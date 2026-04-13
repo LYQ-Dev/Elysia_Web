@@ -367,4 +367,4 @@ pnpm run sync-content
 [![Star History Chart](https://api.star-history.com/svg?repos=LyraVoid/Mizuki&type=Date)](https://star-history.com/#LyraVoid/Mizuki&Date)
 ---
 
-⭐ 如果您觉得这个项目有帮助，请考虑给它一个星标!
+⭐ 如果您觉得这个项目有帮助，请考虑给它一个星标!!
