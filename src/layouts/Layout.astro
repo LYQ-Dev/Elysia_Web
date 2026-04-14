@@ -2,6 +2,7 @@
 import ConfigCarrier from "@components/misc/ConfigCarrier.astro";
 import MusicPlayer from "@components/widgets/music-player/MusicPlayer.svelte";
 import Pio from "@components/features/pio/Pio.svelte"; // 使用 Svelte 版本的 Pio 组件
+import PerformanceControl from "@components/features/performance-control/PerformanceControl.svelte";
 import { PageProgressBar } from "@components/control/PageProgressBar";
 import { pioConfig, profileConfig, siteConfig } from "@/config";
 
@@ -227,6 +228,7 @@ if (siteConfig.font) {
 			height={siteConfig.pageProgressBar?.height ?? 3}
 			duration={siteConfig.pageProgressBar?.duration ?? 8000}
 		/>
+		<PerformanceControl client:load />
 		<slot />
 
 		<!-- Music Player - 核心始终加载（当enable=true），UI通过showFloatingPlayer控制 -->
@@ -237,6 +239,59 @@ if (siteConfig.font) {
 
 		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>
+
+		<!-- Performance Manager Initialization -->
+		<script is:inline>
+			// Performance Manager 内联初始化
+			class PerformanceManager {
+				static getInstance() {
+					if (!window.__performanceManager) {
+						window.__performanceManager = new PerformanceManager();
+					}
+					return window.__performanceManager;
+				}
+
+				constructor() {
+					this.load();
+				}
+
+				load() {
+					const settings = this.loadSettings();
+					this.apply(settings);
+				}
+
+				loadSettings() {
+					const defaults = {
+						waveEffect: true,
+						carousel: true,
+						typewriter: true,
+						floatingToc: true,
+						progressBar: true,
+						floatingPlayer: true,
+						animations: true,
+						pageCovers: true,
+					};
+
+					try {
+						const saved = localStorage.getItem('performanceSettings');
+						return saved ? Object.assign(defaults, JSON.parse(saved)) : defaults;
+					} catch (e) {
+						return defaults;
+					}
+				}
+
+				apply(settings) {
+					const root = document.documentElement;
+					Object.keys(settings).forEach((key) => {
+						const dataKey = key.replace(/([A-Z])/g, '-$1').toLowerCase();
+						root.setAttribute(`data-${dataKey}`, settings[key] ? 'true' : 'false');
+					});
+				}
+			}
+
+			// 初始化
+			PerformanceManager.getInstance();
+		</script>
 	</body>
 </html>
 

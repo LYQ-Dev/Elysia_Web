@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import PageHeader from "@components/features/page-header/PageHeader.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+
+const title = "书籍阅读记录";
+const description = "分享最近看的书籍";
+---
+
+<MainGridLayout title={title} description={description}>
+	<div class="prose dark:prose-invert max-w-none">
+		<PageHeader title="书籍阅读记录" subtitle="分享最近看的书籍和读书笔记" />
+		
+		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
+			<div class="flex items-center gap-3 mb-4">
+				<Icon name="material-symbols:library-books" class="w-8 h-8 text-amber-600" />
+				<h2 class="text-2xl font-bold m-0">书籍阅读</h2>
+			</div>
+			<p class="text-slate-600 dark:text-slate-400">
+				分享阅读中的所得，记录每一本书带来的感受和启发。
+			</p>
+		</div>
+
+		<div class="mt-8">
+			<p class="text-center text-slate-500 dark:text-slate-400">
+				📚 开始分享你的阅读之旅...
+			</p>
+		</div>
+	</div>
+</MainGridLayout>

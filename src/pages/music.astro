@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import PageHeader from "@components/features/page-header/PageHeader.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+
+const title = "我的歌单";
+const description = "分享最近喜欢的歌曲";
+---
+
+<MainGridLayout title={title} description={description}>
+	<div class="prose dark:prose-invert max-w-none">
+		<PageHeader title="我的歌单" subtitle="分享最近加入的歌曲" />
+		
+		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
+			<div class="flex items-center gap-3 mb-4">
+				<Icon name="material-symbols:music-note" class="w-8 h-8 text-pink-500" />
+				<h2 class="text-2xl font-bold m-0">音乐收藏</h2>
+			</div>
+			<p class="text-slate-600 dark:text-slate-400">
+				这里记录最近喜欢的歌曲，从各种风格和心情的音乐中寻找灵感。
+			</p>
+		</div>
+
+		<div class="mt-8">
+			<p class="text-center text-slate-500 dark:text-slate-400">
+				🎵 开始分享你的音乐世界...
+			</p>
+		</div>
+	</div>
+</MainGridLayout>

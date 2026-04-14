@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import PageHeader from "@components/features/page-header/PageHeader.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+
+const title = "运动日志";
+const description = "分享每日运动经历";
+---
+
+<MainGridLayout title={title} description={description}>
+	<div class="prose dark:prose-invert max-w-none">
+		<PageHeader title="运动日志" subtitle="分享每日运动经历和健身进度" />
+		
+		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
+			<div class="flex items-center gap-3 mb-4">
+				<Icon name="material-symbols:sports-soccer" class="w-8 h-8 text-orange-500" />
+				<h2 class="text-2xl font-bold m-0">运动记录</h2>
+			</div>
+			<p class="text-slate-600 dark:text-slate-400">
+				记录日常运动计划、健身目标和美好时刻的分享。
+			</p>
+		</div>
+
+		<div class="mt-8">
+			<p class="text-center text-slate-500 dark:text-slate-400">
+				💪 开始记录你的运动故事...
+			</p>
+		</div>
+	</div>
+</MainGridLayout>

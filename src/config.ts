@@ -21,7 +21,7 @@ import { LinkPreset } from "./types/config";
 // 移除i18n导入以避免循环依赖
 
 // 定义站点语言
-const SITE_LANG = "ja"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
+const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
 export const siteConfig: SiteConfig = {
 	title: "Mizuki",
@@ -57,7 +57,7 @@ export const siteConfig: SiteConfig = {
 		// 顶栏标题文本
 		text: "Elysia",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.webp
-		icon: "assets/home/TopTubiao.png",
+		icon: "public/assets/home/TopTubiao.webp",
 		// 网站Logo图片路径
 		logo: "assets/home/default-logo.webp",
 	},
@@ -149,7 +149,7 @@ export const siteConfig: SiteConfig = {
 
 		waves: {
 			enable: true, // 是否启用水波纹效果（注意：此功能性能开销较大）
-			performanceMode: false, // 性能模式：减少动画复杂度(性能提升40%)
+			performanceMode: true, // 性能模式：减少动画复杂度(性能提升40%)
 			mobileDisable: false, // 移动端禁用
 		},
 
@@ -264,8 +264,8 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	}, // 使用本地横幅图片
 	position: "center", // 壁纸位置，等同于 object-position
 	carousel: {
-		enable: true, // 启用轮播
-		interval: 5, // 轮播间隔时间（秒）
+		enable: false, // 启用轮播
+		interval: 6, // 轮播间隔时间（秒）
 	},
 	zIndex: -1, // 层级，确保壁纸在背景层
 	opacity: 0.8, // 壁纸透明度
@@ -276,9 +276,104 @@ export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
 		LinkPreset.Archive,
-		// 支持自定义导航栏链接，支持多级菜单
 		{
-			name: "Links",
+			name: "记录生活",
+			url: "/life/",
+			icon: "material-symbols:favorite",
+			children: [
+				{
+					name: "追番",
+					url: "/anime/",
+					icon: "material-symbols:movie",
+				},
+				{
+					name: "日记",
+					url: "/diary/",
+					icon: "material-symbols:book",
+				},
+				{
+					name: "歌曲",
+					url: "/music/",
+					icon: "material-symbols:music-note",
+				},
+				{
+					name: "运动",
+					url: "/sports/",
+					icon: "material-symbols:sports-soccer",
+				},
+				{
+					name: "书籍",
+					url: "/books/",
+					icon: "material-symbols:library-books",
+				},
+				{
+					name: "项目",
+					url: "/projects/",
+					icon: "material-symbols:work",
+				},
+				{
+					name: "网站",
+					url: "/websites/",
+					icon: "material-symbols:language",
+				},
+			],
+		},
+		{
+			name: "记录学习",
+			url: "/learning/",
+			icon: "material-symbols:school",
+			children: [
+				{
+					name: "数学",
+					url: "/learning/math/",
+					icon: "material-symbols:calculate",
+				},
+				{
+					name: "专业课",
+					url: "/learning/major/",
+					icon: "material-symbols:notes",
+				},
+				{
+					name: "英语",
+					url: "/learning/english/",
+					icon: "material-symbols:language",
+				},
+				{
+					name: "考研择校",
+					url: "/learning/exam/",
+					icon: "material-symbols:school-outline",
+				},
+			],
+		},
+		{
+			name: "关于",
+			url: "/about/",
+			icon: "material-symbols:info",
+			children: [
+				{
+					name: "关于我",
+					url: "/about/",
+					icon: "material-symbols:person",
+				},
+				{
+					name: "友链",
+					url: "/friends/",
+					icon: "material-symbols:group",
+				},
+				{
+					name: "技能",
+					url: "/skills/",
+					icon: "material-symbols:psychology",
+				},
+				{
+					name: "时间线",
+					url: "/timeline/",
+					icon: "material-symbols:timeline",
+				},
+			],
+		},
+		{
+			name: "链接",
 			url: "/links/",
 			icon: "material-symbols:link",
 			children: [
@@ -299,73 +394,6 @@ export const navBarConfig: NavBarConfig = {
 					url: "https://gitee.com/lyqelysia",
 					external: true,
 					icon: "mdi:git",
-				},
-			],
-		},
-		{
-			name: "My",
-			url: "/content/",
-			icon: "material-symbols:person",
-			children: [
-				{
-					name: "Anime",
-					url: "/anime/",
-					icon: "material-symbols:movie",
-				},
-				{
-					name: "Diary",
-					url: "/diary/",
-					icon: "material-symbols:book",
-				},
-				{
-					name: "Gallery",
-					url: "/albums/",
-					icon: "material-symbols:photo-library",
-				},
-				{
-					name: "Devices",
-					url: "/devices/",
-					icon: "material-symbols:devices",
-					external: false,
-				},
-			],
-		},
-		{
-			name: "About",
-			url: "/content/",
-			icon: "material-symbols:info",
-			children: [
-				{
-					name: "About",
-					url: "/about/",
-					icon: "material-symbols:person",
-				},
-				{
-					name: "Friends",
-					url: "/friends/",
-					icon: "material-symbols:group",
-				},
-			],
-		},
-		{
-			name: "Others",
-			url: "#",
-			icon: "material-symbols:more-horiz",
-			children: [
-				{
-					name: "Projects",
-					url: "/projects/",
-					icon: "material-symbols:work",
-				},
-				{
-					name: "Skills",
-					url: "/skills/",
-					icon: "material-symbols:psychology",
-				},
-				{
-					name: "Timeline",
-					url: "/timeline/",
-					icon: "material-symbols:timeline",
 				},
 			],
 		},

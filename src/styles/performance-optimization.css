@@ -1,0 +1,85 @@
+/* Performance Optimization Styles */
+
+/* 根据性能设置禁用各种效果 */
+
+/* 水波纹特效 */
+html[data-wave-effect="false"] .waves {
+	display: none !important;
+}
+
+/* 轮播动画 */
+html[data-carousel="false"] .banner-carousel,
+html[data-carousel="false"] .carousel {
+	animation: none !important;
+	transition: none !important;
+}
+
+/* 打字机效果 */
+html[data-typewriter="false"] .typewriter-text {
+	animation: none !important;
+}
+
+/* 浮动目录 */
+html[data-floating-toc="false"] #toc-floating,
+html[data-floating-toc="false"] .toc-floating {
+	display: none !important;
+}
+
+/* 进度条 */
+html[data-progress-bar="false"] .page-progress-bar {
+	display: none !important;
+}
+
+/* 悬浮播放器 */
+html[data-floating-player="false"] .music-player-floating,
+html[data-floating-player="false"] .music-floating {
+	display: none !important;
+}
+
+/* 文章封面 */
+html[data-page-covers="false"] .article-cover,
+html[data-page-covers="false"] .post-cover {
+	display: none !important;
+}
+
+/* 禁用所有动画 */
+html[data-animation-disabled="true"],
+html[data-animation-disabled="true"] * {
+	animation: none !important;
+	animation-duration: 0ms !important;
+	animation-delay: 0ms !important;
+	transition: none !important;
+	transition-duration: 0ms !important;
+	transition-delay: 0ms !important;
+}
+
+/* 针对性能优化的组件特定样式 */
+.onload-animation {
+	transition: var(--transition-duration, 0.3s) ease;
+}
+
+/* 禁用所有 CSS 动画和过渡时的回退 */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* 提性能模式：减少重排/重绘 */
+.performance-optimized {
+	will-change: auto;
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+/* 禁用阴影以提高性能 */
+html[data-disable-shadows="true"] * {
+	box-shadow: none !important;
+	text-shadow: none !important;
+	filter: none !important;
+}

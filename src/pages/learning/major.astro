@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import PageHeader from "@components/features/page-header/PageHeader.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+
+const title = "考研专业课";
+const description = "专业课学习记录";
+---
+
+<MainGridLayout title={title} description={description}>
+	<div class="prose dark:prose-invert max-w-none">
+		<PageHeader title="考研专业课" subtitle="记录专业课学习内容" />
+		
+		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
+			<div class="flex items-center gap-3 mb-4">
+			<Icon name="material-symbols:notes" class="w-8 h-8 text-purple-500" />
+				<h2 class="text-2xl font-bold m-0">专业课学习记录</h2>
+			</div>
+			<p class="text-slate-600 dark:text-slate-400">
+				记录考研专业课的复习进度、知识点总结和学习笔记。
+			</p>
+		</div>
+
+		<div class="mt-8">
+			<p class="text-center text-slate-500 dark:text-slate-400">
+				📖 开始记录你的专业课学习...
+			</p>
+		</div>
+	</div>
+</MainGridLayout>

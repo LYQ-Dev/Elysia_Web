@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import PageHeader from "@components/features/page-header/PageHeader.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+
+const title = "实用网站推荐";
+const description = "分享发现的实用网站";
+---
+
+<MainGridLayout title={title} description={description}>
+	<div class="prose dark:prose-invert max-w-none">
+		<PageHeader title="实用网站推荐" subtitle="分享发现的各类实用网站" />
+		
+		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
+			<div class="flex items-center gap-3 mb-4">
+				<Icon name="material-symbols:language" class="w-8 h-8 text-blue-600" />
+				<h2 class="text-2xl font-bold m-0">网站推荐</h2>
+			</div>
+			<p class="text-slate-600 dark:text-slate-400">
+				整理和分享在网络世界中发现的实用、有趣的网站和工具。
+			</p>
+		</div>
+
+		<div class="mt-8">
+			<p class="text-center text-slate-500 dark:text-slate-400">
+				🌐 开始分享你发现的好网站...
+			</p>
+		</div>
+	</div>
+</MainGridLayout>

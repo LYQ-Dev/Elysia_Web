@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+import PageHeader from "@components/features/page-header/PageHeader.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+
+const title = "考研择校信息搜集";
+const description = "记录考研院校相关信息";
+---
+
+<MainGridLayout title={title} description={description}>
+	<div class="prose dark:prose-invert max-w-none">
+		<PageHeader title="考研择校信息搜集" subtitle="记录目标院校的信息和对比分析" />
+		
+		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
+			<div class="flex items-center gap-3 mb-4">
+				<Icon name="material-symbols:school-outline" class="w-8 h-8 text-red-500" />
+				<h2 class="text-2xl font-bold m-0">考研择校信息</h2>
+			</div>
+			<p class="text-slate-600 dark:text-slate-400">
+				搜集和整理目标院校的招生信息、分数线、学科评估等重要数据。
+			</p>
+		</div>
+
+		<div class="mt-8">
+			<p class="text-center text-slate-500 dark:text-slate-400">
+				🎓 探索你的梦想院校...
+			</p>
+		</div>
+	</div>
+</MainGridLayout>
