@@ -26,15 +26,15 @@ const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UT
 export const siteConfig: SiteConfig = {
 	title: "Mizuki",
 	subtitle: "One demo website",
-	siteURL: "https://mizuki.mysqil.com/", // 请替换为你的站点URL，以斜杠结尾
-	siteStartDate: "2025-01-01", // 站点开始运行日期，用于站点统计组件计算运行天数
+	siteURL: "https://elysiaweb.vercel.app/", // 请替换为你的站点URL，以斜杠结尾
+	siteStartDate: "2026-04-13", // 站点开始运行日期，用于站点统计组件计算运行天数
 
 	timeZone: SITE_TIMEZONE,
 
 	lang: SITE_LANG,
 
 	themeColor: {
-		hue: 240, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+		hue: 345, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
 		fixed: false, // 对访问者隐藏主题色选择器
 	},
 
@@ -55,9 +55,9 @@ export const siteConfig: SiteConfig = {
 		// 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
 		mode: "text-icon",
 		// 顶栏标题文本
-		text: "MizukiUI",
+		text: "Elysia",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.webp
-		icon: "assets/home/home.webp",
+		icon: "assets/home/TopTubiao.png",
 		// 网站Logo图片路径
 		logo: "assets/home/default-logo.webp",
 	},
@@ -74,7 +74,7 @@ export const siteConfig: SiteConfig = {
 	},
 
 	bilibili: {
-		vmid: "your-bilibili-vmid", // 在此处设置你的Bilibili用户ID (uid)，例如 "1129280784"
+		vmid: "your-bilibili-vmid", // 在此处设置你的Bilibili用户ID (uid)
 		fetchOnDev: false, // 是否在开发环境下获取 Bilibili 数据（默认 false）
 		coverMirror: "", // 封面图片镜像源（可选，如果需要使用镜像源，例如 "https://images.weserv.nl/?url="）
 		useWebp: true, // 是否使用WebP格式（默认 true）
@@ -129,12 +129,14 @@ export const siteConfig: SiteConfig = {
 				"/assets/desktop-banner/2.webp",
 				"/assets/desktop-banner/3.webp",
 				"/assets/desktop-banner/4.webp",
+				"/assets/desktop-banner/5.webp",
+				"/assets/desktop-banner/6.webp",
+				"/assets/desktop-banner/7.webp",
 			], // 桌面横幅图片
 			mobile: [
 				"/assets/mobile-banner/1.webp",
 				"/assets/mobile-banner/2.webp",
 				"/assets/mobile-banner/3.webp",
-				"/assets/mobile-banner/4.webp",
 			], // 移动横幅图片
 		}, // 使用本地横幅图片
 
@@ -162,14 +164,14 @@ export const siteConfig: SiteConfig = {
 
 		homeText: {
 			enable: true, // 在主页显示自定义文本
-			title: "わたしの部屋", // 主页横幅主标题
+			title: "一点碎碎念", // 主页横幅主标题
 
 			subtitle: [
-				"特別なことはないけど、君がいると十分です",
-				"今でもあなたは私の光",
-				"君ってさ、知らないうちに私の毎日になってたよ",
-				"君と話すと、なんか毎日がちょっと楽しくなるんだ",
-				"今日はなんでもない日。でも、ちょっとだけいい日",
+				"温柔正确的人总是难以生存，因为这个世界既不温柔也不正确。",
+				"时间带着明显的恶意，在我身上缓缓流逝。",
+				"已经走到尽头的东西，重生也不过是再一次的消亡。就像所有的开始，其实都只是一个写好了的结局。",
+				"重要的人，不想忘记的人，绝对不能忘的人，就算我不记得你的名字，我也会一直一直拼命的寻找你——",
+				"要抹去懊悔，终究只有继续不断努力。",
 			],
 			typewriter: {
 				enable: true, // 启用副标题打字机效果
@@ -249,6 +251,9 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 			"/assets/desktop-banner/2.webp",
 			"/assets/desktop-banner/3.webp",
 			"/assets/desktop-banner/4.webp",
+			"/assets/desktop-banner/5.webp",
+			"/assets/desktop-banner/6.webp",
+			"/assets/desktop-banner/7.webp",
 		], // 桌面横幅图片
 		mobile: [
 			"/assets/mobile-banner/1.webp",
@@ -279,19 +284,19 @@ export const navBarConfig: NavBarConfig = {
 			children: [
 				{
 					name: "GitHub",
-					url: "https://github.com/LyraVoid/Mizuki",
+					url: "https://github.com/LYQ-Dev",
 					external: true,
 					icon: "fa7-brands:github",
 				},
 				{
 					name: "Bilibili",
-					url: "https://space.bilibili.com/701864046",
+					url: "https://b23.tv/8y3yvwr",
 					external: true,
 					icon: "fa7-brands:bilibili",
 				},
 				{
 					name: "Gitee",
-					url: "https://gitee.com/matsuzakayuki/Mizuki",
+					url: "https://gitee.com/lyqelysia",
 					external: true,
 					icon: "mdi:git",
 				},
