@@ -2,9 +2,17 @@
 import { Icon } from "astro-icon/components";
 import PageHeader from "@components/features/page-header/PageHeader.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { getCollection } from "astro:content";
+import { removeFileExtension } from "@utils/url-utils";
 
 const title = "考研数学";
 const description = "备战考研数学的学习记录";
+
+// 获取所有帖子并筛选分类为 'math' 的
+const allPosts = await getCollection("posts");
+const mathPosts = allPosts
+	.filter((post) => post.data.category === "math" && !post.data.draft)
+	.sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime());
 ---
 
 <MainGridLayout title={title} description={description}>
@@ -17,14 +25,41 @@ const description = "备战考研数学的学习记录";
 				<h2 class="text-2xl font-bold m-0">数学学习记录</h2>
 			</div>
 			<p class="text-slate-600 dark:text-slate-400">
-				这里将记录考研数学的学习内容、做题笔记和复习进度。
+				这里记录考研数学的学习内容、做题笔记和复习进度。
 			</p>
 		</div>
 
-		<div class="mt-8">
-			<p class="text-center text-slate-500 dark:text-slate-400">
-				📚 开始记录你的数学学习之旅...
-			</p>
-		</div>
+		{mathPosts.length > 0 ? (
+			<div class="space-y-4 mt-8">
+				{mathPosts.map((post) => (
+					<a href={`/posts/${removeFileExtension(post.id)}/`} class="card-base block p-6 hover:shadow-lg transition-shadow">
+						<h3 class="text-xl font-bold mb-2 text-blue-600 dark:text-blue-300">
+							{post.data.title}
+						</h3>
+						<p class="text-slate-600 dark:text-slate-400 mb-3">
+							{post.data.description}
+						</p>
+						<div class="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
+							<span>{new Date(post.data.published).toLocaleDateString('zh-CN')}</span>
+							{post.data.tags.length > 0 && (
+								<div class="flex gap-2">
+									{post.data.tags.slice(0, 3).map((tag) => (
+										<span class="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded text-xs">
+											{tag}
+										</span>
+									))}
+								</div>
+							)}
+						</div>
+					</a>
+				))}
+			</div>
+		) : (
+			<div class="mt-8">
+				<p class="text-center text-slate-500 dark:text-slate-400">
+					📚 开始记录你的数学学习之旅...
+				</p>
+			</div>
+		)}
 	</div>
 </MainGridLayout>
