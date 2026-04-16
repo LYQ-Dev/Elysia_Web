@@ -53,7 +53,7 @@ const subtitle = "分享最近喜欢的歌曲";
 				<FilterTabs tabs={filterTabs} dataAttr="tags" />
 			</div>
 
-			<div id="music-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+			<div id="music-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 items-start">
 				{
 					songs.map((song) => (
 						<div data-tags={JSON.stringify(song.data.tags || [])}>

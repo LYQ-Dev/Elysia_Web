@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import { FilterTabs } from "@components/atoms/filter-tabs";
 import { PageHeader } from "@components/features/page-header";
 import { ProjectCard } from "@components/features/projects";
@@ -7,7 +8,6 @@ import { Icon } from "astro-icon/components";
 
 import { siteConfig } from "../config";
 import { UNCATEGORIZED } from "../constants/constants";
-import { projectsData } from "../data/projects";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 
@@ -15,8 +15,19 @@ if (!siteConfig.featurePages.projects) {
 	return Astro.redirect("/404/");
 }
 
+// 获取所有项目
+const projects = await getCollection("projects");
+
+// 按开始日期排序（最新优先）
+const sortedProjects = [...projects].sort((a, b) => {
+	const dateA = new Date(a.data.startDate).getTime();
+	const dateB = new Date(b.data.startDate).getTime();
+	return dateB - dateA;
+});
+
+// 获取所有分类
 const categories = [
-	...new Set(projectsData.map((project) => project.category)),
+	...new Set(sortedProjects.map((project) => project.data.category)),
 ];
 
 const getCategoryText = (category: string) => {
@@ -56,13 +67,13 @@ const filterTabs = [
 		value: "all",
 		label: i18n(I18nKey.friendsFilterAll),
 		icon: "material-symbols:apps",
-		count: projectsData.length,
+		count: sortedProjects.length,
 	},
 	...categories.map((category) => ({
 		value: category,
 		label: getCategoryText(category),
 		icon: getCategoryIcon(category),
-		count: projectsData.filter((p) => p.category === category).length,
+		count: sortedProjects.filter((p) => p.data.category === category).length,
 	})),
 ];
 
@@ -94,11 +105,32 @@ const subtitle = i18n(I18nKey.projectsSubtitle);
 
 			<div
 				id="projects-grid"
-				class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start"
+				class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start"
 			>
 				{
-					projectsData.map((project) => (
-						<ProjectCard project={project} maxTechStack={4} />
+					sortedProjects.map((project) => (
+						<div data-category={project.data.category}>
+							<ProjectCard
+								project={{
+									id: project.id,
+									title: project.data.title,
+									description: project.data.description,
+									image: project.data.image || "",
+									category: project.data.category,
+									techStack: project.data.techStack,
+									status: project.data.status,
+									liveDemo: project.data.liveDemo,
+									sourceCode: project.data.sourceCode,
+									visitUrl: project.data.visitUrl,
+									startDate: new Date(project.data.startDate).toISOString().split('T')[0],
+									endDate: project.data.endDate ? new Date(project.data.endDate).toISOString().split('T')[0] : undefined,
+									featured: project.data.featured || false,
+									tags: project.data.tags || [],
+									showImage: true,
+								}}
+								maxTechStack={4}
+							/>
+						</div>
 					))
 				}
 			</div>
@@ -115,3 +147,34 @@ const subtitle = i18n(I18nKey.projectsSubtitle);
 		</div>
 	</div>
 </MainGridLayout>
+
+<script define:vars={{ contentLength: sortedProjects.length }}>
+	// 自定义筛选逻辑 - 用于分类属性
+	document.addEventListener("DOMContentLoaded", () => {
+		const filterButtons = document.querySelectorAll("[data-filter-value]");
+		const cards = document.querySelectorAll("#projects-grid > div[data-category]");
+
+		filterButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				const filterValue = button.getAttribute("data-filter-value");
+				const isAll = filterValue === "all";
+
+				cards.forEach((card) => {
+					if (isAll) {
+						card.style.display = "";
+						card.classList.remove("filtered-out");
+					} else {
+						const category = card.getAttribute("data-category");
+						if (category === filterValue) {
+							card.style.display = "";
+							card.classList.remove("filtered-out");
+						} else {
+							card.style.display = "none";
+							card.classList.add("filtered-out");
+						}
+					}
+				});
+			});
+		});
+	});
+</script>
