@@ -67,16 +67,11 @@ const watchProgress = totalEpisodes > 0 ? (watchedEpisodes / totalEpisodes * 100
 
 		<!-- 评分徽章 -->
 		{rating && (
-			<div class="absolute top-4 right-4 flex items-center gap-1 bg-black/60 text-white px-3 py-1.5 rounded-md text-sm font-semibold backdrop-blur-md">
-				<Icon name="material-symbols:star-rounded" class="w-4 h-4" />
+			<div class="absolute top-2 right-2 flex items-center gap-0.5 bg-black/60 text-white px-2 py-1 rounded-md text-xs font-semibold backdrop-blur-md">
+				<Icon name="material-symbols:star-rounded" class="w-3 h-3" />
 				<span>{rating}</span>
 			</div>
 		)}
-
-		<!-- 状态徽章 -->
-		<div class={`absolute bottom-4 left-4 flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-semibold backdrop-blur-md border ${colorMap[statusInfo.color]}`}>
-			<Icon name={statusInfo.icon} class="w-4 h-4" />
-		</div>
 	</div>
 
 	<!-- 右侧：内容部分 -->
