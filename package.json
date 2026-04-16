@@ -5,8 +5,8 @@
 	"scripts": {
 		"sync-content": "node scripts/sync-content.js",
 		"init-content": "node scripts/init-content-repo.js",
-		"predev": "node scripts/sync-content.js || true",
-		"prebuild": "node scripts/sync-content.js || true",
+		"predev": "node scripts/copy-diary-images.mjs && node scripts/sync-content.js || true",
+		"prebuild": "node scripts/copy-diary-images.mjs && node scripts/sync-content.js || true",
 		"dev": "astro dev",
 		"start": "astro dev",
 		"check": "astro check",

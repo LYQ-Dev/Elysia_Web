@@ -27,17 +27,31 @@ const allTags = Array.from(
 ).sort();
 
 // 转换为兼容 MomentCard 的格式
-const moments = sortedDiaries.map((diary) => ({
-	id: diary.id,
-	slug: diary.id,
-	title: diary.data.title,
-	content: diary.data.title,
-	date: diary.data.date.toISOString(),
-	images: diary.data.images || [],
-	location: diary.data.location,
-	mood: diary.data.mood,
-	tags: diary.data.tags || [],
-}));
+const moments = sortedDiaries.map((diary) => {
+	// 处理相对路径的图片，转换为绝对路径
+	const processedImages = (diary.data.images || []).map((image: string) => {
+		// 如果是相对路径（./ 开头或不以 / 开头），转换为 /diary-content/{id}/filename
+		if (image.startsWith("./")) {
+			return `/diary-content/${diary.id}/${image.slice(2)}`;
+		} else if (!image.startsWith("/")) {
+			return `/diary-content/${diary.id}/${image}`;
+		}
+		// 已经是绝对路径，保持不变
+		return image;
+	});
+
+	return {
+		id: diary.id,
+		slug: diary.id,
+		title: diary.data.title,
+		content: diary.data.title,
+		date: diary.data.date.toISOString(),
+		images: processedImages,
+		location: diary.data.location,
+		mood: diary.data.mood,
+		tags: diary.data.tags || [],
+	};
+});
 
 const filterTabs = [
 	{
