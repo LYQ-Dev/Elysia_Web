@@ -55,15 +55,28 @@
 	cursor: pointer;
 	border-radius: 0.5rem;
 	margin-bottom: 1rem;
+	background-color: rgb(248, 250, 252); /* slate-50 */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+	border: 1px solid rgb(226, 232, 240); /* slate-200 */
 }
 
 .learning-post-item:hover {
+	background-color: rgb(241, 245, 249); /* slate-100 */
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 	transform: translateY(-12px);
+	border-color: rgb(203, 213, 225); /* slate-300 */
+}
+
+.dark .learning-post-item {
+	background-color: rgb(30, 41, 59) !important; /* slate-800 */
+	border-color: rgb(51, 65, 85); /* slate-700 */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dark .learning-post-item:hover {
+	background-color: rgb(45, 55, 75) !important; /* slate-700/800混合 */
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+	border-color: rgb(71, 85, 105); /* slate-600 */
 }
 
 /* Learning post title */
