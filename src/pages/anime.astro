@@ -77,7 +77,7 @@ const subtitle = "我的追番记录，记录每一部值得观看的动画";
 				<FilterTabs tabs={filterTabs} dataAttr="status" />
 			</div>
 
-			<div id="anime-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start transition-all duration-300 will-change-[grid-template-columns]">
+			<div id="anime-grid" class="grid grid-cols-2 gap-4 transition-all duration-300 will-change-[grid-template-columns]">
 				{
 					sortedAnimes.map((anime) => (
 						<div data-status={anime.data.status} class="transition-all duration-300 will-change-transform">

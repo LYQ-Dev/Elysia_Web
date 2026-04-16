@@ -48,9 +48,9 @@ const themeColorMap: Record<string, string> = {
 const watchProgress = totalEpisodes > 0 ? (watchedEpisodes / totalEpisodes * 100) : 0;
 ---
 
-<a href={detailLink} class="anime-card group relative rounded-lg overflow-hidden block h-full transition-all will-change-transform" style="transition-property: transform, box-shadow; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);">
-	<!-- 封面容器 -->
-	<div class="aspect-[2/3] overflow-hidden relative bg-gradient-to-br from-black/5 to-black/10 dark:from-white/5 dark:to-white/10">
+<a href={detailLink} class="anime-card group relative rounded-lg overflow-hidden flex h-[200px] transition-all will-change-transform" style="transition-property: transform, box-shadow; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);">
+	<!-- 左侧：封面容器 -->
+	<div class="shrink-0 w-[126px] aspect-[10/16] relative bg-gradient-to-br from-black/5 to-black/10 dark:from-white/5 dark:to-white/10 overflow-hidden">
 		{cover ? (
 			<img
 				src={cover}
@@ -67,67 +67,60 @@ const watchProgress = totalEpisodes > 0 ? (watchedEpisodes / totalEpisodes * 100
 
 		<!-- 评分徽章 -->
 		{rating && (
-			<div class="absolute top-3 right-3 flex items-center gap-1 bg-black/60 text-white px-2.5 py-1.5 rounded-lg text-xs font-semibold backdrop-blur-md">
-				<Icon name="material-symbols:star-rounded" class="w-3.5 h-3.5" />
+			<div class="absolute top-4 right-4 flex items-center gap-1 bg-black/60 text-white px-3 py-1.5 rounded-md text-sm font-semibold backdrop-blur-md">
+				<Icon name="material-symbols:star-rounded" class="w-4 h-4" />
 				<span>{rating}</span>
 			</div>
 		)}
 
 		<!-- 状态徽章 -->
-		<div class={`absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold backdrop-blur-md border ${colorMap[statusInfo.color]}`}>
-			<Icon name={statusInfo.icon} class="w-3.5 h-3.5" />
-			<span>{statusInfo.text}</span>
-		</div>
-
-		<!-- 底部进度条伪元素 -->
-		<div class="absolute bottom-0 left-0 right-0 h-1 bg-black/5 dark:bg-white/5 overflow-hidden">
-			<div
-				class={`h-full bg-gradient-to-r ${themeColorMap[status]} transition-all will-change-transform`}
-				style={`width: 0%; transition-property: width; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`}
-			/>
+		<div class={`absolute bottom-4 left-4 flex items-center gap-1 px-3 py-1.5 rounded-md text-sm font-semibold backdrop-blur-md border ${colorMap[statusInfo.color]}`}>
+			<Icon name={statusInfo.icon} class="w-4 h-4" />
 		</div>
 	</div>
 
-	<!-- 内容部分 -->
-	<div class="p-4 flex flex-col gap-3 bg-white/50 dark:bg-white/5 backdrop-blur-sm border-t border-black/10 dark:border-white/10">
+	<!-- 右侧：内容部分 -->
+	<div class="flex-1 px-6 py-4 flex flex-col justify-between bg-white/50 dark:bg-white/5 backdrop-blur-sm border-l border-black/10 dark:border-white/10">
 		<!-- 标题 -->
-		<h3 class="font-bold text-sm leading-tight text-black/85 dark:text-white/85 line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400" style="transition-property: color; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);">
-			{title}
-		</h3>
+		<div class="flex flex-col gap-2">
+			<h3 class="font-bold text-base leading-tight text-black/90 dark:text-white/90 line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400" style="transition-property: color; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);">
+				{title}
+			</h3>
 
-		<!-- 工作室 & 年份 -->
-		<p class="text-xs text-black/50 dark:text-white/50 line-clamp-1">
-			{studio}
-		</p>
+			<!-- 年份 & 制作 -->
+			<div class="flex items-center gap-1 text-sm text-black/50 dark:text-white/50 line-clamp-1">
+				<span class="shrink-0">{year}</span>
+				<span class="shrink-0">•</span>
+				<span class="truncate">{studio}</span>
+			</div>
 
-		<!-- 分类标签 -->
-		{genre && genre.length > 0 && (
-			<div class="flex flex-wrap gap-1">
-				{genre.slice(0, 2).map((g: string) => (
-					<span class="px-2 py-0.5 text-xs rounded-full bg-red-500/15 text-red-600 dark:text-red-400 font-medium">
-						{g}
-					</span>
-				))}
-				{genre.length > 2 && (
-					<span class="px-2 py-0.5 text-xs rounded-full bg-black/8 dark:bg-white/8 text-black/50 dark:text-white/50 font-medium">
-						+{genre.length - 2}
+			<!-- 状态 -->
+			<div class="flex items-center gap-2 flex-wrap">
+				<span class={`px-2 py-1 rounded text-sm font-medium flex items-center gap-1 ${colorMap[statusInfo.color]}`}>
+					{statusInfo.text}
+				</span>
+				{genre && genre.length > 0 && (
+					<span class="px-2 py-1 text-sm rounded bg-red-500/15 text-red-600 dark:text-red-400 font-medium">
+						{genre[0]}
 					</span>
 				)}
 			</div>
-		)}
+		</div>
 
 		<!-- 观看进度 -->
 		{totalEpisodes > 0 && (
-			<div class="mt-1 flex items-center gap-2 text-xs text-black/60 dark:text-white/60">
-				<div class="flex-1 h-1.5 rounded-full bg-black/10 dark:bg-white/10 overflow-hidden">
-					<div
-						class={`h-full rounded-full bg-gradient-to-r ${themeColorMap[status]} transition-all will-change-transform`}
-						style={`width: ${watchProgress}%; transition-property: width; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`}
-					/>
-				</div>
-				<span class="whitespace-nowrap font-semibold">{watchedEpisodes}/{totalEpisodes}</span>
+			<div class="text-sm text-black/60 dark:text-white/60 font-medium">
+				{watchedEpisodes}/{totalEpisodes}
 			</div>
 		)}
+	</div>
+
+	<!-- 底部进度条 -->
+	<div class="anime-progress-bar absolute bottom-0 left-0 right-0 h-2 bg-black/5 dark:bg-white/5 overflow-hidden">
+		<div
+			class={`anime-progress-fill h-full bg-gradient-to-r ${themeColorMap[status]} transition-all will-change-transform`}
+			style={`width: 0%; transition-property: width; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`}
+		/>
 	</div>
 </a>
 
@@ -159,7 +152,8 @@ const watchProgress = totalEpisodes > 0 ? (watchedEpisodes / totalEpisodes * 100
 		transform: scale(1.08);
 	}
 
-	.anime-card:hover .anime-card div:first-child div:last-child div {
+	/* 悬浮时底部进度条展开 */
+	.anime-card:hover .anime-progress-fill {
 		width: 100% !important;
 	}
 
