@@ -1,156 +1,176 @@
 ---
-import Image from "@components/atoms/Image/Image.astro";
+import { Icon } from "astro-icon/components";
 
-interface Props {
-	anime: {
-		title: string;
-		cover: string;
-		link: string;
-		status: string;
-		rating: number;
-		progress: number;
-		totalEpisodes: number;
-		description: string;
-		year: string;
-		studio: string;
-		genre: string[];
-	};
-	statusInfo: {
-		text: string;
-		class: string;
-		icon: string;
-	};
-	yearLabel: string;
-	studioLabel: string;
+export interface Props {
+	id: string;
+	title: string;
+	studio: string;
+	cover?: string;
+	status: "watching" | "completed" | "planned" | "dropped";
+	rating?: number;
+	totalEpisodes: number;
+	watchedEpisodes?: number;
+	year: string;
+	genre?: string[];
+	tags?: string[];
+	link?: string;
 }
 
-const { anime, statusInfo, yearLabel, studioLabel } = Astro.props;
+const { id, title, studio, cover, status, rating = 5, totalEpisodes, watchedEpisodes = 0, year, genre = [], tags = [], link } = Astro.props as Props;
+const detailLink = `/anime/${id}/`;
 
-const progressPercent =
-	anime.totalEpisodes > 0 ? (anime.progress / anime.totalEpisodes) * 100 : 0;
+const getStatusInfo = (status: string) => {
+	const statusMap: Record<string, { text: string; color: string; icon: string }> = {
+		watching: { text: "追番中", color: "blue", icon: "material-symbols:play-circle" },
+		completed: { text: "已完成", color: "green", icon: "material-symbols:check-circle" },
+		planned: { text: "计划观看", color: "amber", icon: "material-symbols:schedule" },
+		dropped: { text: "已弃番", color: "gray", icon: "material-symbols:cancel" },
+	};
+	return statusMap[status] || { text: status, color: "gray", icon: "material-symbols:play-circle" };
+};
+
+const statusInfo = getStatusInfo(status);
+const colorMap: Record<string, string> = {
+	blue: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400",
+	green: "bg-green-500/10 text-green-600 dark:text-green-400 border-green-600 dark:border-green-400",
+	amber: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-600 dark:border-amber-400",
+	gray: "bg-gray-500/10 text-gray-600 dark:text-gray-400 border-gray-600 dark:border-gray-400",
+};
+
+// 主题色映射（用于进度条）
+const themeColorMap: Record<string, string> = {
+	watching: "from-blue-500 to-blue-600",
+	completed: "from-green-500 to-green-600",
+	planned: "from-amber-500 to-amber-600",
+	dropped: "from-gray-500 to-gray-600",
+};
+
+const watchProgress = totalEpisodes > 0 ? (watchedEpisodes / totalEpisodes * 100) : 0;
 ---
 
-<div
-	class="group relative bg-[var(--card-bg)] border border-[var(--line-divider)] rounded-[var(--radius-large)] overflow-hidden hover:shadow-lg"
-	data-anime-status={anime.status}
->
-	<div class="relative anime-cover-container aspect-[2/3] overflow-hidden">
-		<a
-			href={anime.link}
-			target="_blank"
-			rel="noopener noreferrer"
-			class="block w-full h-full"
-		>
-			<Image
-				src={anime.cover}
-				alt={anime.title}
-				class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-110"
-				widths={[200, 400, 600]}
-				sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+<a href={detailLink} class="anime-card group relative rounded-lg overflow-hidden block h-full transition-all will-change-transform" style="transition-property: transform, box-shadow; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);">
+	<!-- 封面容器 -->
+	<div class="aspect-[2/3] overflow-hidden relative bg-gradient-to-br from-black/5 to-black/10 dark:from-white/5 dark:to-white/10">
+		{cover ? (
+			<img
+				src={cover}
+				alt={title}
+				class="w-full h-full object-cover transition-transform duration-300"
+				style="transition-property: transform; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);"
+				loading="lazy"
 			/>
-			<div
-				class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-			>
-				<div class="absolute inset-0 flex items-center justify-center">
-					<div
-						class="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"
-					>
-						<svg
-							class="w-6 h-6 text-gray-800 ml-1"
-							fill="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path d="M8 5v14l11-7z"></path>
-						</svg>
-					</div>
-				</div>
+		) : (
+			<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-500/10 to-pink-500/20 dark:from-red-500/5 dark:to-pink-500/10">
+				<Icon name="material-symbols:movie" class="w-12 h-12 text-red-500/40 dark:text-red-400/30" />
 			</div>
-		</a>
+		)}
 
-		<div
-			class={`absolute top-2 left-2 px-2 py-1 rounded-md text-xs font-medium ${statusInfo.class}`}
-		>
-			<span class="mr-1">{statusInfo.icon}</span>
+		<!-- 评分徽章 -->
+		{rating && (
+			<div class="absolute top-3 right-3 flex items-center gap-1 bg-black/60 text-white px-2.5 py-1.5 rounded-lg text-xs font-semibold backdrop-blur-md">
+				<Icon name="material-symbols:star-rounded" class="w-3.5 h-3.5" />
+				<span>{rating}</span>
+			</div>
+		)}
+
+		<!-- 状态徽章 -->
+		<div class={`absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold backdrop-blur-md border ${colorMap[statusInfo.color]}`}>
+			<Icon name={statusInfo.icon} class="w-3.5 h-3.5" />
 			<span>{statusInfo.text}</span>
 		</div>
 
-		<div
-			class="absolute top-2 right-2 bg-black/70 text-white px-2 py-1 rounded-md text-xs font-medium flex items-center gap-1"
-		>
-			<svg
-				class="w-3 h-3 text-yellow-400"
-				fill="currentColor"
-				viewBox="0 0 20 20"
-			>
-				<path
-					d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-				></path>
-			</svg>
-			<span>{anime.rating}</span>
+		<!-- 底部进度条伪元素 -->
+		<div class="absolute bottom-0 left-0 right-0 h-1 bg-black/5 dark:bg-white/5 overflow-hidden">
+			<div
+				class={`h-full bg-gradient-to-r ${themeColorMap[status]} transition-all will-change-transform`}
+				style={`width: 0%; transition-property: width; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`}
+			/>
 		</div>
-
-		{
-			anime.status === "watching" && (
-				<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
-					<div class="w-full bg-white/20 rounded-full h-1.5 mb-1">
-						<div
-							class="bg-gradient-to-r from-emerald-400 to-teal-400 h-1.5 rounded-full transition-all duration-300"
-							style={`width: ${progressPercent}%`}
-						/>
-					</div>
-					<div class="text-white text-xs font-medium">
-						{anime.progress}/{anime.totalEpisodes} (
-						{Math.round(progressPercent)}%)
-					</div>
-				</div>
-			)
-		}
 	</div>
 
-	<div class="p-3">
-		<h3
-			class="text-sm font-bold text-black/90 dark:text-white/90 mb-1 leading-tight"
-		>
-			{anime.title}
+	<!-- 内容部分 -->
+	<div class="p-4 flex flex-col gap-3 bg-white/50 dark:bg-white/5 backdrop-blur-sm border-t border-black/10 dark:border-white/10">
+		<!-- 标题 -->
+		<h3 class="font-bold text-sm leading-tight text-black/85 dark:text-white/85 line-clamp-2 group-hover:text-red-600 dark:group-hover:text-red-400" style="transition-property: color; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);">
+			{title}
 		</h3>
-		<p
-			class="text-black/60 dark:text-white/60 text-xs mb-2 line-clamp-2"
-			title={anime.description}
-		>
-			{anime.description}
+
+		<!-- 工作室 & 年份 -->
+		<p class="text-xs text-black/50 dark:text-white/50 line-clamp-1">
+			{studio}
 		</p>
 
-		<div class="space-y-1 text-xs">
-			<div class="flex justify-between items-center">
-				<span class="text-black/50 dark:text-white/50 shrink-0">
-					{yearLabel}
-				</span>
-				<span
-					class="text-black/70 dark:text-white/70 truncate ml-2 text-right"
-				>
-					{anime.year}
-				</span>
+		<!-- 分类标签 -->
+		{genre && genre.length > 0 && (
+			<div class="flex flex-wrap gap-1">
+				{genre.slice(0, 2).map((g: string) => (
+					<span class="px-2 py-0.5 text-xs rounded-full bg-red-500/15 text-red-600 dark:text-red-400 font-medium">
+						{g}
+					</span>
+				))}
+				{genre.length > 2 && (
+					<span class="px-2 py-0.5 text-xs rounded-full bg-black/8 dark:bg-white/8 text-black/50 dark:text-white/50 font-medium">
+						+{genre.length - 2}
+					</span>
+				)}
 			</div>
-			<div class="flex justify-between items-start">
-				<span class="text-black/50 dark:text-white/50 shrink-0 mt-0.5">
-					{studioLabel}
-				</span>
-				<span
-					class="text-black/70 dark:text-white/70 text-right ml-2 line-clamp-2 break-words"
-					title={anime.studio}
-				>
-					{anime.studio}
-				</span>
+		)}
+
+		<!-- 观看进度 -->
+		{totalEpisodes > 0 && (
+			<div class="mt-1 flex items-center gap-2 text-xs text-black/60 dark:text-white/60">
+				<div class="flex-1 h-1.5 rounded-full bg-black/10 dark:bg-white/10 overflow-hidden">
+					<div
+						class={`h-full rounded-full bg-gradient-to-r ${themeColorMap[status]} transition-all will-change-transform`}
+						style={`width: ${watchProgress}%; transition-property: width; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`}
+					/>
+				</div>
+				<span class="whitespace-nowrap font-semibold">{watchedEpisodes}/{totalEpisodes}</span>
 			</div>
-			<div class="flex flex-wrap gap-1 mt-2">
-				{
-					anime.genre.map((g) => (
-						<span class="px-1.5 py-0.5 bg-[var(--btn-regular-bg)] text-black/70 dark:text-white/70 rounded text-xs">
-							{g}
-						</span>
-					))
-				}
-			</div>
-		</div>
+		)}
 	</div>
-</div>
+</a>
+
+<style>
+	.anime-card {
+		animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+		opacity: 0;
+		border-radius: 0.5rem;
+		border: 1px solid rgb(0 0 0 / 0.1);
+		background: linear-gradient(135deg, rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.1));
+		backdrop-filter: blur(8px);
+	}
+
+	:global(.dark) .anime-card {
+		border-color: rgb(255 255 255 / 0.1);
+		background: linear-gradient(135deg, rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.03));
+	}
+
+	.anime-card:hover {
+		transform: translate3d(0, -20px, 0);
+		box-shadow: 0 20px 40px rgb(0 0 0 / 0.15);
+	}
+
+	:global(.dark) .anime-card:hover {
+		box-shadow: 0 20px 40px rgb(0 0 0 / 0.4);
+	}
+
+	.anime-card:hover img {
+		transform: scale(1.08);
+	}
+
+	.anime-card:hover .anime-card div:first-child div:last-child div {
+		width: 100% !important;
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translate3d(0, 24px, 0);
+		}
+		to {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+</style>

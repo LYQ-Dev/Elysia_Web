@@ -1,0 +1,100 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+	id: string;
+	title: string;
+	url: string;
+	description?: string;
+	icon?: string;
+	category: string;
+	tags?: string[];
+	rating?: number;
+}
+
+const { id, title, url, description, icon, category, tags = [], rating = 5 } = Astro.props as Props;
+const detailLink = `/websites/${id}/`;
+---
+
+<a href={detailLink} class="website-card group relative rounded-xl border border-black/10 dark:border-white/10 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block h-full">
+	<!-- 头部区域：图标和标题 -->
+	<div class="aspect-video overflow-hidden relative bg-gradient-to-br from-cyan-500/5 to-blue-500/10 flex items-center justify-center p-4">
+		{icon ? (
+			<img
+				src={icon}
+				alt={title}
+				class="w-16 h-16 object-cover rounded-lg group-hover:scale-110 transition-transform duration-500 shadow-lg"
+				loading="lazy"
+			/>
+		) : (
+			<Icon name="material-symbols:language" class="w-16 h-16 text-cyan-500/30 group-hover:text-cyan-500/50 transition-colors duration-300" />
+		)}
+		<!-- 评分标记 -->
+		{rating && (
+			<div class="absolute top-3 right-3 flex items-center gap-1 bg-black/50 text-white px-2 py-1 rounded-lg text-xs font-medium backdrop-blur">
+				<Icon name="material-symbols:star-rounded" class="w-3 h-3" />
+				<span>{rating}</span>
+			</div>
+		)}
+		<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+	</div>
+
+	<!-- 内容区域 -->
+	<div class="p-4 flex flex-col">
+		<!-- 标题 -->
+		<h3 class="text-base font-bold text-black/90 dark:text-white/90 truncate group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-200 mb-1">
+			{title}
+		</h3>
+
+		<!-- 分类 -->
+		<p class="text-xs text-black/50 dark:text-white/50 mb-2">
+			{category}
+		</p>
+
+		<!-- 描述 -->
+		{description && (
+			<p class="text-sm text-black/60 dark:text-white/60 mb-3 line-clamp-2 flex-1">
+				{description}
+			</p>
+		)}
+
+		<!-- 标签 -->
+		{tags && tags.length > 0 && (
+			<div class="flex flex-wrap gap-1.5 mb-3">
+				{tags.slice(0, 2).map((tag) => (
+					<span class="px-2 py-0.5 text-xs rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-medium">
+						{tag}
+					</span>
+				))}
+				{tags.length > 2 && (
+					<span class="px-2 py-0.5 text-xs rounded-full bg-black/5 dark:bg-white/5 text-black/50 dark:text-white/50 font-medium">
+						+{tags.length - 2}
+					</span>
+				)}
+			</div>
+		)}
+
+		<!-- 访问按钮 -->
+		<button
+			class="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500/20 transition-colors duration-200 mt-auto"
+			onclick={`event.preventDefault(); window.open('${url}', '_blank');`}
+		>
+			<Icon name="material-symbols:open-in-new" class="w-3.5 h-3.5" />
+			<span>访问</span>
+		</button>
+	</div>
+
+	<!-- 悬停渐变背景 -->
+	<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+</a>
+
+<style>
+	.website-card {
+		animation: fadeInUp 0.5s ease-out forwards;
+		opacity: 0;
+	}
+
+	.website-card.filtered-out {
+		display: none;
+	}
+</style>

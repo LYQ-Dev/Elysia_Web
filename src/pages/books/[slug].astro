@@ -1,0 +1,171 @@
+---
+import { getCollection, render } from "astro:content";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { PageHeader } from "../../components/features/page-header";
+import Markdown from "../../components/misc/Markdown.astro";
+import Comment from "../../components/comment/index.astro";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+	const books = await getCollection("books");
+	return books.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}
+
+interface Props {
+	entry: any;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, author, category, cover, status, rating, tags, link, pages, readPages, publisher } = entry.data;
+
+const getStatusInfo = (status: string) => {
+	const statusMap: Record<string, { text: string; color: string; icon: string }> = {
+		reading: { text: "阅读中", color: "blue", icon: "material-symbols:book-open" },
+		completed: { text: "已完成", color: "green", icon: "material-symbols:check-circle" },
+		planned: { text: "计划阅读", color: "amber", icon: "material-symbols:schedule" },
+		abandoned: { text: "已放弃", color: "gray", icon: "material-symbols:cancel" },
+	};
+	return statusMap[status] || { text: status, color: "gray", icon: "material-symbols:book" };
+};
+
+const statusInfo = getStatusInfo(status);
+const colorMap: Record<string, string> = {
+	blue: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+	green: "bg-green-500/10 text-green-600 dark:text-green-400",
+	amber: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+	gray: "bg-gray-500/10 text-gray-600 dark:text-gray-400",
+};
+---
+
+<MainGridLayout title={title} description={author}>
+	<script>
+		import("../../scripts/right-sidebar-layout.js");
+	</script>
+
+	<!-- 主容器 - 白色圆角背景 -->
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 transition-all duration-500 ease-out animate-fadeInUp">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<!-- 页面头部 -->
+			<PageHeader title={title} subtitle={author} />
+
+			<!-- 封面和元数据 -->
+			{cover && (
+				<div class="my-6 flex gap-6 items-start">
+					<div class="shrink-0">
+						<img
+							src={cover}
+							alt={title}
+							class="w-32 h-40 rounded-lg object-cover shadow-lg"
+							loading="lazy"
+						/>
+					</div>
+					<div class="flex-1">
+						<div class="mb-4">
+							<p class="text-sm text-black/50 dark:text-white/50 mb-1">作者</p>
+							<p class="text-base text-black/80 dark:text-white/80">{author}</p>
+						</div>
+						<div class="mb-4">
+							<p class="text-sm text-black/50 dark:text-white/50 mb-1">分类</p>
+							<p class="text-base text-black/80 dark:text-white/80">{category}</p>
+						</div>
+						{pages && (
+							<div class="mb-4">
+								<p class="text-sm text-black/50 dark:text-white/50 mb-1">进度</p>
+								<div class="flex items-center gap-2">
+									<div class="flex-1 h-2 rounded-full bg-black/10 dark:bg-white/10">
+										<div
+											class="h-full rounded-full bg-blue-500 transition-all duration-300"
+											style={`width: ${readPages ? (readPages / pages * 100) : 0}%`}
+										/>
+									</div>
+									<span class="text-sm text-black/80 dark:text-white/80 whitespace-nowrap">
+										{readPages || 0}/{pages}
+									</span>
+								</div>
+							</div>
+						)}
+						{rating && (
+							<div class="mb-4 flex items-center gap-2">
+								<p class="text-sm text-black/50 dark:text-white/50">评分</p>
+								<div class="flex items-center gap-1">
+									{[...Array(5)].map((_, i) => (
+										<Icon
+											name="material-symbols:star-rounded"
+											class={`w-4 h-4 ${i < Math.floor(rating) ? "text-yellow-500" : "text-black/20 dark:text-white/20"}`}
+										/>
+									))}
+									<span class="ml-2 text-sm font-medium">{rating}/5</span>
+								</div>
+							</div>
+						)}
+						<div class="flex items-center gap-2 mb-4">
+							<p class="text-sm text-black/50 dark:text-white/50">状态</p>
+							<span class={`px-2.5 py-1 text-xs rounded-full font-medium flex items-center gap-1 ${colorMap[statusInfo.color]}`}>
+								<Icon name={statusInfo.icon} class="w-3 h-3" />
+								{statusInfo.text}
+							</span>
+						</div>
+						{tags && tags.length > 0 && (
+							<div>
+								<p class="text-sm text-black/50 dark:text-white/50 mb-2">标签</p>
+								<div class="flex flex-wrap gap-2">
+									{tags.map((tag: string) => (
+										<span class="px-2.5 py-1 text-xs rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-medium">
+											{tag}
+										</span>
+									))}
+								</div>
+							</div>
+						)}
+					</div>
+				</div>
+			)}
+
+			<!-- Markdown内容 -->
+			<Markdown class="mt-8">
+				<Content />
+			</Markdown>
+
+			<!-- 外部链接按钮 -->
+			{link && (
+				<div class="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
+					<a
+						href={link}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400 hover:bg-blue-500/20 transition-colors duration-200"
+					>
+						<Icon name="material-symbols:open-in-new" class="w-4 h-4" />
+						查看链接
+					</a>
+				</div>
+			)}
+		</div>
+	</div>
+
+	<!-- 评论区域 -->
+	<div class="mt-4 transition-all duration-500 ease-out animate-fadeInUp" style="animation-delay: 0.1s;">
+		<Comment path={`/books/${entry.id}/`} />
+	</div>
+</MainGridLayout>
+
+<style>
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(24px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	:global(.animate-fadeInUp) {
+		animation: fadeInUp 0.5s ease-out forwards;
+	}
+</style>

@@ -44,7 +44,126 @@ const specCollection = defineCollection({
 	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/spec" }),
 	schema: z.object({}),
 });
+
+// Songs Collection
+const songsCollection = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/songs" }),
+	schema: z.object({
+		title: z.string(),
+		artist: z.string(),
+		album: z.string(),
+		cover: z.string().optional(),
+		link: z.string().optional(),
+		tags: z.array(z.string()).optional().default([]),
+		rating: z.number().optional().default(5),
+		addDate: z.date(),
+		description: z.string().optional().default(""),
+	}),
+});
+
+// Books Collection
+const booksCollection = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/books" }),
+	schema: z.object({
+		title: z.string(),
+		author: z.string(),
+		cover: z.string().optional(),
+		status: z.enum(["reading", "completed", "planned", "abandoned"]),
+		rating: z.number().optional(),
+		pages: z.number().optional(),
+		readPages: z.number().optional(),
+		category: z.string(),
+		publishDate: z.date().optional(),
+		readDate: z.date().optional(),
+		notes: z.string().optional(),
+		tags: z.array(z.string()).optional().default([]),
+		publisher: z.string().optional(),
+		link: z.string().optional(),
+	}),
+});
+
+// Sports Collection
+const sportsCollection = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/sports" }),
+	schema: z.object({
+		title: z.string(),
+		category: z.enum(["cardio", "strength", "flexibility", "ball", "outdoor", "other"]),
+		duration: z.number(), // 分钟
+		distance: z.number().optional(), // 公里
+		calories: z.number().optional(), // 卡路里
+		difficulty: z.enum(["easy", "medium", "hard"]),
+		location: z.string().optional(),
+		date: z.date(),
+		notes: z.string().optional(),
+		image: z.string().optional(),
+		tags: z.array(z.string()).optional().default([]),
+	}),
+});
+
+// Websites Collection
+const websitesCollection = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/websites" }),
+	schema: z.object({
+		title: z.string(),
+		url: z.string(),
+		description: z.string().optional(),
+		icon: z.string().optional(),
+		category: z.string(),
+		tags: z.array(z.string()).optional().default([]),
+		rating: z.number().optional().default(5),
+		addDate: z.date(),
+		lastVisit: z.date().optional(),
+		useFrequency: z.enum(["daily", "weekly", "monthly", "rarely"]).optional(),
+	}),
+});
+
+// Projects Collection
+const projectsCollection = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		image: z.string().optional(),
+		category: z.enum(["web", "mobile", "desktop", "other"]),
+		techStack: z.array(z.string()),
+		status: z.enum(["completed", "in-progress", "planned"]),
+		liveDemo: z.string().optional(),
+		sourceCode: z.string().optional(),
+		visitUrl: z.string().optional(),
+		startDate: z.date(),
+		endDate: z.date().optional(),
+		featured: z.boolean().optional().default(false),
+		tags: z.array(z.string()).optional().default([]),
+	}),
+});
+
+// Anime Collection
+const animeCollection = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/anime" }),
+	schema: z.object({
+		title: z.string(),
+		studio: z.string(),
+		cover: z.string().optional(),
+		status: z.enum(["watching", "completed", "planned", "dropped"]),
+		rating: z.number().optional(),
+		totalEpisodes: z.number(),
+		watchedEpisodes: z.number().optional(),
+		year: z.string(),
+		genre: z.array(z.string()).optional().default([]),
+		airDate: z.string().optional(),
+		tags: z.array(z.string()).optional().default([]),
+		link: z.string().optional(),
+		addDate: z.date(),
+	}),
+});
+
 export const collections = {
 	posts: postsCollection,
 	spec: specCollection,
+	songs: songsCollection,
+	books: booksCollection,
+	sports: sportsCollection,
+	websites: websitesCollection,
+	projects: projectsCollection,
+	anime: animeCollection,
 };

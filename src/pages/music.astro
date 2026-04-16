@@ -1,30 +1,114 @@
 ---
-import { Icon } from "astro-icon/components";
-import PageHeader from "@components/features/page-header/PageHeader.astro";
+import { getCollection } from "astro:content";
+import { FilterTabs } from "@components/atoms/filter-tabs";
+import { PageHeader } from "@components/features/page-header";
+import SongCard from "@components/features/songs/SongCard.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+
+// 获取所有歌曲数据
+const songs = await getCollection("songs");
+
+// 提取所有唯一的标签
+const allTags = new Set<string>();
+songs.forEach((song) => {
+	song.data.tags?.forEach((tag: string) => {
+		allTags.add(tag);
+	});
+});
+
+// 创建筛选标签
+const filterTabs = [
+	{
+		value: "all",
+		label: i18n(I18nKey.friendsFilterAll),
+		icon: "material-symbols:apps",
+		count: songs.length,
+	},
+	...Array.from(allTags).map((tag) => ({
+		value: tag,
+		label: tag,
+		icon: "material-symbols:label",
+		count: songs.filter((s) => s.data.tags?.includes(tag)).length,
+	})),
+];
 
 const title = "我的歌单";
-const description = "分享最近喜欢的歌曲";
+const subtitle = "分享最近喜欢的歌曲";
 ---
 
-<MainGridLayout title={title} description={description}>
-	<div class="prose dark:prose-invert max-w-none">
-		<PageHeader title="我的歌单" subtitle="分享最近加入的歌曲" />
-		
-		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
-			<div class="flex items-center gap-3 mb-4">
-				<Icon name="material-symbols:music-note" class="w-8 h-8 text-pink-500" />
-				<h2 class="text-2xl font-bold m-0">音乐收藏</h2>
-			</div>
-			<p class="text-slate-600 dark:text-slate-400">
-				这里记录最近喜欢的歌曲，从各种风格和心情的音乐中寻找灵感。
-			</p>
-		</div>
+<MainGridLayout title={title} description={subtitle}>
+	<script>
+		import("../scripts/right-sidebar-layout.js");
+	</script>
 
-		<div class="mt-8">
-			<p class="text-center text-slate-500 dark:text-slate-400">
-				🎵 开始分享你的音乐世界...
-			</p>
+	<script is:inline src="/js/filter-tabs-handler.js"></script>
+
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-6 sm:px-9 py-6 relative w-full">
+			<PageHeader title={title} subtitle={subtitle} />
+
+			<div class="mb-8">
+				<FilterTabs tabs={filterTabs} dataAttr="tags" />
+			</div>
+
+			<div id="music-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+				{
+					songs.map((song) => (
+						<div data-tags={JSON.stringify(song.data.tags || [])}>
+							<SongCard
+								id={song.id}
+								title={song.data.title}
+								artist={song.data.artist}
+								album={song.data.album}
+								cover={song.data.cover}
+								link={song.data.link}
+								tags={song.data.tags}
+								rating={song.data.rating}
+								description={song.data.description}
+							/>
+						</div>
+					))
+				}
+			</div>
+
+			{songs.length === 0 && (
+				<div class="text-center py-12">
+					<p class="text-slate-500 dark:text-slate-400">🎵 开始分享你的音乐世界...</p>
+				</div>
+			)}
 		</div>
 	</div>
 </MainGridLayout>
+
+<script define:vars={{ contentLength: songs.length }}>
+	// 自定义筛选逻辑 - 用于数组标签
+	document.addEventListener("DOMContentLoaded", () => {
+		const filterButtons = document.querySelectorAll("[data-filter-value]");
+		const cards = document.querySelectorAll("#music-grid > div[data-tags]");
+
+		filterButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				const filterValue = button.getAttribute("data-filter-value");
+				const isAll = filterValue === "all";
+
+				cards.forEach((card) => {
+					if (isAll) {
+						card.style.display = "";
+						card.classList.remove("filtered-out");
+					} else {
+						const tags = JSON.parse(card.getAttribute("data-tags") || "[]");
+						if (tags.includes(filterValue)) {
+							card.style.display = "";
+							card.classList.remove("filtered-out");
+						} else {
+							card.style.display = "none";
+							card.classList.add("filtered-out");
+						}
+					}
+				});
+			});
+		});
+	});
+</script>

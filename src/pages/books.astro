@@ -1,30 +1,139 @@
 ---
-import { Icon } from "astro-icon/components";
-import PageHeader from "@components/features/page-header/PageHeader.astro";
+import { getCollection } from "astro:content";
+import { FilterTabs } from "@components/atoms/filter-tabs";
+import { PageHeader } from "@components/features/page-header";
+import BookCard from "@components/features/books/BookCard.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+
+// 获取所有书籍数据
+const books = await getCollection("books");
+
+// 按时间排序（阅读完成日期或发布日期）
+const sortedBooks = [...books].sort((a, b) => {
+	const dateA = new Date(a.data.readDate || a.data.publishDate || 0).getTime();
+	const dateB = new Date(b.data.readDate || b.data.publishDate || 0).getTime();
+	return dateB - dateA;
+});
+
+// 提取所有唯一的状态
+const statuses = new Set<string>(
+	books.map((book) => book.data.status)
+);
+
+const getStatusText = (status: string) => {
+	const statusMap: Record<string, string> = {
+		reading: "阅读中",
+		completed: "已完成",
+		planned: "计划阅读",
+		abandoned: "已放弃",
+	};
+	return statusMap[status] || status;
+};
+
+const getStatusIcon = (status: string) => {
+	const iconMap: Record<string, string> = {
+		reading: "material-symbols:book-open",
+		completed: "material-symbols:check-circle",
+		planned: "material-symbols:schedule",
+		abandoned: "material-symbols:cancel",
+	};
+	return iconMap[status] || "material-symbols:book";
+};
+
+// 创建筛选标签
+const filterTabs = [
+	{
+		value: "all",
+		label: i18n(I18nKey.friendsFilterAll),
+		icon: "material-symbols:apps",
+		count: books.length,
+	},
+	...Array.from(statuses).map((status) => ({
+		value: status,
+		label: getStatusText(status as string),
+		icon: getStatusIcon(status as string),
+		count: books.filter((b) => b.data.status === status).length,
+	})),
+];
 
 const title = "书籍阅读记录";
-const description = "分享最近看的书籍";
+const subtitle = "分享最近看的书籍和读书笔记";
 ---
 
-<MainGridLayout title={title} description={description}>
-	<div class="prose dark:prose-invert max-w-none">
-		<PageHeader title="书籍阅读记录" subtitle="分享最近看的书籍和读书笔记" />
-		
-		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
-			<div class="flex items-center gap-3 mb-4">
-				<Icon name="material-symbols:library-books" class="w-8 h-8 text-amber-600" />
-				<h2 class="text-2xl font-bold m-0">书籍阅读</h2>
-			</div>
-			<p class="text-slate-600 dark:text-slate-400">
-				分享阅读中的所得，记录每一本书带来的感受和启发。
-			</p>
-		</div>
+<MainGridLayout title={title} description={subtitle}>
+	<script>
+		import("../scripts/right-sidebar-layout.js");
+	</script>
 
-		<div class="mt-8">
-			<p class="text-center text-slate-500 dark:text-slate-400">
-				📚 开始分享你的阅读之旅...
-			</p>
+	<script is:inline src="/js/filter-tabs-handler.js"></script>
+
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-6 sm:px-9 py-6 relative w-full">
+			<PageHeader title={title} subtitle={subtitle} />
+
+			<div class="mb-8">
+				<FilterTabs tabs={filterTabs} dataAttr="status" />
+			</div>
+
+			<div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+				{
+					sortedBooks.map((book) => (
+						<div data-status={book.data.status}>
+							<BookCard
+								id={book.id}
+								title={book.data.title}
+								author={book.data.author}
+								cover={book.data.cover}
+								status={book.data.status}
+								rating={book.data.rating}
+								category={book.data.category}
+								tags={book.data.tags}
+								link={book.data.link}
+							/>
+						</div>
+					))
+				}
+			</div>
+
+			{books.length === 0 && (
+				<div class="text-center py-12">
+					<p class="text-slate-500 dark:text-slate-400">📚 开始分享你的阅读之旅...</p>
+				</div>
+			)}
 		</div>
 	</div>
 </MainGridLayout>
+
+<script define:vars={{ contentLength: books.length }}>
+	// 自定义筛选逻辑 - 用于状态属性
+	document.addEventListener("DOMContentLoaded", () => {
+		const filterButtons = document.querySelectorAll("[data-filter-value]");
+		const cards = document.querySelectorAll("#books-grid > div[data-status]");
+
+		filterButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				const filterValue = button.getAttribute("data-filter-value");
+				const isAll = filterValue === "all";
+
+				cards.forEach((card) => {
+					if (isAll) {
+						card.style.display = "";
+						card.classList.remove("filtered-out");
+					} else {
+						const status = card.getAttribute("data-status");
+						if (status === filterValue) {
+							card.style.display = "";
+							card.classList.remove("filtered-out");
+						} else {
+							card.style.display = "none";
+							card.classList.add("filtered-out");
+						}
+					}
+				});
+			});
+		});
+	});
+</script>
+

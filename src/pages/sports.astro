@@ -1,30 +1,145 @@
 ---
-import { Icon } from "astro-icon/components";
-import PageHeader from "@components/features/page-header/PageHeader.astro";
+import { getCollection } from "astro:content";
+import { FilterTabs } from "@components/atoms/filter-tabs";
+import { PageHeader } from "@components/features/page-header";
+import SportCard from "@components/features/sports/SportCard.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+
+// 获取所有运动数据
+const sports = await getCollection("sports");
+
+// 按日期排序（最新优先）
+const sortedSports = [...sports].sort((a, b) => {
+	const dateA = new Date(a.data.date).getTime();
+	const dateB = new Date(b.data.date).getTime();
+	return dateB - dateA;
+});
+
+// 提取所有唯一的分类
+const categories = new Set<string>(
+	sports.map((sport) => sport.data.category)
+);
+
+const getCategoryText = (category: string) => {
+	const categoryMap: Record<string, string> = {
+		cardio: "有氧运动",
+		strength: "力量训练",
+		flexibility: "柔韧性",
+		ball: "球类运动",
+		outdoor: "户外运动",
+		other: "其他",
+	};
+	return categoryMap[category] || category;
+};
+
+const getCategoryIcon = (category: string) => {
+	const iconMap: Record<string, string> = {
+		cardio: "material-symbols:directions-run",
+		strength: "material-symbols:fitness-center",
+		flexibility: "material-symbols:self-improvement",
+		ball: "material-symbols:sports-basketball",
+		outdoor: "material-symbols:forest",
+		other: "material-symbols:sports-score",
+	};
+	return iconMap[category] || "material-symbols:sports-score";
+};
+
+// 创建筛选标签
+const filterTabs = [
+	{
+		value: "all",
+		label: i18n(I18nKey.friendsFilterAll),
+		icon: "material-symbols:apps",
+		count: sports.length,
+	},
+	...Array.from(categories).map((category) => ({
+		value: category,
+		label: getCategoryText(category as string),
+		icon: getCategoryIcon(category as string),
+		count: sports.filter((s) => s.data.category === category).length,
+	})),
+];
 
 const title = "运动日志";
-const description = "分享每日运动经历";
+const subtitle = "分享每日运动经历和健身进度";
 ---
 
-<MainGridLayout title={title} description={description}>
-	<div class="prose dark:prose-invert max-w-none">
-		<PageHeader title="运动日志" subtitle="分享每日运动经历和健身进度" />
-		
-		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
-			<div class="flex items-center gap-3 mb-4">
-				<Icon name="material-symbols:sports-soccer" class="w-8 h-8 text-orange-500" />
-				<h2 class="text-2xl font-bold m-0">运动记录</h2>
-			</div>
-			<p class="text-slate-600 dark:text-slate-400">
-				记录日常运动计划、健身目标和美好时刻的分享。
-			</p>
-		</div>
+<MainGridLayout title={title} description={subtitle}>
+	<script>
+		import("../scripts/right-sidebar-layout.js");
+	</script>
 
-		<div class="mt-8">
-			<p class="text-center text-slate-500 dark:text-slate-400">
-				💪 开始记录你的运动故事...
-			</p>
+	<script is:inline src="/js/filter-tabs-handler.js"></script>
+
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-6 sm:px-9 py-6 relative w-full">
+			<PageHeader title={title} subtitle={subtitle} />
+
+			<div class="mb-8">
+				<FilterTabs tabs={filterTabs} dataAttr="category" />
+			</div>
+
+			<div id="sports-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 items-start">
+				{
+					sortedSports.map((sport) => (
+						<div data-category={sport.data.category}>
+							<SportCard
+								id={sport.id}
+								title={sport.data.title}
+								category={sport.data.category}
+								duration={sport.data.duration}
+								distance={sport.data.distance}
+								calories={sport.data.calories}
+								difficulty={sport.data.difficulty}
+								location={sport.data.location}
+								date={sport.data.date}
+								image={sport.data.image}
+								tags={sport.data.tags}
+							/>
+						</div>
+					))
+				}
+			</div>
+
+			{sports.length === 0 && (
+				<div class="text-center py-12">
+					<p class="text-slate-500 dark:text-slate-400">💪 开始记录你的运动故事...</p>
+				</div>
+			)}
 		</div>
 	</div>
 </MainGridLayout>
+
+<script define:vars={{ contentLength: sports.length }}>
+	// 自定义筛选逻辑 - 用于分类属性
+	document.addEventListener("DOMContentLoaded", () => {
+		const filterButtons = document.querySelectorAll("[data-filter-value]");
+		const cards = document.querySelectorAll("#sports-grid > div[data-category]");
+
+		filterButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				const filterValue = button.getAttribute("data-filter-value");
+				const isAll = filterValue === "all";
+
+				cards.forEach((card) => {
+					if (isAll) {
+						card.style.display = "";
+						card.classList.remove("filtered-out");
+					} else {
+						const category = card.getAttribute("data-category");
+						if (category === filterValue) {
+							card.style.display = "";
+							card.classList.remove("filtered-out");
+						} else {
+							card.style.display = "none";
+							card.classList.add("filtered-out");
+						}
+					}
+				});
+			});
+		});
+	});
+</script>
+

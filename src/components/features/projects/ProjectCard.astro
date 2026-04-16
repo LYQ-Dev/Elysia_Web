@@ -11,6 +11,7 @@ const hasImage = !!project.image;
 const showImageArea = project.showImage !== false && hasImage;
 const hasVisitUrl = !!project.visitUrl;
 const hasSourceCode = !!project.sourceCode;
+const detailLink = `/projects/${project.id}/`;
 
 const getStatusText = (status: string) => {
 	switch (status) {
@@ -26,8 +27,9 @@ const getStatusText = (status: string) => {
 };
 ---
 
-<div
-	class="project-card group relative rounded-xl border border-black/10 dark:border-white/10 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+<a
+	href={detailLink}
+	class="project-card group relative rounded-xl border border-black/10 dark:border-white/10 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block h-full"
 	data-category={project.category}
 >
 	{
@@ -78,6 +80,73 @@ const getStatusText = (status: string) => {
 		<p
 			class="text-sm text-black/60 dark:text-white/60 mb-4 line-clamp-2 min-h-[2.5rem]"
 		>
+			{project.description}
+		</p>
+
+		{
+			project.techStack && project.techStack.length > 0 && (
+				<div class="flex flex-wrap gap-2 mb-4">
+					{project.techStack.slice(0, maxTechStack).map((tech) => (
+						<span class="px-2 py-1 text-xs rounded-md bg-[var(--primary)]/10 text-[var(--primary)] font-medium">
+							{tech}
+						</span>
+					))}
+					{project.techStack.length > maxTechStack && (
+						<span class="px-2 py-1 text-xs rounded-md bg-[var(--btn-regular-bg)] text-black/50 dark:text-white/50 font-medium">
+							+{project.techStack.length - maxTechStack}
+						</span>
+					)}
+				</div>
+			)
+		}
+
+		{
+			(hasVisitUrl || hasSourceCode) && (
+				<div class="flex gap-2">
+					{hasVisitUrl && (
+						<button
+							onclick={`event.preventDefault(); window.open('${project.visitUrl}', '_blank');`}
+							class="btn-regular flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+						>
+							<Icon
+								name="material-symbols:open-in-new"
+								class="text-base w-4 h-4"
+							/>
+							{i18n(I18nKey.projectsVisit)}
+						</button>
+					)}
+					{hasSourceCode && (
+						<button
+							onclick={`event.preventDefault(); window.open('${project.sourceCode}', '_blank');`}
+							class="btn-regular flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+							style={hasVisitUrl ? "" : "flex: 1;"}
+						>
+							<Icon name="mdi:github" class="text-base w-4 h-4" />
+							{!hasVisitUrl && "GitHub"}
+						</button>
+					)}
+				</div>
+			)
+		}
+	</div>
+
+	<div
+		class="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+	>
+	</div>
+</a>
+
+<style>
+	.project-card {
+		animation: fadeInUp 0.5s ease-out forwards;
+		opacity: 0;
+	}
+
+	.project-card.filtered-out {
+		display: none;
+	}
+</style>
+
 			{project.description}
 		</p>
 

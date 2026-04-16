@@ -1,0 +1,154 @@
+---
+import { getCollection, render } from "astro:content";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { PageHeader } from "../../components/features/page-header";
+import Markdown from "../../components/misc/Markdown.astro";
+import Comment from "../../components/comment/index.astro";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+	const websites = await getCollection("websites");
+	return websites.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}
+
+interface Props {
+	entry: any;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, url, category, icon, description, rating, tags, useFrequency } = entry.data;
+
+const getFrequencyInfo = (freq: string) => {
+	const frequencyMap: Record<string, { text: string; color: string }> = {
+		daily: { text: "每天使用", color: "red" },
+		weekly: { text: "每周使用", color: "orange" },
+		monthly: { text: "每月使用", color: "blue" },
+		rarely: { text: "很少使用", color: "gray" },
+	};
+	return frequencyMap[freq] || { text: "未知", color: "gray" };
+};
+
+const frequencyInfo = getFrequencyInfo(useFrequency || "rarely");
+
+const colorMap: Record<string, string> = {
+	red: "bg-red-500/10 text-red-600 dark:text-red-400",
+	orange: "bg-orange-500/10 text-orange-600 dark:text-orange-400",
+	blue: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+	gray: "bg-gray-500/10 text-gray-600 dark:text-gray-400",
+	cyan: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400",
+};
+---
+
+<MainGridLayout title={title} description={category}>
+	<script>
+		import("../../scripts/right-sidebar-layout.js");
+	</script>
+
+	<!-- 主容器 - 白色圆角背景 -->
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 transition-all duration-500 ease-out animate-fadeInUp">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<!-- 页面头部 -->
+			<PageHeader title={title} subtitle={category} />
+
+			<!-- 网站信息卡片 -->
+			<div class="my-6 flex gap-6 items-start p-6 bg-black/5 dark:bg-white/5 rounded-lg">
+				{icon && (
+					<div class="shrink-0">
+						<img
+							src={icon}
+							alt={title}
+							class="w-24 h-24 rounded-lg object-cover shadow-lg"
+							loading="lazy"
+						/>
+					</div>
+				)}
+				<div class="flex-1">
+					{description && (
+						<div class="mb-4">
+							<p class="text-sm text-black/50 dark:text-white/50 mb-1">描述</p>
+							<p class="text-base text-black/80 dark:text-white/80">{description}</p>
+						</div>
+					)}
+					{rating && (
+						<div class="mb-4 flex items-center gap-2">
+							<p class="text-sm text-black/50 dark:text-white/50">评分</p>
+							<div class="flex items-center gap-1">
+								{[...Array(5)].map((_, i) => (
+									<Icon
+										name="material-symbols:star-rounded"
+										class={`w-4 h-4 ${i < Math.floor(rating) ? "text-yellow-500" : "text-black/20 dark:text-white/20"}`}
+									/>
+								))}
+								<span class="ml-2 text-sm font-medium">{rating}/5</span>
+							</div>
+						</div>
+					)}
+					<div class="flex items-center gap-2">
+						<p class="text-sm text-black/50 dark:text-white/50">使用频率</p>
+						<span class={`px-2.5 py-1 text-xs rounded-full font-medium ${colorMap[frequencyInfo.color]}`}>
+							{frequencyInfo.text}
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- 标签 -->
+			{tags && tags.length > 0 && (
+				<div class="mb-6">
+					<p class="text-sm text-black/50 dark:text-white/50 mb-3 font-medium">标签</p>
+					<div class="flex flex-wrap gap-2">
+						{tags.map((tag: string) => (
+							<span class="px-3 py-1.5 text-xs rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-medium">
+								{tag}
+							</span>
+						))}
+					</div>
+				</div>
+			)}
+
+			<!-- Markdown内容 -->
+			<Markdown class="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
+				<Content />
+			</Markdown>
+
+			<!-- 访问按钮 -->
+			<div class="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
+				<a
+					href={url}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 hover:bg-cyan-500/20 transition-colors duration-200 text-base"
+				>
+					<Icon name="material-symbols:open-in-new" class="w-5 h-5" />
+					访问网站
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 评论区域 -->
+	<div class="mt-4 transition-all duration-500 ease-out animate-fadeInUp" style="animation-delay: 0.1s;">
+		<Comment path={`/websites/${entry.id}/`} />
+	</div>
+</MainGridLayout>
+
+<style>
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(24px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	:global(.animate-fadeInUp) {
+		animation: fadeInUp 0.5s ease-out forwards;
+	}
+</style>

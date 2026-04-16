@@ -1,0 +1,207 @@
+---
+import { getCollection, render } from "astro:content";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { PageHeader } from "../../components/features/page-header";
+import Markdown from "../../components/misc/Markdown.astro";
+import Comment from "../../components/comment/index.astro";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+	const projects = await getCollection("projects");
+	return projects.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}
+
+interface Props {
+	entry: any;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, image, category, techStack, status, liveDemo, sourceCode, visitUrl, startDate, endDate, featured, tags } = entry.data;
+
+const getCategoryText = (category: string) => {
+	const categoryMap: Record<string, string> = {
+		web: "网页应用",
+		mobile: "移动应用",
+		desktop: "桌面应用",
+		other: "其他",
+	};
+	return categoryMap[category] || category;
+};
+
+const getStatusText = (status: string) => {
+	const statusMap: Record<string, { text: string; color: string; icon: string }> = {
+		completed: { text: "已完成", color: "green", icon: "material-symbols:check-circle" },
+		"in-progress": { text: "进行中", color: "blue", icon: "material-symbols:hourglass-top" },
+		planned: { text: "计划中", color: "amber", icon: "material-symbols:schedule" },
+	};
+	return statusMap[status] || { text: status, color: "gray", icon: "material-symbols:circle" };
+};
+
+const statusInfo = getStatusText(status);
+const colorMap: Record<string, string> = {
+	green: "bg-green-500/10 text-green-600 dark:text-green-400",
+	blue: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+	amber: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+	gray: "bg-gray-500/10 text-gray-600 dark:text-gray-400",
+};
+
+const formatDate = (date: Date) => {
+	return date.toLocaleDateString("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit" });
+};
+---
+
+<MainGridLayout title={title} description={description}>
+	<script>
+		import("../../scripts/right-sidebar-layout.js");
+	</script>
+
+	<!-- 主容器 - 白色圆角背景 -->
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 transition-all duration-500 ease-out animate-fadeInUp">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<!-- 页面头部 -->
+			<PageHeader title={title} subtitle={getCategoryText(category)} />
+
+			<!-- 项目图片 -->
+			{image && (
+				<div class="my-6 rounded-lg overflow-hidden shadow-lg">
+					<img
+						src={image}
+						alt={title}
+						class="w-full h-80 lg:h-96 object-cover"
+						loading="lazy"
+					/>
+				</div>
+			)}
+
+			<!-- 项目信息卡片 -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 p-6 bg-black/5 dark:bg-white/5 rounded-lg">
+				<div>
+					<p class="text-sm text-black/50 dark:text-white/50 mb-2 font-medium">项目状态</p>
+					<div class="flex items-center gap-2">
+						<span class={`px-3 py-1.5 rounded-full text-sm font-medium flex items-center gap-2 ${colorMap[statusInfo.color]}`}>
+							<Icon name={statusInfo.icon} class="w-4 h-4" />
+							{statusInfo.text}
+						</span>
+					</div>
+				</div>
+				<div>
+					<p class="text-sm text-black/50 dark:text-white/50 mb-2 font-medium">项目分类</p>
+					<p class="text-base text-black/80 dark:text-white/80">{getCategoryText(category)}</p>
+				</div>
+				{featured && (
+					<div>
+						<p class="text-sm text-black/50 dark:text-white/50 mb-2 font-medium">标记</p>
+						<div class="flex items-center gap-2">
+							<Icon name="material-symbols:star-rounded" class="w-5 h-5 text-yellow-500" />
+							<span class="text-base text-black/80 dark:text-white/80">精选项目</span>
+						</div>
+					</div>
+				)}
+				<div>
+					<p class="text-sm text-black/50 dark:text-white/50 mb-2 font-medium">开发周期</p>
+					<p class="text-sm text-black/80 dark:text-white/80">
+						{formatDate(new Date(startDate))} 至 {endDate ? formatDate(new Date(endDate)) : "进行中"}
+					</p>
+				</div>
+			</div>
+
+			<!-- 技术栈 -->
+			{techStack && techStack.length > 0 && (
+				<div class="mb-6">
+					<p class="text-sm text-black/50 dark:text-white/50 mb-3 font-medium">技术栈</p>
+					<div class="flex flex-wrap gap-2">
+						{techStack.map((tech: string) => (
+							<span class="px-3 py-1.5 text-sm rounded-full bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--primary)] font-medium">
+								{tech}
+							</span>
+						))}
+					</div>
+				</div>
+			)}
+
+			<!-- 标签 -->
+			{tags && tags.length > 0 && (
+				<div class="mb-6">
+					<p class="text-sm text-black/50 dark:text-white/50 mb-3 font-medium">标签</p>
+					<div class="flex flex-wrap gap-2">
+						{tags.map((tag: string) => (
+							<span class="px-3 py-1.5 text-xs rounded-full bg-black/5 dark:bg-white/5 text-black/60 dark:text-white/60 font-medium">
+								{tag}
+							</span>
+						))}
+					</div>
+				</div>
+			)}
+
+			<!-- Markdown内容 -->
+			<Markdown class="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
+				<Content />
+			</Markdown>
+
+			<!-- 操作按钮 -->
+			<div class="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
+				<div class="flex flex-wrap gap-3">
+					{liveDemo && (
+						<a
+							href={liveDemo}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-[var(--primary)]/10 text-[var(--primary)] hover:bg-[var(--primary)]/20 transition-colors duration-200"
+						>
+							<Icon name="material-symbols:open-in-new" class="w-4 h-4" />
+							在线演示
+						</a>
+					)}
+					{sourceCode && (
+						<a
+							href={sourceCode}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-black/10 dark:bg-white/10 text-black/60 dark:text-white/60 hover:bg-black/15 dark:hover:bg-white/15 transition-colors duration-200"
+						>
+							<Icon name="mdi:github" class="w-4 h-4" />
+							源代码
+						</a>
+					)}
+					{visitUrl && (
+						<a
+							href={visitUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-black/5 dark:bg-white/5 text-black/70 dark:text-white/70 hover:bg-black/10 dark:hover:bg-white/10 transition-colors duration-200"
+						>
+							<Icon name="material-symbols:open-in-new" class="w-4 h-4" />
+							访问
+						</a>
+					)}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 评论区域 -->
+	<div class="mt-4 transition-all duration-500 ease-out animate-fadeInUp" style="animation-delay: 0.1s;">
+		<Comment path={`/projects/${entry.id}/`} />
+	</div>
+</MainGridLayout>
+
+<style>
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(24px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	:global(.animate-fadeInUp) {
+		animation: fadeInUp 0.5s ease-out forwards;
+	}
+</style>

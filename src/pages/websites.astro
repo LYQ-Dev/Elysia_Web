@@ -1,30 +1,118 @@
 ---
-import { Icon } from "astro-icon/components";
-import PageHeader from "@components/features/page-header/PageHeader.astro";
+import { getCollection } from "astro:content";
+import { FilterTabs } from "@components/atoms/filter-tabs";
+import { PageHeader } from "@components/features/page-header";
+import WebsiteCard from "@components/features/websites/WebsiteCard.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import I18nKey from "../i18n/i18nKey";
+import { i18n } from "../i18n/translation";
+
+// 获取所有网站数据
+const websites = await getCollection("websites");
+
+// 按添加日期排序（最新优先）
+const sortedWebsites = [...websites].sort((a, b) => {
+	const dateA = new Date(a.data.addDate).getTime();
+	const dateB = new Date(b.data.addDate).getTime();
+	return dateB - dateA;
+});
+
+// 提取所有唯一的分类
+const categories = new Set<string>(
+	websites.map((website) => website.data.category)
+);
+
+// 创建筛选标签
+const filterTabs = [
+	{
+		value: "all",
+		label: i18n(I18nKey.friendsFilterAll),
+		icon: "material-symbols:apps",
+		count: websites.length,
+	},
+	...Array.from(categories).map((category) => ({
+		value: category,
+		label: category as string,
+		icon: "material-symbols:label",
+		count: websites.filter((w) => w.data.category === category).length,
+	})),
+];
 
 const title = "实用网站推荐";
-const description = "分享发现的实用网站";
+const subtitle = "分享发现的各类实用网站";
 ---
 
-<MainGridLayout title={title} description={description}>
-	<div class="prose dark:prose-invert max-w-none">
-		<PageHeader title="实用网站推荐" subtitle="分享发现的各类实用网站" />
-		
-		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
-			<div class="flex items-center gap-3 mb-4">
-				<Icon name="material-symbols:language" class="w-8 h-8 text-blue-600" />
-				<h2 class="text-2xl font-bold m-0">网站推荐</h2>
-			</div>
-			<p class="text-slate-600 dark:text-slate-400">
-				整理和分享在网络世界中发现的实用、有趣的网站和工具。
-			</p>
-		</div>
+<MainGridLayout title={title} description={subtitle}>
+	<script>
+		import("../scripts/right-sidebar-layout.js");
+	</script>
 
-		<div class="mt-8">
-			<p class="text-center text-slate-500 dark:text-slate-400">
-				🌐 开始分享你发现的好网站...
-			</p>
+	<script is:inline src="/js/filter-tabs-handler.js"></script>
+
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-6 sm:px-9 py-6 relative w-full">
+			<PageHeader title={title} subtitle={subtitle} />
+
+			<div class="mb-8">
+				<FilterTabs tabs={filterTabs} dataAttr="category" />
+			</div>
+
+			<div id="websites-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+				{
+					sortedWebsites.map((website) => (
+						<div data-category={website.data.category}>
+							<WebsiteCard
+								id={website.id}
+								title={website.data.title}
+								url={website.data.url}
+								description={website.data.description}
+								icon={website.data.icon}
+								category={website.data.category}
+								tags={website.data.tags}
+								rating={website.data.rating}
+							/>
+						</div>
+					))
+				}
+			</div>
+
+			{websites.length === 0 && (
+				<div class="text-center py-12">
+					<p class="text-slate-500 dark:text-slate-400">🌐 开始分享你发现的好网站...</p>
+				</div>
+			)}
 		</div>
 	</div>
 </MainGridLayout>
+
+<script define:vars={{ contentLength: websites.length }}>
+	// 自定义筛选逻辑 - 用于分类属性
+	document.addEventListener("DOMContentLoaded", () => {
+		const filterButtons = document.querySelectorAll("[data-filter-value]");
+		const cards = document.querySelectorAll("#websites-grid > div[data-category]");
+
+		filterButtons.forEach((button) => {
+			button.addEventListener("click", () => {
+				const filterValue = button.getAttribute("data-filter-value");
+				const isAll = filterValue === "all";
+
+				cards.forEach((card) => {
+					if (isAll) {
+						card.style.display = "";
+						card.classList.remove("filtered-out");
+					} else {
+						const category = card.getAttribute("data-category");
+						if (category === filterValue) {
+							card.style.display = "";
+							card.classList.remove("filtered-out");
+						} else {
+							card.style.display = "none";
+							card.classList.add("filtered-out");
+						}
+					}
+				});
+			});
+		});
+	});
+</script>
+

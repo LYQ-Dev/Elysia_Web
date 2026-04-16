@@ -1,0 +1,167 @@
+---
+import { getCollection, render } from "astro:content";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
+import { PageHeader } from "../../components/features/page-header";
+import Markdown from "../../components/misc/Markdown.astro";
+import Comment from "../../components/comment/index.astro";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+	const sports = await getCollection("sports");
+	return sports.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}
+
+interface Props {
+	entry: any;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, category, duration, distance, calories, difficulty, location, date, image, tags } = entry.data;
+
+const getCategoryInfo = (cat: string) => {
+	const categoryMap: Record<string, { text: string; color: string; icon: string }> = {
+		cardio: { text: "有氧运动", color: "red", icon: "material-symbols:directions-run" },
+		strength: { text: "力量训练", color: "purple", icon: "material-symbols:fitness-center" },
+		flexibility: { text: "柔韧性", color: "green", icon: "material-symbols:self-improvement" },
+		ball: { text: "球类运动", color: "orange", icon: "material-symbols:sports-basketball" },
+		outdoor: { text: "户外运动", color: "blue", icon: "material-symbols:forest" },
+		other: { text: "其他", color: "gray", icon: "material-symbols:sports-score" },
+	};
+	return categoryMap[cat] || { text: cat, color: "gray", icon: "material-symbols:sports-score" };
+};
+
+const getDifficultyInfo = (diff: string) => {
+	const diffMap: Record<string, { text: string; color: string }> = {
+		easy: { text: "简单", color: "green" },
+		medium: { text: "中等", color: "amber" },
+		hard: { text: "困难", color: "red" },
+	};
+	return diffMap[diff] || { text: "未知", color: "gray" };
+};
+
+const categoryInfo = getCategoryInfo(category);
+const difficultyInfo = getDifficultyInfo(difficulty);
+
+const colorMap: Record<string, string> = {
+	red: "bg-red-500/10 text-red-600 dark:text-red-400",
+	purple: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
+	green: "bg-green-500/10 text-green-600 dark:text-green-400",
+	orange: "bg-orange-500/10 text-orange-600 dark:text-orange-400",
+	blue: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+	gray: "bg-gray-500/10 text-gray-600 dark:text-gray-400",
+	amber: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+};
+---
+
+<MainGridLayout title={title} description={categoryInfo.text}>
+	<script>
+		import("../../scripts/right-sidebar-layout.js");
+	</script>
+
+	<!-- 主容器 - 白色圆角背景 -->
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32 transition-all duration-500 ease-out animate-fadeInUp">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<!-- 页面头部 -->
+			<PageHeader title={title} subtitle={new Date(date).toLocaleDateString("zh-CN", { year: "numeric", month: "long", day: "numeric" })} />
+
+			<!-- 运动图片 -->
+			{image && (
+				<div class="my-6 rounded-lg overflow-hidden shadow-lg">
+					<img
+						src={image}
+						alt={title}
+						class="w-full h-64 object-cover"
+						loading="lazy"
+					/>
+				</div>
+			)}
+
+			<!-- 运动数据卡片 -->
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 p-4 bg-black/5 dark:bg-white/5 rounded-lg">
+				<div class="text-center">
+					<Icon name="material-symbols:schedule" class="w-6 h-6 mx-auto mb-2 text-orange-500" />
+					<p class="text-2xl font-bold text-black/80 dark:text-white/80">{duration}</p>
+					<p class="text-xs text-black/50 dark:text-white/50">分钟</p>
+				</div>
+				{distance && (
+					<div class="text-center">
+						<Icon name="material-symbols:distance" class="w-6 h-6 mx-auto mb-2 text-blue-500" />
+						<p class="text-2xl font-bold text-black/80 dark:text-white/80">{distance}</p>
+						<p class="text-xs text-black/50 dark:text-white/50">公里</p>
+					</div>
+				)}
+				{calories && (
+					<div class="text-center">
+						<Icon name="material-symbols:local-fire-department" class="w-6 h-6 mx-auto mb-2 text-red-500" />
+						<p class="text-2xl font-bold text-black/80 dark:text-white/80">{calories}</p>
+						<p class="text-xs text-black/50 dark:text-white/50">卡路里</p>
+					</div>
+				)}
+				<div class="text-center">
+					<Icon name={categoryInfo.icon} class="w-6 h-6 mx-auto mb-2 text-purple-500" />
+					<p class="text-sm font-bold text-black/80 dark:text-white/80">{categoryInfo.text}</p>
+					<p class="text-xs text-black/50 dark:text-white/50">运动类型</p>
+				</div>
+			</div>
+
+			<!-- 元数据 -->
+			<div class="mb-6 space-y-3">
+				<div class="flex items-center gap-3">
+					<span class="text-sm text-black/50 dark:text-white/50 font-medium min-w-20">难度</span>
+					<span class={`px-3 py-1 rounded-full text-sm font-medium ${colorMap[difficultyInfo.color]}`}>
+						{difficultyInfo.text}
+					</span>
+				</div>
+				{location && (
+					<div class="flex items-center gap-3">
+						<span class="text-sm text-black/50 dark:text-white/50 font-medium min-w-20">地点</span>
+						<span class="text-black/70 dark:text-white/70">{location}</span>
+					</div>
+				)}
+				{tags && tags.length > 0 && (
+					<div class="flex items-start gap-3">
+						<span class="text-sm text-black/50 dark:text-white/50 font-medium min-w-20 mt-1">标签</span>
+						<div class="flex flex-wrap gap-2">
+							{tags.map((tag: string) => (
+								<span class="px-2.5 py-1 text-xs rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 font-medium">
+									{tag}
+								</span>
+							))}
+						</div>
+					</div>
+				)}
+			</div>
+
+			<!-- Markdown内容 -->
+			<Markdown class="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
+				<Content />
+			</Markdown>
+		</div>
+	</div>
+
+	<!-- 评论区域 -->
+	<div class="mt-4 transition-all duration-500 ease-out animate-fadeInUp" style="animation-delay: 0.1s;">
+		<Comment path={`/sports/${entry.id}/`} />
+	</div>
+</MainGridLayout>
+
+<style>
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(24px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	:global(.animate-fadeInUp) {
+		animation: fadeInUp 0.5s ease-out forwards;
+	}
+</style>
