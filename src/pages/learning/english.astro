@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import "@styles/learning-pages.css";
 import PageHeader from "@components/features/page-header/PageHeader.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getCollection } from "astro:content";
@@ -16,50 +16,42 @@ const englishPosts = allPosts
 ---
 
 <MainGridLayout title={title} description={description}>
-	<div class="prose dark:prose-invert max-w-none">
-		<PageHeader title="考研英语" subtitle="记录英语备考的学习过程" />
-		
-		<div class="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 mb-6">
-			<div class="flex items-center gap-3 mb-4">
-				<Icon name="material-symbols:language" class="w-8 h-8 text-green-500" />
-				<h2 class="text-2xl font-bold m-0">英语学习记录</h2>
-			</div>
-			<p class="text-slate-600 dark:text-slate-400">
-				记录英语单词、阅读理解、完形填空等学习内容和备考心得。
-			</p>
-		</div>
+	<div class="learning-container">
+		<div class="learning-content-base">
+			<PageHeader title="英语学习" subtitle="记录英语备考的学习过程" />
 
-		{englishPosts.length > 0 ? (
-			<div class="space-y-4 mt-8">
-				{englishPosts.map((post) => (
-					<a href={`/posts/${removeFileExtension(post.id)}/`} class="card-base block p-6 hover:shadow-lg transition-shadow">
-						<h3 class="text-xl font-bold mb-2 text-green-600 dark:text-green-300">
-							{post.data.title}
-						</h3>
-						<p class="text-slate-600 dark:text-slate-400 mb-3">
-							{post.data.description}
-						</p>
-						<div class="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
-							<span>{new Date(post.data.published).toLocaleDateString('zh-CN')}</span>
-							{post.data.tags.length > 0 && (
-								<div class="flex gap-2">
-									{post.data.tags.slice(0, 3).map((tag) => (
-										<span class="bg-green-100 dark:bg-green-900 px-2 py-1 rounded text-xs">
-											{tag}
-										</span>
-									))}
-								</div>
-							)}
-						</div>
-					</a>
-				))}
-			</div>
-		) : (
-			<div class="mt-8">
-				<p class="text-center text-slate-500 dark:text-slate-400">
-					🌐 开始你的英语学习之旅...
-				</p>
-			</div>
-		)}
+			{englishPosts.length > 0 ? (
+				<div>
+					{englishPosts.map((post) => (
+						<a href={`/posts/${removeFileExtension(post.id)}/`} class="learning-post-item block">
+							<h3 class="learning-post-title text-green-600 dark:text-green-300">
+								{post.data.title}
+							</h3>
+							<p class="learning-post-description">
+								{post.data.description}
+							</p>
+							<div class="learning-post-meta">
+								<span>{new Date(post.data.published).toLocaleDateString('zh-CN')}</span>
+								{post.data.tags.length > 0 && (
+									<div class="flex gap-2">
+										{post.data.tags.slice(0, 3).map((tag) => (
+											<span class="bg-green-100 dark:bg-green-900 px-2 py-1 rounded text-xs">
+												{tag}
+											</span>
+										))}
+									</div>
+								)}
+							</div>
+						</a>
+					))}
+				</div>
+			) : (
+				<div class="learning-empty-state">
+					<p class="learning-empty-message">
+						🌐 开始你的英语学习之旅...
+					</p>
+				</div>
+			)}
+		</div>
 	</div>
 </MainGridLayout>

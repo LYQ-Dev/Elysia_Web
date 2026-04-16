@@ -18,6 +18,7 @@
 			"@components/*": ["src/components/*"],
 			"@assets/*": ["src/assets/*"],
 			"@constants/*": ["src/constants/*"],
+			"@styles/*": ["src/styles/*"],
 			"@utils/*": ["src/utils/*"],
 			"@i18n/*": ["src/i18n/*"],
 			"@layouts/*": ["src/layouts/*"],
