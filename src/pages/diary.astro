@@ -1,11 +1,11 @@
 ---
+import { getCollection } from "astro:content";
 import { FilterTabs } from "@components/atoms/filter-tabs";
 import { MomentCard } from "@components/features/diary";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { Icon } from "astro-icon/components";
 
 import { siteConfig } from "../config";
-import { getAllTags, getDiaryList } from "../data/diary";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 
@@ -13,8 +13,31 @@ if (!siteConfig.featurePages.diary) {
 	return Astro.redirect("/404/");
 }
 
-const moments = getDiaryList();
-const allTags = getAllTags();
+// 从 Markdown Collection 获取日记数据
+const diaries = await getCollection("diary");
+
+// 按日期排序（倒序）
+const sortedDiaries = [...diaries].sort(
+	(a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+// 提取所有唯一标签
+const allTags = Array.from(
+	new Set(sortedDiaries.flatMap(d => d.data.tags || []))
+).sort();
+
+// 转换为兼容 MomentCard 的格式
+const moments = sortedDiaries.map((diary) => ({
+	id: diary.id,
+	slug: diary.id,
+	title: diary.data.title,
+	content: diary.data.title,
+	date: diary.data.date.toISOString(),
+	images: diary.data.images || [],
+	location: diary.data.location,
+	mood: diary.data.mood,
+	tags: diary.data.tags || [],
+}));
 
 const filterTabs = [
 	{
@@ -107,6 +130,7 @@ const subtitle = i18n(I18nKey.diarySubtitle);
 								minutesAgo={minutesAgo}
 								hoursAgo={hoursAgo}
 								daysAgo={daysAgo}
+								slug={moment.slug}
 							/>
 						))
 					}

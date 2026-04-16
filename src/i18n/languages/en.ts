@@ -88,7 +88,7 @@ export const en: Translation = {
 	[Key.diaryNoResults]: "No matching moments",
 	[Key.diaryCount]: "entries",
 
-	[Key.diaryTips]: "Only show the latest 30 diary entries",
+	[Key.diaryTips]: "All diary records",
 	[Key.diaryMinutesAgo]: "minutes ago",
 	[Key.diaryHoursAgo]: "hours ago",
 	[Key.diaryDaysAgo]: "days ago",

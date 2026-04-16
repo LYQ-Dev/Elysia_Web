@@ -90,7 +90,7 @@ export const zh_TW: Translation = {
 	[Key.diaryNoResults]: "沒有匹配的日記",
 	[Key.diaryCount]: "條日記",
 
-	[Key.diaryTips]: "只展示最近30條日記",
+	[Key.diaryTips]: "所有日記記錄",
 	[Key.diaryMinutesAgo]: "分鐘前",
 	[Key.diaryHoursAgo]: "小時前",
 	[Key.diaryDaysAgo]: "天前",

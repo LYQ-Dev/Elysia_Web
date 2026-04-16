@@ -1,0 +1,202 @@
+---
+import { getCollection, render } from "astro:content";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "../../config";
+
+if (!siteConfig.featurePages.diary) {
+	return Astro.redirect("/404/");
+}
+
+// 获取所有日记
+const entries = await getCollection("diary");
+
+// 生成静态路由
+export async function getStaticPaths() {
+	const entries = await getCollection("diary");
+	return entries.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
+}
+
+interface Props {
+	entry: (typeof entries)[0];
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+// 格式化日期
+const formattedDate = new Date(entry.data.date).toLocaleDateString("zh-CN", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+	weekday: "long",
+});
+---
+
+<MainGridLayout title={entry.data.title} description={entry.data.title}>
+	<script>
+		import("../../scripts/right-sidebar-layout.js");
+	</script>
+
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative">
+		<div class="card-base z-10 relative w-full">
+			<!-- Gradient Banner Header -->
+			<div
+				class="relative h-48 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-dark,var(--primary))] overflow-hidden flex items-end justify-between p-6 sm:p-9"
+			>
+				<div class="min-w-0">
+					<h1 class="text-4xl sm:text-5xl font-bold text-white drop-shadow-md mb-2">
+						{entry.data.title}
+					</h1>
+					<p class="text-white/80 flex items-center gap-2">
+						<Icon
+							name="material-symbols:schedule"
+							class="w-4 h-4"
+						/>
+						{formattedDate}
+					</p>
+				</div>
+			</div>
+
+			<!-- Content Area -->
+			<div class="px-6 sm:px-9 py-9">
+				<!-- Metadata Grid -->
+				<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-9 pb-9 border-b border-black/10 dark:border-white/10">
+					{entry.data.mood && (
+						<div class="text-center">
+							<div class="text-2xl mb-2">{entry.data.mood}</div>
+							<p class="text-xs text-black/50 dark:text-white/50">
+								心情
+							</p>
+						</div>
+					)}
+					{entry.data.weather && (
+						<div class="text-center">
+							<p class="text-base font-semibold mb-1 text-black/90 dark:text-white/90">
+								{entry.data.weather}
+							</p>
+							<p class="text-xs text-black/50 dark:text-white/50">
+								天气
+							</p>
+						</div>
+					)}
+					{entry.data.location && (
+						<div class="text-center">
+							<p class="text-base font-semibold mb-1 text-black/90 dark:text-white/90 flex items-center justify-center gap-1">
+								<Icon
+									name="material-symbols:location-on"
+									class="w-4 h-4"
+								/>
+								{entry.data.location}
+							</p>
+							<p class="text-xs text-black/50 dark:text-white/50">
+								位置
+							</p>
+						</div>
+					)}
+					<div class="text-center">
+						<p class="text-base font-semibold mb-1 text-black/90 dark:text-white/90">
+							{entry.data.tags?.length || 0}
+						</p>
+						<p class="text-xs text-black/50 dark:text-white/50">
+							标签
+						</p>
+					</div>
+				</div>
+
+				<!-- Tags -->
+				{entry.data.tags && entry.data.tags.length > 0 && (
+					<div class="flex flex-wrap gap-2 mb-9 pb-9 border-b border-black/10 dark:border-white/10">
+						{entry.data.tags.map((tag) => (
+							<span class="btn-regular px-4 py-2 text-sm rounded-full">
+								{tag}
+							</span>
+						))}
+					</div>
+				)}
+
+				<!-- Main Content with Prose Styling -->
+				<div
+					class="prose dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:text-black/90 dark:prose-p:text-white/90 prose-headings:text-black/90 dark:prose-headings:text-white/90 prose-a:text-[var(--primary)] dark:prose-a:text-[var(--primary)] hover:prose-a:underline prose-img:rounded-lg prose-img:shadow-md"
+				>
+					<Content />
+				</div>
+
+				<!-- Images Gallery -->
+				{entry.data.images && entry.data.images.length > 0 && (
+					<div class="mt-12 pt-9 border-t border-black/10 dark:border-white/10">
+						<h3 class="text-xl font-bold mb-6 text-black/90 dark:text-white/90">
+							相关图片
+						</h3>
+						<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+							{entry.data.images.map((image, idx) => (
+								<div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+									<img
+										src={image}
+										alt={`${entry.data.title} - 图片 ${idx + 1}`}
+										class="w-full h-64 object-cover"
+										loading="lazy"
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+				)}
+
+				<!-- Back Button -->
+				<div class="mt-12 pt-9 border-t border-black/10 dark:border-white/10">
+					<a
+						href="/diary/"
+						class="inline-flex items-center gap-2 text-[var(--primary)] hover:text-[var(--primary-dark,var(--primary))] font-medium transition-colors"
+					>
+						<Icon name="material-symbols:arrow-back" class="w-5 h-5" />
+						返回日记列表
+					</a>
+				</div>
+			</div>
+
+			<!-- Bottom Progress Bar (full width on hover) -->
+			<div class="diary-detail-progress absolute bottom-0 left-0 right-0 h-1 bg-black/5 dark:bg-white/5 overflow-hidden">
+				<div
+					class="diary-detail-progress-fill h-full bg-gradient-to-r from-[var(--primary)] to-[var(--primary-dark,var(--primary))] transition-all"
+					style="width: 0%; transition-property: width; transition-duration: 300ms; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);"
+				/>
+			</div>
+		</div>
+	</div>
+</MainGridLayout>
+
+<style>
+	/* Scroll progress indicator */
+	:global(body) {
+		--scroll-percent: 0%;
+	}
+
+	.diary-detail-progress-fill {
+		width: var(--scroll-percent);
+	}
+</style>
+
+<script>
+	// Update scroll progress bar
+	function updateScrollProgress() {
+		const scrollTop =
+			window.scrollY ||
+			document.documentElement.scrollTop;
+		const docHeight =
+			document.documentElement.scrollHeight -
+			window.innerHeight;
+		const scrollPercent =
+			docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+		document.documentElement.style.setProperty(
+			"--scroll-percent",
+			`${scrollPercent}%`
+		);
+	}
+
+	window.addEventListener("scroll", updateScrollProgress);
+	updateScrollProgress();
+</script>
