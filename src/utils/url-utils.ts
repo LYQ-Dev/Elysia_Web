@@ -1,5 +1,6 @@
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
+import type { ImageMetadata } from "astro";
 import type { CollectionEntry } from "astro:content";
 
 import { permalinkConfig } from "../config";
@@ -11,6 +12,31 @@ import { generatePermalinkSlug } from "./permalink-utils";
  */
 export function removeFileExtension(id: string): string {
 	return id.replace(/\.(md|mdx|markdown)$/i, "");
+}
+
+/**
+ * 将内容集合 entry.id 规范化为单条详情页可用的 slug。
+ *
+ * - 移除可选的 Markdown 扩展名
+ * - 将 `foo/index` 规范化为 `foo`
+ */
+export function normalizeCollectionEntrySlug(id: string): string {
+	const slug = removeFileExtension(id).replace(/\\/g, "/");
+	return slug.replace(/\/index$/i, "");
+}
+
+/**
+ * 统一获取内容 frontmatter 图片字段的 URL。
+ * 支持远程字符串 URL 与 Astro image() 返回的 ImageMetadata。
+ */
+export function getCollectionAssetUrl(
+	asset?: string | ImageMetadata,
+): string | undefined {
+	if (!asset) {
+		return undefined;
+	}
+
+	return typeof asset === "string" ? asset : asset.src;
 }
 
 export function pathsEqual(path1: string, path2: string) {

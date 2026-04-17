@@ -1,5 +1,6 @@
 import sitemap from "@astrojs/sitemap";
 import mdx from '@astrojs/mdx';
+import react from "@astrojs/react";
 import svelte, { vitePreprocess } from "@astrojs/svelte";
 import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
@@ -69,6 +70,7 @@ export default defineConfig({
 			},
 		}),
 		icon(),
+		react(),
 		expressiveCode({
 			themes: ["github-light", "github-dark"],
 			plugins: [

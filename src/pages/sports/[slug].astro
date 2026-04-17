@@ -5,11 +5,12 @@ import { PageHeader } from "../../components/features/page-header";
 import Markdown from "../../components/misc/Markdown.astro";
 import Comment from "../../components/comment/index.astro";
 import { Icon } from "astro-icon/components";
+import { getCollectionAssetUrl, normalizeCollectionEntrySlug } from "../../utils/url-utils";
 
 export async function getStaticPaths() {
 	const sports = await getCollection("sports");
 	return sports.map((entry) => ({
-		params: { slug: entry.id },
+		params: { slug: normalizeCollectionEntrySlug(entry.id) },
 		props: { entry },
 	}));
 }
@@ -21,6 +22,8 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const { title, category, duration, distance, calories, difficulty, location, date, image, tags } = entry.data;
+const entrySlug = normalizeCollectionEntrySlug(entry.id);
+const imageUrl = getCollectionAssetUrl(image);
 
 const getCategoryInfo = (cat: string) => {
 	const categoryMap: Record<string, { text: string; color: string; icon: string }> = {
@@ -69,10 +72,10 @@ const colorMap: Record<string, string> = {
 			<PageHeader title={title} subtitle={new Date(date).toLocaleDateString("zh-CN", { year: "numeric", month: "long", day: "numeric" })} />
 
 			<!-- 运动图片 -->
-			{image && (
+			{imageUrl && (
 				<div class="my-6 rounded-lg overflow-hidden shadow-lg">
 					<img
-						src={image}
+						src={imageUrl}
 						alt={title}
 						class="w-full h-64 object-cover"
 						loading="lazy"
@@ -145,7 +148,7 @@ const colorMap: Record<string, string> = {
 
 	<!-- 评论区域 -->
 	<div class="mt-4 transition-all duration-500 ease-out animate-fadeInUp" style="animation-delay: 0.1s;">
-		<Comment path={`/sports/${entry.id}/`} />
+		<Comment path={`/sports/${entrySlug}/`} />
 	</div>
 </MainGridLayout>
 

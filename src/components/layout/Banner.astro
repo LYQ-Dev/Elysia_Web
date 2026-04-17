@@ -66,6 +66,7 @@ const kbDurationMs = carouselIntervalMs + fadeMs;
 
 const hasBannerCredit = siteConfig.banner.credit.enable;
 const hasBannerLink = !!siteConfig.banner.credit.url;
+const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 ---
 
 <div
@@ -73,145 +74,155 @@ const hasBannerLink = !!siteConfig.banner.credit.url;
 	class={`absolute z-10 w-full transition duration-700 overflow-hidden ${mobileNonHomeBannerClass}`}
 	style={`top: -${BANNER_HEIGHT_EXTEND}vh`}
 >
-	{isCarouselEnabled ? (
-		/* 轮播图模式：Ken Burns + Crossfade */
-		<div
-			id="banner-carousel"
-			class="relative h-full w-full"
-			data-mobile-count={mobileImages.length}
-			data-desktop-count={desktopImages.length}
-			data-carousel-interval={carouselIntervalMs}
-			data-fade-ms={fadeMs}
-		>
-			{/* 移动端：第一张图直接渲染，其余放入 template 延迟加载 */}
-			{mobileImages.length > 0 && (
-				<div class="banner-image-slot-mobile absolute inset-0 block md:hidden">
-					<Image
-						alt="Mobile banner image 1"
-						class="object-cover h-full w-full"
-						src={mobileImages[0]}
-						position={siteConfig.banner.position}
-						widths={[640, 1024, 1536]}
-						sizes="100vw"
-						loading="eager"
-						fetchpriority="high"
-					/>
-				</div>
-			)}
-			{mobileImages.slice(1).map((src, i) => (
-				<template class="banner-tpl-mobile">
-					<Image
-						alt={`Mobile banner image ${i + 2}`}
-						class="object-cover h-full w-full"
-						src={src}
-						position={siteConfig.banner.position}
-						widths={[640, 1024, 1536]}
-						sizes="100vw"
-						loading="eager"
-						fetchpriority="high"
-					/>
-				</template>
-			))}
-
-			{/* 桌面端：第一张图直接渲染，其余放入 template 延迟加载 */}
-			{desktopImages.length > 0 && (
-				<div class="banner-image-slot-desktop absolute inset-0 hidden md:block">
-					<Image
-						id="banner"
-						alt="Desktop banner image 1"
-						class="object-cover h-full w-full"
-						src={desktopImages[0]}
-						position={siteConfig.banner.position}
-						widths={[1024, 1536, 2048, 2560]}
-						sizes="100vw"
-						loading="eager"
-						fetchpriority="high"
-					/>
-				</div>
-			)}
-			{desktopImages.slice(1).map((src, i) => (
-				<template class="banner-tpl-desktop">
-					<Image
-						alt={`Desktop banner image ${i + 2}`}
-						class="object-cover h-full w-full"
-						src={src}
-						position={siteConfig.banner.position}
-						widths={[1024, 1536, 2048, 2560]}
-						sizes="100vw"
-						loading="eager"
-						fetchpriority="high"
-					/>
-				</template>
+	<div class="banner-tilt-container">
+		<div class="banner-tilt-canvas canvas" aria-hidden="true">
+			{trackerCells.map((cellIndex) => (
+				<span class={`banner-tracker tracker tr-${cellIndex}`} />
 			))}
 		</div>
-	) : (
-		/* 单图模式 */
-		<div id="banner-single-container" class="relative h-full w-full">
-			<script
-				is:inline
-				define:vars={{
-					desktopImages: bannerImages.desktop,
-					mobileImages: bannerImages.mobile,
-					position: siteConfig.banner.position,
-				}}
-			>
-				(function () {
-					const getRandomImage = (images, storageKey) => {
-						if (Array.isArray(images)) {
-							if (images.length === 0) {return null;}
-							if (images.length === 1) {return images[0];}
 
-							const lastIndex = sessionStorage.getItem(storageKey);
-							let newIndex;
+		<div class="banner-tilt-panel">
+			{isCarouselEnabled ? (
+				/* 轮播图模式：Ken Burns + Crossfade */
+				<div
+					id="banner-carousel"
+					class="relative h-full w-full"
+					data-mobile-count={mobileImages.length}
+					data-desktop-count={desktopImages.length}
+					data-carousel-interval={carouselIntervalMs}
+					data-fade-ms={fadeMs}
+				>
+					{/* 移动端：第一张图直接渲染，其余放入 template 延迟加载 */}
+					{mobileImages.length > 0 && (
+						<div class="banner-image-slot-mobile absolute inset-0 block md:hidden">
+							<Image
+								alt="Mobile banner image 1"
+								class="object-cover h-full w-full"
+								src={mobileImages[0]}
+								position={siteConfig.banner.position}
+								widths={[640, 1024, 1536]}
+								sizes="100vw"
+								loading="eager"
+								fetchpriority="high"
+							/>
+						</div>
+					)}
+					{mobileImages.slice(1).map((src, i) => (
+						<template class="banner-tpl-mobile">
+							<Image
+								alt={`Mobile banner image ${i + 2}`}
+								class="object-cover h-full w-full"
+								src={src}
+								position={siteConfig.banner.position}
+								widths={[640, 1024, 1536]}
+								sizes="100vw"
+								loading="eager"
+								fetchpriority="high"
+							/>
+						</template>
+					))}
 
-							do {
-								newIndex = Math.floor(Math.random() * images.length);
-							} while (newIndex === parseInt(lastIndex || "-1"));
+					{/* 桌面端：第一张图直接渲染，其余放入 template 延迟加载 */}
+					{desktopImages.length > 0 && (
+						<div class="banner-image-slot-desktop absolute inset-0 hidden md:block">
+							<Image
+								id="banner"
+								alt="Desktop banner image 1"
+								class="object-cover h-full w-full"
+								src={desktopImages[0]}
+								position={siteConfig.banner.position}
+								widths={[1024, 1536, 2048, 2560]}
+								sizes="100vw"
+								loading="eager"
+								fetchpriority="high"
+							/>
+						</div>
+					)}
+					{desktopImages.slice(1).map((src, i) => (
+						<template class="banner-tpl-desktop">
+							<Image
+								alt={`Desktop banner image ${i + 2}`}
+								class="object-cover h-full w-full"
+								src={src}
+								position={siteConfig.banner.position}
+								widths={[1024, 1536, 2048, 2560]}
+								sizes="100vw"
+								loading="eager"
+								fetchpriority="high"
+							/>
+						</template>
+					))}
+				</div>
+			) : (
+				/* 单图模式 */
+				<div id="banner-single-container" class="relative h-full w-full">
+					<script
+						is:inline
+						define:vars={{
+							desktopImages: bannerImages.desktop,
+							mobileImages: bannerImages.mobile,
+							position: siteConfig.banner.position,
+						}}
+					>
+						(function () {
+							const getRandomImage = (images, storageKey) => {
+								if (Array.isArray(images)) {
+									if (images.length === 0) {return null;}
+									if (images.length === 1) {return images[0];}
 
-							sessionStorage.setItem(storageKey, newIndex.toString());
-							return images[newIndex];
-						}
-						return images || null;
-					};
+									const lastIndex = sessionStorage.getItem(storageKey);
+									let newIndex;
 
-					const container = document.getElementById("banner-single-container");
+									do {
+										newIndex = Math.floor(Math.random() * images.length);
+									} while (newIndex === parseInt(lastIndex || "-1"));
 
-					// 检查容器是否已有图片，避免在页面切换或缩放时重复创建
-					if (container.querySelector("img")) {
-						return;
-					}
+									sessionStorage.setItem(storageKey, newIndex.toString());
+									return images[newIndex];
+								}
+								return images || null;
+							};
 
-					const desktopSrc = getRandomImage(desktopImages, "banner_desktop_index");
-					const mobileSrc = getRandomImage(mobileImages, "banner_mobile_index");
+							const container = document.getElementById("banner-single-container");
 
-					if (mobileSrc) {
-						const mobileImg = document.createElement("img");
-						mobileImg.alt = "Mobile banner image of the blog";
-						mobileImg.className =
-							"block md:hidden object-cover h-full w-full transition duration-700 opacity-100";
-						mobileImg.src = mobileSrc;
-						mobileImg.loading = "eager";
-						mobileImg.fetchPriority = "high";
-						mobileImg.dataset.position = position;
-						container.appendChild(mobileImg);
-					}
+							// 检查容器是否已有图片，避免在页面切换或缩放时重复创建
+							if (container.querySelector("img")) {
+								return;
+							}
 
-					if (desktopSrc) {
-						const desktopImg = document.createElement("img");
-						desktopImg.id = "banner";
-						desktopImg.alt = "Desktop banner image of the blog";
-						desktopImg.className =
-							"hidden md:block object-cover h-full w-full transition duration-700 opacity-100";
-						desktopImg.src = desktopSrc;
-						desktopImg.loading = "eager";
-						desktopImg.fetchPriority = "high";
-						desktopImg.dataset.position = position;
-						container.appendChild(desktopImg);
-					}
-				})();
-			</script>
+							const desktopSrc = getRandomImage(desktopImages, "banner_desktop_index");
+							const mobileSrc = getRandomImage(mobileImages, "banner_mobile_index");
+
+							if (mobileSrc) {
+								const mobileImg = document.createElement("img");
+								mobileImg.alt = "Mobile banner image of the blog";
+								mobileImg.className =
+									"block md:hidden object-cover h-full w-full transition duration-700 opacity-100";
+								mobileImg.src = mobileSrc;
+								mobileImg.loading = "eager";
+								mobileImg.fetchPriority = "high";
+								mobileImg.dataset.position = position;
+								container.appendChild(mobileImg);
+							}
+
+							if (desktopSrc) {
+								const desktopImg = document.createElement("img");
+								desktopImg.id = "banner";
+								desktopImg.alt = "Desktop banner image of the blog";
+								desktopImg.className =
+									"hidden md:block object-cover h-full w-full transition duration-700 opacity-100";
+								desktopImg.src = desktopSrc;
+								desktopImg.loading = "eager";
+								desktopImg.fetchPriority = "high";
+								desktopImg.dataset.position = position;
+								container.appendChild(desktopImg);
+							}
+						})();
+					</script>
+				</div>
+			)}
 		</div>
-	)}
+	</div>
 
 	<!-- Ken Burns 动画样式（放在 body 中，不受 Swup head 替换影响） -->
 	{isCarouselEnabled && (
@@ -593,9 +604,148 @@ const hasBannerLink = !!siteConfig.banner.credit.url;
 		</script>
 	)}
 
+	<!-- Banner 5x5 网格平滑倾斜：保留 tracker/canvas 结构，使用 RAF 插值提高流畅度 -->
+	<script is:inline data-swup-ignore-script>
+		(function initBannerTilt() {
+			var root = document.getElementById("banner-wrapper");
+			if (!root) {return;}
+
+			if (window.__bannerTiltCleanup) {
+				window.__bannerTiltCleanup();
+				window.__bannerTiltCleanup = null;
+			}
+
+			var canvas = root.querySelector(".banner-tilt-canvas");
+			var panel = root.querySelector(".banner-tilt-panel");
+			if (!canvas || !panel) {return;}
+
+			var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+			var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+			if (!canHover || reduceMotion) {
+				panel.style.setProperty("--tilt-x", "0deg");
+				panel.style.setProperty("--tilt-y", "0deg");
+				panel.classList.remove("is-tilting");
+				return;
+			}
+
+			var MAX_ROTATE_X = 8;
+			var MAX_ROTATE_Y = 4;
+			var FOLLOW_FACTOR = 0.09;
+
+			var targetX = 0;
+			var targetY = 0;
+			var currentX = 0;
+			var currentY = 0;
+			var rafId = null;
+			var rect = null;
+			var needRectUpdate = true;
+			var isInside = false;
+
+			function softCurve(value) {
+				var clamped = Math.max(-1, Math.min(1, value));
+				return Math.sin(clamped * Math.PI * 0.5);
+			}
+
+			function updateRect() {
+				rect = canvas.getBoundingClientRect();
+				needRectUpdate = false;
+			}
+
+			function queueTick() {
+				if (rafId !== null) {return;}
+				rafId = requestAnimationFrame(tick);
+			}
+
+			function tick() {
+				rafId = null;
+
+				currentX += (targetX - currentX) * FOLLOW_FACTOR;
+				currentY += (targetY - currentY) * FOLLOW_FACTOR;
+
+				if (Math.abs(targetX - currentX) < 0.01) {currentX = targetX;}
+				if (Math.abs(targetY - currentY) < 0.01) {currentY = targetY;}
+
+				panel.style.setProperty("--tilt-x", currentX.toFixed(3) + "deg");
+				panel.style.setProperty("--tilt-y", currentY.toFixed(3) + "deg");
+
+				if (
+					isInside ||
+					Math.abs(targetX - currentX) > 0.01 ||
+					Math.abs(targetY - currentY) > 0.01
+				) {
+					queueTick();
+				}
+			}
+
+			function setTargetFromPointer(event) {
+				if (needRectUpdate || !rect) {
+					updateRect();
+				}
+
+				var relativeX = (event.clientX - rect.left) / rect.width;
+				var relativeY = (event.clientY - rect.top) / rect.height;
+
+				var normalizedX = softCurve(relativeX * 2 - 1);
+				var normalizedY = softCurve(1 - relativeY * 2);
+
+				targetX = normalizedY * MAX_ROTATE_X;
+				targetY = normalizedX * MAX_ROTATE_Y;
+				panel.classList.add("is-tilting");
+				queueTick();
+			}
+
+			function onPointerEnter(event) {
+				isInside = true;
+				needRectUpdate = true;
+				setTargetFromPointer(event);
+			}
+
+			function onPointerMove(event) {
+				if (!isInside) {return;}
+				setTargetFromPointer(event);
+			}
+
+			function onPointerLeave() {
+				isInside = false;
+				targetX = 0;
+				targetY = 0;
+				panel.classList.remove("is-tilting");
+				queueTick();
+			}
+
+			function onViewportChange() {
+				needRectUpdate = true;
+			}
+
+			canvas.addEventListener("pointerenter", onPointerEnter);
+			canvas.addEventListener("pointermove", onPointerMove);
+			canvas.addEventListener("pointerleave", onPointerLeave);
+			window.addEventListener("resize", onViewportChange, { passive: true });
+			window.addEventListener("scroll", onViewportChange, { passive: true });
+
+			window.__bannerTiltCleanup = function() {
+				canvas.removeEventListener("pointerenter", onPointerEnter);
+				canvas.removeEventListener("pointermove", onPointerMove);
+				canvas.removeEventListener("pointerleave", onPointerLeave);
+				window.removeEventListener("resize", onViewportChange);
+				window.removeEventListener("scroll", onViewportChange);
+
+				if (rafId !== null) {
+					cancelAnimationFrame(rafId);
+					rafId = null;
+				}
+
+				panel.style.setProperty("--tilt-x", "0deg");
+				panel.style.setProperty("--tilt-y", "0deg");
+				panel.classList.remove("is-tilting");
+			};
+		})();
+	</script>
+
 	<!-- 首页文字覆盖层 -->
 	{siteConfig.banner.homeText?.enable && (
-		<div class={`banner-text-overlay absolute inset-0 z-20 flex items-center justify-center ${!showTextOverlay ? "hidden" : ""}`}>
+		<div class={`banner-text-overlay absolute inset-0 z-20 flex items-center justify-center pointer-events-none ${!showTextOverlay ? "hidden" : ""}`}>
 			<div class="w-4/5 lg:w-3/4 text-center mb-0">
 				<div class="flex flex-col">
 					{overlayTitle && (
@@ -714,6 +864,99 @@ const hasBannerLink = !!siteConfig.banner.credit.url;
 </div>
 
 <style>
+	/* Banner 图片层 5x5 追踪网格视差 */
+	.banner-tilt-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		perspective: 1200px;
+		isolation: isolate;
+	}
+
+	.banner-tilt-canvas {
+		position: absolute;
+		inset: 0;
+		z-index: 3;
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		grid-template-rows: repeat(5, minmax(0, 1fr));
+	}
+
+	.banner-tracker {
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	.banner-tilt-panel {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(0);
+		transform-origin: center center;
+		transform-style: preserve-3d;
+		backface-visibility: hidden;
+		contain: layout style paint;
+		will-change: transform, filter;
+		transition: filter 240ms ease;
+	}
+
+	.banner-tilt-panel::before {
+		content: "";
+		position: absolute;
+		inset: -1.25rem;
+		background: linear-gradient(
+			43deg,
+			rgb(65, 88, 208) 0%,
+			rgb(200, 80, 192) 46%,
+			rgb(255, 204, 112) 100%
+		);
+		filter: blur(2rem);
+		opacity: 0.24;
+		pointer-events: none;
+		transition: opacity 240ms ease;
+		z-index: -1;
+	}
+
+	.banner-tilt-panel #banner-carousel,
+	.banner-tilt-panel #banner-single-container {
+		position: relative;
+		z-index: 1;
+	}
+
+	.banner-tilt-panel.is-tilting {
+		filter: brightness(1.01) saturate(1.005);
+	}
+
+	.banner-tilt-panel.is-tilting::before {
+		opacity: 0.32;
+	}
+
+	@media (hover: none), (pointer: coarse) {
+		.banner-tilt-canvas {
+			display: none;
+		}
+
+		.banner-tilt-panel {
+			transform: none !important;
+			filter: none;
+			transition: filter 180ms ease;
+		}
+
+		.banner-tilt-panel::before {
+			opacity: 0.18;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.banner-tilt-panel {
+			transform: none !important;
+			transition: filter 200ms ease-in-out;
+		}
+	}
+
 	/* Banner 文本样式 */
 	.banner-title {
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);

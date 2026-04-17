@@ -27,6 +27,18 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
+// 处理相对路径的图片，转换为绝对路径
+const processedImages = (entry.data.images || []).map((image: string) => {
+	// 如果是相对路径（./ 开头或不以 / 开头），转换为 /diary-content/{id}/filename
+	if (image.startsWith("./")) {
+		return `/diary-content/${entry.id}/${image.slice(2)}`;
+	} else if (!image.startsWith("/")) {
+		return `/diary-content/${entry.id}/${image}`;
+	}
+	// 已经是绝对路径，保持不变
+	return image;
+});
+
 // 格式化日期
 const formattedDate = new Date(entry.data.date).toLocaleDateString("zh-CN", {
 	year: "numeric",
@@ -126,21 +138,27 @@ const formattedDate = new Date(entry.data.date).toLocaleDateString("zh-CN", {
 				</div>
 
 				<!-- Images Gallery -->
-				{entry.data.images && entry.data.images.length > 0 && (
+				{processedImages && processedImages.length > 0 && (
 					<div class="mt-12 pt-9 border-t border-black/10 dark:border-white/10">
 						<h3 class="text-xl font-bold mb-6 text-black/90 dark:text-white/90">
 							相关图片
 						</h3>
 						<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-							{entry.data.images.map((image, idx) => (
-								<div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+							{processedImages.map((image, idx) => (
+								<a
+									href="javascript:void(0)"
+									data-fancybox={`diary-${entry.id}`}
+									data-src={image}
+									data-caption={`${entry.data.title} - 图片 ${idx + 1}`}
+									class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 block cursor-pointer group"
+								>
 									<img
 										src={image}
 										alt={`${entry.data.title} - 图片 ${idx + 1}`}
-										class="w-full h-64 object-cover"
+										class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
 										loading="lazy"
 									/>
-								</div>
+								</a>
 							))}
 						</div>
 					</div>

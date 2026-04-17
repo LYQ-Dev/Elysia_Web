@@ -5,11 +5,12 @@ import { PageHeader } from "../../components/features/page-header";
 import Markdown from "../../components/misc/Markdown.astro";
 import Comment from "../../components/comment/index.astro";
 import { Icon } from "astro-icon/components";
+import { getCollectionAssetUrl, normalizeCollectionEntrySlug } from "../../utils/url-utils";
 
 export async function getStaticPaths() {
 	const songs = await getCollection("songs");
 	return songs.map((entry) => ({
-		params: { slug: entry.id },
+		params: { slug: normalizeCollectionEntrySlug(entry.id) },
 		props: { entry },
 	}));
 }
@@ -21,6 +22,8 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const { title, artist, album, cover, link, rating, tags } = entry.data;
+const entrySlug = normalizeCollectionEntrySlug(entry.id);
+const coverUrl = getCollectionAssetUrl(cover);
 const fullTitle = `${title} - ${artist}`;
 ---
 
@@ -36,11 +39,11 @@ const fullTitle = `${title} - ${artist}`;
 			<PageHeader title={title} subtitle={artist} />
 
 			<!-- 封面和元数据 -->
-			{cover && (
+			{coverUrl && (
 				<div class="my-6 flex gap-6 items-start">
 					<div class="shrink-0">
 						<img
-							src={cover}
+							src={coverUrl}
 							alt={title}
 							class="w-32 h-32 rounded-lg object-cover shadow-lg"
 							loading="lazy"
@@ -105,7 +108,7 @@ const fullTitle = `${title} - ${artist}`;
 
 	<!-- 评论区域 -->
 	<div class="mt-4 transition-all duration-500 ease-out animate-fadeInUp" style="animation-delay: 0.1s;">
-		<Comment path={`/music/${entry.id}/`} />
+		<Comment path={`/music/${entrySlug}/`} />
 	</div>
 </MainGridLayout>
 
