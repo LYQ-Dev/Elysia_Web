@@ -3,7 +3,7 @@ title: 考研数学学习记录2026-04-17
 published: 2026-04-17
 pinned: false
 description: 考研数学学习与复盘记录
-tags: [考研数学, 学习记录]
+tags: [考研数学, 学习记录, 无穷级数, 收敛半径, 高阶矩阵]
 category: math
 licenseName: "Unlicensed"
 author: 程翊雪
