@@ -5,11 +5,12 @@ import { PageHeader } from "../../components/features/page-header";
 import Markdown from "../../components/misc/Markdown.astro";
 import Comment from "../../components/comment/index.astro";
 import { Icon } from "astro-icon/components";
+import { getCollectionAssetUrl, normalizeCollectionEntrySlug } from "../../utils/url-utils";
 
 export async function getStaticPaths() {
 	const animeList = await getCollection("anime");
 	return animeList.map((entry) => ({
-		params: { slug: entry.id },
+		params: { slug: normalizeCollectionEntrySlug(entry.id) },
 		props: { entry },
 	}));
 }
@@ -20,7 +21,36 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { title, studio, cover, status, rating, totalEpisodes, watchedEpisodes = 0, year, genre = [], tags = [], link, airDate } = entry.data;
+const {
+	title,
+	studio,
+	cover,
+	status,
+	rating,
+	totalEpisodes,
+	watchedEpisodes = 0,
+	year,
+	genre = [],
+	tags = [],
+	link,
+	bangumiLink,
+	playLink1,
+	playLink2,
+	airDate,
+} = entry.data;
+const entrySlug = normalizeCollectionEntrySlug(entry.id);
+const coverUrl = getCollectionAssetUrl(cover);
+
+interface ExternalLinkItem {
+	label: string;
+	href: string;
+}
+
+const externalLinks = [
+	{ label: "bangumi介绍", href: bangumiLink || link },
+	{ label: "在线播放1", href: playLink1 },
+	{ label: "在线播放2", href: playLink2 },
+].filter((item): item is ExternalLinkItem => Boolean(item.href));
 
 const getStatusInfo = (status: string) => {
 	const statusMap: Record<string, { text: string; color: string; icon: string }> = {
@@ -63,11 +93,11 @@ const watchProgress = totalEpisodes > 0 ? (watchedEpisodes / totalEpisodes * 100
 			<PageHeader title={title} subtitle={studio} />
 
 			<!-- 封面和元数据 -->
-			{cover && (
+			{coverUrl && (
 				<div class="my-6 flex gap-6 items-start">
 					<div class="shrink-0">
 						<img
-							src={cover}
+							src={coverUrl}
 							alt={title}
 							class="w-32 h-48 rounded-lg object-cover shadow-lg"
 							loading="lazy"
@@ -162,17 +192,21 @@ const watchProgress = totalEpisodes > 0 ? (watchedEpisodes / totalEpisodes * 100
 			</Markdown>
 
 			<!-- 外部链接按钮 -->
-			{link && (
+			{externalLinks.length > 0 && (
 				<div class="mt-8 pt-6 border-t border-black/10 dark:border-white/10">
-					<a
-						href={link}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-red-500/10 text-red-600 dark:text-red-400 hover:bg-red-500/20 transition-colors duration-200"
-					>
-						<Icon name="material-symbols:open-in-new" class="w-4 h-4" />
-						查看详情
-					</a>
+					<div class="flex flex-wrap gap-3">
+						{externalLinks.map((item) => (
+							<a
+								href={item.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium bg-red-500/10 text-red-600 dark:text-red-400 hover:bg-red-500/20 transition-colors duration-200"
+							>
+								<Icon name="material-symbols:open-in-new" class="w-4 h-4" />
+								{item.label}
+							</a>
+						))}
+					</div>
 				</div>
 			)}
 		</div>
@@ -180,7 +214,7 @@ const watchProgress = totalEpisodes > 0 ? (watchedEpisodes / totalEpisodes * 100
 
 	<!-- 评论区域 -->
 	<div class="mt-4 transition-all duration-500 ease-out animate-fadeInUp" style="animation-delay: 0.1s;">
-		<Comment path={`/anime/${entry.id}/`} />
+		<Comment path={`/anime/${entrySlug}/`} />
 	</div>
 </MainGridLayout>
 

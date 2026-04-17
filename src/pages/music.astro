@@ -4,6 +4,7 @@ import { FilterTabs } from "@components/atoms/filter-tabs";
 import { PageHeader } from "@components/features/page-header";
 import SongCard from "@components/features/songs/SongCard.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { getCollectionAssetUrl, normalizeCollectionEntrySlug } from "@utils/url-utils";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 
@@ -58,11 +59,11 @@ const subtitle = "分享最近喜欢的歌曲";
 					songs.map((song) => (
 						<div data-tags={JSON.stringify(song.data.tags || [])}>
 							<SongCard
-								id={song.id}
+								id={normalizeCollectionEntrySlug(song.id)}
 								title={song.data.title}
 								artist={song.data.artist}
 								album={song.data.album}
-								cover={song.data.cover}
+								cover={getCollectionAssetUrl(song.data.cover)}
 								link={song.data.link}
 								tags={song.data.tags}
 								rating={song.data.rating}

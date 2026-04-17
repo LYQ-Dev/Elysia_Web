@@ -4,6 +4,7 @@ import { FilterTabs } from "@components/atoms/filter-tabs";
 import { PageHeader } from "@components/features/page-header";
 import AnimeCard from "@components/features/anime/AnimeCard.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { getCollectionAssetUrl, normalizeCollectionEntrySlug } from "@utils/url-utils";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 
@@ -82,10 +83,10 @@ const subtitle = "我的追番记录，记录每一部值得观看的动画";
 					sortedAnimes.map((anime) => (
 						<div data-status={anime.data.status} class="transition-all duration-300 will-change-transform">
 							<AnimeCard
-								id={anime.id}
+								id={normalizeCollectionEntrySlug(anime.id)}
 								title={anime.data.title}
 								studio={anime.data.studio}
-								cover={anime.data.cover}
+								cover={getCollectionAssetUrl(anime.data.cover)}
 								status={anime.data.status}
 								rating={anime.data.rating}
 								totalEpisodes={anime.data.totalEpisodes}

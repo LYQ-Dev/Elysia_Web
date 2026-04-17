@@ -4,6 +4,7 @@ import { FilterTabs } from "@components/atoms/filter-tabs";
 import { PageHeader } from "@components/features/page-header";
 import SportCard from "@components/features/sports/SportCard.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { getCollectionAssetUrl, normalizeCollectionEntrySlug } from "@utils/url-utils";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 
@@ -86,7 +87,7 @@ const subtitle = "分享每日运动经历和健身进度";
 					sortedSports.map((sport) => (
 						<div data-category={sport.data.category}>
 							<SportCard
-								id={sport.id}
+								id={normalizeCollectionEntrySlug(sport.id)}
 								title={sport.data.title}
 								category={sport.data.category}
 								duration={sport.data.duration}
@@ -94,8 +95,8 @@ const subtitle = "分享每日运动经历和健身进度";
 								calories={sport.data.calories}
 								difficulty={sport.data.difficulty}
 								location={sport.data.location}
-								date={sport.data.date}
-								image={sport.data.image}
+								date={sport.data.date.toISOString()}
+								image={getCollectionAssetUrl(sport.data.image)}
 								tags={sport.data.tags}
 							/>
 						</div>
