@@ -3,7 +3,7 @@ title: 考研专业课学习记录2026-04-17
 published: 2026-04-17
 pinned: false
 description: 408 专业课学习与复盘
-tags: ["考研专业课", "408", "学习记录"]
+tags: ["考研专业课", "408", "学习记录","中断和异常"]
 category: major
 licenseName: "Unlicensed"
 author: 程翊雪

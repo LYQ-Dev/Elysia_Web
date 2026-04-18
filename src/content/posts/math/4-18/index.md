@@ -3,7 +3,7 @@ title: 考研数学学习记录2026-04-18
 published: 2026-04-18
 pinned: false
 description: 考研数学概率论一维离散随机变量学习复盘
-tags: [考研数学, 概率论, 学习记录]
+tags: [考研数学, 概率论, 学习记录, 一维随机变量]
 category: math
 licenseName: "Unlicensed"
 author: 程翊雪
