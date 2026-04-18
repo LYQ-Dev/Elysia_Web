@@ -59,7 +59,7 @@ export const siteConfig: SiteConfig = {
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.webp
 		icon: "public/assets/home/TopTubiao.webp",
 		// 网站Logo图片路径
-		logo: "assets/home/default-logo.webp",
+		logo: "public/assets/home/default-logo.webp",
 	},
 
 	// 页面自动缩放配置
@@ -408,17 +408,17 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Bilibili",
 			icon: "fa7-brands:bilibili",
-			url: "https://space.bilibili.com/701864046",
+			url: "https://b23.tv/8y3yvwr",
 		},
 		{
 			name: "Gitee",
 			icon: "mdi:git",
-			url: "https://gitee.com/matsuzakayuki",
+			url: "https://gitee.com/lyqelysia",
 		},
 		{
 			name: "GitHub",
 			icon: "fa7-brands:github",
-			url: "https://github.com/matsuzaka-yuki",
+			url: "https://github.com/LYQ-Dev",
 		},
 		{
 			name: "Codeberg",
