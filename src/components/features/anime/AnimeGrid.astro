@@ -76,6 +76,7 @@ function getFallbackId(anime: AnimeItem, index: number): string {
 				<AnimeCard
 					id={getFallbackId(anime, index)}
 					title={anime.title}
+					description={anime.description}
 					studio={anime.studio}
 					cover={anime.cover}
 					status={status}
@@ -99,6 +100,7 @@ function getFallbackId(anime: AnimeItem, index: number): string {
 				<AnimeCard
 					id={getFallbackId(anime, visibleAnimeList.length + index)}
 					title={anime.title}
+					description={anime.description}
 					studio={anime.studio}
 					cover={anime.cover}
 					status={status}

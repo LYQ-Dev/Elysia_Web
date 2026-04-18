@@ -1,16 +1,34 @@
 <script lang="ts">
-	import I18nKey from "@i18n/i18nKey";
-	import { i18n } from "@i18n/translation";
 	import Icon from "@iconify/svelte";
 	import { navigateToPage } from "@utils/navigation-utils";
-	import { url } from "@utils/url-utils";
 	import { onDestroy, onMount } from "svelte";
 
 	import type { SearchResult } from "@/global";
 
+	interface PostSearchMetaItem {
+		id: string;
+		title: string;
+		description: string;
+		tags: string[];
+		url: string;
+		published: number;
+		category: string;
+		password: boolean;
+		section: string;
+	}
+
+	interface RankedSearchResult extends SearchResult {
+		__score: number;
+		__published: number;
+	}
+
 	let keywordDesktop = $state("");
 	let keywordMobile = $state("");
 	let result: SearchResult[] = $state([]);
+	let postSearchIndex: PostSearchMetaItem[] = $state([]);
+	let postIndexLoading = false;
+	let postIndexLoaded = false;
+	let postIndexPromise: Promise<void> | null = null;
 	let pagefindLoaded = false;
 	let initialized = $state(false);
 	let isDesktopSearchExpanded = $state(false);
@@ -18,29 +36,333 @@
 	let windowJustFocused = false;
 	let focusTimer: NodeJS.Timeout;
 	let blurTimer: NodeJS.Timeout;
+	const searchPlaceholder = "请输入文章标题或标签";
 
-	const fakeResult: SearchResult[] = [
-		{
-			url: url("/"),
-			meta: {
-				title: "This Is a Fake Search Result",
-			},
-			excerpt:
-				"Because the search cannot work in the <mark>dev</mark> environment.",
-		},
-		{
-			url: url("/"),
-			meta: {
-				title: "If You Want to Test the Search",
-			},
-			excerpt:
-				"Try running <mark>npm build && npm preview</mark> instead.",
-		},
-	];
+	const getCurrentKeyword = (): string => (keywordDesktop || keywordMobile).trim();
+
+	const shouldShowNoResultPrompt = (): boolean =>
+		getCurrentKeyword().length > 0 && result.length === 0;
+
+	const normalizeText = (value: string): string =>
+		value
+			.toLowerCase()
+			.normalize("NFKD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.trim();
+
+	const compactText = (value: string): string =>
+		normalizeText(value).replace(/\s+/g, "");
+
+	const splitTokens = (value: string): string[] =>
+		normalizeText(value)
+			.split(/\s+/)
+			.filter(Boolean);
+
+	const escapeHtml = (value: string): string =>
+		value
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/\"/g, "&quot;")
+			.replace(/'/g, "&#39;");
+
+	const escapeRegExp = (value: string): string =>
+		value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+	const isSubsequenceMatch = (needle: string, haystack: string): boolean => {
+		if (!needle || !haystack) {
+			return false;
+		}
+
+		let needleIndex = 0;
+		for (const ch of haystack) {
+			if (ch === needle[needleIndex]) {
+				needleIndex++;
+				if (needleIndex === needle.length) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	};
+
+	const highlightKeywords = (text: string, keyword: string): string => {
+		const escaped = escapeHtml(text);
+		const tokens = splitTokens(keyword);
+
+		if (tokens.length === 0) {
+			return escaped;
+		}
+
+		const pattern = tokens.map(escapeRegExp).join("|");
+		const regex = new RegExp(`(${pattern})`, "gi");
+		return escaped.replace(regex, "<mark>$1</mark>");
+	};
+
+	const normalizeResultUrl = (targetUrl: string): string =>
+		targetUrl.replace(/#.*$/, "").replace(/\/+$/, "") || "/";
+
+	const isValidPostSearchMetaItem = (
+		item: unknown,
+	): item is PostSearchMetaItem => {
+		if (!item || typeof item !== "object") {
+			return false;
+		}
+
+		const data = item as Record<string, unknown>;
+		return (
+			typeof data.id === "string" &&
+			typeof data.title === "string" &&
+			typeof data.url === "string"
+		);
+	};
+
+	const loadPostSearchIndex = async (): Promise<void> => {
+		if (postIndexLoaded) {
+			return;
+		}
+
+		if (postIndexPromise) {
+			await postIndexPromise;
+			return;
+		}
+
+		postIndexPromise = (async () => {
+			postIndexLoading = true;
+			try {
+				const response = await fetch("/api/allPostMeta.json");
+				if (!response.ok) {
+					throw new Error(`Failed to load post index: ${response.status}`);
+				}
+
+				const rawData = (await response.json()) as unknown[];
+				postSearchIndex = Array.isArray(rawData)
+					? rawData.filter(isValidPostSearchMetaItem).map((item) => ({
+						id: item.id,
+						title: item.title,
+						description:
+							typeof item.description === "string"
+								? item.description
+								: "",
+						tags: Array.isArray(item.tags)
+							? item.tags.filter(
+									(tag): tag is string => typeof tag === "string",
+								)
+							: [],
+						url: item.url,
+						published:
+							typeof item.published === "number"
+								? item.published
+								: 0,
+						category:
+							typeof item.category === "string"
+								? item.category
+								: "",
+						password: Boolean(item.password),
+						section:
+							typeof item.section === "string"
+								? item.section
+								: "文章",
+					}))
+					: [];
+			} catch (error) {
+				console.error("Failed to load post search index:", error);
+				postSearchIndex = [];
+			} finally {
+				postIndexLoading = false;
+				postIndexLoaded = true;
+				postIndexPromise = null;
+			}
+		})();
+
+		await postIndexPromise;
+	};
+
+	const searchByTitleAndTags = (keyword: string): SearchResult[] => {
+		const query = normalizeText(keyword);
+		const queryCompact = compactText(keyword);
+		const queryTokens = splitTokens(keyword);
+
+		if (!query || postSearchIndex.length === 0) {
+			return [];
+		}
+
+		const rankedResults: RankedSearchResult[] = [];
+
+		for (const post of postSearchIndex) {
+			if (post.password) {
+				continue;
+			}
+
+			const titleNormalized = normalizeText(post.title);
+			const titleCompact = compactText(post.title);
+			const descriptionNormalized = normalizeText(post.description || "");
+			const tagsNormalized = (post.tags || []).map((tag) =>
+				normalizeText(tag),
+			);
+			const sectionNormalized = normalizeText(post.section || "");
+
+			let score = 0;
+			let titleMatched = false;
+			let tagMatched = false;
+			let fuzzyTitleMatched = false;
+			let fuzzyTagMatched = false;
+
+			if (titleNormalized.includes(query)) {
+				score += 140;
+				titleMatched = true;
+			}
+
+			if (tagsNormalized.some((tag) => tag.includes(query))) {
+				score += 120;
+				tagMatched = true;
+			}
+
+			if (sectionNormalized && sectionNormalized.includes(query)) {
+				score += 24;
+			}
+
+			for (const token of queryTokens) {
+				if (titleNormalized.includes(token)) {
+					score += 28;
+					titleMatched = true;
+				}
+
+				if (tagsNormalized.some((tag) => tag.includes(token))) {
+					score += 24;
+					tagMatched = true;
+				}
+
+				if (descriptionNormalized.includes(token)) {
+					score += 8;
+				}
+
+				if (sectionNormalized && sectionNormalized.includes(token)) {
+					score += 6;
+				}
+			}
+
+			if (
+				!titleMatched &&
+				queryCompact.length > 1 &&
+				isSubsequenceMatch(queryCompact, titleCompact)
+			) {
+				score += 45;
+				fuzzyTitleMatched = true;
+			}
+
+			if (!tagMatched && queryCompact.length > 1) {
+				for (const tag of tagsNormalized) {
+					if (isSubsequenceMatch(queryCompact, compactText(tag))) {
+						score += 38;
+						fuzzyTagMatched = true;
+						break;
+					}
+				}
+			}
+
+			if (score <= 0) {
+				continue;
+			}
+
+			const matchedTags = (post.tags || [])
+				.filter((tag) => {
+					const normalizedTag = normalizeText(tag);
+					return queryTokens.some((token) =>
+						normalizedTag.includes(token),
+					);
+				})
+				.slice(0, 3);
+
+			const excerptParts: string[] = [];
+			if (post.section) {
+				excerptParts.push(`栏目: ${post.section}`);
+			}
+			if (titleMatched) {
+				excerptParts.push("标题匹配");
+			}
+			if (tagMatched || fuzzyTagMatched) {
+				excerptParts.push(
+					matchedTags.length > 0
+						? `标签: ${matchedTags.join(" / ")}`
+						: "标签匹配",
+				);
+			}
+			if (!titleMatched && !tagMatched && (fuzzyTitleMatched || fuzzyTagMatched)) {
+				excerptParts.push("模糊匹配");
+			}
+			if (post.description) {
+				excerptParts.push(post.description.slice(0, 84));
+			}
+
+			rankedResults.push({
+				url: post.url,
+				meta: {
+					title: post.title,
+				},
+				excerpt: highlightKeywords(excerptParts.join(" · "), keyword),
+				__score: score,
+				__published: post.published,
+			});
+		}
+
+		rankedResults.sort((a, b) => {
+			if (b.__score !== a.__score) {
+				return b.__score - a.__score;
+			}
+			return b.__published - a.__published;
+		});
+
+		return rankedResults.slice(0, 10).map((item) => ({
+			url: item.url,
+			meta: item.meta,
+			excerpt: item.excerpt,
+		}));
+	};
+
+	const searchWithPagefind = async (keyword: string): Promise<SearchResult[]> => {
+		if (!(import.meta.env.PROD && pagefindLoaded && window.pagefind)) {
+			return [];
+		}
+
+		try {
+			const response = await window.pagefind.search(keyword);
+			return Promise.all(response.results.map((item) => item.data()));
+		} catch (error) {
+			console.error("Pagefind search error:", error);
+			return [];
+		}
+	};
+
+	const mergeSearchResults = (
+		localResults: SearchResult[],
+		pagefindResults: SearchResult[],
+	): SearchResult[] => {
+		const merged: SearchResult[] = [];
+		const seenUrls = new Set<string>();
+
+		for (const item of [...localResults, ...pagefindResults]) {
+			const normalizedUrl = normalizeResultUrl(item.url);
+			if (seenUrls.has(normalizedUrl)) {
+				continue;
+			}
+
+			seenUrls.add(normalizedUrl);
+			merged.push(item);
+
+			if (merged.length >= 12) {
+				break;
+			}
+		}
+
+		return merged;
+	};
 
 	const togglePanel = () => {
 		const panel = document.getElementById("search-panel");
 		panel?.classList.toggle("float-panel-closed");
+		void loadPostSearchIndex();
 		if (
 			!panel?.classList.contains("float-panel-closed") &&
 			typeof window.loadPagefind === "function"
@@ -56,6 +378,8 @@
 		}
 		isDesktopSearchExpanded = !isDesktopSearchExpanded;
 		if (isDesktopSearchExpanded) {
+			void loadPostSearchIndex();
+			setPanelVisibility(false, true);
 			if (typeof window.loadPagefind === "function") {
 				window.loadPagefind();
 			}
@@ -65,6 +389,8 @@
 				) as HTMLInputElement;
 				input?.focus();
 			}, 0);
+		} else {
+			setPanelVisibility(false, true);
 		}
 	};
 
@@ -116,51 +442,44 @@
 		keyword: string,
 		isDesktop: boolean,
 	): Promise<void> => {
-		if (!keyword) {
-			setPanelVisibility(false, isDesktop);
+		const trimmedKeyword = keyword.trim();
+		if (!trimmedKeyword) {
 			result = [];
+			setPanelVisibility(false, isDesktop);
 			return;
 		}
 		if (!initialized) {
 			return;
 		}
 		try {
-			let searchResults: SearchResult[] = [];
-			if (import.meta.env.PROD && pagefindLoaded && window.pagefind) {
-				const response = await window.pagefind.search(keyword);
-				searchResults = await Promise.all(
-					response.results.map((item) => item.data()),
-				);
-			} else if (import.meta.env.DEV) {
-				searchResults = fakeResult;
-			} else {
-				searchResults = [];
-				console.error(
-					"Pagefind is not available in production environment.",
-				);
-			}
-			result = searchResults;
-			setPanelVisibility(result.length > 0, isDesktop);
+			await loadPostSearchIndex();
+			const localResults = searchByTitleAndTags(trimmedKeyword);
+			const pagefindResults = await searchWithPagefind(trimmedKeyword);
+			result = mergeSearchResults(localResults, pagefindResults);
+			setPanelVisibility(true, isDesktop);
 		} catch (error) {
 			console.error("Search error:", error);
 			result = [];
-			setPanelVisibility(false, isDesktop);
+			setPanelVisibility(true, isDesktop);
 		}
 	};
 
 	onMount(() => {
+		void loadPostSearchIndex();
+
 		const initializeSearch = () => {
 			initialized = true;
 			pagefindLoaded =
 				typeof window !== "undefined" &&
 				!!window.pagefind &&
 				typeof window.pagefind.search === "function";
-			console.log("Pagefind status on init:", pagefindLoaded);
+			console.log("Search status on init:", {
+				pagefindLoaded,
+				postIndexLoaded,
+			});
 		};
 		if (import.meta.env.DEV) {
-			console.log(
-				"Pagefind is not available in development mode. Using mock data.",
-			);
+			console.log("Search initialized in development mode.");
 			initializeSearch();
 		} else {
 			document.addEventListener("pagefindready", () => {
@@ -242,9 +561,9 @@
 		id="search-bar"
 		class="flex transition-all items-center h-11 rounded-lg absolute right-0 top-0 shrink-0 border-0 bg-transparent cursor-pointer
             {isDesktopSearchExpanded
-			? 'bg-black/[0.04] hover:bg-black/[0.06] focus-within:bg-black/[0.06] dark:bg-white/5 dark:hover:bg-white/10 dark:focus-within:bg-white/10'
+			? 'bg-white/95 border border-white/90 shadow-sm hover:bg-white focus-within:bg-white dark:bg-white/95 dark:hover:bg-white dark:focus-within:bg-white'
 			: 'btn-plain active:scale-90'}
-            {isDesktopSearchExpanded ? 'w-48' : 'w-11'}"
+            {isDesktopSearchExpanded ? 'w-72' : 'w-11'}"
 		aria-label="Search"
 		onmouseenter={() => {
 			if (!isDesktopSearchExpanded) {
@@ -264,12 +583,12 @@
 			class="absolute text-[1.25rem] pointer-events-none {isDesktopSearchExpanded
 				? 'left-3'
 				: 'left-1/2 -translate-x-1/2'} transition top-1/2 -translate-y-1/2 {isDesktopSearchExpanded
-				? 'text-black/30 dark:text-white/30'
+				? 'text-slate-500'
 				: ''}"
 		></Icon>
 		<input
 			id="search-input-desktop"
-			placeholder={i18n(I18nKey.search)}
+			placeholder={searchPlaceholder}
 			bind:value={keywordDesktop}
 			onfocus={() => {
 				clearTimeout(blurTimer);
@@ -279,10 +598,10 @@
 				search(keywordDesktop, true);
 			}}
 			onblur={handleBlur}
-			class="transition-all pl-10 text-sm bg-transparent outline-0
+			class="transition-all pl-10 text-sm bg-transparent outline-0 placeholder:text-slate-400
                 h-full {isDesktopSearchExpanded
-				? 'w-36'
-				: 'w-0'} text-black/50 dark:text-white/50"
+				? 'w-60'
+				: 'w-0'} text-slate-700"
 		/>
 	</button>
 </div>
@@ -306,19 +625,19 @@
 	<div
 		id="search-bar-inside"
 		class="flex relative lg:hidden transition-all items-center h-11 rounded-xl
-      bg-black/[0.04] hover:bg-black/[0.06] focus-within:bg-black/[0.06]
-      dark:bg-white/5 dark:hover:bg-white/10 dark:focus-within:bg-white/10
+      bg-white/95 border border-white/90 shadow-sm hover:bg-white focus-within:bg-white
+      dark:bg-white/95 dark:hover:bg-white dark:focus-within:bg-white
   "
 	>
 		<Icon
 			icon="material-symbols:search"
-			class="absolute text-[1.25rem] pointer-events-none ml-3 transition my-auto text-black/30 dark:text-white/30"
+			class="absolute text-[1.25rem] pointer-events-none ml-3 transition my-auto text-slate-500"
 		></Icon>
 		<input
-			placeholder={i18n(I18nKey.search)}
+			placeholder={searchPlaceholder}
 			bind:value={keywordMobile}
-			class="pl-10 absolute inset-0 text-sm bg-transparent outline-0
-               focus:w-60 text-black/50 dark:text-white/50"
+			class="pl-10 absolute inset-0 text-sm bg-transparent outline-0 placeholder:text-slate-400
+               focus:w-60 text-slate-700"
 		/>
 	</div>
 	<!-- search results -->
@@ -342,6 +661,12 @@
 			</div>
 		</a>
 	{/each}
+
+	{#if shouldShowNoResultPrompt()}
+		<div class="search-message">
+			什么也没有喵~
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -351,5 +676,20 @@
 	:global(.search-panel) {
 		max-height: calc(100vh - 100px);
 		overflow-y: auto;
+	}
+
+	.search-message {
+		margin-top: 0.5rem;
+		padding: 0.8rem 0.85rem;
+		text-align: center;
+		font-size: 0.92rem;
+		color: rgb(100 116 139 / 0.9);
+		border-radius: 0.75rem;
+		background: rgb(15 23 42 / 0.05);
+	}
+
+	:global(html.dark) .search-message {
+		color: rgb(226 232 240 / 0.8);
+		background: rgb(148 163 184 / 0.14);
 	}
 </style>

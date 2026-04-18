@@ -8,107 +8,402 @@ import I18nKey from "../../../i18n/i18nKey";
 import { i18n } from "../../../i18n/translation";
 ---
 
-<div class="card-base p-3">
-	<a
-		aria-label="Go to About Page"
-		href={url("/about/")}
-		class="group block relative mx-auto mt-1 lg:mx-0 lg:mt-0 mb-3
-       max-w-[12rem] lg:max-w-none overflow-hidden rounded-xl active:scale-95"
-	>
-		<div
-			class="absolute transition pointer-events-none group-hover:bg-black/30 group-active:bg-black/50
-        w-full h-full z-50 flex items-center justify-center"
-		>
-			<Icon
-				name="fa7-regular:address-card"
-				class="transition opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 text-white text-5xl"
-			/>
-		</div>
-		<Image
-			src={profileConfig.avatar || ""}
-			alt="Profile Image of the Author"
-			class="mx-auto lg:w-full h-full lg:mt-0"
-			loading="eager"
-			fetchpriority="high"
-		/>
-	</a>
-	<div class="px-2">
-		<div
-			class="font-bold text-xl text-center mb-1 dark:text-neutral-50 transition"
-		>
-			{profileConfig.name}
-		</div>
-		<div
-			class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"
-		>
-		</div>
+<div class="card-base profile-shell">
+	<div class="profile-parent">
+		<article class="profile-card">
+			<div class="glass"></div>
 
-		<div class="text-center text-neutral-400 mb-2.5 transition">
-			{
-				profileConfig.typewriter?.enable ? (
-					<TypewriterText
-						text={profileConfig.bio || ""}
-						speed={profileConfig.typewriter.speed}
-						class="inline-block"
-					/>
-				) : (
-					profileConfig.bio
-				)
-			}
-		</div>
-
-		<div class="flex flex-wrap gap-2 justify-center mb-1">
-			{
-				profileConfig.links.length > 1 &&
-					profileConfig.links.map((item) => (
-						<a
-							rel="me"
-							aria-label={item.name}
-							href={item.url}
-							target="_blank"
-							class="btn-regular rounded-lg h-10 w-10 active:scale-90"
-						>
-							<Icon name={item.icon} class="text-[1.5rem]" />
-						</a>
-					))
-			}
-			{
-				profileConfig.links.length == 1 && (
-					<a
-						rel="me"
-						aria-label={profileConfig.links[0].name}
-						href={profileConfig.links[0].url}
-						target="_blank"
-						class="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95"
-					>
-						<Icon
-							name={profileConfig.links[0].icon}
-							class="text-[1.5rem]"
-						/>
-						{profileConfig.links[0].name}
-					</a>
-				)
-			}
-		</div>
-
-		<div class="umami-stats-container hidden">
-			<hr
-				class="my-2 border-t border-dashed border-black/10 dark:border-white/10 transition-colors duration-150"
-			/>
-			<div
-				class="text-sm text-50 mt-2 text-center transition-colors duration-150"
-			>
-				<Icon
-					name="fa7-solid:eye"
-					class="inline-block mr-1 text-50 text-sm align-middle"
-				/>
-				<span class="site-stats-display"
-					>{i18n(I18nKey.profileStatsLoading)}</span
+			<div class="content">
+				<a
+					aria-label="Go to About Page"
+					href={url("/about/")}
+					class="profile-title-link"
 				>
+					<span class="title">{profileConfig.name}</span>
+				</a>
+
+				<div class="text">
+					{
+						profileConfig.typewriter?.enable ? (
+							<TypewriterText
+								text={profileConfig.bio || ""}
+								speed={profileConfig.typewriter.speed}
+								class="inline-block"
+							/>
+						) : (
+							profileConfig.bio
+						)
+					}
+				</div>
+
+				<div class="umami-stats-container hidden profile-stats">
+					<hr class="stats-divider" />
+					<div class="stats-text">
+						<Icon name="fa7-solid:eye" class="stats-icon" />
+						<span class="site-stats-display"
+							>{i18n(I18nKey.profileStatsLoading)}</span
+						>
+					</div>
+				</div>
 			</div>
-		</div>
+
+			<div class="bottom">
+				<div class="social-buttons-container">
+					{
+						profileConfig.links.map((item, index) => (
+							<a
+								rel="me noopener noreferrer"
+								aria-label={item.name}
+								href={item.url}
+								target="_blank"
+								class="social-button"
+								style={`--social-delay: ${index * 120}ms;`}
+							>
+								<Icon name={item.icon} class="social-icon" />
+							</a>
+						))
+					}
+				</div>
+
+				<a
+					aria-label="Go to About Page"
+					href={url("/about/")}
+					class="view-more"
+				>
+					<span class="view-more-button">关于我</span>
+					<Icon
+						name="material-symbols:arrow-right-alt-rounded"
+						class="view-more-icon"
+					/>
+				</a>
+			</div>
+
+			<a aria-label="Open About Page" href={url("/about/")} class="logo">
+				{
+					profileConfig.avatar ? (
+						<Image
+							src={profileConfig.avatar}
+							alt={`${profileConfig.name} avatar`}
+							class="logo-avatar"
+							loading="eager"
+							fetchpriority="high"
+						/>
+					) : (
+						<span class="avatar-fallback-wrapper">
+							<Icon
+								name="material-symbols:person-rounded"
+								class="avatar-fallback"
+							/>
+						</span>
+					)
+				}
+			</a>
+		</article>
 	</div>
 </div>
+
+<style>
+	.profile-shell {
+		padding: 0.55rem;
+		overflow: visible !important;
+		background: transparent !important;
+		backdrop-filter: none !important;
+		-webkit-backdrop-filter: none !important;
+	}
+
+	.profile-parent {
+		width: 100%;
+		min-height: 320px;
+		perspective: 1200px;
+	}
+
+	.profile-card {
+		position: relative;
+		min-height: 320px;
+		border-radius: 36px;
+		background: linear-gradient(
+			135deg,
+			rgb(255, 179, 225) 0%,
+			rgb(167, 223, 255) 100%
+		);
+		transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+		transform-style: preserve-3d;
+		box-shadow:
+			rgba(58, 104, 146, 0) 35px 45px 25px -40px,
+			rgba(58, 104, 146, 0.25) 0 24px 25px -8px;
+		overflow: visible;
+		isolation: isolate;
+	}
+
+	.glass {
+		transform-style: preserve-3d;
+		position: absolute;
+		inset: 8px;
+		border-radius: 40px;
+		background: radial-gradient(
+			circle at center,
+			rgba(255, 255, 255, 0.74) 0%,
+			rgba(255, 255, 255, 0.5) 58%,
+			rgba(255, 255, 255, 0.34) 100%
+		);
+		transform: translate3d(0, 0, 26px);
+		border: 1px solid rgba(255, 255, 255, 0.72);
+		box-shadow:
+			inset 0 1px 0 rgba(255, 255, 255, 0.35),
+			inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+		transition: all 0.5s ease-in-out;
+	}
+
+	.content {
+		padding: 8.9rem 1.45rem 6.8rem 1.45rem;
+		transform: translate3d(0, 0, 30px);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.profile-title-link {
+		display: inline-flex;
+		text-decoration: none;
+		max-width: 100%;
+		justify-content: center;
+	}
+
+	.title {
+		display: block;
+		color: #87409d;
+		font-weight: 900;
+		font-size: 1.3rem;
+		line-height: 1.2;
+	}
+
+	.text {
+		display: block;
+		color: rgba(75, 102, 152, 0.92);
+		font-size: 0.92rem;
+		line-height: 1.55;
+		margin-top: 1.65rem;
+		max-width: 86%;
+		min-height: 3.1rem;
+	}
+
+	.profile-stats {
+		margin-top: 0.95rem;
+		max-width: 86%;
+	}
+
+	.stats-divider {
+		margin: 0.55rem 0;
+		border: none;
+		border-top: 1px dashed rgba(112, 140, 185, 0.32);
+	}
+
+	.stats-text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.3rem;
+		font-size: 0.78rem;
+		color: rgba(75, 102, 152, 0.82);
+	}
+
+	.stats-icon {
+		font-size: 0.72rem;
+	}
+
+	.bottom {
+		padding: 0.7rem 0.8rem;
+		transform-style: preserve-3d;
+		position: absolute;
+		bottom: 0.95rem;
+		left: 0.95rem;
+		right: 0.95rem;
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		transform: translate3d(0, 0, 30px);
+		gap: 0.55rem;
+	}
+
+	.social-buttons-container {
+		display: flex;
+		gap: 0.5rem;
+		transform-style: preserve-3d;
+		flex-wrap: wrap;
+		max-width: 67%;
+	}
+
+	.social-button {
+		width: 2.1rem;
+		aspect-ratio: 1;
+		padding: 0.3rem;
+		background: rgb(255, 255, 255);
+		border-radius: 50%;
+		border: none;
+		display: grid;
+		place-content: center;
+		box-shadow: rgba(58, 104, 146, 0.42) 0 7px 7px -6px;
+		transition:
+			transform 0.22s ease-in-out,
+			box-shadow 0.22s ease-in-out,
+			background-color 0.22s ease-in-out;
+		transition-delay: var(--social-delay, 0ms);
+	}
+
+	.social-icon {
+		font-size: 1rem;
+		color: #3e7fb2;
+		transition: color 0.2s ease-in-out;
+	}
+
+	.social-button:hover {
+		background: rgb(17, 25, 41);
+	}
+
+	.social-button:hover .social-icon {
+		color: #fff;
+	}
+
+	.social-button:active {
+		background: rgb(255, 233, 124);
+	}
+
+	.social-button:active .social-icon {
+		color: #1c1c1c;
+	}
+
+	.view-more {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 0.15rem;
+		transition: transform 0.2s ease-in-out;
+		text-decoration: none;
+		color: #3c74a5;
+	}
+
+	.view-more-button {
+		background: none;
+		border: none;
+		font-weight: 800;
+		font-size: 0.75rem;
+		white-space: nowrap;
+	}
+
+	.view-more-icon {
+		font-size: 1rem;
+	}
+
+	.logo {
+		position: absolute;
+		left: 50%;
+		top: 1.55rem;
+		transform-style: preserve-3d;
+		transform: translate3d(-50%, 0, 86px);
+		width: 6.4rem;
+		height: 6.4rem;
+		border-radius: 1.45rem;
+		overflow: hidden;
+		border: 2px solid rgba(255, 255, 255, 0.7);
+		box-shadow:
+			rgba(97, 131, 171, 0.35) -8px 10px 18px 0,
+			rgba(255, 255, 255, 0.45) 0 0 0 3px;
+		background: rgba(255, 255, 255, 0.82);
+		transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+	}
+
+	.logo-avatar {
+		width: 100%;
+		height: 100%;
+		border-radius: 1.3rem;
+	}
+
+	.avatar-fallback-wrapper {
+		width: 100%;
+		height: 100%;
+		display: grid;
+		place-content: center;
+	}
+
+	.avatar-fallback {
+		font-size: 1.3rem;
+		color: #4e7ca5;
+	}
+
+	.profile-parent:hover .profile-card {
+		transform: rotate3d(1, 1, 0, 22deg);
+		box-shadow:
+			rgba(58, 104, 146, 0.34) 28px 40px 25px -40px,
+			rgba(58, 104, 146, 0.18) 0 24px 30px 0;
+	}
+
+	.profile-parent:hover .profile-card .social-button {
+		transform: translate3d(0, 0, 50px);
+		box-shadow: rgba(58, 104, 146, 0.22) -5px 20px 10px 0;
+	}
+
+	.profile-parent:hover .profile-card .view-more {
+		transform: translate3d(0, 0, 10px);
+	}
+
+	.profile-parent:hover .profile-card .logo {
+		transform: translate3d(-50%, 0, 114px);
+		box-shadow:
+			rgba(97, 131, 171, 0.45) -10px 14px 20px 0,
+			rgba(255, 255, 255, 0.6) 0 0 0 3px;
+	}
+
+	@media (max-width: 768px) {
+		.profile-parent,
+		.profile-card {
+			min-height: 300px;
+		}
+
+		.content {
+			padding: 8rem 1.2rem 6.4rem 1.2rem;
+		}
+
+		.title {
+			font-size: 1.15rem;
+		}
+
+		.text,
+		.profile-stats,
+		.profile-title-link,
+		.social-buttons-container {
+			max-width: 72%;
+		}
+
+		.logo {
+			width: 5.6rem;
+			height: 5.6rem;
+			top: 1.35rem;
+			border-radius: 1.3rem;
+		}
+
+		.profile-parent:hover .profile-card {
+			transform: rotate3d(1, 1, 0, 16deg);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.profile-card,
+		.glass,
+		.social-button,
+		.logo,
+		.view-more {
+			transition: none !important;
+		}
+
+		.profile-parent:hover .profile-card,
+		.profile-parent:hover .profile-card .social-button,
+		.profile-parent:hover .profile-card .view-more,
+		.profile-parent:hover .profile-card .logo {
+			transform: none;
+		}
+	}
+</style>
 
 <script
 	is:inline
