@@ -9,7 +9,6 @@ interface Props {
 	defaultWallpaperMode?: string;
 	defaultPostListLayout?: string;
 	BANNER_HEIGHT?: number;
-	pageScaling?: { enable: boolean; targetWidth?: number };
 }
 
 const {
@@ -17,7 +16,6 @@ const {
 	defaultWallpaperMode = "banner",
 	defaultPostListLayout = "list",
 	BANNER_HEIGHT = 35,
-	pageScaling = { enable: false },
 } = Astro.props;
 ---
 
@@ -29,7 +27,6 @@ const {
 		defaultWallpaperMode,
 		defaultPostListLayout,
 		BANNER_HEIGHT,
-		pageScaling,
 	}}
 >
 	// 立即执行，在页面渲染前应用壁纸模式和布局模式，避免闪烁

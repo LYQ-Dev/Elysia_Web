@@ -6,7 +6,11 @@
  * 提取自 Layout.astro 以实现更好的代码组织
  */
 
-import { profileConfig, siteConfig } from "@/config";
+import {
+	fullscreenWallpaperConfig,
+	profileConfig,
+	siteConfig,
+} from "@/config";
 
 import {
 	DARK_MODE,
@@ -44,6 +48,72 @@ const keywords = siteConfig.keywords;
 // Favicons
 const favicons: Favicon[] =
 	siteConfig.favicon.length > 0 ? siteConfig.favicon : defaultFavicons;
+
+function toArray(src: string | string[] | undefined): string[] {
+	if (Array.isArray(src)) {
+		return src.filter(Boolean);
+	}
+	return src ? [src] : [];
+}
+
+function getFirstResponsiveImages(
+	srcConfig:
+		| string
+		| string[]
+		| {
+				desktop?: string | string[];
+				mobile?: string | string[];
+		  },
+): { desktop?: string; mobile?: string } {
+	if (typeof srcConfig === "string" || Array.isArray(srcConfig)) {
+		const all = toArray(srcConfig);
+		return {
+			desktop: all[0],
+			mobile: all[0],
+		};
+	}
+
+	const desktop = toArray(srcConfig.desktop);
+	const mobile = toArray(srcConfig.mobile);
+
+	return {
+		desktop: desktop[0] || mobile[0],
+		mobile: mobile[0] || desktop[0],
+	};
+}
+
+function toAssetHref(src?: string): string | undefined {
+	if (!src) {
+		return undefined;
+	}
+	return src.startsWith("/") ? url(src) : src;
+}
+
+function getImageType(src?: string): string | undefined {
+	if (!src) {
+		return undefined;
+	}
+	if (/\.webp(\?.*)?$/i.test(src)) {
+		return "image/webp";
+	}
+	if (/\.png(\?.*)?$/i.test(src)) {
+		return "image/png";
+	}
+	if (/\.jpe?g(\?.*)?$/i.test(src)) {
+		return "image/jpeg";
+	}
+	return undefined;
+}
+
+const bannerFirstImages = getFirstResponsiveImages(siteConfig.banner.src);
+const fullscreenFirstImages = getFirstResponsiveImages(fullscreenWallpaperConfig.src);
+const shouldPreloadFullscreenFirstImage =
+	siteConfig.wallpaperMode.defaultMode === "fullscreen";
+const preloadFirstImages = shouldPreloadFullscreenFirstImage
+	? fullscreenFirstImages
+	: bannerFirstImages;
+const preloadDesktopHref = toAssetHref(preloadFirstImages.desktop);
+const preloadMobileHref = toAssetHref(preloadFirstImages.mobile);
 ---
 
 <!-- SEO Meta Tags -->
@@ -98,6 +168,30 @@ const favicons: Favicon[] =
 <!-- 预连接 Iconify API 以减少图标加载延迟 -->
 <link rel="preconnect" href="https://api.iconify.design" crossorigin />
 
+<!-- 首屏 Banner / Fullscreen 首图预加载（按默认壁纸模式选择） -->
+{
+	preloadDesktopHref && (
+		<link
+			rel="preload"
+			as="image"
+			href={preloadDesktopHref}
+			media="(min-width: 768px)"
+			type={getImageType(preloadDesktopHref)}
+		/>
+	)
+}
+{
+	preloadMobileHref && (
+		<link
+			rel="preload"
+			as="image"
+			href={preloadMobileHref}
+			media="(max-width: 767px)"
+			type={getImageType(preloadMobileHref)}
+		/>
+	)
+}
+
 <!-- Set the theme before the page is rendered to avoid a flash -->
 <script
 	is:inline
@@ -147,6 +241,8 @@ const favicons: Favicon[] =
 	// 自动缩放逻辑 (Moved from MainGridLayout to here for earlier execution)
 	(function () {
 		if (pageScaling && pageScaling.enable) {
+			let debounceTimer;
+
 			function adjustPageScale() {
 				const isTouch =
 					(window.matchMedia &&
@@ -173,15 +269,28 @@ const favicons: Favicon[] =
 				document.documentElement.style.fontSize = `${scale * 100}%`;
 			}
 
+			function scheduleAdjustPageScale() {
+				if (debounceTimer) {
+					clearTimeout(debounceTimer);
+				}
+				debounceTimer = setTimeout(adjustPageScale, 120);
+			}
+
 			// 立即执行一次
 			adjustPageScale();
 
-			// 监听窗口大小变化
-			window.addEventListener("resize", adjustPageScale);
+			// 监听窗口变化（passive + debounce）
+			window.addEventListener("resize", scheduleAdjustPageScale, {
+				passive: true,
+			});
+			window.addEventListener(
+				"orientationchange",
+				scheduleAdjustPageScale,
+				{ passive: true },
+			);
 
 			// Swup 页面切换后也需要检查
 			document.addEventListener("swup:page:view", adjustPageScale);
-			window.addEventListener("orientationchange", adjustPageScale);
 		}
 	})();
 </script>

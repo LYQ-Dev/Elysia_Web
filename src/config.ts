@@ -23,6 +23,25 @@ import { LinkPreset } from "./types/config";
 // 定义站点语言
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
+
+// Banner 与全屏壁纸共用图片源，减少重复配置与打包体积
+const SHARED_WALLPAPER_SOURCES: { desktop: string[]; mobile: string[] } = {
+	desktop: [
+		"/assets/desktop-banner/1.webp",
+		"/assets/desktop-banner/2.webp",
+		"/assets/desktop-banner/3.webp",
+		"/assets/desktop-banner/4.webp",
+		"/assets/desktop-banner/5.webp",
+		"/assets/desktop-banner/6.webp",
+		"/assets/desktop-banner/7.webp",
+	],
+	mobile: [
+		"/assets/mobile-banner/1.webp",
+		"/assets/mobile-banner/2.webp",
+		"/assets/mobile-banner/3.webp",
+	],
+};
+
 export const siteConfig: SiteConfig = {
 	title: "Elysia",
 	subtitle: "Elysia",
@@ -123,22 +142,7 @@ export const siteConfig: SiteConfig = {
 
 	banner: {
 		// 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
-		src: {
-			desktop: [
-				"/assets/desktop-banner/1.webp",
-				"/assets/desktop-banner/2.webp",
-				"/assets/desktop-banner/3.webp",
-				"/assets/desktop-banner/4.webp",
-				"/assets/desktop-banner/5.webp",
-				"/assets/desktop-banner/6.webp",
-				"/assets/desktop-banner/7.webp",
-			], // 桌面横幅图片
-			mobile: [
-				"/assets/mobile-banner/1.webp",
-				"/assets/mobile-banner/2.webp",
-				"/assets/mobile-banner/3.webp",
-			], // 移动横幅图片
-		}, // 使用本地横幅图片
+		src: SHARED_WALLPAPER_SOURCES, // 使用本地横幅图片
 
 		position: "center", // 等同于 object-position，仅支持 'top', 'center', 'bottom'。默认为 'center'
 
@@ -241,23 +245,7 @@ export const siteConfig: SiteConfig = {
 	},
 };
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
-	src: {
-		desktop: [
-			"/assets/desktop-banner/1.webp",
-			"/assets/desktop-banner/2.webp",
-			"/assets/desktop-banner/3.webp",
-			"/assets/desktop-banner/4.webp",
-			"/assets/desktop-banner/5.webp",
-			"/assets/desktop-banner/6.webp",
-			"/assets/desktop-banner/7.webp",
-		], // 桌面横幅图片
-		mobile: [
-			"/assets/mobile-banner/1.webp",
-			"/assets/mobile-banner/2.webp",
-			"/assets/mobile-banner/3.webp",
-			"/assets/mobile-banner/4.webp",
-		], // 移动横幅图片
-	}, // 使用本地横幅图片
+	src: SHARED_WALLPAPER_SOURCES, // 与 Banner 共用图片源
 	position: "center", // 壁纸位置，等同于 object-position
 	carousel: {
 		enable: false, // 启用轮播
@@ -527,11 +515,8 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 };
 
 export const footerConfig: FooterConfig = {
-	enable: false, // 是否启用Footer HTML注入功能
-	customHtml: "", // HTML格式的自定义页脚信息，例如备案号等，默认留空
-	// 也可以直接编辑 FooterConfig.html 文件来添加备案号等自定义内容
-	// 注意：若 customHtml 不为空，则使用 customHtml 中的内容；若 customHtml 留空，则使用 FooterConfig.html 文件中的内容
-	// FooterConfig.html 可能会在未来的某个版本弃用
+	enable: false, // 是否启用自定义页脚区块
+	customHtml: "", // HTML 格式的自定义页脚信息（留空则不渲染该区块）
 };
 
 /**

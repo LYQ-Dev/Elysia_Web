@@ -34,11 +34,15 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
 		private pauseTime: number;
 		private currentIndex = 0;
 		private isDeleting = false;
-		private timeoutId: number | null = null;
+		private rafId: number | null = null;
+		private nextActionAt = 0;
+		private running = false;
+		private readonly tickBound: (timestamp: number) => void;
 
 		constructor(element: HTMLElement) {
 			this.element = element;
 			const textData = element.dataset.text || "";
+			this.tickBound = this.tick.bind(this);
 
 			// 尝试解析为 JSON 数组，如果失败则作为单个字符串处理
 			try {
@@ -78,14 +82,26 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
 			if (this.texts.length === 0) {
 				return;
 			}
-			this.type();
+
+			this.running = true;
+			this.nextActionAt = performance.now();
+			this.rafId = requestAnimationFrame(this.tickBound);
 		}
 
 		private getCurrentText(): string {
 			return this.texts[this.currentTextIndex] || "";
 		}
 
-		private type() {
+		private tick(timestamp: number) {
+			if (!this.running) {
+				return;
+			}
+
+			if (timestamp < this.nextActionAt) {
+				this.rafId = requestAnimationFrame(this.tickBound);
+				return;
+			}
+
 			const currentText = this.getCurrentText();
 
 			if (this.isDeleting) {
@@ -96,19 +112,13 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
 						0,
 						this.currentIndex,
 					);
-					this.timeoutId = window.setTimeout(
-						() => this.type(),
-						this.deleteSpeed,
-					);
+					this.nextActionAt = timestamp + this.deleteSpeed;
 				} else {
 					// 删除完成，切换到下一条文本
 					this.isDeleting = false;
 					this.currentTextIndex =
 						(this.currentTextIndex + 1) % this.texts.length;
-					this.timeoutId = window.setTimeout(
-						() => this.type(),
-						this.speed,
-					);
+					this.nextActionAt = timestamp + this.speed;
 				}
 			} else {
 				// 添加字符
@@ -118,50 +128,56 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
 						0,
 						this.currentIndex,
 					);
-					this.timeoutId = window.setTimeout(
-						() => this.type(),
-						this.speed,
-					);
+					this.nextActionAt = timestamp + this.speed;
 				} else {
 					// 打字完成，暂停后开始删除（如果有多条文本）
 					if (this.texts.length > 1) {
 						this.isDeleting = true;
-						this.timeoutId = window.setTimeout(
-							() => this.type(),
-							this.pauseTime,
-						);
+						this.nextActionAt = timestamp + this.pauseTime;
 					} else {
 						// 如果只有一条文本，保持显示不删除，但确保元素有内容
 						if (this.texts.length === 1 && this.texts[0] === "") {
 							this.element.innerHTML = "&nbsp;"; // 使用不间断空格保持布局
 						}
+						this.running = false;
+						this.rafId = null;
+						return;
 					}
 				}
 			}
+
+			this.rafId = requestAnimationFrame(this.tickBound);
 		}
 
 		public destroy() {
-			if (this.timeoutId) {
-				clearTimeout(this.timeoutId);
+			this.running = false;
+			if (this.rafId !== null) {
+				cancelAnimationFrame(this.rafId);
+				this.rafId = null;
 			}
 		}
 	}
 
-	// 初始化所有打字机效果
-	document.addEventListener("DOMContentLoaded", () => {
-		const typewriterElements = document.querySelectorAll(".typewriter");
+	interface TypewriterElement extends HTMLElement {
+		__typewriterInstance?: TypewriterEffect;
+	}
+
+	function initTypewriterEffects() {
+		const typewriterElements = document.querySelectorAll(
+			".typewriter",
+		) as NodeListOf<TypewriterElement>;
+
 		typewriterElements.forEach((element) => {
-			new TypewriterEffect(element as HTMLElement);
+			element.__typewriterInstance?.destroy();
+			element.__typewriterInstance = new TypewriterEffect(element);
 		});
-	});
+	}
+
+	// 初始化所有打字机效果
+	document.addEventListener("DOMContentLoaded", initTypewriterEffects);
 
 	// 支持页面切换时重新初始化
-	document.addEventListener("swup:contentReplaced", () => {
-		const typewriterElements = document.querySelectorAll(".typewriter");
-		typewriterElements.forEach((element) => {
-			new TypewriterEffect(element as HTMLElement);
-		});
-	});
+	document.addEventListener("swup:contentReplaced", initTypewriterEffects);
 </script>
 
 <style>

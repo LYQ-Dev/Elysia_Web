@@ -359,8 +359,8 @@ export interface MusicPlayerConfig {
 }
 
 export interface FooterConfig {
-	enable: boolean; // 是否启用Footer HTML注入功能
-	customHtml?: string; // 自定义HTML内容，用于添加备案号等信息
+	enable: boolean; // 是否启用自定义页脚区块
+	customHtml?: string; // 自定义 HTML 内容（留空则不渲染该区块）
 }
 
 // 组件配置类型定义
