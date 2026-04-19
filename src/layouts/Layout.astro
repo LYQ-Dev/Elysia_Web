@@ -1,6 +1,7 @@
 ---
 import ConfigCarrier from "@components/misc/ConfigCarrier.astro";
 import MusicPlayer from "@components/widgets/music-player/MusicPlayer.svelte";
+import PioComponent from "@components/features/pio/Pio.svelte";
 import { PageProgressBar } from "@components/control/PageProgressBar";
 import { pioConfig, profileConfig, siteConfig } from "@/config";
 import { PAGE_WIDTH } from "../constants/constants";
@@ -15,10 +16,6 @@ import "../styles/panel-animations.css";
 // 导入新提取的 Head 组件
 import AnalyticsScripts from "./partials/AnalyticsScripts.astro";
 import HeadTags from "./partials/HeadTags.astro";
-
-const PioComponent = pioConfig.enable
-	? (await import("@components/features/pio/Pio.svelte")).default
-	: null;
 
 const BANNER_HEIGHT = 35;
 const BANNER_HEIGHT_EXTEND = 30;
@@ -217,7 +214,7 @@ if (siteConfig.font) {
 		<MusicPlayer client:idle />
 
 		<!-- Pio 看板娘组件 - 仅在进入视口时加载 -->
-		{pioConfig.enable && PioComponent && <PioComponent client:visible />}
+		{pioConfig.enable && <PioComponent client:visible />}
 
 		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>

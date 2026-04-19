@@ -60,6 +60,11 @@ const finalMainPanelTop = getMainPanelTop(
 	BANNER_HEIGHT,
 );
 
+const computedMainPanelTop =
+	isHomePage && siteConfig.wallpaperMode.defaultMode === "banner"
+		? `calc(${finalMainPanelTop} + 3.5rem)`
+		: finalMainPanelTop;
+
 // 计算网格布局
 const {
 	gridCols,
@@ -136,7 +141,7 @@ const defaultPostListLayout = siteConfig.postListLayout?.defaultMode || "list";
 	<!-- Main content -->
 	<div
 		class={`absolute w-full z-30 pointer-events-none ${mobileNonHomeBannerClass ? "mobile-main-no-banner" : ""} ${siteConfig.wallpaperMode.defaultMode === "none" ? "no-banner-layout" : ""} ${transparentClass}`}
-		style={`top: ${finalMainPanelTop}`}
+		style={`top: ${computedMainPanelTop}`}
 	>
 		<!-- The pointer-events-none here prevent blocking the click event of the TOC -->
 		<div class="relative max-w-(--page-width) mx-auto pointer-events-auto">

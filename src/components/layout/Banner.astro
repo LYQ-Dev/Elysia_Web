@@ -81,7 +81,12 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 			))}
 		</div>
 
-		<div class="banner-tilt-panel">
+		<div
+			class:list={[
+				"banner-tilt-panel",
+				{ "with-attached-fade": showWave },
+			]}
+		>
 			{isCarouselEnabled ? (
 				/* 轮播图模式：Ken Burns + Crossfade */
 				<div
@@ -251,6 +256,9 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 					</script>
 				</div>
 			)}
+
+			<!-- 贴合图片底边的遮线条：随图片层一起倾斜移动 -->
+			<span class="banner-bottom-solid-strip-attached" aria-hidden="true" />
 		</div>
 	</div>
 
@@ -718,7 +726,7 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 			var panel = root.querySelector(".banner-tilt-panel");
 			if (!canvas || !panel) {return;}
 
-			var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+			var canHover = window.matchMedia("(hover: hover)").matches;
 			var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 			if (!canHover || reduceMotion) {
@@ -728,9 +736,9 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 				return;
 			}
 
-			var MAX_ROTATE_X = 8;
-			var MAX_ROTATE_Y = 4;
-			var FOLLOW_FACTOR = 0.09;
+			var MAX_ROTATE_X = 11;
+			var MAX_ROTATE_Y = 7;
+			var FOLLOW_FACTOR = 0.14;
 
 			var targetX = 0;
 			var targetY = 0;
@@ -875,20 +883,6 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 		</div>
 	)}
 
-	<!-- 底部轻量流体过渡：Apple 风格玻璃分界，纯 CSS 低开销动画 -->
-	{showWave && (
-		<div
-			class="waves absolute -bottom-[1px] h-[10vh] max-h-[9.375rem] min-h-[3.125rem] w-full md:h-[15vh]"
-			id="header-waves"
-			aria-hidden="true"
-		>
-			<div class="banner-seam-surface">
-				<span class="banner-seam-sheen" />
-				<span class="banner-seam-reflect" />
-			</div>
-		</div>
-	)}
-
 	<!-- Banner 图片来源标注 -->
 	{hasBannerCredit && (
 		<a
@@ -927,12 +921,20 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 		height: 100%;
 		perspective: 1200px;
 		isolation: isolate;
+		--banner-edge-radius: clamp(0.7rem, 1.6vw, 1.2rem);
+		--edge-fade-size: clamp(2.4rem, 7vh, 4.4rem);
+		--edge-fade-bottom-size: clamp(3.4rem, 10vh, 6rem);
+		border-radius: var(--banner-edge-radius);
+		overflow: hidden;
+		background: var(--page-bg);
 	}
 
 	.banner-tilt-canvas {
 		position: absolute;
 		inset: 0;
 		z-index: 3;
+		border-radius: inherit;
+		overflow: hidden;
 		display: grid;
 		grid-template-columns: repeat(5, minmax(0, 1fr));
 		grid-template-rows: repeat(5, minmax(0, 1fr));
@@ -949,8 +951,12 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 		z-index: 1;
 		width: 100%;
 		height: 100%;
+		border-radius: inherit;
 		overflow: hidden;
-		transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(0);
+		background: var(--page-bg);
+		/* Use panel-attached page-bg shadow to hide sub-pixel seam under tilt */
+		box-shadow: 0 1px 0 var(--page-bg), 0 2px 0 var(--page-bg);
+		transform: scale(1.022) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(0);
 		transform-origin: center center;
 		transform-style: preserve-3d;
 		backface-visibility: hidden;
@@ -963,17 +969,57 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 		content: "";
 		position: absolute;
 		inset: -1.25rem;
-		background: linear-gradient(
-			43deg,
-			rgb(65, 88, 208) 0%,
-			rgb(200, 80, 192) 46%,
-			rgb(255, 204, 112) 100%
-		);
-		filter: blur(2rem);
-		opacity: 0.24;
+		border-radius: inherit;
+		background: var(--page-bg);
+		filter: none;
+		opacity: 1;
 		pointer-events: none;
-		transition: opacity 240ms ease;
+		transition: none;
 		z-index: -1;
+	}
+
+	.banner-tilt-panel.with-attached-fade::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		pointer-events: none;
+		z-index: 2;
+		background: linear-gradient(
+			to bottom,
+			color-mix(in oklab, var(--page-bg) 56%, transparent) 0%,
+			color-mix(in oklab, var(--page-bg) 22%, transparent) 58%,
+			transparent 100%
+		),
+		linear-gradient(
+			to top,
+			var(--page-bg) 0%,
+			color-mix(in oklab, var(--page-bg) 88%, transparent) 36%,
+			color-mix(in oklab, var(--page-bg) 52%, transparent) 68%,
+			transparent 100%
+		),
+		linear-gradient(
+			to right,
+			color-mix(in oklab, var(--page-bg) 62%, transparent) 0%,
+			color-mix(in oklab, var(--page-bg) 22%, transparent) 60%,
+			transparent 100%
+		),
+		linear-gradient(
+			to left,
+			color-mix(in oklab, var(--page-bg) 62%, transparent) 0%,
+			color-mix(in oklab, var(--page-bg) 22%, transparent) 60%,
+			transparent 100%
+		);
+		background-size:
+			100% var(--edge-fade-size),
+			100% var(--edge-fade-bottom-size),
+			var(--edge-fade-size) 100%,
+			var(--edge-fade-size) 100%;
+		background-position: top center, bottom center, left center, right center;
+		background-repeat: no-repeat;
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
+		transform: translateZ(0);
 	}
 
 	.banner-tilt-panel #banner-carousel,
@@ -987,7 +1033,37 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 	}
 
 	.banner-tilt-panel.is-tilting::before {
-		opacity: 0.32;
+		opacity: 1;
+	}
+
+	.banner-bottom-solid-strip-attached {
+		position: absolute;
+		left: -0.3rem;
+		right: -0.3rem;
+		bottom: -1px;
+		height: clamp(7px, 0.75vw, 12px);
+		border-radius: 0 0 var(--banner-edge-radius) var(--banner-edge-radius);
+		background: var(--page-bg);
+		pointer-events: none;
+		z-index: 4;
+		transform: translateZ(0);
+		box-shadow: 0 2px 0 var(--page-bg);
+	}
+
+	#banner-wrapper {
+		background: var(--page-bg);
+	}
+
+	#banner-wrapper::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -1px;
+		height: 4px;
+		background: var(--page-bg);
+		pointer-events: none;
+		z-index: 24;
 	}
 
 	@media (hover: none), (pointer: coarse) {
@@ -1002,7 +1078,7 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 		}
 
 		.banner-tilt-panel::before {
-			opacity: 0.18;
+			opacity: 1;
 		}
 	}
 
@@ -1010,151 +1086,6 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 		.banner-tilt-panel {
 			transform: none !important;
 			transition: filter 200ms ease-in-out;
-		}
-	}
-
-	.banner-seam-surface {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		pointer-events: none;
-		transform: translateZ(0);
-		backface-visibility: hidden;
-	}
-
-	.banner-seam-surface::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background:
-			radial-gradient(
-				130% 95% at 50% -8%,
-				rgba(255, 255, 255, 0.52) 0%,
-				rgba(255, 255, 255, 0.22) 46%,
-				rgba(255, 255, 255, 0.06) 68%,
-				rgba(255, 255, 255, 0) 100%
-			),
-			linear-gradient(
-				to bottom,
-				rgba(255, 255, 255, 0.28) 0%,
-				rgba(255, 255, 255, 0.12) 48%,
-				rgba(255, 255, 255, 0) 100%
-			);
-		opacity: 0.92;
-	}
-
-	.banner-seam-surface::after {
-		content: "";
-		position: absolute;
-		left: -8%;
-		right: -8%;
-		top: 4%;
-		height: 58%;
-		border-radius: 0 0 50% 50% / 0 0 100% 100%;
-		border-top: 1px solid rgba(255, 255, 255, 0.45);
-		opacity: 0.62;
-		filter: blur(0.2px);
-	}
-
-	.banner-seam-sheen,
-	.banner-seam-reflect {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		transform: translate3d(0, 0, 0);
-		will-change: transform, opacity;
-	}
-
-	.banner-seam-sheen {
-		background: linear-gradient(
-			100deg,
-			rgba(255, 255, 255, 0) 22%,
-			rgba(255, 255, 255, 0.36) 48%,
-			rgba(255, 255, 255, 0) 74%
-		);
-		opacity: 0.55;
-		animation: seam-glide 11s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-	}
-
-	.banner-seam-reflect {
-		background: radial-gradient(
-			46% 72% at 50% 14%,
-			rgba(255, 255, 255, 0.22) 0%,
-			rgba(255, 255, 255, 0.06) 62%,
-			rgba(255, 255, 255, 0) 100%
-		);
-		animation: seam-breathe 5.6s ease-in-out infinite;
-	}
-
-	:global(.dark) .banner-seam-surface::before {
-		background:
-			radial-gradient(
-				130% 95% at 50% -8%,
-				rgba(255, 255, 255, 0.28) 0%,
-				rgba(255, 255, 255, 0.12) 48%,
-				rgba(255, 255, 255, 0.04) 68%,
-				rgba(255, 255, 255, 0) 100%
-			),
-			linear-gradient(
-				to bottom,
-				rgba(255, 255, 255, 0.16) 0%,
-				rgba(255, 255, 255, 0.06) 52%,
-				rgba(255, 255, 255, 0) 100%
-			);
-	}
-
-	:global(.dark) .banner-seam-surface::after {
-		border-top-color: rgba(255, 255, 255, 0.24);
-		opacity: 0.52;
-	}
-
-	@keyframes seam-glide {
-		0% {
-			transform: translate3d(-38%, 0, 0);
-			opacity: 0;
-		}
-		12% {
-			opacity: 0.42;
-		}
-		50% {
-			transform: translate3d(34%, 0, 0);
-			opacity: 0.62;
-		}
-		88% {
-			opacity: 0.34;
-		}
-		100% {
-			transform: translate3d(108%, 0, 0);
-			opacity: 0;
-		}
-	}
-
-	@keyframes seam-breathe {
-		0%,
-		100% {
-			opacity: 0.3;
-			transform: translate3d(0, 0, 0) scale(1);
-		}
-		50% {
-			opacity: 0.55;
-			transform: translate3d(0, -2%, 0) scale(1.03);
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.banner-seam-sheen,
-		.banner-seam-reflect {
-			animation: none;
-			transform: none;
-		}
-
-		.banner-seam-sheen {
-			opacity: 0.25;
-		}
-
-		.banner-seam-reflect {
-			opacity: 0.28;
 		}
 	}
 

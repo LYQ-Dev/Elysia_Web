@@ -25,7 +25,7 @@
 | 书籍 | `/books/` | `src/content/books/` | `单文件 .md` | 当前详情路由仍按单段 slug，暂不建议改成 `目录/index.md` |
 | 项目 | `/projects/` | `src/content/projects/` | `单文件 .md` | 同上，建议继续单文件 |
 | 网站 | `/websites/` | `src/content/websites/` | `单文件 .md` | 同上，建议继续单文件 |
-| 特殊页（关于/友链） | `/about/` `/friends/` | `src/content/spec/` | `about.md` `friends.md` | 特殊页面内容 |
+| 特殊页（关于） | `/about/` | `src/content/spec/` | `about.md` | 特殊页面内容 |
 
 ---
 

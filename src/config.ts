@@ -61,7 +61,6 @@ export const siteConfig: SiteConfig = {
 	featurePages: {
 		anime: true, // 番剧页面开关
 		diary: true, // 日记页面开关
-		friends: true, // 友链页面开关
 		projects: true, // 项目页面开关
 		skills: true, // 技能页面开关
 		timeline: true, // 时间线页面开关
@@ -338,11 +337,6 @@ export const navBarConfig: NavBarConfig = {
 					name: "关于我",
 					url: "/about/",
 					icon: "material-symbols:person",
-				},
-				{
-					name: "友链",
-					url: "/friends/",
-					icon: "material-symbols:group",
 				},
 				{
 					name: "技能",
@@ -682,25 +676,29 @@ export const sakuraConfig: SakuraConfig = {
 
 // Pio 看板娘配置
 export const pioConfig: import("./types/config").PioConfig = {
-	enable: false, // 禁用看板娘以提升性能
-	models: ["/pio/models/pio/model.json"], // 默认模型路径
+	enable: true, // 禁用看板娘以提升性能
+	models: [
+		"/pio/models/pio/model-default.json",
+		"/pio/models/pio/model-pajamas.json",
+		"/pio/models/pio/model-school.json",
+	], // 多皮套模型路径（数量 > 1 时显示换装按钮）
 	position: "left", // 模型位置
-	width: 280, // 默认宽度
-	height: 250, // 默认高度
+	width: 224, // 默认宽度
+	height: 200, // 默认高度
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
-		welcome: "Welcome to Elysia Website!", // 欢迎词
+		welcome: "欢迎来到 Elysia Blog!", // 欢迎词
 		touch: [
-			"What are you doing?",
-			"Stop touching me!",
+			"你在做什么喵~",
+			"不要碰人家喵~",
 			"HENTAI!",
-			"Don't bully me like that!",
+			"别捉弄我了喵~",
 		], // 触摸提示
-		home: "Click here to go back to homepage!", // 首页提示
-		skin: ["Want to see my new outfit?", "The new outfit looks great~"], // 换装提示
-		close: "QWQ See you next time~", // 关闭提示
-		link: "https://github.com/LyraVoid/Mizuki", // 关于链接
+		home: "点这回到首页~", // 首页提示
+		skin: ["想要看看我的新衣服嘛？", "换好了喵~"], // 换装提示
+		close: "QWQ 下次见了喵~", // 关闭提示
+		link: "https://github.com/LYQ-Dev/Elysia_Web", // 关于链接
 	},
 };
 

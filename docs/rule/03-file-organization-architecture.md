@@ -155,7 +155,6 @@ Mizuki/
 │   │   │   ├── [slug].astro
 │   │   │   └── index.astro
 │   │   ├── albums/
-│   │   ├── friends/
 │   │   ├── projects/
 │   │   ├── skills/
 │   │   └── api/
@@ -197,7 +196,6 @@ Mizuki/
 │   │       └── ja.ts
 │   │
 │   ├── data/                # 数据文件
-│   │   ├── friends.ts
 │   │   └── projects.ts
 │   │
 │   ├── scripts/              # 脚本文件
@@ -471,7 +469,7 @@ import MainLayout from '../layouts/Layout.astro'
 **职责**：定义页面的路由结构。
 
 **组织方式**：
-- 按功能分组（posts、albums、friends 等）
+- 按功能分组（posts、albums、projects 等）
 - 使用 `[slug]` 等动态路由
 - `api/` 子目录用于 API 路由
 
@@ -485,8 +483,6 @@ pages/
 ├── albums/                 # 相册页面
 │   ├── index.astro         # 相册列表
 │   └── [id].astro          # 相册详情
-├── friends/                # 友链页面
-│   └── index.astro
 ├── projects/               # 项目页面
 │   └── index.astro
 ├── skills/                 # 技能页面
@@ -566,7 +562,6 @@ export const ROUTES = {
   HOME: '/',
   POSTS: '/posts',
   ALBUMS: '/albums',
-  FRIENDS: '/friends',
 } as const
 
 // 使用时
@@ -635,26 +630,23 @@ const title = i18n(I18nKey.homePage)
 **职责**：存放静态数据文件。
 
 **包含文件**：
-- `friends.ts` - 友链数据
 - `projects.ts` - 项目数据
 - `skills.ts` - 技能数据
 
 **示例**：
 ```typescript
-// data/friends.ts
-export interface Friend {
-  name: string
-  url: string
-  avatar: string
+// data/projects.ts
+export interface Project {
+  title: string
   description: string
+  url: string
 }
 
-export const friends: Friend[] = [
+export const projects: Project[] = [
   {
-    name: 'Friend Name',
+    title: 'My Project',
     url: 'https://example.com',
-    avatar: '/assets/friends/avatar.png',
-    description: 'Description'
+    description: 'Description',
   }
 ]
 ```
