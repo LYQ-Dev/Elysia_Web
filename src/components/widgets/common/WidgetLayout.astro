@@ -14,11 +14,20 @@ interface Props {
 }
 const { id, name, isCollapsed, collapsedHeight, style } = Astro.props;
 const className = Astro.props.class;
+const TILT_WIDGET_IDS = new Set([
+	"site-stats",
+	"tags",
+	"card-toc",
+	"categories",
+	"calendar-widget",
+]);
+const isTiltCard = TILT_WIDGET_IDS.has(id);
 ---
 
 <widget-layout
 	data-id={id}
 	data-is-collapsed={String(isCollapsed)}
+	data-tilt-card={isTiltCard ? "true" : undefined}
 	class={"pb-4 card-base " + className}
 	style={style}
 >
@@ -64,14 +73,29 @@ const className = Astro.props.class;
 	.collapsed {
 		height: var(--collapsedHeight);
 	}
+
+	widget-layout[data-tilt-card="true"] {
+		transform-origin: center center;
+		backface-visibility: hidden;
+		will-change: transform;
+	}
+
+	@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+		widget-layout[data-tilt-card="true"] {
+			transform: none !important;
+		}
+	}
 </style>
 
 <script>
+	const tiltCleanupMap = new WeakMap<WidgetLayout, () => void>();
+
 	class WidgetLayout extends HTMLElement {
 		constructor() {
 			super();
 
 			if (this.dataset.isCollapsed !== "true") {
+				this.setupTiltCard();
 				return;
 			}
 
@@ -81,6 +105,182 @@ const className = Astro.props.class;
 			btn!.addEventListener("click", () => {
 				wrapper!.classList.remove("collapsed");
 				btn!.classList.add("hidden");
+			});
+
+			this.setupTiltCard();
+		}
+
+		disconnectedCallback() {
+			const cleanup = tiltCleanupMap.get(this);
+			if (typeof cleanup === "function") {
+				cleanup();
+				tiltCleanupMap.delete(this);
+			}
+		}
+
+		setupTiltCard() {
+			if (this.dataset.tiltCard !== "true") {
+				return;
+			}
+
+			if (!document.body.classList.contains("lg:is-home")) {
+				return;
+			}
+
+			const canHover = window.matchMedia("(hover: hover) and (pointer: fine)")
+				.matches;
+			const reduceMotion = window.matchMedia(
+				"(prefers-reduced-motion: reduce)",
+			).matches;
+
+			if (!canHover || reduceMotion) {
+				return;
+			}
+
+			const MAX_ROTATE_X = 14;
+			const MAX_ROTATE_Y = 9;
+			const FOLLOW_FACTOR = 0.18;
+
+			let targetX = 0;
+			let targetY = 0;
+			let currentX = 0;
+			let currentY = 0;
+			let rafId: number | null = null;
+			let rect: DOMRect | null = null;
+			let needRectUpdate = true;
+			let isInside = false;
+
+			const host = this;
+
+			function softCurve(value: number): number {
+				const clamped = Math.max(-1, Math.min(1, value));
+				return Math.sin(clamped * Math.PI * 0.5);
+			}
+
+			function updateRect() {
+				rect = host.getBoundingClientRect();
+				needRectUpdate = false;
+			}
+
+			function queueTick() {
+				if (rafId !== null) {
+					return;
+				}
+				rafId = requestAnimationFrame(tick);
+			}
+
+			function resetTransform() {
+				host.style.removeProperty("transform");
+				host.classList.remove("is-tilting");
+			}
+
+			function tick() {
+				rafId = null;
+
+				currentX += (targetX - currentX) * FOLLOW_FACTOR;
+				currentY += (targetY - currentY) * FOLLOW_FACTOR;
+
+				if (Math.abs(targetX - currentX) < 0.01) {
+					currentX = targetX;
+				}
+				if (Math.abs(targetY - currentY) < 0.01) {
+					currentY = targetY;
+				}
+
+				if (
+					!isInside &&
+					Math.abs(currentX) < 0.01 &&
+					Math.abs(currentY) < 0.01 &&
+					Math.abs(targetX) < 0.01 &&
+					Math.abs(targetY) < 0.01
+				) {
+					resetTransform();
+					return;
+				}
+
+				host.style.setProperty(
+					"transform",
+					`perspective(1200px) rotateX(${currentX.toFixed(3)}deg) rotateY(${currentY.toFixed(3)}deg) translateZ(0)`,
+					"important",
+				);
+				host.classList.add("is-tilting");
+
+				if (
+					isInside ||
+					Math.abs(targetX - currentX) > 0.01 ||
+					Math.abs(targetY - currentY) > 0.01
+				) {
+					queueTick();
+				}
+			}
+
+			function setTargetFromPointer(event: PointerEvent) {
+				if (needRectUpdate || !rect) {
+					updateRect();
+				}
+
+				if (!rect || rect.width === 0 || rect.height === 0) {
+					return;
+				}
+
+				const relativeX = (event.clientX - rect.left) / rect.width;
+				const relativeY = (event.clientY - rect.top) / rect.height;
+
+				const normalizedX = softCurve(relativeX * 2 - 1);
+				const normalizedY = softCurve(1 - relativeY * 2);
+
+				targetX = normalizedY * MAX_ROTATE_X;
+				targetY = normalizedX * MAX_ROTATE_Y;
+				queueTick();
+			}
+
+			function onPointerEnter(event: PointerEvent) {
+				isInside = true;
+				needRectUpdate = true;
+				setTargetFromPointer(event);
+			}
+
+			function onPointerMove(event: PointerEvent) {
+				if (!isInside) {
+					return;
+				}
+				setTargetFromPointer(event);
+			}
+
+			function onPointerLeave() {
+				isInside = false;
+				targetX = 0;
+				targetY = 0;
+				queueTick();
+			}
+
+			function onViewportChange() {
+				needRectUpdate = true;
+			}
+
+			host.addEventListener("pointerenter", onPointerEnter);
+			host.addEventListener("pointermove", onPointerMove);
+			host.addEventListener("pointerleave", onPointerLeave);
+			window.addEventListener("resize", onViewportChange, {
+				passive: true,
+			});
+			window.addEventListener("scroll", onViewportChange, {
+				passive: true,
+			});
+
+			tiltCleanupMap.set(this, () => {
+				host.removeEventListener("pointerenter", onPointerEnter);
+				host.removeEventListener("pointermove", onPointerMove);
+				host.removeEventListener("pointerleave", onPointerLeave);
+				window.removeEventListener("resize", onViewportChange);
+				window.removeEventListener("scroll", onViewportChange);
+
+				if (rafId !== null) {
+					cancelAnimationFrame(rafId);
+					rafId = null;
+				}
+
+				resetTransform();
 			});
 		}
 	}

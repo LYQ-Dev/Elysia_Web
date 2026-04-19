@@ -35,6 +35,7 @@ const { remarkPluginFrontmatter } = await render(entry);
 ---
 
 <div
+	data-post-tilt-card="true"
 	class:list={[
 		"card-base flex flex-col-reverse md:flex-col w-full rounded-[var(--radius-large)] overflow-hidden relative",
 		className,
@@ -187,4 +188,16 @@ const { remarkPluginFrontmatter } = await render(entry);
 >
 </div>
 
-<style define:vars={{ coverWidth }}></style>
+<style define:vars={{ coverWidth }}>
+	[data-post-tilt-card="true"] {
+		transform-origin: center center;
+		backface-visibility: hidden;
+		will-change: transform;
+	}
+
+	@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+		[data-post-tilt-card="true"] {
+			transform: none !important;
+		}
+	}
+</style>

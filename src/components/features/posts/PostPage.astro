@@ -34,6 +34,8 @@ const initialLayoutClass = defaultLayout === "grid" ? "grid-mode" : "list-mode";
 </div>
 
 <script>
+	const postTiltCleanupMap = new Map<HTMLElement, () => void>();
+
 	function initLayout() {
 		requestAnimationFrame(() => {
 			const postListContainer = document.getElementById(
@@ -56,6 +58,7 @@ const initialLayoutClass = defaultLayout === "grid" ? "grid-mode" : "list-mode";
 
 			if (isClassCorrect) {
 				postListContainer.classList.add("js-initialized");
+				initPostCardTilt();
 				publishLayoutInit();
 				return;
 			}
@@ -66,7 +69,182 @@ const initialLayoutClass = defaultLayout === "grid" ? "grid-mode" : "list-mode";
 				postListContainer.classList.add("js-initialized");
 			}
 
+			initPostCardTilt();
 			publishLayoutInit();
+		});
+	}
+
+	function cleanupAllPostCardTilt() {
+		postTiltCleanupMap.forEach((cleanup, card) => {
+			cleanup();
+			card.removeAttribute("data-post-tilt-bound");
+		});
+		postTiltCleanupMap.clear();
+
+		document
+			.querySelectorAll<HTMLElement>('[data-post-tilt-card="true"]')
+			.forEach((card) => {
+				card.style.removeProperty("transform");
+				card.classList.remove("is-tilting");
+				card.removeAttribute("data-post-tilt-bound");
+			});
+	}
+
+	function pruneDetachedPostCardTilt() {
+		postTiltCleanupMap.forEach((cleanup, card) => {
+			if (!document.body.contains(card)) {
+				cleanup();
+				postTiltCleanupMap.delete(card);
+			}
+		});
+	}
+
+	function initPostCardTilt() {
+		pruneDetachedPostCardTilt();
+
+		const isHomePage = document.body.classList.contains("lg:is-home");
+		const canHover = window.matchMedia(
+			"(hover: hover) and (pointer: fine)",
+		).matches;
+		const reduceMotion = window.matchMedia(
+			"(prefers-reduced-motion: reduce)",
+		).matches;
+
+		if (!isHomePage || !canHover || reduceMotion) {
+			cleanupAllPostCardTilt();
+			return;
+		}
+
+		const cards = document.querySelectorAll<HTMLElement>(
+			'[data-post-tilt-card="true"]',
+		);
+		cards.forEach((card) => {
+			if (card.dataset.postTiltBound === "true") {
+				return;
+			}
+
+			card.dataset.postTiltBound = "true";
+
+			const MAX_ROTATE_X = 12;
+			const MAX_ROTATE_Y = 8;
+			const FOLLOW_FACTOR = 0.16;
+
+			let targetX = 0;
+			let targetY = 0;
+			let currentX = 0;
+			let currentY = 0;
+			let rafId: number | null = null;
+			let isInside = false;
+
+			function softCurve(value: number): number {
+				const clamped = Math.max(-1, Math.min(1, value));
+				return Math.sin(clamped * Math.PI * 0.5);
+			}
+
+			function queueTick() {
+				if (rafId !== null) {
+					return;
+				}
+				rafId = requestAnimationFrame(tick);
+			}
+
+			function resetTransform() {
+				card.style.removeProperty("transform");
+				card.classList.remove("is-tilting");
+			}
+
+			function tick() {
+				rafId = null;
+
+				currentX += (targetX - currentX) * FOLLOW_FACTOR;
+				currentY += (targetY - currentY) * FOLLOW_FACTOR;
+
+				if (Math.abs(targetX - currentX) < 0.01) {
+					currentX = targetX;
+				}
+				if (Math.abs(targetY - currentY) < 0.01) {
+					currentY = targetY;
+				}
+
+				if (
+					!isInside &&
+					Math.abs(currentX) < 0.01 &&
+					Math.abs(currentY) < 0.01 &&
+					Math.abs(targetX) < 0.01 &&
+					Math.abs(targetY) < 0.01
+				) {
+					resetTransform();
+					return;
+				}
+
+				card.style.setProperty(
+					"transform",
+					`perspective(1200px) rotateX(${currentX.toFixed(3)}deg) rotateY(${currentY.toFixed(3)}deg) translateZ(0)`,
+					"important",
+				);
+				card.classList.add("is-tilting");
+
+				if (
+					isInside ||
+					Math.abs(targetX - currentX) > 0.01 ||
+					Math.abs(targetY - currentY) > 0.01
+				) {
+					queueTick();
+				}
+			}
+
+			function setTargetFromPointer(event: PointerEvent) {
+				const rect = card.getBoundingClientRect();
+				if (rect.width === 0 || rect.height === 0) {
+					return;
+				}
+
+				const relativeX = (event.clientX - rect.left) / rect.width;
+				const relativeY = (event.clientY - rect.top) / rect.height;
+
+				const normalizedX = softCurve(relativeX * 2 - 1);
+				const normalizedY = softCurve(1 - relativeY * 2);
+
+				targetX = normalizedY * MAX_ROTATE_X;
+				targetY = normalizedX * MAX_ROTATE_Y;
+				queueTick();
+			}
+
+			function onPointerEnter(event: PointerEvent) {
+				isInside = true;
+				setTargetFromPointer(event);
+			}
+
+			function onPointerMove(event: PointerEvent) {
+				if (!isInside) {
+					return;
+				}
+				setTargetFromPointer(event);
+			}
+
+			function onPointerLeave() {
+				isInside = false;
+				targetX = 0;
+				targetY = 0;
+				queueTick();
+			}
+
+			card.addEventListener("pointerenter", onPointerEnter);
+			card.addEventListener("pointermove", onPointerMove);
+			card.addEventListener("pointerleave", onPointerLeave);
+
+			postTiltCleanupMap.set(card, () => {
+				card.removeEventListener("pointerenter", onPointerEnter);
+				card.removeEventListener("pointermove", onPointerMove);
+				card.removeEventListener("pointerleave", onPointerLeave);
+
+				if (rafId !== null) {
+					cancelAnimationFrame(rafId);
+					rafId = null;
+				}
+
+				resetTransform();
+			});
 		});
 	}
 

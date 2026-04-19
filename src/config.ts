@@ -654,8 +654,8 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 };
 
 export const sakuraConfig: SakuraConfig = {
-	enable: false, // 默认关闭樱花特效
-	sakuraNum: 21, // 樱花数量
+	enable: true, // 默认关闭樱花特效
+	sakuraNum: 15, // 樱花数量
 	limitTimes: -1, // 樱花越界限制次数，-1为无限循环
 	size: {
 		min: 0.5, // 樱花最小尺寸倍数
@@ -668,11 +668,11 @@ export const sakuraConfig: SakuraConfig = {
 	speed: {
 		horizontal: {
 			min: -1.7, // 水平移动速度最小值
-			max: -1.2, // 水平移动速度最大值
+			max: -1.0, // 水平移动速度最大值
 		},
 		vertical: {
 			min: 1.5, // 垂直移动速度最小值
-			max: 2.2, // 垂直移动速度最大值
+			max: 2.0, // 垂直移动速度最大值
 		},
 		rotation: 0.03, // 旋转速度
 		fadeSpeed: 0.03, // 消失速度，不应大于最小不透明度
@@ -690,7 +690,7 @@ export const pioConfig: import("./types/config").PioConfig = {
 	mode: "draggable", // 默认为可拖拽模式
 	hiddenOnMobile: true, // 默认在移动设备上隐藏
 	dialog: {
-		welcome: "Welcome to Mizuki Website!", // 欢迎词
+		welcome: "Welcome to Elysia Website!", // 欢迎词
 		touch: [
 			"What are you doing?",
 			"Stop touching me!",

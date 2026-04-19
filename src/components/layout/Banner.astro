@@ -875,196 +875,18 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 		</div>
 	)}
 
-	<!-- 底部流体过渡（Canvas）：仅在 Banner 进入视口时运行 -->
+	<!-- 底部轻量流体过渡：Apple 风格玻璃分界，纯 CSS 低开销动画 -->
 	{showWave && (
-		<>
-			<div
-				class="waves absolute -bottom-[1px] h-[10vh] max-h-[9.375rem] min-h-[3.125rem] w-full md:h-[15vh]"
-				id="header-waves"
-			>
-				<canvas class="banner-flow-canvas" aria-hidden="true"></canvas>
+		<div
+			class="waves absolute -bottom-[1px] h-[10vh] max-h-[9.375rem] min-h-[3.125rem] w-full md:h-[15vh]"
+			id="header-waves"
+			aria-hidden="true"
+		>
+			<div class="banner-seam-surface">
+				<span class="banner-seam-sheen" />
+				<span class="banner-seam-reflect" />
 			</div>
-
-			<script is:inline data-swup-ignore-script>
-				(function initBannerFlowCanvas() {
-					var host = document.getElementById('header-waves');
-					if (!host) return;
-
-					if (window.__bannerFlowCleanup) {
-						window.__bannerFlowCleanup();
-						window.__bannerFlowCleanup = null;
-					}
-
-					var canvas = host.querySelector('.banner-flow-canvas');
-					if (!canvas) return;
-
-					var ctx = canvas.getContext('2d', { alpha: true });
-					if (!ctx) return;
-
-					var dpr = 1;
-					var rafId = null;
-					var running = false;
-					var resizeTimer = null;
-					var observer = null;
-
-					function resizeCanvas() {
-						dpr = Math.min(window.devicePixelRatio || 1, 2);
-						var rect = host.getBoundingClientRect();
-						var width = Math.max(1, Math.floor(rect.width));
-						var height = Math.max(1, Math.floor(rect.height));
-
-						canvas.width = Math.floor(width * dpr);
-						canvas.height = Math.floor(height * dpr);
-						canvas.style.width = width + 'px';
-						canvas.style.height = height + 'px';
-
-						ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-					}
-
-					function debouncedResize() {
-						if (resizeTimer) clearTimeout(resizeTimer);
-						resizeTimer = setTimeout(function () {
-							resizeCanvas();
-						}, 120);
-					}
-
-					function drawLayer(width, height, time, options) {
-						var gradient = ctx.createLinearGradient(0, 0, width, height);
-						gradient.addColorStop(0, options.startColor);
-						gradient.addColorStop(1, options.endColor);
-						ctx.globalAlpha = options.alpha;
-						ctx.fillStyle = gradient;
-						ctx.beginPath();
-						ctx.moveTo(0, height);
-
-						for (var x = 0; x <= width; x += 12) {
-							var waveY = options.baseY
-								+ Math.sin(x * options.freq + time * options.speed + options.phase) * options.amplitude
-								+ Math.cos(x * options.freq * 0.55 - time * options.speed * 0.78 + options.phase * 0.7) * options.amplitude * 0.35;
-							ctx.lineTo(x, waveY);
-						}
-
-						ctx.lineTo(width, height);
-						ctx.closePath();
-						ctx.fill();
-					}
-
-					function draw(now) {
-						if (!running) return;
-
-						var time = now * 0.0012;
-						var width = canvas.width / dpr;
-						var height = canvas.height / dpr;
-
-						ctx.clearRect(0, 0, width, height);
-
-						var baseY = height * 0.45;
-
-						drawLayer(width, height, time, {
-							baseY: baseY,
-							amplitude: height * 0.2,
-							freq: 0.012,
-							speed: 1.35,
-							phase: 0,
-							alpha: 0.72,
-							startColor: 'rgba(255,255,255,0.30)',
-							endColor: 'rgba(255,255,255,0.10)'
-						});
-
-						drawLayer(width, height, time, {
-							baseY: baseY + height * 0.05,
-							amplitude: height * 0.15,
-							freq: 0.014,
-							speed: 1.75,
-							phase: 1.4,
-							alpha: 0.58,
-							startColor: 'rgba(255,255,255,0.22)',
-							endColor: 'rgba(255,255,255,0.07)'
-						});
-
-						drawLayer(width, height, time, {
-							baseY: baseY + height * 0.09,
-							amplitude: height * 0.12,
-							freq: 0.016,
-							speed: 2.2,
-							phase: 2.8,
-							alpha: 0.46,
-							startColor: 'rgba(255,255,255,0.18)',
-							endColor: 'rgba(255,255,255,0.04)'
-						});
-
-						ctx.globalAlpha = 1;
-						var tailGradient = ctx.createLinearGradient(0, height * 0.72, 0, height);
-						tailGradient.addColorStop(0, 'rgba(255,255,255,0.22)');
-						tailGradient.addColorStop(1, 'rgba(255,255,255,0.02)');
-						ctx.fillStyle = tailGradient;
-						ctx.fillRect(0, height * 0.72, width, height * 0.28);
-
-						rafId = requestAnimationFrame(draw);
-					}
-
-					function start() {
-						if (running) return;
-						running = true;
-						rafId = requestAnimationFrame(draw);
-					}
-
-					function stop() {
-						running = false;
-						if (rafId !== null) {
-							cancelAnimationFrame(rafId);
-							rafId = null;
-						}
-					}
-
-					function handleVisibilityChange() {
-						if (document.hidden) {
-							stop();
-							return;
-						}
-						var rect = host.getBoundingClientRect();
-						if (rect.bottom > 0 && rect.top < window.innerHeight) {
-							start();
-						}
-					}
-
-					resizeCanvas();
-
-					var bannerRoot = document.getElementById('banner-wrapper') || host;
-					observer = new IntersectionObserver(function (entries) {
-						var isVisible = entries.some(function (entry) {
-							return entry.isIntersecting;
-						});
-						if (isVisible && !document.hidden) {
-							start();
-						} else {
-							stop();
-						}
-					}, { threshold: 0.05 });
-
-					observer.observe(bannerRoot);
-
-					document.addEventListener('visibilitychange', handleVisibilityChange);
-					window.addEventListener('resize', debouncedResize, { passive: true });
-					window.addEventListener('orientationchange', debouncedResize, { passive: true });
-
-					window.__bannerFlowCleanup = function () {
-						stop();
-						if (resizeTimer) {
-							clearTimeout(resizeTimer);
-							resizeTimer = null;
-						}
-						if (observer) {
-							observer.disconnect();
-							observer = null;
-						}
-						document.removeEventListener('visibilitychange', handleVisibilityChange);
-						window.removeEventListener('resize', debouncedResize);
-						window.removeEventListener('orientationchange', debouncedResize);
-					};
-				})();
-			</script>
-		</>
+		</div>
 	)}
 
 	<!-- Banner 图片来源标注 -->
@@ -1191,12 +1013,149 @@ const trackerCells = Array.from({ length: 25 }, (_, index) => index + 1);
 		}
 	}
 
-	.banner-flow-canvas {
-		display: block;
+	.banner-seam-surface {
+		position: relative;
 		width: 100%;
 		height: 100%;
+		overflow: hidden;
+		pointer-events: none;
 		transform: translateZ(0);
 		backface-visibility: hidden;
+	}
+
+	.banner-seam-surface::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			radial-gradient(
+				130% 95% at 50% -8%,
+				rgba(255, 255, 255, 0.52) 0%,
+				rgba(255, 255, 255, 0.22) 46%,
+				rgba(255, 255, 255, 0.06) 68%,
+				rgba(255, 255, 255, 0) 100%
+			),
+			linear-gradient(
+				to bottom,
+				rgba(255, 255, 255, 0.28) 0%,
+				rgba(255, 255, 255, 0.12) 48%,
+				rgba(255, 255, 255, 0) 100%
+			);
+		opacity: 0.92;
+	}
+
+	.banner-seam-surface::after {
+		content: "";
+		position: absolute;
+		left: -8%;
+		right: -8%;
+		top: 4%;
+		height: 58%;
+		border-radius: 0 0 50% 50% / 0 0 100% 100%;
+		border-top: 1px solid rgba(255, 255, 255, 0.45);
+		opacity: 0.62;
+		filter: blur(0.2px);
+	}
+
+	.banner-seam-sheen,
+	.banner-seam-reflect {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		transform: translate3d(0, 0, 0);
+		will-change: transform, opacity;
+	}
+
+	.banner-seam-sheen {
+		background: linear-gradient(
+			100deg,
+			rgba(255, 255, 255, 0) 22%,
+			rgba(255, 255, 255, 0.36) 48%,
+			rgba(255, 255, 255, 0) 74%
+		);
+		opacity: 0.55;
+		animation: seam-glide 11s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+	}
+
+	.banner-seam-reflect {
+		background: radial-gradient(
+			46% 72% at 50% 14%,
+			rgba(255, 255, 255, 0.22) 0%,
+			rgba(255, 255, 255, 0.06) 62%,
+			rgba(255, 255, 255, 0) 100%
+		);
+		animation: seam-breathe 5.6s ease-in-out infinite;
+	}
+
+	:global(.dark) .banner-seam-surface::before {
+		background:
+			radial-gradient(
+				130% 95% at 50% -8%,
+				rgba(255, 255, 255, 0.28) 0%,
+				rgba(255, 255, 255, 0.12) 48%,
+				rgba(255, 255, 255, 0.04) 68%,
+				rgba(255, 255, 255, 0) 100%
+			),
+			linear-gradient(
+				to bottom,
+				rgba(255, 255, 255, 0.16) 0%,
+				rgba(255, 255, 255, 0.06) 52%,
+				rgba(255, 255, 255, 0) 100%
+			);
+	}
+
+	:global(.dark) .banner-seam-surface::after {
+		border-top-color: rgba(255, 255, 255, 0.24);
+		opacity: 0.52;
+	}
+
+	@keyframes seam-glide {
+		0% {
+			transform: translate3d(-38%, 0, 0);
+			opacity: 0;
+		}
+		12% {
+			opacity: 0.42;
+		}
+		50% {
+			transform: translate3d(34%, 0, 0);
+			opacity: 0.62;
+		}
+		88% {
+			opacity: 0.34;
+		}
+		100% {
+			transform: translate3d(108%, 0, 0);
+			opacity: 0;
+		}
+	}
+
+	@keyframes seam-breathe {
+		0%,
+		100% {
+			opacity: 0.3;
+			transform: translate3d(0, 0, 0) scale(1);
+		}
+		50% {
+			opacity: 0.55;
+			transform: translate3d(0, -2%, 0) scale(1.03);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.banner-seam-sheen,
+		.banner-seam-reflect {
+			animation: none;
+			transform: none;
+		}
+
+		.banner-seam-sheen {
+			opacity: 0.25;
+		}
+
+		.banner-seam-reflect {
+			opacity: 0.28;
+		}
 	}
 
 	.banner-image-unavailable {
