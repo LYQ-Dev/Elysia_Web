@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="logo.png" alt="Elysia" width="120" />
-
 # Elysia Web
 
 **A personal blog & portfolio site built with [Astro](https://astro.build) and the [Mizuki](https://github.com/LyraVoid/Mizuki) theme.**
