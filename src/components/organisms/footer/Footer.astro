@@ -1,8 +1,9 @@
 ---
-import { footerConfig, profileConfig } from "../../../config";
+import { footerConfig, profileConfig, siteConfig } from "../../../config";
 import { url } from "../../../utils/url-utils";
 
 const currentYear = new Date().getFullYear();
+const siteStartDate = siteConfig.siteStartDate || "2025-01-01";
 
 const customFooterHtml =
 	footerConfig.enable && footerConfig.customHtml
@@ -61,5 +62,84 @@ const customFooterHtml =
 				href="https://github.com/LyraVoid/Mizuki">9.0</a
 			>
 		</div>
+
+		<div id="site-uptime" class="mt-1" data-site-start-date={siteStartDate}>
+			本站已存活：
+			<span data-uptime-value>0天-00时-00分-00秒</span>
+		</div>
 	</div>
 </div>
+
+<script is:inline>
+	(function () {
+		const TIMER_KEY = "__mizukiFooterUptimeTimer";
+		const BOUND_KEY = "__mizukiFooterUptimeBound";
+
+		function getUptimeRoot() {
+			return document.getElementById("site-uptime");
+		}
+
+		function formatUptime(diffMs) {
+			const totalSeconds = Math.max(0, Math.floor(diffMs / 1000));
+			const days = Math.floor(totalSeconds / 86400);
+			const hours = Math.floor((totalSeconds % 86400) / 3600);
+			const minutes = Math.floor((totalSeconds % 3600) / 60);
+			const seconds = totalSeconds % 60;
+
+			const paddedHours = String(hours).padStart(2, "0");
+			const paddedMinutes = String(minutes).padStart(2, "0");
+			const paddedSeconds = String(seconds).padStart(2, "0");
+
+			return `${days}天-${paddedHours}时-${paddedMinutes}分-${paddedSeconds}秒`;
+		}
+
+		function updateUptime() {
+			const root = getUptimeRoot();
+			if (!root) {
+				return;
+			}
+
+			const valueEl = root.querySelector("[data-uptime-value]");
+			if (!valueEl) {
+				return;
+			}
+
+			const startDateRaw = root.dataset.siteStartDate;
+			if (!startDateRaw) {
+				valueEl.textContent = "--";
+				return;
+			}
+
+			const startDate = new Date(`${startDateRaw}T00:00:00`);
+			if (Number.isNaN(startDate.getTime())) {
+				valueEl.textContent = "--";
+				return;
+			}
+
+			const now = new Date();
+			valueEl.textContent = formatUptime(now.getTime() - startDate.getTime());
+		}
+
+		function stopTicker() {
+			const timerId = window[TIMER_KEY];
+			if (typeof timerId === "number") {
+				clearInterval(timerId);
+			}
+			window[TIMER_KEY] = null;
+		}
+
+		function startTicker() {
+			stopTicker();
+			updateUptime();
+			window[TIMER_KEY] = window.setInterval(updateUptime, 1000);
+		}
+
+		startTicker();
+
+		if (!window[BOUND_KEY]) {
+			document.addEventListener("mizuki:page:loaded", startTicker);
+			window.addEventListener("beforeunload", stopTicker);
+			window[BOUND_KEY] = true;
+		}
+	})();
+</script>
