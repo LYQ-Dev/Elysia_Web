@@ -74,8 +74,6 @@ export const siteConfig: SiteConfig = {
 		mode: "text-icon",
 		// 顶栏标题文本
 		text: "Elysia",
-		// 顶栏标题图标路径，默认使用 public/assets/home/home.webp
-		icon: "public/assets/home/TopTubiao.webp",
 		// 网站Logo图片路径
 		logo: "public/assets/home/default-logo.webp",
 	},
