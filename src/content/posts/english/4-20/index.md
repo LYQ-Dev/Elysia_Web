@@ -10,77 +10,69 @@ author: 程翊雪
 draft: false
 date: 2026-04-20
 ---
-
 # 考研英语学习记录 | 2026-04-20
+## 今日学习内容
+今日累计英语学习时长50分钟，分为三个核心模块：红宝书考研英语核心词Unit10必背词、红宝书基础词Unit28、考研英语经典长难句精析。
 
-## 今日学习总览
-今日累计考研英语学习时长约50分钟，主要完成了以下学习任务：
-1.  红宝书考研英语词汇Unit10 必背核心词
-2.  考研英语基础词Unit28 拓展词
-3.  考研英语真题长难句拆解练习
+### 红宝书核心词Unit10必背词
+系统背诵19个高频核心词，结合词源和语境加深记忆：
+1.  **acclaim**：v./n. 称赞、欢呼，词源为ac-(加强语气)+claim(呼喊)，即众人齐声呼喊表达认可
+2.  **accommodate**：v. 容纳、提供住宿；适应，拆解为ac-(加强)+com-(共同)+mod(模式)+ate(动词后缀)，即适配共同需求
+3.  **accompany**：v. 陪伴、陪同，com-(共同)+panion(伙伴)的变体
+4.  **accomplish**：v. 完成、实现，com-(完全)+plish(填满)，即填满任务达成目标
+5.  **bias**：n./v. 偏见、偏袒，bi(二)+as(偏向)，即偏向某一方
+6.  **bid**：v./n. 投标、命令、出价
+7.  **charm**：n. 魅力、魔力；v. 吸引、迷住
+8.  **demand**：n./v. 需求、要求
+9.  **democracy**：n. 民主，demo(民众)+cracy(统治)，即民众统治
+10. **denote**：v. 表示、意味着，de-(强调)+note(标记)，即标记出含义
+11. **deposit**：v./n. 存放、存款、押金
+12. **eminent**：adj. 杰出的、卓越的，e-(向外)+min(突出)+ent，即突出于众人之上
+13. **federal**：adj. 联邦的、联邦政府的
+14. **fertile**：adj. 肥沃的、多产的
+15. **grand**：adj. 宏伟的、盛大的；重要的
+16. **grant**：v./n. 授予、拨款、补助金
+17. **immense**：adj. 巨大的、无限的，im-(否定)+mense(测量)，即无法测量的规模
+18. **immerse**：v. 沉浸、使陷入，im-(进入)+merse(沉没)，即沉入某件事中
+19. **immune**：adj. 免疫的、不受影响的，im-(否定)+mune(税/豁免)，即豁免于疾病或影响
 
----
+### 红宝书基础词Unit28
+背诵14个基础考纲词，重点区分易混淆搭配：
+1.  **avenue**：n. 大道、林荫道；途径、手段
+2.  **avert**：v. 避免、防止；转移目光，a-(离开)+vert(转动)，即转开避开风险
+3.  **crude**：adj. 粗糙的、未加工的；粗鲁的
+4.  **dump**：v./n. 倾倒、丢弃；垃圾场
+5.  **duplicate**：v./adj./n. 复制、重复；副本的
+6.  **dwell**：v. 居住、栖身；细想、唠叨
+7.  **furnish**：v. 布置家具；提供、供应
+8.  **irrigate**：v. 灌溉、冲洗，ir-(使)+rig(湿)+ate，即使湿润
+9.  **irritate**：v. 激怒、使烦躁；刺激
+10. **mute**：adj./v./n. 沉默的、静音的；减弱声音
+11. **prosecute**：v. 起诉、控告；从事，pro-(向前)+secut(跟随)+e，即跟随到底追究责任
+12. **provision**：n. 供应、供给；条款、规定
+13. **ruin**：v./n. 毁坏、毁灭；废墟
 
-## 单词学习复盘
-### 红宝书Unit10 必背核心词
-| 单词 | 音标 | 考研高频释义与考点 |
-|------|------|-------------------|
-| acclaim | /əˈkleɪm/ | v./n. 称赞，喝彩；**be acclaimed as** 被誉为，广受好评 |
-| accommodate | /əˈkɒmədeɪt/ | v. 容纳；提供住宿；**adapt/accommodate to** 适应（熟词僻义高频考点） |
-| accompany | /əˈkʌmpəni/ | v. 陪伴，陪同；伴随...发生 |
-| accomplish | /əˈkʌmplɪʃ/ | v. 完成，实现；搭配 *accomplish a task* |
-| bias | /ˈbaɪəs/ | n. 偏见，偏心；v. 使有偏见；**racial bias** 种族偏见 |
-| bid | /bɪd/ | n./v. 投标；出价；**bid for** 争取，竞标 |
-| charm | /tʃɑːm/ | n. 魅力；v. 使着迷 |
-| demand | /dɪˈmɑːnd/ | v./n. 要求，需求；**in demand** 受欢迎，有需求 |
-| democracy | /dɪˈmɒkrəsi/ | n. 民主制度，民主国家 |
-| denote | /dɪˈnəʊt/ | v. 意味着，代表；同义替换 *mean*（阅读高频考点） |
-| deposit | /dɪˈpɒzɪt/ | v. 存放，储蓄；使沉淀；n. 存款，押金 |
-| eminent | /ˈemɪnənt/ | adj. 杰出的，知名的；**eminent scholar** 知名学者 |
-| federal | /ˈfedərəl/ | adj. 联邦的；**federal government** 联邦政府 |
-| fertile | /ˈfɜːtaɪl/ | adj. 肥沃的；丰富的，多产的 |
-| grand | /ɡrænd/ | adj. 宏伟的，盛大的；重大的 |
-| grant | /ɡrɑːnt/ | v. 授予，同意；n. 补助金；**take...for granted** 认为...理所当然（必考短语） |
-| immense | /ɪˈmens/ | adj. 巨大的，极大的；同义替换 *huge, enormous* |
-| immerse | /ɪˈmɜːs/ | v. 使沉浸于；**immerse oneself in** 全神贯注于 |
-| immune | /ɪˈmjuːn/ | adj. 免疫的；**be immune to** 对...免疫，不受...影响 |
+### 考研英语长难句精析
+今天解析的长难句来自2009年考研英语阅读Text3，原句：
+> we are fortunate that it is,because building new educational systems there and putting enough people through them to improve economic performance would require two or three generations.
 
-### 基础词Unit28 拓展词
-| 单词 | 音标 | 考研高频释义与考点 |
-|------|------|-------------------|
-| avenue | /ˈævənjuː/ | n. 大道；**an avenue of sth.** 做某事的途径、手段 |
-| avert | /əˈvɜːt/ | v. 避免，防止；转移目光；**avert a crisis** 避免危机 |
-| crude | /kruːd/ | adj. 粗糙的；未加工的；粗鲁的 |
-| dump | /dʌmp/ | v. 倾倒垃圾；抛售；n. 垃圾场 |
-| duplicate | /ˈdjuːplɪkeɪt/ | v. 复制；重复；adj. 复制的 |
-| dwell | /dwel/ | v. 居住；**dwell on/upon** 详述，纠结于（高频考点） |
-| furnish | /ˈfɜːnɪʃ/ | v. 布置家具；**furnish sb. with sth.** 为某人提供某物 |
-| irrigate | /ˈɪrɪɡeɪt/ | v. 灌溉；冲洗（伤口） |
-| irritate | /ˈɪrɪteɪt/ | v. 使恼怒；刺激（皮肤） |
-| mute | /mjuːt/ | adj. 沉默的；v. 减弱声音 |
-| prosecute | /ˈprɒsɪkjuːt/ | v. 起诉，控告；从事经营 |
-| provision | /prəˈvɪʒn/ | n. 供应；条款；**provisions** n. 给养，口粮 |
-| ruin | /ˈruːɪn/ | v. 毁坏；n. 废墟；**in ruins** 成为废墟 |
+#### 结构拆解：
+1.  主句：`we are fortunate that it is`，其中`that it is`为宾语从句，指代前文提到的教育与经济发展的关系
+2.  原因状语从句：由`because`引导，主语为两个并列动名词短语：`building new educational systems there`和`putting enough people through them to improve economic performance`，谓语动词为`would require`，宾语为`two or three generations`
+3.  翻译参考：我们很庆幸事实确实如此，因为在这些欠发达国家建立全新的教育体系，并培养足够多的人才以此拉动经济增长，需要耗费两到三代人的时间。
 
----
+#### 易错点总结：
+动名词短语作主语时，谓语动词需使用单数形式，今天特意标记了该考点，避免后续阅读和写作中出错。
 
-## 长难句拆解练习
-### 原句
-> We are fortunate that it is, because building new educational systems there and putting enough people through them to improve economic performance would require two or three generations.
+## 单词复盘
+### 今日易错词整理
+1.  **acclaim vs exclaim**：前者为官方/公开的称赞，后者指因惊讶、愤怒发出的惊呼
+2.  **accommodate vs accompany**：前者侧重容纳、适配，后者侧重陪伴同行
+3.  **immerse vs immune**：拼写相似但含义完全不同，前者为“沉浸”，后者为“免疫的”
+4.  **democracy vs denote**：发音易混淆，重音位置分别在第一个和第二个音节
 
-### 结构解析
-1.  **主句**：`We are fortunate that it is`，其中`that`引导宾语从句，`it`指代前文提及的「教育体系无法快速推动经济发展」这一核心逻辑
-2.  **原因状语从句**：由`because`引导，主语为两个并列动名词短语：`building new educational systems there` 和 `putting enough people through them to improve economic performance`，谓语动词为`would require`
-3.  **参考译文**：我们很庆幸情况正是如此，因为在这些国家建立全新的教育体系，并培养足够多的人才以提升经济水平，需要耗费两到三代人的时间。
+### 默写检测
+今天对Unit10核心词进行了默写自测，正确率达到82%，其中`eminent`和`immense`的拼写仍需加强练习。
 
-### 学习心得
-这是考研英语阅读真题中的经典句子，此前做真题时总是混淆`it`的指代对象，今天通过梳理上下文逻辑终于理清了指代关系，同时巩固了动名词短语作主语的语法点。
-
----
-
-## 今日学习碎碎念
-💡 今天早上在图书馆学习，一开始有点犯困，喝了杯冰美式之后状态立刻拉满。背单词时特意把容易混淆的词汇放在一起对比记忆，比如`acclaim`和`exclaim`，`immerse`和`submerge`，这样记忆效率明显提升。长难句拆解花了15分钟，终于搞懂了这个难点，感觉又攻克了一个考研英语的小关卡。
-
-坚持每天积累一点点，积少成多，考研英语上岸指日可待！冲鸭！
-
+💡 碎碎念：今天的长难句拆分比昨天更熟练了，虽然背单词的时候偶尔会走神，但还是坚持完成了全部计划。考研英语的积累从来不是一蹴而就的，每天50分钟的小目标，坚持下来就是巨大的进步！相信只要踏实积累，今年一定能成功上岸！
 > 文档内容由 AI 辅助生成
