@@ -1,19 +1,16 @@
 ---
-title: ""
-author: ""
+title: "《活着》"
+author: "余华"
 cover: ""
 status: "completed"
-rating: 0
+rating: 5.0
 pages: 0
-readPages: 0
-category: ""
+category: "小说"
 notes: ""
-tags: []
+tags: ["余华", "小说"]
 publisher: ""
 link: ""
 ---
-
-Replace this with your book data.
 
 
 这本书非常值得阅读。作者的笔触细腻，故事情节引人入胜，人物刻画深刻。我在阅读期间被完全吸引住了。
@@ -26,4 +23,3 @@ Replace this with your book data.
 
 **推荐指数**: ⭐⭐⭐⭐⭐
 
-[查看购买链接](https://example.com)
