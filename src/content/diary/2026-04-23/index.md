@@ -5,7 +5,7 @@ mood: 🤩
 weather: 雨天
 location: 图书馆
 tags: [考研, 项目, 学习]
-images: []
+images: [./1.jpg]
 ---
 
 ## 学习时长统计
