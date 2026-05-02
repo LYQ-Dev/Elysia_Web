@@ -4,6 +4,7 @@ import { FilterTabs } from "@components/atoms/filter-tabs";
 import { MomentCard } from "@components/features/diary";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { Icon } from "astro-icon/components";
+import { normalizeDiarySlug } from "@utils/url-utils";
 
 import { siteConfig } from "../config";
 import I18nKey from "../i18n/i18nKey";
@@ -28,21 +29,22 @@ const allTags = Array.from(
 
 // 转换为兼容 MomentCard 的格式
 const moments = sortedDiaries.map((diary) => {
+	const diarySlug = normalizeDiarySlug(diary.id);
 	// 处理相对路径的图片，转换为绝对路径
 	const processedImages = (diary.data.images || []).map((image: string) => {
 		// 如果是相对路径（./ 开头或不以 / 开头），转换为 /diary-content/{id}/filename
 		if (image.startsWith("./")) {
-			return `/diary-content/${diary.id}/${image.slice(2)}`;
+			return `/diary-content/${diarySlug}/${image.slice(2)}`;
 		} else if (!image.startsWith("/")) {
-			return `/diary-content/${diary.id}/${image}`;
+			return `/diary-content/${diarySlug}/${image}`;
 		}
 		// 已经是绝对路径，保持不变
 		return image;
 	});
 
 	return {
-		id: diary.id,
-		slug: diary.id,
+		id: diarySlug,
+		slug: diarySlug,
 		title: diary.data.title,
 		content: diary.data.title,
 		date: diary.data.date.toISOString(),

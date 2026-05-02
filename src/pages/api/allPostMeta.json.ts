@@ -1,5 +1,9 @@
 import { getSortedPostsList } from "@/utils/content-utils";
-import { normalizeCollectionEntrySlug } from "@/utils/url-utils";
+import {
+	normalizeCollectionEntrySlug,
+	normalizeDiarySlug,
+	normalizePostSlug,
+} from "@/utils/url-utils";
 import { getCollection } from "astro:content";
 
 interface SearchMetaItem {
@@ -41,7 +45,7 @@ export async function GET() {
 			title: post.data.title,
 			description: post.data.description || "",
 			tags: post.data.tags || [],
-			url: post.url || `/posts/${post.id}/`,
+			url: post.url || `/posts/${normalizePostSlug(post.id)}/`,
 			published: post.data.published.getTime(),
 			category: post.data.category || "",
 			password: !!post.data.password,
@@ -129,7 +133,7 @@ export async function GET() {
 			.filter(Boolean)
 			.join(" · "),
 		tags: diary.data.tags || [],
-		url: `/diary/${diary.id}/`,
+		url: `/diary/${normalizeDiarySlug(diary.id)}/`,
 		published: getTime(diary.data.date),
 		category: "",
 		password: false,

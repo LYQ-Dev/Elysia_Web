@@ -2,14 +2,14 @@ import type { CollectionEntry } from "astro:content";
 
 import { permalinkConfig } from "../config";
 import { hasCustomPermalink, initPostIdMap } from "./permalink-utils";
-import { removeFileExtension } from "./url-utils";
+import { normalizePostSlug } from "./url-utils";
 
 export function buildPostPaths(blogEntries: CollectionEntry<"posts">[]) {
 	initPostIdMap(blogEntries);
 
 	return blogEntries
 		.map((entry) => {
-			const defaultSlug = removeFileExtension(entry.id);
+			const defaultSlug = normalizePostSlug(entry.id);
 
 			if (hasCustomPermalink(entry)) {
 				return [{ params: { slug: defaultSlug }, props: { entry } }];

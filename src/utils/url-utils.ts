@@ -25,6 +25,55 @@ export function normalizeCollectionEntrySlug(id: string): string {
 	return slug.replace(/\/index$/i, "");
 }
 
+function isNumericMonthSegment(value: string): boolean {
+	if (!/^\d{1,2}$/.test(value)) {
+		return false;
+	}
+	const month = Number(value);
+	return month >= 1 && month <= 12;
+}
+
+function slugStartsWithMonth(slug: string, monthSegment: string): boolean {
+	const month = Number(monthSegment);
+	if (!Number.isFinite(month)) {
+		return false;
+	}
+	const monthShort = String(month);
+	const monthLong = String(month).padStart(2, "0");
+	return slug.startsWith(`${monthShort}-`) || slug.startsWith(`${monthLong}-`);
+}
+
+export function normalizePostSlug(id: string): string {
+	const slug = removeFileExtension(id).replace(/\\/g, "/");
+	const parts = slug.split("/").filter(Boolean);
+	if (parts.length >= 3) {
+		const maybeMonth = parts[1];
+		if (isNumericMonthSegment(maybeMonth) && slugStartsWithMonth(parts[2], maybeMonth)) {
+			return [parts[0], ...parts.slice(2)].join("/");
+		}
+	}
+	if (parts.length >= 2) {
+		const maybeMonth = parts[0];
+		if (isNumericMonthSegment(maybeMonth) && slugStartsWithMonth(parts[1], maybeMonth)) {
+			return parts.slice(1).join("/");
+		}
+	}
+	return slug;
+}
+
+export function normalizeDiarySlug(id: string): string {
+	const slug = removeFileExtension(id).replace(/\\/g, "/");
+	const parts = slug.split("/").filter(Boolean);
+	if (parts.length >= 2) {
+		const monthSegment = parts[0];
+		const monthPattern = /^\d{4}-(0?[1-9]|1[0-2])$/;
+		if (monthPattern.test(monthSegment) && parts[1].startsWith(`${monthSegment}-`)) {
+			return parts.slice(1).join("/");
+		}
+	}
+	return slug;
+}
+
 /**
  * 统一获取内容 frontmatter 图片字段的 URL。
  * 支持远程字符串 URL 与 Astro image() 返回的 ImageMetadata。
@@ -51,9 +100,9 @@ function joinUrl(...parts: string[]): string {
 }
 
 export function getPostUrlBySlug(slug: string): string {
-	// 移除文件扩展名（如 .md, .mdx 等）
-	const slugWithoutExt = removeFileExtension(slug);
-	return url(`/posts/${slugWithoutExt}/`);
+	// 移除文件扩展名（如 .md, .mdx 等）并规范化 slug
+	const normalizedSlug = normalizePostSlug(slug);
+	return url(`/posts/${normalizedSlug}/`);
 }
 
 export function getPostUrlByAlias(alias: string): string {

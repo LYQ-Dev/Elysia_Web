@@ -8,7 +8,7 @@ import sanitizeHtml from "sanitize-html";
 import { profileConfig, siteConfig } from "@/config";
 import { getSortedPosts } from "@/utils/content-utils";
 import { initPostIdMap } from "@/utils/permalink-utils";
-import { getPostUrl } from "@/utils/url-utils";
+import { getDir, getPostUrl } from "@/utils/url-utils";
 
 const markdownParser = new MarkdownIt();
 
@@ -67,37 +67,18 @@ export async function GET(context: APIContext) {
 				if (src.startsWith("./")) {
 					// Path relative to the post file directory
 					const prefixRemoved = src.slice(2);
-					// Check if this post is in a subdirectory (like bestimageapi/index.md)
-					const postPath = post.id; // This gives us the full path like "bestimageapi/index.md"
-					const postDir = postPath.includes("/")
-						? postPath.split("/")[0]
-						: "";
-
-					if (postDir) {
-						// For posts in subdirectories
-						importPath = `/src/content/posts/${postDir}/${prefixRemoved}`;
-					} else {
-						// For posts directly in posts directory
-						importPath = `/src/content/posts/${prefixRemoved}`;
-					}
+					const postDir = getDir(post.id);
+					const normalizedDir = postDir === "/" ? "" : postDir;
+					importPath = `/src/content/posts/${normalizedDir}${prefixRemoved}`;
 				} else if (src.startsWith("../")) {
 					// Path like ../assets/images/xxx -> relative to /src/content/
 					const cleaned = src.replace(/^\.\.\//, "");
 					importPath = `/src/content/${cleaned}`;
 				} else {
 					// Handle direct filename (no ./ prefix) - assume it's in the same directory as the post
-					const postPath = post.id; // This gives us the full path like "bestimageapi/index.md"
-					const postDir = postPath.includes("/")
-						? postPath.split("/")[0]
-						: "";
-
-					if (postDir) {
-						// For posts in subdirectories
-						importPath = `/src/content/posts/${postDir}/${src}`;
-					} else {
-						// For posts directly in posts directory
-						importPath = `/src/content/posts/${src}`;
-					}
+					const postDir = getDir(post.id);
+					const normalizedDir = postDir === "/" ? "" : postDir;
+					importPath = `/src/content/posts/${normalizedDir}${src}`;
 				}
 
 				const imageMod = await imagesGlob[importPath]?.()?.then(

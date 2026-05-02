@@ -4,6 +4,7 @@ import { i18n } from "@i18n/translation";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getSortedPosts } from "@utils/content-utils";
 import { formatDateToYYYYMMDD } from "@utils/date-utils";
+import { getPostUrlBySlug } from "@utils/url-utils";
 import { Icon } from "astro-icon/components";
 
 interface Props {
@@ -97,7 +98,7 @@ const t = (key: string) => i18n(key as I18nKey);
 						<article class="bg-[var(--card-bg)] rounded-xl p-4 border border-[var(--line-divider)] hover:border-[var(--primary)] transition-all duration-300">
 							<h3 class="text-lg font-semibold text-90 mb-2 hover:text-[var(--primary)] transition-colors">
 								<a
-									href={`/posts/${post.id}/`}
+									href={getPostUrlBySlug(post.id)}
 									class="hover:underline"
 								>
 									{post.data.title}

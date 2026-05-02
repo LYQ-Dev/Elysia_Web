@@ -1,7 +1,7 @@
 import type { CollectionEntry } from "astro:content";
 
 import { permalinkConfig } from "../config";
-import { removeFileExtension } from "./url-utils";
+import { normalizePostSlug, removeFileExtension } from "./url-utils";
 
 // 文章 ID 映射缓存（用于存储按时间排序后的文章序号）
 let postIdMap: Map<string, number> | null = null;
@@ -73,14 +73,14 @@ export function generatePermalinkSlug(post: CollectionEntry<"posts">): string {
 			return post.data.alias.replace(/^\/+/, "").replace(/\/+$/, "");
 		}
 		// 否则使用文件名
-		return removeFileExtension(post.id);
+		return normalizePostSlug(post.id);
 	}
 
 	// 使用全局 permalink 格式模板
 	const format = permalinkConfig.format;
 
 	const published = post.data.published;
-	const postname = removeFileExtension(post.id);
+	const postname = normalizePostSlug(post.id);
 
 	let rawPostname = postname;
 	// Use original file name preserving case from filePath if available

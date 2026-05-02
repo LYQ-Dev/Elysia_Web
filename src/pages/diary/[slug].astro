@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { Icon } from "astro-icon/components";
 import { siteConfig } from "../../config";
+import { normalizeDiarySlug } from "@utils/url-utils";
 
 if (!siteConfig.featurePages.diary) {
 	return Astro.redirect("/404/");
@@ -15,7 +16,7 @@ const entries = await getCollection("diary");
 export async function getStaticPaths() {
 	const entries = await getCollection("diary");
 	return entries.map((entry) => ({
-		params: { slug: entry.id },
+		params: { slug: normalizeDiarySlug(entry.id) },
 		props: { entry },
 	}));
 }
@@ -26,14 +27,15 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const entrySlug = normalizeDiarySlug(entry.id);
 
 // 处理相对路径的图片，转换为绝对路径
 const processedImages = (entry.data.images || []).map((image: string) => {
 	// 如果是相对路径（./ 开头或不以 / 开头），转换为 /diary-content/{id}/filename
 	if (image.startsWith("./")) {
-		return `/diary-content/${entry.id}/${image.slice(2)}`;
+		return `/diary-content/${entrySlug}/${image.slice(2)}`;
 	} else if (!image.startsWith("/")) {
-		return `/diary-content/${entry.id}/${image}`;
+		return `/diary-content/${entrySlug}/${image}`;
 	}
 	// 已经是绝对路径，保持不变
 	return image;

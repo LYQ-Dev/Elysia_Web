@@ -1,6 +1,7 @@
 <script lang="ts">
 	import I18nKey from "@i18n/i18nKey";
 	import { i18n } from "@i18n/translation";
+	import { getPostUrlBySlug } from "@utils/url-utils";
 	import { onMount } from "svelte";
 
 	export let tags: string[];
@@ -123,7 +124,7 @@
 
 			{#each group.posts as post}
 				<a
-					href={post.url || `/posts/${post.id}/`}
+					href={post.url || getPostUrlBySlug(post.id)}
 					aria-label={post.data.title}
 					class="group btn-plain !block h-10 w-full rounded-lg hover:text-[initial]"
 				>

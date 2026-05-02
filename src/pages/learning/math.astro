@@ -3,7 +3,7 @@ import "@styles/learning-pages.css";
 import PageHeader from "@components/features/page-header/PageHeader.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getCollection } from "astro:content";
-import { removeFileExtension } from "@utils/url-utils";
+import { getPostUrlBySlug } from "@utils/url-utils";
 
 const title = "考研数学";
 const description = "备战考研数学的学习记录";
@@ -23,7 +23,7 @@ const mathPosts = allPosts
 			{mathPosts.length > 0 ? (
 				<div>
 					{mathPosts.map((post) => (
-						<a href={`/posts/${removeFileExtension(post.id)}/`} class="learning-post-item block">
+						<a href={getPostUrlBySlug(post.id)} class="learning-post-item block">
 							<h3 class="learning-post-title text-blue-600 dark:text-blue-300">
 								{post.data.title}
 							</h3>

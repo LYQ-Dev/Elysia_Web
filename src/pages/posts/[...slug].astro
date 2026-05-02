@@ -16,7 +16,7 @@ import Markdown from "@components/misc/Markdown.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getRelatedPosts, getSortedPosts } from "@utils/content-utils";
 import { hasCustomPermalink, initPostIdMap } from "@utils/permalink-utils";
-import { getFileDirFromPath, removeFileExtension } from "@utils/url-utils";
+import { getFileDirFromPath, normalizePostSlug } from "@utils/url-utils";
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 import {
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 
 	for (const entry of blogEntries) {
 		// 将 id 转换为 slug（移除扩展名）以匹配路由参数
-		const defaultSlug = removeFileExtension(entry.id);
+		const defaultSlug = normalizePostSlug(entry.id);
 
 		// 如果文章有自定义 permalink，不在 /posts/ 下创建路径
 		// 而是通过根目录的 [permalink].astro 处理
@@ -192,7 +192,7 @@ const jsonLd = {
 	description={entry.data.description}
 	lang={entry.data.lang}
 	setOGTypeArticle={true}
-	postSlug={entry.id}
+	postSlug={normalizePostSlug(entry.id)}
 	headings={headings}
 >
 	<script
