@@ -8,6 +8,8 @@
 	export let categories: string[];
 	export let sortedPosts: Post[] = [];
 
+	const PAGE_SIZE = 10;
+
 	const params = new URLSearchParams(window.location.search);
 	tags = params.has("tag") ? params.getAll("tag") : [];
 	categories = params.has("category") ? params.getAll("category") : [];
@@ -32,6 +34,15 @@
 	}
 
 	let groups: Group[] = [];
+	let filteredPosts: Post[] = [];
+	let pagedPosts: Post[] = [];
+	let currentPage = 1;
+	let totalPages = 1;
+	let pages: number[] = [];
+
+	const HIDDEN = -1;
+	const ADJ_DIST = 2;
+	const VISIBLE = ADJ_DIST * 2 + 1;
 
 	function formatDate(date: Date) {
 		const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -43,8 +54,89 @@
 		return tagList.map((t) => `#${t}`).join(" ");
 	}
 
+	function updatePages() {
+		pages = [];
+		let count = 1;
+		let l = currentPage;
+		let r = currentPage;
+		while (0 < l - 1 && r + 1 <= totalPages && count + 2 <= VISIBLE) {
+			count += 2;
+			l--;
+			r++;
+		}
+		while (0 < l - 1 && count < VISIBLE) {
+			count++;
+			l--;
+		}
+		while (r + 1 <= totalPages && count < VISIBLE) {
+			count++;
+			r++;
+		}
+
+		if (l > 1) {
+			pages.push(1);
+		}
+		if (l === 3) {
+			pages.push(2);
+		}
+		if (l > 3) {
+			pages.push(HIDDEN);
+		}
+		for (let i = l; i <= r; i++) {
+			pages.push(i);
+		}
+		if (r < totalPages - 2) {
+			pages.push(HIDDEN);
+		}
+		if (r === totalPages - 2) {
+			pages.push(totalPages - 1);
+		}
+		if (r < totalPages) {
+			pages.push(totalPages);
+		}
+	}
+
+	function buildGroups(posts: Post[]) {
+		const grouped = posts.reduce(
+			(acc, post) => {
+				const year = post.data.published.getFullYear();
+				if (!acc[year]) {
+					acc[year] = [];
+				}
+				acc[year].push(post);
+				return acc;
+			},
+			{} as Record<number, Post[]>,
+		);
+
+		const groupedPostsArray = Object.keys(grouped).map((yearStr) => ({
+			year: Number.parseInt(yearStr, 10),
+			posts: grouped[Number.parseInt(yearStr, 10)],
+		}));
+
+		groupedPostsArray.sort((a, b) => b.year - a.year);
+		groups = groupedPostsArray;
+	}
+
+	function setCurrentPage(nextPage: number) {
+		currentPage = Math.min(Math.max(1, nextPage), totalPages);
+		const start = (currentPage - 1) * PAGE_SIZE;
+		pagedPosts = filteredPosts.slice(start, start + PAGE_SIZE);
+		buildGroups(pagedPosts);
+		updatePages();
+		const nextParams = new URLSearchParams(window.location.search);
+		if (currentPage > 1) {
+			nextParams.set("page", String(currentPage));
+		} else {
+			nextParams.delete("page");
+		}
+		const nextQuery = nextParams.toString();
+		const nextUrl = `${window.location.pathname}${nextQuery ? `?${nextQuery}` : ""}`;
+		window.history.replaceState({}, "", nextUrl);
+	}
+
 	onMount(async () => {
-		let filteredPosts: Post[] = sortedPosts;
+		filteredPosts = sortedPosts;
 
 		if (tags.length > 0) {
 			filteredPosts = filteredPosts.filter(
@@ -73,27 +165,10 @@
 				(a, b) =>
 					b.data.published.getTime() - a.data.published.getTime(),
 			);
-
-		const grouped = filteredPosts.reduce(
-			(acc, post) => {
-				const year = post.data.published.getFullYear();
-				if (!acc[year]) {
-					acc[year] = [];
-				}
-				acc[year].push(post);
-				return acc;
-			},
-			{} as Record<number, Post[]>,
-		);
-
-		const groupedPostsArray = Object.keys(grouped).map((yearStr) => ({
-			year: Number.parseInt(yearStr, 10),
-			posts: grouped[Number.parseInt(yearStr, 10)],
-		}));
-
-		groupedPostsArray.sort((a, b) => b.year - a.year);
-
-		groups = groupedPostsArray;
+		totalPages = Math.max(1, Math.ceil(filteredPosts.length / PAGE_SIZE));
+		const pageParam = Number(params.get("page"));
+		const initialPage = Number.isFinite(pageParam) && pageParam > 0 ? pageParam : 1;
+		setCurrentPage(initialPage);
 	});
 </script>
 
@@ -174,3 +249,47 @@
 		</div>
 	{/each}
 </div>
+
+{#if totalPages > 1}
+	<div class="flex flex-row gap-3 justify-center mt-8">
+		<button
+			class:disabled={currentPage <= 1}
+			class="btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11"
+			aria-label="上一页"
+			on:click={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+		>
+			<span class="text-xl">‹</span>
+		</button>
+		<div
+			class="bg-[var(--card-bg)] flex flex-row rounded-lg items-center text-neutral-700 dark:text-neutral-300 font-bold"
+		>
+			{#each pages as p}
+				{#if p === HIDDEN}
+					<span class="mx-2 text-sm">...</span>
+				{:else if p === currentPage}
+					<div
+						class="h-11 w-11 rounded-lg bg-[var(--primary)] flex items-center justify-center font-bold text-white dark:text-black/70"
+					>
+						{p}
+					</div>
+				{:else}
+					<button
+						class="btn-card w-11 h-11 rounded-lg overflow-hidden active:scale-[0.85]"
+						aria-label={`Page ${p}`}
+						on:click={() => setCurrentPage(p)}
+					>
+						{p}
+					</button>
+				{/if}
+			{/each}
+		</div>
+		<button
+			class:disabled={currentPage >= totalPages}
+			class="btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11"
+			aria-label="下一页"
+			on:click={() => currentPage < totalPages && setCurrentPage(currentPage + 1)}
+		>
+			<span class="text-xl">›</span>
+		</button>
+	</div>
+{/if}

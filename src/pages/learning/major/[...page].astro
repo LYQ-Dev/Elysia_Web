@@ -1,18 +1,32 @@
 ---
 import "@styles/learning-pages.css";
+import Pagination from "@components/control/Pagination.astro";
 import PageHeader from "@components/features/page-header/PageHeader.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
+import { PAGE_SIZE } from "../../../constants/constants";
 import { getPostUrlBySlug } from "@utils/url-utils";
 
 const title = "考研专业课";
 const description = "专业课学习记录";
 
-// 获取所有帖子并筛选分类为 'major' 的
-const allPosts = await getCollection("posts");
-const majorPosts = allPosts
-	.filter((post) => post.data.category === "major" && !post.data.draft)
-	.sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime());
+export const getStaticPaths = (async ({ paginate }) => {
+	const allPosts = await getCollection("posts");
+	const majorPosts = allPosts
+		.filter((post) => post.data.category === "major" && !post.data.draft)
+		.sort(
+			(a, b) =>
+				new Date(b.data.published).getTime() -
+				new Date(a.data.published).getTime(),
+		);
+
+	return paginate(majorPosts, { pageSize: PAGE_SIZE });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const majorPosts = page.data;
+const len = majorPosts.length;
 ---
 
 <MainGridLayout title={title} description={description}>
@@ -23,7 +37,10 @@ const majorPosts = allPosts
 			{majorPosts.length > 0 ? (
 				<div>
 					{majorPosts.map((post) => (
-						<a href={getPostUrlBySlug(post.id)} class="learning-post-item block">
+						<a
+							href={getPostUrlBySlug(post.id)}
+							class="learning-post-item block"
+						>
 							<h3 class="learning-post-title text-purple-600 dark:text-purple-300">
 								{post.data.title}
 							</h3>
@@ -31,7 +48,11 @@ const majorPosts = allPosts
 								{post.data.description}
 							</p>
 							<div class="learning-post-meta">
-								<span>{new Date(post.data.published).toLocaleDateString('zh-CN')}</span>
+								<span>
+									{new Date(
+										post.data.published,
+									).toLocaleDateString("zh-CN")}
+								</span>
 								{post.data.tags.length > 0 && (
 									<div class="flex gap-2">
 										{post.data.tags.slice(0, 3).map((tag) => (
@@ -51,6 +72,15 @@ const majorPosts = allPosts
 						📖 开始记录你的专业课学习...
 					</p>
 				</div>
+			)}
+
+			{page.lastPage > 1 && (
+				<Pagination
+					class="mx-auto mt-8 onload-animation"
+					basePath="/learning/major"
+					page={page}
+					style={`animation-delay: calc(var(--content-delay) + ${len * 50}ms)`}
+				/>
 			)}
 		</div>
 	</div>

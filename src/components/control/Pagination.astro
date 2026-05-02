@@ -8,9 +8,10 @@ interface Props {
 	page: Page;
 	class?: string;
 	style?: string;
+	basePath?: string;
 }
 
-const { page, style } = Astro.props;
+const { page, style, basePath = "" } = Astro.props;
 
 const HIDDEN = -1;
 
@@ -60,11 +61,21 @@ if (r < page.lastPage) {
 	pages.push(page.lastPage);
 }
 
+const normalizeBasePath = (path: string) => {
+	if (!path) {
+		return "";
+	}
+	const normalized = path.startsWith("/") ? path : `/${path}`;
+	return normalized.replace(/\/+$/g, "");
+};
+
+const normalizedBasePath = normalizeBasePath(basePath);
+
 const getPageUrl = (p: number) => {
 	if (p === 1) {
-		return "/";
+		return normalizedBasePath || "/";
 	}
-	return `/${p}/`;
+	return `${normalizedBasePath}/${p}/`;
 };
 ---
 
