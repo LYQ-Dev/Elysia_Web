@@ -5,8 +5,204 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-04T14:22:24.572Z</updated>
+  <updated>2026-05-05T14:32:22.896Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-05</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-5/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-5/</id>
+    <published>2026-05-05T00:00:00.000Z</published>
+    <updated>2026-05-05T00:00:00.000Z</updated>
+    <summary>408 操作系统专业课同步互斥知识点学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-05</h1>
+<h2>今日学习内容</h2>
+<p>今天主要完成操作系统进程管理模块中同步和互斥的实现手段的学习，包括软件实现、硬件实现手段，同时梳理了三大经典同步问题：哲学家进餐、生产-消费者、读者写者问题的核心逻辑与解题要点。</p>
+<h2>AI知识点带复盘</h2>
+<h3>同步互斥核心概念铺垫</h3>
+<p>同步与互斥是进程并发执行的核心保障，其中<strong>互斥</strong>指多个并发进程无法同时进入临界区（访问共享资源的代码段），<strong>同步</strong>指多个进程的执行顺序需要按照业务逻辑进行配合，避免出现竞争错误。</p>
+<h3>同步互斥实现手段复盘</h3>
+<ol>
+<li><strong>软件实现手段</strong>：以皮特森算法为经典代表，通过共享内存变量实现临界区互斥，核心变量包括<code>flag[N]</code>（标记每个进程是否请求进入临界区）和<code>turn</code>（标记当前允许进入临界区的进程编号），严格满足临界区调度的三大准则：互斥访问、空闲让进、有限等待，是408简答题必考的算法默写题型。</li>
+<li><strong>硬件实现手段</strong>：
+<ul>
+<li>中断屏蔽：通过关闭CPU中断禁止进程切换，仅适用于单CPU内核级同步，缺点是会延长中断响应时间，仅适合短临界区场景</li>
+<li>原子硬件指令：包括<code>Test-and-Set（TS指令）</code>、<code>Swap（交换指令）</code>，通过硬件级的原子操作完成临界区的互斥访问，无需依赖软件共享变量，效率更高，是现代操作系统内核同步的主流实现方式</li>
+</ul>
+</li>
+</ol>
+<h3>经典同步问题考点拆解</h3>
+<ol>
+<li><strong>生产者-消费者问题</strong>：核心场景是共享缓冲区的并发访问，需要同时解决互斥访问缓冲区与同步生产/消费的逻辑。考研考点重点包括信号量实现中同步信号量与互斥信号量的使用顺序（必须先申请同步信号量再申请互斥信号量，否则可能触发死锁）、多缓冲区场景下的缓冲区计数管理。</li>
+<li><strong>读者-写者问题</strong>：区分读者优先、写者优先、读写公平三种模型，核心逻辑为：读者之间无需互斥，读者与写者、写者之间需要互斥。考研常考通过信号量实现读者计数变量的保护，以及不同优先级模型的调度逻辑差异。</li>
+<li><strong>哲学家进餐问题</strong>：经典死锁场景，五个哲学家轮流思考与进餐，需拿起左右两支筷子才能完成进餐。核心死因是循环等待，考研常考的解决方法包括：限制最多4个哲学家同时进餐、规定哲学家按固定顺序拿取筷子、使用AND型信号量一次性申请两支所需资源。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>初期容易混淆同步信号量与互斥信号量的使用顺序，曾错误将P互斥信号量放在P同步信号量之前，导致可能出现进程死锁</li>
+<li>对读者优先模型中读者计数变量的互斥保护逻辑理解不够透彻，容易遗漏对计数变量的临界区保护步骤</li>
+<li>对哲学家进餐问题的多种解法的适用场景区分不够清晰，需要进一步梳理不同方案的优劣与适用环境</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>完整梳理了同步互斥从软件、硬件到高级同步原语的实现层级，明确了不同实现手段的适用场景与优缺点</li>
+<li>掌握了三大经典同步问题的核心逻辑与标准化解题步骤，能够独立默写相关信号量实现代码</li>
+<li>明确了408操作系统模块中该章节的高频考点：临界区调度准则、算法默写、死锁分析、同步方案设计</li>
+<li>理清了同步与互斥的本质区别，能够准确区分不同并发场景下的同步需求
+💡 碎碎念：踏实吃透每一个知识点！</li>
+</ol>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-05</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-5/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-5/</id>
+    <published>2026-05-05T00:00:00.000Z</published>
+    <updated>2026-05-05T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-05</h1>
+<h2>今日学习总览</h2>
+<p>今日严格按照备考计划完成2个单元考研核心单词的背诵与复盘，完成1篇考研英语长难句拆解练习，累计有效学习时长约1小时，夯实了基础词汇储备与长难句分析能力。</p>
+<h2>考研核心单词复盘</h2>
+<h3>第一单元核心词汇（radical ~ prove）</h3>
+<ol>
+<li><strong>radical</strong> /ˈrædɪkl/ adj. 根本的、彻底的；激进的；n. 激进分子。考研高频搭配：radical reform 彻底改革</li>
+<li><strong>oblige</strong> /əˈblaɪdʒ/ v. 迫使、责成；使感激。考研高频搭配：be obliged to do sth. 被迫做某事；be obliged to sb. 感激某人</li>
+<li><strong>obscure</strong> /əbˈskjʊə(r)/ adj. 模糊的、晦涩的；不著名的；v. 使模糊、掩盖</li>
+<li><strong>obsession</strong> /əbˈseʃn/ n. 痴迷、执念；困扰。考研高频搭配：obsession with sth. 对某事的痴迷</li>
+<li><strong>obsolete</strong> /ˈɒbsəliːt/ adj. 过时的、废弃的</li>
+<li><strong>identical</strong> /aɪˈdentɪkl/ adj. 相同的、同一的。考研高频搭配：be identical to/with 与……一致</li>
+<li><strong>judge</strong> /dʒʌdʒ/ n. 法官、裁判员；v. 判断、评判</li>
+<li><strong>jury</strong> /ˈdʒʊəri/ n. 陪审团；评判委员会</li>
+<li><strong>justice</strong> /ˈdʒʌstɪs/ n. 正义、公正；司法体系</li>
+<li><strong>justify</strong> /ˈdʒʌstɪfaɪ/ v. 证明……正当；为……辩护</li>
+<li><strong>lag</strong> /læɡ/ v./n. 滞后、落后</li>
+<li><strong>lateral</strong> /ˈlætərəl/ adj. 侧面的、横向的</li>
+<li><strong>magnitude</strong> /ˈmæɡnɪtjuːd/ n. 重要性、重大；量级、规模</li>
+<li><strong>therapy</strong> /ˈθerəpi/ n. 治疗、疗法</li>
+<li><strong>scale</strong> /skeɪl/ n. 规模、等级；刻度；v. 攀登、衡量</li>
+<li><strong>panel</strong> /ˈpænl/ n. 专门小组、面板；陪审团</li>
+<li><strong>panorama</strong> /ˌpænəˈrɑːmə/ n. 全景、概观</li>
+<li><strong>prove</strong> /pruːv/ v. 证明、证实；结果是、证明是</li>
+</ol>
+<h3>第二单元核心词汇（tow ~ knit）</h3>
+<ol>
+<li><strong>tow</strong> /təʊ/ v./n. 拖、拉、牵引</li>
+<li><strong>temper</strong> /ˈtempə(r)/ n. 脾气、情绪；v. 调和、使缓和</li>
+<li><strong>temporal</strong> /ˈtempərəl/ adj. 时间的；世俗的、非宗教的</li>
+<li><strong>temporary</strong> /ˈtemprəri/ adj. 暂时的、临时的</li>
+<li><strong>tempt</strong> /tempt/ v. 引诱、诱惑；吸引</li>
+<li><strong>tentative</strong> /ˈtentətɪv/ adj. 试探性的、暂定的</li>
+<li><strong>ultimate</strong> /ˈʌltɪmət/ adj. 终极的、根本的；n. 终极、极限</li>
+<li><strong>undergo</strong> /ˌʌndəˈɡəʊ/ v. 经历、经受</li>
+<li><strong>underlie</strong> /ˌʌndəˈlaɪ/ v. 构成……的基础；位于……之下</li>
+<li><strong>unify</strong> /ˈjuːnɪfaɪ/ v. 统一、使成一体</li>
+<li><strong>vague</strong> /veɪɡ/ adj. 模糊的、含糊的</li>
+<li><strong>vain</strong> /veɪn/ adj. 徒劳的、无效的；自负的。考研高频搭配：in vain 徒劳地</li>
+<li><strong>valid</strong> /ˈvælɪd/ adj. 有效的、合法的；正当的</li>
+<li><strong>vanish</strong> /ˈvænɪʃ/ v. 消失、消散</li>
+<li><strong>variable</strong> /ˈveəriəbl/ adj. 可变的、易变的；n. 变量</li>
+<li><strong>variety</strong> /vəˈraɪəti/ n. 种类、多样；品种</li>
+<li><strong>wage</strong> /weɪdʒ/ n. 工资、报酬；v. 开展、进行（战争、运动等）</li>
+<li><strong>wander</strong> /ˈwɒndə(r)/ v. 漫步、徘徊；走神、恍惚</li>
+<li><strong>weary</strong> /ˈwɪəri/ adj. 疲惫的、厌烦的；v. 使疲惫、厌烦</li>
+<li><strong>weird</strong> /wɪəd/ adj. 奇怪的、离奇的</li>
+<li><strong>whirl</strong> /wɜːl/ v./n. 旋转、回旋；混乱</li>
+<li><strong>yield</strong> /jiːld/ v. 屈服、让步；产生、产出；n. 产量、收益</li>
+<li><strong>zoom</strong> /zuːm/ v. 快速移动；激增、暴涨</li>
+<li><strong>knit</strong> /nɪt/ v. 编织；使紧密结合、使团结</li>
+</ol>
+<h2>长难句拆解练习</h2>
+<p>今日选取2024年考研英语（一）阅读Text3经典长难句进行专项训练：</p>
+<blockquote>
+<p>The researchers found that children who were exposed to more screen time before age 5 had lower scores on tests measuring cognitive development at age 8, even after accounting for factors such as parental education and family income.</p>
+</blockquote>
+<h3>结构拆解：</h3>
+<ol>
+<li>主句主干：The researchers found + 宾语从句</li>
+<li>宾语从句主干：children had lower scores</li>
+<li>后置定语修饰children：who were exposed to more screen time before age 5</li>
+<li>介词短语作状语：on tests measuring cognitive development at age 8（其中measuring...为现在分词作后置定语修饰tests）</li>
+<li>让步状语：even after accounting for factors such as parental education and family income</li>
+</ol>
+<h3>参考翻译：</h3>
+<p>研究人员发现，即便在控制了父母受教育程度、家庭收入等干扰因素后，5岁前接触屏幕时间更长的儿童，在8岁时的认知发育测试中得分更低。</p>
+<h2>今日碎碎念</h2>
+<p>今天背单词特意整理了每个词汇的考研高频搭配，纠正了之前只会死记硬背释义却不会在真题中运用的问题。长难句拆解初期被多层定语从句绕晕，后来通过拆分主干的方法理清了逻辑，瞬间通透了。距离2027年考研还有不到一年，不求速成但求扎实，每天积累一点点，量变终会质变，上岸目标一定能达成！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-05</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-5/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-5/</id>
+    <published>2026-05-05T00:00:00.000Z</published>
+    <updated>2026-05-05T00:00:00.000Z</updated>
+    <summary>2026年5月5日考研数学学习与复盘记录，涵盖大数定律习题训练、数理统计预习及一元积分几何应用复盘</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-05</h1>
+<h2>今日学习内容</h2>
+<p>今日总学习时长约3.5小时，分为三个模块有序推进：</p>
+<ol>
+<li>专项刷题：完成张宇考研数学1000题中概率论与数理统计板块的大数定律专项习题，共计22道选择、填空与解答题，过程中感受到1000题的题型灵活性与计算量均高于基础题；</li>
+<li>新课预习：开启数理统计基础章节的学习，梳理了总体、样本、统计量的核心概念框架；</li>
+<li>模块复盘：系统性复盘高等数学一元积分学的几何应用模块，补全此前遗漏的极坐标下面积计算等易错知识点。</li>
+</ol>
+<h2>薄弱点</h2>
+<p>结合今日刷题与学习过程，梳理出三个核心薄弱环节：</p>
+<ol>
+<li><strong>大数定律条件辨析模糊</strong>：对切比雪夫、伯努利、辛钦三大大数定律的适用场景与前提条件容易混淆，在判断随机变量序列是否满足大数定律的题型中出现多次失误；</li>
+<li><strong>张宇1000题解题效率偏低</strong>：部分综合题涉及积分放缩、极限收敛的结合考察，解题思路不清晰，导致单题耗时超过15分钟；</li>
+<li><strong>数理统计入门概念混淆</strong>：对总体与样本的对应关系、统计量的构造逻辑尚未形成清晰认知，部分基础概念的记忆不够牢固。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>1. 一元积分学几何应用复盘</h3>
+<p>该模块是考研高数高频考点，主要覆盖四大类题型：</p>
+<ul>
+<li>平面直角坐标系下曲边梯形面积：核心公式为$S=\int_{a}^{b}|f(x)-g(x)|dx$，需优先求解曲线交点确定积分上下限，避免因符号错误导致结果偏差；</li>
+<li>旋转体体积：绕x轴旋转用圆盘法$V=\pi\int_{a}^{b}f^2(x)dx$，绕y轴旋转需注意积分变量转换，可采用壳层法$V=2\pi\int_{a}^{b}x|f(x)|dx$简化计算；</li>
+<li>弧长计算：直角坐标下公式为$L=\int_{a}^{b}\sqrt{1+[f'(x)]^2}dx$，参数方程与极坐标下需对应调整微元形式；</li>
+<li>极坐标下面积：微元为$\frac{1}{2}r^2(\theta)d\theta$，适用极坐标给出的曲线围成的面积计算。本次复盘补全了极坐标面积的推导过程，明确了积分区间的选取规则。</li>
+</ul>
+<h3>2. 大数定律知识点复盘</h3>
+<p>大数定律是概率论解答题的基础考点，核心是阐述随机变量序列的样本均值收敛到总体期望的条件：</p>
+<ul>
+<li>切比雪夫大数定律：要求随机变量序列两两独立、期望与方差均存在，且方差一致有界；</li>
+<li>伯努利大数定律：是切比雪夫大数定律的特例，针对n重伯努利试验中事件发生的频率收敛到其发生概率；</li>
+<li>辛钦大数定律：针对独立同分布且期望存在的随机变量序列，无需方差存在的条件，是后续数理统计中矩估计的核心理论基础。
+本次刷题暴露的核心问题为三大定律的适用条件混淆，后续需结合典型例题强化辨析。</li>
+</ul>
+<h3>3. 数理统计入门知识点梳理</h3>
+<p>今日预习的数理统计开篇内容搭建了该模块的基础框架：</p>
+<ul>
+<li>总体：研究对象的某项数量指标的全体，可等价为一个随机变量$X$；</li>
+<li>样本：从总体中独立抽取的$n$个同分布随机变量$X_1,X_2,\dots,X_n$，其观测值为$x_1,x_2,\dots,x_n$；</li>
+<li>统计量：不含未知参数的样本函数，常见统计量包括样本均值$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$、样本方差$S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X})^2$等。
+数理统计的核心目标是通过样本推断总体的分布与数字特征，为后续参数估计、假设检验等内容奠定基础。</li>
+</ul>
+<h2>今日小结</h2>
+<p>今日学习计划完成度100%，整体节奏平稳，未出现明显的精力分散情况。通过刷题与复盘，既补全了一元积分几何应用的遗漏考点，也明确了大数定律模块的知识漏洞，数理统计的预习也搭建了初步的知识框架。后续需针对性强化大数定律的条件辨析，同时提升张宇1000题综合题型的解题效率。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-04</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-4/" rel="alternate" type="text/html"/>
