@@ -5,8 +5,195 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-05T14:32:22.896Z</updated>
+  <updated>2026-05-06T14:30:28.771Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-6/</id>
+    <published>2026-05-06T00:00:00.000Z</published>
+    <updated>2026-05-06T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-06</h1>
+<h2>今日学习内容</h2>
+<p>今天专业课学习三小时24分，走神大概四十分钟，主要完成了死锁的相关学习、死锁的产生条件、预防、避免、银行家算法、安全队列、死锁的检测和消除</p>
+<h2>AI知识点带复盘</h2>
+<h3>死锁核心定义</h3>
+<p>考研408操作系统中，死锁指多个并发进程在执行过程中，因争夺共享资源陷入互相等待的僵局，若无外力干预，所有僵持进程都将无法继续推进。典型示例：进程P1持有打印机资源等待扫描仪，进程P2持有扫描仪资源等待打印机，二者形成循环等待陷入死锁。</p>
+<h3>死锁产生的四个必要条件</h3>
+<p>必须同时满足以下4个条件才会触发死锁，破坏任意一个即可避免死锁：</p>
+<ol>
+<li><strong>互斥条件</strong>：独占资源同一时刻只能被一个进程占用，如打印机、磁带机。</li>
+<li><strong>请求和保持条件</strong>：进程已持有至少一个资源，同时提出新资源请求，且未释放已持有的资源。</li>
+<li><strong>不剥夺条件</strong>：进程已获得的资源无法被强行剥夺，只能由进程主动释放。</li>
+<li><strong>环路等待条件</strong>：存在进程-资源循环链，即{P0,P1,...,Pn}，Pi等待Pi+1占有的资源，Pn等待P0占有的资源。</li>
+</ol>
+<h3>死锁的预防</h3>
+<p>通过破坏死锁必要条件从根源杜绝死锁：</p>
+<ol>
+<li>破坏请求和保持条件：要求进程一次性申请全部所需资源，未获取全部资源则不执行，缺点是资源利用率低。</li>
+<li>破坏不剥夺条件：进程申请新资源未满足时，主动释放已持有的全部资源，后续重新申请，会增加上下文切换开销。</li>
+<li>破坏环路等待条件：为所有资源分配唯一编号，要求进程按编号递增顺序申请资源，从根源打破循环等待，是工程常用方案。</li>
+<li>破坏互斥条件：仅适用于可共享资源，独占资源无法通过该方式预防死锁。</li>
+</ol>
+<h3>死锁的避免</h3>
+<p>不破坏必要条件，通过动态评估资源分配状态，避免系统进入不安全状态，核心算法为银行家算法。核心思路是每次分配前模拟分配并检查是否存在安全序列，存在则正式分配，否则让进程等待。</p>
+<h3>银行家算法核心细节</h3>
+<h4>核心数据结构</h4>
+<ul>
+<li><code>Available</code>：系统可用各类资源数量数组</li>
+<li><code>Max</code>：每个进程最大所需各类资源数量</li>
+<li><code>Allocation</code>：每个进程当前已分配资源数量</li>
+<li><code>Need</code>：每个进程剩余所需资源数量，<code>Need = Max - Allocation</code></li>
+</ul>
+<h4>执行步骤</h4>
+<ol>
+<li>检查进程请求资源数是否不超过自身剩余需求<code>Request[i] ≤ Need[i]</code>，非法则报错</li>
+<li>检查请求资源数是否不超过系统可用资源<code>Request[i] ≤ Available</code>，不满足则进程等待</li>
+<li>模拟分配并修改数据结构，随后执行安全性算法验证是否存在安全序列，存在则正式分配，否则回滚模拟数据让进程等待</li>
+</ol>
+<h3>安全队列（安全序列）</h3>
+<p>指按顺序推进的进程集合{P1,P2,...,Pn}，按该顺序每个进程均可获取全部资源完成执行并释放资源，供后续进程使用。系统处于安全状态当且仅当存在至少一个安全序列。</p>
+<h3>死锁的检测</h3>
+<p>定期扫描系统状态判断是否出现死锁：</p>
+<ol>
+<li>初始化<code>Work = Available</code>，标记所有进程为未完成</li>
+<li>遍历未完成进程，若存在进程满足<code>Need[i] ≤ Work</code>，则标记其完成并将<code>Work = Work + Allocation[i]</code>，重复该步骤</li>
+<li>若所有进程均完成则无死锁，否则系统出现死锁</li>
+</ol>
+<h3>死锁的消除</h3>
+<p>检测到死锁后通过以下方式解除：</p>
+<ol>
+<li>资源剥夺：强行从其他进程夺取资源分配给死锁进程</li>
+<li>撤销进程：终止一个或多个死锁进程，释放其占用的全部资源</li>
+<li>进程回退：让死锁进程回滚至检查点，释放当前占有的资源重新申请</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>今日走神时长约40分钟，占用近五分之一学习时间，压缩了知识点练习时长，后续需通过番茄工作法提升专注度，减少无效走神。</li>
+<li>死锁预防、避免、检测与消除的边界容易混淆，尤其是预防和避免的核心区别需进一步梳理：预防是破坏必要条件从根源杜绝，避免是动态规避不安全状态。</li>
+<li>多资源场景下银行家算法的安全序列推导容易出错，需要通过更多例题巩固练习。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了死锁模块的完整知识框架，理清了从定义、产生条件到各类应对方案的逻辑链条，明确了各考点在408考试中的考查重点，比如银行家算法是高频计算题考点，死锁四个必要条件常以选择题形式考查。</li>
+<li>掌握了银行家算法的核心流程和数据结构关系，能够独立完成简单场景下的资源分配模拟和安全序列查找。</li>
+<li>明确了死锁预防、避免、检测与消除的适用场景和优缺点，为后续做综合应用题打下了扎实基础。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-6/</id>
+    <published>2026-05-06T00:00:00.000Z</published>
+    <updated>2026-05-06T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-06</h1>
+<h2>今日学习内容</h2>
+<p>今天总计投入1小时的考研英语学习，首先完成了2个单元的考研英语核心必背词（Unit 11和Unit 12）的复盘复习，通过遮住中文释义快速自测，修正了5个易混淆的形近词与固定搭配误区；随后完成1个单元的考研基础词（Unit 8）的滚动复习，重点巩固了之前遗漏的词组用法。之后拆解了一句2024年考研英语阅读Text 3的长难句，先梳理句子主干与从句结构，拆分了分词后置定语与状语从句，核对官方解析后整理进个人长难句错题本，完整翻译了整句内容。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>核心必背词</h3>
+<ol>
+<li><strong>ingenious</strong> /ɪnˈdʒiːniəs/ adj. 精巧的；有独创性的
+<blockquote>
+<p>形近易混词：<strong>ingenuous</strong> /ɪnˈdʒenjuəs/ adj. 天真的，率直的</p>
+</blockquote>
+</li>
+<li><strong>premise</strong> /ˈpremɪs/ n. 前提，假定；v. 以…为立论基础</li>
+<li><strong>mitigate</strong> /ˈmɪtɪɡeɪt/ v. 减轻，缓解（=alleviate）</li>
+<li><strong>curb</strong> /kɜːb/ v. 控制，抑制；n. 路缘石</li>
+</ol>
+<h3>基础词巩固</h3>
+<ol>
+<li>take sth. for granted 认为…理所当然</li>
+<li>in due course 在适当的时候，如期</li>
+</ol>
+<p>💡 碎碎念：今天的形近词辨析解决了一直以来的小误区，背单词不能只追求数量，还要吃透易混点！坚持每日积累，英语上岸稳了！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-6/</id>
+    <published>2026-05-06T00:00:00.000Z</published>
+    <updated>2026-05-06T00:00:00.000Z</updated>
+    <summary>2026年5月6日考研数学学习复盘，涵盖高数积分中值定理复盘、三重积分练习及数理统计核心知识点学习</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-06</h1>
+<h2>今日学习内容</h2>
+<p>今天累计学习数学3小时，核心学习分为三个模块：一是复盘高数一元积分学的中值定理相关知识点；二是完成了一道三重积分（即日常所说的三元积分）习题练习；三是系统学习数理统计中的三大分布、样本均值与样本方差的定义性质，以及正态总体抽样分布的核心结论，并背诵了正态总体抽样分布四类常用场景的公式。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>一元积分中值定理与微分中值定理的适用条件、结论差异容易混淆，尤其是开区间与闭区间的取值范围区别；</li>
+<li>正态总体抽样分布的四类场景对应的统计量形式、自由度规则记忆模糊，双正态总体的合并方差公式容易记错；</li>
+<li>三重积分的积分区域分析不够熟练，非规则区域的投影换元步骤易出现积分限错误；</li>
+<li>数理统计三大分布的构造条件容易混淆，在抽样分布结合题中无法快速匹配对应分布形式。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>高数模块复盘</h3>
+<ol>
+<li><strong>一元积分中值定理</strong>
+考研核心考察两类积分中值定理：① 基础积分第一中值定理：若$f(x)$在$[a,b]$上连续，则存在$\xi\in[a,b]$，使得$\int_{a}^{b}f(x)dx = f(\xi)(b-a)$；② 推广的积分第一中值定理：若$f(x),g(x)$在$[a,b]$上连续，且$g(x)$在$[a,b]$上不变号，则存在$\xi\in[a,b]$，使得$\int_{a}^{b}f(x)g(x)dx = f(\xi)\int_{a}^{b}g(x)dx$。需要注意与微分中值定理的核心区别：积分中值定理的$\xi$可取闭区间，且仅要求被积函数连续，而微分中值定理要求函数可导且$\xi$可取开区间。今日复盘时特意整理了两类定理的考研出题陷阱，比如题干仅给出被积函数可积而非连续时，推广定理不再适用。</li>
+<li><strong>三重积分练习复盘</strong>
+今日完成的习题为柱体区域下的三重积分计算，采用先一后二的投影法：先将积分区域向$xOy$平面投影得到投影区域$D_{xy}$，再确定$z$的上下限$z_1(x,y)\leq z\leq z_2(x,y)$，将三重积分转化为$\iint_{D_{xy}}dxdy\int_{z_1(x,y)}^{z_2(x,y)}f(x,y,z)dz$，后续结合极坐标简化了$D_{xy}$的二重积分计算。练习中发现自己容易忽略柱坐标下体积元素$dV = r dr d\theta dz$的雅可比行列式系数，后续将通过5道专项习题强化换元技巧。</li>
+</ol>
+<h3>数理统计模块复盘</h3>
+<ol>
+<li><strong>三大分布核心梳理</strong>
+① $\boldsymbol{\chi^2}$分布：$n$个独立同分布的标准正态变量$X_1,X_2,\dots,X_n$的平方和$\sum_{i=1}^nX_i^2$服从自由度为$n$的$\chi^2$分布，具备可加性，期望为$n$，方差为$2n$；
+② $\boldsymbol{t}$分布：设$X\sim N(0,1)$，$Y\sim\chi^2(n)$且$X,Y$独立，则$T=\frac{X}{\sqrt{Y/n}}$服从自由度为$n$的$t$分布，其概率密度图像关于$y$轴对称，当$n$较大时近似于标准正态分布；
+③ $\boldsymbol{F}$分布：设$U\sim\chi^2(n_1)$，$V\sim\chi^2(n_2)$且$U,V$独立，则$F=\frac{U/n_1}{V/n_2}$服从自由度为$(n_1,n_2)$的$F$分布，分位数满足$F_{1-\alpha}(n_1,n_2)=\frac{1}{F_\alpha(n_2,n_1)}$，是考研方差比检验的核心公式。</li>
+<li><strong>样本统计量基础</strong>
+样本均值$\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i$，样本方差$S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2$，考研选择题常考察分母为$n-1$的原因：保证$S^2$是总体方差$\sigma^2$的无偏估计，若分母为$n$则为有偏估计。</li>
+<li><strong>正态总体抽样分布四大场景</strong>
+今日背诵的四类结论是数理统计大题的必考内容，按单/双总体分类整理如下：
+<ol>
+<li><strong>单正态总体$N(\mu,\sigma^2)$</strong>：
+<ul>
+<li>样本均值服从正态分布：$\overline{X}\sim N\left(\mu,\frac{\sigma^2}{n}\right)$，标准化后$U=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$；</li>
+<li>$\sigma$未知时，使用样本方差代替总体方差：$\frac{\overline{X}-\mu}{S/\sqrt{n}}\sim t(n-1)$；</li>
+<li>方差的卡方分布：$\frac{(n-1)S^2}{\sigma^2}\sim\chi^2(n-1)$，且$\overline{X}$与$S^2$相互独立。</li>
+</ul>
+</li>
+<li><strong>双正态总体</strong>：
+<ul>
+<li>若$\sigma_1^2,\sigma_2^2$已知，则$\frac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}\sim N(0,1)$；</li>
+<li>若$\sigma_1^2=\sigma_2^2=\sigma^2$未知，则使用合并样本方差$S_w^2=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$，此时$\frac{(\overline{X}-\overline{Y})-(\mu_1-\mu_2)}{S_w\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\sim t(n_1+n_2-2)$；</li>
+<li>方差比的分布：$\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}\sim F(n_1-1,n_2-1)$，当$\sigma_1^2=\sigma_2^2$时，$\frac{S_1^2}{S_2^2}\sim F(n_1-1,n_2-1)$。
+今日通过表格整理了四类场景的对比，有效降低了记忆混淆的概率。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日的考研数学学习完成了预设计划，先通过复盘补齐了积分中值定理的知识漏洞，再通过习题练习巩固了三重积分的计算技巧，最后系统掌握了数理统计的核心框架。学习过程中发现自己对双正态总体的合并方差公式熟练度不足，后续将通过专项习题强化记忆。整体学习节奏稳定，对数理统计的考点有了清晰的认知，为后续的真题练习打下了基础。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-05</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-5/" rel="alternate" type="text/html"/>
