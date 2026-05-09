@@ -5,8 +5,214 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-08T14:28:17.780Z</updated>
+  <updated>2026-05-09T14:29:16.212Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-09</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-9/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-9/</id>
+    <published>2026-05-09T00:00:00.000Z</published>
+    <updated>2026-05-09T00:00:00.000Z</updated>
+    <summary>408 专业课之分段虚拟存储系统学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-09</h1>
+<h2>今日学习内容</h2>
+<p>今天累计学习2.5小时，围绕408操作系统模块考点，重点深入学习了分段虚拟存储系统的核心概念、实现原理与考研高频考点细节。</p>
+<h2>AI知识点带复盘</h2>
+<h3>分段虚拟存储系统核心考点复盘</h3>
+<ol>
+<li>
+<p><strong>基础概念辨析</strong>
+分段虚拟存储系统是分段存储管理与虚拟存储技术结合的产物，以用户程序的逻辑模块（代码段、数据段、栈段等）为内存分配单位，允许程序逻辑地址空间远大于物理内存实际容量，通过请求调入、分段置换机制实现大程序在小内存中运行。
+与分页虚拟存储的核心区别：分段贴合用户程序组织结构，逻辑地址为二维结构（段号+段内偏移），天然支持段的共享、保护与动态增长，而分页以固定大小的页为单位，逻辑地址为一维结构。</p>
+</li>
+<li>
+<p><strong>段表结构与地址变换流程</strong>
+每个进程对应一张段表，标准段表项包含以下核心字段：</p>
+<ul>
+<li>段号：匹配逻辑地址中的段编号</li>
+<li>段基址：该段在物理内存的起始地址</li>
+<li>段长：当前段最大长度，用于校验段内偏移越界</li>
+<li>存在位：标记段是否已加载至内存</li>
+<li>修改位：标记段在内存中是否被修改，置换时判断是否需要写回外存</li>
+<li>外存地址：段在外存的存储位置，用于缺段中断时调入内存</li>
+<li>访问权限：限制段的读写/执行操作，实现内存保护</li>
+</ul>
+<p>完整地址变换流程：</p>
+<ol>
+<li>拆分逻辑地址为段号S与段内偏移W</li>
+<li>以段号为索引查询段表，获取对应段表项</li>
+<li>校验段内偏移W是否超出段长，越界则触发地址越界中断</li>
+<li>若存在位为0，触发缺段中断，操作系统将对应段从外存调入内存并更新段表项</li>
+<li>段已加载时，将段基址与段内偏移相加得到最终物理地址</li>
+</ol>
+</li>
+<li>
+<p><strong>高频考点细节</strong></p>
+<ul>
+<li>缺段中断：以段为单位调入内存，段大小不固定，需匹配内存空闲分区</li>
+<li>分段置换算法：沿用OPT、FIFO、LRU等分页置换逻辑，选择内存段进行置换释放空间</li>
+<li>内存碎片：会产生外碎片（零散小空闲分区），可通过内存紧凑缓解但增加系统开销</li>
+<li>共享与保护：多进程可共享同一段代码/数据，通过段表权限字段限制非法访问</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<p>今日学习未提出具体疑难问题，但后续需要结合408历年真题，针对性练习分段虚拟存储的地址变换、缺段中断处理、与分页虚拟存储对比类题型，强化考点应用能力。</p>
+<h2>收获与总结</h2>
+<p>今日系统梳理了分段虚拟存储系统的核心考点，明确了其与分页虚拟存储的本质区别，掌握了段表结构、地址变换流程与缺段中断处理逻辑，对操作系统内存管理模块的虚拟存储部分有了更清晰的认知，为后续真题刷题打下了扎实基础。</p>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-09</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-9/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-9/</id>
+    <published>2026-05-09T00:00:00.000Z</published>
+    <updated>2026-05-09T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-09</h1>
+<h2>今日学习总览</h2>
+<p>今天累计投入1.5小时进行考研英语专项学习，具体完成三项任务：一是背诵2个模块的考研英语必背核心词汇，二是拆解分析1句考研真题长难句，三是整理当日学习笔记与易错点。</p>
+<h2>单词复盘</h2>
+<p>本次背诵的是《红宝书·考研英语词汇》的Unit 3（阅读高频词模块）与Unit 4（写作核心词模块），整理了核心单词的音标、真题释义与例句，同时标注了易混淆的熟词僻义，具体整理如下：</p>
+<h3>Unit 3 阅读高频核心词</h3>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>音标</th>
+<th>核心释义</th>
+<th>考研真题语境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prone</td>
+<td>/prəʊn/</td>
+<td>adj. 易于…的，有…倾向的</td>
+<td>"we are prone to snap overreactions"（2023英一Text2）</td>
+</tr>
+<tr>
+<td>impulse</td>
+<td>/ˈɪmpʌls/</td>
+<td>n. 冲动，一时的念头</td>
+<td>"momentary emotional impulse"（2023英一Text2）</td>
+</tr>
+<tr>
+<td>mitigate</td>
+<td>/ˈmɪtɪɡeɪt/</td>
+<td>v. 减轻，缓解</td>
+<td>"mitigate the impact of climate change"（2022英一Text3）</td>
+</tr>
+<tr>
+<td>prevalent</td>
+<td>/ˈprevələnt/</td>
+<td>adj. 普遍的，盛行的</td>
+<td>"a prevalent belief"（2021英一Text2）</td>
+</tr>
+</tbody>
+</table>
+<h3>Unit 4 写作核心词</h3>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>音标</th>
+<th>核心释义</th>
+<th>写作例句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>depict</td>
+<td>/dɪˈpɪkt/</td>
+<td>v. 描绘，刻画</td>
+<td>The cartoon depicts a young student struggling with heavy homework.</td>
+</tr>
+<tr>
+<td>advocate</td>
+<td>/ˈædvəkeɪt/</td>
+<td>v. 提倡，主张</td>
+<td>Many experts advocate balancing study and physical exercise.</td>
+</tr>
+<tr>
+<td>deteriorate</td>
+<td>/dɪˈtɪəriəreɪt/</td>
+<td>v. 恶化，衰退</td>
+<td>The quality of public services has deteriorated in recent years.</td>
+</tr>
+<tr>
+<td>perspective</td>
+<td>/pəˈspektɪv/</td>
+<td>n. 视角，角度</td>
+<td>We should view this issue from a long-term perspective.</td>
+</tr>
+</tbody>
+</table>
+<p>💡 今日碎碎念：今天背单词的时候发现自己对<code>prone</code>的熟词僻义记得不牢，之前只记住了“俯卧的”，没想到考研里常考“易于…的”，赶紧整理到了错题本里。坚持每天积累核心词，把每个单词的真题用法都搞清楚，才能在考试里不丢分！</p>
+<h2>长难句分析</h2>
+<h3>学习素材：2023年全国硕士研究生招生考试英语（一）Text2 原句</h3>
+<blockquote>
+<p>Scientists have found that although we are prone to snap overreactions, if we pause and evaluate the momentary emotional impulse, we can reduce the impact of our bad reactions by up to 60 percent.</p>
+</blockquote>
+<h3>结构拆解</h3>
+<ol>
+<li>主句主干：Scientists have found + 宾语从句</li>
+<li>宾语从句嵌套让步状语：<code>although we are prone to snap overreactions</code>，其中<code>snap overreactions</code>意为“仓促的过度反应”</li>
+<li>让步状语内部嵌套条件状语：<code>if we pause and evaluate the momentary emotional impulse</code>，修饰宾语从句的主句</li>
+<li>宾语从句主句：<code>we can reduce the impact of our bad reactions by up to 60 percent</code>，<code>by up to 60 percent</code>为程度状语，表示“多达60%”</li>
+</ol>
+<h3>参考翻译</h3>
+<p>科学家们发现，尽管我们容易做出仓促的过度反应，但如果我们暂停下来，评估当下的情绪冲动，就能将负面反应的影响降低多达60%。</p>
+<h3>学习心得</h3>
+<p>之前做阅读时经常会被多层嵌套的状语从句绕晕，今天特意把句子拆分后逐部分分析，终于理清了让步和条件从句的逻辑关系，以后遇到类似结构可以快速定位主句，提升阅读速度和准确率。</p>
+<blockquote>
+<p>文档内容由AI辅助生成，仅供考研英语学习参考</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-09</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-9/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-9/</id>
+    <published>2026-05-09T00:00:00.000Z</published>
+    <updated>2026-05-09T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-09</h1>
+<h2>今日学习内容</h2>
+<p>今天总共投入3小时进行考研数学概率论与数理统计模块的参数估计专项刷题，完成了2套对应章节的真题模拟题与课后拓展习题，覆盖了矩估计、最大似然估计以及估计量评选标准三个核心考点，梳理了解题的通用流程与易错陷阱。</p>
+<h2>薄弱点</h2>
+<p>今日刷题暴露的核心薄弱点主要有三处：一是混淆离散型与连续型总体的似然函数构造逻辑，部分题目中误将离散型的概率质量函数写成连续型的概率密度函数；二是多参数矩估计中容易漏列矩方程，或是在计算样本矩时出现代数运算错误；三是对估计量无偏性、有效性的定义理解模糊，验证无偏性时对期望的运算规则掌握不扎实，经常忽略样本统计量的期望推导细节。</p>
+<h2>AI知识点带复盘</h2>
+<p>参数估计是考研数学概率论模块的核心解答题考点，年均分值约10-12分，主要考察两大核心方法与评选标准：</p>
+<ol>
+<li><strong>矩估计法</strong>：核心逻辑是用样本矩替代总体矩建立方程求解参数。通用步骤为：①计算总体k阶原点矩$E(X^k)$，用未知参数表示；②计算样本k阶原点矩$A_k=\frac{1}{n}\sum_{i=1}^n X_i^k$；③令$A_k=E(X^k)$建立方程组，解出参数的矩估计量。例如对于正态总体$N(\mu,\sigma^2)$，令$\bar{X}=E(X)=\mu$，$\frac{1}{n}\sum_{i=1}^n X_i^2=E(X^2)=\mu^2+\sigma^2$，即可解得$\hat{\mu}=\bar{X}$，$\hat{\sigma}^2=\frac{1}{n}\sum_{i=1}^n(X_i-\bar{X})^2$。</li>
+<li><strong>最大似然估计法</strong>：核心是找到使样本观测值出现概率最大的参数值，步骤为：①写出似然函数，离散总体为$L(\theta)=\prod_{i=1}^n P(X=x_i;\theta)$，连续总体为$L(\theta)=\prod_{i=1}^n f(x_i;\theta)$；②取对数得到对数似然函数简化求导；③令导数为0求解驻点，特殊情况（如均匀分布）需根据样本取值范围确定估计量，例如$U(0,\theta)$的最大似然估计量为$\hat{\theta}=\max{X_1,X_2,...,X_n}$。</li>
+<li><strong>估计量评选标准</strong>：考研常考察无偏性与有效性，无偏性指$E(\hat{\theta})=\theta$，有效性指在所有无偏估计中方差最小的为有效估计量。需重点掌握样本方差$S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X})^2$是总体方差的无偏估计这一高频结论。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日完成了预设的3小时参数估计刷题计划，修正了此前混淆似然函数类型的错误，熟练掌握了多参数矩估计的解题流程。不过在验证估计量无偏性的题型中仍有2道题出错，后续需要针对性强化无偏性的推导练习。整体对参数估计模块的解题熟练度有了明显提升，达成了当日学习目标。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-08</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-8/" rel="alternate" type="text/html"/>
