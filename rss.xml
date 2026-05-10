@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-05-09</title><link>https://elysiaweb.vercel.app/posts/408/5-9/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/5-9/</guid><description>408 专业课之分段虚拟存储系统学习与复盘</description><pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-05-09&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-05-10</title><link>https://elysiaweb.vercel.app/posts/408/5-10/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/5-10/</guid><description>408计算机组成原理 虚拟存储器专业课学习与复盘</description><pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-05-10&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今天专业课学习四十分钟，主要梳理了计算机组成原理模块中虚拟存储器相关的核心知识点，从基础概念到核心实现逻辑完成了初步框架搭建。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 虚拟存储器核心考点复盘&lt;/h3&gt;
+&lt;p&gt;虚拟存储器是408组成原理的高频必考考点，其本质是通过软硬件结合为用户提供逻辑上远超物理主存容量的存储空间，核心实现基础是&lt;strong&gt;程序局部性原理&lt;/strong&gt;，包含时间局部性和空间局部性，运行时仅将当前活跃的代码与数据加载到物理主存，其余内容暂存外存，动态完成调入调出。&lt;/p&gt;
+&lt;h3&gt;2. 三类虚拟存储方案拆解&lt;/h3&gt;
+&lt;h4&gt;（1）分页式虚拟存储器&lt;/h4&gt;
+&lt;p&gt;将虚拟地址空间和物理地址空间划分为等大小的页/块，通过页表完成虚拟页号到物理块号的映射。采用多级页表可以大幅压缩页表占用的物理内存，搭配TLB快表可以加速地址映射，减少重复访问主存页表的开销。&lt;/p&gt;
+&lt;h4&gt;（2）段式虚拟存储器&lt;/h4&gt;
+&lt;p&gt;按照程序逻辑模块（代码段、数据段等）划分虚拟地址空间，段长不固定，通过段表实现段号到物理基址、段长的映射，优势是便于程序共享和内存保护，但会产生外碎片问题。&lt;/p&gt;
+&lt;h4&gt;（3）段页式虚拟存储器&lt;/h4&gt;
+&lt;p&gt;结合分页与分段的优点，先按逻辑模块分段，再将每段划分为固定大小的页，需要段表+页表两层映射结构，兼顾了分段的共享保护特性与分页无外碎片的优势。&lt;/p&gt;
+&lt;h3&gt;3. 核心考向细节&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;缺页中断&lt;/strong&gt;：当CPU访问的虚拟页未加载到物理主存时触发中断，操作系统需从外存调入目标页，若物理内存已满则需要执行页面置换操作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;页面置换算法&lt;/strong&gt;：是考研计算题核心考点，常见算法包括：
+&lt;ol&gt;
+&lt;li&gt;最佳置换算法（OPT）：理论最优基准，置换未来最晚使用的页，无法实际落地，用于评价其他算法性能&lt;/li&gt;
+&lt;li&gt;先进先出置换算法（FIFO）：置换最早载入主存的页，存在Belady异常现象&lt;/li&gt;
+&lt;li&gt;最近最少使用置换算法（LRU）：置换最近最久未使用的页，可通过栈、链表或移位寄存器实现近似版本Clock算法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4. 地址映射流程&lt;/h3&gt;
+&lt;p&gt;虚拟地址通过MMU内存管理单元，结合TLB和页表完成映射：先通过虚拟页号查询TLB，命中则直接获取物理块号拼接物理地址；未命中则访问主存页表，更新TLB后再完成地址拼接。&lt;/p&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;p&gt;本次学习仅完成了虚拟存储器的框架梳理，未结合考研真题进行针对性练习，对页面置换算法的缺页率计算细节仍不够熟练，同时对段页式存储的双层地址映射流程存在混淆，后续需要补充配套习题并拆解复杂映射案例。&lt;/p&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;明确了虚拟存储器的核心作用是通过动态调入调出实现主存容量的逻辑扩充，解决大程序运行内存不足的痛点&lt;/li&gt;
+&lt;li&gt;理清了分页、分段、段页式三种虚拟存储方案的核心区别与各自适用场景&lt;/li&gt;
+&lt;li&gt;掌握了局部性原理是虚拟存储器实现的理论基础，以及TLB在地址映射中的加速逻辑&lt;/li&gt;
+&lt;li&gt;梳理了常见页面置换算法的核心逻辑与易错考点，明确了缺页中断的触发条件与完整处理流程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-05-10</title><link>https://elysiaweb.vercel.app/posts/english/5-10/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/5-10/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-05-10&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今天累计学习1.5小时，主要分为两个模块：一是复盘本周背诵的考研核心单词并完成2个新单元的必背词背诵，二是精读拆解1句考研真题长难句。&lt;/p&gt;
+&lt;h2&gt;单词复盘与新词背诵&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理）&lt;/p&gt;
+&lt;h3&gt;本周单词复盘&lt;/h3&gt;
+&lt;p&gt;梳理了本周记忆的42个高频核心词，重点整理了易混淆考点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;形近动词辨析：&lt;code&gt;compose&lt;/code&gt;/&lt;code&gt;comprise&lt;/code&gt;/&lt;code&gt;consist&lt;/code&gt;/&lt;code&gt;constitute&lt;/code&gt;的用法差异，明确&lt;code&gt;comprise&lt;/code&gt;表整体包含部分，&lt;code&gt;consist of&lt;/code&gt;为固定搭配，&lt;code&gt;constitute&lt;/code&gt;表构成整体&lt;/li&gt;
+&lt;li&gt;熟词僻义积累：&lt;code&gt;address&lt;/code&gt;作动词意为“处理、发表演说”，&lt;code&gt;climate&lt;/code&gt;除“气候”外可指“社会氛围、趋势”&lt;/li&gt;
+&lt;li&gt;高频搭配：&lt;code&gt;be conducive to&lt;/code&gt;（有助于）、&lt;code&gt;in the wake of&lt;/code&gt;（随着……而来）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;新单元单词背诵&lt;/h3&gt;
+&lt;p&gt;完成《红宝书考研英语词汇》Unit 17与Unit 18的背诵，累计记忆116个新单词，同步摘录了每个单词的考研真题例句，强化语境记忆。&lt;/p&gt;
+&lt;h2&gt;长难句精读拆解&lt;/h2&gt;
+&lt;p&gt;选取2024年全国硕士研究生招生考试英语（一）阅读理解Text 2的经典长难句进行练习：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原句：Rather than dismissing the trend as a passing fad, researchers argue that it reflects a fundamental shift in the way consumers interact with brands.
+结构拆解：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;让步状语：Rather than dismissing the trend as a passing fad&lt;/li&gt;
+&lt;li&gt;主句主语：researchers&lt;/li&gt;
+&lt;li&gt;主句谓语：argue that&lt;/li&gt;
+&lt;li&gt;宾语从句：it reflects a fundamental shift in the way consumers interact with brands&lt;/li&gt;
+&lt;li&gt;定语从句：&lt;code&gt;consumers interact with brands&lt;/code&gt;修饰先行词&lt;code&gt;the way&lt;/code&gt;，可省略关系词that/which
+参考译文：研究人员并未将这一趋势斥为一时兴起的潮流，而是认为它反映了消费者与品牌互动方式的根本性转变。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;💡 今日碎碎念&lt;/h2&gt;
+&lt;p&gt;今天复盘的时候发现自己之前确实对形近动词的区分不够清晰，整理笔记后终于理清了逻辑，背新单词时特意结合真题例句记忆，效果比单纯背拼写好很多。长难句的拆分一开始差点被&lt;code&gt;rather than&lt;/code&gt;的结构带偏，慢慢梳理主干后就顺畅了。坚持每天积累，考研英语上岸一定没问题！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成，仅供考研英语学习参考&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-05-10</title><link>https://elysiaweb.vercel.app/posts/math/5-10/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/5-10/</guid><description>考研数学复盘大数定律、假设检验与曲线积分的学习记录</description><pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-05-10&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今天数学学习时长共计一个半小时，主要分为两个模块：首先系统复盘了近一周学习的概率论与数理统计板块的大数定律、假设检验相关知识点，梳理了核心考点的逻辑框架；随后转向高等数学的曲线积分模块，完成了3道对坐标的曲线积分专项练习题，巩固计算方法。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;大数定律板块：三类常见大数定律（切比雪夫、伯努利、辛钦）的适用条件容易混淆，对“独立同分布”“方差存在且一致有界”“仅要求期望存在”等细节条件记忆模糊，做题时容易漏判前提；&lt;/li&gt;
+&lt;li&gt;假设检验板块：两类错误的定义和实际场景难以快速区分，拒绝域的推导逻辑不清晰，尤其在单侧检验中如何确定拒绝域的位置容易出错；&lt;/li&gt;
+&lt;li&gt;曲线积分板块：第二类曲线积分使用格林公式时，容易忽略“积分区域为单连通区域”“P、Q在区域内具有一阶连续偏导数”的前提条件，且对积分方向与积分结果的关联理解不到位，部分题目中补线计算时符号容易出错。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;概率论与数理统计板块复盘&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;大数定律核心考点&lt;/strong&gt;：
+考研中高频考查三类大数定律，需精准区分其适用条件：
+&lt;ul&gt;
+&lt;li&gt;切比雪夫大数定律：要求随机变量序列${X_n}$相互独立，且每个随机变量的方差存在并满足一致有界性（$D(X_n) \leq C, C$为常数），则$\frac{1}{n}\sum_{k=1}^n X_k - \frac{1}{n}\sum_{k=1}^n E(X_k) \xrightarrow{P} 0$；&lt;/li&gt;
+&lt;li&gt;伯努利大数定律：是切比雪夫大数定律的特例，针对独立重复的伯努利试验，频率$\frac{n_A}{n}$依概率收敛于事件发生的概率$p$，即$\frac{n_A}{n} \xrightarrow{P} p$；&lt;/li&gt;
+&lt;li&gt;辛钦大数定律：无需方差存在，仅要求${X_n}$独立同分布且存在有限期望$E(X_n)=\mu$，则样本均值$\frac{1}{n}\sum_{k=1}^n X_k \xrightarrow{P} \mu$，是参数估计中矩估计的理论基础。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;假设检验核心考点&lt;/strong&gt;：
+假设检验的核心逻辑是“小概率事件在一次试验中几乎不发生”，标准步骤为：
+① 提出原假设$H_0$与备择假设$H_1$；
+② 构造不含未知参数的检验统计量，并确定其在$H_0$成立时的分布；
+③ 根据显著性水平$\alpha$确定拒绝域；
+④ 代入样本值计算统计量，判断是否落入拒绝域，从而做出决策。
+重点区分两类错误：第一类错误（弃真错误）：$P(拒绝H_0 | H_0为真)=\alpha$；第二类错误（取伪错误）：$P(接受H_0 | H_1为真)=\beta$，考研常结合实际场景考查两类错误的含义与计算。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;高等数学曲线积分板块复盘&lt;/h3&gt;
+&lt;p&gt;本次练习的为&lt;strong&gt;第二类曲线积分（对坐标的曲线积分）&lt;/strong&gt;，核心计算方法分为两类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;直接参数化法&lt;/strong&gt;：将积分曲线$L$用参数方程表示，代入被积表达式，将曲线积分转化为定积分计算，需注意参数的上下限与曲线方向一致；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;格林公式法&lt;/strong&gt;：当$L$为闭合曲线时，可转化为二重积分$\iint_D (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})dxdy$，其中$D$为$L$围成的区域，需严格满足“$L$为正向闭合曲线”“$P,Q$在$D$内具有一阶连续偏导数”两个前提；若$L$非闭合，则可通过补线法转化为闭合曲线积分，再减去补线上的曲线积分。
+此外需注意第二类曲线积分的对称性：若$L$关于$x$轴对称，且被积表达式中的$P,Q$关于$y$为奇函数，则积分值为0，该技巧可简化计算。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日完成了既定的考研数学学习任务，整体节奏平稳，通过复盘梳理了易混淆的知识点框架，通过刷题验证了计算方法的掌握程度，但仍存在部分细节易错点，后续将整理易错清单进行专项巩固。
+💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-05-09</title><link>https://elysiaweb.vercel.app/posts/408/5-9/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/5-9/</guid><description>408 专业课之分段虚拟存储系统学习与复盘</description><pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-05-09&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今天累计学习2.5小时，围绕408操作系统模块考点，重点深入学习了分段虚拟存储系统的核心概念、实现原理与考研高频考点细节。&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
