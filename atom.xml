@@ -5,8 +5,191 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-10T13:47:00.817Z</updated>
+  <updated>2026-05-11T14:33:02.631Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-11</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-11/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-11/</id>
+    <published>2026-05-11T00:00:00.000Z</published>
+    <updated>2026-05-11T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘——操作系统虚拟存储与页面置换算法</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-11</h1>
+<h2>今日学习内容</h2>
+<p>今天专业课学习两个半小时，主要完成了页面置换算法和虚拟存储相关的学习，覆盖了操作系统内存管理模块的核心考点内容。</p>
+<h2>AI知识点带复盘</h2>
+<h3>一、虚拟存储核心考点复盘</h3>
+<ol>
+<li><strong>核心定义与前提</strong>：虚拟存储是基于局部性原理（时间局部性、空间局部性），将逻辑地址空间映射到物理内存，实现比物理内存更大的寻址空间的技术。其实现必须满足两个核心前提：离散分配内存方式 + 请求调入/页面置换功能。</li>
+<li><strong>虚拟内存三大特征</strong>：
+<ul>
+<li>多次性：作业无需一次性全部装入内存，可多次调入调出</li>
+<li>对换性：作业在运行过程中可在内存和外存对换区之间动态交换</li>
+<li>虚拟性：通过虚拟技术将物理内存扩展为更大的逻辑内存空间</li>
+</ul>
+</li>
+<li><strong>常见虚拟存储类型</strong>：请求分页存储管理、请求分段存储管理、请求段页式存储管理，其中请求分页是考研考察最多的类型。</li>
+<li><strong>缺页中断</strong>：是虚拟存储特有的中断类型，区别于普通中断：缺页中断在指令执行期间产生并处理，一次缺页中断可能对应多次内存访问（如读取页表项、加载页面）。</li>
+</ol>
+<h3>二、页面置换算法核心考点复盘</h3>
+<ol>
+<li><strong>算法评价标准</strong>：缺页率、实现开销、是否存在Belady异常</li>
+<li>考研高频算法详解：
+<ol>
+<li><strong>最佳置换算法（OPT）</strong>：选择未来永不使用或最长时间不被使用的页面置换，是理论上最优的算法，缺页率最低，但无法实际实现，常用来作为其他算法的性能衡量基准。</li>
+<li><strong>先进先出置换算法（FIFO）</strong>：选择最早进入内存的页面置换，实现简单，但会出现<strong>Belady异常</strong>——即物理块数增加时，缺页率反而升高的现象，本质是因为该算法未考虑页面的使用频率。</li>
+<li><strong>最近最少使用算法（LRU）</strong>：选择最近一段时间内最久未被使用的页面置换，符合局部性原理，缺页率较低，常见实现方式有栈实现、双向链表+哈希表。</li>
+<li><strong>时钟置换算法（CLOCK）</strong>：又称最近未使用算法（NRU），通过为每个页面设置访问位和修改位，循环扫描选择第一个访问位为0的页面置换，实现开销远低于LRU。</li>
+<li><strong>改进型CLOCK算法</strong>：优先选择未被访问且未被修改的页面，其次选择未被访问但被修改的页面，减少磁盘IO开销，是实际系统中常用的置换算法。</li>
+</ol>
+</li>
+<li><strong>常考题型</strong>：给定页面访问序列和物理块数，计算不同算法下的缺页次数、缺页率，判断是否出现Belady异常。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对改进型CLOCK置换算法的扫描优先级和具体执行流程还不够熟练，容易和普通CLOCK算法混淆</li>
+<li>缺页中断的处理流程和普通中断的差异点还需要结合实例进一步梳理</li>
+<li>Belady异常的触发条件和本质原理，还需要通过更多例题加深理解</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>理清了虚拟存储的核心原理与三大特征，明确了虚拟存储技术如何突破物理内存的限制</li>
+<li>全面掌握了常见页面置换算法的原理、优缺点、适用场景，能够准确区分不同算法的性能表现</li>
+<li>掌握了页面置换算法的典型考法，能够独立完成页面访问序列的缺页次数计算与异常判断</li>
+<li>明确了虚拟存储模块在408操作系统中的考察重点和命题方向</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-11</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-11/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-11/</id>
+    <published>2026-05-11T00:00:00.000Z</published>
+    <updated>2026-05-11T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-11</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入考研英语学习1.5小时，具体学习安排如下：</p>
+<ol>
+<li><strong>核心单词背诵</strong>：完成《考研英语红宝书》Unit 12与Unit 13的必背高频词学习，涵盖社会生活、科技发展、教育文化三大考研常考话题词汇，同步复习了昨日标记的18个易混易错单词。</li>
+<li><strong>长难句拆解训练</strong>：精读2025年英语（一）Text 3中的经典长难句，通过划分主句与从句、识别非谓语动词结构、梳理逻辑关系，掌握了“状语前置+后置定语”的复杂句式翻译技巧。</li>
+<li><strong>阅读方法论复盘</strong>：巩固了“例证题的解题逻辑”，明确了区分“例子本身”与“例子支撑的观点”的核心原则，避免被选项中的例子细节干扰失分。</li>
+</ol>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日核心必背词</h3>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>音标</th>
+<th>核心释义</th>
+<th>考研常考搭配/例句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>perspective</td>
+<td>/pəˈspektɪv/</td>
+<td>n. 视角；透视画法</td>
+<td>考研例句：The report offers a new perspective on rural education reform.</td>
+</tr>
+<tr>
+<td>mitigate</td>
+<td>/ˈmɪtɪɡeɪt/</td>
+<td>v. 减轻，缓解</td>
+<td>搭配：mitigate the impact of climate change</td>
+</tr>
+<tr>
+<td>exacerbate</td>
+<td>/ɪɡˈzæsəbeɪt/</td>
+<td>v. 使恶化</td>
+<td>反义辨析：与mitigate为考研阅读常见对立考点</td>
+</tr>
+<tr>
+<td>address</td>
+<td>/əˈdres/</td>
+<td>v. 处理，解决；演说</td>
+<td>熟词僻义重点：考研中常考察“解决问题”含义，如address the housing shortage</td>
+</tr>
+<tr>
+<td>crucial</td>
+<td>/ˈkruːʃl/</td>
+<td>adj. 至关重要的</td>
+<td>同义替换：vital, critical, indispensable</td>
+</tr>
+</tbody>
+</table>
+<h3>易混词整理</h3>
+<ol>
+<li><strong>affect / effect / effective</strong>：
+<ul>
+<li>affect 作动词意为“影响”，effect 作名词意为“影响”、作动词意为“实现”，effective 为形容词“有效的”</li>
+<li>考研真题例句：The new policy will effect meaningful changes in public health.</li>
+</ul>
+</li>
+</ol>
+<p>💡 碎碎念：今天背单词时特意重点复盘了<code>address</code>的熟词僻义，果然在下午做阅读练习时遇到了考察该含义的题目，终于没有再踩坑！坚持每天的单词积累和方法论学习，哪怕进度慢一点也没关系，量变终会带来质变，考研上岸的目标一定能实现！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-11</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-11/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-11/</id>
+    <published>2026-05-11T00:00:00.000Z</published>
+    <updated>2026-05-11T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-11</h1>
+<h2>今日学习内容</h2>
+<p>今天总共投入两个半小时的考研数学学习时间，先梳理了前期课堂笔记中的二重积分考点脉络，再针对核心技巧进行专项复盘，重点锚定了二重积分的中值定理、对称性与轮换对称性三个高频考点模块。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>分段区域下的对称性适配问题：当积分区域$D$由分段曲线围成时，难以快速判断各子区域是否满足奇偶对称或轮换对称条件，容易出现误用对称性简化计算的错误；</li>
+<li>轮换对称性的前置条件模糊：未明确需要同时满足“积分区域关于$x,y$互换不变”和“被积函数可轮换”两个前提，导致在非对称区域强行套用结论；</li>
+<li>二重积分中值定理的应用边界不清：忽略了“被积函数在闭区域上连续”的必要条件，在被积函数存在间断点的场景下错误使用中值定理。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>1. 二重积分的对称性规则</h3>
+<p>考研中对称性是二重积分计算的高频简化技巧，分为奇偶对称性和区域对称性：</p>
+<ul>
+<li>奇偶对称性：若积分区域$D$关于$x$轴对称，且被积函数$f(x,y)$关于$y$为奇函数（$f(x,-y)=-f(x,y)$），则$\iint_D f(x,y)d\sigma=0$；若为偶函数，则$\iint_D f(x,y)d\sigma=2\iint_{D_1} f(x,y)d\sigma$，其中$D_1$为$D$在$x$轴上方的子区域。关于$y$轴对称的场景同理。</li>
+<li>区域轮换对称性：当积分区域$D$满足$(x,y)\in D \iff (y,x)\in D$时，$\iint_D f(x,y)d\sigma=\iint_D f(y,x)d\sigma$。若被积函数也满足轮换不变性（如$f(x,y)=x^2+y^2$），可进一步合并计算，大幅简化运算，例如在单位正方形区域$0\leq x\leq1,0\leq y\leq1$中，$\iint_D x^2d\sigma=\iint_D y^2d\sigma$，可直接计算为$2\int_0^1x^2dx\int_0^1dy=\frac{2}{3}$。</li>
+</ul>
+<h3>2. 二重积分中值定理</h3>
+<p>考研中主要考查两类应用：</p>
+<ul>
+<li>估值问题：若$f(x,y)$在闭区域$D$上连续，设$M,m$分别为$f(x,y)$在$D$上的最大值、最小值，$\sigma_D$为$D$的面积，则$m\cdot\sigma_D\leq\iint_D f(x,y)d\sigma\leq M\cdot\sigma_D$，常结合中值定理直接表示积分值为$f(\xi,\eta)\cdot\sigma_D$，用于极限求解或范围估计。</li>
+<li>极限求解：当积分区域$D$收缩到某定点$(x_0,y_0)$时，$\lim_{D\to(x_0,y_0)}\frac{1}{\sigma_D}\iint_D f(x,y)d\sigma=f(x_0,y_0)$，此类题型常出现在数一的极限选择题中。</li>
+</ul>
+<h3>3. 易错点辨析</h3>
+<p>结合今日复盘的薄弱点，明确：轮换对称性仅在区域和被积函数同时满足轮换条件时才可使用；分段区域需拆分后分别判断对称性，不可直接套用全局规则；中值定理的连续前提不可省略，否则结论不成立。</p>
+<h2>今日小结</h2>
+<p>今日通过2.5小时的专项复盘，理清了二重积分三大核心技巧的使用边界，纠正了此前对轮换对称性前置条件的模糊认知，掌握了中值定理在估值与极限题中的规范应用流程。后续计划通过12道针对性习题强化分段区域对称性判定的熟练度，计划明日完成2023年数一高数二重积分真题的专项训练。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-10</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-10/" rel="alternate" type="text/html"/>
