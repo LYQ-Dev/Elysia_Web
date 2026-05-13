@@ -5,8 +5,159 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-12T14:48:47.296Z</updated>
+  <updated>2026-05-13T15:16:54.571Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-13</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-13/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-13/</id>
+    <published>2026-05-13T00:00:00.000Z</published>
+    <updated>2026-05-13T00:00:00.000Z</updated>
+    <summary>408操作系统文件系统索引存储学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-13</h1>
+<h2>今日学习内容</h2>
+<p>今天学习了一个半小时，整体学习效率偏低，主要完成了408操作系统文件系统章节中索引存储方式的学习，梳理了该存储方式的基本逻辑与考研核心考点。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次学习的索引存储是408操作系统文件系统模块的核心考点之一，复盘如下：</p>
+<ol>
+<li><strong>核心定义</strong>：索引存储是为弥补连续存储（存在外碎片）、链式存储（无法随机访问）的缺陷提出的文件存储方案，通过为每个文件建立独立的索引表，将文件数据块的盘块号集中存储在索引表中，文件控制块（或索引结点）仅需存储索引表的入口地址。</li>
+<li><strong>408高频考察结构</strong>：统考中常以Linux系统的i节点为原型考察，标准结构包含10个直接索引块号、1个一级间接索引指针、1个二级间接索引指针、1个三级间接索引指针。</li>
+<li><strong>容量与IO次数计算（必考题型）</strong>：
+假设磁盘块大小为4KB，单个盘块号占4B，则单个索引块可存放1024个盘块号：
+<ul>
+<li>直接索引：10个数据块，总容量40KB，读取仅需1次磁盘IO</li>
+<li>一级间接索引：1024个数据块，总容量4MB，读取需2次IO（读索引块+读数据块）</li>
+<li>二级间接索引：1024²个数据块，总容量4GB，读取需3次IO</li>
+<li>三级间接索引：1024³个数据块，总容量4TB，读取需4次IO</li>
+</ul>
+</li>
+<li><strong>优劣分析</strong>：优点为支持随机访问、可动态扩展文件长度、解决外碎片问题；缺点为需要额外存储索引表的磁盘空间，多级索引会增加磁盘访问开销。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>今日学习时长未达预设目标，且整体学习效率偏低，学习过程连贯性不足。</li>
+<li>对多级索引对应的磁盘IO次数计算理解仍有模糊之处，需要结合专项例题巩固。</li>
+<li>未完成当日知识点的配套习题练习，未能形成完整的学习闭环。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>完整掌握了文件系统索引存储的基本原理与408统考的核心考察方向。</li>
+<li>学会了根据磁盘块参数计算文件最大存储容量、不同层级索引的磁盘IO次数的解题方法。</li>
+<li>意识到当前学习存在效率不足、练习滞后的问题，后续会调整学习节奏，保证学习时长与质量，同步完成配套习题巩固。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-13</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-13/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-13/</id>
+    <published>2026-05-13T00:00:00.000Z</published>
+    <updated>2026-05-13T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-13</h1>
+<h2>今日学习总览</h2>
+<p>今天累计投入1.5小时进行考研英语专项学习，严格遵循了昨日制定的学习计划，未拖沓进度，整体学习节奏平稳，完成了单词背诵复盘与考研阅读长难句拆解两大核心任务。</p>
+<h2>单词学习与复盘</h2>
+<p>今日核心学习了考研英语高频核心词List 17，共计45个目标单词，涵盖动词、形容词与名词等多词性，重点攻克了易混淆搭配与熟词僻义。现将今日重点整理如下：</p>
+<ol>
+<li><strong>abide</strong> /əˈbaɪd/ v. 遵守，服从；容忍（考研常考搭配：<code>abide by</code> 信守，遵守）
+考研语境例句：All citizens must abide by the national law and regulations.</li>
+<li><strong>adhere</strong> /ədˈhɪə(r)/ v. 黏附；坚持，遵守（搭配：<code>adhere to</code> 坚持，遵循）
+考研语境例句：The team will adhere to the original plan despite the challenges.</li>
+<li><strong>amplify</strong> /ˈæmplɪfaɪ/ v. 放大，增强；详述，扩充
+考研语境例句：The professor tried to amplify his lecture with more real-world examples.</li>
+<li><strong>prevail</strong> /prɪˈveɪl/ v. 盛行，流行；获胜，占上风</li>
+<li><strong>pervade</strong> /pəˈveɪd/ v. 弥漫，遍布；充满</li>
+</ol>
+<p>同时今日复盘了昨日学习的易错易混词，理清了<code>prevail</code>与<code>pervade</code>的使用差异：<code>prevail</code>侧重“占上风、盛行”，而<code>pervade</code>侧重“全面弥漫、遍布”，避免了之前的混用错误。</p>
+<p>💡 碎碎念：今天在背单词时发现自己对固定搭配的敏感度还是有待提升，比如<code>adhere to</code>与<code>abide by</code>的使用场景容易搞混，明天要专门整理这类易混搭配表。坚持每天积累，稳扎稳打，考研英语必上岸！</p>
+<h2>考研长难句拆解练习</h2>
+<p>今日完成了2024年全国硕士研究生招生考试英语（一）Text 1中的两个高频长难句拆解任务，重点练习了句子结构分析与翻译技巧：</p>
+<ol>
+<li><strong>原句</strong>：But although we now know that the company’s decision was driven by financial concerns, it is still hard to understand why it chose to alienate its long-term customers in such a public way.
+<ul>
+<li>结构拆解：主句为<code>it is still hard to understand...</code>，其中<code>it</code>作形式主语，真正的主语是不定式短语<code>to understand why...</code>；<code>although</code>引导让步状语从句，从句内部包含<code>that</code>引导的宾语从句。</li>
+<li>参考翻译：尽管我们如今已知该公司的决定是出于财务考量，但仍难以理解它为何要以如此公开的方式疏远其长期客户。</li>
+</ul>
+</li>
+<li><strong>原句</strong>：The survey, which was conducted by a leading market research firm, found that 62% of consumers said they would stop buying the brand’s products if the company continued with its current pricing strategy.
+<ul>
+<li>结构拆解：主句主语为<code>The survey</code>，后接<code>which</code>引导的非限制性定语从句补充说明调查主体；主句谓语为<code>found</code>，其后接<code>that</code>引导的宾语从句，宾语从句内部又包含<code>if</code>引导的条件状语从句。</li>
+<li>参考翻译：由一家顶尖市场调研公司开展的这项调查发现，若该公司继续推行当前的定价策略，62%的消费者表示将停止购买其品牌产品。</li>
+</ul>
+</li>
+</ol>
+<h2>今日学习总结与明日规划</h2>
+<h3>今日学习总结</h3>
+<ol>
+<li>圆满完成了既定的单词背诵与复盘任务，理清了3组易混搭配的用法，单词默写正确率达到87%</li>
+<li>掌握了考研阅读长难句中让步状语从句、形式主语等高频结构的分析方法，长难句翻译准确率提升明显</li>
+<li>整体学习状态平稳，未出现明显的倦怠情绪，能够专注完成每项学习任务</li>
+</ol>
+<h3>明日学习规划</h3>
+<ol>
+<li>复习今日所学的45个核心单词，完成单词默写自测，查漏补缺</li>
+<li>学习考研英语高频核心词List 18，共计40个单词，重点标记熟词僻义与固定搭配</li>
+<li>拆解2024年英语（一）Text 2中的3个长难句，完成逐句翻译练习并对照真题解析修正</li>
+<li>背诵考研英语写作书信类模板的开头段与结尾段，积累5组高分替换句型</li>
+</ol>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-13</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-13/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-13/</id>
+    <published>2026-05-13T00:00:00.000Z</published>
+    <updated>2026-05-13T00:00:00.000Z</updated>
+    <summary>考研数学微分方程与无穷级数学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-13</h1>
+<h2>今日学习内容</h2>
+<p>今天累计学习时长约3.5小时，核心任务分为两部分：一是完成《考研数学复习全书（强化版）》中微分方程章节的配套强化习题，共计28道；二是系统性复盘无穷级数板块的核心考点、易错公式与解题逻辑，整理了专属易错笔记。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>二阶线性非齐次微分方程特解形式设定错误：当自由项为多项式、指数函数、三角函数的组合形式时，无法准确判断特解中$x^k$的次数$k$，多次出现假设偏差导致计算结果错误；</li>
+<li>幂级数收敛域求解疏漏：忽略端点处的数项级数敛散性判别，尤其是交错级数的莱布尼茨判别法应用条件记忆模糊，曾误判端点处的收敛性；</li>
+<li>微分方程应用题建模卡顿：面对变力做功、种群增长这类实际应用场景时，无法快速梳理变量间的微分关系，解题步骤逻辑不清晰。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>微分方程板块复盘</h3>
+<ol>
+<li><strong>一阶微分方程核心考点</strong>：重点巩固了可分离变量方程、齐次方程、一阶线性微分方程的通解公式，特别强调了一阶线性非齐次方程积分因子法的应用细节，避免漏乘积分因子导致的通解错误；</li>
+<li><strong>二阶线性微分方程</strong>：梳理了齐次通解的结构逻辑，针对特征根的三种情况（不等实根、相等实根、共轭复根）总结了通解模板；针对非齐次特解设定规则，明确了自由项为$f(x)=e^{\lambda x}P_m(x)$和$f(x)=e^{\lambda x}[P_l(x)\cos\omega x + P_n(x)\sin\omega x]$时，特解的形式与$k$的取值规则；</li>
+<li><strong>无穷级数板块复盘</strong>：
+<ul>
+<li>数项级数：区分了绝对收敛与条件收敛的定义，熟练掌握正项级数的比较、比值、根值判别法，以及交错级数的莱布尼茨判别法的应用条件；</li>
+<li>幂级数：掌握了收敛半径的两种求解方法，明确了逐项求导、逐项积分后收敛域的变化规则，梳理了常见幂级数的和函数推导逻辑。</li>
+</ul>
+</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日按计划完成了微分方程强化习题与无穷级数复盘任务，整理了3页易错笔记，整体进度匹配本周学习规划。但在微分方程应用题建模环节仍存在卡顿，后续需要额外补充10道应用专项习题强化训练。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-12</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-12/" rel="alternate" type="text/html"/>
