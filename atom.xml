@@ -5,8 +5,146 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-15T14:56:31.335Z</updated>
+  <updated>2026-05-16T14:09:50.146Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-16</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-16/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-16/</id>
+    <published>2026-05-16T00:00:00.000Z</published>
+    <updated>2026-05-16T00:00:00.000Z</updated>
+    <summary>408 计算机组成原理IO系统组成学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-16</h1>
+<h2>今日学习内容</h2>
+<p>今天专业课学习共计1.5小时，聚焦计算机组成原理模块的IO系统组成部分，完成了IO系统整体框架梳理、各组成模块的功能与关联关系学习，配套整理了对应章节的基础考点笔记。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次学习覆盖的考研408核心考点复盘如下：</p>
+<ol>
+<li><strong>IO系统整体构成</strong>：IO系统由外设、IO接口、IO总线三大部分协同组成，是主机与外部设备完成数据交互的核心通路，三者缺一不可。</li>
+<li><strong>外设模块考点</strong>：外设按功能可分为输入设备、输出设备、外存储设备三类；按数据传输粒度可分为字符设备与块设备，该分类是后续学习IO控制方式的前置基础。</li>
+<li><strong>IO接口模块考点</strong>：IO接口是主机与外设的适配桥梁，核心功能包含数据缓冲、电平信号转换、设备寻址、中断请求转发等，物理结构包含数据端口、状态端口、控制端口三类，需明确端口与CPU通用寄存器的概念差异。</li>
+<li><strong>IO总线模块考点</strong>：IO总线作为共享传输介质，负责连接CPU、内存、IO接口与外设，按功能可划分为数据总线、地址总线、控制总线，IO系统的数据传输依赖总线的寻址能力与带宽上限。</li>
+<li><strong>易错点梳理</strong>：易混淆外设与IO接口的边界，需明确外设为实际物理设备，IO接口为主机侧的适配电路，二者共同完成主机与外设的信号与格式适配。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>初期对IO接口三类端口的功能区分不够清晰，在举例对应端口的读写操作时出现混淆；</li>
+<li>未结合本次学习内容配套完成IO系统组成的课后习题，对考点的应用熟练度不足。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>搭建了计算机组成原理IO系统组成的完整知识框架，明确了各组成模块的职责与协同逻辑；</li>
+<li>修正了此前对IO接口概念的模糊认知，理清了外设、IO接口、IO总线三者的关联关系；</li>
+<li>整理了IO系统组成的核心考点笔记，为后续学习中断控制、DMA等IO控制方式打下了基础。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-16</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-16/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-16/</id>
+    <published>2026-05-16T00:00:00.000Z</published>
+    <updated>2026-05-16T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-16</h1>
+<h2>今日学习内容</h2>
+<p>今日总计投入1.5小时考研英语学习，延续昨日的学习节奏，分为单词复盘与长难句拆解两个核心模块，稳步推进备考进度。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理考研高频核心词汇）</p>
+<ol>
+<li><strong>permeate</strong> /ˈpɜːmieɪt/ v. 渗透，弥漫；充满，充斥
+<blockquote>
+<p>例句：The smell of coffee permeated the whole office. 咖啡的香气弥漫了整个办公室。</p>
+</blockquote>
+</li>
+<li><strong>disperse</strong> /dɪˈspɜːs/ v. 分散，散开；传播，散布
+<blockquote>
+<p>例句：The wind dispersed the clouds after the storm. 暴风雨过后，风吹散了乌云。</p>
+</blockquote>
+</li>
+<li><strong>rigorous</strong> /ˈrɪɡərəs/ adj. 严格的，严谨的；缜密的
+<blockquote>
+<p>例句：We need to conduct a rigorous analysis of the data. 我们需要对数据进行严谨的分析。</p>
+</blockquote>
+</li>
+<li><strong>deteriorate</strong> /dɪˈtɪəriəreɪt/ v. 恶化，退化；变坏
+<blockquote>
+<p>例句：The patient's health deteriorated rapidly after the surgery. 手术后患者的健康状况迅速恶化。</p>
+</blockquote>
+</li>
+<li><strong>mitigate</strong> /ˈmɪtɪɡeɪt/ v. 减轻，缓解；使缓和
+<blockquote>
+<p>例句：Measures should be taken to mitigate the impact of climate change. 应采取措施缓解气候变化的影响。</p>
+</blockquote>
+</li>
+</ol>
+<p>💡 碎碎念：今天复盘时发现部分近义词汇的熟词僻义容易混淆，比如<code>permeate</code>和<code>penetrate</code>的细微区别，已经整理到专属的考研词汇错题本里了。坚持每天积累核心词汇，啃下单词关就是拿下考研英语的半壁江山，继续加油！</p>
+<h2>长难句拆解</h2>
+<p>选自2025年全国硕士研究生招生考试英语（一）阅读Text 2真题原句：</p>
+<blockquote>
+<p>The researchers from the University of California and Stanford University found that the way people use their phones in social settings could significantly affect their feelings of connection and overall well-being.</p>
+</blockquote>
+<ol>
+<li><strong>结构拆分</strong>：
+<ul>
+<li>主句主干：The researchers... found + 宾语从句</li>
+<li>后置定语修饰主语：from the University of California and Stanford University</li>
+<li>宾语从句主干：the way... could significantly affect their feelings of connection and overall well-being</li>
+<li>省略关系代词的定语从句修饰<code>the way</code>：people use their phones in social settings（完整结构为<code>the way in which people use their phones...</code>）</li>
+</ul>
+</li>
+<li>参考翻译：加州大学与斯坦福大学的研究人员发现，人们在社交场合使用手机的方式，会显著影响他们的社交联结感与整体幸福感。</li>
+</ol>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-16</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-16/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-16/</id>
+    <published>2026-05-16T00:00:00.000Z</published>
+    <updated>2026-05-16T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-16</h1>
+<h2>今日学习内容</h2>
+<p>今天数学学习共计三个半小时，主要完成了线性代数中矩阵、行列式、向量组三大核心板块的系统性复盘，配套完成了对应章节的历年真题精选习题20道，整理了错题本中前期积累的相关错题，重新梳理了各知识点的应用逻辑与解题步骤。</p>
+<h2>薄弱点</h2>
+<p>今日复盘过程中暴露的薄弱点主要有三处：一是伴随矩阵与逆矩阵的相关公式容易混淆，尤其是伴随矩阵的秩的对应关系记忆模糊，在做相关选择题时容易出错；二是抽象行列式的计算技巧掌握不熟练，无法快速结合矩阵运算、特征值等条件完成转化求解，部分题目耗时过长；三是向量组线性相关性的判断逻辑容易混乱，混淆了线性表示、线性相关与秩之间的推导关系，综合性的向量组证明题无法快速找到解题切入点。</p>
+<h2>AI知识点带复盘</h2>
+<h3>行列式板块复盘</h3>
+<p>考研线性代数中行列式是基础工具，核心考点包括：①n阶行列式的定义与展开定理，尤其是按行（列）展开的降维思想；②特殊行列式的计算，如范德蒙德行列式、三角行列式、分块行列式；③抽象行列式的计算，常用技巧包括利用矩阵运算性质$|kA|=k^n|A|$、$|AB|=|A||B|$，伴随矩阵行列式公式$|A^*|=|A|^{n-1}$，结合特征值性质$|A|=\prod_{i=1}^n\lambda_i$（$\lambda_i$为A的特征值），以及利用可逆矩阵、正交矩阵的行列式性质进行转化。</p>
+<h3>矩阵板块复盘</h3>
+<p>矩阵是线性代数的核心研究对象，常考考点包括：①矩阵的基本运算（线性运算、乘法、转置、幂运算），注意矩阵乘法不满足交换律；②逆矩阵的判定与计算，包括伴随矩阵法$A^{-1}=\frac{1}{|A|}A^<em>$、初等变换法$(A|E)\rightarrow(E|A^{-1})$，以及逆矩阵的性质（$(AB)^{-1}=B^{-1}A^{-1}$等）；③伴随矩阵$A^</em>$的核心性质，尤其是秩的关系：
+$$r(A^*)=\begin{cases}n, &amp; r(A)=n \1, &amp; r(A)=n-1 \0, &amp; r(A)&lt;n-1\end{cases}$$
+④矩阵的初等变换与初等矩阵，以及矩阵秩的基本性质。</p>
+<h3>向量组板块复盘</h3>
+<p>向量组是线性方程组与线性空间的桥梁，核心考点包括：①线性组合与线性表示的定义，判断一个向量能否由某向量组线性表示等价于对应线性方程组是否有解；②线性相关与线性无关的判定定理，向量组线性相关的充要条件是存在不全为零的数使得线性组合为零向量，也等价于向量组的秩小于向量个数；③极大线性无关组与向量组的秩，以及向量组秩与矩阵秩的等价关系；④向量组之间的等价关系，以及线性方程组解的结构与向量组线性相关性的结合应用，如齐次线性方程组的基础解系即为解向量组的极大无关组。</p>
+<h2>今日小结</h2>
+<p>今日通过三个半小时的系统性复盘，梳理了线性代数三大核心板块的完整知识框架，修正了前期混淆的公式与逻辑误区，通过配套习题巩固了各知识点的实际应用场景。整体学习节奏平稳，完成了前期遗留的查漏补缺任务，后续将针对抽象行列式计算与向量组相关性判断的综合题型进行专项练习，提升解题速度与正确率。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研英语学习记录2026-05-15</title>
     <link href="https://elysiaweb.vercel.app/posts/english/5-15/" rel="alternate" type="text/html"/>
