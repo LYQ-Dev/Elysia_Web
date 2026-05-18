@@ -5,8 +5,162 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-17T12:14:37.337Z</updated>
+  <updated>2026-05-18T14:24:48.001Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-18</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-18/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-18/</id>
+    <published>2026-05-18T00:00:00.000Z</published>
+    <updated>2026-05-18T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-18</h1>
+<h2>今日学习内容</h2>
+<p>今天专业课学习两个小时，结合教材与配套网课，系统复习了计算机组成原理IO系统模块的核心知识点，主要学习了IO缓冲、硬件驱动设备、SPOOLING脱机技术三大内容，配套完成了课后相关习题巩固。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. IO缓冲</h3>
+<p>IO缓冲是IO系统中用于匹配CPU与外设速度差异、优化IO性能的核心机制，是408考研的高频考点：</p>
+<ul>
+<li><strong>核心作用</strong>：解决CPU与IO设备速度不匹配的矛盾，减少中断触发次数，平衡数据传输的突发特性，提升系统整体并发执行能力。</li>
+<li><strong>常见缓冲类型与考点拆解</strong>：
+<ul>
+<li>单缓冲：外设将数据写入缓冲区后，CPU再从缓冲区读取数据，仅能实现部分数据传输重叠，是最基础的缓冲方案；</li>
+<li>双缓冲：外设写入缓冲区1时，CPU可同步读取缓冲区2，大幅缩短等待耗时，考研常考双缓冲与单缓冲的性能对比计算；</li>
+<li>循环缓冲：由多个缓冲区组成循环队列，支持多进程并发IO操作，适配多任务场景；</li>
+<li>缓冲池：由空闲、装满、空三类缓冲区组成的公共缓冲区域，可适配多设备、多进程的复杂IO需求。</li>
+</ul>
+</li>
+<li>常考题型：计算单/双缓冲下的IO总耗时，分析不同缓冲方案的性能瓶颈。</li>
+</ul>
+<h3>2. 硬件驱动设备</h3>
+<p>设备驱动程序是操作系统与物理硬件之间的中间抽象层，是IO系统的必考概念：</p>
+<ul>
+<li><strong>核心职责</strong>：屏蔽硬件设备的底层操作细节，向上层操作系统提供统一的标准调用接口，完成设备初始化、数据读写、中断响应与处理等核心操作。</li>
+<li><strong>分层逻辑</strong>：从底层到上层依次为物理硬件、设备控制器、设备驱动程序、设备无关操作系统层、用户应用层。</li>
+<li>考点延伸：区分块设备（如硬盘）与字符设备（如键盘、打印机）的驱动差异，明确驱动程序与中断服务程序的职责边界。</li>
+</ul>
+<h3>3. SPOOLING脱机技术</h3>
+<p>SPOOLING（Simultaneous Peripheral Operations On-Line，假脱机技术）是将独占设备改造为共享设备的经典方案，是IO系统的高频考点：</p>
+<ul>
+<li><strong>核心原理</strong>：通过磁盘上的输入井、输出井模拟脱机输入输出，将外设的IO操作与CPU的处理操作完全解耦：
+<ol>
+<li>输入守护进程：将外设读取的数据先写入磁盘输入井，CPU后续可直接从磁盘高速读取数据；</li>
+<li>输出守护进程：将CPU输出的数据先写入磁盘输出井，再由外设分批读取完成输出。</li>
+</ol>
+</li>
+<li><strong>核心组成</strong>：输入井、输出井、输入守护进程、输出守护进程。</li>
+<li>考点：解释SPOOLING系统如何将独占设备转化为共享设备，梳理打印机SPOOLING系统的完整工作流程，区分SPOOLING与传统脱机IO的差异。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>对SPOOLING技术中输入井、输出井的磁盘存储管理细节记忆模糊，后续需要结合文件系统的磁盘管理知识补充理解；</li>
+<li>硬件驱动程序与中断服务程序的配合流程容易混淆，尚未完全理清二者的职责划分；</li>
+<li>四类IO缓冲的适用场景还需要结合具体实例进一步区分，避免概念混淆。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了IO缓冲的四类实现方式，明确了不同缓冲方案的性能差异与适用场景，掌握了IO总耗时的计算方法；</li>
+<li>明确了设备驱动程序的核心定位与分层结构，理解了其在操作系统IO体系中的桥梁作用；</li>
+<li>透彻掌握了SPOOLING脱机技术的工作原理与核心价值，能够清晰解释其将独占设备转化为共享设备的逻辑；</li>
+<li>建立了IO系统模块的整体知识框架，将零散的知识点串联为完整的体系，为后续刷题巩固打下了基础。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-18</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-18/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-18/</id>
+    <published>2026-05-18T00:00:00.000Z</published>
+    <updated>2026-05-18T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-18</h1>
+<h2>今日学习内容</h2>
+<p>今天累计投入1.5小时考研英语备考，学习进度与昨日保持一致，分为单词复盘、长难句拆解两大核心模块，重点巩固前期积累的高频词汇与复杂语法结构，为后续阅读训练打牢基础。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）今日复盘35个考研英语核心词汇，重点梳理了易混淆形近词、熟词僻义及真题搭配：</p>
+<ol>
+<li><strong>perceive</strong> v. 察觉，感知；认为，理解
+常用搭配：perceive sth. as sth. 把…视作
+真题例句：Most citizens perceive the new urban renewal policy as a pragmatic solution to housing shortages.</li>
+<li><strong>perspective</strong> n. 视角，观点；透视画法
+常用短语：in perspective 正确看待；合理判断</li>
+<li><strong>transcend</strong> v. 超越，超出；胜过
+真题语境：The interdisciplinary research transcends the boundaries of traditional academic fields.</li>
+<li><strong>adapt</strong> v. 适应，改编；调整
+易混淆词辨析：vs adopt（v. 采用，收养），今日特意整理了二者的真题用法对比，避免混淆。</li>
+</ol>
+<p>💡 碎碎念：今天背单词时又栽在了adapt和adopt的形近坑里，赶紧翻了红宝书的混淆词专题整理进错题本，看来每天的复盘真的不能偷懒！坚持每天啃下核心词，上岸的底气就越来越足啦！</p>
+<h2>长难句拆解</h2>
+<p>今日选取2025年全国硕士研究生招生考试英语（一）Text 3中的经典长难句进行系统分析：</p>
+<blockquote>
+<p>The researchers argue that because reduced sleep has been linked to impaired decision-making, a decline in academic performance and even weight gain, the policy of cutting school start times to allow more sleep could have widespread benefits for students’ well-being and academic outcomes.</p>
+</blockquote>
+<h3>语法结构拆解</h3>
+<ol>
+<li>主句框架：<code>The researchers argue + 宾语从句</code></li>
+<li>宾语从句嵌套原因状语从句：<code>because reduced sleep has been linked to impaired decision-making, a decline in academic performance and even weight gain</code>，其中<code>impaired decision-making</code>、<code>a decline in academic performance</code>、<code>even weight gain</code>为并列宾语</li>
+<li>宾语从句主干：<code>the policy...could have widespread benefits for students’ well-being and academic outcomes</code>，其中<code>of cutting school start times to allow more sleep</code>为后置定语修饰<code>the policy</code></li>
+</ol>
+<h3>参考译文</h3>
+<p>研究人员指出，由于睡眠不足与决策能力受损、学业表现下滑甚至体重增加存在关联，因此调整上课时间以保障学生获得更多睡眠的政策，或将对学生的身心健康与学业成果产生广泛益处。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-18</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-18/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-18/</id>
+    <published>2026-05-18T00:00:00.000Z</published>
+    <updated>2026-05-18T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-18</h1>
+<h2>今日学习内容</h2>
+<p>今天数学学习共计三个半小时。首先系统复盘了线性代数中特征值与特征向量章节的往期错题，梳理了该章节的核心考点框架；接着完成了二次型章节的专项复习，整理了二次型化标准形、正定性判定的核心公式与步骤；最后配套完成了20道针对性习题，涵盖选择题、填空题与解答题，并对错题进行了详细的错因整理。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>实对称矩阵不同特征值对应的特征向量正交性的应用场景容易混淆，在使用正交变换法化二次型为标准形时，经常遗漏特征向量的正交单位化步骤，导致最终变换矩阵不符合正交矩阵的要求；</li>
+<li>二次型正定性判定中，高阶矩阵的顺序主子式计算容易出现符号错误或计算失误，尤其是在出现负号的行列式展开环节；</li>
+<li>矩阵可对角化的判定条件容易混淆，常常记错代数重数与几何重数的对应关系，在解答题中错误推导可对角化的结论。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>特征值与特征向量复盘</h3>
+<ol>
+<li><strong>核心定义与计算</strong>：特征值与特征向量的定义为$A\alpha=\lambda\alpha(\alpha\neq\boldsymbol{0})$，考研中核心计算步骤为：先通过行列式$|\lambda E - A|=0$求解全部特征值，再对每个特征值$\lambda_i$求解齐次线性方程组$(\lambda_i E - A)\boldsymbol{x}=\boldsymbol{0}$，得到的基础解系即为对应$\lambda_i$的线性无关特征向量。</li>
+<li><strong>高频性质</strong>：特征值之和等于矩阵的迹$\text{tr}(A)=\sum_{i=1}^n a_{ii}$，特征值之积等于矩阵行列式$|A|$；实对称矩阵的特征值均为实数，且不同特征值对应的特征向量天然正交，可直接通过施密特正交化处理重根对应的特征向量，最终得到正交单位化的特征向量组，用于构造正交变换矩阵。</li>
+<li><strong>可对角化判定</strong>：$n$阶矩阵$A$可对角化的充要条件是每个$k$重特征值$\lambda_i$对应的几何重数$n - r(\lambda_i E - A)$等于代数重数$k$，考研中常结合特征值重数考查可对角化的判定。</li>
+</ol>
+<h3>二次型复盘</h3>
+<ol>
+<li><strong>核心概念</strong>：二次型指关于$n$个变量的二次齐次多项式，可表示为$f=\boldsymbol{x}^T A\boldsymbol{x}$，其中$A$为实对称矩阵，即二次型的矩阵。</li>
+<li><strong>标准化方法</strong>：常用方法有配方法、正交变换法，其中正交变换法是考研解答题的高频考点，步骤为：写出二次型的实对称矩阵$A$→求解$A$的全部特征值与特征向量→对重根对应的特征向量进行施密特正交化与单位化，得到正交单位向量组→构造正交矩阵$Q$，令$\boldsymbol{x}=Q\boldsymbol{y}$，即可将二次型化为标准形$f=\lambda_1 y_1^2+\lambda_2 y_2^2+\dots+\lambda_n y_n^2$。</li>
+<li><strong>正定性判定</strong>：实二次型$f=\boldsymbol{x}^T A\boldsymbol{x}$正定的充要条件为：①$A$的所有顺序主子式全大于0；②$A$的所有特征值全大于0；③$A$合同于单位矩阵$E$。考研中常以选择题或解答题的形式考查二次型的正定性判定，需要注意负定、半正定等类似判定条件的区分。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日通过复盘与专项刷题，完善了特征值与二次型章节的知识框架，解决了部分前期遗留的疑点，但在细节步骤的规范性与计算准确率上仍有不足。后续将针对薄弱点进行专项训练，重点强化正交变换法的步骤完整性与高阶顺序主子式的计算练习。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-17</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-17/" rel="alternate" type="text/html"/>
