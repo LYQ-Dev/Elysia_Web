@@ -5,8 +5,178 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-19T14:14:34.065Z</updated>
+  <updated>2026-05-20T14:12:33.589Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-20</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-20/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-20/</id>
+    <published>2026-05-20T00:00:00.000Z</published>
+    <updated>2026-05-20T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-20</h1>
+<h2>今日学习内容</h2>
+<p>今日完成2.5小时考研408专业课学习，主要针对操作系统上册前半章节进行系统性复盘，覆盖操作系统概述、进程与线程两大核心模块，同步梳理了历年真题中该模块的高频考点与易错陷阱。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 操作系统概述模块复盘</h3>
+<h4>核心考点</h4>
+<ul>
+<li>操作系统定义：管理计算机硬件与软件资源的程序，是计算机系统的内核与基石，为用户提供统一的操作接口。</li>
+<li>四大基本特征：并发（多个事件在同一时间段内交替执行，宏观并行微观串行）、共享（系统资源被多个并发进程共同使用，分为互斥共享和同时共享两种形式）、虚拟（将物理资源抽象为多个逻辑副本，如虚拟内存、虚拟设备）、异步（进程以不可预知的速度向前推进，最终结果可复现）。</li>
+<li>五大核心功能：处理机管理、存储器管理、设备管理、文件管理、用户接口（命令接口、程序接口、图形接口）。</li>
+<li>操作系统发展历程：批处理系统（脱机/联机，提高资源利用率）、分时系统（多路复用，人机交互）、实时系统（快速响应，可靠性要求高）的核心差异。</li>
+</ul>
+<h4>易错辨析</h4>
+<p>易混淆并发与并行的概念：并发是宏观上同时发生，微观上交替执行；并行是微观上多个事件同时执行，需要多核心硬件支持。共享特征以并发为前提，异步性是四大特征的最终外在体现。</p>
+<h3>2. 进程模块复盘</h3>
+<h4>核心考点</h4>
+<ul>
+<li>进程定义：进程是进程实体（程序段、数据段、PCB）的运行过程，是系统进行<strong>资源分配和调度的基本单位</strong>。</li>
+<li>进程与程序的区别：程序是静态的代码集合，可永久存储；进程是动态的执行过程，具有完整的生命周期。一个程序可对应多个进程，一个进程可执行多个程序段。</li>
+<li>五态模型与状态转换：新建→就绪、就绪→运行（调度程序选中）、运行→阻塞（等待I/O/申请资源）、阻塞→就绪（等待事件完成）、运行→终止。</li>
+<li>PCB（进程控制块）：进程存在的唯一标志，存储进程标识、状态信息、资源清单、调度信息等内容，是进程管理的核心数据结构。</li>
+<li>进程上下文切换：保存当前进程的寄存器、页表等上下文信息，加载新进程的上下文，完成进程切换的操作。</li>
+</ul>
+<h4>高频考点</h4>
+<p>进程状态转换的触发条件为选择题高频考点，PCB的组成与功能是简答题核心出题点。</p>
+<h3>3. 线程模块复盘</h3>
+<h4>核心考点</h4>
+<ul>
+<li>线程定义：线程是进程内的一个执行单元，是系统<strong>调度的基本单位</strong>，共享所属进程的全部资源。</li>
+<li>进程与线程的核心差异：
+<ol>
+<li>资源拥有：进程拥有独立的地址空间和系统资源，线程仅拥有少量运行必需的资源，共享所属进程的所有资源。</li>
+<li>调度开销：线程切换开销远小于进程切换，无需切换页表等全局资源。</li>
+<li>通信方式：线程可直接读写进程内存实现通信，进程间通信需借助IPC机制。</li>
+</ol>
+</li>
+<li>线程实现方式：用户级线程（ULT，由用户线程库管理，内核不可见，切换开销小但无法利用多CPU）、内核级线程（KLT，由内核管理，切换需内核介入，支持多CPU但开销大）、组合式线程（结合两者优势）。</li>
+</ul>
+<h4>易错辨析</h4>
+<p>易混淆线程调度与进程调度的主体，以及不同线程实现方式的适用场景：实时系统多采用内核级线程以保证响应速度，轻量级应用多采用用户级线程降低开销。</p>
+<h2>问题与反思</h2>
+<ol>
+<li>对进程上下文切换的具体硬件操作步骤记忆不够清晰，未结合计算机组成原理的内存、寄存器知识进行联动理解；</li>
+<li>用户级线程与内核级线程的应用场景容易混淆，无法快速匹配不同业务场景下的最优线程实现方案；</li>
+<li>操作系统四大特征之间的逻辑关联还不够熟练，无法快速举例说明特征间的相互影响关系。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了操作系统概述与进程线程模块的核心考点，明确了408真题中该模块的高频出题方向与易错陷阱；</li>
+<li>清晰区分了进程与线程的核心差异，掌握了进程状态转换的完整逻辑与触发条件；</li>
+<li>理清了操作系统四大特征的内涵与相互关系，能够快速辨析并发与并行、互斥共享与同时共享的区别。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-20</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-20/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-20/</id>
+    <published>2026-05-20T00:00:00.000Z</published>
+    <updated>2026-05-20T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-20</h1>
+<h2>今日学习内容</h2>
+<p>今日总学习时长1.5小时，具体分配如下：</p>
+<ol>
+<li>60分钟考研英语核心单词复习：复盘昨日学习的50个高频词汇，结合例句巩固记忆，同时新学习40个2025考研大纲核心词；</li>
+<li>30分钟长难句拆解与真题精读：选取2023年英语一Text3中的3个复杂长难句进行结构拆分、语法点梳理，并结合上下文理解句意，整理专属学习笔记。</li>
+</ol>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）今日重点整理的高频核心词及易错辨析：</p>
+<ol>
+<li><strong>permeate</strong> v. 弥漫，渗透；充满
+例句：The rich aroma of freshly baked bread permeated the whole neighborhood.</li>
+<li><strong>counterpart</strong> n. 对应的人/物，副本
+搭配：foreign diplomatic counterparts 外国外交对应人员</li>
+<li><strong>alleviate</strong> v. 减轻，缓解（痛苦、负担等）
+搭配：alleviate traffic congestion 缓解交通拥堵</li>
+<li><strong>adjacent</strong> a. 相邻的，邻近的
+搭配：adjacent classroom buildings 相邻教学楼</li>
+<li>易错形近词专项辨析：
+<ul>
+<li>adopt v. 采纳，收养：The company will adopt a new marketing strategy.</li>
+<li>adapt v. 适应，改编：We must adapt quickly to the new working environment.</li>
+</ul>
+</li>
+</ol>
+<h2>长难句复盘</h2>
+<p>今日拆解的典型长难句（选自2023英语一Text3）：</p>
+<blockquote>
+<p>And yet, despite the proliferation of smart home devices that promise to make our lives easier, many of us still struggle to integrate them into our daily routines without feeling overwhelmed.</p>
+</blockquote>
+<ul>
+<li>结构拆分：主句为<code>many of us still struggle to integrate them into our daily routines</code>；<code>despite the proliferation of smart home devices</code>为让步状语，其中<code>that promise to make our lives easier</code>是定语从句修饰<code>smart home devices</code>。</li>
+<li>重点语法：<code>without feeling overwhelmed</code>为介词短语作伴随状语，<code>proliferation</code>在语境中意为“激增、泛滥”，<code>integrate...into</code>为固定搭配“将……融入”。</li>
+<li>参考译文：然而，尽管各类承诺让生活更便捷的智能家居设备层出不穷，我们许多人仍难以在不感到不堪重负的前提下，将它们融入日常生活。</li>
+</ul>
+<p>💡 碎碎念：今天复盘单词时终于理清了adopt和adapt的用法区别，之前总是因为拼写相近搞混；长难句的嵌套定语从句和让步状语组合之前总容易理不清逻辑，今天特意把这类结构的拆解步骤整理成了小口诀，希望明天做题时能更快识别。虽然今天只完成了计划的学习时长，但每一分钟都扎扎实实的，不追求进度快，只求掌握牢固，考研英语上岸的目标一定能实现！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-20</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-20/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-20/</id>
+    <published>2026-05-20T00:00:00.000Z</published>
+    <updated>2026-05-20T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-20</h1>
+<h2>今日学习内容</h2>
+<p>今天累计学习考研数学4小时，核心学习内容分为两大部分：一是多维随机变量的分布函数体系，重点攻克了卷积公式的应用难点；二是随机变量的数字特征，涵盖一维、二维随机变量的期望与方差，以及协方差、相关系数的核心概念与公式推导。</p>
+<h2>薄弱点</h2>
+<ol>
+<li><strong>卷积公式积分区间确定困难</strong>：当两个随机变量的取值范围并非全体实数时，容易混淆积分上下限的拆分逻辑，比如已知X~U(0,1)、Y~U(0,1)求Z=X+Y的概率密度时，需要分0≤z&lt;1和1≤z≤2两种情况讨论，不少考生容易漏分区间或写错积分范围。</li>
+<li><strong>概念混淆问题</strong>：容易将协方差为0和随机变量独立划等号，忽略仅当(X,Y)服从二维正态分布时，二者才完全等价；同时也会记错方差的推广公式，在计算D(X±Y)时忘记加上协方差的倍数项。</li>
+<li><strong>边缘分布函数求解易错</strong>：在通过联合分布函数求边缘分布时，容易遗忘对另一个变量取正无穷的操作步骤，导致结果推导错误。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>多维随机变量分布函数与卷积公式</h3>
+<ol>
+<li><strong>基础定义复盘</strong>：二维随机变量$(X,Y)$的分布函数$F(x,y)=P{X\leq x,Y\leq y}$，几何意义是随机点落在以$(x,y)$为右上顶点的无穷矩形区域内的概率。边缘分布函数可通过极限得到：$F_X(x)=\lim_{y\to+\infty}F(x,y)$，$F_Y(y)=\lim_{x\to+\infty}F(x,y)$。</li>
+<li><strong>卷积公式核心考点</strong>：当X和Y为独立连续型随机变量时，$Z=X+Y$的概率密度为卷积形式：
+$$f_Z(z)=\int_{-\infty}^{+\infty}f_X(x)f_Y(z-x)dx=\int_{-\infty}^{+\infty}f_X(z-y)f_Y(y)dy$$
+考研中常考察非均匀分布的卷积计算，关键步骤是根据X和Y的取值范围联立不等式确定积分上下限，再分情况讨论Z的取值区间后完成积分。</li>
+</ol>
+<h3>数字特征体系复盘</h3>
+<ol>
+<li><strong>一维数字特征</strong>：期望$E(X)$是随机变量的加权平均，方差$D(X)=E(X^2)-[E(X)]^2$，可通过变形公式快速简化计算。</li>
+<li><strong>二维数字特征</strong>：
+<ul>
+<li>二维期望：$E(X)=\iint_{\mathbb{R}^2}xf(x,y)dxdy$，$E(Y)=\iint_{\mathbb{R}^2}yf(x,y)dxdy$；</li>
+<li>协方差：$\text{Cov}(X,Y)=E(XY)-E(X)E(Y)$，用于衡量两个随机变量的线性相关程度；</li>
+<li>相关系数：$\rho_{XY}=\frac{\text{Cov}(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}$，取值范围为$[-1,1]$，$|\rho_{XY}|=1$对应严格线性相关，$\rho_{XY}=0$仅代表无线性相关，不代表独立；</li>
+<li>方差推广公式：$D(X\pm Y)=D(X)+D(Y)\pm2\text{Cov}(X,Y)$，独立时协方差为0，公式可简化为$D(X\pm Y)=D(X)+D(Y)$。</li>
+</ul>
+</li>
+<li><strong>考研常考题型</strong>：通过联合分布计算边缘/条件密度、利用卷积公式求随机变量和的分布、结合实际背景计算期望方差、判断变量相关性与独立性。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今天完成了4小时的专项学习，系统梳理了多维随机变量与数字特征的核心知识点，重点突破了卷积公式的应用逻辑。虽然已经理清基本公式，但在非均匀分布的卷积区间拆分、易混淆概念辨析上仍存在不足，后续需要通过10-15道配套习题强化练习，确保做题时能够快速准确应用知识点。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-19</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-19/" rel="alternate" type="text/html"/>
