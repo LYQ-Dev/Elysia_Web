@@ -5,8 +5,153 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-20T17:00:14.640Z</updated>
+  <updated>2026-05-21T14:25:40.965Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-21</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-21/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-21/</id>
+    <published>2026-05-21T00:00:00.000Z</published>
+    <updated>2026-05-21T00:00:00.000Z</updated>
+    <summary>408 操作系统专业课后半章节复习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-21</h1>
+<h2>今日学习内容</h2>
+<p>今天专业课学习1小时，主要完成了计算机操作系统（OS）后半章节的复习。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次复习覆盖的操作系统后半章节核心考点为408考研的高频考察范围，具体复盘如下：</p>
+<ol>
+<li><strong>进程同步与死锁模块</strong>
+<ul>
+<li>死锁的四个必要条件：互斥使用、请求与保持、不可剥夺、循环等待，选择题常结合实际场景判断是否会引发死锁，简答题要求分析具体案例的死锁成因并给出解决方案。</li>
+<li>经典同步问题PV操作：生产者-消费者、读者-写者、哲学家进餐问题，需熟练掌握信号量的初始化逻辑与P/V操作的执行顺序，是代码补全、原理分析题的高频考点。</li>
+<li>死锁处理策略：包括预防（破坏任一死锁必要条件）、避免（银行家算法，需掌握安全序列的计算方法）、检测（资源分配图化简法）、解除（资源剥夺、进程撤销等）四类方案。</li>
+</ul>
+</li>
+<li><strong>内存管理模块</strong>
+<ul>
+<li>三种存储管理方式对比：分页、分段、段页式，包括地址结构、存储保护、优缺点，为选择题必考内容。</li>
+<li>虚拟内存与页面置换：基于局部性原理实现虚拟内存，需掌握缺页中断的处理流程，以及OPT、FIFO、LRU、Clock等页面置换算法的原理与缺页次数计算，其中FIFO的Belady异常、LRU算法的实现是高频考点。</li>
+<li>抖动现象：成因与解决办法，为简答题常见考察点。</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<p>本次复习仅完成了知识点的框架性回顾，未配套对应习题进行巩固，对银行家算法的安全序列计算、复杂同步问题的PV信号量设置仍存在熟练度不足的问题，后续需针对性补充练习。</p>
+<h2>收获与总结</h2>
+<p>本次复习梳理了操作系统后半章节的核心考点脉络，明确了各模块的考研考察重点，理清了进程同步与内存管理两大模块的逻辑关联，为后续的专项刷题搭建了清晰的知识框架。</p>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-21</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-21/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-21/</id>
+    <published>2026-05-21T00:00:00.000Z</published>
+    <updated>2026-05-21T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-21</h1>
+<h2>今日学习内容</h2>
+<p>今天英语学习时长为1小时40分钟，学习节奏与昨日保持一致，整体围绕考研英语核心备考模块展开，涵盖真题单词复盘与长难句拆解两大核心任务。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+本次复盘聚焦2010年英语一Text 1真题中的高频核心生词，共整理12个重点词汇，附带真题语境例句、搭配拓展与形近/同义辨析：</p>
+<ol>
+<li><strong>alleviate</strong> /əˈliːvieɪt/ <em>v.</em> 减轻，缓解（痛苦、负担等）
+真题原句：The policy aims to alleviate the burden of low-income families.
+形近辨析：allocate /ˈæləkeɪt/ <em>v.</em> 分配，拨出</li>
+<li><strong>compensate</strong> /ˈkɒmpenseɪt/ <em>v.</em> 补偿，弥补
+真题原句：Companies are required to compensate employees for workplace injuries.
+核心搭配：compensate for 弥补，抵消（损失/缺陷）</li>
+<li><strong>skeptical</strong> /ˈskeptɪkl/ <em>adj.</em> 怀疑的，不相信的
+真题原句：Most academics remain skeptical of the new research findings.
+同义替换：doubtful, suspicious（语境辨析：skeptical更侧重基于证据的怀疑）</li>
+<li><strong>mitigate</strong> /ˈmɪtɪɡeɪt/ <em>v.</em> 减轻，缓和（严重性）</li>
+<li><strong>subsequent</strong> /ˈsʌbsɪkwənt/ <em>adj.</em> 随后的，后来的</li>
+<li><strong>indispensable</strong> /ˌɪndɪˈspensəbl/ <em>adj.</em> 不可缺少的，绝对必要的</li>
+<li><strong>transient</strong> /ˈtrænziənt/ <em>adj.</em> 短暂的，转瞬即逝的</li>
+<li><strong>deteriorate</strong> /dɪˈtɪəriəreɪt/ <em>v.</em> 恶化，变坏</li>
+<li><strong>simulate</strong> /ˈsɪmjuleɪt/ <em>v.</em> 模仿，模拟；假装</li>
+<li><strong>superficial</strong> /ˌsuːpəˈfɪʃl/ <em>adj.</em> 表面的，肤浅的</li>
+<li><strong>perspective</strong> /pəˈspektɪv/ <em>n.</em> 视角，观点；透视画法</li>
+<li><strong>constitute</strong> /ˈkɒnstɪtjuːt/ <em>v.</em> 组成，构成；被算作</li>
+</ol>
+<p>💡 碎碎念：今天复盘时发现自己容易混淆alleviate和allocate的拼写与词义，下次要专门制作形近词对比卡片强化记忆。另外真题里的compensate for搭配在写作议论文中用来论述弥补措施非常实用，已经整理到自己的写作素材本里啦。坚持每天积累真题核心词汇，积少成多，考研英语上岸势在必得！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-21</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-21/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-21/</id>
+    <published>2026-05-21T00:00:00.000Z</published>
+    <updated>2026-05-21T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-21</h1>
+<h2>今日学习内容</h2>
+<p>今天数学学习四个半小时，主要完成了大数定律、数理统计、区间估计，函数的连续和极限等复盘，配套完成了12道选择题、8道填空题与3道解答题的专项训练，同步整理了此前积累的对应模块错题。</p>
+<h2>薄弱点</h2>
+<p>今日复盘过程中暴露出多处易错薄弱环节：一是三大大数定律的适用条件容易混淆，切比雪夫、伯努利、辛钦大数定律的前提假设、适用场景记忆模糊，在选择题判断场景时经常出错；二是数理统计中三大抽样分布的构造逻辑与性质记忆不牢，卡方、t、F分布的自由度判定、期望方差等参数容易记错；三是区间估计部分，单侧置信区间的临界值选取容易混淆单侧α分位点与双侧α/2分位点，求解步骤出现遗漏；四是函数连续与极限模块中，变限积分相关的极限计算容易忽略等价无穷小替换的适用条件，间断点分类时容易漏判振荡间断点的情况。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 大数定律模块复盘</h3>
+<p>考研数学中三大高频大数定律核心考点如下：</p>
+<ul>
+<li>切比雪夫大数定律：要求随机变量序列${X_n}$相互独立，且每个$D(X_n) \leq C$（C为常数），则$\frac{1}{n}\sum_{k=1}^n X_k - \frac{1}{n}\sum_{k=1}^n E(X_k) \xrightarrow{P} 0$</li>
+<li>伯努利大数定律：是切比雪夫的特例，针对n重伯努利试验中事件A发生的频率$\frac{n_A}{n}$，满足$\frac{n_A}{n} \xrightarrow{P} p$（p为事件A单次发生概率）</li>
+<li>辛钦大数定律：要求${X_n}$独立同分布，且$E(X_n)=\mu$存在（无需方差存在），是数理统计中矩估计的理论基础，也是考研解答题常考的收敛性证明考点。</li>
+</ul>
+<h3>2. 数理统计模块复盘</h3>
+<p>核心围绕样本与抽样分布展开：</p>
+<ul>
+<li>统计量定义：不含未知参数的样本函数，常见统计量包括样本均值$\bar{X}$、样本方差$S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X})^2$、样本矩等</li>
+<li>三大抽样分布：
+<ul>
+<li>$\chi^2(n)$：n个独立标准正态变量的平方和，$E(\chi^2(n))=n, D(\chi^2(n))=2n$，可用于正态总体方差的区间估计与假设检验</li>
+<li>$t(n)$：标准正态变量$U$与独立$\chi^2(m)/m$开根号的比值，当$n&gt;30$时近似服从标准正态分布，常用于正态总体均值的区间估计（σ未知时）</li>
+<li>$F(n_1,n_2)$：两个独立$\chi^2$分布除以各自自由度的比值，用于两个正态总体方差比的区间估计</li>
+</ul>
+</li>
+<li>正态总体抽样分布结论：单个正态总体$N(\mu,\sigma^2)$中，$\bar{X} \sim N(\mu,\sigma^2/n)$，$\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$，且$\bar{X}$与$S^2$独立，$\frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t(n-1)$，是必考的基础结论。</li>
+</ul>
+<h3>3. 区间估计模块复盘</h3>
+<p>区间估计的核心是构造枢轴量，步骤为：确定待估参数→构造含待估参数与样本的枢轴量（已知分布）→根据置信水平$1-\alpha$确定分位点→推导置信区间。
+考研高频考点为正态总体的区间估计：</p>
+<ul>
+<li>单个正态总体均值μ的置信区间：σ已知时用$U=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \sim N(0,1)$，双侧置信区间为$(\bar{X} \pm Z_{\alpha/2}\frac{\sigma}{\sqrt{n}})$；σ未知时用$t=\frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t(n-1)$，区间为$(\bar{X} \pm t_{\alpha/2}(n-1)\frac{S}{\sqrt{n}})$</li>
+<li>单侧置信区间仅需将双侧分位点替换为单侧α分位点，例如μ的单侧置信下限为$\bar{X} - Z_\alpha\frac{\sigma}{\sqrt{n}}$（σ已知时）</li>
+<li>单个正态总体方差$\sigma^2$的置信区间用$\chi^2$分布构造，区间为$(\frac{(n-1)S^2}{\chi^2_{\alpha/2}(n-1)},\frac{(n-1)S^2}{\chi^2_{1-\alpha/2}(n-1)})$</li>
+</ul>
+<h3>4. 函数连续与极限模块复盘</h3>
+<p>该模块是高数基础，考研选择填空高频考点：</p>
+<ul>
+<li>极限计算核心方法：等价无穷小替换（仅适用于乘除因子，加减场景需谨慎）、洛必达法则、泰勒展开、夹逼准则等，变限积分极限需先通过积分中值定理或等价替换化简被积函数</li>
+<li>连续的定义：$\lim_{x \to x_0}f(x)=f(x_0)$，间断点分为第一类间断点（极限存在，可去/跳跃）与第二类间断点（极限不存在，无穷/振荡）</li>
+<li>闭区间上连续函数的性质：有界性、最值定理、介值定理、零点定理，常用于证明方程根的存在性。</li>
+</ul>
+<h2>今日小结</h2>
+<p>今日共计完成4.5小时的考研数学学习，其中知识点复盘1.5小时，专项刷题2小时，错题整理1小时。通过本次复盘与训练，巩固了大数定律、数理统计与区间估计的核心考点，但仍在三大抽样分布记忆、单侧置信区间临界值选取上存在较多失误，函数极限的变限积分计算准确率有待提升。后续将针对性整理易错点笔记，每日安排15分钟的薄弱模块专项训练，强化记忆与应用能力。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-20</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-20/" rel="alternate" type="text/html"/>
