@@ -5,8 +5,187 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-21T14:25:40.965Z</updated>
+  <updated>2026-05-22T15:06:14.180Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-22</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-22/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-22/</id>
+    <published>2026-05-22T00:00:00.000Z</published>
+    <updated>2026-05-22T00:00:00.000Z</updated>
+    <summary>408计算机网络章节学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-22</h1>
+<h2>今日学习内容</h2>
+<p>今天专业课学习时长约2小时，主要完成了计算机网络概述章节的系统学习，以及OSI七层参考模型与TCP/IP四层模型的知识点梳理与对比。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 计算机网络概述核心考点</h3>
+<h4>（1）核心定义与组成</h4>
+<p>计算机网络是将若干台具有独立功能的计算机，通过通信设备和传输介质互连，由网络操作系统和通信协议管理，实现数据通信与资源共享的系统。其组成分为硬件层（终端设备、交换机、路由器、传输介质等）与软件层（网络协议、网络操作系统等）。</p>
+<h4>（2）分类方式</h4>
+<p>按覆盖范围可分为局域网（LAN）、城域网（MAN）、广域网（WAN）、个人局域网（PAN）；按传输介质可分为有线网络与无线网络。</p>
+<h4>（3）考研常考性能指标</h4>
+<ul>
+<li>带宽：单位时间内传输的最大数据量，单位为bit/s</li>
+<li>时延：数据从链路一端传输到另一端的时间，包含发送时延、传播时延、处理时延、排队时延</li>
+<li>吞吐量：单位时间内成功传输的数据量</li>
+<li>丢包率：丢失数据包占总发送数据包的比例</li>
+<li>RTT：往返时间，包含请求与响应的总时延</li>
+</ul>
+<h3>2. OSI七层模型与TCP/IP四层模型</h3>
+<h4>（1）OSI七层参考模型</h4>
+<p>从下到上依次为：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层，每层各司其职，实现对等层通信。各层典型协议与功能：</p>
+<ul>
+<li>物理层：传输比特流，如RJ45、光纤、集线器</li>
+<li>数据链路层：传输帧，如PPP、以太网、交换机</li>
+<li>网络层：传输数据包，如IP、ARP、路由器</li>
+<li>传输层：传输报文段/用户数据报，如TCP、UDP</li>
+<li>会话层：建立、管理、终止会话</li>
+<li>表示层：数据格式转换、加密解密</li>
+<li>应用层：面向用户的服务，如HTTP、FTP、DNS</li>
+</ul>
+<h4>（2）TCP/IP四层模型</h4>
+<p>从下到上依次为：链路层、网络层、传输层、应用层，是实际互联网采用的模型，更简洁实用。各层功能与协议和OSI模型存在对应映射关系。</p>
+<h4>（3）两种模型的考研核心对比</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>OSI七层模型</th>
+<th>TCP/IP四层模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>层数</td>
+<td>7层</td>
+<td>4层</td>
+</tr>
+<tr>
+<td>核心思想</td>
+<td>先定义模型再推广协议</td>
+<td>先有协议再总结模型</td>
+</tr>
+<tr>
+<td>实际应用</td>
+<td>仅作为理论参考</td>
+<td>互联网主流采用</td>
+</tr>
+<tr>
+<td>对应关系</td>
+<td>应用层/表示层/会话层 → 应用层；传输层→传输层；网络层→网络层；数据链路层/物理层→链路层</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>问题与反思</h2>
+<ol>
+<li>对OSI模型中层数较多的中间层（会话层、表示层）的功能记忆不够清晰，容易和其他层级混淆</li>
+<li>部分小众网络协议的所属层级还需要额外强化记忆</li>
+<li>网络性能指标的计算类习题练习不足，后续需要补充专项训练</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了计算机网络概述章节的核心考点，明确了网络组成、分类与常考性能指标的定义与计算逻辑</li>
+<li>掌握了OSI七层模型与TCP/IP四层模型的完整结构、各层功能与典型协议，能够准确完成两种模型的对比分析</li>
+<li>明确了两种网络模型的应用场景差异，理解了TCP/IP模型成为互联网主流标准的原因</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-22</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-22/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-22/</id>
+    <published>2026-05-22T00:00:00.000Z</published>
+    <updated>2026-05-22T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-22</h1>
+<h2>今日学习总览</h2>
+<p>今日有效考研英语学习时长为1小时45分钟，分为单词复盘与背诵、长难句拆解与真题精读两个核心模块，整体节奏与昨日保持一致但补充了真题实战练习环节。</p>
+<h2>单词学习复盘</h2>
+<h3>昨日单词复盘</h3>
+<p>今日首先复盘了昨日背诵的50个考研核心高频词，整体正确率约83%，易错点集中在形近词混淆与熟词僻义：比如容易将<code>perspective</code>（视角，观点）与<code>prospective</code>（未来的，预期的）拼写混淆，还有<code>schedule</code>作为动词时意为“安排，计划”而非仅作名词“日程表”。</p>
+<h3>新单词背诵</h3>
+<p>今日新背诵30个考研高频词，重点整理了其核心含义与常考搭配：</p>
+<ol>
+<li><strong>stagnant</strong>：adj. 停滞的，不景气的  常考搭配：stagnant economy 经济停滞</li>
+<li><strong>permeate</strong>：v. 渗透，弥漫；充满  常考搭配：permeate through the soil 渗透土壤</li>
+<li><strong>dispense</strong>：v. 分配，分发；免除，豁免  常考搭配：dispense with 摒弃，省去</li>
+<li><strong>empirical</strong>：adj. 经验主义的，实证的  常考搭配：empirical evidence 实证证据
+我将今日新学单词整理进了专属的考研单词错题本，方便后续反复复习。</li>
+</ol>
+<h2>长难句拆解与精读</h2>
+<p>今日选取2024年全国硕士研究生招生考试英语（一）Text3中的经典长难句进行拆解：</p>
+<blockquote>
+<p><em>The researchers suggest that capuchin monkeys, like humans, are guided by social emotions, which in turn are based on individual recognition.</em></p>
+</blockquote>
+<h3>结构拆解</h3>
+<ol>
+<li>主句：<code>The researchers suggest that + 宾语从句</code></li>
+<li>宾语从句主干：<code>capuchin monkeys are guided by social emotions</code>，插入语<code>like humans</code>作比较状语</li>
+<li>非限制性定语从句：<code>which in turn are based on individual recognition</code>，指代先行词<code>social emotions</code>，补充说明社会情感的形成基础。</li>
+</ol>
+<h3>参考翻译</h3>
+<p>研究人员指出，卷尾猴与人类一样，会受到社会情感的支配，而社会情感反过来又建立在个体识别能力的基础之上。
+今日练习中发现自己对非限制性定语从句的识别熟练度仍有提升空间，后续会额外整理10道同类真题句进行专项训练。</p>
+<h2>今日碎碎念</h2>
+<p>今天背单词时一度因为内容重复有些走神，后来采用了“20分钟专注学习+5分钟休息”的番茄工作法，效率明显提升。在复盘熟词僻义时发现自己对<code>game</code>作为“猎物，猎物活动”的含义掌握不牢，特意补充进了随身的口袋单词卡。
+距离考研还有约5个月，虽然每日学习难免枯燥，但看到累计背诵的1200+考研核心词，还是很有成就感。坚持每日积累，英语上岸不是空想！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-22</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-22/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-22/</id>
+    <published>2026-05-22T00:00:00.000Z</published>
+    <updated>2026-05-22T00:00:00.000Z</updated>
+    <summary>今日围绕函数极限与连续、一元微分概念展开考研数学复盘与刷题的学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-22</h1>
+<h2>今日学习内容</h2>
+<p>今天数学学习四个半小时，主要完成了函数的极限和连续、一元微分的概念相关的复盘和刷题，包括张宇基础30讲配套章节习题25道、历年考研真题节选5道，同时复盘整理了前期积累的该模块错题本。</p>
+<h2>薄弱点</h2>
+<p>今天的学习中暴露出两个核心薄弱点：一是在利用等价无穷小计算极限时，混淆了乘除与加减运算的使用条件，多次在加减项中错误替换导致结果出错；二是分段函数在分段点处的可导性判断时，忘记必须通过左右导数定义验证，直接套用初等函数求导公式，同时对可导、可微、连续三者的推导逻辑记忆模糊。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 函数的极限与连续</h3>
+<p>该模块是考研数学微分学的基础核心考点，高频考察内容包括：</p>
+<ul>
+<li>极限的基础运算法则、等价无穷小替换、洛必达法则的适用场景；其中等价无穷小替换仅可在乘除运算中安全使用，加减运算需满足替换后整体极限不为零，或通过泰勒展开进行严谨近似；</li>
+<li>间断点分类判断：第一类间断点（左右极限均存在，可去间断点/跳跃间断点）、第二类间断点（左右极限至少一个不存在，无穷间断点/振荡间断点）；</li>
+<li>函数连续的充要条件：极限值等于函数值，需同时验证该点极限存在与函数有定义。</li>
+</ul>
+<h3>2. 一元微分的概念</h3>
+<p>该模块是微分学的入门核心，考研常以选择题、填空题形式考察：</p>
+<ul>
+<li>可导、可微与连续的逻辑关系：可导等价于可微，可导必连续，但连续不一定可导；</li>
+<li>导数与微分的定义：导数的标准极限形式为$f'(x_0)=\lim_{\Delta x \to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$，微分$dy=f'(x_0)\Delta x$，本质是函数增量的线性主部；</li>
+<li>分段函数分段点可导性验证：必须分别计算左右导数，仅当左右导数相等且函数在该点连续时，才可判定在该点可导。</li>
+</ul>
+<h2>今日小结</h2>
+<p>今日通过复盘和刷题进一步巩固了函数极限与一元微分的基础框架，针对暴露出的薄弱点整理了3道典型错题并标注了易错提醒。后续计划针对等价无穷小误用、分段点可导性判断两个薄弱点，各补充10道专项练习题强化熟练度。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-21</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-21/" rel="alternate" type="text/html"/>
