@@ -1,4 +1,115 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-05-22</title><link>https://elysiaweb.vercel.app/posts/408/5-22/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/5-22/</guid><description>408计算机网络章节学习与复盘</description><pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-05-22&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-05-23</title><link>https://elysiaweb.vercel.app/posts/408/5-23/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/5-23/</guid><description>408计算机网络专业课学习与复盘</description><pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-05-23&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今天专业课学习1小时，聚焦计算机网络物理层核心考点，完成了奈奎斯特奈氏准则、香农定理，以及常见基带编码、带通调制技术的系统学习与梳理。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 奈奎斯特奈氏准则&lt;/h3&gt;
+&lt;p&gt;奈奎斯特第一准则针对&lt;strong&gt;无噪声的理想低通信道&lt;/strong&gt;，规定信道最高码元传输速率为$2W$ Baud（$W$为信道带宽，单位Hz）。若每个码元携带$\log_2 M$比特信息量（$M$为码元离散状态数），则理想信道极限信息传输速率为：
+$$C_{奈} = 2W \cdot \log_2 M$$
+考研考点：常以选择题、计算题形式考察，核心是区分理想信道与实际信道的速率计算前提，需明确Baud（码元速率）与bps（信息速率）的单位差异。&lt;/p&gt;
+&lt;h3&gt;2. 香农定理&lt;/h3&gt;
+&lt;p&gt;香农定理针对&lt;strong&gt;存在高斯白噪声的实际通信信道&lt;/strong&gt;，极限信息传输速率公式为：
+$$C_{香} = W \cdot \log_2(1 + S/N)$$
+其中$S$为信号平均功率，$N$为噪声平均功率，$S/N$为信噪比。实际应用中信噪比常以分贝(dB)为单位，换算关系为：$\text{信噪比(dB)} = 10\lg_{10}(S/N)$。
+考研考点：结合实际场景的速率计算，需注意当同时满足奈氏准则和香农定理时，实际极限速率取两者结果的较小值，也是408计网物理层高频考点。&lt;/p&gt;
+&lt;h3&gt;3. 常见调制与编码技术&lt;/h3&gt;
+&lt;h4&gt;基带编码（数字数据转数字信号）&lt;/h4&gt;
+&lt;p&gt;适用于基带传输，核心类型及特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不归零编码(NRZ)：高低电平直接对应0/1，无中间跳变，需额外同步信号&lt;/li&gt;
+&lt;li&gt;曼彻斯特编码：每个码元中间有电平跳变用于同步，高到低跳变表示1、低到高跳变表示0，以太网采用该编码&lt;/li&gt;
+&lt;li&gt;差分曼彻斯特编码：保留中间跳变同步，码元起始跳变表示0、无跳变表示1，抗干扰性优于曼彻斯特编码&lt;/li&gt;
+&lt;li&gt;归零编码(RZ)：每个码元中间归零，同步性好但带宽利用率低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;带通调制（数字数据转模拟信号）&lt;/h4&gt;
+&lt;p&gt;适用于带通传输，核心类型及特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;调幅(AM/2ASK)：改变载波振幅，每个码元携带1bit信息&lt;/li&gt;
+&lt;li&gt;调频(FM/2FSK)：改变载波频率，抗干扰性优于调幅&lt;/li&gt;
+&lt;li&gt;调相(PM/2PSK)：改变载波相位，抗干扰性较强&lt;/li&gt;
+&lt;li&gt;正交调幅(QAM)：结合调幅与调相，同时改变载波振幅和相位，如16QAM每个码元携带4bit信息，是高速无线通信常用方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;考研考点：考察各类编码/调制的特点、应用场景，以及码元速率与信息速率的换算。&lt;/p&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;初期容易混淆奈奎斯特准则与香农定理的适用场景，做题时未先判断信道是否存在噪声，导致公式误用&lt;/li&gt;
+&lt;li&gt;曼彻斯特编码与差分曼彻斯特编码的判码规则记忆模糊，容易搞反电平跳变对应的二进制值&lt;/li&gt;
+&lt;li&gt;信噪比的分贝换算时常出现计算错误，比如将$10\lg(S/N)=20$直接等价为$S/N=20$，忽略对数换算规则&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;彻底理清了物理层两大极限传输速率定理的区别与应用前提，能够独立完成理想信道与实际噪声信道的最大传输速率计算&lt;/li&gt;
+&lt;li&gt;掌握了8种常见基带编码与带通调制技术的核心特点、应用场景，能够准确区分不同编码方式的优劣&lt;/li&gt;
+&lt;li&gt;明确了码元传输速率与信息传输速率的换算关系，熟练掌握了信噪比的分贝值与实际功率比的转换方法&lt;/li&gt;
+&lt;li&gt;对408计网物理层的高频考点有了更系统的认知，能够对应到真题的考察方向&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-05-23</title><link>https://elysiaweb.vercel.app/posts/english/5-23/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/5-23/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-05-23&lt;/h1&gt;
+&lt;h2&gt;今日学习总时长&lt;/h2&gt;
+&lt;p&gt;今日累计投入考研英语学习1.5小时，具体拆分如下：单词循环复习40分钟，长难句结构分析30分钟，阅读解题技巧梳理20分钟。&lt;/p&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;h3&gt;单词复习&lt;/h3&gt;
+&lt;p&gt;完成红宝书必背词Unit15至Unit26的循环复盘，重点标记了近期容易混淆的形近词、熟词僻义，共整理12个易错高频词到个人错题本。&lt;/p&gt;
+&lt;h3&gt;长难句学习&lt;/h3&gt;
+&lt;p&gt;聚焦考研英语阅读高频的&lt;strong&gt;嵌套式定语从句&lt;/strong&gt;，拆解了3道2025年考研英语真题例句，掌握了“先找核心谓语动词，再逐层剥离从句”的拆分技巧，能够快速定位句子主干，排除插入语的干扰。&lt;/p&gt;
+&lt;h3&gt;阅读方法学习&lt;/h3&gt;
+&lt;p&gt;学习了考研英语阅读的「题干精准定位法」，总结了3种常见的同义替换类型：同义词替换、词性转换、概括性改写，并结合真题例句进行了实操练习。&lt;/p&gt;
+&lt;h2&gt;单词复盘（AI辅助整理）&lt;/h2&gt;
+&lt;p&gt;整理今日重点复盘的高频易错词：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;complimentary&lt;/strong&gt; /kəmˈplɪməntri/ adj. 免费的；赞美的
+&lt;blockquote&gt;
+&lt;p&gt;易混词：&lt;strong&gt;complementary&lt;/strong&gt; /ˌkɒmplɪˈmentri/ adj. 补充的，互补的（二者形近且发音相近，需结合语境区分）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;subsequent&lt;/strong&gt; /ˈsʌbsɪkwənt/ adj. 随后的，后来的
+&lt;blockquote&gt;
+&lt;p&gt;固定搭配：&lt;code&gt;subsequent to sth.&lt;/code&gt; 在……之后&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ambiguous&lt;/strong&gt; /æmˈbɪɡjuəs/ adj. 模棱两可的，含糊不清的
+&lt;blockquote&gt;
+&lt;p&gt;近义词辨析：&lt;code&gt;vague&lt;/code&gt; 侧重“模糊不清的，不明确的”，&lt;code&gt;ambiguous&lt;/code&gt; 侧重“有多种解释的，易引起歧义的”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;substitute&lt;/strong&gt; /ˈsʌbstɪtjuːt/ v./n. 代替，替代品
+&lt;blockquote&gt;
+&lt;p&gt;固定搭配：&lt;code&gt;substitute A for B&lt;/code&gt; 用A代替B&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 今日碎碎念：今天在复盘单词的时候又踩了complimentary和complementary的坑，特意反复抄写了5遍加深记忆。虽然晚上学的有点晚，但看着整理的错题本又厚了一点，觉得离上岸的目标又近了一步！继续加油💪&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-05-23</title><link>https://elysiaweb.vercel.app/posts/math/5-23/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/5-23/</guid><description>考研数学学习与复盘记录</description><pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-05-23&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今天共计投入4小时考研数学学习时间，首先完成了一元积分学模块的系统性复盘，梳理了核心知识点与错题类型；随后通过试听多位主流考研数学强化课程讲师的公开课，完成了强化阶段授课老师的初步筛选工作。复盘环节中，我对照考研大纲整理了不定积分、定积分、变限积分与反常积分的核心考点框架，同时复盘了近两周刷题中积累的积分类错题；选老师环节则对比了武忠祥、张宇、汤家凤三位主流讲师的强化课试听片段，结合自身基础偏弱的实际情况，重点关注了课程对基础概念的拆解和题型的分层讲解逻辑。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;变限积分与导数、微分方程结合的综合题型，在处理含参变限积分的求导时容易混淆变量关系，出现求导漏项的错误；&lt;/li&gt;
+&lt;li&gt;反常积分的敛散性判别中，瑕点的定位不够精准，对p积分、Γ函数的敛散性规则记忆不够牢固，混合型反常积分的判别步骤容易遗漏；&lt;/li&gt;
+&lt;li&gt;强化课程选型阶段，对自身的学习风格匹配度判断不够清晰，不确定是优先选择侧重题型归纳还是基础补全的授课体系。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;一元积分学核心考点复盘&lt;/h3&gt;
+&lt;p&gt;一元积分学是考研数学高数模块的核心必考板块，涵盖不定积分、定积分、变限积分与反常积分四大核心模块，结合考研大纲的常考要求，今日复盘重点梳理了以下内容：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;基础公式与法则&lt;/strong&gt;：复盘了不定积分的基本积分表、两类换元积分法的适用场景，明确了分部积分法「反对幂指三」的选u优先级；重点强化了变限积分求导的三类基础形式，补充了被积函数含参的变限积分求导的分步处理技巧。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;定积分应用&lt;/strong&gt;：回顾了定积分在几何中的核心应用，包括平面图形面积（直角坐标、极坐标）、旋转体体积（圆盘法、壳层法）、弧长与表面积公式，梳理了不同场景下的公式选择逻辑。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;反常积分判别&lt;/strong&gt;：明确了无穷限反常积分与瑕积分的定义，掌握了比较判别法、极限形式比较判别法的应用规则，整理了p积分、Γ函数的敛散性结论，补充了混合型反常积分的拆分判别方法。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高频题型复盘&lt;/strong&gt;：结合近期错题，梳理了变限积分构造辅助函数证明不等式、定积分与微分方程结合两类高频题型的解题步骤，总结了通用的解题思路。
+本次复盘暴露的典型问题：含参变限积分的求导步骤不够熟练，反常积分瑕点判断容易忽略被积函数的间断点位置，后续将针对这两点进行专项刷题巩固。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日顺利完成了4小时的学习计划，通过系统性复盘搭建了一元积分学的完整知识框架，明确了强化阶段授课老师的选择方向，梳理了当前存在的知识漏洞。后续将针对薄弱点进行专项刷题训练，同时进一步确认强化课程的适配性，确保后续学习节奏稳定。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-05-22</title><link>https://elysiaweb.vercel.app/posts/408/5-22/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/5-22/</guid><description>408计算机网络章节学习与复盘</description><pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-05-22&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今天专业课学习时长约2小时，主要完成了计算机网络概述章节的系统学习，以及OSI七层参考模型与TCP/IP四层模型的知识点梳理与对比。&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
