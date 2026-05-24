@@ -5,8 +5,113 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-23T14:07:14.605Z</updated>
+  <updated>2026-05-24T13:19:01.283Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-24</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-24/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-24/</id>
+    <published>2026-05-24T00:00:00.000Z</published>
+    <updated>2026-05-24T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-24</h1>
+<h2>今日学习内容</h2>
+<p>今天专业课主要对考研408过往学习的全部核心内容进行系统性复盘，覆盖数据结构、计算机组成原理、操作系统、计算机网络四门专业课科目，旨在梳理知识框架、查漏补缺，为后续的强化阶段复习打好基础。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次复盘围绕408四门核心科目展开：</p>
+<ol>
+<li><strong>数据结构</strong>：复盘线性表、栈与队列、树与二叉树、图、排序与查找等核心模块，梳理各数据结构的底层实现、时间/空间复杂度以及工程适用场景，重点回顾了快速排序的最坏复杂度优化、堆排序的建堆流程、哈希表冲突解决办法等高频易错考点。</li>
+<li><strong>计算机组成原理</strong>：复盘指令系统、总线结构、存储器层次结构、CPU控制器、I/O系统等模块，明确了主存与Cache的三种映射方式、指令流水线的三类冒险及解决策略、CPI的计算方法等考研核心考点。</li>
+<li><strong>操作系统</strong>：复盘进程与线程管理、内存管理（分页、分段、虚拟内存）、文件系统、I/O管理以及死锁处理等内容，梳理了死锁的四个必要条件、银行家算法的应用逻辑、页面置换算法的优劣对比等重点内容。</li>
+<li><strong>计算机网络</strong>：复盘OSI五层/七层模型、TCP/UDP协议特性、IP地址分类与子网划分、路由转发机制、HTTP/HTTPS协议等核心知识点，重点区分了TCP三次握手、四次挥手的细节差异以及滑动窗口的工作原理。
+本次复盘同时结合了过往练习中的错题标记，针对性回顾了出错率较高的知识点模块。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>跨科目关联知识点的记忆容易混淆，例如操作系统虚拟内存与计算机组成原理存储器层次结构的联动考点理解不够透彻；</li>
+<li>部分细节性考点的记忆不够牢固，例如部分排序算法的具体实现步骤、TCP选项字段的作用等；</li>
+<li>本次复盘未针对个人薄弱模块设置专项时间分配，整体复盘节奏不够精准。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了408四门科目的整体知识框架，明确了各模块的考研考点权重与考查形式；</li>
+<li>通过复盘错题标记，精准定位了自身的薄弱知识点模块，为后续专项强化复习指明了方向；</li>
+<li>加深了对跨科目知识点关联性的理解，打破了单一模块学习的局限性，构建了更完整的知识体系。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-24</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-24/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-24/</id>
+    <published>2026-05-24T00:00:00.000Z</published>
+    <updated>2026-05-24T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-24</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入40分钟用于考研英语学习，分为两个模块：一是复盘过去一周背诵的考研英语大纲核心词汇，二是梳理并复盘了《考研英语长难句解密》前半册的核心语法知识点与典型真题例句，重点巩固了定语从句、状语从句的拆分逻辑。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+本次复盘聚焦易混点与高频考点：</p>
+<ol>
+<li><strong>形近词辨析</strong>：<code>permeate</code>（v. 弥漫，渗透，多用于抽象场景，如 <em>permeate into daily life</em>）与 <code>penetrate</code>（v. 穿透，渗入，多用于具体物理场景，如 <em>penetrate the fog</em>）</li>
+<li><strong>熟词僻义</strong>：<code>game</code> 除常见的“游戏”外，还可指“猎物，野味”；<code>address</code> 除“地址”外，还可表示“处理，解决（问题）”或“发表演说”</li>
+<li><strong>真题高频词巩固</strong>：默写了 <code>ambiguous</code>、<code>corroborate</code>、<code>subsequent</code> 等15个核心词的真题例句，修正了3个拼写错误。
+💡 碎碎念：今天复盘时发现之前混淆了好几个形近词，隔周复盘真的能有效对抗遗忘！踏踏实实积累，考研英语上岸稳了！</li>
+</ol>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-24</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-24/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-24/</id>
+    <published>2026-05-24T00:00:00.000Z</published>
+    <updated>2026-05-24T00:00:00.000Z</updated>
+    <summary>考研数学阶段性复盘与学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-24</h1>
+<h2>今日学习内容</h2>
+<p>今天数学复习两个小时左右，主要对一周过去的内容进行了复盘，涵盖了高等数学一元函数微积分、线性代数矩阵基础以及概率论二维随机变量初步的复习内容，同步整理了本周的错题集。</p>
+<h2>薄弱点</h2>
+<p>通过本次复盘梳理，我明确了当前存在的几处核心薄弱点：</p>
+<ol>
+<li><strong>变限积分综合题型</strong>：在结合极限、微分中值定理的变限积分考题中，容易忽略变限积分的连续性前提，且在参数型变限积分的求导步骤中出现符号错误；</li>
+<li><strong>线性代数矩阵综合应用</strong>：伴随矩阵、逆矩阵与初等变换的结合题型中，公式记忆混淆，尤其是可逆矩阵伴随矩阵与逆矩阵的转换关系容易记错，初等变换后的秩的判断步骤繁琐易出错；</li>
+<li><strong>二维随机变量分布计算</strong>：对二维连续型随机变量的边缘分布、条件分布的积分区域拆分逻辑不清晰，在计算联合分布对应的二重积分时常出现积分上下限取值错误。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>本次复盘围绕本周复习的三大模块展开，结合考研数学常考方向做了系统梳理：</p>
+<ol>
+<li><strong>高等数学模块</strong>：本周重点复习了一元函数积分学与微分中值定理，其中变限积分是考研高频考点，核心考点包括变限积分求导法则、变限积分与极限结合的洛必达法则应用、参数型变限积分的处理技巧。复盘过程中我整理了3道典型错题，发现自己在处理$\lim_{x \to 0} \frac{\int_{0}^{x} \sin t^2 dt}{x^3}$这类题型时，能够正确应用洛必达法则，但在处理含参数的变限积分$\int_{0}^{x} f(xt)dt$时，容易忽略换元步骤导致求导错误。另外微分中值定理的辅助函数构造，需要牢记“移项造函数”“积分法构造”两种核心方法，本周的错题中就有2道是因为辅助函数构造失误丢分。</li>
+<li><strong>线性代数模块</strong>：本周复习了矩阵的秩、可逆性以及伴随矩阵的相关公式，考研中常将伴随矩阵与逆矩阵、初等变换结合命题，核心公式$AA^*=A^<em>A=|A|E$是必须牢记的基础，当$A$可逆时，$A^</em>=|A|A^{-1}$，这一转换公式我在本周练习中多次混淆，需要重点强化记忆。另外矩阵初等变换不改变秩的性质，在判断矩阵等价性时需要熟练应用。</li>
+<li><strong>概率论模块</strong>：本周学习了二维随机变量的联合分布、边缘分布与条件分布，对于二维连续型随机变量，边缘密度需要通过二重积分对联合密度积分得到，关键在于准确确定积分区域。本次复盘发现我在处理$0&lt;y&lt;x&lt;1$这类非零联合密度区域的题型时，多次错误地将积分上下限写反，导致计算结果出错。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日共计完成2小时的考研数学复习，主要完成了本周学习内容的系统性复盘，通过梳理错题、标记薄弱点，明确了后续一周的复习重点。接下来我将针对变限积分、矩阵综合应用以及二维随机变量分布这三个薄弱模块，每天各完成5道针对性练习题，同时整理专属的薄弱知识点笔记，强化公式记忆与题型解题逻辑。
+💡 碎碎念：今日的复盘让我跳出了盲目刷题的误区，稳步积累，持续提升，不急于赶进度，把基础打牢才是关键。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-23</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-23/" rel="alternate" type="text/html"/>
