@@ -5,8 +5,154 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-05-25T14:23:07.259Z</updated>
+  <updated>2026-05-26T14:55:44.707Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-05-26</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/5-26/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/5-26/</id>
+    <published>2026-05-26T00:00:00.000Z</published>
+    <updated>2026-05-26T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-05-26</h1>
+<h2>今日学习内容</h2>
+<p>今天专业课学习2小时，聚焦计算机网络可靠传输中的滑动窗口协议相关内容，系统学习了三类自动重传请求（ARQ）协议：停止-等待协议、回退N步（GBN）协议、选择重传（SR）协议。重点掌握了三类协议的发送窗口、接收窗口尺寸约束，以及信道利用率的计算方法：</p>
+<ol>
+<li>窗口约束：停止-等待协议的发送窗口$W_t=1$、接收窗口$W_r=1$；GBN协议发送窗口$W_t \leq 2^k -1$（$k$为帧序号比特数），接收窗口$W_r=1$；SR协议发送窗口$W_t \leq 2^{k-1}$、接收窗口$W_r \leq 2^{k-1}$。</li>
+<li>信道利用率：停止-等待协议的利用率$U = \frac{T_t}{T_t + RTT + T_{ack}}$（$T_t$为单帧发送时延，$RTT$为往返传播时延，$T_{ack}$为确认帧发送时延，通常可忽略$T_{ack}$简化计算）；当使用连续ARQ协议时，若连续发送$N$个帧，当$N \cdot T_t \geq T_t + RTT + T_{ack}$时，利用率$U = \frac{N \cdot T_t}{T_t + RTT + T_{ack}}$，若发送窗口足够大，利用率可趋近于1。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>考研考点深度复盘</h3>
+<ol>
+<li><strong>自动重传请求（ARQ）核心定位</strong>
+ARQ是解决不可靠物理信道上可靠数据传输的核心技术，通过「发送帧+等待确认+超时重传」的机制实现数据的可靠交付，是计算机网络数据链路层与运输层可靠传输服务的基础实现方式，也是408考研计算机网络模块的高频必考考点。</li>
+<li>三类ARQ协议逐一拆解
+<ul>
+<li><strong>停止-等待ARQ</strong>
+是最基础的可靠传输协议，发送方每发送一帧后必须阻塞等待接收方的确认帧，收到确认后才能发送下一帧。
+窗口约束：发送窗口与接收窗口均为1，从根源上避免接收方收到重复帧的混淆问题。
+信道利用率极低，仅为单帧发送时延与总传输周期（发送时延+往返传播时延）的比值，在长距离高速链路中利用率通常不足10%，仅适用于低速短距离通信场景。</li>
+<li><strong>回退N步（GBN）ARQ</strong>
+对停止-等待协议的优化，允许发送方连续发送最多$W_t$个帧，无需等待每帧的确认，通过滑动窗口控制连续发送的帧数量，大幅提升信道利用率。
+窗口约束：发送窗口$W_t \leq 2^k -1$，接收窗口$W_r=1$，仅按序接收帧。若某帧出现差错或超时，发送方会回退并重传当前帧及所有后续已发送的帧，存在大量冗余重传的问题。
+信道利用率相比停止-等待协议有显著提升，当发送窗口足够大时，利用率可趋近于1。</li>
+<li><strong>选择重传（SR）ARQ</strong>
+针对GBN协议的冗余重传问题进行优化，接收方支持乱序接收并缓存正确到达的帧，仅重传出现差错或超时的单个帧，避免了不必要的重传开销。
+窗口约束：发送窗口$W_t \leq 2^{k-1}$，接收窗口$W_r \leq 2^{k-1}$，需满足$W_t + W_r \leq 2^k$，防止帧序号循环后新旧帧混淆。
+是三种协议中信道利用率最高的，适用于高速长距离通信链路，也是考研中考察的重点优化场景。</li>
+</ul>
+</li>
+<li>考研常见考察题型
+<ul>
+<li>给定帧序号比特数，计算协议允许的最大发送/接收窗口尺寸；</li>
+<li>对比三类ARQ协议的工作原理、优缺点与适用场景；</li>
+<li>信道利用率公式的推导与实际场景计算；</li>
+<li>滑动窗口机制如何兼顾可靠传输与流量控制的逻辑分析。</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<p>今日学习过程中，对GBN与SR协议的接收窗口约束条件记忆容易混淆，尚未完全理清两者窗口设计差异的底层原因；同时对连续ARQ协议信道利用率公式的两种适用场景（$N\cdot T_t$大于/小于总周期）还需要结合具体例题进行巩固，对公式推导的逻辑还不够熟练。</p>
+<h2>收获与总结</h2>
+<p>今日通过系统学习，完整掌握了三类滑动窗口ARQ协议的核心知识点，明确了可靠传输协议的演进逻辑：从停止-等待的基础可靠传输，到GBN的连续发送优化，再到SR的选择性重传优化，逐步实现信道利用率的提升。同时清晰梳理了408考研中该模块的常见考察方向，为后续刷题巩固打下了扎实的基础。</p>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-05-26</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/5-26/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/5-26/</id>
+    <published>2026-05-26T00:00:00.000Z</published>
+    <updated>2026-05-26T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-05-26</h1>
+<h2>今日学习内容</h2>
+<p>今日专注考研英语学习共计1小时15分钟，超额完成原定计划：完成2个单元考研英语核心词汇（Unit 7 &amp; Unit 8）的复盘巩固，背诵1个单元基础拓展词汇（Unit 12），同时完成1篇2024年英语一阅读Text 2中的经典长难句拆解与翻译练习，整体学习节奏贴合个人定制的考研英语复习计划表。</p>
+<h2>单词复盘</h2>
+<h3>核心词复盘（Unit7&amp;8）</h3>
+<p>本次复盘重点攻克了3组易混词义与搭配：</p>
+<ol>
+<li><strong>exacerbate v. 使恶化，加重</strong>：此前曾误记为“激发”，结合真题例句<code>The economic crisis exacerbated the housing shortage</code>纠正了核心词义，同时整理了同根词exacerbation n. 恶化</li>
+<li><strong>complement / compliment</strong>：彻底区分了两个形近词：<code>complement</code>作名词意为“补充、配套物”，作动词意为“补充完善”；<code>compliment</code>意为“恭维、称赞”，今日完成了5组搭配自测，正确率100%</li>
+<li><strong>surpass v. 超过，胜过</strong>：区分了易混名词<code>surplus n. 过剩，剩余</code>，整理真题搭配<code>surpass one's expectations 超出预期</code></li>
+</ol>
+<h3>基础词背诵（Unit12）</h3>
+<p>重点记忆了考研阅读高频搭配：</p>
+<ol>
+<li><code>conventional adj. 传统的，惯例的</code> → <code>conventional warfare 常规战争</code></li>
+<li><code>casual adj. 随意的，非正式的</code> → <code>casual attire 便装</code></li>
+<li><code>offset v. 抵消，弥补</code> → <code>offset the loss 弥补损失</code></li>
+</ol>
+<h3>复盘自测</h3>
+<p>通过默写自测的方式检验学习成果，核心词复盘正确率82%，基础词背诵正确率78%，较昨日分别提升7%和5%，将今日易错词加入了明日复习清单。</p>
+<h2>长难句拆解</h2>
+<p>选取2024年全国硕士研究生招生考试英语（一）阅读理解Text 2中的经典长难句：</p>
+<blockquote>
+<p>The researchers found that, among the 120 patients who had received the new treatment, 86% showed a significant reduction in symptoms compared with 32% in the control group.</p>
+</blockquote>
+<h3>拆解步骤</h3>
+<ol>
+<li><strong>定位主句</strong>：主句主干为<code>The researchers found that + 宾语从句</code>，核心谓语动词为<code>found</code></li>
+<li><strong>拆分宾语从句</strong>：从句主干为<code>86% showed a significant reduction in symptoms</code></li>
+<li><strong>理清修饰成分</strong>：
+<ul>
+<li>定语从句<code>who had received the new treatment</code>修饰先行词<code>patients</code></li>
+<li>介词短语<code>among the 120 patients</code>限定范围，<code>compared with 32% in the control group</code>作比较状语</li>
+</ul>
+</li>
+<li>参考翻译：研究人员发现，在120名接受新疗法的患者中，86%的人症状出现了明显缓解，而对照组的这一比例仅为32%。</li>
+</ol>
+<h3>学习反思</h3>
+<p>今日一开始误将定语从句的修饰对象判定为<code>researchers</code>，通过田静老师教授的“找谓语动词法”，快速圈出从句中的谓语<code>had received</code>，明确了先行词为<code>patients</code>，后续将继续强化该拆分技巧。</p>
+<h2>今日碎碎念</h2>
+<p>今天下午在图书馆学习时起初有些犯困，用冷水洗脸并播放了白噪音后快速找回了学习状态。背单词时使用了墨墨背单词的考研高频词库，自动弹出的真题例句帮助我快速将词义与语境结合，比死记硬背的效率高很多。长难句拆解虽然一开始卡了很久，但理清结构后成就感满满。感觉每天坚持一点点，进步虽然缓慢但很扎实，明天计划复习Unit5&amp;6的核心词，再完成2个长难句练习，继续为考研上岸蓄力！</p>
+<blockquote>
+<p>文档内容由AI辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-05-26</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/5-26/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/5-26/</id>
+    <published>2026-05-26T00:00:00.000Z</published>
+    <updated>2026-05-26T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-05-26</h1>
+<h2>今日学习内容</h2>
+<p>今天总学习时长4.5小时，完成张宇强化班高数第二章极限部分的第二课时学习，同步配套完成了《考研数学18讲》强化篇对应的习题，核心覆盖数列极限、函数极限的核心定义、有界性判定准则，以及极限相关的证明题型训练，全程搭配了错题标注与知识点梳理。</p>
+<h2>薄弱点</h2>
+<p>今日暴露的薄弱点主要有三处：一是数列极限的柯西收敛准则与夹逼准则的灵活运用场景混淆，在做涉及递推数列的极限题时，无法快速判断应该选用哪一种判定方法；二是函数极限局部有界性与全局有界性的边界区分，做题时容易混淆两种有界性的适用前提，出现概念性错误；三是极限证明题的书写规范，尤其是数列极限ε-N定义的表述步骤，经常遗漏关键的放缩逻辑，导致步骤分丢失。</p>
+<h2>AI知识点带复盘</h2>
+<h3>数列极限模块</h3>
+<p>考研中数列极限的核心考点集中在ε-N语言定义、收敛数列的基本性质、三大判定准则。其中<strong>单调有界准则</strong>是高频压轴考点，常结合递推数列（如$x_{n+1}=f(x_n)$）考察，解题需先通过数学归纳法证明数列单调且有界，再对递推式两边取极限求解；柯西收敛准则则多用于无需直接求极限的收敛性判定，或证明数列发散。</p>
+<h3>函数极限模块</h3>
+<p>函数极限核心包含ε-δ/ε-X语言定义、局部性质（局部有界性、局部保号性），以及六大基本极限公式、等价无穷小替换、洛必达法则等计算方法。需要重点区分<strong>局部有界性</strong>：若$\lim_{x \to x_0}f(x)=A$，则仅在$x_0$的某去心邻域内$f(x)$有界，并非全局定义域内有界，这是考研选择题的高频陷阱。</p>
+<h3>极限证明题模块</h3>
+<p>考研极限证明题主要分为两类：一是用定义严格证明极限存在或极限值为A，需严格遵循“任意ε&gt;0，存在N/δ，当n&gt;N/0&lt;|x-x0|&lt;δ时，$|x_n-A|&lt;ε$”的标准步骤，放缩过程需紧扣定义逻辑；二是利用极限性质推导等式或不等式，比如结合保号性证明函数符号、结合有界性证明数列收敛性。</p>
+<h2>今日小结</h2>
+<p>今日完成了强化课极限模块第二课时的学习与配套习题训练，通过复盘明确了自身在准则区分、概念边界、证明步骤上的不足。后续计划针对性整理准则适用场景对照表，每天练习3道极限证明题强化书写规范，同时加深局部/全局有界性的概念理解。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-05-25</title>
     <link href="https://elysiaweb.vercel.app/posts/408/5-25/" rel="alternate" type="text/html"/>

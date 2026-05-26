@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-05-25</title><link>https://elysiaweb.vercel.app/posts/408/5-25/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/5-25/</guid><description>408 专业课学习与复盘</description><pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-05-25&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-05-26</title><link>https://elysiaweb.vercel.app/posts/408/5-26/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/5-26/</guid><description>408 专业课学习与复盘</description><pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-05-26&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今天专业课学习2小时，聚焦计算机网络可靠传输中的滑动窗口协议相关内容，系统学习了三类自动重传请求（ARQ）协议：停止-等待协议、回退N步（GBN）协议、选择重传（SR）协议。重点掌握了三类协议的发送窗口、接收窗口尺寸约束，以及信道利用率的计算方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;窗口约束：停止-等待协议的发送窗口$W_t=1$、接收窗口$W_r=1$；GBN协议发送窗口$W_t \leq 2^k -1$（$k$为帧序号比特数），接收窗口$W_r=1$；SR协议发送窗口$W_t \leq 2^{k-1}$、接收窗口$W_r \leq 2^{k-1}$。&lt;/li&gt;
+&lt;li&gt;信道利用率：停止-等待协议的利用率$U = \frac{T_t}{T_t + RTT + T_{ack}}$（$T_t$为单帧发送时延，$RTT$为往返传播时延，$T_{ack}$为确认帧发送时延，通常可忽略$T_{ack}$简化计算）；当使用连续ARQ协议时，若连续发送$N$个帧，当$N \cdot T_t \geq T_t + RTT + T_{ack}$时，利用率$U = \frac{N \cdot T_t}{T_t + RTT + T_{ack}}$，若发送窗口足够大，利用率可趋近于1。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;考研考点深度复盘&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;自动重传请求（ARQ）核心定位&lt;/strong&gt;
+ARQ是解决不可靠物理信道上可靠数据传输的核心技术，通过「发送帧+等待确认+超时重传」的机制实现数据的可靠交付，是计算机网络数据链路层与运输层可靠传输服务的基础实现方式，也是408考研计算机网络模块的高频必考考点。&lt;/li&gt;
+&lt;li&gt;三类ARQ协议逐一拆解
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;停止-等待ARQ&lt;/strong&gt;
+是最基础的可靠传输协议，发送方每发送一帧后必须阻塞等待接收方的确认帧，收到确认后才能发送下一帧。
+窗口约束：发送窗口与接收窗口均为1，从根源上避免接收方收到重复帧的混淆问题。
+信道利用率极低，仅为单帧发送时延与总传输周期（发送时延+往返传播时延）的比值，在长距离高速链路中利用率通常不足10%，仅适用于低速短距离通信场景。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;回退N步（GBN）ARQ&lt;/strong&gt;
+对停止-等待协议的优化，允许发送方连续发送最多$W_t$个帧，无需等待每帧的确认，通过滑动窗口控制连续发送的帧数量，大幅提升信道利用率。
+窗口约束：发送窗口$W_t \leq 2^k -1$，接收窗口$W_r=1$，仅按序接收帧。若某帧出现差错或超时，发送方会回退并重传当前帧及所有后续已发送的帧，存在大量冗余重传的问题。
+信道利用率相比停止-等待协议有显著提升，当发送窗口足够大时，利用率可趋近于1。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择重传（SR）ARQ&lt;/strong&gt;
+针对GBN协议的冗余重传问题进行优化，接收方支持乱序接收并缓存正确到达的帧，仅重传出现差错或超时的单个帧，避免了不必要的重传开销。
+窗口约束：发送窗口$W_t \leq 2^{k-1}$，接收窗口$W_r \leq 2^{k-1}$，需满足$W_t + W_r \leq 2^k$，防止帧序号循环后新旧帧混淆。
+是三种协议中信道利用率最高的，适用于高速长距离通信链路，也是考研中考察的重点优化场景。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;考研常见考察题型
+&lt;ul&gt;
+&lt;li&gt;给定帧序号比特数，计算协议允许的最大发送/接收窗口尺寸；&lt;/li&gt;
+&lt;li&gt;对比三类ARQ协议的工作原理、优缺点与适用场景；&lt;/li&gt;
+&lt;li&gt;信道利用率公式的推导与实际场景计算；&lt;/li&gt;
+&lt;li&gt;滑动窗口机制如何兼顾可靠传输与流量控制的逻辑分析。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;p&gt;今日学习过程中，对GBN与SR协议的接收窗口约束条件记忆容易混淆，尚未完全理清两者窗口设计差异的底层原因；同时对连续ARQ协议信道利用率公式的两种适用场景（$N\cdot T_t$大于/小于总周期）还需要结合具体例题进行巩固，对公式推导的逻辑还不够熟练。&lt;/p&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;p&gt;今日通过系统学习，完整掌握了三类滑动窗口ARQ协议的核心知识点，明确了可靠传输协议的演进逻辑：从停止-等待的基础可靠传输，到GBN的连续发送优化，再到SR的选择性重传优化，逐步实现信道利用率的提升。同时清晰梳理了408考研中该模块的常见考察方向，为后续刷题巩固打下了扎实的基础。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-05-26</title><link>https://elysiaweb.vercel.app/posts/english/5-26/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/5-26/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-05-26&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日专注考研英语学习共计1小时15分钟，超额完成原定计划：完成2个单元考研英语核心词汇（Unit 7 &amp;amp; Unit 8）的复盘巩固，背诵1个单元基础拓展词汇（Unit 12），同时完成1篇2024年英语一阅读Text 2中的经典长难句拆解与翻译练习，整体学习节奏贴合个人定制的考研英语复习计划表。&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;h3&gt;核心词复盘（Unit7&amp;amp;8）&lt;/h3&gt;
+&lt;p&gt;本次复盘重点攻克了3组易混词义与搭配：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;exacerbate v. 使恶化，加重&lt;/strong&gt;：此前曾误记为“激发”，结合真题例句&lt;code&gt;The economic crisis exacerbated the housing shortage&lt;/code&gt;纠正了核心词义，同时整理了同根词exacerbation n. 恶化&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;complement / compliment&lt;/strong&gt;：彻底区分了两个形近词：&lt;code&gt;complement&lt;/code&gt;作名词意为“补充、配套物”，作动词意为“补充完善”；&lt;code&gt;compliment&lt;/code&gt;意为“恭维、称赞”，今日完成了5组搭配自测，正确率100%&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;surpass v. 超过，胜过&lt;/strong&gt;：区分了易混名词&lt;code&gt;surplus n. 过剩，剩余&lt;/code&gt;，整理真题搭配&lt;code&gt;surpass one&apos;s expectations 超出预期&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;基础词背诵（Unit12）&lt;/h3&gt;
+&lt;p&gt;重点记忆了考研阅读高频搭配：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;conventional adj. 传统的，惯例的&lt;/code&gt; → &lt;code&gt;conventional warfare 常规战争&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;casual adj. 随意的，非正式的&lt;/code&gt; → &lt;code&gt;casual attire 便装&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;offset v. 抵消，弥补&lt;/code&gt; → &lt;code&gt;offset the loss 弥补损失&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;复盘自测&lt;/h3&gt;
+&lt;p&gt;通过默写自测的方式检验学习成果，核心词复盘正确率82%，基础词背诵正确率78%，较昨日分别提升7%和5%，将今日易错词加入了明日复习清单。&lt;/p&gt;
+&lt;h2&gt;长难句拆解&lt;/h2&gt;
+&lt;p&gt;选取2024年全国硕士研究生招生考试英语（一）阅读理解Text 2中的经典长难句：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The researchers found that, among the 120 patients who had received the new treatment, 86% showed a significant reduction in symptoms compared with 32% in the control group.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;拆解步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;定位主句&lt;/strong&gt;：主句主干为&lt;code&gt;The researchers found that + 宾语从句&lt;/code&gt;，核心谓语动词为&lt;code&gt;found&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拆分宾语从句&lt;/strong&gt;：从句主干为&lt;code&gt;86% showed a significant reduction in symptoms&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;理清修饰成分&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;定语从句&lt;code&gt;who had received the new treatment&lt;/code&gt;修饰先行词&lt;code&gt;patients&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;介词短语&lt;code&gt;among the 120 patients&lt;/code&gt;限定范围，&lt;code&gt;compared with 32% in the control group&lt;/code&gt;作比较状语&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;参考翻译：研究人员发现，在120名接受新疗法的患者中，86%的人症状出现了明显缓解，而对照组的这一比例仅为32%。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;学习反思&lt;/h3&gt;
+&lt;p&gt;今日一开始误将定语从句的修饰对象判定为&lt;code&gt;researchers&lt;/code&gt;，通过田静老师教授的“找谓语动词法”，快速圈出从句中的谓语&lt;code&gt;had received&lt;/code&gt;，明确了先行词为&lt;code&gt;patients&lt;/code&gt;，后续将继续强化该拆分技巧。&lt;/p&gt;
+&lt;h2&gt;今日碎碎念&lt;/h2&gt;
+&lt;p&gt;今天下午在图书馆学习时起初有些犯困，用冷水洗脸并播放了白噪音后快速找回了学习状态。背单词时使用了墨墨背单词的考研高频词库，自动弹出的真题例句帮助我快速将词义与语境结合，比死记硬背的效率高很多。长难句拆解虽然一开始卡了很久，但理清结构后成就感满满。感觉每天坚持一点点，进步虽然缓慢但很扎实，明天计划复习Unit5&amp;amp;6的核心词，再完成2个长难句练习，继续为考研上岸蓄力！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由AI辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-05-26</title><link>https://elysiaweb.vercel.app/posts/math/5-26/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/5-26/</guid><description>考研数学学习与复盘记录</description><pubDate>Tue, 26 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-05-26&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今天总学习时长4.5小时，完成张宇强化班高数第二章极限部分的第二课时学习，同步配套完成了《考研数学18讲》强化篇对应的习题，核心覆盖数列极限、函数极限的核心定义、有界性判定准则，以及极限相关的证明题型训练，全程搭配了错题标注与知识点梳理。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;p&gt;今日暴露的薄弱点主要有三处：一是数列极限的柯西收敛准则与夹逼准则的灵活运用场景混淆，在做涉及递推数列的极限题时，无法快速判断应该选用哪一种判定方法；二是函数极限局部有界性与全局有界性的边界区分，做题时容易混淆两种有界性的适用前提，出现概念性错误；三是极限证明题的书写规范，尤其是数列极限ε-N定义的表述步骤，经常遗漏关键的放缩逻辑，导致步骤分丢失。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;数列极限模块&lt;/h3&gt;
+&lt;p&gt;考研中数列极限的核心考点集中在ε-N语言定义、收敛数列的基本性质、三大判定准则。其中&lt;strong&gt;单调有界准则&lt;/strong&gt;是高频压轴考点，常结合递推数列（如$x_{n+1}=f(x_n)$）考察，解题需先通过数学归纳法证明数列单调且有界，再对递推式两边取极限求解；柯西收敛准则则多用于无需直接求极限的收敛性判定，或证明数列发散。&lt;/p&gt;
+&lt;h3&gt;函数极限模块&lt;/h3&gt;
+&lt;p&gt;函数极限核心包含ε-δ/ε-X语言定义、局部性质（局部有界性、局部保号性），以及六大基本极限公式、等价无穷小替换、洛必达法则等计算方法。需要重点区分&lt;strong&gt;局部有界性&lt;/strong&gt;：若$\lim_{x \to x_0}f(x)=A$，则仅在$x_0$的某去心邻域内$f(x)$有界，并非全局定义域内有界，这是考研选择题的高频陷阱。&lt;/p&gt;
+&lt;h3&gt;极限证明题模块&lt;/h3&gt;
+&lt;p&gt;考研极限证明题主要分为两类：一是用定义严格证明极限存在或极限值为A，需严格遵循“任意ε&amp;gt;0，存在N/δ，当n&amp;gt;N/0&amp;lt;|x-x0|&amp;lt;δ时，$|x_n-A|&amp;lt;ε$”的标准步骤，放缩过程需紧扣定义逻辑；二是利用极限性质推导等式或不等式，比如结合保号性证明函数符号、结合有界性证明数列收敛性。&lt;/p&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日完成了强化课极限模块第二课时的学习与配套习题训练，通过复盘明确了自身在准则区分、概念边界、证明步骤上的不足。后续计划针对性整理准则适用场景对照表，每天练习3道极限证明题强化书写规范，同时加深局部/全局有界性的概念理解。
+💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-05-25</title><link>https://elysiaweb.vercel.app/posts/408/5-25/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/5-25/</guid><description>408 专业课学习与复盘</description><pubDate>Mon, 25 May 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-05-25&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今天考研408专业课累计学习3小时，系统梳理了计算机网络核心知识点，覆盖两大模块：一是数据链路层与物理层的网络互联设备，二是广域网架构与经典数据差错控制编码技术，具体学习了中继器、集线器、交换机、广域网相关概念，以及奇偶校验码、海明码、CRC循环冗余校验三类差错控制编码。&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
