@@ -3,7 +3,7 @@ title: 考研专业课学习记录2026-05-27
 published: 2026-05-27
 pinned: false
 description: 408 专业课学习与复盘
-tags: [考研408,计算机网络,CSMA协议,802.11,VLAN]
+tags: [考研408,计算机网络,CSMA协议,"802.11",VLAN]
 category: major
 licenseName: "Unlicensed"
 author: 程翊雪
