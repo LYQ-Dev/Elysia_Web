@@ -5,8 +5,209 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-02T13:58:23.804Z</updated>
+  <updated>2026-06-03T14:14:51.365Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-03</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-3/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-3/</id>
+    <published>2026-06-03T00:00:00.000Z</published>
+    <updated>2026-06-03T00:00:00.000Z</updated>
+    <summary>408 计算机网络专业课学习与复盘（UDP、DNS专题）</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-03</h1>
+<h2>今日学习内容</h2>
+<p>今天累计学习2小时，系统梳理了计算机网络传输层的UDP数据报协议，以及应用层的DNS域名系统相关知识点，完成了对应核心考点的笔记整理。</p>
+<h2>AI知识点带复盘</h2>
+<h3>一、UDP数据报考点复盘</h3>
+<ol>
+<li><strong>协议定位与核心特性</strong>：UDP是传输层无连接协议，不提供可靠交付、不保证有序性，仅基于数据报进行传输，相较于TCP开销更小，适合对实时性要求高、对丢包容忍度较高的场景。</li>
+<li><strong>首部格式</strong>：UDP首部共8字节，包含4个2字节字段：
+<ul>
+<li>源端口号（可选，仅当需要对方回信时填写）</li>
+<li>目的端口号</li>
+<li>UDP长度（UDP数据报的总长度）</li>
+<li>UDP校验和（对UDP首部、数据和伪首部进行校验，IPv4中为可选字段，IPv6中强制要求）</li>
+</ul>
+</li>
+<li><strong>常考对比考点</strong>：与TCP的核心差异：无连接、无确认机制、头部开销小、支持广播/多播，常见应用场景包括DNS、SNMP、视频直播、实时通话等。</li>
+</ol>
+<h3>二、DNS域名系统考点复盘</h3>
+<ol>
+<li><strong>协议定位与端口</strong>：DNS是应用层协议，默认基于UDP 53号端口进行通信，当报文长度超过512字节时会切换为TCP 53端口。</li>
+<li><strong>核心功能</strong>：实现域名到IP地址的映射解析，同时支持反向解析（IP到域名）。</li>
+<li><strong>域名空间结构</strong>：采用树形层级结构，分为根域（.）、顶级域（如.com、.cn）、二级域（如baidu.com）、主机名等层级。</li>
+<li><strong>DNS服务器类型</strong>：根域名服务器、顶级域名服务器、权限域名服务器、本地域名服务器。</li>
+<li><strong>查询流程与方式</strong>：
+<ul>
+<li>递归查询：本地域名服务器代替主机完成全部查询过程，将最终结果返回给主机</li>
+<li>迭代查询：本地域名服务器每次只向一个服务器获取下一步查询的地址，逐步完成解析</li>
+<li>标准流程：主机先查询本地缓存→无结果则发送请求到本地域名服务器→本地域名服务器根据配置选择递归/迭代查询，依次访问根域、顶级域、权限域服务器完成解析。</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<p>今日学习过程中，对UDP校验和的伪首部参与校验的具体计算逻辑，以及DNS递归查询与迭代查询在实际网络中的部署场景还存在模糊之处，后续需要结合考研真题例题进行针对性巩固。</p>
+<h2>收获与总结</h2>
+<ol>
+<li>完整掌握了UDP数据报的首部结构、核心特性与适用场景，明确了其与TCP协议的考试常考对比点；</li>
+<li>理清了DNS的整体架构、查询流程与两种查询方式的区别，理解了DNS选择UDP作为传输协议的原因；</li>
+<li>建立了传输层协议与应用层协议的联动知识点框架，为后续综合考点学习打下基础。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-03</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-3/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-3/</id>
+    <published>2026-06-03T00:00:00.000Z</published>
+    <updated>2026-06-03T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-03</h1>
+<h2>今日学习总览</h2>
+<p>今日累计学习时长约1小时45分钟，分为三个模块：</p>
+<ol>
+<li><strong>考研核心单词复习与新学</strong>：45分钟，复盘昨日30个核心词并完成默写检测，新学25个高频考研词汇</li>
+<li><strong>阅读方法论巩固</strong>：40分钟，继续跟进考研英语阅读逻辑课，重点梳理细节题的定位技巧与干扰项排除规则，整理了3页课堂笔记</li>
+<li><strong>真题长难句拆解</strong>：20分钟，拆解2006年考研英语一Text 3中的3个嵌套式长难句，掌握了插入语的识别与拆分方法，同步整理了长难句分析模板</li>
+</ol>
+<h2>单词复盘详情</h2>
+<h3>新学核心词汇（节选）</h3>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>释义</th>
+<th>易错提醒</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>permeate</td>
+<td>v.</td>
+<td>弥漫，渗透；遍布</td>
+<td>易与<code>perpetual</code>混淆，前者表“渗透”，后者表“永恒的”</td>
+</tr>
+<tr>
+<td>conspicuous</td>
+<td>adj.</td>
+<td>显眼的，显著的</td>
+<td>拼写易漏写中间的<code>s</code></td>
+</tr>
+<tr>
+<td>deduct</td>
+<td>v.</td>
+<td>扣除，减去；演绎</td>
+<td>易与<code>induct</code>混淆，<code>induct</code>表“吸纳，就职”</td>
+</tr>
+<tr>
+<td>perpetual</td>
+<td>adj.</td>
+<td>永恒的，持续的</td>
+<td>常出现在科技类阅读的主题语境中</td>
+</tr>
+<tr>
+<td>tangible</td>
+<td>adj.</td>
+<td>有形的，切实的；可触摸的</td>
+<td>形近词<code>tangential</code>表“离题的”</td>
+</tr>
+</tbody>
+</table>
+<h3>昨日单词复盘</h3>
+<p>昨日学习的30个核心词默写正确率为83%，出错的3个单词分别为：<code>perspective</code>（词义混淆，误记为“透视”而非“视角，观点”）、<code>dubious</code>（拼写错误）、<code>simultaneous</code>（释义记忆偏差），已标记至错题本，将在明日晨读重点复习。</p>
+<h2>长难句学习笔记</h2>
+<p>今日拆解的典型长难句示例：</p>
+<blockquote>
+<p>His function is analogous to that of a judge, who must accept the obligation of revealing in as obvious a manner as possible the course of reasoning which led him to his decision.
+拆分分析：主句为主系表结构，定语从句<code>who must accept...</code>修饰judge，其中包含插入式状语<code>in as obvious a manner as possible</code>，后续定语从句<code>which led him to his decision</code>修饰<code>the course of reasoning</code>。今日重点练习了如何剥离插入成分，快速定位主句核心结构。</p>
+</blockquote>
+<h2>今日学习反思与明日计划</h2>
+<ol>
+<li>存在问题：长难句中插入语的快速识别仍不熟练，细节题的定位关键词选择容易受冗余信息干扰</li>
+<li>明日计划：
+<ul>
+<li>晨读复习昨日错题单词，背诵新整理的形近词对照表</li>
+<li>完成10个带插入语的长难句专项练习</li>
+<li>继续学习阅读方法论中的主旨题解题逻辑</li>
+</ul>
+</li>
+</ol>
+<p>💡 碎碎念：今天在整理形近词对照表的时候发现自己之前对很多单词的辨析都不到位，积累不能只停留在背单个单词，还要关注形近、义近词的区分。虽然今天学习时长不算特别长，但每一分钟都专注了，继续加油，考研英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-03</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-3/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-3/</id>
+    <published>2026-06-03T00:00:00.000Z</published>
+    <updated>2026-06-03T00:00:00.000Z</updated>
+    <summary>考研数学强化阶段：方程根存在性、微分中值定理与不等式证明的复盘与练习</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-03</h1>
+<h2>今日学习内容</h2>
+<p>今天累计学习4.5小时，完成了考研数学高数强化阶段的专项复习：系统梳理了方程根的存在性与唯一性问题、三大微分中值定理的应用场景与变形，以及不等式证明的常用解题方法，配套完成了张宇高数18讲对应的30道强化习题，并整理了专属错题笔记。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>微分中值定理的适用条件混淆：偶尔会混淆罗尔定理、拉格朗日中值定理的前提要求，比如忘记罗尔定理需要端点函数值相等的条件，在解题时误用定理；</li>
+<li>辅助函数构造缺乏思路：在利用微分中值定理证明方程根或不等式时，难以快速匹配合适的辅助函数，比如针对带$f’(\xi)+kf(\xi)$形式的证明题，构造指数函数辅助的技巧掌握不熟练；</li>
+<li>方程根唯一性的证明逻辑不严谨：经常只验证了存在性，忽略利用单调性或导数符号判断唯一性的步骤；</li>
+<li>不等式证明的方法选择混乱：在单调性法、中值定理法、凹凸性法之间难以快速选择最优解法，浪费了较多解题时间。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>1. 方程根的存在性与唯一性问题</h3>
+<p>考研中该题型主要分为两类考察方向：</p>
+<ul>
+<li><strong>存在性证明</strong>：优先使用闭区间上连续函数的零点定理，若条件满足则可直接得到存在至少一个实根；若无法直接使用零点定理，则可通过构造辅助函数，将原方程根的问题转化为辅助函数的导函数零点问题，利用罗尔定理证明存在性。</li>
+<li><strong>唯一性证明</strong>：通常结合函数单调性进行证明，通过求导判断函数在区间内的单调性，结合端点函数值的符号即可唯一确定根的个数。</li>
+</ul>
+<blockquote>
+<p>典型例题：证明方程$x^3 - 3x +1=0$在区间$(0,1)$内有且仅有一个实根。先通过零点定理验证$f(0)=1&gt;0,f(1)=-1&lt;0$，得到存在性；再求导$f’(x)=3x^2-3=3(x^2-1)$，在$(0,1)$内$f’(x)&lt;0$，函数单调递减，故唯一。</p>
+</blockquote>
+<h3>2. 三大微分中值定理</h3>
+<p>本次复习重点梳理了三个定理的关联与区别：</p>
+<ul>
+<li>罗尔定理是拉格朗日中值定理的特例（当$f(a)=f(b)$时），而柯西中值定理则是拉格朗日中值定理的推广（引入两个独立函数）。</li>
+<li>考研高频考点包括：单中值点证明、多中值点证明、结合导数符号的证明题。其中构造辅助函数是核心技巧，比如要证明$f’(\xi)+f(\xi)g’(\xi)=0$，可构造$F(x)=e^{g(x)}f(x)$，利用罗尔定理即可得证。</li>
+<li>本次复习中重点纠正了自己之前的误区：柯西中值定理要求$g’(x)≠0$且$g(a)≠g(b)$，这一条件在解题时极易被忽略。</li>
+</ul>
+<h3>3. 不等式证明</h3>
+<p>常用解题方法按优先级排序：</p>
+<ol>
+<li><strong>单调性法</strong>：构造辅助函数$F(x)=f(x)-g(x)$，通过求导判断$F(x)$在区间内的符号，结合端点值即可证明不等式，是最基础也是最常用的方法；</li>
+<li><strong>微分中值定理法</strong>：当不等式中出现$f(b)-f(a)$形式时，可利用拉格朗日中值定理将其转化为$f’(\xi)(b-a)$，再通过估计$f’(\xi)$的范围完成证明；</li>
+<li><strong>凹凸性法</strong>：利用二阶导数的符号判断函数凹凸性，结合凹凸性的定义完成证明；</li>
+<li><strong>极值最值法</strong>：当不等式涉及区间内的最值时，通过求函数的极值最值完成证明。</li>
+</ol>
+<blockquote>
+<p>易错点：在构造辅助函数时，忘记考虑区间端点的函数值是否满足要求，导致推导出现漏洞。</p>
+</blockquote>
+<h2>今日小结</h2>
+<p>今天通过专项复习理清了三个核心知识点的内在联系，意识到方程根的证明、不等式证明很多时候都需要借助微分中值定理作为解题桥梁，完成了错题整理并针对性地补充了5道同类题型练习。整体学习节奏平稳，对知识点的应用逻辑有了更清晰的认知，但在辅助函数构造的熟练度上仍有提升空间，后续需要加强针对性练习。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-02</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-2/" rel="alternate" type="text/html"/>
