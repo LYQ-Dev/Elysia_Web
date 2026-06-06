@@ -5,8 +5,134 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-05T14:40:42.959Z</updated>
+  <updated>2026-06-06T14:36:32.801Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-6/</id>
+    <published>2026-06-06T00:00:00.000Z</published>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <summary>408 计算机网络专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-06</h1>
+<h2>今日学习内容</h2>
+<p>今天总共投入2小时考研408专业课学习，核心任务是对计算机网络教材前半部分的核心知识点进行系统性复盘梳理，不过整体学习效率未达预期，未完成预设的全部复盘计划。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次复盘覆盖的计算机网络前半部分核心考点，属于408考研计网的高频考查范围，具体复盘内容如下：</p>
+<ol>
+<li><strong>计算机网络概述</strong>
+考研核心考点包括：网络的定义与分类（按覆盖范围、拓扑结构等）、分层体系结构的设计原则，OSI七层模型、TCP/IP四层模型、五层综合模型的各层功能与对应协议，重点区分三种模型的差异，掌握各层的PDU（协议数据单元）名称，比如物理层比特流、数据链路层帧、网络层分组/数据报、传输层段、应用层报文。</li>
+<li><strong>物理层</strong>
+核心考点涵盖：常见传输介质的分类与特点（双绞线、光纤、无线传输介质等）、数字数据编码与调制技术（NRZ、曼彻斯特编码、ASK、FSK、PSK等）、多路复用技术（频分复用FDM、时分复用TDM、波分复用WDM、码分多址CDMA）、数字传输系统标准（T1/E1、SDH/SONET）与宽带接入技术（ADSL、PON等）。</li>
+<li><strong>数据链路层</strong>
+考研高频考点包括：数据链路层的基本功能（封装成帧、透明传输、差错控制、流量控制、介质访问控制）、循环冗余校验CRC的计算原理与校验过程、介质访问控制协议（ALOHA协议、CSMA/CD协议、令牌总线/令牌环协议）、以太网的MAC地址与帧结构、交换机的工作原理与转发规则、PPP协议的帧结构与工作状态（链路建立、认证、网络层协商、链路拆除）。</li>
+</ol>
+<h2>问题与反思</h2>
+<p>今日学习存在的核心问题是复盘时未提前搭建知识框架，只是零散翻看课堂笔记与教材，导致知识点之间的关联梳理不顺畅，部分容易混淆的协议（比如CSMA/CD与令牌环的适用场景）未能彻底理清；同时学习过程中存在注意力分散的情况，导致整体学习效率未达预设目标，未完成原定的错题复盘任务。</p>
+<h2>收获与总结</h2>
+<p>虽然整体效率不佳，但本次复盘依然梳理清楚了五层模型各层的对应关系与核心功能，明确了CRC校验的计算逻辑与差错检测的原理，厘清了曼彻斯特编码与差分曼彻斯特编码的差异。后续需要调整复盘方法，先绘制对应章节的思维导图再针对性回顾，同时提前规划好每日学习的具体任务节点，避免注意力分散。</p>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-6/</id>
+    <published>2026-06-06T00:00:00.000Z</published>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-06</h1>
+<h2>今日学习内容</h2>
+<p>今天总学习时长1小时20分钟，学习节奏与昨日保持一致，分为三大模块：考研核心单词复盘与新拓展、长难句拆解训练、2025年英语一阅读Text 2片段精读。</p>
+<h2>单词复盘</h2>
+<p>今日共完成58个考研核心高频词的复盘与记忆，其中重点巩固了12个前一日记忆模糊的易错词，额外拓展了8个同根词与固定搭配：</p>
+<ol>
+<li><strong>perceive</strong> v. 察觉，感知；认为，理解 → 固定搭配：perceive sth. as sth. 把…视作</li>
+<li><strong>mitigate</strong> v. 减轻，缓解（伤害、损失等） → 形近词辨析：区分<code>migrate</code>（迁徙）与<code>demote</code>（降级）</li>
+<li><strong>discrepancy</strong> n. 差异，不符（尤指数据、说法间的） → 同义词归纳：inconsistency, disparity</li>
+<li><strong>prevalent</strong> adj. 普遍的，盛行的 → 同义词替换：widespread, common
+同时整理了3组易混淆高频短语：<em>in terms of</em>（在…方面）、<em>in the wake of</em>（随着…而来，在…之后）、<em>on the verge of</em>（濒临，接近于）。
+💡 碎碎念：今天发现自己总把<code>mitigate</code>和<code>migrate</code>的拼写搞混，特意用词根拆分法强化记忆：miti-（轻柔）→ mitigate（使轻柔→缓解），migri-（移动）→ migrate（移动→迁徙），明天还要抽5分钟快速复盘这批易错词，稳扎稳打积累词汇，考研英语上岸必有我！</li>
+</ol>
+<h2>长难句拆解训练</h2>
+<p>今日重点拆解了2025年英语一阅读Text 2中的嵌套长难句：</p>
+<blockquote>
+<p><em>The researchers found that, among the 2,300 parents surveyed, those who regularly read bedtime stories to their children had significantly higher scores on measures of emotional well-being than those who did not.</em></p>
+</blockquote>
+<h3>拆分步骤：</h3>
+<ol>
+<li>定位主句主干：<code>The researchers found that + 宾语从句</code></li>
+<li>解析宾语从句：主干为<code>those had significantly higher scores</code>，其中<code>among the 2,300 parents surveyed</code>作地点状语，<code>who regularly read bedtime stories to their children</code>为定语从句修饰先行词<code>those</code></li>
+<li>识别比较状语：<code>than those who did not</code>，其中<code>did</code>指代前文的<code>had read bedtime stories</code>
+今日收获：熟练掌握了嵌套定语从句的拆分逻辑，能够快速剥离修饰成分定位句子核心含义。</li>
+</ol>
+<h2>真题片段精读</h2>
+<p>同步精读了上述阅读Text 2的前两段，梳理了文章行文逻辑：开篇以一项育儿科研成果引出主题，探讨睡前亲子阅读对儿童情感健康的积极影响，结尾预留了后续研究的拓展方向，标记了2处可能设置细节题的出题位置，为下周的限时真题模拟训练做好准备。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-6/</id>
+    <published>2026-06-06T00:00:00.000Z</published>
+    <updated>2026-06-06T00:00:00.000Z</updated>
+    <summary>考研数学微分中值定理强化刷题与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-06</h1>
+<h2>今日学习内容</h2>
+<p>今天数学学习时长共计4小时50分钟，严格按照强化阶段复习计划，完成了《张宇考研数学强化36讲》中微分中值定理章节的全部32道强化习题训练，同步整理了每道题的解题思路笔记，针对错题进行了二次演算与错因总结。</p>
+<h2>薄弱点</h2>
+<p>今日刷题过程中暴露出的核心薄弱点主要有三个：</p>
+<ol>
+<li><strong>中值定理适用场景混淆</strong>：部分题目中无法快速区分罗尔、拉格朗日、柯西中值定理的应用条件，尤其是柯西中值定理中“两个函数在开区间内导数不同时为0”的限制条件容易被忽略，导致解题方向偏差；</li>
+<li><strong>辅助函数构造能力不足</strong>：针对含中值的等式证明题，拆分式子、还原原函数的技巧不够熟练，比如当出现$f(ξ)+ξf’(ξ)$形式时，不能快速联想到构造辅助函数$F(x)=xf(x)$；</li>
+<li><strong>多步骤衔接逻辑不顺畅</strong>：当题目需要结合介值定理、积分中值定理与微分中值定理综合应用时，区间划分和定理衔接的逻辑链条不够清晰，容易出现步骤跳跃。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>核心知识点梳理</h3>
+<ol>
+<li><strong>三大微分中值定理基础回顾</strong>
+<ul>
+<li>罗尔中值定理：若$f(x)$在$[a,b]$连续，$(a,b)$可导，且$f(a)=f(b)$，则存在$ξ∈(a,b)$使得$f’(ξ)=0$，是拉格朗日定理的特例，常用于证明零点存在性问题；</li>
+<li>拉格朗日中值定理：若$f(x)$满足罗尔定理前两个条件，则存在$ξ∈(a,b)$使得$f(b)-f(a)=f’(ξ)(b-a)$，核心是建立函数增量与导数的联系，常用于证明函数不等式、有限增量估计；</li>
+<li>柯西中值定理：若$f(x),g(x)$均在$[a,b]$连续，$(a,b)$可导，且$g’(x)≠0$对任意$x∈(a,b)$成立，则存在$ξ∈(a,b)$使得$\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(ξ)}{g’(ξ)}$，是拉格朗日定理的推广，常用于双中值或两个函数的比值问题。</li>
+</ul>
+</li>
+<li><strong>考研常考题型拆解</strong>
+<ul>
+<li><strong>单中值证明</strong>：优先观察端点函数值是否相等，若相等则优先尝试罗尔定理；若不等则尝试拉格朗日中值定理；若出现两个函数的比值形式，则考虑柯西中值定理。</li>
+<li><strong>双中值证明</strong>：通常有两种思路，一是将区间拆分为两个子区间，分别应用拉格朗日中值定理得到两个中值；二是结合拉格朗日与柯西中值定理联立推导。</li>
+<li><strong>辅助函数构造技巧</strong>：常用原函数法（将$ξ$换为$x$，积分得到原函数）、常数K值法（将含中值的式子整理为常数形式，构造辅助函数）。</li>
+</ul>
+</li>
+<li><strong>今日错题复盘</strong>
+今日整理的12道错题中，7道集中在双中值题型和辅助函数构造，比如证明存在$ξ,η∈(a,b)$使得$f’(ξ)=\frac{(b-a)}{2η}f’(η)$的题目，通过将式子变形为$\frac{f’(ξ)}{1}=\frac{f’(η)}{2η/(b-a)}$，即可发现分别对$f(x)$用拉格朗日、对$f’(x)$结合$g(x)=x^2$用柯西即可完成证明。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日严格落实了强化阶段的刷题计划，完成了全部微分中值定理强化习题，通过针对性复盘明确了自身薄弱环节，解决了之前对柯西中值定理适用场景混淆的问题，梳理了不同题型的解题逻辑框架。后续需要额外加强双中值题型的专项训练，进一步熟练辅助函数的构造技巧，整体学习进度符合强化阶段预期。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-05</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-5/" rel="alternate" type="text/html"/>
