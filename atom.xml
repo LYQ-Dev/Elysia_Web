@@ -5,8 +5,184 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-07T12:35:39.162Z</updated>
+  <updated>2026-06-08T14:32:27.187Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-08</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-8/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-8/</id>
+    <published>2026-06-08T00:00:00.000Z</published>
+    <updated>2026-06-08T00:00:00.000Z</updated>
+    <summary>408数据结构核心知识点复盘与学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-08</h1>
+<h2>今日学习内容</h2>
+<p>今天专业课学习三个半小时，系统复盘数据结构核心知识点，涵盖算法基础、线性表、栈与队列、数组矩阵相关内容，具体包括：算法的五大特性与程序的区别、渐近时间复杂度的大O表示法、线性表顺序存储的增删查操作时间复杂度、单链表的插入删除操作与时间复杂度、循环链表的结构与应用、栈的两种栈顶指针设置规则、循环队列的判空判满实现、前缀后缀表达式的转换与求值难点、二维数组与特殊矩阵的下标地址对应关系。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 算法的特性与程序辨析</h3>
+<p>考研核心考点：算法需满足<strong>有穷性、确定性、可行性、输入、输出</strong>五大特性，其中有穷性是算法与程序的核心区别——程序（如操作系统）可以无限运行，不满足有穷性。常考选择题辨析算法与程序的差异，以及简答题简述算法的五大特性。</p>
+<h3>2. 渐近时间复杂度与大O表示法</h3>
+<p>考研核心考点：</p>
+<ul>
+<li>渐近时间复杂度的定义：忽略低阶项、常数系数，保留最高阶项，记作$O(f(n))$，用于描述算法随输入规模增长的时间增长趋势。</li>
+<li>常见复杂度阶数排序：$O(1) &lt; O(\log n) &lt; O(n) &lt; O(n\log n) &lt; O(n^2) &lt; O(n^3) &lt; O(2^n)$</li>
+<li>常考题型：推导循环结构的时间复杂度，区分最好、最坏、平均时间复杂度（如顺序查找的最好$O(1)$、最坏$O(n)$、平均$O(n/2)$）。</li>
+</ul>
+<h3>3. 线性表的顺序存储及其操作复杂度</h3>
+<p>顺序表采用数组实现，存储地址连续：</p>
+<ul>
+<li>按位查找：$O(1)$，可直接通过下标访问</li>
+<li>按值查找：$O(n)$，需遍历数组匹配元素</li>
+<li>插入/删除操作：平均需要移动$n/2$个元素，时间复杂度$O(n)$，仅在表尾操作时可达到$O(1)$。
+考研常考选择题对比顺序表与链表的操作复杂度，以及简答题分析顺序表的优缺点。</li>
+</ul>
+<h3>4. 单链表的插入删除与时间复杂度</h3>
+<p>单链表采用链式存储，无需连续存储空间：</p>
+<ul>
+<li>按位置插入/删除：需先遍历找到目标节点的前驱，时间复杂度$O(n)$</li>
+<li>已知目标节点的插入/删除：可直接修改指针，时间复杂度$O(1)$（考研常考该场景的编程实现）</li>
+<li>头插法、尾插法建表：头插法复杂度$O(n)$，尾插法若带有尾指针可优化为一次遍历完成，总复杂度$O(n)$。
+常考单链表的编程题实现，以及复杂度分析。</li>
+</ul>
+<h3>5. 循环链表的结构与应用</h3>
+<p>循环链表分为单向循环链表与双向循环链表：</p>
+<ul>
+<li>单向循环链表：尾节点的<code>next</code>指针指向头节点，无需遍历即可找到任意节点的后继，常用于解决单向链表无法快速访问尾节点的问题</li>
+<li>双向循环链表：每个节点带有前驱与后继指针，尾节点的<code>next</code>指向头节点，头节点的<code>prior</code>指向尾节点，支持双向遍历，常用于实现双向队列。
+考研常考循环链表的判空、判尾条件，以及应用场景分析。</li>
+</ul>
+<h3>6. 栈的两种栈顶指针设置方式</h3>
+<p>栈是后进先出的线性结构，栈顶指针的两种常见实现：</p>
+<ol>
+<li><strong>栈顶指针指向栈顶元素的下一个位置</strong>：初始状态<code>top = 0</code>，入栈时先存储元素再<code>top++</code>，出栈时先<code>top--</code>再取出元素，栈空条件为<code>top == 0</code>，栈满条件为<code>top == maxSize</code></li>
+<li><strong>栈顶指针指向栈顶元素本身</strong>：初始状态<code>top = -1</code>，入栈时先<code>top++</code>再存储元素，出栈时先取出元素再<code>top--</code>，栈空条件为<code>top == -1</code>，栈满条件为<code>top == maxSize -1</code>
+考研常考选择题区分两种实现的栈空栈满条件，以及代码实现细节。</li>
+</ol>
+<h3>7. 循环队列的判空判满实现</h3>
+<p>循环队列用于解决顺序队列的假溢出问题，常见三种实现方式：</p>
+<ol>
+<li><strong>牺牲一个单元法</strong>（考研最常考）：栈满条件为<code>(rear + 1) % maxSize == front</code>，栈空条件为<code>front == rear</code>，牺牲的单元用于区分空与满的状态</li>
+<li><strong>计数器法</strong>：设置一个计数器<code>count</code>，<code>count == 0</code>时为空，<code>count == maxSize</code>时为满</li>
+<li><strong>标记法</strong>：设置<code>tag</code>标记，0表示上次操作是出队，1表示上次操作是入队，当<code>front == rear &amp;&amp; tag == 0</code>为空，<code>front == rear &amp;&amp; tag ==1</code>为满。
+常考选择题给出循环队列的<code>front</code>与<code>rear</code>值，判断队列中元素个数。</li>
+</ol>
+<h3>8. 前缀、后缀表达式转换与求值</h3>
+<p>这是考研408的高频考点，难点在于转换规则与求值顺序：</p>
+<ul>
+<li><strong>中缀转后缀（逆波兰式）</strong>：借助栈实现，规则为：
+<ol>
+<li>遇到操作数直接输出</li>
+<li>遇到运算符：弹出栈中优先级大于等于当前运算符的运算符，再将当前运算符压栈；遇到左括号直接压栈，遇到右括号则弹出栈中元素直到左括号（左括号不输出）</li>
+<li>遍历结束后弹出栈中剩余的所有运算符</li>
+</ol>
+</li>
+<li><strong>后缀表达式求值</strong>：借助栈实现，遇到操作数压栈，遇到运算符弹出两个栈顶元素（注意：后弹出的是左操作数），计算结果后压栈，最终栈顶元素即为结果</li>
+<li>前缀表达式（波兰式）：与后缀类似，仅遍历方向相反，从右向左扫描求值。
+常考手工转换与求值的选择题、简答题。</li>
+</ul>
+<h3>9. 数组与矩阵的下标存储地址计算</h3>
+<ul>
+<li><strong>一维数组</strong>：<code>LOC(i) = LOC(0) + i * sizeof(ElemType)</code></li>
+<li><strong>二维数组</strong>：
+<ol>
+<li>行优先：<code>LOC(i,j) = LOC(0,0) + (i * n + j) * sizeof(ElemType)</code>（n为列数）</li>
+<li>列优先：<code>LOC(i,j) = LOC(0,0) + (j * m + i) * sizeof(ElemType)</code>（m为行数）</li>
+</ol>
+</li>
+<li><strong>特殊矩阵压缩存储</strong>：对称矩阵、三角矩阵仅存储下三角/上三角元素，稀疏矩阵采用三元组表或十字链表存储，考研常考特殊矩阵的地址计算公式。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>对循环队列判空判满的三种实现逻辑容易混淆，尤其是牺牲单元法与计数器法的适用场景需要进一步明确</li>
+<li>前缀后缀表达式转换时，运算符优先级的判断与栈的弹出规则还不够熟练，偶尔会出现操作数顺序错误</li>
+<li>特殊矩阵（如对称矩阵、三角矩阵）的压缩存储地址计算公式容易记错，需要重新推导巩固</li>
+<li>单链表已知目标节点的O(1)插入删除场景容易忽略，需要结合经典例题再梳理细节</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>完整系统复盘了数据结构开篇章节的核心考点，明确了算法与程序的本质区别，掌握了大O复杂度的推导方法与常见阶数排序</li>
+<li>理清了线性表顺序存储与链式存储的操作复杂度差异，明确了不同操作场景下的最优时间复杂度</li>
+<li>掌握了栈与队列的核心实现细节，包括栈顶指针的两种设置方式、循环队列解决假溢出的原理与判空判满规则</li>
+<li>熟练掌握了中缀、前缀、后缀表达式的转换与求值方法，能够快速完成表达式的手工转换与计算</li>
+<li>明确了二维数组行优先与列优先的存储地址计算规则，掌握了特殊矩阵的压缩存储方法与地址推导逻辑</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-08</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-8/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-8/</id>
+    <published>2026-06-08T00:00:00.000Z</published>
+    <updated>2026-06-08T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-08</h1>
+<h2>今日学习内容</h2>
+<p>今天英语学习总时长1小时20分钟，分为两个模块：45分钟的考研单词背诵与复盘，35分钟的阅读方法论学习与配套练习。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+今日重点复习了32个考研英语大纲核心词汇，重点攻克了两类易错点：一是形近易混淆词，比如<code>adapt</code>（v. 适应；改编）与<code>adopt</code>（v. 采纳；收养）的语境区分，结合例句<code>She adapted quickly to the new working environment</code>和<code>The company adopted a new marketing strategy</code>加深记忆；二是熟词僻义，比如<code>address</code>作动词意为“处理、解决”而非仅作名词“地址”，搭配例句<code>The government will take measures to address the rising unemployment rate</code>；<code>schedule</code>除了常见的“日程表”，还可作动词表示“安排、预定”，例如<code>The conference is scheduled to take place next Friday</code>。同时复习了昨日学习的18个词汇，通过英汉互译自测巩固了记忆效果。</p>
+<h2>阅读方法论学习</h2>
+<p>今天系统学习了考研英语阅读A节细节题的解题逻辑：</p>
+<ol>
+<li><strong>精准定位</strong>：通过题干中的专有名词、数字、核心名词等关键词锁定原文对应段落与句子，避免泛读浪费时间；</li>
+<li><strong>信息比对</strong>：将选项表述与原文原句进行逐词比对，警惕同义替换的陷阱；</li>
+<li><strong>排除干扰</strong>：快速筛除三类高频干扰项：偷换概念（篡改原文限定词）、过度引申（添加原文未提及的逻辑）、无中生有（捏造原文不存在的信息）。
+配套练习了2024年英语一Text 1的第2道细节题，最初因关键词定位偏差选错了选项，重新梳理定位逻辑后修正了答案，并整理了错题笔记，总结了“优先用专有名词定位”的小技巧。</li>
+</ol>
+<p>💡 碎碎念：今天早上临时有事耽搁了学习进度，原本计划的1.5小时学习时长压缩到了1小时20分钟，但还是咬牙坚持完成了所有计划内容。最近背单词时发现熟词僻义是丢分重灾区，明天会专门整理一本熟词僻义的随身笔记本。坚持每天积累，考研英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-08</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-8/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-8/</id>
+    <published>2026-06-08T00:00:00.000Z</published>
+    <updated>2026-06-08T00:00:00.000Z</updated>
+    <summary>考研数学一元积分学强化阶段学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-08</h1>
+<h2>今日学习内容</h2>
+<p>今天累计学习4小时，正式进入高等数学一元积分学的强化阶段。先复盘了基础阶段的不定积分基本公式、定积分核心性质，随后跟随强化班课程系统学习了变限积分、反常积分以及定积分的几何应用三大模块，同步梳理了课程配套的知识点框架，标记了课堂上讲解的高频考点与易错陷阱。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>变限积分与极限结合的综合题型：容易忽略变限积分求导的前提条件（被积函数连续），复合变限积分求导时经常漏乘内层函数的导数；</li>
+<li>反常积分敛散性判断：对无穷限反常积分与无界反常积分的判别方法混淆，p积分的临界参数取值（如p=1时的敛散性）记忆不准确；</li>
+<li>不定积分换元技巧：三角换元与倒代换的适用场景区分不清，遇到含根式的积分时难以选择最优换元方式；</li>
+<li>定积分几何应用：旋转体体积的圆盘法、壳层法公式容易混淆，绕不同轴旋转的体积计算公式记忆偏差。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>核心考点复盘</h3>
+<ol>
+<li><strong>变限积分</strong>：变限积分是考研数学的高频综合考点，本质是关于积分上下限的函数。当被积函数$f(x)$在闭区间$[a,b]$上连续时，变限积分$\Phi(x)=\int_a^x f(t)dt$可导，且$\Phi'(x)=f(x)$；对于复合变限积分$\Phi(x)=\int_a^{u(x)}f(t)dt$，其导数为$\Phi'(x)=f(u(x))\cdot u'(x)$。考研常将其与洛必达法则、函数极值、导数应用结合考察，例如求$\lim_{x\to0}\frac{\int_0^x \sin t^2 dt}{x^3}$，需通过变限积分求导结合洛必达法则得到结果为$\frac{1}{3}$。</li>
+<li><strong>反常积分</strong>：分为无穷限反常积分与无界反常积分两类，判别敛散性的核心方法为比较判别法及其极限形式，其中p积分是最常用的参考模型：$\int_a^{+\infty}\frac{1}{x^p}dx(a&gt;0)$当$p&gt;1$时收敛，$p\leq1$时发散；$\int_0^a\frac{1}{(a-x)^p}$当$p&lt;1$时收敛，$p\geq1$时发散。考研常考察通过换元法将复杂反常积分转化为p积分进行判别。</li>
+<li><strong>定积分的几何应用</strong>：主要考察平面图形面积、旋转体体积、弧长与表面积，其中旋转体体积是高频考点：绕$x$轴旋转的体积公式为$V=\pi\int_a^b [f(x)]^2dx$（圆盘法）；绕$y$轴旋转的体积可使用壳层法$V=2\pi\int_a^b x|f(x)|dx$，或转化为以$y$为积分变量的圆盘法公式，需根据题目给出的曲线方程灵活选择计算方式。</li>
+<li><strong>积分中值定理</strong>：若$f(x)$在$[a,b]$上连续，则存在$\xi\in(a,b)$使得$\int_a^b f(x)dx = f(\xi)(b-a)$，该定理常应用于中值定理证明题，需注意其使用前提是被积函数连续，不可直接推广到可积函数。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今天完成了一元积分学强化阶段前3节课程的学习，同步整理了14页的知识点笔记，完成了21道配套强化习题，其中7道题因上述薄弱点失误失分。后续计划针对性练习10道变限积分与极限结合的题型、8道反常积分敛散性判别题，同时将今日错题整理到专属错题本中，每周定期复盘易错题型。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-07</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-7/" rel="alternate" type="text/html"/>
