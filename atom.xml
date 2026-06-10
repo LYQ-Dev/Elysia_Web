@@ -5,8 +5,244 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-09T14:45:33.007Z</updated>
+  <updated>2026-06-10T14:38:50.668Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-10</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-10/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-10/</id>
+    <published>2026-06-10T00:00:00.000Z</published>
+    <updated>2026-06-10T00:00:00.000Z</updated>
+    <summary>408 数据结构图相关知识点学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-10</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习2.5小时，主要复习了数据结构图模块核心知识点，包括：图的两种基础存储结构（邻接矩阵、邻接表）、图的两种遍历方式（DFS深度优先搜索、BFS广度优先搜索，修正笔误：原记录的DBS为BFS）、最小生成树相关算法（Prim普利姆算法、Kruskal克鲁斯卡尔算法，修正笔误：原记录的卡酷斯特为克鲁斯卡尔）、单源最短路径算法（Dijkstra迪杰斯特拉算法），以及任务调度相关的AOV网与AOE网知识点。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 图的基础存储结构</h3>
+<h4>邻接矩阵</h4>
+<ul>
+<li>实现逻辑：通过二维数组<code>G[n][n]</code>存储图的边关系与权值，无向图满足<code>G[i][j]=G[j][i]</code>，无权图用1/0标记是否存在边，带权图直接存储边权值。</li>
+<li>复杂度与场景：空间复杂度<code>O(n²)</code>，适合稠密图，查询顶点i的邻接点时间复杂度为<code>O(n)</code>，408常考察其空间浪费问题与稠密图适配性。</li>
+</ul>
+<h4>邻接表</h4>
+<ul>
+<li>实现逻辑：为每个顶点维护一个单链表，存储其所有邻接点与对应边权，带权图的链表节点需额外存储权值信息。</li>
+<li>复杂度与场景：空间复杂度<code>O(n+e)</code>（e为总边数），适合稀疏图，查询顶点i的邻接点时间复杂度为顶点i的出边数，408常考察其空间优化特性与稀疏图适配性。</li>
+</ul>
+<h3>2. 图的遍历算法</h3>
+<h4>DFS深度优先搜索</h4>
+<ul>
+<li>核心逻辑：沿着单条路径尽可能深地遍历，无法继续时回溯，递归实现依赖系统栈，非递归实现需手动模拟栈结构。</li>
+<li>复杂度与应用：邻接表实现时间复杂度<code>O(n+e)</code>，邻接矩阵实现<code>O(n²)</code>，可用于求解连通分量、判断图的连通性，是拓扑排序的前置基础。</li>
+</ul>
+<h4>BFS广度优先搜索</h4>
+<ul>
+<li>核心逻辑：按层级遍历图，借助队列实现节点访问顺序，可直接求解无权图的单源最短路径。</li>
+<li>复杂度与应用：复杂度同DFS，常考察遍历序列生成、分层图问题求解，以及有向图强连通分量的求解思路。</li>
+</ul>
+<h3>3. 最小生成树（MST）</h3>
+<h4>Prim算法</h4>
+<ul>
+<li>核心逻辑：从单个起始顶点出发，每次选择连接当前生成树与外部顶点的最小权值边，将对应顶点加入生成树，重复执行<code>n-1</code>次得到最小生成树。</li>
+<li>实现与场景：邻接矩阵版本时间复杂度<code>O(n²)</code>，适配稠密图；堆优化邻接表版本复杂度<code>O(elogn)</code>，适配稀疏图。</li>
+</ul>
+<h4>Kruskal算法</h4>
+<ul>
+<li>核心逻辑：将所有边按权值从小到大排序，依次选取边，若边的两个顶点不在同一连通分量中，则将其加入生成树，直到包含<code>n-1</code>条边。</li>
+<li>实现与场景：借助并查集维护连通分量，时间复杂度<code>O(eloge)</code>，适配稀疏图，408常考察其并查集的使用细节。</li>
+</ul>
+<h3>4. 单源最短路径：Dijkstra算法</h3>
+<ul>
+<li>核心逻辑：贪心算法，每次选取当前距离源点最近的未访问顶点，更新其邻接点的最短距离，<strong>不支持负权边与负环</strong>。</li>
+<li>实现步骤：初始化距离数组，源点距离设为0，其余顶点设为无穷大；循环<code>n</code>次，每次选取未访问的最小距离顶点，标记已访问后更新邻接点距离。</li>
+<li>复杂度与考点：邻接矩阵版本<code>O(n²)</code>，堆优化版本<code>O(elogn)</code>，408常考察初始化边界、不可达顶点的处理逻辑。</li>
+</ul>
+<h3>5. AOV与AOE任务调度网</h3>
+<h4>AOV网（顶点表示活动）</h4>
+<ul>
+<li>核心逻辑：通过拓扑排序判断有向图是否存在环，拓扑序列即为活动的可行执行顺序，解决任务先后依赖问题。</li>
+<li>考点：拓扑排序的实现步骤、有向无环图的环判断。</li>
+</ul>
+<h4>AOE网（边表示活动）</h4>
+<ul>
+<li>核心逻辑：求解项目的关键路径，即从源点到汇点的最长路径，关键活动为总时差为0的边，直接决定项目最短工期。</li>
+<li>核心计算：需正向遍历计算活动最早开始时间、反向遍历计算活动最晚开始时间，通过<code>最晚开始时间-最早开始时间</code>得到总时差，408常考察完整关键路径计算流程。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>曾混淆Prim与Kruskal算法的适用场景，对两种算法的适配图类型记忆不够牢固；</li>
+<li>Dijkstra算法的初始化细节容易出错，比如忘记将非源点顶点的初始距离设为无穷大，或标记已访问顶点的时机有误；</li>
+<li>AOE网的关键路径计算中，容易搞混最早/最晚开始时间的遍历顺序，导致计算结果偏差；</li>
+<li>手写邻接表与邻接矩阵的转换代码时，常出现下标越界的问题；</li>
+<li>初期曾将BFS误写为DBS，对算法名称的记忆不够精准。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了408数据结构图模块的全部核心考点，明确了每种存储结构、遍历算法、优化算法的适用场景与复杂度；</li>
+<li>修正了前期的笔误，强化了Kruskal、BFS等标准算法名称的正确记忆；</li>
+<li>清晰区分了AOV与AOE网的核心差异，能够独立完成关键路径的完整计算流程；</li>
+<li>掌握了图遍历、最小生成树、最短路径的核心代码框架，能够快速写出考试要求的核心逻辑；</li>
+<li>明确了该模块在408考试中的常见题型：选择题侧重算法场景判断、综合题侧重算法实现与路径计算。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-10</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-10/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-10/</id>
+    <published>2026-06-10T00:00:00.000Z</published>
+    <updated>2026-06-10T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-10</h1>
+<h2>今日学习内容</h2>
+<p>今日总学习时长1小时10分钟，分为两个模块：</p>
+<ol>
+<li>考研核心单词复盘与新学：50分钟</li>
+<li>2005年考研英语Text 1精读与长难句分析：20分钟</li>
+</ol>
+<h2>单词复盘</h2>
+<h3>今日新学+复盘核心词汇（共22个）</h3>
+<p>本次重点整理了考研高频形近词与真题常考熟词僻义：</p>
+<ol>
+<li><strong>perspective</strong> /pəˈspektɪv/
+<ul>
+<li>真题考法：n. 视角，观点；(观察问题的)角度；透视图</li>
+<li>真题搭配：from one's perspective 从某人的视角出发</li>
+<li>真题例句（2021 Text 2）：<em>From the middle-class family perspective, much of this, understandably, looks far less like an opportunity to exercise more financial responsibility, and a good deal more like a frightening acceleration of the wholesale shift of financial risk onto their already overburdened shoulders.</em></li>
+</ul>
+</li>
+<li><strong>prospective</strong> /prəˈspektɪv/
+<ul>
+<li>真题考法：adj. 未来的，预期的；潜在的</li>
+<li>真题搭配：prospective clients 潜在客户</li>
+</ul>
+</li>
+<li><strong>constitute</strong> /ˈkɒnstɪtjuːt/
+<ul>
+<li>真题考法：v. 组成，构成；被算作，被视为</li>
+<li>真题例句（2017 Text 2）：<em>Such measures would constitute a significant shift in the government's approach to climate policy.</em></li>
+</ul>
+</li>
+<li><strong>mitigate</strong> /ˈmɪtɪɡeɪt/
+<ul>
+<li>真题考法：v. 减轻，缓解；使缓和</li>
+<li>真题搭配：mitigate the impact of 缓解...的影响</li>
+</ul>
+</li>
+<li><strong>discrepancy</strong> /dɪsˈkrepənsi/
+<ul>
+<li>真题考法：n. 差异，不符，不一致</li>
+<li>真题例句（2019 Text 3）：<em>There is a noticeable discrepancy between the company's public statements and its internal policies.</em></li>
+</ul>
+</li>
+<li><strong>concomitant</strong> /kənˈkɒmɪtənt/
+<ul>
+<li>真题考法：adj. 伴随的，随之而来的；n. 伴随物，附属物</li>
+</ul>
+</li>
+</ol>
+<h4>易混词复盘与错题整理</h4>
+<p>今天背单词时混淆了<code>perspective</code>和<code>prospective</code>，特意整理了辨析表：</p>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>核心含义</th>
+<th>例句示范</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>perspective</td>
+<td>n./adj.</td>
+<td>视角/透视的</td>
+<td>She viewed the problem from a different perspective.</td>
+</tr>
+<tr>
+<td>prospective</td>
+<td>adj.</td>
+<td>未来的，预期的</td>
+<td>We met a group of prospective students at the open day.</td>
+</tr>
+</tbody>
+</table>
+<h2>长难句与阅读精读</h2>
+<h3>精选长难句分析（2005 Text 1）</h3>
+<blockquote>
+<p>原句：Do you remember all those years when scientists argued that smoking would kill us but the doubters insisted that we didn’t know for sure? That the evidence was inconclusive, the science uncertain?</p>
+<h5>结构拆解：</h5>
+<ol>
+<li>主句：<code>Do you remember all those years</code>，后续<code>when</code>引导定语从句修饰先行词<code>those years</code></li>
+<li>定语从句内部包含并列转折结构：<code>scientists argued that... but the doubters insisted that...</code></li>
+<li>第二个<code>insisted</code>后省略了引导词<code>that</code>，且<code>the science uncertain</code>是独立主格结构，完整形式为<code>the science was uncertain</code>，省略了系动词<code>was</code>，用于简化书面表达</li>
+</ol>
+<h5>参考翻译：你还记得那些年吗？当时科学家们认为吸烟会致命，但怀疑论者坚称我们无法确定这一点，坚称证据不足、科学尚无定论。</h5>
+</blockquote>
+<h3>阅读收获</h3>
+<p>今天精读了2005年Text 1的前两段，理清了文章开篇通过“吸烟致癌争议”的社会话题，引出“公众对科学信息的不信任”这一核心论证背景，为后续理解作者对“反科学”现象的批判打下了逻辑基础。</p>
+<p>💡 碎碎念：今天早上因为赶小组作业差点耽误了学习计划，还好利用了课间和晚饭后的碎片时间补完了任务。背单词时发现自己对形近词的掌握还是有漏洞，之后每天要加10分钟的易混词专项复盘。坚持每天积累，英语提分不是梦，考研上岸必拿下！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成，结合考研英语5500核心词与历年真题考法整理</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-10</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-10/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-10/</id>
+    <published>2026-06-10T00:00:00.000Z</published>
+    <updated>2026-06-10T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-10</h1>
+<h2>今日学习内容</h2>
+<p>今天累计学习3.5小时，分为两个时段完成：上午2小时完成无穷积分的强化训练，结合张宇考研数学题源探析经典1000题的无穷积分章节，完成20道选择题与计算题，同步梳理敛散性判别的核心逻辑；下午1.5小时专攻积分不等式的证明题型，完成15道历年考研真题改编题，整理了证明过程中的通用思路与易错步骤。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>无穷积分敛散性判别时，对比较判别法的标准选取混淆，尤其是当被积函数含对数项或三角函数时，无法快速匹配合适的p积分、q积分作为参照；</li>
+<li>积分不等式证明中，构造辅助函数的思路较为局限，尤其在涉及变上限积分结合单调性证明时，难以快速找到合适的构造方向；</li>
+<li>无穷区间上的积分不等式证明时，易忽略先判断积分敛散性的前提步骤，直接进行放缩导致逻辑错误。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>无穷积分知识点复盘</h3>
+<p>无穷积分是定积分在无限积分区间上的推广，考研核心考点分为三类：</p>
+<ol>
+<li><strong>敛散性定义与分类</strong>：区分绝对收敛、条件收敛与发散的判定标准，需注意无穷积分收敛的前提是拆分后的单侧无穷积分均收敛；</li>
+<li><strong>比较判别法（极限形式）</strong>：考研高频考点，核心是选取标准参照积分（$\int_{1}^{+\infty}\frac{1}{x^p}dx$，$p&gt;1$收敛、$p\leq1$发散；$\int_{0}^{1}\frac{1}{x^q}dx$，$q&lt;1$收敛、$q\geq1$发散），通过极限形式快速判断敛散性；</li>
+<li>狄利克雷与阿贝尔判别法：适用于被积函数为两个因子乘积的场景，需牢记判别条件的适用边界。</li>
+</ol>
+<h3>积分不等式知识点复盘</h3>
+<p>考研常考积分不等式题型分为定积分、变上限积分与无穷区间积分不等式，核心解题方法包括：</p>
+<ol>
+<li><strong>单调性法</strong>：构造变上限积分$F(x)=\int_{a}^{x}f(t)dt$，通过求导判断单调性完成证明；</li>
+<li><strong>中值定理法</strong>：结合拉格朗日中值定理或积分中值定理，利用被积函数的导数或均值性质完成放缩；</li>
+<li><strong>柯西不等式法</strong>：针对含平方项或乘积项的积分不等式，通过柯西积分不等式快速推导结论；</li>
+<li>放缩法：利用被积函数的有界性、奇偶性或已知代数不等式完成简化证明。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日完成了预定的无穷积分强化与积分不等式学习计划，通过习题训练巩固了基础知识点，整理了12道对应错题。练习中暴露了比较判别法选取和辅助函数构造的薄弱环节，后续将针对这两点进行专项刷题与思路总结。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-09</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-9/" rel="alternate" type="text/html"/>
