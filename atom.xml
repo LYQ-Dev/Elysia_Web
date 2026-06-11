@@ -5,8 +5,162 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-10T14:38:50.668Z</updated>
+  <updated>2026-06-11T14:42:23.687Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-11</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-11/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-11/</id>
+    <published>2026-06-11T00:00:00.000Z</published>
+    <updated>2026-06-11T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-11</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习2.5小时，重点梳理并巩固了数据结构模块中的各类内部排序算法、二叉查找树、B树与B+树相关知识点，完成了对应考点的框架整理与典型习题练习。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 二叉查找树（BST）</h3>
+<p>考研核心考点复盘：</p>
+<ul>
+<li>定义：左子树所有关键字小于根节点关键字，右子树所有关键字大于根节点关键字，左右子树均为二叉查找树</li>
+<li>核心操作：查找、插入、删除（分三种场景：叶子节点、单子树节点、双子树节点，双子树场景需替换为中序后继/前驱节点）</li>
+<li>性能分析：平均查找复杂度$O(\log n)$，最坏情况退化为链表达到$O(n)$，常考退化原因与优化方向</li>
+</ul>
+<h3>2. 各类内部排序算法</h3>
+<p>考研必背考点复盘：</p>
+<ul>
+<li>分类覆盖：插入排序（直接插入、折半插入）、交换排序（冒泡、快速）、选择排序（简单选择、堆排序）、归并排序、基数排序</li>
+<li>核心指标：需牢记各算法的平均/最坏时间复杂度、空间复杂度、稳定性，其中稳定性常结合实际应用场景考察（如不破坏原有同元素顺序的排序需求）</li>
+<li>适用场景：快速排序适配大数量无序序列、堆排序适配TopK问题、归并排序适配外排序场景</li>
+</ul>
+<h3>3. B树（多路平衡查找树）</h3>
+<p>考研高频考点复盘：</p>
+<ul>
+<li>m阶B树定义：非根节点关键字数范围为$[\lceil m/2 \rceil -1, m-1]$，根节点关键字数范围为$[1, m-1]$，节点子树数=关键字数+1</li>
+<li>操作流程：插入时若节点关键字超限则分裂，将中间关键字提升至父节点；删除时若节点关键字不足下限，则向兄弟节点借关键字或合并节点，常考察节点分裂合并的具体步骤</li>
+<li>常考题型：给定m值计算B树的最小高度、最大高度，绘制指定关键字序列构建的B树结构</li>
+</ul>
+<h3>4. B+树</h3>
+<p>考研核心对比考点复盘：</p>
+<ul>
+<li>与B树的核心差异：所有关键字仅存储在叶子节点，非叶子节点仅作为索引；叶子节点通过链表按关键字顺序连接，支持高效范围查询</li>
+<li>实际应用：InnoDB数据库的聚簇索引与二级索引均采用B+树结构，因其非叶子节点占比更小，磁盘IO次数更少，更适配磁盘存储场景</li>
+<li>常考题型：B树与B+树的对比简答题、B+树索引的查询流程分析</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>对m阶B树插入、删除时的节点分裂、合并与关键字移动逻辑还不够熟练，做题时容易混淆节点的调整规则；</li>
+<li>各类排序算法的稳定性与时间复杂度容易记混，尤其是归并排序与快速排序的细节差异；</li>
+<li>二叉查找树删除操作中，中序后继/前驱节点的选择与替换后的节点调整步骤还需要进一步巩固。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>完整梳理了408数据结构排序模块的所有核心考点，明确了各排序算法的适用场景与优劣对比；</li>
+<li>理清了二叉查找树、B树、B+树三者的层级关系与核心差异，掌握了各自的应用场景与高频考点；</li>
+<li>完成了对应知识点的框架整理，能够快速匹配各模块对应的考研常考题型与解题思路。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-11</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-11/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-11/</id>
+    <published>2026-06-11T00:00:00.000Z</published>
+    <updated>2026-06-11T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-11</h1>
+<h2>今日学习内容</h2>
+<p>今日总计投入1.5小时考研英语学习，分为两个模块：40分钟核心单词复盘与新单词背诵，以及1小时10分钟的2005年考研英语阅读Text3精读训练，重点拆解长难句与梳理社科类阅读的行文逻辑。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）今日重点背诵并复盘了考研英语高频核心词15个，其中易错易混词整理如下：</p>
+<ol>
+<li><strong>stagnant</strong> /ˈstæɡnənt/ adj. 停滞的，不发展的（侧重经济、行业等发展停滞）
+易混辨析：与stationary（静止的，固定位置的）区分，前者强调无增长停滞，后者侧重位置不变</li>
+<li><strong>discrepancy</strong> /dɪsˈkrepənsi/ n. 差异，不一致（多用于数据、报告、说法间的矛盾差异）</li>
+<li><strong>mitigate</strong> /ˈmɪtɪɡeɪt/ v. 减轻，缓解（正式用词，多指减轻伤害、风险等）</li>
+<li><strong>prevalent</strong> /ˈprevələnt/ adj. 普遍的，流行的（侧重在某一群体或地区广泛存在）</li>
+<li><strong>exacerbate</strong> /ɪɡˈzæsəbeɪt/ v. 使恶化，加重（与mitigate词义相反）</li>
+</ol>
+<p>此外还通过默写检测了前3天背诵的list11-13的单词，正确率达到82%，后续需要加强易混词的专项巩固练习。</p>
+<h2>长难句拆解</h2>
+<p>今日精读2005年英语一Text3时遇到2处嵌套结构长难句，拆解如下：</p>
+<blockquote>
+<p>原句：Do you remember all those years when scientists argued that smoking would kill us but the doubters insisted that we didn’t know for sure?
+结构拆解：主句为<code>Do you remember all those years</code>，后续<code>when</code>引导定语从句修饰years；定语从句中由<code>but</code>连接两个并列分句，分别为<code>scientists argued that smoking would kill us</code>和<code>the doubters insisted that we didn’t know for sure</code>，两个分句均包含<code>that</code>引导的宾语从句。
+参考译文：你还记得那些年吗？当时科学家们认为吸烟会致命，但怀疑论者坚称我们无法确定这一点。</p>
+</blockquote>
+<h2>今日学习总结与碎碎念</h2>
+<p>今天在背单词的时候特意整理了易混词表格，避免下次再搞混stagnant和stationary，做阅读的时候遇到discrepancy第一反应就想到了今天背的意思，明显感觉到积累的效果。虽然有时候觉得反复背单词很枯燥，但想到考研英语5500词的目标，还是咬咬牙坚持下来了。明天计划继续背诵list15，同时完成2005年Text4的精读训练，加油！
+💡 碎碎念：坚持积累，英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-11</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-11/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-11/</id>
+    <published>2026-06-11T00:00:00.000Z</published>
+    <updated>2026-06-11T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-11</h1>
+<h2>今日学习内容</h2>
+<p>今天总共投入4.5小时用于考研数学学习，首先系统性复盘了强化阶段的定积分核心知识点，包括定积分的定义、可积性判定条件、牛顿-莱布尼茨公式的拓展应用，随后重点学习了定积分的几何应用与物理应用两大考研高频模块，配套完成了15道针对性习题并整理了错题标注。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>定积分物理应用中，变力做功的微元参考点选取容易出错，弹簧做功、抽水做功的高度参数计算时常混淆；</li>
+<li>旋转体体积的圆盘法与圆柱壳法适用场景区分不清晰，非坐标轴旋转的体积求解容易遗漏平移变换步骤；</li>
+<li>反常积分的瑕点判断偶尔会出现遗漏，对无界函数反常积分的敛散性判定熟练度不足。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>一、定积分强化复盘</h3>
+<ol>
+<li><strong>可积性核心考点</strong>：考研选择题常考察可积性的充要条件，需牢记三类可积函数：闭区间连续函数、单调有界函数、仅有有限个间断点的有界函数，需注意狄利克雷函数这类处处间断的有界函数不可积。</li>
+<li><strong>牛顿-莱布尼茨公式拓展</strong>：当被积函数在区间内存在有限个第一类间断点时，可通过分段积分结合牛顿-莱布尼茨公式求解，间断点处的函数值不影响最终积分结果。</li>
+<li><strong>定积分对称性应用</strong>：奇函数在对称区间上的定积分为0，偶函数的定积分为2倍半区间积分，是化简复杂积分计算的核心技巧，需先通过换元、拆分判断被积函数的奇偶性。</li>
+</ol>
+<h3>二、定积分几何应用（考研高频解答题考点）</h3>
+<ol>
+<li><strong>平面图形面积</strong>：
+<ul>
+<li>直角坐标系下需先求曲线交点确定积分上下限，通过绝对值处理消除正负面积误差；极坐标系下使用$S=\frac{1}{2}\int_{\alpha}^{\beta}r^2(\theta)d\theta$，常用于心形线、双纽线等曲线的面积计算。</li>
+</ul>
+</li>
+<li><strong>旋转体体积</strong>：
+<ul>
+<li>圆盘法：绕x轴旋转时$V=\pi\int_{a}^{b}f^2(x)dx$，绕y轴旋转时若以x为积分变量，可使用圆柱壳法$V=2\pi\int_{a}^{b}x|f(x)|dx$；当旋转轴为非坐标轴时，需先通过坐标平移转换后再计算。</li>
+</ul>
+</li>
+</ol>
+<h3>三、定积分物理应用（考研易失分低频考点）</h3>
+<ol>
+<li><strong>变力做功</strong>：弹簧做功公式为$W=\frac{1}{2}kx^2$，需注意初始形变量的参考点选取；抽水做功需建立坐标系，选取微元薄层水计算重力与提升高度的乘积后积分求和。</li>
+<li><strong>液体压力与引力</strong>：液体压力利用$p=\rho gh$结合微元积分求解总压力；引力问题需通过分量积分分解后再整合合力，是物理应用中难度较高的题型。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日完成了定积分强化复盘与两大应用模块的系统学习，整理了3道易错题的解题步骤框架，针对薄弱点制定了次日的专项习题计划，整体学习节奏符合备考预期。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-10</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-10/" rel="alternate" type="text/html"/>
