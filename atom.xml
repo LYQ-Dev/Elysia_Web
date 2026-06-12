@@ -5,8 +5,131 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-12T05:06:02.888Z</updated>
+  <updated>2026-06-12T14:50:48.542Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-12</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-12/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-12/</id>
+    <published>2026-06-12T00:00:00.000Z</published>
+    <updated>2026-06-12T00:00:00.000Z</updated>
+    <summary>408 计算机组成原理专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-12</h1>
+<h2>今日学习内容</h2>
+<p>累计学习3小时，完成计算机组成原理教材前半部分（计算机系统概述、运算方法和运算器、存储器层次结构章节）的系统性复盘，梳理核心考点与知识脉络。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 计算机系统基础考点复盘</h3>
+<ul>
+<li>冯·诺依曼体系结构核心要点：存储程序原理、五大组成部件（运算器、控制器、存储器、输入设备、输出设备），以及其总线带宽瓶颈等局限性，考研常以选择题形式考察结构特点与组成部件功能。</li>
+<li>计算机层次结构：从微程序级、机器语言级、操作系统级到高级语言级的分层逻辑，软硬件逻辑等价性的理解，该知识点会结合编译原理联动考察。</li>
+</ul>
+<h3>2. 运算方法与运算器考点复盘</h3>
+<ul>
+<li>数值表示：原码、反码、补码、移码的编码规则、表示范围，重点掌握补码的加减运算、溢出判断（双符号位法、单符号位进位判断法），是408计算大题与选择题的高频考点。</li>
+<li>浮点数表示：IEEE754单精度/双精度标准的格式，规格化浮点数的形式（尾数的隐藏位、阶码的偏移量），浮点数的加减运算步骤（对阶、尾数运算、规格化、舍入、溢出判断），常结合进制转换与计算题型考察。</li>
+<li>运算器组成：ALU的核心功能、先行进位链的两种实现方案（行波进位与超前进位）的优缺点，寄存器组与多路选择器在运算器中的作用，该知识点会结合CPU结构联动考察。</li>
+</ul>
+<h3>3. 存储器层次结构考点复盘</h3>
+<ul>
+<li>存储系统层次化设计：高速缓存、主存、辅存的三级存储体系的性能优化逻辑，局部性原理的两种形式（时间局部性、空间局部性）。</li>
+<li>主存储器：SRAM与DRAM的工作原理与区别，存储器容量扩展的三种方式（位扩展、字扩展、字位扩展）的计算方法，是408大题的必考题型之一。</li>
+<li>存储系统性能指标：存取时间、存取周期、带宽的计算公式，考研常以选择题形式考察参数计算。</li>
+</ul>
+<h2>问题与反思</h2>
+<p>复盘过程中发现对浮点数规格化的特殊情况（如负尾数的规格化处理）、存储器字位扩展的边界计算容易出错，对超前进位链的具体电路逻辑理解仍存在模糊之处，后续需要针对性完成对应题型的专项训练。</p>
+<h2>收获与总结</h2>
+<p>本次复盘搭建了计组前半部分的完整知识框架，理清了各章节之间的逻辑关联，明确了核心考点的考察方向与出题形式，弥补了前期学习中遗留的知识盲区，对后续强化阶段的刷题复习奠定了扎实的基础。</p>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-12</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-12/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-12/</id>
+    <published>2026-06-12T00:00:00.000Z</published>
+    <updated>2026-06-12T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-12</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入1.5小时进行考研英语专项学习，分为核心单词复盘与2018年英语一Text 2真题精读两个模块，严格按照考研英语备考节奏完成学习任务。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+今日复盘《考研英语核心词汇红宝书》Unit 3至Unit 5的核心词汇，共72个，其中生疏词汇占比约24%，重点整理了形近易混词与真题高频搭配：</p>
+<ol>
+<li><strong>perspective</strong> /pəˈspektɪv/ n. 视角；观点；透视画法  |  真题高频搭配：in perspective 正确地；from a historical perspective 从历史视角来看（2022年Text3原句使用）</li>
+<li><strong>advocate</strong> /ˈædvəkeɪt/ v. 拥护；提倡  /ˈædvəkət/ n. 支持者；倡导者  |  形近词区分：advocacy n. 主张；拥护</li>
+<li><strong>dispense</strong> /dɪˈspens/ v. 分配；分发；配药  |  考研阅读常考语境：dispense prescription drugs 配药</li>
+<li><strong>sentiment</strong> /ˈsentɪmənt/ n. 情绪；公众舆论  |  高频搭配：public sentiment 民意</li>
+<li><strong>prospective</strong> /prəˈspektɪv/ adj. 未来的；预期的  |  易混辨析：与perspective仅一个字母之差，需注意词性与词义差异</li>
+</ol>
+<h2>真题阅读精读复盘</h2>
+<p>今日选取2018年英语一Text 2进行精细化精读，完整遵循考研阅读备考流程：</p>
+<ol>
+<li><strong>限时模拟</strong>：严格按照考研英语阅读每题1.5-2分钟的标准，18分钟完成全部5道题目，最终正确率为5/5</li>
+<li><strong>长难句拆解</strong>：重点攻克了第3段的倒装结构句：<em>Not only did they develop such a device but by the turn of the millennium they had also managed to embed it in a worldwide system</em>，梳理了部分倒装的触发规则（否定词位于句首时的倒装）与主谓一致逻辑</li>
+<li><strong>同义替换整理</strong>：整理了题干与原文的同义替换逻辑，例如原文用<em>thrive</em>替换选项中的<em>prosper</em>，用<em>detrimental</em>替换干扰项中的<em>harmful</em></li>
+<li><strong>错题陷阱复盘</strong>：针对第27题的偷换概念干扰项，总结了应对技巧：需精准定位原文定位句，避免凭借主观印象选择相似表述的选项</li>
+</ol>
+<p>💡 碎碎念：今天终于理清了考研阅读中倒装句的出题陷阱，背单词时也特意标记了形近易混词，避免再出现混记的低级错误。坚持每天按计划积累，考研英语上岸一定没问题！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-12</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-12/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-12/</id>
+    <published>2026-06-12T00:00:00.000Z</published>
+    <updated>2026-06-12T00:00:00.000Z</updated>
+    <summary>2026年6月12日考研数学一元积分学刷题与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-12</h1>
+<h2>今日学习内容</h2>
+<p>今天投入4.5小时用于考研数学学习，核心任务为一元积分学模块的专项刷题训练，涵盖不定积分、定积分、变限积分、反常积分四大子模块，搭配同济版高数配套课后习题与考研数学基础真题题型，完成从公式回顾到题型应用的全流程训练。</p>
+<h2>薄弱点</h2>
+<p>今日刷题过程中暴露的典型薄弱点主要有三处：一是第二类换元积分法中，针对含根式的积分，换元后容易忽略积分上下限的同步转换，导致计算结果出错；二是反常积分敛散性的判别，对无穷限积分和无界函数积分的判别准则混淆，部分需要拆分积分区间的题型容易漏判奇点；三是变限积分与导数结合的综合题中，混淆积分变量与求导变量，在构造辅助函数处理积分不等式时逻辑不够清晰。</p>
+<h2>AI知识点带复盘</h2>
+<h3>一元积分学核心考点复盘</h3>
+<ol>
+<li><strong>基本积分与运算规则</strong>：牢记11个基本初等函数的积分公式，掌握积分线性运算性质，明确不定积分与定积分的核心差异：不定积分结果为原函数族，需添加积分常数$C$，定积分结果为确定数值。</li>
+<li><strong>换元积分法</strong>
+<ul>
+<li>第一类换元法（凑微分法）：熟记常见凑微分形式，如$\int f(ax+b)dx=\frac{1}{a}F(ax+b)+C$、$\int \frac{1}{x}dx=\ln|x|+C$等，针对复合函数积分优先观察被积函数的导数结构，快速匹配凑微分方向。</li>
+<li>第二类换元法：针对含$\sqrt{a^2-x^2}$、$\sqrt{x^2+a^2}$、$\sqrt{x^2-a^2}$的根式积分，分别采用三角代换$x=a\sin t$、$x=a\tan t$、$x=a\sec t$，换元时必须同步更换积分上下限，避免后续计算出现低级错误。</li>
+</ul>
+</li>
+<li><strong>分部积分法</strong>：适用于两类不同类型函数的乘积积分，按照“反对幂指三”的优先级确定$u$和$dv$，牢记分部积分公式$\int u dv = uv - \int v du$，多次分部积分时需注意循环抵消的特殊题型。</li>
+<li><strong>变限积分</strong>：变限积分是关于上限（或下限）的函数，其求导公式为$\frac{d}{dx}\int_{a}^{\varphi(x)}f(t)dt = f(\varphi(x))\cdot\varphi'(x)$，当被积函数含求导变量$x$时，需先通过变量替换将$x$分离至积分号外再进行求导操作。</li>
+<li><strong>反常积分</strong>
+<ul>
+<li>无穷限反常积分：$\int_{a}^{+\infty}f(x)dx=\lim_{b\to+\infty}\int_{a}^{b}f(x)dx$，敛散性判别可通过比较判别法、极限形式比较判别法，熟记$p$积分$\int_{1}^{+\infty}\frac{1}{x^p}dx$当$p&gt;1$时收敛，$p\leq1$时发散。</li>
+<li>无界函数反常积分：针对奇点$c\in[a,b]$，需拆分积分区间分别计算极限，$\int_{a}^{b}f(x)dx=\lim_{t\to c^-}\int_{a}^{t}f(x)dx+\lim_{s\to c^+}\int_{s}^{b}f(x)dx$，熟记$p$积分$\int_{a}^{b}\frac{1}{(x-a)^p}dx$当$p&lt;1$时收敛，$p\geq1$时发散。</li>
+</ul>
+</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日共计完成32道基础题型与18道提升题型的刷题训练，针对薄弱点整理了3页错题笔记，重点标注了换元积分上下限、反常积分奇点判别两类高频易错点。刷题过程中逐步熟练了变限积分求导的操作步骤，对分部积分法的应用场景有了更清晰的认知。后续计划针对反常积分的判别题型进行专项强化训练，巩固薄弱模块。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-11</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-11/" rel="alternate" type="text/html"/>
