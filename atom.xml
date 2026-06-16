@@ -5,8 +5,181 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-15T14:39:15.969Z</updated>
+  <updated>2026-06-16T14:40:49.951Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-16</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-16/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-16/</id>
+    <published>2026-06-16T00:00:00.000Z</published>
+    <updated>2026-06-16T00:00:00.000Z</updated>
+    <summary>408计算机组成原理后半部分知识点学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-16</h1>
+<h2>今日学习内容</h2>
+<p>完成了考研408计算机组成原理后半部分的3个核心小节知识点梳理，并配套完成了相关基础习题练习。</p>
+<h2>AI知识点带复盘</h2>
+<h3>计算机组成原理后半部分核心考点复盘</h3>
+<ol>
+<li><strong>存储系统模块</strong>
+<ul>
+<li>核心理论：存储器三级层次化结构（Cache-主存层、主存-辅存层），局部性原理（时间局部性、空间局部性）是该模块的核心设计依据。</li>
+<li>高频考点1：Cache映射机制，包括直接映射、全相联映射、组相联映射的原理、硬件实现逻辑、优缺点对比，以及Cache平均访问时间、命中率的计算公式。</li>
+<li>高频考点2：虚拟存储器管理，页式、段式、段页式存储管理的区别，缺页中断处理流程，以及OPT、FIFO、LRU、Clock等页面置换算法的规则与性能分析。</li>
+</ul>
+</li>
+<li><strong>总线系统模块</strong>
+<ul>
+<li>核心概念：总线的分类（数据/地址/控制总线）、总线性能指标（总线带宽、总线宽度、总线频率）。</li>
+<li>高频考点：总线仲裁机制，集中式仲裁的三种方式（链式查询、计数器定时查询、独立请求）的工作流程与优缺点对比。</li>
+</ul>
+</li>
+<li><strong>输入输出系统模块</strong>
+<ul>
+<li>核心框架：IO系统的层次结构，四类IO方式（程序查询、中断驱动、DMA、通道）的工作原理、适用场景与性能对比。</li>
+<li>高频考点：中断系统的基本流程、中断向量与中断屏蔽的作用，DMA控制器的组成与数据传输过程。</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<p>今日未明确记录具体学习中的疑难问题，后续需结合历年真题与章节错题，针对计组后半部分的高频考点进行专项突破，重点梳理易混淆的知识点（如页面置换算法、Cache映射规则、IO方式差异）。</p>
+<h2>收获与总结</h2>
+<ol>
+<li>搭建了计算机组成原理后半部分模块的知识框架，明确了存储系统、总线、IO系统是408专业课的核心高频考点模块。</li>
+<li>掌握了各模块的基础考点逻辑，能够准确区分不同IO方式、页面置换算法的适用场景与特点。</li>
+<li>理解了三级存储体系的设计逻辑，明晰了局部性原理在存储系统优化中的核心作用。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-16</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-16/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-16/</id>
+    <published>2026-06-16T00:00:00.000Z</published>
+    <updated>2026-06-16T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-16</h1>
+<h2>今日学习内容</h2>
+<p>累计1.5小时，完成考研英语核心单词复盘与一篇英语一阅读真题的精读训练，重点梳理高频词汇的熟词僻义并拆解阅读中的长难句。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+今日重点积累考研高频核心词汇及熟词僻义：</p>
+<ol>
+<li><strong>address</strong> /əˈdres/
+<ul>
+<li>基础义：n. 地址；v. 书写地址</li>
+<li>考研熟词僻义：v. 处理、解决；发表演说</li>
+<li>真题例句：We must address the root causes of this social crisis.</li>
+</ul>
+</li>
+<li><strong>compromise</strong> /ˈkɒmprəmaɪz/
+<ul>
+<li>基础义：v./n. 妥协</li>
+<li>考研熟词僻义：v. 危及、损害</li>
+<li>真题例句：The poor quality of the product has compromised the brand's reputation.</li>
+</ul>
+</li>
+<li><strong>perspective</strong> /pəˈspektɪv/
+<ul>
+<li>n. 视角、观点；透视画法</li>
+<li>考研常考搭配：in perspective 正确地、恰当地</li>
+</ul>
+</li>
+<li><strong>spur</strong> /spɜː(r)/
+<ul>
+<li>n. 刺激、激励；v. 促进、推动</li>
+<li>真题例句：The new policy will spur investment in renewable energy.</li>
+</ul>
+</li>
+</ol>
+<h2>长难句拆解</h2>
+<p>选取今日精读阅读中的典型嵌套长难句进行拆解：</p>
+<blockquote>
+<p>原句：Declaring that he was opposed to using this unusual animal husbandry technique to clone humans, he ordered that federal funds not be used for such an experiment — although no one had proposed to do so — and asked an independent panel of experts to report back to the White House in 90 days with recommendations for a national policy on human cloning.
+拆解步骤：</p>
+</blockquote>
+<ol>
+<li>伴随状语：现在分词短语<code>Declaring that he was opposed to using this unusual animal husbandry technique to clone humans</code>，内部包含宾语从句</li>
+<li>主句并列谓语：① ordered + 宾语从句<code>that federal funds not be used for such an experiment</code>；② asked + 宾语<code>an independent panel of experts</code> + 宾补<code>to report back to the White House in 90 days with recommendations for a national policy on human cloning</code></li>
+<li>让步状语从句：<code>although no one had proposed to do so</code></li>
+</ol>
+<blockquote>
+<p>参考译文：他宣称反对利用这种非同寻常的畜牧克隆技术来克隆人类，因此下令禁止使用联邦资金开展此类实验——尽管目前还没有人提议这么做——同时要求一个独立专家小组在90天内向白宫提交关于制定克隆人类国家政策的建议。</p>
+</blockquote>
+<p>💡 碎碎念：今天复盘单词时理清了多个之前混淆的熟词僻义，比如<code>address</code>的“处理”义终于和<code>deal with</code>的使用场景区分开了。长难句拆解花了近20分钟，但完成后对嵌套从句的逻辑梳理能力提升明显。坚持每天积累，英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-16</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-16/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-16/</id>
+    <published>2026-06-16T00:00:00.000Z</published>
+    <updated>2026-06-16T00:00:00.000Z</updated>
+    <summary>考研数学常微分方程专项刷题与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-16</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入4小时专注学习，全程围绕考研数学常微分方程模块开展专项刷题训练，先后完成近10年考研数学一/二/三的常微分方程真题小题、2套模拟卷中的微分方程大题，并同步完成了错题的订正与归类整理。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>一阶线性微分方程的标准型变形易出错，当方程非原始形式$\frac{dy}{dx}+P(x)y=Q(x)$时，无法快速整理为标准形式求解；</li>
+<li>二阶常系数非齐次线性微分方程的特解形式记忆混淆，尤其是当$f(x)$含三角函数与多项式的混合型时，无法准确判断特解中$x^k$的系数与形式；</li>
+<li>微分方程几何应用中，容易遗漏题目隐含的初始条件，比如曲线过定点、切线斜率条件未正确转化为初始值$y(x_0)=y_0$；</li>
+<li>伯努利方程的变量代换步骤易遗漏，代换后未正确整理为一阶线性方程的标准结构。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>考研常微分方程核心考点复盘</h3>
+<ol>
+<li><strong>一阶微分方程分类与解法</strong>
+<ul>
+<li>可分离变量方程：$\frac{dy}{dx}=f(x)g(y)$，分离变量积分求解，需额外验证$g(y)=0$的特解；</li>
+<li>齐次方程：$\frac{dy}{dx}=\varphi(\frac{y}{x})$，通过换元$u=\frac{y}{x}$转化为可分离变量方程求解；</li>
+<li>一阶线性方程：标准形式$\frac{dy}{dx}+P(x)y=Q(x)$，通解公式为$y=e^{-\int P(x)dx}(\int Q(x)e^{\int P(x)dx}dx + C)$，也可通过积分因子法快速推导；</li>
+<li>伯努利方程：$\frac{dy}{dx}+P(x)y=Q(x)y^n(n≠0,1)$，通过换元$z=y^{1-n}$转化为一阶线性方程求解；</li>
+<li>全微分方程：满足$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$的$P(x,y)dx+Q(x,y)dy=0$，可通过曲线积分或分组凑全微分求解。</li>
+</ul>
+</li>
+<li><strong>二阶常系数线性微分方程</strong>
+<ul>
+<li>齐次方程$y''+py'+qy=0$：通过特征方程$r^2+pr+q=0$的根的三种情况（不等实根、相等实根、共轭复根）写出通解；</li>
+<li>非齐次方程$y''+py'+qy=f(x)$：通解为齐次通解+非齐次特解$y^*$，针对考研高频的两类$f(x)$：
+<ol>
+<li>$f(x)=P_m(x)e^{\lambda x}$（$P_m(x)$为m次多项式），特解形式为$y^*=x^kQ_m(x)e^{\lambda x}$，$k$根据$\lambda$是否为特征根取0、1、2；</li>
+<li>$f(x)=e^{\alpha x}[P_l(x)\cos\beta x + P_n(x)\sin\beta x]$，特解形式为$y^*=x^ke^{\alpha x}[R_s(x)\cos\beta x + S_s(x)\sin\beta x]$，其中$s=\max(l,n)$，$k$根据$\alpha\pm\beta i$是否为特征根取0或1。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>微分方程应用</strong>
+考研常考几何应用（曲线切线法线、面积体积建模）与物理应用（质点运动、牛顿冷却定律、电路问题），解题核心是根据场景关系列出微分方程并匹配初始条件。</li>
+</ol>
+<h3>今日刷题复盘</h3>
+<p>今日刷题中暴露的核心问题集中在二阶非齐次特解的形式判断上，比如在处理一道含$\sin x$的非齐次二阶方程时，误将特解设为不含$x$的多项式与三角函数乘积，忽略了$\pm i$是特征根的情况，导致后续计算完全偏差，后续需强化特征根与特解形式的对应训练。</p>
+<h2>今日小结</h2>
+<p>今日4小时的专项刷题有效覆盖了常微分方程的全部考研考点，通过订正错题梳理了模块内的易错点，明确了后续巩固方向：一是强化一阶线性方程与伯努利方程的变形训练，二是熟练掌握二阶非齐次微分方程特解形式的判断逻辑，整体学习节奏平稳，达成当日刷题复盘目标。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-15</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-15/" rel="alternate" type="text/html"/>
