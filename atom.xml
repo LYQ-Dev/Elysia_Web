@@ -5,8 +5,155 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-16T14:40:49.951Z</updated>
+  <updated>2026-06-17T14:41:12.092Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-17</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-17/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-17/</id>
+    <published>2026-06-17T00:00:00.000Z</published>
+    <updated>2026-06-17T00:00:00.000Z</updated>
+    <summary>408 计算机网络专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-17</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习3小时，围绕王道408《计算机网络》复习指导教材，完成了全书后半部分的知识点梳理与框架搭建，覆盖传输层、网络层、数据链路层三大核心考研考点章节，并同步回顾了各章节配套的经典习题。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次学习覆盖的计网后半部分核心考研考点复盘如下：</p>
+<ol>
+<li><strong>传输层</strong>
+<ul>
+<li>核心考点：TCP与UDP协议的区别、TCP三次握手/四次挥手流程、滑动窗口机制、流量控制、拥塞控制（慢启动、拥塞避免、快速重传、快速恢复）、知名端口号分类</li>
+<li>考研出题形式：选择题常考察三次握手的状态变化、拥塞控制的触发条件；简答题常要求描述TCP可靠传输机制；综合题常结合网络场景考察滑动窗口计算。</li>
+</ul>
+</li>
+<li><strong>网络层</strong>
+<ul>
+<li>核心考点：IPv4报文格式、CIDR子网划分、ARP/RARP协议工作原理、主流路由协议（RIP、OSPF、BGP）的应用场景与区别、IPv6与IPv4的对比</li>
+<li>考研出题形式：选择题常考察子网划分计算、ARP协议的工作流程；简答题常要求对比不同路由协议的优缺点；综合题常结合拓扑考察路由配置逻辑。</li>
+</ul>
+</li>
+<li><strong>数据链路层</strong>
+<ul>
+<li>核心考点：CSMA/CD协议、CRC差错校验、PPP协议、以太网MAC地址与帧格式</li>
+<li>考研出题形式：选择题常考察CRC校验的计算过程、CSMA/CD的争用期长度；简答题常要求描述PPP协议的工作状态。
+本次复盘重点梳理了各层协议的协作逻辑，明确了传输层负责端到端通信、网络层负责点到点路由转发、数据链路层负责相邻节点数据传输的层级职责边界。</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对TCP拥塞控制中快速恢复阶段的窗口调整细节记忆不够清晰，在做配套习题时出现了混淆阈值与窗口变化的错误；</li>
+<li>不同路由协议的适用场景仍存在混淆，比如无法快速区分OSPF用于自治系统内部、BGP用于自治系统间的核心区别；</li>
+<li>本次学习时长控制偏紧凑，仅完成了知识点框架梳理，没有足够时间针对薄弱点进行专项刷题巩固，导致部分细节记忆不够牢固。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>完整搭建了计算机网络后半部分的知识框架，理清了传输层到数据链路层各考点的关联关系；</li>
+<li>掌握了子网划分的标准化解题步骤，能够快速完成给定IP地址的子网掩码、可用IP范围计算；</li>
+<li>明确了TCP流量控制与拥塞控制的核心差异，能够准确区分二者的触发机制与作用对象；</li>
+<li>对各层协议的考研出题方向有了更清晰的认知，能够针对性规划后续的刷题重点。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-17</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-17/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-17/</id>
+    <published>2026-06-17T00:00:00.000Z</published>
+    <updated>2026-06-17T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-17</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入1.5小时考研英语专项学习，分为两大模块：考研核心单词复盘，以及2010年英语一阅读Text 1的长难句拆解与精读。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日新学+复盘核心高频词</h3>
+<ol>
+<li><strong>abide</strong> /əˈbaɪd/ v. 遵守，忍受；固定搭配<code>abide by</code>（遵守，遵循）</li>
+<li><strong>adhere</strong> /ədˈhɪə(r)/ v. 坚持，粘附；固定搭配<code>adhere to</code>（坚持，遵守）</li>
+<li><strong>boost</strong> /buːst/ v./n. 促进，推动；增长，提升</li>
+<li><strong>conspicuous</strong> /kənˈspɪkjuəs/ adj. 显著的，显眼的</li>
+<li><strong>depict</strong> /dɪˈpɪkt/ v. 描述，描绘；刻画</li>
+</ol>
+<h3>易错点整理</h3>
+<p>今日复盘时发现容易混淆<code>adhere to</code>与<code>stick to</code>的使用场景：<code>adhere to</code>更偏向正式语境，多用于遵守规则、坚持原则；<code>stick to</code>则更口语化，可用于坚持计划、黏附物体。</p>
+<p>💡 碎碎念：今天背单词时特意把易混搭配整理在了随身便签上，睡前再过一遍加深记忆。考研英语的基础就是反复积累，只要每天不松懈，上岸的目标一定能实现！</p>
+<h2>长难句精读</h2>
+<p>今日选取2010年英语一阅读Text 1中的经典长难句进行拆解：</p>
+<blockquote>
+<p>原句：Scientists jumped to the rescue with some distinctly shaky evidence to the effect that insects would eat us up if birds failed to control them.</p>
+<ol>
+<li>结构拆分：
+<ul>
+<li>主句：<code>Scientists jumped to the rescue</code></li>
+<li>伴随状语：<code>with some distinctly shaky evidence</code></li>
+<li>同位语从句：<code>that insects would eat us up if birds failed to control them</code>，解释说明<code>evidence</code>的具体内容，其中包含<code>if</code>引导的条件状语从句</li>
+</ul>
+</li>
+<li>翻译要点：
+<ul>
+<li><code>jump to the rescue</code> 译为“匆忙出面救援”</li>
+<li><code>shaky</code> 在此处译为“站不住脚的，不可靠的”</li>
+<li><code>to the effect that</code> 译为“大意是，内容是”</li>
+</ul>
+</li>
+<li>参考译文：科学家们匆忙出面救援，拿出了一些明显站不住脚的证据，大意是如果鸟类无法控制昆虫的数量，昆虫就会将我们全部吃光。
+今日收获：彻底理清了同位语从句与定语从句的区别：同位语从句的<code>that</code>仅起引导作用，不充当从句成分；而定语从句的<code>that</code>需在从句中充当主语或宾语。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-17</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-17/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-17/</id>
+    <published>2026-06-17T00:00:00.000Z</published>
+    <updated>2026-06-17T00:00:00.000Z</updated>
+    <summary>考研数学微分方程章节刷题与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-17</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入4小时考研数学学习时间，主要完成了考研数学大纲中微分方程章节的后续提升习题，涵盖二阶常系数线性非齐次微分方程求解、变限积分与微分方程综合题型、微分方程实际应用建模三类题型，共计完成32道习题，同步将错题整理至专属错题本中。</p>
+<h2>薄弱点</h2>
+<p>今日做题过程中暴露出的核心薄弱点主要有三处：一是二阶常系数非齐次线性微分方程的特解假设错误，当非齐次项为多项式与指数函数结合的形式时，容易忽略特征根与指数项的关联，错误设定特解的次数；二是变限积分与微分方程结合的综合题型中，忘记通过原等式代入特殊值确定初始条件，导致后续求解微分方程时缺少必要的边界条件；三是微分方程实际应用建模时，无法准确根据题目描述提炼出变量间的变化率关系，遗漏部分约束条件。</p>
+<h2>AI知识点带复盘</h2>
+<h3>核心知识点复盘</h3>
+<ol>
+<li><strong>二阶常系数线性非齐次微分方程求解</strong>
+考研中最常见的形式为 $y'' + py' + qy = f(x)$，核心解题步骤为：先求解对应齐次方程的通解，再根据$f(x)$的形式设定特解$y^<em>$，代入原方程求得特解系数，最终通解为齐次通解与特解的和。其中针对$f(x)=P_m(x)e^{\lambda x}$，特解形式为$y^</em>=x^k Q_m(x)e^{\lambda x}$，$k$为$\lambda$作为特征根的重数；针对$f(x)=e^{\lambda x}[P_n(x)\cos\omega x + Q_l(x)\sin\omega x]$，特解形式为$y^*=x^k e^{\lambda x}[R_s(x)\cos\omega x + T_s(x)\sin\omega x]$，其中$s=\max{n,l}$，$k$为$\lambda\pm\omega i$作为特征根的重数。</li>
+<li><strong>变限积分与微分方程综合题型</strong>
+标准解题流程分为三步：①对等式两边关于积分上限变量求导，消去变限积分，转化为标准微分方程；②令积分上限等于下限，代入原等式得到初始条件；③求解得到的微分方程并验证结果是否符合原等式约束。</li>
+<li><strong>微分方程建模</strong>
+需结合几何意义（切线斜率、曲率）、物理意义（变化率、牛顿冷却定律、种群增长）等提炼等量关系，常见易错点为遗漏初始条件或错误理解变化率的正负性。</li>
+</ol>
+<h3>今日错题复盘</h3>
+<p>今日整理的5道错题均集中在特解设定和初始条件确定环节，后续将针对这类题型整理专项练习，强化解题熟练度。</p>
+<h2>今日小结</h2>
+<p>今日通过4小时的集中刷题与复盘，巩固了微分方程章节的核心解题方法，修正了此前对特解设定的模糊认知，明确了变限积分结合题型的完整解题步骤。后续将针对今日暴露的薄弱点，补充15道专项习题进行强化训练，确保本周内完全掌握该章节的考研常考题型。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-16</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-16/" rel="alternate" type="text/html"/>
