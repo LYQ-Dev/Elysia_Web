@@ -1,4 +1,185 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-06-19</title><link>https://elysiaweb.vercel.app/posts/408/6-19/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-19/</guid><description>408 专业课学习与复盘（今日备考休整）</description><pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-19&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-06-20</title><link>https://elysiaweb.vercel.app/posts/408/6-20/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-20/</guid><description>408 专业课学习与复盘</description><pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-20&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计学习4小时，围绕408数据结构线性表模块完成链表专项强化复习，重点梳理了单链表、双向链表的核心基本操作逻辑，并完成了常见链表操作的代码模板背诵与针对性默写练习。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;链表考点定位&lt;/strong&gt;：链表是408数据结构线性表章节的核心必考考点，选择题、综合题均会高频涉及，主要考察链表基本操作、与顺序表的性能对比、链表应用场景等内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;核心概念复盘&lt;/strong&gt;：链表属于物理存储非连续的线性表，通过指针串联离散结点实现逻辑上的线性结构，支持动态按需分配内存，相比顺序表更适配频繁插入、删除的业务场景。考研中常区分考察单链表、双向链表、循环链表的结构差异。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;当日重点复习的考点细节&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;单链表标准结构体定义：考研要求熟练掌握&lt;code&gt;typedef struct LNode {ElemType data; struct LNode *next;} LNode, *LinkList;&lt;/code&gt;的写法，需明确头结点的作用是统一空表与非空表的操作逻辑。&lt;/li&gt;
+&lt;li&gt;建表操作考点：头插法可快速逆序生成链表，时间复杂度O(n)，适合临时构建链表场景；尾插法可生成顺序链表，需维护尾指针避免遍历查找尾结点，是考研综合题的基础步骤。&lt;/li&gt;
+&lt;li&gt;基础操作考点：按序号/按值查找、后插结点、删除结点的代码逻辑，需重点牢记指针修改的顺序，避免出现断链错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;延伸考点关联&lt;/strong&gt;：当日复习的基础代码是链表综合题型的核心底座，考研常将基础操作组合为合并有序链表、链表反转、链表判环等综合编程题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;p&gt;今日学习中发现自己对双向链表的前驱、后继指针操作顺序容易混淆，默写尾插法代码时偶尔会遗漏初始化头结点并绑定尾指针的细节，后续需要针对性加强指针操作的细节练习，规避考试中的小细节失分问题。&lt;/p&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;系统梳理了链表各类基础操作的代码框架，明确了头插法、尾插法的适用场景与代码差异；&lt;/li&gt;
+&lt;li&gt;理清了链表各类操作的时间复杂度规律，明确了不同操作下的效率边界；&lt;/li&gt;
+&lt;li&gt;强化了代码默写的熟练度，修正了此前对双向链表指针操作的模糊认知，为后续学习链表综合题型打下扎实基础。
+💡 碎碎念：踏实吃透每一个知识点！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-06-20</title><link>https://elysiaweb.vercel.app/posts/english/6-20/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/6-20/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-06-20&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计学习1.5小时，其中40分钟用于背诵2005-2010年考研英语阅读真题高频核心单词，50分钟用于拆解并翻译3篇考研英语阅读真题中的典型长难句，20分钟用于复盘昨日整理的易混淆词汇错题。&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;h3&gt;核心高频词汇（15个）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;perspective&lt;/strong&gt; /pəˈspektɪv/ n. 视角；观点；透视画法 adj. 透视的
+&lt;ul&gt;
+&lt;li&gt;真题例句：The trend links the new thinking of creativity with innovation, and offers a broader perspective on the history of business. (2019, Text 1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;prospective&lt;/strong&gt; /prəˈspektɪv/ adj. 未来的；潜在的；预期的
+&lt;ul&gt;
+&lt;li&gt;真题例句：Prospective buyers should study the market carefully before making a purchase.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;depict&lt;/strong&gt; /dɪˈpɪkt/ vt. 描述；描绘；描画
+&lt;ul&gt;
+&lt;li&gt;真题例句：The painting depicts a rural scene that reflects the simplicity of country life.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ambiguous&lt;/strong&gt; /æmˈbɪɡjuəs/ adj. 模棱两可的；含糊不清的
+&lt;ul&gt;
+&lt;li&gt;真题例句：The politician’s ambiguous statement left reporters confused about his stance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;diminish&lt;/strong&gt; /dɪˈmɪnɪʃ/ v. 减少；降低；贬低
+&lt;ul&gt;
+&lt;li&gt;真题例句：Overuse of pesticides may diminish the biodiversity of farmland.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sustain&lt;/strong&gt; /səˈsteɪn/ vt. 维持；支撑；承受；赡养
+&lt;ul&gt;
+&lt;li&gt;真题例句：The company needs to sustain its growth rate to meet investor expectations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;compromise&lt;/strong&gt; /ˈkɒmprəmaɪz/ v. 妥协；折中；危及 n. 妥协；和解
+&lt;ul&gt;
+&lt;li&gt;真题例句：Both parties agreed to compromise to reach a final agreement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;derive&lt;/strong&gt; /dɪˈraɪv/ v. 起源；得自；获得
+&lt;ul&gt;
+&lt;li&gt;真题例句：Many English words are derived from Latin and Greek.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;dominant&lt;/strong&gt; /ˈdɒmɪnənt/ adj. 占主导地位的；显性的
+&lt;ul&gt;
+&lt;li&gt;真题例句：The dominant political party won a majority in the parliamentary election.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;flourish&lt;/strong&gt; /ˈflʌrɪʃ/ v. 繁荣；兴旺；茁壮成长 n. 华丽的辞藻
+&lt;ul&gt;
+&lt;li&gt;真题例句：Small businesses flourished in the coastal city after the new policy was released.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;instinct&lt;/strong&gt; /ˈɪnstɪŋkt/ n. 本能；直觉；天性
+&lt;ul&gt;
+&lt;li&gt;真题例句：Newborn babies have an instinct to seek out their mother’s breast.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;prior&lt;/strong&gt; /ˈpraɪə(r)/ adj. 优先的；在前的 adv. 在...之前
+&lt;ul&gt;
+&lt;li&gt;真题例句：Prior to the conference, we need to prepare all the necessary materials.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;rigorous&lt;/strong&gt; /ˈrɪɡərəs/ adj. 严格的；严谨的；缜密的
+&lt;ul&gt;
+&lt;li&gt;真题例句：The university has a rigorous admission process for international students.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;stimulate&lt;/strong&gt; /ˈstɪmjuleɪt/ vt. 刺激；促进；激发
+&lt;ul&gt;
+&lt;li&gt;真题例句：The government’s new policy aims to stimulate economic growth.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;transcend&lt;/strong&gt; /trænˈsend/ vt. 超越；超出；胜过
+&lt;ul&gt;
+&lt;li&gt;真题例句：The artist’s works transcend the limitations of traditional art forms.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;易混淆词专项整理&lt;/h3&gt;
+&lt;p&gt;今日重点攻克了3组易混词汇，彻底理清了差异：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;perspective &amp;amp; prospective&lt;/strong&gt;：前者侧重“视角、观点”，后者意为“未来的、潜在的”，通过真题例句对比记忆后不再混淆。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;adapt &amp;amp; adopt&lt;/strong&gt;：adapt指“适应、改编”，adopt意为“采纳、收养”，整理了搭配例句加深记忆。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;complement &amp;amp; compliment&lt;/strong&gt;：complement为“补充、使完善”，compliment指“赞美、恭维”，区分了拼写和词义差异。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;长难句分析&lt;/h2&gt;
+&lt;h3&gt;真题原句（2006年Text 1）&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;But it is the little black-and-white buildings outside Stratford-upon-Avon, the very ones that Shakespeare would have known, that are said to be in danger of being torn down to make way for parking lots and theme parks.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;结构拆解&lt;/h3&gt;
+&lt;p&gt;这是典型的&lt;strong&gt;强调句&lt;/strong&gt;，基础结构为&lt;code&gt;It is + 被强调部分 + that + 剩余成分&lt;/code&gt;。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;被强调部分：&lt;code&gt;the little black-and-white buildings outside Stratford-upon-Avon&lt;/code&gt;（埃文河畔斯特拉特福镇外的黑白小建筑）&lt;/li&gt;
+&lt;li&gt;同位语补充：&lt;code&gt;the very ones that Shakespeare would have known&lt;/code&gt;（正是莎士比亚当年熟知的那些建筑），其中&lt;code&gt;that&lt;/code&gt;引导定语从句修饰&lt;code&gt;ones&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;剩余主干：&lt;code&gt;that are said to be in danger of being torn down to make way for parking lots and theme parks&lt;/code&gt;（据说面临被拆除以修建停车场和主题公园的风险）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;参考翻译&lt;/h3&gt;
+&lt;p&gt;但据说埃文河畔斯特拉特福镇外那些黑白相间的小建筑——也就是莎士比亚当年见过的那些建筑——正面临着被拆除以修建停车场和主题公园的风险。&lt;/p&gt;
+&lt;h3&gt;今日收获&lt;/h3&gt;
+&lt;p&gt;首次在真题中识别出嵌套式强调句+同位语的复杂结构，通过拆分句子成分掌握了这类长难句的翻译技巧，后续会整理更多同类结构进行巩固练习。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：今天背单词时终于理清了之前一直混淆的易混词，长难句分析虽然花了不少时间，但每攻克一个难点都感觉离上岸更近一步。坚持每天积累，不求速成但求扎实，考研英语一定可以拿下！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-06-20</title><link>https://elysiaweb.vercel.app/posts/math/6-20/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/6-20/</guid><description>考研数学学习与复盘记录</description><pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-06-20&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入3小时完成多元微分模块的强化学习，重点复习了多元函数极值、拉格朗日条件极值两大核心考点，结合配套例题梳理了两类题型的解题逻辑与易错点。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对二元函数无条件极值的判别步骤掌握不扎实，容易忽略二阶偏导数判别式的前提条件（仅当一阶偏导数均存在时才可使用该判别法）；&lt;/li&gt;
+&lt;li&gt;构造拉格朗日条件极值的辅助函数时，常出现漏乘约束条件的系数，或对拉格朗日乘数的赋值逻辑混淆；&lt;/li&gt;
+&lt;li&gt;在实际应用类极值问题中，难以快速区分无条件极值与条件极值的适用场景，且容易遗漏对驻点是否符合实际定义域的校验；&lt;/li&gt;
+&lt;li&gt;求解拉格朗日方程组时，变量消元技巧掌握不足，导致计算出错率较高。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;一、二元函数无条件极值&lt;/h3&gt;
+&lt;p&gt;二元函数无条件极值是考研数学高数模块的高频考点，核心解题流程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;驻点求解&lt;/strong&gt;：分别对自变量$x、y$求一阶偏导数$f_x、f_y$，令$f_x=0、f_y=0$，解二元方程组得到所有驻点；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;极值判别&lt;/strong&gt;：计算驻点处的二阶偏导数$A=f_{xx}, B=f_{xy}, C=f_{yy}$，构造判别式$\Delta=AC-B^2$：
+&lt;ul&gt;
+&lt;li&gt;若$\Delta&amp;gt;0$且$A&amp;gt;0$，则该驻点为极小值点；若$\Delta&amp;gt;0$且$A&amp;lt;0$，则为极大值点；&lt;/li&gt;
+&lt;li&gt;若$\Delta&amp;lt;0$，则该点不是极值点；&lt;/li&gt;
+&lt;li&gt;若$\Delta=0$，则判别式失效，需通过极值定义或其他方式进一步判断；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;补充注意：函数在定义域内偏导数不存在的点，也可能成为极值点，需单独进行校验。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;二、拉格朗日条件极值&lt;/h3&gt;
+&lt;p&gt;拉格朗日乘数法是求解带约束条件极值问题的核心工具，适配绝大多数考研条件极值题型，解题步骤如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;构造辅助函数&lt;/strong&gt;：设目标函数为$z=f(x,y)$，约束条件为$\varphi(x,y)=0$，则构造拉格朗日函数$L(x,y,\lambda)=f(x,y)+\lambda\varphi(x,y)$，其中$\lambda$为拉格朗日乘数；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;求解驻点&lt;/strong&gt;：分别对$x、y、\lambda$求一阶偏导数并令其为0，得到方程组：
+$$\begin{cases}
+L_x = f_x + \lambda\varphi_x = 0 \
+L_y = f_y + \lambda\varphi_y = 0 \
+L_\lambda = \varphi(x,y) = 0
+\end{cases}$$
+解此方程组得到的$(x_0,y_0)$即为条件极值的可疑驻点；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;极值判定&lt;/strong&gt;：对于实际应用问题，通常可根据问题本身的实际意义直接判断该驻点为最大值或最小值；对于纯数学题型，可将约束条件代入目标函数转化为一元函数，再利用一元函数极值判别法完成判断；&lt;/li&gt;
+&lt;li&gt;拓展考点：当存在多个约束条件时，可引入对应数量的拉格朗日乘数，构造多变量辅助函数后按相同流程求解。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日完成了多元微分强化模块的核心考点复习，通过3小时的学习系统梳理了无条件极值与条件极值的解题框架，结合例题巩固了拉格朗日乘数法的应用逻辑。学习过程中暴露了计算细节与场景判断上的不足，后续将针对性选取专项习题进行训练，强化解题熟练度与正确率。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-06-19</title><link>https://elysiaweb.vercel.app/posts/408/6-19/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-19/</guid><description>408 专业课学习与复盘（今日备考休整）</description><pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-19&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今天休息，未开展新的408专业课知识点学习，仅对前期复习情况做了简单复盘，并梳理了下周的复习计划。&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
