@@ -5,8 +5,206 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-20T14:42:01.628Z</updated>
+  <updated>2026-06-21T14:29:12.218Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-21</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-21/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-21/</id>
+    <published>2026-06-21T00:00:00.000Z</published>
+    <updated>2026-06-21T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-21</h1>
+<h2>今日学习内容</h2>
+<p>共计3小时，完成数据结构栈与队列章节的强化复习，涵盖核心概念梳理、经典题型刷题、错题复盘三个模块。</p>
+<h2>AI知识点带复盘</h2>
+<h3>栈核心考点复盘</h3>
+<ol>
+<li><strong>基础概念</strong>：栈是后进先出（LIFO）的受限线性表，仅允许在栈顶执行插入（入栈）和删除（出栈）操作。分为顺序栈（基于数组实现，需维护栈顶指针并判断栈空/栈满条件）和链栈（基于单链表实现，无需额外判断栈满，除非内存耗尽）。</li>
+<li><strong>高频应用考点</strong>：括号匹配合法性校验、中缀表达式转后缀逆波兰表达式、表达式求值、函数递归调用的底层栈实现逻辑。</li>
+<li><strong>经典题型技巧</strong>：出栈序列合法性判断，核心方法为：遍历入栈序列，若当前出栈元素与栈顶元素一致则弹出栈顶，最终若所有元素均可完成匹配且栈为空，则该出栈序列合法；也可通过“某元素出栈后，其前面早入栈且未出栈的元素，不能出现逆序出栈”的规则快速排除错误选项。</li>
+</ol>
+<h3>队列核心考点复盘</h3>
+<ol>
+<li><strong>基础概念</strong>：队列是先进先出（FIFO）的受限线性表，仅允许在队尾执行插入（入队）、队头执行删除（出队）操作。分为顺序队列（需通过循环队列解决假溢出问题）和链队列。</li>
+<li><strong>循环队列关键考点</strong>：
+<ul>
+<li>假溢出：顺序队列中尾指针到达数组末尾，但队头仍有空闲空间的现象，是408必考陷阱点</li>
+<li>队空/队满判断：两种主流实现方案：①牺牲一个数组单元，队满条件为<code>(rear+1)%maxSize == front</code>，队空条件为<code>front == rear</code>；②通过计数器记录元素个数，队空为<code>count==0</code>，队满为<code>count==maxSize</code></li>
+<li>元素个数计算公式：<code>(rear - front + maxSize) % maxSize</code></li>
+</ul>
+</li>
+<li><strong>高频应用考点</strong>：二叉树层次遍历、杨辉三角打印、操作系统I/O缓冲区、作业调度队列</li>
+<li><strong>链队列考点</strong>：必须设置头结点统一边界处理，队空条件为<code>front == rear</code>，入队操作在队尾追加结点，出队操作删除头结点后的首个结点。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>循环队列两种队满判断方式的适用场景仍存在混淆，需要整理对比表格强化记忆</li>
+<li>涉及栈的综合应用题（如递归转非递归实现）的步骤梳理还不够流畅</li>
+<li>刷题时偶尔会忽略链栈、链队列的头结点处理细节，导致代码实现逻辑出错</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了栈与队列的全部408高频考点，明确了不同实现方式的优劣与适用场景</li>
+<li>掌握了出栈序列判断、循环队列元素计算等快速解题技巧，能够快速定位题型对应的解题思路</li>
+<li>整理了栈与队列的高频应用场景，能够快速关联到具体的算法题考法</li>
+<li>修正了此前对循环队列假溢出问题的理解误区，明确了其产生的根本原因与解决方法</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-21</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-21/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-21/</id>
+    <published>2026-06-21T00:00:00.000Z</published>
+    <updated>2026-06-21T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-21</h1>
+<h2>今日学习总览</h2>
+<p>今日总计学习2小时，严格按照考研英语每日规划完成：1小时核心单词背诵与复盘、40分钟2018年英语一Text 3长难句拆解精读、20分钟当日学习内容复盘整理。</p>
+<h2>单词学习与复盘</h2>
+<h3>今日新学核心高频词汇</h3>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>音标</th>
+<th>释义</th>
+<th>考研真题例句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abolish</td>
+<td>/əˈbɑːlɪʃ/</td>
+<td>v. 彻底废除，废止（法律、制度等）</td>
+<td>The government plans to abolish the outdated policy on rural land use.（2021英一Text 2）</td>
+</tr>
+<tr>
+<td>ambiguous</td>
+<td>/æmˈbɪɡjuəs/</td>
+<td>adj. 模糊不清的，模棱两可的</td>
+<td>The ambassador’s ambiguous response raised more questions than it answered.（2020英二Text 3）</td>
+</tr>
+<tr>
+<td>circumvent</td>
+<td>/ˌsɜːrkəmˈvent/</td>
+<td>v. 规避，绕过（法律、规则等）</td>
+<td>Some tech firms try to circumvent data privacy laws by anonymizing user information.（2019英一Text 4）</td>
+</tr>
+<tr>
+<td>conform</td>
+<td>/kənˈfɔːrm/</td>
+<td>v. 遵守，符合（规则、标准）；顺应</td>
+<td>All new campus buildings must conform to the national green construction standards.（2022英二Text 1）</td>
+</tr>
+</tbody>
+</table>
+<h3>熟词僻义整理</h3>
+<p>今日特意整理了考研高频熟词僻义：</p>
+<ol>
+<li><code>game</code> n. 猎物，野味（而非日常含义“游戏”）</li>
+<li><code>school</code> n. 学派，院系（而非普通含义“学校”）</li>
+<li><code>air</code> v. 公开发表（观点）；晾晒</li>
+</ol>
+<h3>易错混淆点复盘</h3>
+<ol>
+<li>区分<code>comply</code>/<code>conform</code>/<code>abide</code>的固定搭配：
+<ul>
+<li><code>comply with</code>：侧重遵从指令、官方要求</li>
+<li><code>conform to</code>：侧重符合行业规范、社会标准</li>
+<li><code>abide by</code>：侧重遵守法律、协议等正式规则</li>
+</ul>
+</li>
+<li>纠正了今日记错的<code>circumvent</code>与<code>circumscribe</code>的词义：前者意为“规避、绕过”，后者意为“限制、划定界限”。</li>
+</ol>
+<h2>长难句学习与复盘</h2>
+<h3>拆解例句（选自2018英一Text 3）</h3>
+<blockquote>
+<p>Original Sentence: "The question that has puzzled economists and policymakers alike is how exactly the digital transformation of the world’s largest economy is reshaping the way we work, live and interact."</p>
+</blockquote>
+<h4>语法拆解</h4>
+<ol>
+<li>主句核心结构：<code>The question [定语从句] is [表语从句]</code></li>
+<li>定语从句：<code>that has puzzled economists and policymakers alike</code>，修饰先行词<code>the question</code>，其中<code>alike</code>为副词，意为“同样地，两者都”，修饰<code>economists and policymakers</code></li>
+<li>表语从句：<code>how exactly the digital transformation of the world’s largest economy is reshaping the way we work, live and interact</code>
+<ul>
+<li>从句主语：<code>the digital transformation of the world’s largest economy</code></li>
+<li>谓语：<code>is reshaping</code></li>
+<li>宾语：<code>the way</code>，其后<code>we work, live and interact</code>为省略了<code>that/in which</code>的定语从句，修饰<code>the way</code></li>
+</ul>
+</li>
+</ol>
+<h4>易错反思</h4>
+<p>一开始误将<code>alike</code>理解为仅修饰<code>policymakers</code>，通过查阅语法笔记明确：<code>alike</code>通常放在名词/代词后，修饰两者及以上的并列对象，此处修饰<code>economists and policymakers</code>。</p>
+<h2>今日学习碎碎念</h2>
+<p>今天背单词时用了艾宾浩斯复习法，先复盘了昨日的45个核心词，再学习新的50个词，中途特意标记了12个容易记错的词汇。长难句拆解时一开始卡了20分钟，对着黄皮书的解析逐成分标注了主谓宾定状补，终于理清了嵌套定语从句的结构。虽然今日学习时长比计划少了20分钟，但每一个搞懂的知识点都让我觉得踏实。距离考研还有不到500天，坚持每天积累，一定能拿下考研英语这门难关！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-21</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-21/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-21/</id>
+    <published>2026-06-21T00:00:00.000Z</published>
+    <updated>2026-06-21T00:00:00.000Z</updated>
+    <summary>今日完成多元微分强化学习，参与高数竞赛并复盘积分学薄弱点</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-21</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习数学4小时，整体分为两个阶段：第一阶段为上午2.5小时的多元微分强化复习，跟随强化讲义完成复合函数链式法则、隐函数存在定理、多元函数极值与最值的题型训练，共计完成32道配套习题，整理了12道易错错题；第二阶段为下午1.5小时的错题复盘，梳理了隐函数求导符号混淆、拉格朗日乘数法辅助函数构造的常见失误。晚间参与了校高等数学竞赛，试卷涵盖高数核心考点，其中2道积分大题分别考察了三重积分坐标变换与第二类曲线积分的格林公式应用，赛后复盘确认自身在积分学板块存在明显短板。</p>
+<h2>薄弱点</h2>
+<ol>
+<li><strong>积分学熟练度不足</strong>：三重积分的积分区域判断、坐标转换技巧掌握不牢，竞赛中椭球区域三重积分题未能快速选择适配的坐标变换方法，出现计算符号错误；</li>
+<li><strong>积分公式使用条件模糊</strong>：对格林公式、高斯公式的适用前提（单连通区域、闭合曲面侧）记忆不清晰，竞赛中带奇点的闭合曲线积分题，遗漏了“挖去奇点构造单连通区域”的关键步骤；</li>
+<li><strong>计算细节失误频发</strong>：积分化简、偏导数求解过程中易出现符号错误、系数漏算，例如高斯公式通量计算中误将曲面侧符号搞反，导致结果偏差。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>一、多元微分强化复盘</h3>
+<p>今日复习的多元微分学是考研高数核心板块，常考题型与考点如下：</p>
+<ol>
+<li><strong>复合函数求导</strong>：需明确链式法则分层逻辑，抽象函数求导要准确标记中间变量，隐函数求导可通过公式法或直接求导法完成，需区分显式隐函数与方程组确定的隐函数；</li>
+<li><strong>多元函数极值与最值</strong>：无条件极值通过二阶偏导数判别式$AC-B^2$判断，条件极值优先使用拉格朗日乘数法，闭区域最值需同时计算区域内部驻点与边界极值，结合边界条件转化为单变量最值问题；</li>
+<li>考研高频考点：结合几何应用的极值题，比如求曲面切平面、空间距离最值等，是历年真题的常见考察方向。</li>
+</ol>
+<h3>二、积分学薄弱点复盘</h3>
+<p>针对竞赛暴露的短板，复盘考研核心积分知识点：</p>
+<ol>
+<li><strong>三重积分计算</strong>：需根据积分区域选择适配坐标：
+<ul>
+<li>直角坐标：适用于任意区域，通过“先一后二”或“先二后一”法计算；</li>
+<li>柱坐标：适配旋转体区域（圆柱、抛物面旋转体），转换公式为$x=r\cos\theta,y=r\sin\theta,z=z$，体积元$dV=rdrd\theta dz$；</li>
+<li>球坐标：适配球型、锥型区域，转换公式为$x=\rho\sin\varphi\cos\theta,y=\rho\sin\varphi\sin\theta,z=\rho\cos\varphi$，体积元$dV=\rho^2\sin\varphi d\rho d\varphi d\theta$；</li>
+</ul>
+</li>
+<li><strong>第二类曲线积分</strong>：格林公式为核心工具，使用需满足：积分路径为闭合正向曲线、P、Q在闭合区域内有连续偏导数，若存在奇点需挖去奇点构造复连通区域；当积分与路径无关时，可选择简便路径计算；</li>
+<li><strong>第二类曲面积分</strong>：高斯公式用于将闭合曲面积分转换为三重积分，需注意曲面为外侧，非闭合曲面需补面后使用高斯公式，再减去补面积分。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日学习时长达标，多元微分强化板块知识点掌握情况良好，错题复盘覆盖了常见易错点。通过高数竞赛发现了积分学板块的明显短板，后续需针对性强化积分学题型训练，整理积分公式使用条件与易错细节。明日计划完成20道积分学专项习题，重点练习三重积分坐标变换与曲线曲面积分的公式应用，并建立积分学易错点专项笔记。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-20</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-20/" rel="alternate" type="text/html"/>
