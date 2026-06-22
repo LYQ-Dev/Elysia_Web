@@ -5,8 +5,173 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-21T14:29:12.218Z</updated>
+  <updated>2026-06-22T14:31:55.032Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-22</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-22/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-22/</id>
+    <published>2026-06-22T00:00:00.000Z</published>
+    <updated>2026-06-22T00:00:00.000Z</updated>
+    <summary>2026年6月22日考研408数据结构模块学习与复盘，涵盖KMP字符串匹配算法、数组矩阵压缩存储、栈与队列应用等核心知识点</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-22</h1>
+<h2>今日学习内容</h2>
+<p>总学习时长约3小时，核心覆盖数据结构模块的KMP字符串匹配算法、next与nextval数组优化、数组的矩阵压缩存储方法、栈与队列的经典应用场景。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. KMP字符串匹配算法</h3>
+<p>考研408字符串匹配模块的核心高频考点，相较于暴力匹配的O(n*m)时间复杂度，KMP通过利用已匹配的前缀信息避免主串指针回溯，将整体复杂度优化至O(n+m)。</p>
+<ul>
+<li><strong>next数组</strong>：用于记录模式串每个位置<code>j</code>对应的最长相等前后缀长度（不同教材存在下标偏移定义差异），手工计算时需先求解各子串的最长公共前后缀长度，再按照规则推导数组值。</li>
+<li><strong>nextval数组</strong>：next数组的优化版本，用于解决当模式串当前字符与匹配失败的主串字符相等时的重复无效匹配问题：若<code>P[j] == P[next[j]]</code>，则<code>nextval[j] = nextval[next[j]]</code>，否则<code>nextval[j] = next[j]</code>，可进一步压缩匹配次数。</li>
+</ul>
+<h3>2. 数组的矩阵压缩存储</h3>
+<p>针对特殊矩阵的存储空间优化方法，是408数组模块必考考点：</p>
+<ul>
+<li><strong>对称矩阵</strong>：利用元素对称特性仅存储下三角（含对角线）元素，通过下标映射公式将二维数组压缩至一维数组，可节省约50%存储空间。</li>
+<li><strong>三角矩阵</strong>：分为上三角、下三角矩阵，仅存储非零三角区域元素，剩余区域可通过公式直接计算或统一赋值。</li>
+<li><strong>稀疏矩阵</strong>：非零元素远少于总元素的矩阵，主流存储方式为三元组表（存储行、列、值）和十字链表，其中三元组表适合静态存储，十字链表适合动态增删非零元素，考研常考察三元组表的转置、快速转置算法。</li>
+</ul>
+<h3>3. 栈与队列的应用</h3>
+<p>基于先进后出、先进先出的特性适配不同业务场景：</p>
+<ul>
+<li><strong>栈的经典应用</strong>：括号匹配校验、中缀转后缀表达式、后缀表达式求值、递归调用实现、函数调用上下文保存。</li>
+<li><strong>队列的经典应用</strong>：二叉树层次遍历、循环队列实现、操作系统进程调度、打印机任务队列，考研常考察表达式求值步骤、循环队列队满/队空判断条件。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>手工计算nextval数组时，仍容易混淆优化条件的触发场景，需结合更多例题巩固推导逻辑；</li>
+<li>稀疏矩阵十字链表的结点结构和遍历逻辑尚未完全熟练，需结合真题练习加深理解；</li>
+<li>栈与队列的细分应用场景适配逻辑仍需梳理，避免在选择题中混淆数据结构选择。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>完全掌握KMP算法核心原理，能够独立手工推导模式串的next与nextval数组，明确其相较于暴力匹配的优化逻辑；</li>
+<li>清晰梳理特殊矩阵压缩存储的方法和下标映射公式，可准确计算不同存储方式下的元素存储位置；</li>
+<li>系统梳理栈与队列的经典应用场景，能够根据问题需求快速匹配合适的数据结构；</li>
+<li>明确了408数据结构模块中字符串、数组、栈与队列章节的高频考察形式和出题方向。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-22</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-22/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-22/</id>
+    <published>2026-06-22T00:00:00.000Z</published>
+    <updated>2026-06-22T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-22</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入1.5小时用于考研英语专项学习，其中45分钟用于考研核心单词的新学与复盘，55分钟用于2025年英语一阅读理解Text3的精读训练，剩余30分钟用于整理当日易错知识点与错题复盘。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+今日重点攻克了35个考研高频易错词汇，整理核心考点如下：</p>
+<ol>
+<li><strong>surpass</strong> /səˈpɑːs/ <em>v.</em> 超过；胜过；优于
+<ul>
+<li>真题搭配：<code>surpass one’s expectations</code> 超出预期</li>
+<li>真题例句：The rapid iteration of AI technology has surpassed most ordinary people’s cognitive scope.</li>
+</ul>
+</li>
+<li><strong>conventional</strong> /kənˈvenʃənl/ <em>adj.</em> 传统的；惯例的；常规的
+<ul>
+<li>易混辨析：与<code>conditional</code>（有条件的）形近易混，需结合语境区分词义</li>
+</ul>
+</li>
+<li><strong>concomitant</strong> /kənˈkɒmɪtənt/ <em>adj.</em> 伴随的；随之而来的 <em>n.</em> 伴随物
+<ul>
+<li>真题语境：Concomitant with the aging population is the soaring demand for senior care services.</li>
+</ul>
+</li>
+<li><strong>complimentary</strong> /ˌkɒmplɪˈmentri/ <em>adj.</em> 免费赠送的；赞美的
+<ul>
+<li>致命易混点：与<code>complementary</code>（/ˌkɒmplɪˈmentri/，互补的）重音位置不同，前者重音在第二音节，后者在第三音节，写作时需格外留意拼写差异</li>
+</ul>
+</li>
+<li><strong>deteriorate</strong> /dɪˈtɪəriəreɪt/ <em>v.</em> 恶化；退化
+<ul>
+<li>派生词：<code>deterioration</code> <em>n.</em> 恶化；退化</li>
+</ul>
+</li>
+</ol>
+<h2>长难句拆解</h2>
+<p>选取2025年英语一Text3中的经典长难句进行结构化拆解：</p>
+<blockquote>
+<p>原句：Rather than concluding that children make parents either happy or miserable, senior researchers from the University of California suggest we need to redefine what happiness means, especially for those who have already raised their kids to adulthood.</p>
+<ol>
+<li><strong>结构拆分</strong>：
+<ul>
+<li>让步状语：<code>Rather than concluding that children make parents either happy or miserable</code>，其中<code>that</code>引导宾语从句作<code>concluding</code>的宾语</li>
+<li>主句主干：<code>senior researchers suggest + 宾语从句</code></li>
+<li>宾语从句主干：<code>we need to redefine what happiness means</code>，其中<code>what</code>引导宾语从句作<code>redefine</code>的宾语</li>
+<li>后置修饰：<code>especially for those who have already raised their kids to adulthood</code>，其中<code>who</code>引导定语从句修饰先行词<code>those</code></li>
+</ul>
+</li>
+<li>参考译文：加州大学的资深研究人员并未直接断言子女会让父母陷入快乐或是痛苦的二元对立，而是提出我们需要重新定义幸福的内涵，尤其是对于那些已将子女抚养成人的父母而言。</li>
+</ol>
+</blockquote>
+<p>💡 碎碎念：今天背单词时终于理清了complimentary和complementary的区别，之前做模拟题时曾因混淆词义选错了3道题，这次彻底记牢了。做阅读时因为提前背过conventional一词，快速定位到了原文的传统观点定位句，但推理题的定位还是慢了2分钟，明天要针对性训练定位技巧。坚持每天积累，英语上岸的底气就是靠这些细碎的努力攒出来的！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-22</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-22/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-22/</id>
+    <published>2026-06-22T00:00:00.000Z</published>
+    <updated>2026-06-22T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-22</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入3.5小时专注考研数学学习，聚焦多元函数微分学板块，完成了该章节基础习题与强化练习题的前半部分内容，核心训练重点为偏导数定义的灵活运用，针对不同场景下的定义式变形进行了多轮演算巩固。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>处理分段函数在分段点处的偏导数时，仍存在偶尔忽略定义式要求、直接套用普通求导公式的错误；</li>
+<li>对含增量的偏导数极限变形题，配凑标准定义式的熟练度不足，容易出现增量系数匹配错误；</li>
+<li>对抽象函数偏导数存在性的证明逻辑仍不够清晰，偶尔混淆偏导数与全微分的关联考点。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>本次复盘围绕今日重点强化的<strong>偏导数定义</strong>展开，结合考研数学高频考点整理如下：</p>
+<ol>
+<li><strong>偏导数定义的标准形式与本质</strong>
+对于二元函数 $z=f(x,y)$，在点 $(x_0,y_0)$ 处对 $x$ 的偏导数定义为：
+$$f_x'(x_0,y_0)=\lim_{\Delta x\to0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}$$
+对 $y$ 的偏导数同理。其本质是固定 $y=y_0$ 后，将二元函数退化为关于 $x$ 的一元函数，再求该一元函数在 $x=x_0$ 处的导数，仅反映函数沿坐标轴方向的变化率。</li>
+<li><strong>考研常考题型拆解</strong>
+<ul>
+<li><strong>分段点偏导数求解</strong>：这是考研选择、解答题的高频考点，当函数在分段点处左右表达式不同时，必须严格使用偏导数定义计算，不可直接代入分段表达式求导。</li>
+<li><strong>含增量的极限求偏导值</strong>：常以极限形式命题，需通过配凑标准定义式求解，例如已知 $\lim_{h\to0}\frac{f(a+2h,b)-f(a-h,b)}{h}=A$，可拆分分子配凑得到 $f_x'(a,b)=\frac{A}{3}$。</li>
+<li><strong>偏导数与连续性的辨析</strong>：考研选择题高频陷阱，偏导数存在仅能保证函数沿坐标轴方向连续，无法推出任意方向连续，因此偏导存在≠函数连续。</li>
+</ul>
+</li>
+<li><strong>今日刷题收获</strong>
+明确了偏导数定义的适用场景，纠正了分段点随意求导的错误习惯，提升了增量极限题的配凑熟练度。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日学习节奏平稳，完成了多元微分学前半板块的基础巩固，核心解决了偏导数定义运用的相关问题，整体完成度符合预期。后续需整理今日出错的2道增量变形题，进一步强化配凑技巧。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-21</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-21/" rel="alternate" type="text/html"/>
