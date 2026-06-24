@@ -1,4 +1,122 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-06-23</title><link>https://elysiaweb.vercel.app/posts/408/6-23/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-23/</guid><description>408数据结构专业课学习与复盘，重点围绕二叉树基础公式展开</description><pubDate>Tue, 23 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-23&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-06-24</title><link>https://elysiaweb.vercel.app/posts/408/6-24/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-24/</guid><description>408 专业课学习与复盘：树的遍历及代码实现</description><pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-24&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;树的遍历、代码&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;p&gt;本次学习围绕408数据结构核心考点树的遍历展开，具体复盘如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;考点核心范围&lt;/strong&gt;：树的遍历是408数据结构的必考高频考点，主要聚焦二叉树的四种经典遍历方式：前序遍历（根→左→右）、中序遍历（左→根→右）、后序遍历（左→右→根）、层序遍历，考察题型涵盖遍历序列推导、递归/非递归代码实现、遍历的工程应用等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;递归遍历实现&lt;/strong&gt;：递归遍历逻辑清晰简洁，是笔试中快速完成代码的首选方案。首先需要掌握二叉树节点的标准结构体定义：&lt;pre&gt;&lt;code&gt;typedef struct BiTNode {
+    int data;
+    struct BiTNode *lchild, *rchild;
+} BiTNode, *BiTree;
+&lt;/code&gt;&lt;/pre&gt;
+以中序遍历为例，递归实现代码框架为：&lt;pre&gt;&lt;code&gt;void InOrder(BiTree T) {
+    if (T == NULL) return;
+    InOrder(T-&amp;gt;lchild);
+    printf(&quot;%d &quot;, T-&amp;gt;data);
+    InOrder(T-&amp;gt;rchild);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;非递归遍历实现&lt;/strong&gt;：非递归遍历是笔试面试的重点考察内容，主要借助栈完成遍历，其中中序非递归遍历考察频率最高。核心流程为：初始化辅助栈，指针指向根节点，循环遍历左子树并依次入栈，弹出栈顶节点并访问，再将指针指向当前节点的右子树，重复上述流程直至栈空且指针为空。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;层序遍历实现&lt;/strong&gt;：层序遍历借助队列实现，核心逻辑为：根节点入队，依次出队并访问节点，将当前节点的左右子节点依次入队，常用于求解二叉树宽度、判断完全二叉树等场景。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;综合应用考点&lt;/strong&gt;：根据两种遍历序列还原二叉树是经典题型，其中前序+中序、后序+中序组合可以唯一确定一棵二叉树，核心思路为通过前序/后序确定根节点位置，通过中序划分左右子树范围。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;p&gt;今日学习过程中，对于后序非递归遍历的栈操作细节容易混淆，同时在编写遍历代码时，对空树、单节点树等边界情况的处理不够熟练，后续需要针对性强化非递归遍历的代码练习，补齐边界处理的短板。&lt;/p&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;p&gt;本次学习系统梳理了树的遍历的全部核心考点，掌握了四种遍历方式的底层逻辑，能够独立写出递归遍历的标准代码，对非递归遍历的实现思路有了清晰的认知，明确了408考试中树的遍历的常见考察角度与解题技巧。
+💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-06-24</title><link>https://elysiaweb.vercel.app/posts/english/6-24/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/6-24/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-06-24&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日总计投入2小时备考考研英语，分为两个模块：1小时考研核心单词复盘与新词背诵，1小时精读2018年全国硕士研究生招生考试英语（一）Text 2并拆解对应长难句，完成了3道真题细节题的错题复盘。&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;h3&gt;今日新学+复盘核心高频词&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;deem&lt;/strong&gt; /diːm/ v. 认为，视为（正式书面用词，考研阅读观点题高频替换词，可替代think/believe）
+&lt;ul&gt;
+&lt;li&gt;记忆技巧：联想deem = de（强调前缀）+ em（表“存在”词根），即“强调存在的看法”→ 认为&lt;/li&gt;
+&lt;li&gt;真题例句：The court deemed that the policy violated constitutional rights.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;discrepancy&lt;/strong&gt; /dɪˈskrepənsi/ n. 差异，不符（常出现在实验类、调查类阅读）
+&lt;ul&gt;
+&lt;li&gt;记忆技巧：dis-（否定）+ crep（= crack 破裂）+ -ancy（名词后缀）→ 破裂的不一致 → 差异&lt;/li&gt;
+&lt;li&gt;真题搭配：discrepancy between theory and practice&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mitigate&lt;/strong&gt; /ˈmɪtɪɡeɪt/ v. 减轻，缓解（常与risk/pressure/impact搭配）
+&lt;ul&gt;
+&lt;li&gt;记忆技巧：miti（= mild 温和的）+ gate → 使变温和 → 缓解&lt;/li&gt;
+&lt;li&gt;真题例句：Measures to mitigate climate change&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;prevalent&lt;/strong&gt; /ˈprevələnt/ adj. 普遍的，流行的（替换普通的common/widespread）
+&lt;ul&gt;
+&lt;li&gt;记忆技巧：preval（= prevail 流行）+ -ent（形容词后缀）→ 流行的&lt;/li&gt;
+&lt;li&gt;真题例句：Smoking is less prevalent among young people now.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;stipulation&lt;/strong&gt; /ˌstɪpjuˈleɪʃn/ n. 规定，条款（法律、商业类阅读高频词）
+&lt;ul&gt;
+&lt;li&gt;记忆技巧：stipul（= stipulate 规定）+ -ation（名词后缀）→ 规定&lt;/li&gt;
+&lt;li&gt;真题例句：The contract includes a stipulation about payment deadlines.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;今日复盘易错词&lt;/h3&gt;
+&lt;p&gt;今日复盘发现遗忘率较高的单词为&lt;code&gt;stipulation&lt;/code&gt;和&lt;code&gt;discrepancy&lt;/code&gt;，后续将加入每日循环复习清单，避免再次遗忘。&lt;/p&gt;
+&lt;h2&gt;阅读长难句拆解&lt;/h2&gt;
+&lt;p&gt;今日精读2018英语一Text 2时，遇到以下典型考研长难句，完成结构拆分与翻译练习：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原句：The researchers suggest that the disparity between the expected and actual outcomes stems from a failure to account for the cumulative effect of daily small changes in behavior.
+结构拆分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;主句：The researchers suggest + 宾语从句&lt;/li&gt;
+&lt;li&gt;宾语从句主语：the disparity [介词短语后置定语：between the expected and actual outcomes]&lt;/li&gt;
+&lt;li&gt;宾语从句谓语：stems from（意为“源于，来自”）&lt;/li&gt;
+&lt;li&gt;宾语从句宾语：a failure [不定式后置定语：to account for the cumulative effect of daily small changes in behavior]
+参考翻译：研究人员指出，预期结果与实际结果之间的差异源于未能考虑到日常行为细微变化的累积效应。
+做题感悟：一开始误将&lt;code&gt;stems from&lt;/code&gt;翻译成“来自于”，结合上下文纠正为“源于”，同时注意到&lt;code&gt;cumulative&lt;/code&gt;作为考研高频形容词，意为“累积的”，后续需要加强对这类词的敏感度。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;💡 碎碎念：今天背单词的时候因为刷手机走神了两次，下次要把手机放到另一个房间！做阅读时错了一道细节题，就是因为没认出&lt;code&gt;mitigate&lt;/code&gt;的同义替换，看来还是要多积累真题里的熟词僻义。坚持每天积累，英语上岸肯定没问题！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由AI辅助生成，所有真题词汇均来自考研英语官方大纲及历年真题&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-06-24</title><link>https://elysiaweb.vercel.app/posts/math/6-24/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/6-24/</guid><description>考研数学学习与复盘记录</description><pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-06-24&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入3小时考研数学专项学习时间，全程聚焦二重积分板块的刷题训练，完成了汤家凤《考研数学复习大全》配套习题集提高篇、张宇《考研数学1000题》B组中二重积分章节的42道习题，覆盖直角坐标计算、极坐标转换、积分次序交换、对称性化简等核心题型，同步完成了错题的初步标注与分类。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;极坐标下混合边界积分区域的确定存在盲区，当积分边界同时包含直角坐标直线、曲线和极坐标方程时，无法快速准确绘制区域并敲定$r$和$\theta$的上下限；&lt;/li&gt;
+&lt;li&gt;含绝对值的二重积分分段处理步骤不熟练，容易遗漏分段的临界条件，导致积分计算错误；&lt;/li&gt;
+&lt;li&gt;利用对称性简化二重积分时，常混淆积分区域对称性与被积函数奇偶性的匹配规则，出现错误化简的情况。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;考研二重积分核心考点复盘&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;基础计算逻辑&lt;/strong&gt;
+二重积分的本质是将平面区域上的累积量转化为累次积分，考研中最核心的考察点是选择合理的积分次序与坐标系：当积分区域为矩形、三角形等直角坐标下易划分的区域，或被积函数为多项式形式时，优先使用直角坐标；当区域为圆、圆环、扇形，或被积函数含$x^2+y^2$、$\frac{y}{x}$时，优先切换极坐标。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;极坐标转换规范&lt;/strong&gt;
+转换公式为$x = r\cos\theta, y = r\sin\theta$，面积元素$d\sigma = r dr d\theta$，确定积分上下限时需遵循“先r后θ”的原则：先固定$\theta$，找到该角度下$r$的取值范围$[r_1(\theta), r_2(\theta)]$，再确定$\theta$的整体区间$[\alpha, \beta]$。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对称性简化技巧&lt;/strong&gt;
+需同时满足两个条件才能使用对称性：一是积分区域$D$具有对称性（关于x轴/y轴/原点/直线$y=x$对称），二是被积函数$f(x,y)$在对称区域上具有对应奇偶性。例如区域关于x轴对称时，若$f(x,y)$为关于y的奇函数，则积分值为0，若为偶函数则积分值为2倍上半区域积分。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;积分次序交换方法&lt;/strong&gt;
+当被积函数无法直接积分（如$\frac{\sin x}{x}, e^{x^2}$）时，必须交换积分次序，步骤为：根据原累次积分的上下限还原积分区域$D$→将$D$转换为另一类型的区域（X型转Y型或反之）→写出新的累次积分表达式。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;含绝对值积分处理&lt;/strong&gt;
+先求解绝对值内函数的零点，以零点为分界点划分积分区域，将原积分拆分为多个无绝对值的二重积分分别计算后求和，需注意每个分段区域的边界条件准确无误。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日通过专项刷题巩固了二重积分的基础计算流程，成功解决了大部分常规题型的计算问题，但也明确暴露了极坐标区域确定和对称性应用的核心薄弱环节。后续将针对性整理极坐标积分区域绘制的专项练习，归纳对称性应用的易错场景，形成标准化解题步骤，同时整理今日错题的详细复盘笔记。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-06-23</title><link>https://elysiaweb.vercel.app/posts/408/6-23/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-23/</guid><description>408数据结构专业课学习与复盘，重点围绕二叉树基础公式展开</description><pubDate>Tue, 23 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-23&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今日累计学习3小时，完成数据结构模块中树的基础内容学习，重点梳理并推导了二叉树的各类核心考点公式，包括二叉树的层数与节点数关系、度的关系公式等。&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
