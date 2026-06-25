@@ -5,8 +5,178 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-24T14:28:04.603Z</updated>
+  <updated>2026-06-25T14:57:01.339Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-25</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-25/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-25/</id>
+    <published>2026-06-25T00:00:00.000Z</published>
+    <updated>2026-06-25T00:00:00.000Z</updated>
+    <summary>408考研专业课：树的存储表示、二叉树与森林相互转换学习复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-25</h1>
+<h2>今日学习内容</h2>
+<p>今天主要复习了树、森林、二叉树的相互转换方法以及树的孩子兄弟表示法，树的双亲表示法</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 树的经典存储表示法</h3>
+<h4>（1）双亲表示法</h4>
+<p>双亲表示法属于树的顺序存储结构，通过连续数组存储树的所有结点，每个结点附加一个指示器记录其双亲结点在数组中的下标，根结点的双亲下标通常设为-1或0。考研常考的结构定义代码框架如下：</p>
+<pre><code>#define MAX_TREE_SIZE 100
+typedef struct {
+    ElemType data;
+    int parent; // 双亲结点的数组下标
+} PTNode;
+typedef struct {
+    PTNode nodes[MAX_TREE_SIZE];
+    int node_num; // 树的结点总数
+} PTree;
+</code></pre>
+<p>该结构的优势是可以在O(1)时间内快速查找任意结点的双亲结点，但查找结点的孩子需要遍历整个数组，时间复杂度为O(n)，适合以双亲查询为核心操作的场景。</p>
+<h4>（2）孩子兄弟表示法（二叉链表表示法）</h4>
+<p>孩子兄弟表示法是树的链式存储结构，将树转化为二叉链表形式，每个结点包含数据域、第一个孩子结点指针和右兄弟结点指针，结构定义如下：</p>
+<pre><code>typedef struct CSNode {
+    ElemType data;
+    struct CSNode *firstchild; // 指向第一个孩子结点
+    struct CSNode *rightsib;   // 指向当前结点的右兄弟结点
+} CSNode, *CSTree;
+</code></pre>
+<p>该表示法是树与二叉树相互转换的核心结构，可以将任意树/森林转化为唯一对应的二叉树，同时简化了树的遍历、路径查询等操作，考研中常考察该结构的代码实现与转换规则。</p>
+<h3>2. 树、森林与二叉树的相互转换</h3>
+<p>该知识点是408数据部分的高频考点，核心依托孩子兄弟表示法实现：</p>
+<h4>（1）树转二叉树</h4>
+<p>转换步骤分为三步：</p>
+<ol>
+<li>加线：为树中所有兄弟结点添加虚线连线；</li>
+<li>去线：仅保留每个结点与第一个孩子的连线，删除其余孩子间的兄弟连线；</li>
+<li>调整：将所有兄弟连线旋转为右子树形式，最终得到唯一对应的二叉树，且转换后的二叉树根结点无右子树。</li>
+</ol>
+<h4>（2）森林转二叉树</h4>
+<p>先将森林中的每一棵独立树分别转换为二叉树，再将后续每一棵二叉树的根结点作为前一棵二叉树根结点的右子树进行拼接，即可得到对应森林的二叉树。</p>
+<h4>（3）二叉树转树/森林</h4>
+<p>逆向转换流程：</p>
+<ol>
+<li>若二叉树根结点存在右子树，则该右子树对应原森林中的其他树；若无右子树，则对应单棵树；</li>
+<li>对于任意结点，其左子树的所有结点均为该结点的孩子结点，右子树的所有结点均为该结点的兄弟结点。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对森林转二叉树时多棵树的拼接顺序容易混淆，需要结合具体实例反复练习强化；</li>
+<li>双亲表示法中遍历结点所有孩子的优化实现思路尚未完全理清，后续需要补充相关算法练习；</li>
+<li>两种树存储结构的适用场景记忆不够牢固，需要结合历年真题考点进行对比总结。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>完整梳理了树的两种经典存储结构的原理、代码实现与优缺点，明确了双亲表示法与孩子兄弟表示法的适用场景差异；</li>
+<li>掌握了树、森林与二叉树相互转换的核心规则与操作步骤，可以独立完成简单实例的转换练习；</li>
+<li>明确了该部分知识点在408考研中的高频考察形式，包括结构定义、转换操作、算法应用等方向。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-25</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-25/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-25/</id>
+    <published>2026-06-25T00:00:00.000Z</published>
+    <updated>2026-06-25T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-25</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入1.5小时学习，分为两个核心模块：第一模块为考研核心单词复盘与新词背诵，累计梳理62个高频考纲词汇，重点整理了熟词僻义和易混形近词；第二模块为考研英语阅读长难句专项学习，重点拆解了2011年考研英语Text 3中的3个嵌套式定语从句长难句，掌握了分层拆分句子结构的解题方法。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>高频核心词汇梳理</h3>
+<ol>
+<li><strong>sustain</strong> /səˈsteɪn/ v. 维持；支撑；忍受；（考研熟词僻义：证实，确认）
+考研例句：The new policy failed to sustain its promised economic benefits.</li>
+<li><strong>dubious</strong> /ˈdjuːbiəs/ adj. 可疑的；不确定的；不可靠的
+固定搭配：be dubious about/of sth. 对…持怀疑态度</li>
+<li><strong>paradox</strong> /ˈpærədɒks/ n. 悖论；自相矛盾的人或事
+考研例句：It is a paradox that such a wealthy nation has so many homeless people.</li>
+<li><strong>conspicuous</strong> /kənˈspɪkjuəs/ adj. 显著的；显而易见的
+词根记忆：con-（共同）+ spic（看）+ -uous → 众人皆可见的</li>
+<li><strong>prevail</strong> /prɪˈveɪl/ v. 盛行；流行；获胜，占优势
+固定搭配：prevail over 战胜，优于</li>
+</ol>
+<h3>易混形近词辨析</h3>
+<ol>
+<li><strong>adapt / adopt / adept</strong>
+<ul>
+<li>adapt：v. 适应；改编</li>
+<li>adopt：v. 收养；采用，采纳</li>
+<li>adept：adj. 熟练的，精通的</li>
+</ul>
+</li>
+<li><strong>compliment / complement</strong>
+<ul>
+<li>compliment：n./v. 赞美，恭维</li>
+<li>complement：n. 补充物；补足语</li>
+</ul>
+</li>
+</ol>
+<p>💡 碎碎念：今天的形近词辨析帮我理清了之前总搞混的几组易混词，背单词不能只记中文释义，还要结合考研常考搭配和熟词僻义，坚持每日复盘积累，考研英语上岸稳了！</p>
+<h2>长难句专项学习</h2>
+<p>今天重点攻克了嵌套式定语从句的拆分技巧，选取2011年考研英语Text 3的经典长难句进行拆解练习：</p>
+<blockquote>
+<p><em>The researchers' argument stems from a simple observation about social influence: With the exception of a few celebrities like Oprah Winfrey—whose outsize presence is primarily a function of media, interpersonal, and economic influence—even the most influential members of a population simply don't interact with that many others.</em></p>
+</blockquote>
+<h3>拆分步骤与翻译</h3>
+<ol>
+<li><strong>定位主句主干</strong>：先跳过插入语和同位语，找到句子核心主干<code>The researchers' argument stems from a simple observation about social influence</code></li>
+<li><strong>剥离插入语</strong>：破折号之间的<code>whose outsize presence is primarily a function of media, interpersonal, and economic influence</code>是定语从句，修饰先行词Oprah Winfrey，可暂时跳过</li>
+<li><strong>理解同位语</strong>：冒号后的内容是对<code>observation</code>的具体解释说明，其主干为<code>even the most influential members... simply don't interact with that many others</code></li>
+<li>参考翻译：研究人员的观点源于对社会影响力的一项简单观察：除了少数像奥普拉·温弗瑞这样的名人——她们的强大影响力主要源自媒体、人际和经济因素——即便群体中最具影响力的成员也不会与那么多人进行互动。</li>
+</ol>
+<h3>今日收获</h3>
+<p>掌握了「先抓主句主干，再逐层拆分插入语、定语从句」的长难句拆解逻辑，解决了之前分不清多层嵌套从句的痛点，后续将继续通过真题句练习巩固该方法。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-25</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-25/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-25/</id>
+    <published>2026-06-25T00:00:00.000Z</published>
+    <updated>2026-06-25T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-25</h1>
+<h2>今日学习内容</h2>
+<p>今天总计投入2.5小时的考研数学学习时间，主要围绕二重积分模块展开针对性复习与练习：首先系统回顾了极坐标下二重积分的转换规则、积分限确定方法等基础知识点，随后完成了12道配套习题，其中重点攻克了<strong>极坐标积分次序交换</strong>的题型，共计拆解练习3道典型交换次序真题，同时复盘了此前错题本中积累的同类易错题目，整理了相关解题笔记。</p>
+<h2>薄弱点</h2>
+<p>今日练习中暴露出的核心薄弱点主要有三点：一是在非标准对称区域的极坐标积分限确定上容易混淆θ与r的取值范围，比如当积分区域由直线$y=x$、$y=0$和圆$x^2+y^2=2x$围成时，无法快速准确划分θ的区间并写出r关于θ的表达式；二是极坐标转换时偶尔会遗忘面积元素$dxdy$需乘以r，导致被积函数计算出现低级错误；三是极坐标积分交换次序时，难以快速反向推导θ关于r的约束条件，需要重新绘制区域图像才能理清逻辑，拖慢了解题速度。</p>
+<h2>AI知识点带复盘</h2>
+<p>针对本次重点复习的极坐标积分次序交换，结合考研数学的大纲要求与历年真题规律复盘如下：</p>
+<ol>
+<li><strong>极坐标二重积分的适用场景</strong>：当积分区域为圆、圆环、扇形等对称区域，或被积函数含有$x^2+y^2$、$\frac{y}{x}$、$\frac{x}{y}$等形式时，优先选择极坐标转换，可大幅简化计算量，避免直角坐标下难以积分的情况。</li>
+<li><strong>极坐标基本转换规则</strong>：直角坐标转极坐标的核心公式为$x = r\cos\theta, y = r\sin\theta$，面积元素$dxdy = r , drd\theta$，转换后二重积分的累次积分形式为$\iint_D f(x,y)dxdy = \int_{\alpha}^{\beta} d\theta \int_{r_1(\theta)}^{r_2(\theta)} f(r\cos\theta, r\sin\theta) \cdot r , dr$，其中$\alpha、\beta$为区域D对应的θ范围，$r_1(\theta)、r_2(\theta)$为固定θ时r的上下界。</li>
+<li><strong>极坐标积分次序交换的核心逻辑</strong>：常规极坐标积分多采用先对r积分、再对θ积分的顺序，交换次序时需要先确定r的全局取值范围$[r_{min}, r_{max}]$，再对每个固定的r，找出满足区域约束的θ区间$[\theta_1(r), \theta_2(r)]$，最终将积分改写为$\int_{r_{min}}^{r_{max}} r dr \int_{\theta_1(r)}^{\theta_2(r)} f(r\cos\theta, r\sin\theta) d\theta$。</li>
+<li><strong>考研高频易错提醒</strong>：① 务必牢记面积元素的r因子，历年真题均有针对该点的失分陷阱；② 确定积分限时需结合区域的边界曲线，例如圆$x^2+y^2=2x$转换为极坐标为$r=2\cos\theta$，对应的θ范围为$[-\frac{\pi}{2}, \frac{\pi}{2}]$；③ 交换次序时不要遗漏对r范围的重新界定，避免出现积分限错位的错误。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日通过2.5小时的专项学习，有效巩固了极坐标二重积分尤其是积分次序交换的解题能力，纠正了此前遗忘面积元素r的低级错误，同时整理了3道典型错题的解题步骤与易错警示。整体学习节奏平稳，通过针对性刷题弥补了此前的知识盲区，后续计划补充更多同类型的拓展习题，进一步强化积分限确定与次序交换的熟练度，确保在考试中遇到同类题型可以快速准确作答。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-24</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-24/" rel="alternate" type="text/html"/>
