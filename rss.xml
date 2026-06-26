@@ -1,4 +1,146 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-06-25</title><link>https://elysiaweb.vercel.app/posts/408/6-25/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-25/</guid><description>408考研专业课：树的存储表示、二叉树与森林相互转换学习复盘</description><pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-25&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-06-26</title><link>https://elysiaweb.vercel.app/posts/408/6-26/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-26/</guid><description>408 专业课学习与复盘</description><pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-26&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;两个半小时，完成并查集和霍夫曼编码的学习&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;并查集考点复盘&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;核心概念&lt;/strong&gt;：并查集是用于管理元素分组、查询连通性的经典数据结构，考研408中核心考察&lt;code&gt;查找(Find)&lt;/code&gt;和&lt;code&gt;合并(Union)&lt;/code&gt;两种基础操作，以及其优化版本的实现与应用场景。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优化技巧&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;路径压缩：查找根节点时，将当前节点直接指向根节点，扁平化树结构，降低后续查找的时间复杂度&lt;/li&gt;
+&lt;li&gt;按秩合并：按树的深度或节点数量合并，将浅树挂载到深树上，避免树高过度增长
+两种优化结合后，单次操作时间复杂度近似为$O(\alpha(n))$，$\alpha$为阿克曼函数反函数，增长极慢可视为常数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;考研常见考察形式&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;选择题：连通性判断、优化方式的时间复杂度分析、实际场景应用（如Kruskal最小生成树、朋友圈分组问题）&lt;/li&gt;
+&lt;li&gt;编程题：实现带优化的并查集、解决网格连通块、动态分组统计等题型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;霍夫曼编码考点复盘&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;核心概念&lt;/strong&gt;：霍夫曼编码基于霍夫曼树（最优二叉树）实现，属于变长前缀编码，可使给定权值的编码总长度最短，是数据压缩领域的经典应用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;标准构造步骤&lt;/strong&gt;：
+&lt;ol&gt;
+&lt;li&gt;将所有给定权值作为叶子节点构建独立二叉树森林&lt;/li&gt;
+&lt;li&gt;每次选取两个权值最小的节点，合并为新的父节点，父节点权值为两节点权值之和&lt;/li&gt;
+&lt;li&gt;重复步骤2直至森林仅剩一棵二叉树，即得到目标霍夫曼树&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关键指标&lt;/strong&gt;：带权路径长度WPL = 所有叶子节点权值 × 其到根节点的路径长度之和，即为编码总长度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;考研常见考察形式&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;选择题：前缀编码的判断、WPL计算、霍夫曼编码的优劣对比&lt;/li&gt;
+&lt;li&gt;计算题：给定权值集合构造霍夫曼树、计算WPL、生成对应编码表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对并查集路径压缩与按秩合并的底层代码实现细节理解不够透彻，容易混淆两种优化的触发条件&lt;/li&gt;
+&lt;li&gt;构造霍夫曼树时，偶尔会在选取最小权值节点时出现失误，需要加强构造练习&lt;/li&gt;
+&lt;li&gt;未结合408真题对应题型进行练习，后续需要补充针对性刷题巩固&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;掌握了并查集的基本操作与两种优化方式，明确了其在连通性问题中的核心应用场景&lt;/li&gt;
+&lt;li&gt;理解了霍夫曼树与霍夫曼编码的原理，能够独立完成简单的霍夫曼树构造与WPL计算&lt;/li&gt;
+&lt;li&gt;明确了408考试中这两个知识点的考察形式与重点方向，为后续刷题奠定了基础&lt;/li&gt;
+&lt;li&gt;今日学习节奏合理，两个半小时的专注学习完成了既定目标，后续可保持该学习强度
+💡 碎碎念：踏实吃透每一个知识点！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-06-26</title><link>https://elysiaweb.vercel.app/posts/english/6-26/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/6-26/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-06-26&lt;/h1&gt;
+&lt;h2&gt;今日学习总览&lt;/h2&gt;
+&lt;p&gt;今日累计学习时长约1小时50分钟，分为单词复盘、阅读方法论学习与错题复盘三个模块，超额完成预设学习目标。&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理）&lt;/p&gt;
+&lt;h3&gt;今日核心整理词汇&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;形近词辨析组&lt;/strong&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹 &lt;code&gt;perspective&lt;/code&gt;  /pəˈspektɪv/
+n. 视角；观点；透视画法；考研常考搭配：&lt;em&gt;in perspective&lt;/em&gt; 正确地；&lt;em&gt;out of perspective&lt;/em&gt; 不合逻辑地
+🔹 &lt;code&gt;prospective&lt;/code&gt;  /prəˈspektɪv/
+adj. 未来的；预期的  易混淆点：前者侧重看待事物的角度，后者侧重“即将发生的”
+真题同源例句：&lt;em&gt;We need to gain a new perspective on the issue.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;熟词僻义积累&lt;/strong&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹 &lt;code&gt;address&lt;/code&gt;  /əˈdres/
+熟义：n. 地址；v. 写地址 → 僻义：v. 处理，解决；向…发表演说
+🔹 &lt;code&gt;sustain&lt;/code&gt;  /səˈsteɪn/
+熟义：v. 维持 → 僻义：v. 支撑，承受；证实，确认&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高频考点动词&lt;/strong&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔹 &lt;code&gt;tackle&lt;/code&gt;  /ˈtækl/ v. 处理，解决；n. 用具，装备
+🔹 &lt;code&gt;undermine&lt;/code&gt;  /ˌʌndəˈmaɪn/ v. 逐渐削弱；破坏（基础）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;碎碎念&lt;/h3&gt;
+&lt;p&gt;今天背单词时特意整理了形近词对比表格，终于理清了perspective和prospective的用法差异，不过address的熟词僻义还是需要多轮复盘才能记牢。坚持每天积累核心词，感觉离考研英语上岸的目标又近了一步！&lt;/p&gt;
+&lt;h2&gt;阅读方法论学习&lt;/h2&gt;
+&lt;p&gt;今日完成了《考研英语阅读的逻辑》中「细节题的精准定位与干扰项排除」模块学习：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;掌握细节题解题三步骤：划出题干核心关键词→回原文定位同义替换句→对比选项排除偷换概念、无中生有等干扰项&lt;/li&gt;
+&lt;li&gt;配套完成3道2023年英语一真题改编细节题，仅错1道，错误原因为定位到错误段落，未抓住题干专有名词作为核心定位线索&lt;/li&gt;
+&lt;li&gt;整理细节题高频干扰类型：偷换主体、时态偏差、绝对化表述、范围扩大/缩小&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日收获与明日计划&lt;/h2&gt;
+&lt;h3&gt;今日收获&lt;/h3&gt;
+&lt;p&gt;✅ 掌握20组易混词与熟词僻义，能够准确辨析形近词用法
+✅ 熟练掌握细节题标准解题流程，能够快速定位原文对应段落&lt;/p&gt;
+&lt;h3&gt;明日计划&lt;/h3&gt;
+&lt;p&gt;🔖 新学150个考研核心单词，复盘今日所有整理词汇
+🔖 学习推理题解题方法论，完成5道2022年英语一真题练习
+🔖 整理本周错题本，复盘前期做错的阅读真题&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-06-26</title><link>https://elysiaweb.vercel.app/posts/math/6-26/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/6-26/</guid><description>考研数学二重积分模块复盘与学习记录</description><pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-06-26&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入3小时用于考研数学二重积分模块的系统复盘，具体分为三个环节：首先回顾二重积分的核心定义、几何意义与基本性质，其次拆解了12道经典考研真题与模拟题的解题步骤，最后复盘了近期训练中出错的4道错题，梳理了易错点的规避方法。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;p&gt;今日复盘过程中暴露的核心薄弱点集中在三个方面：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;对称性的灵活应用&lt;/strong&gt;：容易混淆区域对称性与被积函数奇偶性的匹配条件，尤其是当区域同时关于x轴、y轴对称时，无法快速结合被积函数的奇偶性简化计算，曾在一道环形区域的真题中因未注意到被积函数关于y的偶函数属性，导致多进行了一倍的计算量；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;积分次序的交换&lt;/strong&gt;：在根据累次积分上下限还原积分区域时，容易漏看分段边界，导致新的累次积分上下限设置错误，尤其是当原积分区域由多条曲线围成且存在分段时，绘图与边界判断失误率较高；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;极坐标转换的细节处理&lt;/strong&gt;：复盘过程中发现自己仍有概率遗忘极坐标下的面积元素为$r\mathrm{d}r\mathrm{d}\theta$，且在确定极径与极角的范围时，对边界曲线的极坐标方程转换不够熟练，比如将直线$x+y=1$转换为极坐标时容易出现系数错误。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;核心知识点复盘&lt;/h3&gt;
+&lt;p&gt;结合考研数学大纲要求，二重积分是数一、数二、数三的高频考点，核心考察内容与易错点如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;基本概念与性质&lt;/strong&gt;：
+二重积分的本质是二元函数在平面有界闭区域上的黎曼和极限，几何意义为曲顶柱体的体积。核心性质中&lt;strong&gt;对称性简化计算&lt;/strong&gt;是考研最常考察的得分点之一：
+&lt;ul&gt;
+&lt;li&gt;若积分区域$D$关于$x$轴对称，且$f(x,-y) = -f(x,y)$，则$\iint_D f(x,y)\mathrm{d}\sigma=0$；若$f(x,-y)=f(x,y)$，则$\iint_D f(x,y)\mathrm{d}\sigma=2\iint_{D_1} f(x,y)\mathrm{d}\sigma$，其中$D_1$为$D$在上半平面的部分。&lt;/li&gt;
+&lt;li&gt;同理，当$D$关于$y$轴对称时，可结合被积函数关于$x$的奇偶性简化计算，跨坐标轴的复合对称场景也是考研高频陷阱。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;累次积分的计算&lt;/strong&gt;
+直角坐标下分为先$y$后$x$与先$x$后$y$两种次序，选择依据是被积函数的可积性：若被积函数含有$\mathrm{e}^{y^2}$、$\frac{\sin y}{y}$、$\frac{\cos y}{y}$等无法用初等函数表示的原函数时，必须选择先对$x$积分再对$y$积分。
+极坐标转换的适用场景：当$D$为圆域、圆环域、扇形域，或被积函数含有$x^2+y^2$、$\sqrt{x^2+y^2}$时，优先使用极坐标计算，需特别注意不要漏乘面积元素中的$r$。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;积分次序的交换&lt;/strong&gt;
+标准步骤为：①根据原累次积分的上下限写出积分区域$D$的不等式组；②绘制$D$的平面图形；③按照新的积分次序重新确定上下限。今日复盘的2022年数二真题中，原积分次序为先$x$后$y$，被积函数为$\mathrm{e}^{-y^2}$，交换次序后大幅简化了计算流程。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;典型错题复盘&lt;/strong&gt;
+今日复盘的错题中，有一道题的区域为$D: x^2+y^2 \leq 1, x\geq0, y\geq0$，被积函数为$x+y$，我最初直接分别计算两个积分再相加，后来通过对称性发现$x$和$y$在该区域上的积分相等，直接合并为$2\iint_D x\mathrm{d}\sigma$，大幅缩短了解题时间。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日通过3小时的系统复盘，针对性解决了二重积分模块中对称性应用、积分次序交换与极坐标转换的三类易错问题，修正了4道典型错题，明确了不同题型的最优解题路径。后续计划通过20道针对性习题进行巩固训练，重点练习积分次序交换与对称性结合的题型，进一步提升解题速度与正确率。
+💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-06-25</title><link>https://elysiaweb.vercel.app/posts/408/6-25/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-25/</guid><description>408考研专业课：树的存储表示、二叉树与森林相互转换学习复盘</description><pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-25&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今天主要复习了树、森林、二叉树的相互转换方法以及树的孩子兄弟表示法，树的双亲表示法&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
