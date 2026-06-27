@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-06-26</title><link>https://elysiaweb.vercel.app/posts/408/6-26/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-26/</guid><description>408 专业课学习与复盘</description><pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-26&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-06-27</title><link>https://elysiaweb.vercel.app/posts/408/6-27/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-27/</guid><description>408数据结构图论基础知识点学习与复盘</description><pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-27&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日总学习时长约2.5小时，聚焦408数据结构中图论章节的基础知识点学习，重点梳理了无向图、有向图的定义与区别，以及完全图、图的连通性相关核心概念，搭建了图基础知识点的初步框架。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 无向图与有向图&lt;/h3&gt;
+&lt;p&gt;这是图论入门的核心选择题考点，常以概念辨析形式出题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;无向图&lt;/strong&gt;：由顶点集$V$和边集$E$组成，边是顶点的无序对，记作$(u,v)$，表示顶点$u$和$v$之间存在无向边，无向边无起点终点之分。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有向图&lt;/strong&gt;：同样由顶点集$V$和边集$E$组成，但边是顶点的有序对，记作$&amp;lt;u,v&amp;gt;$，其中$u$为有向边起点，$v$为终点，边具有明确方向性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. 完全图&lt;/h3&gt;
+&lt;p&gt;考研高频边数计算题考点，需严格区分两类完全图：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;无向完全图&lt;/strong&gt;：任意两个不同顶点间仅存在一条无向边，$n$个顶点的无向完全图边数为$\mathrm{C}_{n}^{2}=\frac{n(n-1)}{2}$。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有向完全图&lt;/strong&gt;：任意两个不同顶点间均存在一对方向相反的有向边，$n$个顶点的有向完全图边数为$n(n-1)$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. 图的连通性&lt;/h3&gt;
+&lt;p&gt;图论核心考点，需区分无向图与有向图的连通判定标准：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;无向图连通性&lt;/strong&gt;：若图中任意两顶点间都存在路径，则为连通图；非连通无向图可划分为若干互不连通的连通分量。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有向图连通性&lt;/strong&gt;：分为三级判定：
+&lt;ol&gt;
+&lt;li&gt;强连通：任意两顶点间均存在双向路径；&lt;/li&gt;
+&lt;li&gt;单向连通：任意两顶点间至少存在一个方向的路径；&lt;/li&gt;
+&lt;li&gt;弱连通：将有向边转为无向边后得到的无向图为连通图。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对有向图三种连通性的判定条件区分不够清晰，容易混淆概念；&lt;/li&gt;
+&lt;li&gt;无向/有向完全图的边数计算公式偶尔会记错，缺乏针对性强化记忆；&lt;/li&gt;
+&lt;li&gt;尚未结合具体案例练习概念辨析，对知识点的具象化理解不足。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;明确了无向图与有向图的核心差异在于边的方向性，掌握了两类图的形式化定义；&lt;/li&gt;
+&lt;li&gt;熟练掌握了两类完全图的边数计算方法，能够快速根据顶点数推导对应边数；&lt;/li&gt;
+&lt;li&gt;理清了无向图和有向图的连通性分类标准，建立了图论基础概念的完整知识链条。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-06-27</title><link>https://elysiaweb.vercel.app/posts/english/6-27/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/6-27/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-06-27&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计学习2小时，其中1小时用于背诵考研英语大纲核心词汇Unit 12的50个高频考点词，剩余1小时用于专项拆解2023年英语一阅读Text3中的3个典型长难句，重点掌握非限制性定语从句与插入语的结构分析技巧。&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理）
+本次整理了今日背诵的高频考点词，筛选出4个易混淆、高频率考查的单词如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;strive&lt;/strong&gt; /straɪv/ v. 努力，奋斗；力争
+👉 核心搭配：strive for sth. / strive to do sth. 为……而努力
+👉 真题例句：Many educators strive to create inclusive learning environments for all students.（源自2022年英语二阅读Text2）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sustain&lt;/strong&gt; /səˈsteɪn/ v. 维持，保持；支撑，扶持；遭受（损失、伤害等）
+👉 高频考点：sustain a family 养家糊口；sustain a defeat 遭受失败&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mitigate&lt;/strong&gt; /ˈmɪtɪɡeɪt/ v. 减轻，缓解（伤害、痛苦等）
+👉 形近辨析：migrate v. 迁徙；移居（两者拼写和发音极易混淆）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;stationary&lt;/strong&gt; /ˈsteɪʃənri/ adj. 固定的，静止的
+👉 形近陷阱：stationery n. 文具（仅一个字母之差，词义完全不同）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：今天背单词时特意整理了易混淆的形近词组合，终于理清了stationary和stationery的用法区别！长难句拆解练习让我对非限制性定语从句的指代逻辑有了更清晰的认知，坚持稳步积累，考研英语必上岸！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-06-27</title><link>https://elysiaweb.vercel.app/posts/math/6-27/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/6-27/</guid><description>考研数学二重积分模块刷题与复盘记录</description><pubDate>Sat, 27 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-06-27&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入3小时学习时间，全程围绕考研数学二重积分模块展开针对性刷题训练，完成了近20道涵盖直角坐标计算、极坐标转换、对称性应用、交换积分次序的经典题型，同时对照错题本整理了当日的出错点与解题思路。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;p&gt;今日刷题过程中暴露的核心薄弱点如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;积分区域确定易错&lt;/strong&gt;：对于由多条曲线（尤其是含参数、分段的曲线）围成的复杂区域，无法快速准确地绘制出平面图形，导致积分上下限推导错误；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;极坐标转换细节疏漏&lt;/strong&gt;：部分题目中忘记极坐标变换时面积元素需乘以极径$r$，或是对扇形、圆环类区域的角度范围、极径范围界定模糊；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对称性应用不熟练&lt;/strong&gt;：当积分区域存在部分对称性时，无法快速判断被积函数的奇偶性，错过简化计算的机会，甚至误用对称性导致结果错误；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;交换积分次序逻辑混乱&lt;/strong&gt;：针对上下限含变量的累次积分，无法准确还原积分区域的不等式形式，重新确定积分次序时常出现上下限颠倒或范围错误。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;p&gt;结合考研数学二重积分的常考方向，今日刷题对应的核心知识点复盘如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;核心计算逻辑&lt;/strong&gt;：二重积分的本质是将二维区域的积分拆解为两次一维定积分，核心步骤为「确定积分区域→选择积分次序→计算累次积分」，其中积分区域的可视化是关键前提；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;坐标转换规则&lt;/strong&gt;：直角坐标转极坐标时，需满足$x=r\cos\theta, y=r\sin\theta$，面积元素$dxdy=rdrd\theta$，该转换适用于区域为圆域、扇形、圆环，或被积函数含$x^2+y^2、\frac{y}{x}$的题型；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对称性简化技巧&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;区域关于$x$轴对称时，若$f(x,-y)=-f(x,y)$则积分值为0，若$f(x,-y)=f(x,y)$则积分值为$2\iint_{D_上} f(x,y)d\sigma$；&lt;/li&gt;
+&lt;li&gt;轮换对称性：当积分区域$D$关于$x,y$互换对称时，$\iint_D f(x,y)d\sigma=\iint_D f(y,x)d\sigma$，可用于简化对称区域内的复杂被积函数计算；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;交换积分次序的方法&lt;/strong&gt;：先根据原累次积分的上下限写出积分区域$D$的不等式组，绘制区域图形后，按照新的积分次序重新确定上下限，常用于被积函数无法直接积分（如$\int e^{x^2}dx$）的题型。
+此外，今日刷题中多次遇到的分段被积函数积分，需严格按照分段点拆分积分区域，避免漏算或重复计算。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日完成了既定的二重积分刷题计划，通过实战训练巩固了模块基础，但也清晰认识到细节考点的掌握仍有不足。后续将针对今日暴露的薄弱点，每日安排15分钟的专项训练，重点练习复杂积分区域推导、极坐标转换细节以及交换积分次序的题型，确保每个易错点都能得到针对性突破。
+💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-06-26</title><link>https://elysiaweb.vercel.app/posts/408/6-26/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/6-26/</guid><description>408 专业课学习与复盘</description><pubDate>Fri, 26 Jun 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-06-26&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;两个半小时，完成并查集和霍夫曼编码的学习&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
