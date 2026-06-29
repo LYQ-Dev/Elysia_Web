@@ -5,8 +5,179 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-06-28T14:25:09.965Z</updated>
+  <updated>2026-06-29T14:55:11.289Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-06-29</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/6-29/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/6-29/</id>
+    <published>2026-06-29T00:00:00.000Z</published>
+    <updated>2026-06-29T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-06-29</h1>
+<h2>今日学习内容</h2>
+<p>用时45分钟，系统学习了图的三类核心存储结构：邻接矩阵、十字链表、多重邻接表。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 邻接矩阵</h3>
+<h4>核心定义</h4>
+<p>邻接矩阵是使用二维数组<code>G[N][N]</code>存储图顶点间关系的存储结构，其中<code>N</code>为图的顶点总数，<code>G[i][j]</code>用于标记顶点<code>v_i</code>到<code>v_j</code>的边权或存在性，无向图的邻接矩阵必然对称，有向图无此特性。</p>
+<h4>考研核心考点</h4>
+<ul>
+<li>空间复杂度：<code>O(n²)</code>，仅适合稠密图存储，稀疏图下会产生大量冗余空间</li>
+<li>度计算规则：无向图中顶点<code>v_i</code>的度为第<code>i</code>行/列非零元素之和；有向图中顶点<code>v_i</code>的出度为第<code>i</code>行非零元素之和，入度为第<code>i</code>列非零元素之和</li>
+<li>操作效率：添加、删除边的时间复杂度为<code>O(1)</code>，但查询顶点邻接点需要遍历整行，效率低于链式存储结构</li>
+<li>高频对比考点：与邻接表相比，邻接矩阵更适合稠密图，邻接表更适配稀疏图场景。</li>
+</ul>
+<h3>2. 十字链表</h3>
+<h4>核心定义</h4>
+<p>十字链表是<strong>有向图专属</strong>的链式存储结构，整合了邻接表和逆邻接表的优势，可同时高效存储顶点的出边与入边：</p>
+<ul>
+<li>顶点结点结构：<code>(data, firstin, firstout)</code>，其中<code>firstin</code>指向该顶点的入边链表头，<code>firstout</code>指向出边链表头</li>
+<li>边结点结构：<code>(tailvex, headvex, headlink, taillink, info)</code>，其中<code>tailvex</code>为边的起点下标，<code>headvex</code>为终点下标，<code>headlink</code>指向同终点的下一条入边，<code>taillink</code>指向同起点的下一条出边</li>
+</ul>
+<h4>考研核心考点</h4>
+<ul>
+<li>空间复杂度：<code>O(n+e)</code>，<code>e</code>为图的边总数</li>
+<li>核心优势：可以在<code>O(1)</code>时间内查询顶点的入度和出度，解决了普通邻接表查询有向图入度需要遍历全图的痛点</li>
+<li>常考场景：涉及有向图入度、出度高频查询的算法题。</li>
+</ul>
+<h3>3. 多重邻接表</h3>
+<h4>核心定义</h4>
+<p>多重邻接表是<strong>无向图优化版</strong>的链式存储结构，解决了普通邻接表中无向图边被重复存储两次的冗余问题：</p>
+<ul>
+<li>顶点结点结构：<code>(data, firstedge)</code>，<code>firstedge</code>指向该顶点的第一条边链表</li>
+<li>边结点结构：<code>(ivex, jvex, ilink, jlink, info)</code>，其中<code>ivex</code>和<code>jvex</code>为无向边的两个邻接点下标，<code>ilink</code>指向下一个依附于<code>ivex</code>的边，<code>jlink</code>指向下一个依附于<code>jvex</code>的边</li>
+</ul>
+<h4>考研核心考点</h4>
+<ul>
+<li>空间复杂度：<code>O(n+e)</code>，相比普通邻接表可节省约一半的存储空间</li>
+<li>操作效率：遍历邻接点、添加/删除边的效率与普通邻接表一致，无重复存储的冗余开销。</li>
+</ul>
+<h2>问题与反思</h2>
+<p>今日学习的三种图存储结构容易出现适用场景混淆，尤其是十字链表和多重邻接表的针对图类型差异，以及有向图邻接矩阵的入度/出度计算规则容易记错，需要额外强化对比记忆。</p>
+<h2>收获与总结</h2>
+<ol>
+<li>明确了三种图存储结构的适用边界：邻接矩阵适配稠密图，十字链表适配需要高频查询入出度的有向图，多重邻接表适配无向图优化存储；</li>
+<li>掌握了三种结构的空间复杂度、核心操作的时间复杂度以及关键计算规则；</li>
+<li>理清了不同存储结构针对不同图类型的设计优势与实际应用场景。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-06-29</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/6-29/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/6-29/</id>
+    <published>2026-06-29T00:00:00.000Z</published>
+    <updated>2026-06-29T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-06-29</h1>
+<h2>今日学习总时长</h2>
+<p>共计1.5小时，分为单词背诵、长难句拆解与复盘三个模块</p>
+<h2>一、单词背诵与复盘</h2>
+<h3>今日新学20个考研核心高频词</h3>
+<ol>
+<li><strong>allocate</strong> /ˈæləkeɪt/ v. 分配，分派；拨出（款项、时间等）
+真题搭配：allocate funds to infrastructure construction 为基础设施建设拨款</li>
+<li><strong>consensus</strong> /kənˈsensəs/ n. 共识，一致意见
+真题例句：The panel finally reached a consensus on the environmental protection bill.</li>
+<li><strong>conventional</strong> /kənˈvenʃənl/ adj. 传统的，常规的；符合习俗的</li>
+<li><strong>deduce</strong> /dɪˈdjuːs/ v. 演绎，推断；追溯起源</li>
+<li><strong>deem</strong> /diːm/ v. 认为，视为；正式评定</li>
+<li><strong>discrepancy</strong> /dɪˈskrepənsi/ n. 差异，不一致；矛盾之处</li>
+<li><strong>dwell</strong> /dwel/ v. 居住；细想，详述（过去式：dwelt/dwelled）
+固定搭配：dwell on 详述，仔细琢磨</li>
+<li><strong>evoke</strong> /ɪˈvəʊk/ v. 唤起，引起（情感、记忆或反应）</li>
+<li><strong>fluctuate</strong> /ˈflʌktʃueɪt/ v. 波动，涨落；动摇不定</li>
+<li><strong>hence</strong> /hens/ adv. 因此，由此；从今以后</li>
+<li><strong>inhibit</strong> /ɪnˈhɪbɪt/ v. 抑制，阻碍；约束，阻止</li>
+<li><strong>manifest</strong> /ˈmænɪfest/ adj. 明显的，清楚的 v. 显示，证明</li>
+<li><strong>mitigate</strong> /ˈmɪtɪɡeɪt/ v. 减轻，缓解（伤害、痛苦等）</li>
+<li><strong>novel</strong> /ˈnɒvl/ adj. 新颖的，新奇的 n. （长篇）小说</li>
+<li><strong>persist</strong> /pəˈsɪst/ v. 坚持，执意；持续存在</li>
+<li><strong>predominant</strong> /prɪˈdɒmɪnənt/ adj. 占主导的，主要的</li>
+<li><strong>reconcile</strong> /ˈrekənsaɪl/ v. 使和解，使和谐；调和，协调</li>
+<li><strong>simulate</strong> /ˈsɪmjuleɪt/ v. 模拟，模仿；假装，冒充</li>
+<li><strong>sustain</strong> /səˈsteɪn/ v. 维持，保持；支撑，承担；经受住</li>
+<li><strong>testify</strong> /ˈtestɪfaɪ/ v. 作证，证明；表明，说明</li>
+</ol>
+<h3>昨日单词复盘</h3>
+<p>复习了6月28日背诵的30个核心词汇，整体正确率约82%，重点巩固了容易混淆的<code>persist</code>与<code>insist</code>的用法差异。</p>
+<h2>二、长难句攻克</h2>
+<p>今天选取2025年考研英语一阅读理解Text 3的经典长难句进行拆解练习：</p>
+<blockquote>
+<p>原句：The rapid evolution of generative AI tools, which have democratized access to creative content production, has sparked intense debate among policymakers, ethicists, and the general public about how to regulate its use while fostering innovation.</p>
+<ol>
+<li><strong>主干提取</strong>：The rapid evolution... has sparked intense debate...</li>
+<li><strong>从句解析</strong>：非限制性定语从句<code>which have democratized access to creative content production</code>修饰先行词<code>generative AI tools</code>，说明生成式AI工具的核心影响</li>
+<li><strong>修饰成分</strong>：<code>among policymakers, ethicists, and the general public</code>明确辩论的参与群体；<code>about how to regulate its use while fostering innovation</code>说明辩论的核心议题，其中<code>while fostering innovation</code>为省略主语的伴随状语，完整形式为<code>while we foster innovation</code></li>
+<li><strong>参考翻译</strong>：生成式AI工具实现了创意内容创作的平民化，其快速发展引发了政策制定者、伦理学家以及普通民众之间的激烈辩论，议题围绕如何在促进创新的同时规范其应用展开。</li>
+</ol>
+</blockquote>
+<h2>💡 今日碎碎念</h2>
+<p>今天的学习状态比昨天更好，背单词的时候用了艾宾浩斯复习模式，有效降低了遗忘率。长难句的拆分一开始卡了一下定语从句的识别，后来对照语法笔记梳理后就清晰多了。距离考研还有542天，每天坚持一点点，上岸的底气就多一分！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-06-29</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/6-29/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/6-29/</id>
+    <published>2026-06-29T00:00:00.000Z</published>
+    <updated>2026-06-29T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-06-29</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入2小时学习时间，主要围绕考研数学高等数学部分的二重积分专题展开，完成了近15道历年真题及模拟题的刷题训练，同时针对错题进行了初步标记与分类整理。</p>
+<h2>薄弱点</h2>
+<p>通过今日的刷题训练，暴露出几个较为突出的薄弱环节：</p>
+<ol>
+<li><strong>积分坐标系的选择判断不够熟练</strong>：部分题目中积分区域包含圆弧、扇形结构，初期容易直接选择直角坐标系进行计算，导致积分过程繁琐甚至出现计算错误；</li>
+<li><strong>极坐标下积分上下限的确定容易出错</strong>：尤其是当积分区域不是标准的圆心在原点的圆/扇形时，对$\theta$和$r$的取值范围推导不够严谨，偶尔会出现$r$的上限计算偏差；</li>
+<li><strong>积分交换次序的步骤不熟练</strong>：在直角坐标系下需要交换先$x$后$y$为先$y$后$x$的积分次序时，容易混淆积分上下限的转换逻辑，导致最终结果错误；</li>
+<li><strong>对称性的应用条件记忆模糊</strong>：有时会忽略积分区域的对称性前提，强行套用奇偶性简化计算，反而出现错误。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>二重积分核心知识点复盘</h3>
+<ol>
+<li><strong>基础概念回顾</strong>
+二重积分的本质是曲顶柱体的体积，其定义式为$\iint_D f(x,y)d\sigma = \lim_{\lambda \to 0} \sum_{i=1}^n f(\xi_i,\eta_i)\Delta \sigma_i$，考研中重点考察其计算方法与几何意义的结合应用。</li>
+<li><strong>两大核心计算方法</strong>
+<ul>
+<li><strong>直角坐标法</strong>：根据积分区域$D$的形状选择先$x$后$y$或先$y$后$x$的累次积分。若$D$为X型区域（$a\leq x\leq b, \varphi_1(x)\leq y\leq \varphi_2(x)$），则$\iint_D f(x,y)d\sigma = \int_a^b dx \int_{\varphi_1(x)}^{\varphi_2(x)} f(x,y)dy$；若为Y型区域则调换积分次序。</li>
+<li><strong>极坐标法</strong>：当积分区域$D$为圆、圆环、扇形区域，或被积函数含有$x^2+y^2、\sqrt{x^2+y^2}、\arctan\frac{y}{x}$时，优先选择极坐标变换：$x=\rho\cos\theta, y=\rho\sin\theta$，此时$d\sigma=\rho d\rho d\theta$，积分变为$\iint_D f(\rho\cos\theta,\rho\sin\theta)\rho d\rho d\theta$，需准确确定$\theta$和$\rho$的取值范围。</li>
+</ul>
+</li>
+<li><strong>对称性简化计算</strong>
+若积分区域$D$关于x轴对称，且$f(x,y)$关于y为奇函数，则$\iint_D f(x,y)d\sigma=0$；若为偶函数，则$\iint_D f(x,y)d\sigma=2\iint_{D_1} f(x,y)d\sigma$（$D_1$为D在x轴上方的部分）。关于y轴对称的情况同理，轮换对称性则可用于对称区域下简化被积函数的计算。</li>
+<li><strong>今日刷题易错点复盘</strong>
+今日错题集中在极坐标上下限推导和积分次序交换上，例如在计算区域$D:1\leq x^2+y^2\leq4, x\geq0,y\geq0$的积分时，初期误将$\theta$的范围设为$0\sim\frac{\pi}{2}$之外的区间，后通过画图纠正了范围；另外在交换$\int_0^1 dx \int_x^{1} e^{y^2}dy$的积分次序时，一开始搞反了y的上下限，最终通过绘制积分区域图形明确了正确次序为$\int_0^1 dy \int_0^y e^{y^2}dx$，简化计算得到结果$\frac{1}{2}(e-1)$。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日完成了2小时的二重积分专题刷题训练，共计整理12道错题并标注了错误原因，明确了自身在坐标系选择、极坐标上下限确定以及积分次序交换上的薄弱点。后续计划针对极坐标积分区域推导和积分交换次序进行专项练习，同时加强对称性应用的条件辨析，稳步提升二重积分的解题熟练度。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-06-28</title>
     <link href="https://elysiaweb.vercel.app/posts/408/6-28/" rel="alternate" type="text/html"/>
