@@ -14,6 +14,7 @@ bangumiLink: "https://bangumi.tv/subject/78542"
 playLink1: "https://www.mwcy.net/search/wd/%E4%B8%9C%E4%BA%AC%E6%9A%97%E9%B8%A6.html"
 playLink2: "https://m.agedongman.net/search?wd=%E4%B8%9C%E4%BA%AC%E6%9A%97%E9%B8%A6"
 link: "https://bgm.tv/subject_search/%E4%B8%9C%E4%BA%AC%E6%9A%97%E9%B8%A6?cat=2"
+watchPeriod: "2026年上半"
 addDate: "2024-10-20"
 ---
 

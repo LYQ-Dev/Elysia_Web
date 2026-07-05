@@ -159,6 +159,7 @@ const animeCollection = defineCollection({
 			playLink1: z.string().optional(),
 			playLink2: z.string().optional(),
 			link: z.string().optional(),
+			watchPeriod: z.string().optional(),
 			addDate: z.coerce.date(),
 		}),
 });

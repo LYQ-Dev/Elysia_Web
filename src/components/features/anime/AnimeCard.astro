@@ -71,7 +71,7 @@ const descriptionText = description.trim() || `${year} · ${studio}`;
 >
 	<div class="card-inner flex w-full rounded-[inherit] overflow-hidden">
 		<!-- 左侧：封面容器 -->
-		<div class="shrink-0 w-[126px] aspect-[10/16] relative bg-gradient-to-br from-black/5 to-black/10 overflow-hidden">
+		<div class="shrink-0 w-[110px] aspect-[10/16] relative bg-gradient-to-br from-black/5 to-black/10 overflow-hidden">
 			{cover ? (
 				<img
 					src={cover}
@@ -95,32 +95,32 @@ const descriptionText = description.trim() || `${year} · ${studio}`;
 		</div>
 
 		<!-- 右侧：内容部分 -->
-		<div class="card-details flex-1 px-5 py-4 border-l border-black/10">
-			<div class="flex flex-col gap-2">
+		<div class="card-details flex-1 px-3 py-2 border-l border-black/10">
+			<div class="flex flex-col gap-0.5">
 				<h3 class="text-title line-clamp-2">{title}</h3>
-				<p class="text-body line-clamp-3">{descriptionText}</p>
+				<p class="text-body line-clamp-2">{descriptionText}</p>
 			</div>
 
-			<div class="flex flex-col gap-2.5">
-				<div class="flex items-center gap-1 text-sm text-black/60 line-clamp-1">
+			<div class="flex flex-col gap-0.5">
+				<div class="flex items-center gap-1 text-xs text-black/60 line-clamp-1">
 					<span class="shrink-0">{year}</span>
 					<span class="shrink-0">•</span>
 					<span class="truncate">{studio}</span>
 				</div>
 
-				<div class="flex items-center gap-2 flex-wrap">
-					<span class={`px-2 py-1 rounded text-xs font-medium flex items-center gap-1 ${colorMap[statusInfo.color]}`}>
+				<div class="flex items-center gap-1.5 flex-wrap">
+					<span class={`px-1.5 py-0.5 rounded text-[11px] font-medium flex items-center gap-0.5 ${colorMap[statusInfo.color]}`}>
 						{statusInfo.text}
 					</span>
 					{genre && genre.length > 0 && (
-						<span class="px-2 py-1 text-xs rounded bg-black/10 text-black/70 font-medium">
+						<span class="px-1.5 py-0.5 text-[11px] rounded bg-black/10 text-black/70 font-medium">
 							{genre[0]}
 						</span>
 					)}
 				</div>
 
 				{totalEpisodes > 0 && (
-					<div class="text-xs text-black/60 font-medium">
+					<div class="text-[11px] text-black/60 font-medium">
 						{watchedEpisodes}/{totalEpisodes}
 					</div>
 				)}
@@ -128,7 +128,7 @@ const descriptionText = description.trim() || `${year} · ${studio}`;
 		</div>
 
 		<!-- 底部进度条 -->
-		<div class="anime-progress-bar absolute bottom-0 left-0 right-0 h-1.5 bg-black/8 overflow-hidden">
+		<div class="anime-progress-bar absolute bottom-0 left-0 right-0 h-1 bg-black/8 overflow-hidden">
 			<div
 				class={`anime-progress-fill h-full bg-gradient-to-r ${themeColorMap[status]}`}
 				style="width: 0%;"
@@ -142,8 +142,8 @@ const descriptionText = description.trim() || `${year} · ${studio}`;
 <style>
 	.card {
 		width: 100%;
-		height: 212px;
-		border-radius: 20px;
+		height: 135px;
+		border-radius: 16px;
 		background: #f5f5f5;
 		position: relative;
 		padding: 0;
@@ -165,7 +165,7 @@ const descriptionText = description.trim() || `${year} · ${studio}`;
 	.card-details {
 		color: black;
 		height: 100%;
-		gap: 0.5em;
+		gap: 0.35em;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -179,9 +179,9 @@ const descriptionText = description.trim() || `${year} · ${studio}`;
 		border: none;
 		background-color: #008bf8;
 		color: #fff;
-		font-size: 0.95rem;
+		font-size: 0.85rem;
 		font-weight: 700;
-		padding: 0.5rem 1rem;
+		padding: 0.4rem 1rem;
 		position: absolute;
 		left: 50%;
 		bottom: 0;
@@ -194,14 +194,14 @@ const descriptionText = description.trim() || `${year} · ${studio}`;
 
 	.text-body {
 		color: rgb(134 134 134);
-		font-size: 0.88rem;
-		line-height: 1.45;
+		font-size: 0.72rem;
+		line-height: 1.25;
 	}
 
 	.text-title {
-		font-size: 1.05rem;
+		font-size: 0.82rem;
 		font-weight: bold;
-		line-height: 1.3;
+		line-height: 1.25;
 		color: rgb(15 23 42 / 0.9);
 	}
 
@@ -229,19 +229,19 @@ const descriptionText = description.trim() || `${year} · ${studio}`;
 
 	@media (max-width: 768px) {
 		.card {
-			height: 198px;
+			height: 130px;
 		}
 
 		.text-title {
-			font-size: 0.95rem;
+			font-size: 0.78rem;
 		}
 
 		.text-body {
-			font-size: 0.8rem;
+			font-size: 0.68rem;
 		}
 
 		.card-button {
-			font-size: 0.85rem;
+			font-size: 0.8rem;
 		}
 	}
 

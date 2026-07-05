@@ -5,8 +5,6 @@ import { PageHeader } from "@components/features/page-header";
 import AnimeCard from "@components/features/anime/AnimeCard.astro";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import { getCollectionAssetUrl, normalizeCollectionEntrySlug } from "@utils/url-utils";
-import I18nKey from "../i18n/i18nKey";
-import { i18n } from "../i18n/translation";
 
 // 获取所有追番数据
 const animeList = await getCollection("anime");
@@ -18,44 +16,42 @@ const sortedAnimes = [...animeList].sort((a, b) => {
 	return yearB - yearA;
 });
 
-// 提取所有唯一的状态
-const statuses = new Set<string>(
-	animeList.map((anime) => anime.data.status)
-);
+// 判断番剧所属的追番时间段
+// 分类依据：读取番剧 frontmatter 中的 watchPeriod 字段
+// 添加新番剧时，只需在 index.md 的 frontmatter 中设置 watchPeriod 即可
+function getAnimePeriod(anime: (typeof animeList)[number]): string {
+	return anime.data.watchPeriod || "其他";
+}
 
-const getStatusText = (status: string) => {
-	const statusMap: Record<string, string> = {
-		watching: "追番中",
-		completed: "已完成",
-		planned: "计划观看",
-		dropped: "已弃番",
-	};
-	return statusMap[status] || status;
-};
+// 动态收集所有出现过的时间段（用于自动生成筛选标签）
+const periodSet = new Set<string>();
+sortedAnimes.forEach((a) => {
+	periodSet.add(getAnimePeriod(a));
+});
+const allPeriods = Array.from(periodSet).sort((a, b) => a.localeCompare(b, "zh"));
 
-const getStatusIcon = (status: string) => {
-	const iconMap: Record<string, string> = {
-		watching: "material-symbols:play-circle",
-		completed: "material-symbols:check-circle",
-		planned: "material-symbols:schedule",
-		dropped: "material-symbols:cancel",
-	};
-	return iconMap[status] || "material-symbols:movie";
-};
+// 按时间段分组计数
+const periodCounts: Record<string, number> = {};
+sortedAnimes.forEach((a) => {
+	const period = getAnimePeriod(a);
+	periodCounts[period] = (periodCounts[period] || 0) + 1;
+});
 
-// 创建筛选标签
+const totalCount = sortedAnimes.length;
+
+// 创建筛选标签：全部 + 所有追番时间段
 const filterTabs = [
 	{
 		value: "all",
-		label: i18n(I18nKey.all),
+		label: "全部",
 		icon: "material-symbols:apps",
-		count: animeList.length,
+		count: totalCount,
 	},
-	...Array.from(statuses).map((status) => ({
-		value: status,
-		label: getStatusText(status as string),
-		icon: getStatusIcon(status as string),
-		count: animeList.filter((a) => a.data.status === status).length,
+	...allPeriods.map((period) => ({
+		value: period,
+		label: period,
+		icon: "material-symbols:calendar-month",
+		count: periodCounts[period] || 0,
 	})),
 ];
 
@@ -113,13 +109,13 @@ function extractAnimeDescription(markdown: string): string {
 			<PageHeader title={title} subtitle={subtitle} />
 
 			<div class="mb-8">
-				<FilterTabs tabs={filterTabs} dataAttr="status" />
+				<FilterTabs tabs={filterTabs} dataAttr="period" />
 			</div>
 
-			<div id="anime-grid" class="grid grid-cols-2 gap-4 transition-all duration-300 will-change-[grid-template-columns]">
+			<div id="anime-grid" class="grid grid-cols-2 gap-4 transition-all duration-300">
 				{
 					sortedAnimes.map((anime) => (
-						<div data-status={anime.data.status} class="transition-all duration-300 will-change-transform">
+						<div data-period={getAnimePeriod(anime)} class="transition-all duration-300 will-change-transform">
 							<AnimeCard
 								id={normalizeCollectionEntrySlug(anime.id)}
 								title={anime.data.title}
@@ -150,10 +146,10 @@ function extractAnimeDescription(markdown: string): string {
 </MainGridLayout>
 
 <script define:vars={{ contentLength: animeList.length }}>
-	// 自定义筛选逻辑 - 用于状态属性
+	// 筛选逻辑：display:none 隐藏不匹配项，grid 自动填充不留空隙
 	document.addEventListener("DOMContentLoaded", () => {
 		const filterButtons = document.querySelectorAll("[data-filter-value]");
-		const cards = document.querySelectorAll("#anime-grid > div[data-status]");
+		const cards = document.querySelectorAll("#anime-grid > div[data-period]");
 
 		filterButtons.forEach((button) => {
 			button.addEventListener("click", () => {
@@ -161,19 +157,8 @@ function extractAnimeDescription(markdown: string): string {
 				const isAll = filterValue === "all";
 
 				cards.forEach((card) => {
-					if (isAll) {
-						card.style.display = "";
-						card.classList.remove("filtered-out");
-					} else {
-						const status = card.getAttribute("data-status");
-						if (status === filterValue) {
-							card.style.display = "";
-							card.classList.remove("filtered-out");
-						} else {
-							card.style.display = "none";
-							card.classList.add("filtered-out");
-						}
-					}
+					const period = card.getAttribute("data-period");
+					card.style.display = (isAll || period === filterValue) ? "" : "none";
 				});
 			});
 		});
@@ -202,8 +187,6 @@ function extractAnimeDescription(markdown: string): string {
 	}
 
 	#anime-grid > div.filtered-out {
-		opacity: 0;
-		pointer-events: none;
-		transform: translate3d(0, -10px, 0);
+		display: none;
 	}
 </style>
