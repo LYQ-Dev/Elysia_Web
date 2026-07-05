@@ -20,7 +20,7 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { title, author, category, cover, status, rating, tags, link, pages, readPages, publisher } = entry.data;
+const { title, author, category, cover, status, rating, tags, link, pages, readPages } = entry.data;
 
 const getStatusInfo = (status: string) => {
 	const statusMap: Record<string, { text: string; color: string; icon: string }> = {

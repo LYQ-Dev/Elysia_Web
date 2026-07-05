@@ -145,7 +145,7 @@ function extractAnimeDescription(markdown: string): string {
 	</div>
 </MainGridLayout>
 
-<script define:vars={{ contentLength: animeList.length }}>
+<script>
 	// 筛选逻辑：display:none 隐藏不匹配项，grid 自动填充不留空隙
 	document.addEventListener("DOMContentLoaded", () => {
 		const filterButtons = document.querySelectorAll("[data-filter-value]");
@@ -157,8 +157,9 @@ function extractAnimeDescription(markdown: string): string {
 				const isAll = filterValue === "all";
 
 				cards.forEach((card) => {
-					const period = card.getAttribute("data-period");
-					card.style.display = (isAll || period === filterValue) ? "" : "none";
+					const el = card as HTMLElement;
+					const period = el.getAttribute("data-period");
+					el.style.display = (isAll || period === filterValue) ? "" : "none";
 				});
 			});
 		});
