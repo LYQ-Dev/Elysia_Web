@@ -5,8 +5,196 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-05T14:56:40.612Z</updated>
+  <updated>2026-07-06T14:31:03.501Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-07-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/7-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/7-6/</id>
+    <published>2026-07-06T00:00:00.000Z</published>
+    <updated>2026-07-06T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘，重点复习深度优先搜索(DFS)代码背诵</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-07-06</h1>
+<h2>今日学习内容</h2>
+<p>今日累计花费1小时专注复习考研408数据结构模块内容，核心任务为背诵并理解深度优先搜索（DFS）的两种主流实现代码，包括递归版与非递归版，同时梳理了DFS对应的考研考点框架。</p>
+<h2>AI知识点带复盘</h2>
+<h3>核心考点梳理</h3>
+<p>深度优先搜索（DFS）是408数据结构模块中<strong>图遍历</strong>的核心考点之一，同时也可应用于树的遍历、连通分量求解、拓扑排序、迷宫路径查找等场景，常见考察形式包括代码默写、时间复杂度计算、场景应用分析：</p>
+<ol>
+<li><strong>递归版DFS实现原理</strong>
+递归实现基于程序运行时的系统调用栈，每次访问一个节点后，会递归遍历其所有未被访问的邻接点，直到所有可达节点都被访问完毕。标准邻接表存储下的递归代码框架如下：<pre><code>// 假设MAXVEX为最大顶点数，Graph为邻接表存储的图结构体
+bool visited[MAXVEX]; // 全局访问标记数组
+void DFS(Graph G, int v) {
+    // 访问当前顶点v
+    printf("%d ", G.vertices[v].data);
+    visited[v] = true;
+    // 遍历v的所有邻接点w
+    for (int w = FirstNeighbor(G, v); w &gt;= 0; w = NextNeighbor(G, v, w)) {
+        if (!visited[w]) {
+            DFS(G, w); // 递归访问未被访问的邻接点
+        }
+    }
+}
+</code></pre>
+</li>
+<li><strong>非递归版DFS实现思路</strong>
+手动模拟系统栈的工作流程：将起始顶点压入栈并标记访问，循环弹出栈顶顶点并访问，再将其所有未被访问的邻接点按逆序压入栈（保证与递归遍历顺序一致），直到栈为空。</li>
+<li><strong>时间复杂度分析</strong>
+<ul>
+<li>邻接表存储：每个顶点和边都被访问一次，时间复杂度为 $O(V+E)$，其中$V$为顶点数，$E$为边数</li>
+<li>邻接矩阵存储：需要遍历每个顶点的所有邻接矩阵元素，时间复杂度为 $O(V^2)$</li>
+</ul>
+</li>
+<li><strong>常见考察变式</strong>
+408真题常结合无向图连通分量求解、有向图环检测、拓扑排序等场景考察DFS的应用，同时会对比DFS与BFS的空间、时间复杂度差异。</li>
+</ol>
+<h2>问题与反思</h2>
+<p>今日背诵过程中发现两个易错点：一是对邻接表存储下的<code>FirstNeighbor</code>、<code>NextNeighbor</code>辅助函数的调用逻辑记忆模糊，容易在循环遍历邻接点时出现边界错误；二是递归版DFS中<code>visited</code>数组的初始化容易遗漏，导致出现重复访问节点的问题，后续需要结合图的遍历流程强化记忆。</p>
+<h2>收获与总结</h2>
+<ol>
+<li>熟练掌握了DFS递归版代码的核心结构，明确了访问标记数组的作用与递归调用的底层逻辑</li>
+<li>梳理了DFS在408考试中的核心考点范围，理清了不同存储结构下的时间复杂度差异</li>
+<li>意识到需要结合图的存储结构来理解DFS的遍历过程，后续需要补充练习非递归版DFS的代码实现</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-07-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/7-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/7-6/</id>
+    <published>2026-07-06T00:00:00.000Z</published>
+    <updated>2026-07-06T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-06</h1>
+<h2>今日学习内容</h2>
+<p>今日共计学习1.5小时考研英语，其中包含30分钟考研核心高频单词背诵，1小时的2024年英语一真题长难句专项拆解分析，剩余20分钟用于复盘当日易错知识点与整理笔记。</p>
+<h2>单词复盘</h2>
+<h3>今日核心背诵词（选自2025年考研英语阅读真题同源高频词）</h3>
+<p>本次重点整理了10个易混高频词与核心考点词：</p>
+<ol>
+<li><strong>ambiguous</strong> /æmˈbɪɡjuəs/ adj. 模棱两可的，含糊不清的
+<ul>
+<li>考研语境例句：The politician’s ambiguous campaign statement left voters uncertain about his stance on tax reform.</li>
+<li>真题搭配：ambiguous policy/statement 模棱两可的政策/声明</li>
+</ul>
+</li>
+<li><strong>arbitrary</strong> /ˈɑːbɪtrəri/ adj. 任意的，武断的；专断的
+<ul>
+<li>考研语境例句：Critics argued that the university’s admission criteria were arbitrary and unfair to minority applicants.</li>
+</ul>
+</li>
+<li><strong>collaborate</strong> /kəˈlæbəreɪt/ v. 合作，协作；勾结（with）
+<ul>
+<li>考研语境例句：Researchers from MIT and Stanford collaborated on a landmark study about renewable energy.</li>
+</ul>
+</li>
+<li><strong>deduce</strong> /dɪˈdjuːs/ v. 推断，演绎
+<ul>
+<li>考研语境例句：From the limited evidence provided, the jury was able to deduce that the defendant was not present at the scene of the crime.</li>
+</ul>
+</li>
+<li><strong>depict</strong> /dɪˈpɪkt/ v. 描绘，描述；刻画
+<ul>
+<li>考研语境例句：The novel vividly depicts the struggles of a young immigrant family navigating life in a new country.</li>
+</ul>
+</li>
+<li><strong>易错词辨析：complimentary vs complementary</strong>
+<ul>
+<li>complimentary：adj. 免费的；赞美的，恭维的
+例句：The hotel offered complimentary breakfast to all overnight guests.</li>
+<li>complementary：adj. 互补的，补充的
+例句：The two training programs are complementary and together cover all aspects of professional development.</li>
+</ul>
+</li>
+<li><strong>persist vs insist</strong>
+<ul>
+<li>persist：v. 坚持（行为），持续存在，后接in
+例句：Despite repeated warnings, he persisted in skipping his morning classes.</li>
+<li>insist：v. 坚持（观点、要求），后接on
+例句：The doctor insisted that the patient get a full blood test.</li>
+</ul>
+</li>
+</ol>
+<h2>长难句专项分析</h2>
+<h3>选自2024年全国硕士研究生招生考试英语（一）Text 3</h3>
+<blockquote>
+<p>原句：Yet the link between feeling good and spending money on others can be seen among rich and poor people around the world, and scarcity enhances the pleasure of most things for most people.</p>
+</blockquote>
+<ol>
+<li><strong>结构拆解</strong>：本句为并列复合句，由并列连词<code>and</code>连接两个独立分句：
+<ul>
+<li>第一个分句：主语为<code>the link</code>，后置定语为<code>between feeling good and spending money on others</code>，谓语为被动语态<code>can be seen</code>，状语为<code>among rich and poor people around the world</code>。</li>
+<li>第二个分句：主语为<code>scarcity</code>，谓语为<code>enhances</code>，宾语为<code>the pleasure</code>，后置定语为<code>of most things for most people</code>。</li>
+</ul>
+</li>
+<li><strong>核心词汇拓展</strong>：
+<ul>
+<li>scarcity /ˈskeəsəti/ n. 稀缺，短缺；匮乏</li>
+<li>enhance /ɪnˈhɑːns/ v. 提高，增强；增进</li>
+</ul>
+</li>
+<li><strong>参考译文</strong>：然而，在全球范围内的富人与穷人身上，都能观察到“愉悦感与为他人花钱”之间的关联；且对于大多数人而言，稀缺性能提升他们对绝大多数事物的愉悦体验。</li>
+<li><strong>今日收获</strong>：掌握了通过识别并列连词快速拆分长难句的方法，理清了介词短语作后置定语的修饰逻辑，解决了此前混淆并列结构与介词短语的做题误区。</li>
+</ol>
+<p>💡 碎碎念：今天背单词时终于理清了之前一直混淆的两组形近词，做长难句分析时也克服了对多and结构的恐惧，感觉又攻克了一个小难点！坚持每天积累，英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-07-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/7-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/7-6/</id>
+    <published>2026-07-06T00:00:00.000Z</published>
+    <updated>2026-07-06T00:00:00.000Z</updated>
+    <summary>考研数学休整与前期薄弱点复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-06</h1>
+<h2>今日学习内容</h2>
+<p>因连续多日进行考研数学高强度复习，今日选择调整状态、适当休整，未开展新知识点学习与习题训练，仅对前期复习进度做了简要梳理，并初步调整了后续一周的复习计划节奏。</p>
+<h2>薄弱点</h2>
+<p>通过前期复习复盘，明确了当前仍存在的两处核心薄弱模块：一是<strong>多元函数微分学的几何应用</strong>题型，遇到结合空间曲线切线、法平面的综合题时，容易混淆参数式、隐式曲线对应的切向量求解公式；二是<strong>无穷级数的敛散性判别</strong>，对交错级数莱布尼茨判别法的使用边界把握模糊，偶尔会漏判数列单调性的前提条件。</p>
+<h2>AI知识点带复盘</h2>
+<p>虽未学习新内容，但针对前期暴露的薄弱点做考研向复盘：</p>
+<ol>
+<li><strong>多元函数微分学的几何应用</strong>：该模块是考研数学数一、数二的高频考点，核心分为两类题型：
+<ul>
+<li>空间曲线型：若曲线由参数方程$x=x(t),y=y(t),z=z(t)$给出，在$t=t_0$对应点$(x_0,y_0,z_0)$处的切向量为$\boldsymbol{\tau}=(x'(t_0),y'(t_0),z'(t_0))$，切线方程为$\frac{x-x_0}{x'(t_0)}=\frac{y-y_0}{y'(t_0)}=\frac{z-z_0}{z'(t_0)}$，法平面方程为$x'(t_0)(x-x_0)+y'(t_0)(y-y_0)+z'(t_0)(z-z_0)=0$；若曲线由$\begin{cases}F(x,y,z)=0\G(x,y,z)=0\end{cases}$给出，则切向量为$\boldsymbol{\tau}=\nabla F\times\nabla G$。</li>
+<li>曲面型：若曲面由$F(x,y,z)=0$给出，在点$(x_0,y_0,z_0)$处的法向量为$\boldsymbol{n}=(F_x,F_y,F_z)$在该点的取值，可直接推导切平面与法线方程。</li>
+</ul>
+</li>
+<li><strong>无穷级数的敛散性判别</strong>：考研中常考三类级数的判别逻辑：
+<ul>
+<li>正项级数优先选用比值、根值判别法，无法直接使用时再用比较判别法；</li>
+<li>交错级数必须同时满足${u_n}$单调递减且$\lim_{n\to\infty}u_n=0$才能使用莱布尼茨判别法，且单调性仅需从某一项开始满足即可；</li>
+<li>任意项级数需先判断绝对收敛，再判断条件收敛。</li>
+</ul>
+</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日通过休整规避了疲劳学习导致的效率下滑，同时明确了后续复习的靶向目标，为接下来的专项刷题理清了方向。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-07-05</title>
     <link href="https://elysiaweb.vercel.app/posts/408/7-5/" rel="alternate" type="text/html"/>
