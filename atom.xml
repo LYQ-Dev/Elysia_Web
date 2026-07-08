@@ -5,8 +5,372 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-06T14:31:03.501Z</updated>
+  <updated>2026-07-08T14:55:55.384Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-07-08</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/7-8/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/7-8/</id>
+    <published>2026-07-08T00:00:00.000Z</published>
+    <updated>2026-07-08T00:00:00.000Z</updated>
+    <summary>408 数据结构图论核心算法学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-07-08</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习3小时，聚焦408数据结构中图论模块的核心应用场景，系统学习了三大高频考点：单源最短路径迪杰斯特拉算法、无向连通带权图的最小生成树求解，以及AOE网与关键路径分析，配套完成了5道历年考研真题改编的模拟题。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 迪杰斯特拉（Dijkstra）算法</h3>
+<h4>考研核心考点</h4>
+<ul>
+<li><strong>算法思想</strong>：基于贪心策略，每次从尚未确定最短路径的顶点集合中，选择距离源点最近的顶点，通过该顶点松弛其他顶点的最短路径估计值，重复此过程直到所有顶点都被访问。</li>
+<li><strong>适用限制</strong>：仅适用于边权非负的单源最短路径问题，无法处理存在负权边或负权环的场景，与Bellman-Ford、Floyd算法形成场景区分。</li>
+<li><strong>复杂度分析</strong>：邻接矩阵实现下时间复杂度为$O(V^2)$，适合稠密图；使用优先队列（堆）优化邻接表实现时，时间复杂度为$O((V+E)\log V)$，适配稀疏图场景，是考研高频考察的优化版本。</li>
+<li><strong>常考题型</strong>：给定带权无向/有向图，手动模拟算法执行过程，推导源点到各顶点的最短路径长度与路径细节。</li>
+</ul>
+<h3>2. 最小生成树（MST）</h3>
+<h4>考研核心考点</h4>
+<p>共两种经典求解算法，考察重点为两种算法的对比与手动模拟：</p>
+<ol>
+<li><strong>Prim算法</strong>：从单个源顶点出发，每次选择连接当前生成树与外部顶点的最小权边，逐步扩展生成树。邻接矩阵实现复杂度$O(V^2)$适合稠密图，堆优化版本复杂度$O(E\log V)$适合稀疏图。</li>
+<li><strong>Kruskal算法</strong>：将所有边按权值从小到大排序，依次选择不形成环的边加入生成树，借助并查集快速判断环的存在。复杂度主要由排序决定，为$O(E\log E)$，适合稀疏图。</li>
+</ol>
+<ul>
+<li><strong>额外考点</strong>：最小生成树的唯一性判断（当存在多条权值相同的边且选择顺序不同时可能出现多解）、最小生成树的总权值性质。</li>
+<li><strong>常考题型</strong>：手动模拟两种算法的执行过程，对比两种算法的适用场景与步骤差异。</li>
+</ul>
+<h3>3. 关键路径</h3>
+<h4>考研核心考点</h4>
+<ul>
+<li><strong>核心概念</strong>：基于AOE网（边表示活动、顶点表示事件），关键路径是从源点到汇点的最长路径，其总长度决定了工程的最短完成工期。</li>
+<li><strong>关键参数</strong>：
+<ul>
+<li>$ve[i]$：顶点$i$的最早发生时间（拓扑排序正向递推）</li>
+<li>$vl[i]$：顶点$i$的最晚发生时间（逆拓扑排序反向递推）</li>
+<li>活动$a$的最早开始时间$e(a)=ve[u]$（$u$为活动起点顶点）</li>
+<li>活动$a$的最晚开始时间$l(a)=vl[v]-len(a)$（$v$为活动终点顶点，$len(a)$为活动权值）</li>
+<li>活动余量$l(a)-e(a)$，余量为0的活动为关键活动，全部关键活动组成关键路径。</li>
+</ul>
+</li>
+<li><strong>常考题型</strong>：给定AOE网，手动计算各顶点的$ve$、$vl$值，推导各活动的$e$、$l$值，找出所有关键路径与工程最短工期。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>对Kruskal算法中并查集的按秩合并与路径压缩细节记忆不够牢固，在模拟存在多条相同权值边的图时，容易误判环的存在导致推导错误。</li>
+<li>关键路径的逆拓扑排序求解$vl$的步骤容易与拓扑排序正向递推混淆，在处理多汇点的AOE网时，汇点的$vl$值初始化容易出错。</li>
+<li>部分复杂图的迪杰斯特拉松弛步骤容易遗漏顶点，需要借助表格辅助记录每一步的距离更新结果。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了图论三大核心应用算法的考研考点、适用场景与复杂度差异，明确了不同算法的易错边界条件。</li>
+<li>掌握了三种算法的手动模拟方法，能够独立完成历年真题中常见的图论计算类题型。</li>
+<li>理清了关键路径相关参数的推导逻辑，能够快速区分拓扑排序与逆拓扑排序的使用场景，避免步骤混淆。</li>
+<li>总结了不同图结构下最优算法的选择思路，为后续刷题提速打下基础。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-07-08</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/7-8/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/7-8/</id>
+    <published>2026-07-08T00:00:00.000Z</published>
+    <updated>2026-07-08T00:00:00.000Z</updated>
+    <summary>考研英语单词、阅读精读与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-08</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入1小时20分钟用于考研英语学习，分为两个核心模块：</p>
+<ol>
+<li><strong>单词积累与复盘</strong>：约45分钟，完成新单词背诵与旧词巩固</li>
+<li><strong>阅读精读训练</strong>：约35分钟，完成2019年全国硕士研究生招生考试英语（一）Text 2的全流程训练</li>
+</ol>
+<h2>单词复盘</h2>
+<h3>新学词汇</h3>
+<p>今日背诵考研英语大纲高频词Unit 18，共计68个核心单词，重点攻克了<code>perspective</code>（n. 视角；透视法）、<code>aggregate</code>（adj. 聚合的；总的 v. 合计）、<code>deviate</code>（v. 偏离；脱离）等高频易混词，同时整理了3个考研常考的熟词僻义：</p>
+<ul>
+<li><code>game</code> n. 行业；猎物（区别于日常含义“游戏”）</li>
+<li><code>address</code> v. 处理；解决（区别于常见含义“地址”）</li>
+<li><code>school</code> n. 学派；学院（区别于日常含义“学校”）</li>
+</ul>
+<h3>复盘巩固</h3>
+<p>采用艾宾浩斯记忆曲线复习了Unit 13至Unit 17的已学单词，通过“英译汉+拼写自测”的方式修正了6个拼写失误，同时整理了2组易混词组的用法区别：</p>
+<ol>
+<li><code>in terms of</code> vs <code>on the basis of</code>：前者侧重“在……方面；就……而言”，后者侧重“基于……；根据……”</li>
+<li><code>prior to</code> vs <code>in advance of</code>：二者均表“在……之前”，但<code>prior to</code>更正式，适配考研书面语境。</li>
+</ol>
+<h3>错题摘抄</h3>
+<p>将今日自测中遗忘的10个核心单词摘抄至专属单词本，计划明日晨起进行二次复习巩固。</p>
+<h2>阅读精读复盘</h2>
+<p>本次训练选取2019年英语（一）Text 2，主题为企业可持续发展与股东利益的平衡：</p>
+<ol>
+<li><strong>限时做题环节</strong>：18分钟完成全篇题目，最终错题数为2道，失分点均为细节题同义替换陷阱，例如原文用<code>prioritize stakeholder interests</code>，选项偷换为<code>prioritize consumer needs</code>，混淆了主体范围。</li>
+<li><strong>长难句拆解</strong>：共拆解5个复杂句式，整理核心语法点与同义替换表达：
+<ul>
+<li>例句1：<em>"Rather than focusing solely on short-term profits, many enterprises are embracing sustainable practices that drive both environmental protection and long-term growth."</em>
+拆解：<code>rather than</code>引导比较状语，主句使用现在进行时，定语从句<code>that drive...</code>修饰<code>sustainable practices</code>，整理同义替换：<code>focus on</code> = <code>concentrate on</code>，<code>short-term profits</code> = <code>temporary financial gains</code>。</li>
+<li>例句2：<em>"Critics contend that the pressure to meet quarterly earnings targets often pushes managers to deviate from sustainable business models."</em>
+拆解：主句主语为<code>Critics</code>，谓语<code>contend</code>，宾语从句中<code>the pressure</code>带后置定语<code>to meet quarterly earnings targets</code>，谓语<code>pushes</code>搭配宾补<code>to deviate from</code>。</li>
+</ul>
+</li>
+</ol>
+<p>💡 碎碎念：今天突然摸透了考研阅读“熟词僻义”的考点坑点，之前背单词只记了基础释义，终于明白之前做阅读卡壳的原因了！虽然今天错了两道题，但每一个错题都是查漏补缺的信号，继续坚持每天的积累，一步一个脚印，考研英语必上岸！明天计划复习今日单词、完成一篇新的阅读训练并整理出题陷阱。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-07-08</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/7-8/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/7-8/</id>
+    <published>2026-07-08T00:00:00.000Z</published>
+    <updated>2026-07-08T00:00:00.000Z</updated>
+    <summary>考研数学级数模块学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-08</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入3.5小时，系统学习了常数项级数收敛性判别、幂级数收敛域求解，以及函数展开为幂级数的核心方法，配套完成了12道历年考研真题选择题与3道解答题，针对性巩固了两类核心考点的解题逻辑。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>对正项级数判别法的适用边界混淆，比如当通项含有指数函数与阶乘混合时，误将根值判别法当作首选，而非适配性更强的比值判别法；</li>
+<li>交错级数莱布尼茨判别法的两个判定条件容易遗漏，尤其是忽略“通项绝对值单调递减”的前提，仅通过极限为0就草率判定级数收敛；</li>
+<li>幂级数间接展开时，容易记错常见展开式的收敛域，比如将$\arctan x$的收敛域误记为$(-1,1)$，忽略端点$x=\pm1$时的敛散性验证；</li>
+<li>绝对收敛与条件收敛的判定逻辑混乱，未养成先判断$\sum|u_n|$敛散性再分析条件收敛的标准解题习惯。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>一、常数项级数收敛性判别复盘</h3>
+<ol>
+<li><strong>分类与核心逻辑</strong>：常数项级数分为正项级数、交错级数、任意项级数三类，解题需先明确级数类型再选择对应判别法：
+<ul>
+<li>正项级数（通项$u_n \geq 0$）：优先使用比值/根值判别法快速判断，极限为1时切换为比较判别法（极限形式优先，可快速找到同阶敛散性的参考级数）；</li>
+<li>交错级数（$u_n = (-1)^{n-1}v_n, v_n&gt;0$）：严格遵循莱布尼茨判别法的两个条件：$\lim_{n \to \infty}v_n=0$且${v_n}$单调递减，两个条件缺一不可；</li>
+<li>任意项级数：先判断$\sum|u_n|$的敛散性，若收敛则原级数绝对收敛；若发散但原级数收敛，则为条件收敛。</li>
+</ul>
+</li>
+<li><strong>考研高频陷阱</strong>：比值/根值判别法仅为充分条件，当极限$\rho=1$时判别法失效，需更换为比较判别法或积分判别法；级数收敛的必要条件是$\lim_{n \to \infty}u_n=0$，但该条件仅为必要非充分，不能用于证明级数收敛。</li>
+</ol>
+<h3>二、幂级数展开与收敛域复盘</h3>
+<ol>
+<li><strong>间接展开核心方法</strong>：通过换元、求导、积分将目标函数转化为已知泰勒展开式的标准形式，考研常用的标准展开式如下：
+<table>
+<thead>
+<tr>
+<th>函数形式</th>
+<th>幂级数展开式</th>
+<th>收敛域</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\frac{1}{1-x}$</td>
+<td>$\sum_{n=0}^{\infty}x^n$</td>
+<td>$(-1,1)$</td>
+</tr>
+<tr>
+<td>$e^x$</td>
+<td>$\sum_{n=0}^{\infty}\frac{x^n}{n!}$</td>
+<td>$(-\infty,+\infty)$</td>
+</tr>
+<tr>
+<td>$\sin x$</td>
+<td>$\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{(2n+1)!}$</td>
+<td>$(-\infty,+\infty)$</td>
+</tr>
+<tr>
+<td>$\ln(1+x)$</td>
+<td>$\sum_{n=1}^{\infty}\frac{(-1)^{n-1}x^n}{n}$</td>
+<td>$(-1,1]$</td>
+</tr>
+<tr>
+<td>$\arctan x$</td>
+<td>$\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{2n+1}$</td>
+<td>$[-1,1]$</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>收敛域求解步骤</strong>：先通过比值法/根值法计算收敛半径$R$，再分别验证$x=R$与$x=-R$处的敛散性，最终确定收敛域；</li>
+<li>常见易错点：展开后需同步标注收敛域，避免遗漏端点的敛散性判断，例如$\ln(1+x)$在$x=1$时级数收敛于$\ln2$，但$x=-1$时级数发散。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日系统梳理了级数模块的核心考点，通过刷题巩固了不同类型级数的判别逻辑，修正了此前对判别法适用场景的认知偏差。在练习中发现，针对端点敛散性的判断仍需额外加强，后续计划补充10道收敛域端点判断的专项习题。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
+  <entry>
+    <title>考研专业课学习记录2026-07-07</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/7-7/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/7-7/</id>
+    <published>2026-07-07T00:00:00.000Z</published>
+    <updated>2026-07-07T00:00:00.000Z</updated>
+    <summary>408 数据结构图遍历、最短路径、最小生成树学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-07-07</h1>
+<h2>今日学习内容</h2>
+<p>今日共学习2.5小时，完成了深度优先搜索(DFS)、广度优先搜索(BFS)的代码背诵，同时学习并梳理了迪杰斯特拉算法、弗洛伊德算法以及最小生成树的核心考点与实现逻辑。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 图遍历算法（DFS &amp; BFS）</h3>
+<p>属于408数据结构图章节核心基础考点：</p>
+<ul>
+<li>实现方式：支持邻接表、邻接矩阵两种存储结构，DFS非递归版本借助栈模拟递归调用栈，BFS依赖队列实现层序遍历；</li>
+<li>时间复杂度：邻接表实现为$O(V+E)$，邻接矩阵实现为$O(V^2)$；</li>
+<li>核心应用：连通分量求解、拓扑排序、环检测、两点间路径查找等，是所有图算法的学习基础。</li>
+</ul>
+<h3>2. 迪杰斯特拉(Dijkstra)算法</h3>
+<p>单源最短路径经典贪心算法：</p>
+<ul>
+<li>适用场景：非负权值的有向/无向图，求解从指定起点到其余所有顶点的最短路径；</li>
+<li>核心步骤：初始化距离数组，每次选取未访问的距离起点最近的顶点，更新其邻接点的距离值，重复流程直至所有顶点完成访问；</li>
+<li>优化考点：堆优化版本将时间复杂度从基础版的$O(V^2)$降至$O(ElogV)$，是考研选择题与编程题高频考点；</li>
+<li>注意事项：无法处理存在负权边的图。</li>
+</ul>
+<h3>3. 弗洛伊德(Floyd)算法</h3>
+<p>多源最短路径动态规划算法：</p>
+<ul>
+<li>核心思想：通过动态规划转移方程<code>dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])</code>枚举中间顶点$k$，逐步更新任意两点间的最短路径；</li>
+<li>实现方式：基于邻接矩阵存储，时间复杂度为$O(V^3)$，空间复杂度为$O(V^2)$；</li>
+<li>适用场景：可处理存在负权边但不含负环的图，适合批量求解任意两点间的最短路径。</li>
+</ul>
+<h3>4. 最小生成树(MST)</h3>
+<p>图的经典优化问题，考研核心考点包含两种主流算法：</p>
+<ul>
+<li>Prim算法：以顶点为核心，每次选取连接当前生成树与外部顶点的最小权边扩展生成树，邻接矩阵实现复杂度$O(V^2)$适合稠密图，堆优化版本适配稀疏图；</li>
+<li>Kruskal算法：以边为核心，将所有边按权值升序排序，依次选取不形成环的边加入生成树，借助并查集实现环的快速判断，复杂度$O(ElogE)$适合稀疏图；</li>
+<li>核心考点：两种算法的贪心正确性证明、适用场景以及代码实现细节。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>堆优化版迪杰斯特拉算法的代码实现细节还不够熟练，手写时容易在堆的更新和顶点访问标记上出错；</li>
+<li>弗洛伊德算法的动态规划转移方程的推导逻辑还需要进一步梳理，对中间顶点的枚举顺序理解不够透彻；</li>
+<li>最小生成树两种算法在处理不连通图时的边界情况处理还需要巩固。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>熟练掌握了DFS、BFS的递归与非递归代码实现，理清了两种遍历算法的适用场景与差异；</li>
+<li>清晰区分了单源最短路径（迪杰斯特拉）与多源最短路径（弗洛伊德）的算法逻辑、适用范围；</li>
+<li>明确了最小生成树两种经典算法的核心区别与选择依据，能够独立完成两种算法的手写实现与复杂度分析。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-07-07</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/7-7/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/7-7/</id>
+    <published>2026-07-07T00:00:00.000Z</published>
+    <updated>2026-07-07T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-07</h1>
+<h2>今日学习内容</h2>
+<p>今日总共投入1.5小时考研英语学习，分为两个核心模块：45分钟考研高频单词背诵复盘，以及1小时2025年英语一Text 1-2的真题精读训练。整体正确率未达预期，两篇阅读共错6题，其中3道题因词汇辨析失误、2道因长难句结构拆解错误，仅1道因题干定位偏差出错。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>核心生词与熟词僻义整理</h3>
+<ol>
+<li><strong>vulnerable</strong> /ˈvʌlnərəbl/ adj. 易受伤害的；脆弱的；易受攻击的
+搭配：be vulnerable to sth. 易受...影响
+真题例句：Older adults are particularly vulnerable to the effects of extreme weather.</li>
+<li><strong>scrutinize</strong> /ˈskruːtənaɪz/ v. 仔细检查，详审
+派生词：scrutiny n. 详细审查，仔细检查</li>
+<li><strong>concomitant</strong> /kənˈkɒmɪtənt/ adj. 伴随的，相伴而生的
+真题语境：The rise of AI brings concomitant challenges to data privacy.</li>
+<li><strong>pervasive</strong> /pəˈveɪsɪv/ adj. 普遍的，遍布的
+搭配：pervasive influence 广泛的影响</li>
+<li><strong>address</strong> /əˈdres/ 熟词僻义：v. 处理，解决；向...发表演说
+原熟义：n. 地址，住址</li>
+</ol>
+<h3>复盘反思</h3>
+<p>今天背单词时混淆了<code>complimentary</code>和<code>complementary</code>的词义，后续需要通过例句强化区分记忆。</p>
+<h2>长难句复盘</h2>
+<p>今日拆解了2篇真题中的3个嵌套式长难句：</p>
+<ol>
+<li><strong>原句</strong>：The researchers argue that such a reduction in sleep quality, which often goes unnoticed by those who display it, may increase the risk of developing chronic diseases.
+<strong>拆解</strong>：主句为<code>The researchers argue that +宾语从句</code>，宾语从句中包含非限制性定语从句<code>which often goes unnoticed by those who display it</code>，修饰先行词sleep quality，其中<code>who display it</code>又是定语从句修饰those。
+<strong>翻译</strong>：研究人员认为，这种常被自身忽视的睡眠质量下降，可能会增加患慢性病的风险。</li>
+<li><strong>原句</strong>：It is not that the technology itself is bad, but that our approach to using it has not kept pace with its rapid development.
+<strong>拆解</strong>：固定句型<code>It is not that...but that...</code>，意为“不是因为...而是因为...”，两个that引导表语从句。
+<strong>翻译</strong>：并非技术本身存在问题，而是我们使用它的方式未能跟上其快速发展的步伐。</li>
+</ol>
+<p>💡 碎碎念：今天第一次限时做两篇阅读错这么多确实有点受挫，但好在找到了问题所在——词汇基础不牢+长难句拆解不熟练。明天计划用20分钟复习今天的生词，再精读一篇错题分析视频，整理错题本。坚持每天积累，英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-07-07</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/7-7/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/7-7/</id>
+    <published>2026-07-07T00:00:00.000Z</published>
+    <updated>2026-07-07T00:00:00.000Z</updated>
+    <summary>考研数学级数模块复习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-07</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入2.5小时用于考研数学级数模块的系统复习，完成了数项级数、幂级数两大核心板块的知识点梳理、典型例题复盘与课后习题演练，同时对傅里叶级数的基础考点进行了回顾整理。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>数项级数敛散性判别时，容易混淆比较判别法、比值判别法、根值判别法的适用场景，对于通项含有阶乘、指数形式的级数，未能第一时间选择匹配的判别法；</li>
+<li>求解幂级数的收敛域时，常常忽略对端点处敛散性的单独讨论，导致最终收敛域范围出现错误；</li>
+<li>对幂级数逐项求导、逐项积分后收敛域可能发生变化的细节记忆不牢，容易直接沿用原级数的收敛域进行后续计算；</li>
+<li>交错级数的莱布尼茨判别法中，容易遗漏验证通项单调递减这一条件，导致判别结果出现偏差。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>一、数项级数核心考点复盘</h3>
+<ol>
+<li><strong>分类与敛散性逻辑</strong>：数项级数分为正项级数（通项≥0）、交错级数（通项正负交替）、任意项级数三类。其中正项级数的敛散性判别是考研高频考点，常用判别法按优先级排序：
+<ul>
+<li>极限形式的比较判别法：适用于能找到等价无穷小的通项，通过与已知敛散性的p级数、等比级数对比判断；</li>
+<li>比值判别法：适用于通项含有$n!$、$a^n$的级数，通过计算$\lim_{n \to \infty}|\frac{a_{n+1}}{a_n}|$判断；</li>
+<li>根值判别法：适用于通项含有$n^n$的级数，通过计算$\lim_{n \to \infty}|a_n|^{\frac{1}{n}}$判断。</li>
+</ul>
+</li>
+<li><strong>交错级数与任意项级数</strong>：交错级数优先使用莱布尼茨判别法，需同时满足$\lim_{n \to \infty}a_n=0$和${a_n}$单调递减；任意项级数需先判断绝对收敛（$\sum|a_n|$收敛），再判断条件收敛（$\sum|a_n|$发散但原级数收敛）。</li>
+</ol>
+<h3>二、幂级数核心考点复盘</h3>
+<ol>
+<li><strong>收敛半径与收敛域</strong>：对于幂级数$\sum a_n x^n$，收敛半径$R=\lim_{n \to \infty}|\frac{a_n}{a_{n+1}}|$（比值法）或$R=\frac{1}{\lim_{n \to \infty}|a_n|^{\frac{1}{n}}}$（根值法），再单独代入$x=\pm R$判断端点敛散性，最终得到完整收敛域。</li>
+<li><strong>逐项运算性质</strong>：幂级数在收敛区间内可逐项求导、逐项积分，收敛半径不变，但收敛域可能变化（端点处的敛散性需重新验证）。</li>
+<li><strong>和函数求解与函数展开</strong>：常用已知展开式包括$\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n(|x|&lt;1)$、$e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}$、$\sin x=\sum_{n=0}^{\infty}\frac{(-1)^n x^{2n+1}}{(2n+1)!}$等，通过变形、逐项求导/积分将目标函数转化为已知展开式的形式完成求解或展开。</li>
+</ol>
+<h3>三、傅里叶级数基础回顾</h3>
+<p>考研中傅里叶级数多以客观题形式考查，核心为狄利克雷收敛定理：周期为$2l$的函数$f(x)$在$[-l,l]$上满足至多有限个间断点且单调有界，则其傅里叶级数在连续点处收敛于$f(x)$，在间断点处收敛于$\frac{f(x+0)+f(x-0)}{2}$。奇偶函数可简化为正弦级数（奇函数）或余弦级数（偶函数），无需计算非对应项的系数。</p>
+<h2>今日小结</h2>
+<p>今日通过2.5小时的系统复习，完善了级数模块的知识框架，对核心判别方法与运算规则有了更清晰的认知，但在收敛域端点讨论、判别法适配场景上仍存在疏漏，后续将针对性整理相关错题并补充专项训练，强化细节记忆。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-07-06</title>
     <link href="https://elysiaweb.vercel.app/posts/408/7-6/" rel="alternate" type="text/html"/>
