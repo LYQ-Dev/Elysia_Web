@@ -5,8 +5,104 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-08T14:55:55.384Z</updated>
+  <updated>2026-07-09T15:31:55.498Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研英语学习记录2026-07-09</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/7-9/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/7-9/</id>
+    <published>2026-07-09T00:00:00.000Z</published>
+    <updated>2026-07-09T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-09</h1>
+<h2>今日学习内容</h2>
+<p>作为考研备考的第42天，连续一周的高强度单词背诵和长难句拆解让大脑处于轻度过载状态，因此今天特意安排了休整日，暂停新内容的学习。上午睡到自然醒，补充睡眠后紧绷的神经舒缓了很多；下午花1小时整理了前3天积累的高频易混词笔记，回顾了5500词大纲里的核心动词搭配；晚上和研友语音通话半小时，交流了近期的备考瓶颈，彻底放松了备考心态。适度的休整不仅没有打乱节奏，反而让我理清了后续的学习计划，真正领会了“磨刀不误砍柴工”的道理。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日复盘的考研高频易混动词组</h3>
+<ol>
+<li><strong>adopt / adapt / adept</strong>
+<ul>
+<li><code>adopt</code> v. 收养；采用，采纳（例句：The company adopted a new marketing strategy. 该公司采用了新的营销策略）</li>
+<li><code>adapt</code> v. 适应；改编（例句：It took me a month to adapt to the new dormitory life. 我花了一个月适应新的宿舍生活）</li>
+<li><code>adept</code> adj. 熟练的，精通的（例句：She is adept at translating academic papers. 她擅长翻译学术论文）</li>
+</ul>
+</li>
+<li><strong>affect / effect</strong>
+<ul>
+<li><code>affect</code> 多作动词，意为“影响；假装”（例句：Smoking seriously affects respiratory health. 吸烟严重影响呼吸系统健康）</li>
+<li><code>effect</code> 作名词时意为“影响；效果”，作动词时意为“使发生；实现”（例句：The new policy will take effect next month. 新政策下月生效）</li>
+</ul>
+</li>
+<li><strong>compose / consist / constitute</strong>
+<ul>
+<li><code>compose</code> v. 组成；作曲（被动语态常用：The album is composed of 12 tracks. 这张专辑包含12首歌）</li>
+<li><code>consist</code> v. 由…组成（无被动语态，固定搭配：consist of）</li>
+<li><code>constitute</code> v. 构成；成为（例句：Five forward passes constitute a goal in rugby. 橄榄球中五次向前传球即可得分）
+💡 碎碎念：今天虽然没接触新的学习内容，但复盘旧知识的过程让我理清了之前模糊的知识点，劳逸结合才是高效备考的王道！坚持积累，英语必上岸！</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-07-09</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/7-9/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/7-9/</id>
+    <published>2026-07-09T00:00:00.000Z</published>
+    <updated>2026-07-09T00:00:00.000Z</updated>
+    <summary>考研数学傅里叶级数专项学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-09</h1>
+<h2>今日学习内容</h2>
+<p>今日专注投入2小时，系统完成了高等数学傅里叶级数模块的专项学习，从基础概念、收敛定理到周期延拓、级数展开的解题流程都进行了完整梳理，配套梳理了考研高频考点对应的典型考法。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>狄利克雷收敛定理的适用条件记忆模糊，容易混淆连续点、间断点处和函数的取值规则；</li>
+<li>周期为2l的傅里叶级数系数公式与积分区间的对应关系易出错，尤其是系数前的缩放因子容易记错；</li>
+<li>奇偶函数傅里叶级数的简化计算，容易忽略“延拓前提”，误用奇偶性直接推导系数；</li>
+<li>定义在有限区间上的函数展开为正弦/余弦级数时，延拓后的周期函数与原函数的关系混淆，导致和函数求值出现偏差。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>核心考点复盘</h3>
+<ol>
+<li><strong>傅里叶级数基础框架</strong>
+考研中傅里叶级数主要分为周期为$2\pi$和周期为$2l$两类场景：
+<ul>
+<li>周期$2\pi$时，傅里叶系数为$a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos nx dx$，$b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx dx$，和函数$S(x)$遵循狄利克雷收敛定理：连续点处$S(x)=f(x)$，间断点处$S(x)=\frac{f(x+0)+f(x-0)}{2}$。</li>
+<li>周期$2l$时可通过变量替换转化为周期$2\pi$场景，系数公式简化为$a_n=\frac{1}{l}\int_{-l}^{l}f(x)\cos\frac{n\pi x}{l}dx$，$b_n=\frac{1}{l}\int_{-l}^{l}f(x)\sin\frac{n\pi x}{l}dx$。</li>
+</ul>
+</li>
+<li><strong>奇偶延拓的简化技巧</strong>
+若$f(x)$为周期偶函数，则$b_n=0$，仅含余弦项；奇函数则$a_n=0$，仅含正弦项。考研常考将$[0,l]$上的函数展开为正弦/余弦级数，此时需要先进行奇延拓/偶延拓得到周期函数，再计算傅里叶级数，最终在原区间$[0,l]$上还原和函数。</li>
+<li><strong>考研高频考法拆解</strong>
+<ul>
+<li>直接求周期函数的傅里叶级数：重点关注积分区间的选取和系数计算的精度，避免积分上下限混淆；</li>
+<li>和函数求值：这是最高频考点，解题核心是严格套用收敛定理，不要直接代入原函数值；</li>
+<li>有限区间延拓展开：需明确延拓后的周期与原区间的对应关系，避免出现延拓错误。</li>
+</ul>
+</li>
+</ol>
+<h3>今日学习纠正点</h3>
+<p>修正了此前混淆“周期延拓”和“奇偶延拓”的误区，明确了不同延拓场景下的级数形式差异，同时梳理了系数公式的推导逻辑，不再死记硬背公式。</p>
+<h2>今日小结</h2>
+<p>今日完成了2小时的傅里叶级数专项学习，完整梳理了核心知识点与易错点，解决了此前的延拓混淆问题，但尚未进行配套习题训练，后续需要通过10-15道典型习题巩固系数计算、和函数求值等题型的解题熟练度。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-07-08</title>
     <link href="https://elysiaweb.vercel.app/posts/408/7-8/" rel="alternate" type="text/html"/>
