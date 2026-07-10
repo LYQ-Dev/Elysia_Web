@@ -5,8 +5,160 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-09T15:31:55.498Z</updated>
+  <updated>2026-07-10T15:02:49.976Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-07-10</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/7-10/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/7-10/</id>
+    <published>2026-07-10T00:00:00.000Z</published>
+    <updated>2026-07-10T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-07-10</h1>
+<h2>今日学习内容</h2>
+<p>今日投入3小时系统学习考研408数据结构板块的二分查找相关知识点，完成基础概念梳理、代码实现练习与典型题型复盘。</p>
+<h2>AI知识点带复盘</h2>
+<h3>核心基础考点</h3>
+<ol>
+<li><strong>二分查找的本质与前提</strong>：二分查找是基于分治思想的高效查找算法，核心前提是查找表为<strong>有序静态序列</strong>，时间复杂度为$O(\log n)$，是408查找章节的核心高频考点。</li>
+<li><strong>基础实现细节</strong>
+<ul>
+<li>迭代实现标准模板：初始化左边界<code>left=0</code>，右边界<code>right=n-1</code>，循环条件常用<code>left &lt;= right</code>，每次计算中间下标<code>mid = left + (right - left) / 2</code>（避免<code>left+right</code>溢出），根据<code>nums[mid]</code>与目标值<code>target</code>的大小关系更新边界：若<code>nums[mid] == target</code>则返回mid；若<code>nums[mid] &lt; target</code>则<code>left = mid +1</code>；反之<code>right = mid -1</code>。</li>
+<li>递归实现：通过递归调用缩小查找区间，空间复杂度为$O(\log n)$，工程中更推荐迭代版以避免栈溢出。</li>
+</ul>
+</li>
+<li><strong>常考变种题型</strong>
+<ul>
+<li>查找第一个大于等于<code>target</code>的元素（下界查找）</li>
+<li>查找最后一个小于等于<code>target</code>的元素（上界查找）</li>
+<li>旋转有序数组的二分查找（无重复元素/有重复元素场景）</li>
+<li>寻找峰值元素、寻找旋转数组的最小值等拓展题型</li>
+</ul>
+</li>
+<li><strong>易错点梳理</strong>：边界条件混淆、mid计算溢出、未提前校验序列有序性直接使用二分查找，这些都是历年真题的常见失分点。</li>
+</ol>
+<h2>问题与反思</h2>
+<p>今日学习过程中发现自己对不同变种二分查找的边界更新逻辑仍存在混淆，尤其是下界、上界查找的循环条件与边界赋值容易出错，后续需要针对性练习变种题型，整理边界处理的通用规则，避免因细节失误丢分。</p>
+<h2>收获与总结</h2>
+<p>今日通过3小时的系统学习，完整梳理了二分查找的核心考点与易错细节，掌握了基础版与各类变种题型的实现思路，明确了边界处理的通用方法，对408数据结构查找板块的核心考点形成了完整的知识框架，能够独立完成基础与常见变种题型的代码编写。</p>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-07-10</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/7-10/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/7-10/</id>
+    <published>2026-07-10T00:00:00.000Z</published>
+    <updated>2026-07-10T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-10</h1>
+<h2>今日学习内容</h2>
+<p>Total 2.5 hours of focused study, split into three parts:</p>
+<ol>
+<li>1 hour for high-frequency vocabulary review and new word accumulation</li>
+<li>1 hour for long complex sentence analysis based on 2025 Postgraduate Entrance Examination English Paper I</li>
+<li>0.5 hours for intensive reading of a 2024 text excerpt and error correction</li>
+</ol>
+<h2>单词复盘</h2>
+<p>（AI 自动整理考研高频核心词）</p>
+<ol>
+<li><strong>diminish</strong>
+<ul>
+<li>考研考频：★★★★★</li>
+<li>核心释义：v. 减少，降低；熟词僻义：v. 贬低，轻视，损害（名誉、价值等）</li>
+<li>真题搭配：diminish public trust 削弱公众信任</li>
+<li>真题例句：<em>Critics argue that new regulations will do little to diminish the power of big tech companies.</em>（2024年英语一Text2）</li>
+</ul>
+</li>
+<li><strong>scrutinize</strong>
+<ul>
+<li>考研考频：★★★★☆</li>
+<li>核心释义：v. 仔细检查，细看；审查</li>
+<li>真题搭配：scrutinize every detail 仔细审查每一个细节</li>
+<li>真题例句：<em>Researchers scrutinized data from over 10,000 participants over a 5-year period.</em>（2023年英语二Text3）</li>
+</ul>
+</li>
+<li><strong>concomitant</strong>
+<ul>
+<li>考研考频：★★★☆☆</li>
+<li>核心释义：adj. 伴随的，相伴而生的；n. 伴随物，附属事物</li>
+<li>真题例句：<em>Stress is often a concomitant of overwork.</em>（考研英语大纲示例句）</li>
+</ul>
+</li>
+<li><strong>plausible</strong>
+<ul>
+<li>考研考频：★★★★☆</li>
+<li>核心释义：adj. 看似合理的，可信的；花言巧语的，貌似可信的</li>
+<li>真题搭配：a plausible explanation 看似合理的解释</li>
+<li>真题例句：<em>The candidate presented a plausible plan to address climate change.</em>（2025年英语一Text4）</li>
+</ul>
+</li>
+</ol>
+<p>💡 碎碎念：今天背单词时发现好多熟词僻义很容易混淆，比如diminish的“贬低”义项之前做题时选错了答案。长难句的嵌套定语从句练习终于有了进步，能快速定位主句和修饰成分了。坚持每日打卡快一个月，感觉词汇储备和阅读敏感度都有提升，继续稳扎稳打，考研英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-07-10</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/7-10/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/7-10/</id>
+    <published>2026-07-10T00:00:00.000Z</published>
+    <updated>2026-07-10T00:00:00.000Z</updated>
+    <summary>考研数学级数专题学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-10</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入4小时考研数学专项学习，全程围绕无穷级数模块展开刷题训练，涵盖数项级数敛散性判别、幂级数的收敛域求解与和函数推导、傅里叶级数基础应用三类核心考研题型。当日共计完成32道配套习题，其中包含12道历年考研真题、20道高质量模拟题，题型覆盖选择题、填空题与解答题全类型。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>交错级数莱布尼茨判别法的使用前置条件记忆不牢固，时常忽略验证通项极限为0的步骤，导致部分题目误判敛散性；</li>
+<li>幂级数逐项求导或积分后，对收敛域端点处的敛散性判断容易出现疏漏，无法准确判断端点处级数的收敛情况；</li>
+<li>针对结合多项式、指数函数、三角函数的复杂幂级数求和问题，对常见泰勒展开式的变形应用不够熟练，解题思路卡顿；</li>
+<li>抽象级数敛散性的证明题逻辑梳理不够清晰，缺乏规范的放缩与推导思路，难以快速建立证明框架。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>数项级数模块复盘</h3>
+<p>考研数学中数项级数的核心考察方向为敛散性判别，分为正项级数、交错级数、任意项级数三类：</p>
+<ol>
+<li>正项级数优先使用比值判别法、根值判别法（适用于含$n!$、$n^n$的题型），或比较判别法的极限形式，需熟记$p$级数、等比级数等基准级数的敛散性；</li>
+<li>交错级数必须先验证通项极限为0，再使用莱布尼茨判别法，同时需先判断原级数是否绝对收敛，若不绝对收敛再验证交错级数是否条件收敛；</li>
+<li>抽象级数敛散性证明可结合级数收敛的必要条件、比较判别法、绝对值不等式放缩等方法，需先明确已知条件再推导结论。</li>
+</ol>
+<h3>幂级数模块复盘</h3>
+<p>幂级数是考研数学的高频解答题考点，核心要点包括：</p>
+<ol>
+<li>收敛半径计算：对标准幂级数$\sum_{n=0}^{\infty}a_nx^n$，使用$\rho=\lim_{n\to\infty}|\frac{a_{n+1}}{a_n}|$或$\rho=\lim_{n\to\infty}\sqrt[n]{|a_n|}$，收敛半径$R=\frac{1}{\rho}$（$\rho=0$时$R=+\infty$，$\rho=+\infty$时$R=0$）；</li>
+<li>收敛域求解需在得到开区间后，单独验证端点处的级数敛散性，这是高频失分点；</li>
+<li>幂级数和函数求解需依托常见泰勒展开式，通过逐项求导、逐项积分、变量替换等方式将复杂幂级数转化为标准形式，再还原得到和函数；</li>
+<li>逐项求导或积分后，幂级数的收敛半径不变，但端点敛散性可能发生变化，需重新验证。</li>
+</ol>
+<h3>傅里叶级数模块复盘</h3>
+<p>傅里叶级数多以选择题或小型解答题出现，核心为狄利克雷收敛定理，以及周期为$2l$的傅里叶级数系数计算公式，奇偶函数可简化为正弦级数或余弦级数，降低计算量。</p>
+<p>结合今日刷题情况，多数错题集中在收敛域端点验证与交错级数前置条件遗漏，后续需针对性强化这两类细节的练习。</p>
+<h2>今日小结</h2>
+<p>今日4小时的级数专题刷题训练，全面覆盖了考研数学级数模块的核心考点，通过大量习题暴露了自身在细节判断与复杂变形上的短板。后续计划整理当日错题形成专项错题本，每日复盘判别法使用条件，每周开展1次幂级数求和专项训练，同时补充抽象级数证明题的解题思路练习，稳步提升级数模块的解题正确率与熟练度。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研英语学习记录2026-07-09</title>
     <link href="https://elysiaweb.vercel.app/posts/english/7-9/" rel="alternate" type="text/html"/>
