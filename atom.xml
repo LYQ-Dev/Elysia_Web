@@ -5,8 +5,211 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-10T15:02:49.976Z</updated>
+  <updated>2026-07-11T16:28:12.320Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-07-12</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/7-12/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/7-12/</id>
+    <published>2026-07-12T00:00:00.000Z</published>
+    <updated>2026-07-12T00:00:00.000Z</updated>
+    <summary>2026-07-12考研408专业课学习记录：补记7月11日学习内容，复盘二叉查找树与红黑树核心知识点</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-07-12</h1>
+<h2>今日学习内容</h2>
+<p>补记7月11日考研408专业课学习内容，当日复习了二叉查找相关知识点，并深入学习红黑树的核心概念与考点。</p>
+<h2>AI知识点带复盘</h2>
+<h3>二叉查找树（BST）复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：一棵二叉树，对于任意节点，其左子树所有节点值均小于该节点值，右子树所有节点值均大于该节点值，左右子树均为二叉查找树。</li>
+<li><strong>考研核心考点</strong>
+<ul>
+<li>查找、插入、删除操作的时间复杂度：平均复杂度为$O(\log n)$，极端情况（如有序序列插入）会退化为链表，最坏复杂度为$O(n)$；</li>
+<li>平均查找长度的计算逻辑；</li>
+<li>删除操作的三种场景处理：叶子节点直接删除、单孩子节点用孩子替换、双孩子节点用后继/前驱节点替换后删除原节点，是考研选择题与编程题的高频易错点；</li>
+<li>二叉查找树的不平衡缺陷，引出自平衡二叉树的研究需求。</li>
+</ul>
+</li>
+</ol>
+<h3>红黑树复盘</h3>
+<ol>
+<li><strong>核心5条性质（必须精准记忆）</strong>
+<ul>
+<li>每个节点非红即黑；</li>
+<li>根节点为黑色；</li>
+<li>所有叶子节点（NIL空节点）为黑色；</li>
+<li>红色节点的两个子节点均为黑色，不存在连续红色节点；</li>
+<li>任意节点到其所有后代叶子节点的路径上，黑色节点数目相同。</li>
+</ul>
+</li>
+<li><strong>考研核心考点</strong>
+<ul>
+<li>红黑树的高度证明：最坏情况下高度不超过$2\log(n+1)$，兼顾了查找与插入删除效率；</li>
+<li>与AVL树的对比：AVL树是严格平衡二叉树，要求左右子树高度差不超过1，插入删除可能需要多次旋转调整；红黑树通过颜色规则实现近似平衡，减少旋转次数，插入删除效率更优，是工业界主流的自平衡树实现（如Java TreeMap、C++ std::map底层均采用红黑树）；</li>
+<li>插入/删除后的调整操作：通过左旋、右旋、变色三种操作修复红黑树性质，是考研主观题的难点内容；</li>
+<li>易错点：容易混淆红黑树的叶子节点为NIL空节点，而非实际存储数据的叶子节点。</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>今日为补记前一日学习记录，存在学习台账滞后的问题，后续需严格落实当日学习当日归档，避免遗漏学习细节；</li>
+<li>红黑树插入修复时的分支判断（如叔节点颜色为红/黑的不同处理逻辑）仍不够熟练，需要结合动画演示重新梳理操作流程；</li>
+<li>二叉查找树删除双孩子节点时，选择后继节点还是前驱节点的边界场景仍需进一步明确。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>补记过程中重新系统梳理了二叉查找树的全流程考点，明确了其作为自平衡树前置知识点的核心地位；</li>
+<li>精准掌握了红黑树的5条核心性质与考研考点差异，理清了其相较于AVL树的设计优势与应用场景；</li>
+<li>意识到了学习记录及时性的重要性，后续将建立每日学习复盘的固定流程，避免补记遗漏细节。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-07-12</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/7-12/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/7-12/</id>
+    <published>2026-07-12T00:00:00.000Z</published>
+    <updated>2026-07-12T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-12</h1>
+<h2>今日学习内容</h2>
+<p>今日补写7月11日的考研英语学习记录，主要完成两项学习任务：一是复盘前期背诵的考研核心单词，梳理易错易混点；二是拆解2010年全国硕士研究生招生考试英语（一）Text 1中的经典长难句，掌握长难句拆分逻辑与翻译技巧。</p>
+<h2>单词复盘</h2>
+<h3>复习旧词复盘</h3>
+<p>本周累计背诵的150个考研高频词中，重点复习了30组易混淆搭配：</p>
+<ol>
+<li><strong>complimentary /ˌkɒmplɪˈmentri/ adj.</strong> 称赞的；免费的  vs  <strong>complementary /ˌkɒmplɪˈmentri/ adj.</strong> 补充的，互补的
+易错点：拼写相近，需结合语境记忆，如"complimentary remarks"（赞扬的话），"complementary courses"（补充课程）</li>
+<li><strong>affect /əˈfekt/ v.</strong> 影响；打动  vs  <strong>effect /ɪˈfekt/ n.</strong> 影响；效果 /v.** 使发生，引起
+易错点：词性与词义辨析，常考搭配"have an effect on"（对...有影响），"affect the outcome"（影响结果）</li>
+<li><strong>disparage /dɪˈspærɪdʒ/ v.</strong> 贬低，轻视  vs  <strong>dispense /dɪˈspens/ v.</strong> 分配；分发（药剂）
+易错点：结尾发音相近，需牢记词根含义，dispar-意为“不同”，故disparage有“看轻不同之处即贬低”之意。</li>
+</ol>
+<h3>新词积累</h3>
+<p>今日新学习2010年Text 1中出现的25个核心真题词，整理如下：</p>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>音标</th>
+<th>核心释义</th>
+<th>真题适配例句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ambiguous</td>
+<td>/æmˈbɪɡjuəs/</td>
+<td>模糊不清的，模棱两可的</td>
+<td>"The ambiguous wording of the policy led to widespread confusion."</td>
+</tr>
+<tr>
+<td>corroborate</td>
+<td>/kəˈrɒbəreɪt/</td>
+<td>证实，支持</td>
+<td>"The new study corroborates the findings of earlier research."</td>
+</tr>
+<tr>
+<td>epitome</td>
+<td>/ɪˈpɪtəmi/</td>
+<td>缩影，典型</td>
+<td>"The small town is the epitome of traditional American life."</td>
+</tr>
+<tr>
+<td>automate</td>
+<td>/ˈɔːtəmeɪt/</td>
+<td>使自动化</td>
+<td>"Factories have increasingly automated their production lines."</td>
+</tr>
+<tr>
+<td>textile</td>
+<td>/ˈtekstaɪl/</td>
+<td>纺织品，纺织业</td>
+<td>"The textile industry has seen significant changes in recent decades."</td>
+</tr>
+</tbody>
+</table>
+<h2>长难句拆解</h2>
+<h3>选取长难句</h3>
+<blockquote>
+<p>In an essay entitled "Making It in America", the author Adam Davidson relates a joke from cotton country about just how much a modern textile mill has been automated: The average mill has only two employees today, "a man and a dog. The man is there to feed the dog, and the dog is there to keep the man away from the machines."</p>
+</blockquote>
+<h3>结构拆解</h3>
+<ol>
+<li>主句部分：<code>the author Adam Davidson relates a joke</code>，主语为<code>the author Adam Davidson</code>，谓语为<code>relates</code>，宾语为<code>a joke</code></li>
+<li>前置状语：<code>In an essay entitled "Making It in America"</code>，其中<code>entitled "Making It in America"</code>为过去分词短语作后置定语修饰<code>essay</code>，"Making It in America"为美国口语经典表达，意为“在美国立足并取得成功”</li>
+<li>后置限定：<code>from cotton country about just how much a modern textile mill has been automated</code>，其中<code>about</code>引导宾语从句<code>how much a modern textile mill has been automated</code>，补充说明笑话的核心调侃内容</li>
+<li>冒号后内容：为直接引用的笑话原文，用夸张的幽默方式具象化现代工厂的自动化程度，辅助读者理解文本观点</li>
+</ol>
+<h3>参考翻译</h3>
+<p>在一篇题为《在美国闯出一片天》的文章中，作家亚当·戴维森讲述了一个来自产棉区的笑话，调侃现代纺织厂的自动化程度已然极高：如今普通纺织厂仅雇佣两名员工，“一个人和一条狗。人负责喂狗，狗负责让人别碰机器”。</p>
+<h2>💡 今日碎碎念</h2>
+<p>今天补完了上周落下的学习记录，差点因为拖延忘记复盘的易错知识点，还好及时补上了。背单词时特意用了艾宾浩斯复习计划表，把易混词单独整理在了错题本上，避免后续再混淆。长难句拆解虽然花了近四十分钟，但终于能快速理清嵌套从句的结构，不再对着满页语法标记头疼。考研英语的积累从来不是一蹴而就的，每天坚持啃下一小部分，相信最终一定能拿下目标分数！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-07-12</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/7-12/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/7-12/</id>
+    <published>2026-07-12T00:00:00.000Z</published>
+    <updated>2026-07-12T00:00:00.000Z</updated>
+    <summary>考研数学级数专项刷题与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-12</h1>
+<h2>今日学习内容</h2>
+<p>补写7月11日未完成的考研数学学习日记，当日核心任务为级数专项刷题，共计完成20道精选考研级数题型，涵盖数项级数敛散性判别、幂级数收敛域求解、幂级数和函数计算三类考研高频考点。</p>
+<h2>薄弱点</h2>
+<p>今日刷题过程中暴露出的核心薄弱点如下：</p>
+<ol>
+<li><strong>幂级数收敛域端点的敛散性判断易遗漏</strong>：在求解形如$\sum_{n=1}^\infty \frac{x^n}{n}$的幂级数收敛域时，曾忘记单独代入$x=1$和$x=-1$验证级数敛散性，直接默认开区间结果；</li>
+<li><strong>交错级数莱布尼茨判别法的条件混淆</strong>：误将“通项绝对值单调递减”等同于“通项单调递减”，忽略了需要针对$|u_n|$进行单调性判断，而非$u_n$本身；</li>
+<li><strong>数项级数敛散性判别时等价无穷小的误用</strong>：在判断正项级数敛散性时，曾错误地将$\ln(1+\frac{1}{n})$等价于$\frac{1}{n}$后直接套用比值判别法，混淆了等价替换的适用场景；</li>
+<li><strong>幂级数逐项求导/积分后的收敛域变化模糊</strong>：不清楚逐项求导或积分后收敛半径不变，但端点处的敛散性可能发生变化，导致部分题目推导出现偏差。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>结合今日刷题内容，复盘考研数学级数模块的核心考点与易错点：</p>
+<h3>1. 数项级数敛散性判别</h3>
+<p>考研数学中数项级数是基础考点，主要分为三类：</p>
+<ul>
+<li><strong>正项级数</strong>：优先使用比较判别法（含极限形式），其次为比值、根值判别法，积分判别法仅适用于单调递减且趋于0的正项级数；需注意等价无穷小替换仅能用于比较判别法的极限形式中，不能直接用于通项的放缩。</li>
+<li><strong>交错级数</strong>：核心判别法为莱布尼茨判别法，需同时满足两个条件：①$\lim_{n\to\infty} u_n=0$；②${|u_n|}$单调递减，二者缺一不可，且需注意$u_n=(-1)^{n-1}a_n$中$a_n&gt;0$。</li>
+<li><strong>任意项级数</strong>：先判断绝对收敛（即对应正项级数收敛），再判断条件收敛，绝对收敛可转化为正项级数判别，条件收敛则需结合交错级数判别法。</li>
+</ul>
+<h3>2. 幂级数相关考点</h3>
+<p>幂级数是级数模块的考研重点，核心考点包括：</p>
+<ul>
+<li><strong>收敛半径与收敛域</strong>：对于标准幂级数$\sum_{n=0}^\infty a_n x^n$，收敛半径$R=\lim_{n\to\infty}|\frac{a_n}{a_{n+1}}|$（比值法）或$R=\frac{1}{\lim_{n\to\infty}\sqrt[n]{|a_n|}}$（根值法），收敛域需在开区间$(-R,R)$基础上单独讨论$x=\pm R$处的级数敛散性，这也是多数考生的易错点。</li>
+<li><strong>逐项求导与逐项积分</strong>：幂级数在收敛区间$(-R,R)$内可逐项求导或积分，且收敛半径不变，但端点处的敛散性可能改变，需重新验证。</li>
+<li><strong>和函数求解</strong>：核心是利用已知的基本幂级数展开式（如$\frac{1}{1-x}=\sum_{n=0}^\infty x^n$，$\ln(1+x)=\sum_{n=1}^\infty \frac{(-1)^{n-1}x^n}{n}$等），结合逐项求导、积分进行变形推导。</li>
+</ul>
+<h3>3. 考研高频错题复盘</h3>
+<p>今日刷题中出现的典型错题对应考点：如求$\sum_{n=1}^\infty \frac{(x-1)^n}{n2^n}$的收敛域，需先做换元$t=x-1$，再按标准步骤求解，且在端点$t=\pm2$处需分别验证级数敛散性，这也是多数考生容易出错的点。</p>
+<h2>今日小结</h2>
+<p>今日补写了7月11日未完成的学习记录，完成了20道级数专项刷题任务，通过复盘错题与核心知识点，修正了此前对级数模块的多处认知偏差。整体刷题正确率约75%，主要错误集中在收敛域端点判断与莱布尼茨判别法的条件应用上。后续将整理今日错题至专项错题本，每天抽15分钟回顾级数模块的核心判别规则，强化易错点记忆。
+💡 碎碎念：补刷的过程也是查漏补缺的过程，不必纠结耽搁的时间，理清思路比赶进度更重要，稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-07-10</title>
     <link href="https://elysiaweb.vercel.app/posts/408/7-10/" rel="alternate" type="text/html"/>
