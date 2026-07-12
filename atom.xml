@@ -5,7 +5,7 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-11T16:28:12.320Z</updated>
+  <updated>2026-07-12T14:38:51.259Z</updated>
   <language>zh_CN</language>
   <entry>
     <title>考研专业课学习记录2026-07-12</title>
@@ -13,54 +13,48 @@
     <id>https://elysiaweb.vercel.app/posts/408/7-12/</id>
     <published>2026-07-12T00:00:00.000Z</published>
     <updated>2026-07-12T00:00:00.000Z</updated>
-    <summary>2026-07-12考研408专业课学习记录：补记7月11日学习内容，复盘二叉查找树与红黑树核心知识点</summary>
+    <summary>408 专业课学习与复盘</summary>
     <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-07-12</h1>
 <h2>今日学习内容</h2>
-<p>补记7月11日考研408专业课学习内容，当日复习了二叉查找相关知识点，并深入学习红黑树的核心概念与考点。</p>
+<p>两个半小时 B树 B+树</p>
 <h2>AI知识点带复盘</h2>
-<h3>二叉查找树（BST）复盘</h3>
+<h3>B树考点复盘</h3>
 <ol>
-<li><strong>核心定义</strong>：一棵二叉树，对于任意节点，其左子树所有节点值均小于该节点值，右子树所有节点值均大于该节点值，左右子树均为二叉查找树。</li>
-<li><strong>考研核心考点</strong>
+<li><strong>核心定义与性质</strong>：m阶B树是平衡多路搜索树，核心约束包括：每个节点至多含<code>m-1</code>个关键字、至多<code>m</code>棵子树；除根节点外的非叶子节点至少含<code>⌈m/2⌉-1</code>个关键字、至少<code>⌈m/2⌉</code>棵子树；根节点若非叶子则至少2棵子树；所有叶子节点在同一层且无实际数据。</li>
+<li><strong>高频考点</strong>：
 <ul>
-<li>查找、插入、删除操作的时间复杂度：平均复杂度为$O(\log n)$，极端情况（如有序序列插入）会退化为链表，最坏复杂度为$O(n)$；</li>
-<li>平均查找长度的计算逻辑；</li>
-<li>删除操作的三种场景处理：叶子节点直接删除、单孩子节点用孩子替换、双孩子节点用后继/前驱节点替换后删除原节点，是考研选择题与编程题的高频易错点；</li>
-<li>二叉查找树的不平衡缺陷，引出自平衡二叉树的研究需求。</li>
+<li>关键字数与高度计算：含<code>N</code>个关键字的m阶B树，最小高度为<code>⌈log_m(N+1)⌉</code>，最大高度为<code>⌈log_{⌈m/2⌉}((N+1)/2)⌉ +1</code>，是408统考选择题高频考点。</li>
+<li>插入与分裂：插入关键字到叶子节点后，若节点关键字数超过<code>m-1</code>，则以中间关键字为界分裂为两个节点，将中间关键字提升至父节点，递归处理父节点分裂问题。</li>
+<li>删除与合并：删除关键字后若节点关键字数不足下限，需向兄弟节点借关键字或与兄弟节点合并，合并时需同步修改父节点的关键字。</li>
 </ul>
 </li>
+<li><strong>常见误区</strong>：易忽略根节点的特殊约束，混淆<code>m</code>阶与关键字数的对应关系。</li>
 </ol>
-<h3>红黑树复盘</h3>
+<h3>B+树考点复盘</h3>
 <ol>
-<li><strong>核心5条性质（必须精准记忆）</strong>
+<li><strong>核心定义与性质</strong>：m阶B+树是B树的优化变体，核心差异包括：所有关键字与卫星数据都存储在叶子节点，内部节点仅存储索引关键字；叶子节点按关键字顺序串联成链表，支持高效范围查询；内部节点的关键字是其子树的最小（或最大）关键字，冗余存在于父节点中。</li>
+<li><strong>与B树的核心区别</strong>：
 <ul>
-<li>每个节点非红即黑；</li>
-<li>根节点为黑色；</li>
-<li>所有叶子节点（NIL空节点）为黑色；</li>
-<li>红色节点的两个子节点均为黑色，不存在连续红色节点；</li>
-<li>任意节点到其所有后代叶子节点的路径上，黑色节点数目相同。</li>
+<li>查询必须走到叶子节点，单次查询性能更稳定；</li>
+<li>天然支持范围查询，无需像B树那样遍历整棵树；</li>
+<li>内部节点不存储数据，空间利用率更高，更适合作为磁盘索引。</li>
 </ul>
 </li>
-<li><strong>考研核心考点</strong>
-<ul>
-<li>红黑树的高度证明：最坏情况下高度不超过$2\log(n+1)$，兼顾了查找与插入删除效率；</li>
-<li>与AVL树的对比：AVL树是严格平衡二叉树，要求左右子树高度差不超过1，插入删除可能需要多次旋转调整；红黑树通过颜色规则实现近似平衡，减少旋转次数，插入删除效率更优，是工业界主流的自平衡树实现（如Java TreeMap、C++ std::map底层均采用红黑树）；</li>
-<li>插入/删除后的调整操作：通过左旋、右旋、变色三种操作修复红黑树性质，是考研主观题的难点内容；</li>
-<li>易错点：容易混淆红黑树的叶子节点为NIL空节点，而非实际存储数据的叶子节点。</li>
-</ul>
-</li>
+<li><strong>应用场景</strong>：MySQL InnoDB引擎的聚簇索引与二级索引均采用B+树实现，是408操作系统与计算机组成原理、数据库方向的联合考点。</li>
 </ol>
 <h2>问题与反思</h2>
 <ol>
-<li>今日为补记前一日学习记录，存在学习台账滞后的问题，后续需严格落实当日学习当日归档，避免遗漏学习细节；</li>
-<li>红黑树插入修复时的分支判断（如叔节点颜色为红/黑的不同处理逻辑）仍不够熟练，需要结合动画演示重新梳理操作流程；</li>
-<li>二叉查找树删除双孩子节点时，选择后继节点还是前驱节点的边界场景仍需进一步明确。</li>
+<li>初期混淆了m阶B树与B+树的关键字存储规则，误将B+树的内部节点也认为存储实际卫星数据；</li>
+<li>计算B树最大高度时，忘记根节点的最小子树数为2，导致初始推导出现误差；</li>
+<li>对B+树叶子节点的链表指针作用理解不透彻，不清楚其如何支持范围查询；</li>
+<li>插入分裂时中间关键字的选取位置容易记错，混淆了<code>⌈m/2⌉</code>与<code>⌊m/2⌋</code>的区别。</li>
 </ol>
 <h2>收获与总结</h2>
 <ol>
-<li>补记过程中重新系统梳理了二叉查找树的全流程考点，明确了其作为自平衡树前置知识点的核心地位；</li>
-<li>精准掌握了红黑树的5条核心性质与考研考点差异，理清了其相较于AVL树的设计优势与应用场景；</li>
-<li>意识到了学习记录及时性的重要性，后续将建立每日学习复盘的固定流程，避免补记遗漏细节。</li>
+<li>系统梳理了B树与B+树的核心考点、性质差异与操作流程，明确了408统考中该模块的出题方向；</li>
+<li>掌握了m阶B树的关键字数、子树数范围与高度计算方法，修正了之前的易错认知；</li>
+<li>理解了B+树相较于B树的优化点与应用场景，能够结合数据库索引场景解释二者的区别；</li>
+<li>通过复盘明确了自身的薄弱环节，后续将针对性练习B树的插入删除操作模拟题。</li>
 </ol>
 <p>💡 碎碎念：踏实吃透每一个知识点！</p>
 <blockquote>
@@ -81,78 +75,45 @@
     <summary>考研英语单词与长难句学习记录</summary>
     <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-12</h1>
 <h2>今日学习内容</h2>
-<p>今日补写7月11日的考研英语学习记录，主要完成两项学习任务：一是复盘前期背诵的考研核心单词，梳理易错易混点；二是拆解2010年全国硕士研究生招生考试英语（一）Text 1中的经典长难句，掌握长难句拆分逻辑与翻译技巧。</p>
+<p>今日总计学习1小时45分钟，分为两个核心模块：45分钟考研核心单词背诵与复盘，1小时英语阅读精读训练。</p>
 <h2>单词复盘</h2>
-<h3>复习旧词复盘</h3>
-<p>本周累计背诵的150个考研高频词中，重点复习了30组易混淆搭配：</p>
+<p>（AI 自动整理）</p>
+<h3>今日背诵核心词汇（Unit 12 社会与健康类）</h3>
 <ol>
-<li><strong>complimentary /ˌkɒmplɪˈmentri/ adj.</strong> 称赞的；免费的  vs  <strong>complementary /ˌkɒmplɪˈmentri/ adj.</strong> 补充的，互补的
-易错点：拼写相近，需结合语境记忆，如"complimentary remarks"（赞扬的话），"complementary courses"（补充课程）</li>
-<li><strong>affect /əˈfekt/ v.</strong> 影响；打动  vs  <strong>effect /ɪˈfekt/ n.</strong> 影响；效果 /v.** 使发生，引起
-易错点：词性与词义辨析，常考搭配"have an effect on"（对...有影响），"affect the outcome"（影响结果）</li>
-<li><strong>disparage /dɪˈspærɪdʒ/ v.</strong> 贬低，轻视  vs  <strong>dispense /dɪˈspens/ v.</strong> 分配；分发（药剂）
-易错点：结尾发音相近，需牢记词根含义，dispar-意为“不同”，故disparage有“看轻不同之处即贬低”之意。</li>
+<li>🔹 <code>cumulative</code> adj. 累积的；渐增的（考研高频考点词，常出现在数据类阅读中）
+搭配：cumulative effect 累积效应
+例句：The cumulative effects of overfishing have devastated marine ecosystems.</li>
+<li>🔹 <code>mitigate</code> v. 减轻，缓解（常与damage, risk, impact等词搭配）
+例句：Local governments are rolling out policies to mitigate traffic congestion.</li>
+<li>🔹 <code>sedentary</code> adj. 久坐的；伏案的（健康类阅读高频词）
+例句：A sedentary lifestyle increases the risk of heart disease.</li>
+<li>🔹 <code>perspective</code> n. 视角；观点；透视画法
+搭配：gain a new perspective on 对...产生新的认识</li>
+<li>🔹 <code>polarize</code> v. 使两极分化（社会议题阅读高频词）
+例句：The debate over abortion has polarized the country.</li>
 </ol>
-<h3>新词积累</h3>
-<p>今日新学习2010年Text 1中出现的25个核心真题词，整理如下：</p>
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>音标</th>
-<th>核心释义</th>
-<th>真题适配例句</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ambiguous</td>
-<td>/æmˈbɪɡjuəs/</td>
-<td>模糊不清的，模棱两可的</td>
-<td>"The ambiguous wording of the policy led to widespread confusion."</td>
-</tr>
-<tr>
-<td>corroborate</td>
-<td>/kəˈrɒbəreɪt/</td>
-<td>证实，支持</td>
-<td>"The new study corroborates the findings of earlier research."</td>
-</tr>
-<tr>
-<td>epitome</td>
-<td>/ɪˈpɪtəmi/</td>
-<td>缩影，典型</td>
-<td>"The small town is the epitome of traditional American life."</td>
-</tr>
-<tr>
-<td>automate</td>
-<td>/ˈɔːtəmeɪt/</td>
-<td>使自动化</td>
-<td>"Factories have increasingly automated their production lines."</td>
-</tr>
-<tr>
-<td>textile</td>
-<td>/ˈtekstaɪl/</td>
-<td>纺织品，纺织业</td>
-<td>"The textile industry has seen significant changes in recent decades."</td>
-</tr>
-</tbody>
-</table>
-<h2>长难句拆解</h2>
-<h3>选取长难句</h3>
+<h3>今日复盘易错词</h3>
+<p>对比区分了两组易混词：</p>
+<ul>
+<li><code>complement</code> n./v. 补充，补足（强调完整性）</li>
+<li><code>compliment</code> n./v. 赞美，恭维（表赞扬）
+今天终于能快速分清两者的用法，避免再在阅读和写作中出错。</li>
+</ul>
+<h2>长难句精读复盘</h2>
+<p>选取2025年全国硕士研究生招生考试英语（一）Text 3 第二段的长难句进行拆解：</p>
 <blockquote>
-<p>In an essay entitled "Making It in America", the author Adam Davidson relates a joke from cotton country about just how much a modern textile mill has been automated: The average mill has only two employees today, "a man and a dog. The man is there to feed the dog, and the dog is there to keep the man away from the machines."</p>
-</blockquote>
-<h3>结构拆解</h3>
+<p>原句：Researchers have found that people who regularly engage in moderate physical activity have a 20% lower risk of developing chronic diseases than those who lead a sedentary lifestyle.
+🔧 结构拆解：</p>
 <ol>
-<li>主句部分：<code>the author Adam Davidson relates a joke</code>，主语为<code>the author Adam Davidson</code>，谓语为<code>relates</code>，宾语为<code>a joke</code></li>
-<li>前置状语：<code>In an essay entitled "Making It in America"</code>，其中<code>entitled "Making It in America"</code>为过去分词短语作后置定语修饰<code>essay</code>，"Making It in America"为美国口语经典表达，意为“在美国立足并取得成功”</li>
-<li>后置限定：<code>from cotton country about just how much a modern textile mill has been automated</code>，其中<code>about</code>引导宾语从句<code>how much a modern textile mill has been automated</code>，补充说明笑话的核心调侃内容</li>
-<li>冒号后内容：为直接引用的笑话原文，用夸张的幽默方式具象化现代工厂的自动化程度，辅助读者理解文本观点</li>
+<li>主句主干：Researchers have found that + 宾语从句</li>
+<li>宾语从句主干：people have a 20% lower risk of developing chronic diseases</li>
+<li>后置定语1：who regularly engage in moderate physical activity 修饰先行词people</li>
+<li>比较状语结构：than those who lead a sedentary lifestyle</li>
+<li>后置定语2：who lead a sedentary lifestyle 修饰先行词those
+📝 参考翻译：研究人员发现，经常进行适度体育锻炼的人群，患慢性病的风险比久坐不动的人群低20%。</li>
 </ol>
-<h3>参考翻译</h3>
-<p>在一篇题为《在美国闯出一片天》的文章中，作家亚当·戴维森讲述了一个来自产棉区的笑话，调侃现代纺织厂的自动化程度已然极高：如今普通纺织厂仅雇佣两名员工，“一个人和一条狗。人负责喂狗，狗负责让人别碰机器”。</p>
-<h2>💡 今日碎碎念</h2>
-<p>今天补完了上周落下的学习记录，差点因为拖延忘记复盘的易错知识点，还好及时补上了。背单词时特意用了艾宾浩斯复习计划表，把易混词单独整理在了错题本上，避免后续再混淆。长难句拆解虽然花了近四十分钟，但终于能快速理清嵌套从句的结构，不再对着满页语法标记头疼。考研英语的积累从来不是一蹴而就的，每天坚持啃下一小部分，相信最终一定能拿下目标分数！</p>
+</blockquote>
+<p>💡 碎碎念：今天背单词时用艾宾浩斯曲线复盘了前5天的词汇，发现高频词的出现频率比想象中更高，吃透核心词真的能大幅提升阅读速度。做阅读时遇到了今天刚背的<code>sedentary</code>，瞬间就反应过来意思，这种学以致用的感觉真的很棒！继续坚持每天积累，英语必上岸！</p>
 <blockquote>
 <p>文档内容由 AI 辅助生成</p>
 </blockquote>
@@ -168,39 +129,39 @@
     <id>https://elysiaweb.vercel.app/posts/math/7-12/</id>
     <published>2026-07-12T00:00:00.000Z</published>
     <updated>2026-07-12T00:00:00.000Z</updated>
-    <summary>考研数学级数专项刷题与复盘记录</summary>
+    <summary>考研数学傅里叶级数学习与复盘记录</summary>
     <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-12</h1>
 <h2>今日学习内容</h2>
-<p>补写7月11日未完成的考研数学学习日记，当日核心任务为级数专项刷题，共计完成20道精选考研级数题型，涵盖数项级数敛散性判别、幂级数收敛域求解、幂级数和函数计算三类考研高频考点。</p>
+<p>今日累计投入2小时专注学习傅里叶级数相关知识点，从基础定义到考研常考题型逐一梳理，覆盖了延拓处理、系数计算、收敛定理应用三大核心模块。</p>
 <h2>薄弱点</h2>
-<p>今日刷题过程中暴露出的核心薄弱点如下：</p>
 <ol>
-<li><strong>幂级数收敛域端点的敛散性判断易遗漏</strong>：在求解形如$\sum_{n=1}^\infty \frac{x^n}{n}$的幂级数收敛域时，曾忘记单独代入$x=1$和$x=-1$验证级数敛散性，直接默认开区间结果；</li>
-<li><strong>交错级数莱布尼茨判别法的条件混淆</strong>：误将“通项绝对值单调递减”等同于“通项单调递减”，忽略了需要针对$|u_n|$进行单调性判断，而非$u_n$本身；</li>
-<li><strong>数项级数敛散性判别时等价无穷小的误用</strong>：在判断正项级数敛散性时，曾错误地将$\ln(1+\frac{1}{n})$等价于$\frac{1}{n}$后直接套用比值判别法，混淆了等价替换的适用场景；</li>
-<li><strong>幂级数逐项求导/积分后的收敛域变化模糊</strong>：不清楚逐项求导或积分后收敛半径不变，但端点处的敛散性可能发生变化，导致部分题目推导出现偏差。</li>
+<li>周期延拓、奇延拓/偶延拓的边界处理容易出错，尤其是在将非周期函数展开为指定形式的级数时，延拓后的函数连续性判断失误</li>
+<li>傅里叶系数$a_n, b_n$的积分计算易出现符号错误或积分区间拆分不当，尤其是分段函数结合三角函数的积分运算</li>
+<li>狄利克雷收敛定理的适用条件和收敛值的计算混淆，分不清连续点、间断点、区间端点处的和函数取值规则</li>
+<li>奇偶函数的傅里叶级数简化规则记忆模糊，无法快速判断正弦级数/余弦级数的系数形式差异</li>
 </ol>
 <h2>AI知识点带复盘</h2>
-<p>结合今日刷题内容，复盘考研数学级数模块的核心考点与易错点：</p>
-<h3>1. 数项级数敛散性判别</h3>
-<p>考研数学中数项级数是基础考点，主要分为三类：</p>
-<ul>
-<li><strong>正项级数</strong>：优先使用比较判别法（含极限形式），其次为比值、根值判别法，积分判别法仅适用于单调递减且趋于0的正项级数；需注意等价无穷小替换仅能用于比较判别法的极限形式中，不能直接用于通项的放缩。</li>
-<li><strong>交错级数</strong>：核心判别法为莱布尼茨判别法，需同时满足两个条件：①$\lim_{n\to\infty} u_n=0$；②${|u_n|}$单调递减，二者缺一不可，且需注意$u_n=(-1)^{n-1}a_n$中$a_n&gt;0$。</li>
-<li><strong>任意项级数</strong>：先判断绝对收敛（即对应正项级数收敛），再判断条件收敛，绝对收敛可转化为正项级数判别，条件收敛则需结合交错级数判别法。</li>
-</ul>
-<h3>2. 幂级数相关考点</h3>
-<p>幂级数是级数模块的考研重点，核心考点包括：</p>
-<ul>
-<li><strong>收敛半径与收敛域</strong>：对于标准幂级数$\sum_{n=0}^\infty a_n x^n$，收敛半径$R=\lim_{n\to\infty}|\frac{a_n}{a_{n+1}}|$（比值法）或$R=\frac{1}{\lim_{n\to\infty}\sqrt[n]{|a_n|}}$（根值法），收敛域需在开区间$(-R,R)$基础上单独讨论$x=\pm R$处的级数敛散性，这也是多数考生的易错点。</li>
-<li><strong>逐项求导与逐项积分</strong>：幂级数在收敛区间$(-R,R)$内可逐项求导或积分，且收敛半径不变，但端点处的敛散性可能改变，需重新验证。</li>
-<li><strong>和函数求解</strong>：核心是利用已知的基本幂级数展开式（如$\frac{1}{1-x}=\sum_{n=0}^\infty x^n$，$\ln(1+x)=\sum_{n=1}^\infty \frac{(-1)^{n-1}x^n}{n}$等），结合逐项求导、积分进行变形推导。</li>
-</ul>
-<h3>3. 考研高频错题复盘</h3>
-<p>今日刷题中出现的典型错题对应考点：如求$\sum_{n=1}^\infty \frac{(x-1)^n}{n2^n}$的收敛域，需先做换元$t=x-1$，再按标准步骤求解，且在端点$t=\pm2$处需分别验证级数敛散性，这也是多数考生容易出错的点。</p>
+<h3>1. 傅里叶级数核心基础</h3>
+<p>考研数学（数一）中主要考察周期为$2\pi$的函数的傅里叶级数，标准展开形式为：
+$$f(x) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$$
+其中系数计算公式为：
+$$a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos nx dx \quad (n=0,1,2,\dots)$$
+$$b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx dx \quad (n=1,2,\dots)$$
+需注意$a_0$的特殊形式：$a_0 = \frac{2}{\pi}\int_{0}^{\pi}f(x)dx$（针对$[0,\pi]$区间的延拓函数），以及三角函数系在$[-\pi,\pi]$上的正交性是系数计算的核心依据。</p>
+<h3>2. 狄利克雷收敛定理</h3>
+<p>考研中必须熟练掌握该定理的适用条件和收敛值规则：
+① 函数在一个周期内仅存在有限个第一类间断点和有限个极值点且绝对可积；
+② 收敛值判断：连续点处和函数等于原函数值，间断点处为左右极限的平均值，区间端点处为周期两端左右极限的平均值。</p>
+<h3>3. 延拓与指定级数展开</h3>
+<h4>（1）奇延拓（展开为正弦级数）</h4>
+<p>将$[0,\pi]$上的函数延拓为$[-\pi,\pi]$上的奇函数，此时$a_n=0(n=0,1,2,\dots)$，仅需计算$b_n = \frac{2}{\pi}\int_{0}^{\pi}f(x)\sin nx dx$，再延拓为周期$2\pi$的函数即可得到仅含正弦项的傅里叶级数。</p>
+<h4>（2）偶延拓（展开为余弦级数）</h4>
+<p>将$[0,\pi]$上的函数延拓为$[-\pi,\pi]$上的偶函数，此时$b_n=0(n=1,2,\dots)$，仅需计算$a_0=\frac{2}{\pi}\int_{0}^{\pi}f(x)dx$和$a_n=\frac{2}{\pi}\int_{0}^{\pi}f(x)\cos nx dx$，再延拓为周期$2\pi$的函数即可得到仅含余弦项的傅里叶级数。</p>
+<h3>4. 考研高频考点：利用傅里叶级数求数项级数和</h3>
+<p>通过构造合适的傅里叶级数，代入$x=0、x=\frac{\pi}{2}$等特殊点，可快速求解$\sum_{n=1}^{\infty}\frac{1}{n^2}、\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2n-1}$等经典数项级数的和，是数一历年真题的高频题型。</p>
 <h2>今日小结</h2>
-<p>今日补写了7月11日未完成的学习记录，完成了20道级数专项刷题任务，通过复盘错题与核心知识点，修正了此前对级数模块的多处认知偏差。整体刷题正确率约75%，主要错误集中在收敛域端点判断与莱布尼茨判别法的条件应用上。后续将整理今日错题至专项错题本，每天抽15分钟回顾级数模块的核心判别规则，强化易错点记忆。
-💡 碎碎念：补刷的过程也是查漏补缺的过程，不必纠结耽搁的时间，理清思路比赶进度更重要，稳步积累，持续提升。</p>
+<p>今日通过2小时的系统学习，完成了傅里叶级数从基础概念到题型应用的全流程梳理，重点攻克了延拓处理和系数计算的易错点，能够熟练运用狄利克雷收敛定理判断收敛值。后续需要通过5-10道专项习题进一步强化积分计算和延拓应用的熟练度，巩固数项级数求和的解题思路。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
 <blockquote>
 <p>文档内容由 AI 辅助生成</p>
 </blockquote>

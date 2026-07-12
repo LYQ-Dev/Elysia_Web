@@ -1,50 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-12</title><link>https://elysiaweb.vercel.app/posts/408/7-12/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-12/</guid><description>2026-07-12考研408专业课学习记录：补记7月11日学习内容，复盘二叉查找树与红黑树核心知识点</description><pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-12&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-12</title><link>https://elysiaweb.vercel.app/posts/408/7-12/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-12/</guid><description>408 专业课学习与复盘</description><pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-12&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
-&lt;p&gt;补记7月11日考研408专业课学习内容，当日复习了二叉查找相关知识点，并深入学习红黑树的核心概念与考点。&lt;/p&gt;
+&lt;p&gt;两个半小时 B树 B+树&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
-&lt;h3&gt;二叉查找树（BST）复盘&lt;/h3&gt;
+&lt;h3&gt;B树考点复盘&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;核心定义&lt;/strong&gt;：一棵二叉树，对于任意节点，其左子树所有节点值均小于该节点值，右子树所有节点值均大于该节点值，左右子树均为二叉查找树。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;考研核心考点&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;核心定义与性质&lt;/strong&gt;：m阶B树是平衡多路搜索树，核心约束包括：每个节点至多含&lt;code&gt;m-1&lt;/code&gt;个关键字、至多&lt;code&gt;m&lt;/code&gt;棵子树；除根节点外的非叶子节点至少含&lt;code&gt;⌈m/2⌉-1&lt;/code&gt;个关键字、至少&lt;code&gt;⌈m/2⌉&lt;/code&gt;棵子树；根节点若非叶子则至少2棵子树；所有叶子节点在同一层且无实际数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高频考点&lt;/strong&gt;：
 &lt;ul&gt;
-&lt;li&gt;查找、插入、删除操作的时间复杂度：平均复杂度为$O(\log n)$，极端情况（如有序序列插入）会退化为链表，最坏复杂度为$O(n)$；&lt;/li&gt;
-&lt;li&gt;平均查找长度的计算逻辑；&lt;/li&gt;
-&lt;li&gt;删除操作的三种场景处理：叶子节点直接删除、单孩子节点用孩子替换、双孩子节点用后继/前驱节点替换后删除原节点，是考研选择题与编程题的高频易错点；&lt;/li&gt;
-&lt;li&gt;二叉查找树的不平衡缺陷，引出自平衡二叉树的研究需求。&lt;/li&gt;
+&lt;li&gt;关键字数与高度计算：含&lt;code&gt;N&lt;/code&gt;个关键字的m阶B树，最小高度为&lt;code&gt;⌈log_m(N+1)⌉&lt;/code&gt;，最大高度为&lt;code&gt;⌈log_{⌈m/2⌉}((N+1)/2)⌉ +1&lt;/code&gt;，是408统考选择题高频考点。&lt;/li&gt;
+&lt;li&gt;插入与分裂：插入关键字到叶子节点后，若节点关键字数超过&lt;code&gt;m-1&lt;/code&gt;，则以中间关键字为界分裂为两个节点，将中间关键字提升至父节点，递归处理父节点分裂问题。&lt;/li&gt;
+&lt;li&gt;删除与合并：删除关键字后若节点关键字数不足下限，需向兄弟节点借关键字或与兄弟节点合并，合并时需同步修改父节点的关键字。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;常见误区&lt;/strong&gt;：易忽略根节点的特殊约束，混淆&lt;code&gt;m&lt;/code&gt;阶与关键字数的对应关系。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;红黑树复盘&lt;/h3&gt;
+&lt;h3&gt;B+树考点复盘&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;核心5条性质（必须精准记忆）&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;核心定义与性质&lt;/strong&gt;：m阶B+树是B树的优化变体，核心差异包括：所有关键字与卫星数据都存储在叶子节点，内部节点仅存储索引关键字；叶子节点按关键字顺序串联成链表，支持高效范围查询；内部节点的关键字是其子树的最小（或最大）关键字，冗余存在于父节点中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;与B树的核心区别&lt;/strong&gt;：
 &lt;ul&gt;
-&lt;li&gt;每个节点非红即黑；&lt;/li&gt;
-&lt;li&gt;根节点为黑色；&lt;/li&gt;
-&lt;li&gt;所有叶子节点（NIL空节点）为黑色；&lt;/li&gt;
-&lt;li&gt;红色节点的两个子节点均为黑色，不存在连续红色节点；&lt;/li&gt;
-&lt;li&gt;任意节点到其所有后代叶子节点的路径上，黑色节点数目相同。&lt;/li&gt;
+&lt;li&gt;查询必须走到叶子节点，单次查询性能更稳定；&lt;/li&gt;
+&lt;li&gt;天然支持范围查询，无需像B树那样遍历整棵树；&lt;/li&gt;
+&lt;li&gt;内部节点不存储数据，空间利用率更高，更适合作为磁盘索引。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;考研核心考点&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;红黑树的高度证明：最坏情况下高度不超过$2\log(n+1)$，兼顾了查找与插入删除效率；&lt;/li&gt;
-&lt;li&gt;与AVL树的对比：AVL树是严格平衡二叉树，要求左右子树高度差不超过1，插入删除可能需要多次旋转调整；红黑树通过颜色规则实现近似平衡，减少旋转次数，插入删除效率更优，是工业界主流的自平衡树实现（如Java TreeMap、C++ std::map底层均采用红黑树）；&lt;/li&gt;
-&lt;li&gt;插入/删除后的调整操作：通过左旋、右旋、变色三种操作修复红黑树性质，是考研主观题的难点内容；&lt;/li&gt;
-&lt;li&gt;易错点：容易混淆红黑树的叶子节点为NIL空节点，而非实际存储数据的叶子节点。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;应用场景&lt;/strong&gt;：MySQL InnoDB引擎的聚簇索引与二级索引均采用B+树实现，是408操作系统与计算机组成原理、数据库方向的联合考点。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;问题与反思&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;今日为补记前一日学习记录，存在学习台账滞后的问题，后续需严格落实当日学习当日归档，避免遗漏学习细节；&lt;/li&gt;
-&lt;li&gt;红黑树插入修复时的分支判断（如叔节点颜色为红/黑的不同处理逻辑）仍不够熟练，需要结合动画演示重新梳理操作流程；&lt;/li&gt;
-&lt;li&gt;二叉查找树删除双孩子节点时，选择后继节点还是前驱节点的边界场景仍需进一步明确。&lt;/li&gt;
+&lt;li&gt;初期混淆了m阶B树与B+树的关键字存储规则，误将B+树的内部节点也认为存储实际卫星数据；&lt;/li&gt;
+&lt;li&gt;计算B树最大高度时，忘记根节点的最小子树数为2，导致初始推导出现误差；&lt;/li&gt;
+&lt;li&gt;对B+树叶子节点的链表指针作用理解不透彻，不清楚其如何支持范围查询；&lt;/li&gt;
+&lt;li&gt;插入分裂时中间关键字的选取位置容易记错，混淆了&lt;code&gt;⌈m/2⌉&lt;/code&gt;与&lt;code&gt;⌊m/2⌋&lt;/code&gt;的区别。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;收获与总结&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;补记过程中重新系统梳理了二叉查找树的全流程考点，明确了其作为自平衡树前置知识点的核心地位；&lt;/li&gt;
-&lt;li&gt;精准掌握了红黑树的5条核心性质与考研考点差异，理清了其相较于AVL树的设计优势与应用场景；&lt;/li&gt;
-&lt;li&gt;意识到了学习记录及时性的重要性，后续将建立每日学习复盘的固定流程，避免补记遗漏细节。&lt;/li&gt;
+&lt;li&gt;系统梳理了B树与B+树的核心考点、性质差异与操作流程，明确了408统考中该模块的出题方向；&lt;/li&gt;
+&lt;li&gt;掌握了m阶B树的关键字数、子树数范围与高度计算方法，修正了之前的易错认知；&lt;/li&gt;
+&lt;li&gt;理解了B+树相较于B树的优化点与应用场景，能够结合数据库索引场景解释二者的区别；&lt;/li&gt;
+&lt;li&gt;通过复盘明确了自身的薄弱环节，后续将针对性练习B树的插入删除操作模拟题。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
 &lt;blockquote&gt;
@@ -52,113 +46,80 @@
 &lt;/blockquote&gt;
 </content:encoded></item><item><title>考研英语学习记录2026-07-12</title><link>https://elysiaweb.vercel.app/posts/english/7-12/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/7-12/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-07-12&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
-&lt;p&gt;今日补写7月11日的考研英语学习记录，主要完成两项学习任务：一是复盘前期背诵的考研核心单词，梳理易错易混点；二是拆解2010年全国硕士研究生招生考试英语（一）Text 1中的经典长难句，掌握长难句拆分逻辑与翻译技巧。&lt;/p&gt;
+&lt;p&gt;今日总计学习1小时45分钟，分为两个核心模块：45分钟考研核心单词背诵与复盘，1小时英语阅读精读训练。&lt;/p&gt;
 &lt;h2&gt;单词复盘&lt;/h2&gt;
-&lt;h3&gt;复习旧词复盘&lt;/h3&gt;
-&lt;p&gt;本周累计背诵的150个考研高频词中，重点复习了30组易混淆搭配：&lt;/p&gt;
+&lt;p&gt;（AI 自动整理）&lt;/p&gt;
+&lt;h3&gt;今日背诵核心词汇（Unit 12 社会与健康类）&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;complimentary /ˌkɒmplɪˈmentri/ adj.&lt;/strong&gt; 称赞的；免费的  vs  &lt;strong&gt;complementary /ˌkɒmplɪˈmentri/ adj.&lt;/strong&gt; 补充的，互补的
-易错点：拼写相近，需结合语境记忆，如&quot;complimentary remarks&quot;（赞扬的话），&quot;complementary courses&quot;（补充课程）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;affect /əˈfekt/ v.&lt;/strong&gt; 影响；打动  vs  &lt;strong&gt;effect /ɪˈfekt/ n.&lt;/strong&gt; 影响；效果 /v.** 使发生，引起
-易错点：词性与词义辨析，常考搭配&quot;have an effect on&quot;（对...有影响），&quot;affect the outcome&quot;（影响结果）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;disparage /dɪˈspærɪdʒ/ v.&lt;/strong&gt; 贬低，轻视  vs  &lt;strong&gt;dispense /dɪˈspens/ v.&lt;/strong&gt; 分配；分发（药剂）
-易错点：结尾发音相近，需牢记词根含义，dispar-意为“不同”，故disparage有“看轻不同之处即贬低”之意。&lt;/li&gt;
+&lt;li&gt;🔹 &lt;code&gt;cumulative&lt;/code&gt; adj. 累积的；渐增的（考研高频考点词，常出现在数据类阅读中）
+搭配：cumulative effect 累积效应
+例句：The cumulative effects of overfishing have devastated marine ecosystems.&lt;/li&gt;
+&lt;li&gt;🔹 &lt;code&gt;mitigate&lt;/code&gt; v. 减轻，缓解（常与damage, risk, impact等词搭配）
+例句：Local governments are rolling out policies to mitigate traffic congestion.&lt;/li&gt;
+&lt;li&gt;🔹 &lt;code&gt;sedentary&lt;/code&gt; adj. 久坐的；伏案的（健康类阅读高频词）
+例句：A sedentary lifestyle increases the risk of heart disease.&lt;/li&gt;
+&lt;li&gt;🔹 &lt;code&gt;perspective&lt;/code&gt; n. 视角；观点；透视画法
+搭配：gain a new perspective on 对...产生新的认识&lt;/li&gt;
+&lt;li&gt;🔹 &lt;code&gt;polarize&lt;/code&gt; v. 使两极分化（社会议题阅读高频词）
+例句：The debate over abortion has polarized the country.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;新词积累&lt;/h3&gt;
-&lt;p&gt;今日新学习2010年Text 1中出现的25个核心真题词，整理如下：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;单词&lt;/th&gt;
-&lt;th&gt;音标&lt;/th&gt;
-&lt;th&gt;核心释义&lt;/th&gt;
-&lt;th&gt;真题适配例句&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;ambiguous&lt;/td&gt;
-&lt;td&gt;/æmˈbɪɡjuəs/&lt;/td&gt;
-&lt;td&gt;模糊不清的，模棱两可的&lt;/td&gt;
-&lt;td&gt;&quot;The ambiguous wording of the policy led to widespread confusion.&quot;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;corroborate&lt;/td&gt;
-&lt;td&gt;/kəˈrɒbəreɪt/&lt;/td&gt;
-&lt;td&gt;证实，支持&lt;/td&gt;
-&lt;td&gt;&quot;The new study corroborates the findings of earlier research.&quot;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;epitome&lt;/td&gt;
-&lt;td&gt;/ɪˈpɪtəmi/&lt;/td&gt;
-&lt;td&gt;缩影，典型&lt;/td&gt;
-&lt;td&gt;&quot;The small town is the epitome of traditional American life.&quot;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;automate&lt;/td&gt;
-&lt;td&gt;/ˈɔːtəmeɪt/&lt;/td&gt;
-&lt;td&gt;使自动化&lt;/td&gt;
-&lt;td&gt;&quot;Factories have increasingly automated their production lines.&quot;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;textile&lt;/td&gt;
-&lt;td&gt;/ˈtekstaɪl/&lt;/td&gt;
-&lt;td&gt;纺织品，纺织业&lt;/td&gt;
-&lt;td&gt;&quot;The textile industry has seen significant changes in recent decades.&quot;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;长难句拆解&lt;/h2&gt;
-&lt;h3&gt;选取长难句&lt;/h3&gt;
+&lt;h3&gt;今日复盘易错词&lt;/h3&gt;
+&lt;p&gt;对比区分了两组易混词：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;complement&lt;/code&gt; n./v. 补充，补足（强调完整性）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;compliment&lt;/code&gt; n./v. 赞美，恭维（表赞扬）
+今天终于能快速分清两者的用法，避免再在阅读和写作中出错。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;长难句精读复盘&lt;/h2&gt;
+&lt;p&gt;选取2025年全国硕士研究生招生考试英语（一）Text 3 第二段的长难句进行拆解：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;In an essay entitled &quot;Making It in America&quot;, the author Adam Davidson relates a joke from cotton country about just how much a modern textile mill has been automated: The average mill has only two employees today, &quot;a man and a dog. The man is there to feed the dog, and the dog is there to keep the man away from the machines.&quot;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;结构拆解&lt;/h3&gt;
+&lt;p&gt;原句：Researchers have found that people who regularly engage in moderate physical activity have a 20% lower risk of developing chronic diseases than those who lead a sedentary lifestyle.
+🔧 结构拆解：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;主句部分：&lt;code&gt;the author Adam Davidson relates a joke&lt;/code&gt;，主语为&lt;code&gt;the author Adam Davidson&lt;/code&gt;，谓语为&lt;code&gt;relates&lt;/code&gt;，宾语为&lt;code&gt;a joke&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;前置状语：&lt;code&gt;In an essay entitled &quot;Making It in America&quot;&lt;/code&gt;，其中&lt;code&gt;entitled &quot;Making It in America&quot;&lt;/code&gt;为过去分词短语作后置定语修饰&lt;code&gt;essay&lt;/code&gt;，&quot;Making It in America&quot;为美国口语经典表达，意为“在美国立足并取得成功”&lt;/li&gt;
-&lt;li&gt;后置限定：&lt;code&gt;from cotton country about just how much a modern textile mill has been automated&lt;/code&gt;，其中&lt;code&gt;about&lt;/code&gt;引导宾语从句&lt;code&gt;how much a modern textile mill has been automated&lt;/code&gt;，补充说明笑话的核心调侃内容&lt;/li&gt;
-&lt;li&gt;冒号后内容：为直接引用的笑话原文，用夸张的幽默方式具象化现代工厂的自动化程度，辅助读者理解文本观点&lt;/li&gt;
+&lt;li&gt;主句主干：Researchers have found that + 宾语从句&lt;/li&gt;
+&lt;li&gt;宾语从句主干：people have a 20% lower risk of developing chronic diseases&lt;/li&gt;
+&lt;li&gt;后置定语1：who regularly engage in moderate physical activity 修饰先行词people&lt;/li&gt;
+&lt;li&gt;比较状语结构：than those who lead a sedentary lifestyle&lt;/li&gt;
+&lt;li&gt;后置定语2：who lead a sedentary lifestyle 修饰先行词those
+📝 参考翻译：研究人员发现，经常进行适度体育锻炼的人群，患慢性病的风险比久坐不动的人群低20%。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3&gt;参考翻译&lt;/h3&gt;
-&lt;p&gt;在一篇题为《在美国闯出一片天》的文章中，作家亚当·戴维森讲述了一个来自产棉区的笑话，调侃现代纺织厂的自动化程度已然极高：如今普通纺织厂仅雇佣两名员工，“一个人和一条狗。人负责喂狗，狗负责让人别碰机器”。&lt;/p&gt;
-&lt;h2&gt;💡 今日碎碎念&lt;/h2&gt;
-&lt;p&gt;今天补完了上周落下的学习记录，差点因为拖延忘记复盘的易错知识点，还好及时补上了。背单词时特意用了艾宾浩斯复习计划表，把易混词单独整理在了错题本上，避免后续再混淆。长难句拆解虽然花了近四十分钟，但终于能快速理清嵌套从句的结构，不再对着满页语法标记头疼。考研英语的积累从来不是一蹴而就的，每天坚持啃下一小部分，相信最终一定能拿下目标分数！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;💡 碎碎念：今天背单词时用艾宾浩斯曲线复盘了前5天的词汇，发现高频词的出现频率比想象中更高，吃透核心词真的能大幅提升阅读速度。做阅读时遇到了今天刚背的&lt;code&gt;sedentary&lt;/code&gt;，瞬间就反应过来意思，这种学以致用的感觉真的很棒！继续坚持每天积累，英语必上岸！&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
 &lt;/blockquote&gt;
-</content:encoded></item><item><title>考研数学学习记录2026-07-12</title><link>https://elysiaweb.vercel.app/posts/math/7-12/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-12/</guid><description>考研数学级数专项刷题与复盘记录</description><pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-12&lt;/h1&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-07-12</title><link>https://elysiaweb.vercel.app/posts/math/7-12/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-12/</guid><description>考研数学傅里叶级数学习与复盘记录</description><pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-12&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
-&lt;p&gt;补写7月11日未完成的考研数学学习日记，当日核心任务为级数专项刷题，共计完成20道精选考研级数题型，涵盖数项级数敛散性判别、幂级数收敛域求解、幂级数和函数计算三类考研高频考点。&lt;/p&gt;
+&lt;p&gt;今日累计投入2小时专注学习傅里叶级数相关知识点，从基础定义到考研常考题型逐一梳理，覆盖了延拓处理、系数计算、收敛定理应用三大核心模块。&lt;/p&gt;
 &lt;h2&gt;薄弱点&lt;/h2&gt;
-&lt;p&gt;今日刷题过程中暴露出的核心薄弱点如下：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;幂级数收敛域端点的敛散性判断易遗漏&lt;/strong&gt;：在求解形如$\sum_{n=1}^\infty \frac{x^n}{n}$的幂级数收敛域时，曾忘记单独代入$x=1$和$x=-1$验证级数敛散性，直接默认开区间结果；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;交错级数莱布尼茨判别法的条件混淆&lt;/strong&gt;：误将“通项绝对值单调递减”等同于“通项单调递减”，忽略了需要针对$|u_n|$进行单调性判断，而非$u_n$本身；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;数项级数敛散性判别时等价无穷小的误用&lt;/strong&gt;：在判断正项级数敛散性时，曾错误地将$\ln(1+\frac{1}{n})$等价于$\frac{1}{n}$后直接套用比值判别法，混淆了等价替换的适用场景；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;幂级数逐项求导/积分后的收敛域变化模糊&lt;/strong&gt;：不清楚逐项求导或积分后收敛半径不变，但端点处的敛散性可能发生变化，导致部分题目推导出现偏差。&lt;/li&gt;
+&lt;li&gt;周期延拓、奇延拓/偶延拓的边界处理容易出错，尤其是在将非周期函数展开为指定形式的级数时，延拓后的函数连续性判断失误&lt;/li&gt;
+&lt;li&gt;傅里叶系数$a_n, b_n$的积分计算易出现符号错误或积分区间拆分不当，尤其是分段函数结合三角函数的积分运算&lt;/li&gt;
+&lt;li&gt;狄利克雷收敛定理的适用条件和收敛值的计算混淆，分不清连续点、间断点、区间端点处的和函数取值规则&lt;/li&gt;
+&lt;li&gt;奇偶函数的傅里叶级数简化规则记忆模糊，无法快速判断正弦级数/余弦级数的系数形式差异&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
-&lt;p&gt;结合今日刷题内容，复盘考研数学级数模块的核心考点与易错点：&lt;/p&gt;
-&lt;h3&gt;1. 数项级数敛散性判别&lt;/h3&gt;
-&lt;p&gt;考研数学中数项级数是基础考点，主要分为三类：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;正项级数&lt;/strong&gt;：优先使用比较判别法（含极限形式），其次为比值、根值判别法，积分判别法仅适用于单调递减且趋于0的正项级数；需注意等价无穷小替换仅能用于比较判别法的极限形式中，不能直接用于通项的放缩。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;交错级数&lt;/strong&gt;：核心判别法为莱布尼茨判别法，需同时满足两个条件：①$\lim_{n\to\infty} u_n=0$；②${|u_n|}$单调递减，二者缺一不可，且需注意$u_n=(-1)^{n-1}a_n$中$a_n&amp;gt;0$。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;任意项级数&lt;/strong&gt;：先判断绝对收敛（即对应正项级数收敛），再判断条件收敛，绝对收敛可转化为正项级数判别，条件收敛则需结合交错级数判别法。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;2. 幂级数相关考点&lt;/h3&gt;
-&lt;p&gt;幂级数是级数模块的考研重点，核心考点包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;收敛半径与收敛域&lt;/strong&gt;：对于标准幂级数$\sum_{n=0}^\infty a_n x^n$，收敛半径$R=\lim_{n\to\infty}|\frac{a_n}{a_{n+1}}|$（比值法）或$R=\frac{1}{\lim_{n\to\infty}\sqrt[n]{|a_n|}}$（根值法），收敛域需在开区间$(-R,R)$基础上单独讨论$x=\pm R$处的级数敛散性，这也是多数考生的易错点。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;逐项求导与逐项积分&lt;/strong&gt;：幂级数在收敛区间$(-R,R)$内可逐项求导或积分，且收敛半径不变，但端点处的敛散性可能改变，需重新验证。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;和函数求解&lt;/strong&gt;：核心是利用已知的基本幂级数展开式（如$\frac{1}{1-x}=\sum_{n=0}^\infty x^n$，$\ln(1+x)=\sum_{n=1}^\infty \frac{(-1)^{n-1}x^n}{n}$等），结合逐项求导、积分进行变形推导。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;3. 考研高频错题复盘&lt;/h3&gt;
-&lt;p&gt;今日刷题中出现的典型错题对应考点：如求$\sum_{n=1}^\infty \frac{(x-1)^n}{n2^n}$的收敛域，需先做换元$t=x-1$，再按标准步骤求解，且在端点$t=\pm2$处需分别验证级数敛散性，这也是多数考生容易出错的点。&lt;/p&gt;
+&lt;h3&gt;1. 傅里叶级数核心基础&lt;/h3&gt;
+&lt;p&gt;考研数学（数一）中主要考察周期为$2\pi$的函数的傅里叶级数，标准展开形式为：
+$$f(x) \sim \frac{a_0}{2} + \sum_{n=1}^{\infty}(a_n\cos nx + b_n\sin nx)$$
+其中系数计算公式为：
+$$a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos nx dx \quad (n=0,1,2,\dots)$$
+$$b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx dx \quad (n=1,2,\dots)$$
+需注意$a_0$的特殊形式：$a_0 = \frac{2}{\pi}\int_{0}^{\pi}f(x)dx$（针对$[0,\pi]$区间的延拓函数），以及三角函数系在$[-\pi,\pi]$上的正交性是系数计算的核心依据。&lt;/p&gt;
+&lt;h3&gt;2. 狄利克雷收敛定理&lt;/h3&gt;
+&lt;p&gt;考研中必须熟练掌握该定理的适用条件和收敛值规则：
+① 函数在一个周期内仅存在有限个第一类间断点和有限个极值点且绝对可积；
+② 收敛值判断：连续点处和函数等于原函数值，间断点处为左右极限的平均值，区间端点处为周期两端左右极限的平均值。&lt;/p&gt;
+&lt;h3&gt;3. 延拓与指定级数展开&lt;/h3&gt;
+&lt;h4&gt;（1）奇延拓（展开为正弦级数）&lt;/h4&gt;
+&lt;p&gt;将$[0,\pi]$上的函数延拓为$[-\pi,\pi]$上的奇函数，此时$a_n=0(n=0,1,2,\dots)$，仅需计算$b_n = \frac{2}{\pi}\int_{0}^{\pi}f(x)\sin nx dx$，再延拓为周期$2\pi$的函数即可得到仅含正弦项的傅里叶级数。&lt;/p&gt;
+&lt;h4&gt;（2）偶延拓（展开为余弦级数）&lt;/h4&gt;
+&lt;p&gt;将$[0,\pi]$上的函数延拓为$[-\pi,\pi]$上的偶函数，此时$b_n=0(n=1,2,\dots)$，仅需计算$a_0=\frac{2}{\pi}\int_{0}^{\pi}f(x)dx$和$a_n=\frac{2}{\pi}\int_{0}^{\pi}f(x)\cos nx dx$，再延拓为周期$2\pi$的函数即可得到仅含余弦项的傅里叶级数。&lt;/p&gt;
+&lt;h3&gt;4. 考研高频考点：利用傅里叶级数求数项级数和&lt;/h3&gt;
+&lt;p&gt;通过构造合适的傅里叶级数，代入$x=0、x=\frac{\pi}{2}$等特殊点，可快速求解$\sum_{n=1}^{\infty}\frac{1}{n^2}、\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{2n-1}$等经典数项级数的和，是数一历年真题的高频题型。&lt;/p&gt;
 &lt;h2&gt;今日小结&lt;/h2&gt;
-&lt;p&gt;今日补写了7月11日未完成的学习记录，完成了20道级数专项刷题任务，通过复盘错题与核心知识点，修正了此前对级数模块的多处认知偏差。整体刷题正确率约75%，主要错误集中在收敛域端点判断与莱布尼茨判别法的条件应用上。后续将整理今日错题至专项错题本，每天抽15分钟回顾级数模块的核心判别规则，强化易错点记忆。
-💡 碎碎念：补刷的过程也是查漏补缺的过程，不必纠结耽搁的时间，理清思路比赶进度更重要，稳步积累，持续提升。&lt;/p&gt;
+&lt;p&gt;今日通过2小时的系统学习，完成了傅里叶级数从基础概念到题型应用的全流程梳理，重点攻克了延拓处理和系数计算的易错点，能够熟练运用狄利克雷收敛定理判断收敛值。后续需要通过5-10道专项习题进一步强化积分计算和延拓应用的熟练度，巩固数项级数求和的解题思路。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
 &lt;/blockquote&gt;
