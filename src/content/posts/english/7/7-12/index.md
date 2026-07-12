@@ -12,42 +12,39 @@ date: 2026-07-12
 ---
 # 考研英语学习记录 | 2026-07-12
 ## 今日学习内容
-今日补写7月11日的考研英语学习记录，主要完成两项学习任务：一是复盘前期背诵的考研核心单词，梳理易错易混点；二是拆解2010年全国硕士研究生招生考试英语（一）Text 1中的经典长难句，掌握长难句拆分逻辑与翻译技巧。
+今日总计学习1小时45分钟，分为两个核心模块：45分钟考研核心单词背诵与复盘，1小时英语阅读精读训练。
 
 ## 单词复盘
-### 复习旧词复盘
-本周累计背诵的150个考研高频词中，重点复习了30组易混淆搭配：
-1.  **complimentary /ˌkɒmplɪˈmentri/ adj.** 称赞的；免费的  vs  **complementary /ˌkɒmplɪˈmentri/ adj.** 补充的，互补的
-    易错点：拼写相近，需结合语境记忆，如"complimentary remarks"（赞扬的话），"complementary courses"（补充课程）
-2.  **affect /əˈfekt/ v.** 影响；打动  vs  **effect /ɪˈfekt/ n.** 影响；效果 /v.** 使发生，引起
-    易错点：词性与词义辨析，常考搭配"have an effect on"（对...有影响），"affect the outcome"（影响结果）
-3.  **disparage /dɪˈspærɪdʒ/ v.** 贬低，轻视  vs  **dispense /dɪˈspens/ v.** 分配；分发（药剂）
-    易错点：结尾发音相近，需牢记词根含义，dispar-意为“不同”，故disparage有“看轻不同之处即贬低”之意。
+（AI 自动整理）
+### 今日背诵核心词汇（Unit 12 社会与健康类）
+1.  🔹 `cumulative` adj. 累积的；渐增的（考研高频考点词，常出现在数据类阅读中）
+    搭配：cumulative effect 累积效应
+    例句：The cumulative effects of overfishing have devastated marine ecosystems.
+2.  🔹 `mitigate` v. 减轻，缓解（常与damage, risk, impact等词搭配）
+    例句：Local governments are rolling out policies to mitigate traffic congestion.
+3.  🔹 `sedentary` adj. 久坐的；伏案的（健康类阅读高频词）
+    例句：A sedentary lifestyle increases the risk of heart disease.
+4.  🔹 `perspective` n. 视角；观点；透视画法
+    搭配：gain a new perspective on 对...产生新的认识
+5.  🔹 `polarize` v. 使两极分化（社会议题阅读高频词）
+    例句：The debate over abortion has polarized the country.
 
-### 新词积累
-今日新学习2010年Text 1中出现的25个核心真题词，整理如下：
-| 单词 | 音标 | 核心释义 | 真题适配例句 |
-| --- | --- | --- | --- |
-| ambiguous | /æmˈbɪɡjuəs/ | 模糊不清的，模棱两可的 | "The ambiguous wording of the policy led to widespread confusion." |
-| corroborate | /kəˈrɒbəreɪt/ | 证实，支持 | "The new study corroborates the findings of earlier research." |
-| epitome | /ɪˈpɪtəmi/ | 缩影，典型 | "The small town is the epitome of traditional American life." |
-| automate | /ˈɔːtəmeɪt/ | 使自动化 | "Factories have increasingly automated their production lines." |
-| textile | /ˈtekstaɪl/ | 纺织品，纺织业 | "The textile industry has seen significant changes in recent decades." |
+### 今日复盘易错词
+对比区分了两组易混词：
+- `complement` n./v. 补充，补足（强调完整性）
+- `compliment` n./v. 赞美，恭维（表赞扬）
+今天终于能快速分清两者的用法，避免再在阅读和写作中出错。
 
-## 长难句拆解
-### 选取长难句
-> In an essay entitled "Making It in America", the author Adam Davidson relates a joke from cotton country about just how much a modern textile mill has been automated: The average mill has only two employees today, "a man and a dog. The man is there to feed the dog, and the dog is there to keep the man away from the machines."
+## 长难句精读复盘
+选取2025年全国硕士研究生招生考试英语（一）Text 3 第二段的长难句进行拆解：
+> 原句：Researchers have found that people who regularly engage in moderate physical activity have a 20% lower risk of developing chronic diseases than those who lead a sedentary lifestyle.
+> 🔧 结构拆解：
+> 1.  主句主干：Researchers have found that + 宾语从句
+> 2.  宾语从句主干：people have a 20% lower risk of developing chronic diseases
+> 3.  后置定语1：who regularly engage in moderate physical activity 修饰先行词people
+> 4.  比较状语结构：than those who lead a sedentary lifestyle
+> 5.  后置定语2：who lead a sedentary lifestyle 修饰先行词those
+> 📝 参考翻译：研究人员发现，经常进行适度体育锻炼的人群，患慢性病的风险比久坐不动的人群低20%。
 
-### 结构拆解
-1.  主句部分：`the author Adam Davidson relates a joke`，主语为`the author Adam Davidson`，谓语为`relates`，宾语为`a joke`
-2.  前置状语：`In an essay entitled "Making It in America"`，其中`entitled "Making It in America"`为过去分词短语作后置定语修饰`essay`，"Making It in America"为美国口语经典表达，意为“在美国立足并取得成功”
-3.  后置限定：`from cotton country about just how much a modern textile mill has been automated`，其中`about`引导宾语从句`how much a modern textile mill has been automated`，补充说明笑话的核心调侃内容
-4.  冒号后内容：为直接引用的笑话原文，用夸张的幽默方式具象化现代工厂的自动化程度，辅助读者理解文本观点
-
-### 参考翻译
-在一篇题为《在美国闯出一片天》的文章中，作家亚当·戴维森讲述了一个来自产棉区的笑话，调侃现代纺织厂的自动化程度已然极高：如今普通纺织厂仅雇佣两名员工，“一个人和一条狗。人负责喂狗，狗负责让人别碰机器”。
-
-## 💡 今日碎碎念
-今天补完了上周落下的学习记录，差点因为拖延忘记复盘的易错知识点，还好及时补上了。背单词时特意用了艾宾浩斯复习计划表，把易混词单独整理在了错题本上，避免后续再混淆。长难句拆解虽然花了近四十分钟，但终于能快速理清嵌套从句的结构，不再对着满页语法标记头疼。考研英语的积累从来不是一蹴而就的，每天坚持啃下一小部分，相信最终一定能拿下目标分数！
-
+💡 碎碎念：今天背单词时用艾宾浩斯曲线复盘了前5天的词汇，发现高频词的出现频率比想象中更高，吃透核心词真的能大幅提升阅读速度。做阅读时遇到了今天刚背的`sedentary`，瞬间就反应过来意思，这种学以致用的感觉真的很棒！继续坚持每天积累，英语必上岸！
 > 文档内容由 AI 辅助生成
