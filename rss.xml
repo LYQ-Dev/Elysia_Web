@@ -1,4 +1,128 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-12</title><link>https://elysiaweb.vercel.app/posts/408/7-12/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-12/</guid><description>408 专业课学习与复盘</description><pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-12&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-13</title><link>https://elysiaweb.vercel.app/posts/408/7-13/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-13/</guid><description>408 专业课学习与复盘——散列表专题</description><pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-13&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今天总共投入2.5小时学习散列表相关知识点，覆盖了408统考大纲中数据结构板块的散列表核心考点。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 散列表核心概念复盘&lt;/h3&gt;
+&lt;p&gt;散列表（Hash Table）又称哈希表，是根据关键字(key)直接进行访问的数据结构，通过把关键字映射到表中一个位置来访问记录，以加快查找速度，这个映射函数称为散列函数，存放记录的数组称为散列表。考研核心考点：散列表的平均查找长度(ASL)与装填因子$\alpha = \frac{表中记录数n}{散列表长度m}$直接相关，$\alpha$越小，发生冲突的概率越低，平均查找长度越小。&lt;/p&gt;
+&lt;h3&gt;2. 常用散列函数构造方法&lt;/h3&gt;
+&lt;p&gt;考研高频考点包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;除留余数法：最常用的构造方法，公式为$H(key) = key % p$，其中$p$应取不大于散列表长度$m$的最大质数，可最大程度减少冲突。&lt;/li&gt;
+&lt;li&gt;直接定址法：$H(key) = a*key + b$，适用于关键字分布连续的场景。&lt;/li&gt;
+&lt;li&gt;数字分析法、平方取中法等，多以选择题形式考察适用场景。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. 冲突解决方法（考研核心大题考点）&lt;/h3&gt;
+&lt;p&gt;分为两大类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;开放地址法：
+&lt;ul&gt;
+&lt;li&gt;线性探测法：$H_i = (H(key) + i) % m, i=1,2,...,k(k\leq m-1)$，缺点是会产生“堆积”问题，相同散列地址的关键字越多，查找效率越低。&lt;/li&gt;
+&lt;li&gt;二次探测法：$H_i = (H(key) \pm i^2) % m$，避免了线性探测的堆积问题，但不能探测到整个散列表空间。&lt;/li&gt;
+&lt;li&gt;双散列法：使用第二个散列函数计算增量，进一步减少堆积。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;链地址法：将所有关键字为同义词的记录存储在一个单链表中，散列表数组存储每个链表的头指针，是考研最常考察的冲突解决方法，其平均查找长度与装填因子$\alpha$线性相关，且不会产生堆积问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;4. 平均查找长度计算&lt;/h3&gt;
+&lt;p&gt;考研常考察不同冲突处理方法下的ASL计算，例如给定关键字序列和散列表长度，计算线性探测法下的成功和不成功平均查找长度，需要重点掌握计算步骤。&lt;/p&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对于不同冲突解决方法下平均查找长度的计算逻辑仍不够熟练，尤其是不成功ASL的推导过程容易混淆。&lt;/li&gt;
+&lt;li&gt;对双散列法的具体实现细节和适用场景还需要进一步梳理巩固。&lt;/li&gt;
+&lt;li&gt;在选择题中容易混淆线性探测法和二次探测法的优缺点，需要强化对比记忆。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;系统梳理了408大纲中散列表板块的所有核心考点，明确了散列表的核心优势在于通过空间换时间实现高效查找。&lt;/li&gt;
+&lt;li&gt;掌握了除留余数法等主流散列函数的构造规则和适用场景，能够快速判断不同场景下应选用的散列函数。&lt;/li&gt;
+&lt;li&gt;厘清了开放地址法和链地址法的核心区别，能够准确分析两种方法的优缺点和适用场景。&lt;/li&gt;
+&lt;li&gt;明确了装填因子$\alpha$对散列表查找效率的决定性影响，理解了$\alpha$与平均查找长度的正向关联逻辑。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-07-13</title><link>https://elysiaweb.vercel.app/posts/english/7-13/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/7-13/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-07-13&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;Total study duration: 1 hour and 10 minutes&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;45 minutes of vocabulary practice: memorized the 17th list of the National Postgraduate Entrance Examination (NPSEE) core vocabulary, focused on mastering 18 high-frequency words, their collocations and common uncommon meanings, and sorted out the error-prone points in a special notebook.&lt;/li&gt;
+&lt;li&gt;25 minutes of long difficult sentence analysis and reading training: dissected 3 complex nested long sentences from the 2020 NPSEE English Paper I Text 2, sorted out the structural logic of attributive clauses and participial modifiers, and summarized translation tips for multi-layered complex sentences.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;address&lt;/strong&gt; /əˈdres/
+&lt;ul&gt;
+&lt;li&gt;熟词僻义：v. 处理，解决（问题）；向……发表正式演说&lt;/li&gt;
+&lt;li&gt;真题例句：The policy aims to address the housing shortage in urban areas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;stumble&lt;/strong&gt; /ˈstʌmbl/
+&lt;ul&gt;
+&lt;li&gt;考研核心考法：v. 偶然发现，碰巧找到&lt;/li&gt;
+&lt;li&gt;真题例句：The researcher stumbled upon a new method while conducting experiments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tenure&lt;/strong&gt; /ˈtenjə(r)/
+&lt;ul&gt;
+&lt;li&gt;释义：n. (大学的)终身职位；任期&lt;/li&gt;
+&lt;li&gt;例句：She gained tenure at Harvard University after 7 years of academic work.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;paradox&lt;/strong&gt; /ˈpærədɒks/
+&lt;ul&gt;
+&lt;li&gt;释义：n. 矛盾现象，悖论&lt;/li&gt;
+&lt;li&gt;例句：There&apos;s a famous paradox about choice: more options often lead to less satisfaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：今天做真题阅读时差点因为记错了address的熟词僻义选错答案，幸好及时复盘纠正了错误。长难句的嵌套从句拆分还是不够熟练，遇到多层修饰的时候经常会打乱逻辑顺序，明天计划额外增加15分钟的长难句专项拆分练习。坚持每天积累点滴进步，相信终会抵达考研上岸的目标！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-07-13</title><link>https://elysiaweb.vercel.app/posts/math/7-13/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-13/</guid><description>考研数学学习与复盘记录</description><pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-13&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;3.5h  多元微分学的几何应用&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对空间曲线参数方程、交面式方程两种形式的切向量求解逻辑混淆，交面式下双曲面法向量的叉乘计算容易出现分量顺序错误或符号失误；&lt;/li&gt;
+&lt;li&gt;曲面切平面与法线的求解中，显式方程和隐式方程对应的法向量结构记混，尤其是隐式方程中法向量z分量的符号容易搞反；&lt;/li&gt;
+&lt;li&gt;结合多元微分几何应用的极值类题型中，无法快速将几何距离、最值等实际问题转化为多元函数极值问题，对约束条件的提取不够精准。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;p&gt;多元微分学的几何应用是考研数学高数模块的核心高频考点之一，主要围绕空间曲线的切线与法平面、曲面的切平面与法线两大核心题型展开，结合考研大纲要求复盘如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;空间曲线的几何应用&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;参数方程形式：若空间曲线$\Gamma$的参数方程为$x=x(t), y=y(t), z=z(t)$，在对应参数$t=t_0$的点$M_0(x_0,y_0,z_0)$（其中$x_0=x(t_0),y_0=y(t_0),z_0=z(t_0)$）处，切向量为$\boldsymbol{\tau}=(x&apos;(t_0), y&apos;(t_0), z&apos;(t_0))$。
+切线方程为：$\frac{x-x_0}{x&apos;(t_0)}=\frac{y-y_0}{y&apos;(t_0)}=\frac{z-z_0}{z&apos;(t_0)}$
+法平面（过$M_0$且与切向量垂直的平面）方程为：$x&apos;(t_0)(x-x_0)+y&apos;(t_0)(y-y_0)+z&apos;(t_0)(z-z_0)=0$&lt;/li&gt;
+&lt;li&gt;交面式（两曲面交线）形式：若$\Gamma$由$\begin{cases}F(x,y,z)=0\G(x,y,z)=0\end{cases}$确定，则切向量为两个曲面在$M_0$处法向量的叉乘：$\boldsymbol{\tau}=\begin{vmatrix}
+\boldsymbol{i} &amp;amp; \boldsymbol{j} &amp;amp; \boldsymbol{k} \
+F_x(M_0) &amp;amp; F_y(M_0) &amp;amp; F_z(M_0) \
+G_x(M_0) &amp;amp; G_y(M_0) &amp;amp; G_z(M_0)
+\end{vmatrix}=(F_yG_z-F_zG_y, F_zG_x-F_xG_z, F_xG_y-F_yG_x)|_{M_0}$，后续切线与法平面方程可套用参数式通用公式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;曲面的几何应用&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;显式方程形式：若曲面$\Sigma$为$z=f(x,y)$，在点$M_0(x_0,y_0,z_0)$（$z_0=f(x_0,y_0)$）处，法向量为$\boldsymbol{n}=(f_x(x_0,y_0), f_y(x_0,y_0), -1)$。
+切平面方程：$z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$
+法线方程：$\frac{x-x_0}{f_x(x_0,y_0)}=\frac{y-y_0}{f_y(x_0,y_0)}=\frac{z-z_0}{-1}$&lt;/li&gt;
+&lt;li&gt;隐式方程形式：若曲面$\Sigma$为$F(x,y,z)=0$，在$M_0(x_0,y_0,z_0)$处的法向量为$\boldsymbol{n}=(F_x(M_0), F_y(M_0), F_z(M_0))$，切平面与法线方程可直接由法向量推导，注意此处法向量的z分量符号与显式方程完全相反，切勿混淆。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;考研常考延伸题型&lt;/strong&gt;
+该模块常结合多元函数极值、条件极值进行综合考查，比如求曲面上的点到定点的最短/最长距离、证明曲面的切平面具有某类共性等，解题核心是先准确求出切向量或法向量，再结合极值判定条件完成后续推导。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日共计投入3.5小时完成多元微分学几何应用的专项学习，先系统梳理了两类核心场景的公式体系，随后通过8道典型例题完成了参数式曲线、交面式曲线、显式/隐式曲面的几何应用练习，还完成了2道结合条件极值的综合应用题，初步掌握了不同场景下切向量、法向量的求解步骤，但在交面式曲线的切向量叉乘计算上仍存在卡顿，后续需要针对性加强该类题型的训练，提升计算熟练度。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-07-12</title><link>https://elysiaweb.vercel.app/posts/408/7-12/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-12/</guid><description>408 专业课学习与复盘</description><pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-12&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;两个半小时 B树 B+树&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
