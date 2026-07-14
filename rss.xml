@@ -1,4 +1,199 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-13</title><link>https://elysiaweb.vercel.app/posts/408/7-13/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-13/</guid><description>408 专业课学习与复盘——散列表专题</description><pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-13&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-15</title><link>https://elysiaweb.vercel.app/posts/408/7-15/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-15/</guid><description>408 专业课学习与复盘</description><pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-15&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入2.5小时学习，重点梳理了内部排序模块中的&lt;strong&gt;简单插入排序&lt;/strong&gt;与&lt;strong&gt;希尔排序&lt;/strong&gt;两种经典插入类排序算法，覆盖了原理、实现细节与考研核心考点。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 简单插入排序&lt;/h3&gt;
+&lt;h4&gt;核心思想&lt;/h4&gt;
+&lt;p&gt;将待排序数组划分为&lt;strong&gt;有序区&lt;/strong&gt;和&lt;strong&gt;无序区&lt;/strong&gt;，初始时有序区仅包含数组第一个元素。依次遍历无序区的每个元素，从后往前与有序区元素比较，将大于当前元素的有序区元素向后移动一位，直到找到当前元素的插入位置，插入后扩大有序区范围，直至整个数组完全有序。&lt;/p&gt;
+&lt;h4&gt;标准实现（伪代码）&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;void insertSort(int arr[], int n) {
+    for (int i = 1; i &amp;lt; n; i++) {
+        int temp = arr[i]; // 缓存当前待插入元素
+        int j = i - 1;
+        // 从后往前遍历有序区，移动元素腾出插入位置
+        while (j &amp;gt;= 0 &amp;amp;&amp;amp; arr[j] &amp;gt; temp) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = temp; // 插入到正确位置
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;考研考点与特性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：最好情况（数组已有序）为$O(n)$，最坏情况（数组逆序）为$O(n^2)$，平均复杂度为$O(n^2)$&lt;/li&gt;
+&lt;li&gt;空间复杂度：$O(1)$，属于原地排序算法&lt;/li&gt;
+&lt;li&gt;稳定性：稳定排序，相等元素的相对位置不会发生改变&lt;/li&gt;
+&lt;li&gt;适用场景：数据量较小、数组基本有序的排序场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. 希尔排序&lt;/h3&gt;
+&lt;h4&gt;核心思想&lt;/h4&gt;
+&lt;p&gt;是简单插入排序的优化版本，通过&lt;strong&gt;增量分组&lt;/strong&gt;降低插入排序的元素移动次数：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;选定初始增量&lt;code&gt;gap = n/2&lt;/code&gt;（n为数组长度），将数组划分为&lt;code&gt;gap&lt;/code&gt;个子序列，每个子序列的元素下标间隔为&lt;code&gt;gap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;对每个子序列分别执行简单插入排序，让数组逐步趋近全局有序&lt;/li&gt;
+&lt;li&gt;逐步缩小增量（&lt;code&gt;gap = gap // 2&lt;/code&gt;），重复分组排序过程，直到&lt;code&gt;gap=1&lt;/code&gt;，此时对整个数组执行一次简单插入排序，此时数组已基本有序，仅需少量移动即可完成最终排序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;标准实现（伪代码）&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;void shellSort(int arr[], int n) {
+    for (int gap = n / 2; gap &amp;gt; 0; gap /= 2) {
+        // 对每个分组执行插入排序
+        for (int i = gap; i &amp;lt; n; i++) {
+            int temp = arr[i];
+            int j = i - gap;
+            while (j &amp;gt;= 0 &amp;amp;&amp;amp; arr[j] &amp;gt; temp) {
+                arr[j + gap] = arr[j];
+                j -= gap;
+            }
+            arr[j + gap] = temp;
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;考研考点与特性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;时间复杂度：依赖增量序列，采用希尔增量时平均复杂度为$O(n^{1.3}) \sim O(n^2)$，最坏复杂度仍为$O(n^2)$&lt;/li&gt;
+&lt;li&gt;空间复杂度：$O(1)$，属于原地排序算法&lt;/li&gt;
+&lt;li&gt;稳定性：不稳定排序，分组插入会改变相等元素的相对位置&lt;/li&gt;
+&lt;li&gt;适用场景：数据量较大的无序数组排序场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. 两种排序算法对比&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;维度&lt;/th&gt;
+&lt;th&gt;简单插入排序&lt;/th&gt;
+&lt;th&gt;希尔排序&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;稳定性&lt;/td&gt;
+&lt;td&gt;稳定&lt;/td&gt;
+&lt;td&gt;不稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;平均时间复杂度&lt;/td&gt;
+&lt;td&gt;$O(n^2)$&lt;/td&gt;
+&lt;td&gt;$O(n^{1.3})$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;核心优化点&lt;/td&gt;
+&lt;td&gt;无分组直接插入&lt;/td&gt;
+&lt;td&gt;增量分组减少移动次数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;适用场景&lt;/td&gt;
+&lt;td&gt;小数据、基本有序&lt;/td&gt;
+&lt;td&gt;大数据集&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对希尔排序不同增量序列对性能的影响理解不够透彻，仅掌握了基础的希尔增量版本&lt;/li&gt;
+&lt;li&gt;手写希尔排序代码时，分组遍历的下标逻辑容易出现偏移错误&lt;/li&gt;
+&lt;li&gt;偶尔会混淆两种排序算法的稳定性判断，需要通过例题强化记忆&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;完整掌握了简单插入排序与希尔排序的原理、实现代码与408高频考点&lt;/li&gt;
+&lt;li&gt;明确了两种插入类排序算法的适用场景、性能差异与稳定性区别&lt;/li&gt;
+&lt;li&gt;能够独立完成两种排序算法的手写代码，并准确判断其复杂度与稳定性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-07-15</title><link>https://elysiaweb.vercel.app/posts/english/7-15/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/7-15/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-07-15&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;2 hours in total, split into 1 hour for targeted vocabulary memorization and review, 1 hour for long difficult sentence parsing and reading comprehension practice.&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;h3&gt;今日核心考研词汇（选自2026考研大纲高频词）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;persist&lt;/strong&gt; /pəˈsɪst/ v. 坚持，执意；持续存在
+&lt;ul&gt;
+&lt;li&gt;常用搭配：persist in (doing) sth.&lt;/li&gt;
+&lt;li&gt;真题例句：If you then examined the European national youth teams that feed the World Cup and professional ranks, you would find this strange phenomenon to be even more pronounced.（选自2007年考研阅读Text1）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;derive&lt;/strong&gt; /dɪˈraɪv/ v. 起源于，来自；取得，获得
+&lt;ul&gt;
+&lt;li&gt;常用搭配：derive from&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;compensate&lt;/strong&gt; /ˈkɒmpenseɪt/ v. 补偿，弥补；赔偿
+&lt;ul&gt;
+&lt;li&gt;常用搭配：compensate for&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;deteriorate&lt;/strong&gt; /dɪˈtɪəriəreɪt/ v. 恶化，变坏；退化&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;endorse&lt;/strong&gt; /ɪnˈdɔːs/ v. 赞同，支持；在（文件）上签名，背书&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;prevalent&lt;/strong&gt; /ˈprevələnt/ adj. 普遍存在的，流行的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;形近词易混点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;adapt /əˈdæpt/ v. 适应；改编 vs adopt /əˈdɒpt/ v. 收养；采纳，采用&lt;/li&gt;
+&lt;li&gt;elicit /ɪˈlɪsɪt/ v. 引出，探出；引发 vs illicit /ɪˈlɪsɪt/ adj. 非法的，违禁的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;长难句分析（选自2006年考研阅读Text3）&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原句：The definition also excludes the majority of teachers, despite the fact that many have traditionally practiced the &quot;public&quot; intellectual profession of discussing and teaching aspects of philosophy, which is a form of public engagement.
+拆分解析：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;主句：The definition also excludes the majority of teachers&lt;/li&gt;
+&lt;li&gt;让步状语：despite the fact that... 其中that引导同位语从句解释说明fact&lt;/li&gt;
+&lt;li&gt;同位语从句内部：many have traditionally practiced the &quot;public&quot; intellectual profession of discussing and teaching aspects of philosophy&lt;/li&gt;
+&lt;li&gt;非限制性定语从句：which is a form of public engagement 修饰先行词the &quot;public&quot; intellectual profession&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;💡 碎碎念：今天尝试用真题例句辅助背单词，遗忘率比单独背拼写低了不少，长难句的嵌套结构终于能快速理清了，继续坚持每天积累，考研英语上岸指日可待！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-07-15</title><link>https://elysiaweb.vercel.app/posts/math/7-15/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-15/</guid><description>考研数学学习与复盘记录</description><pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-15&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日累计学习时长3.5小时，聚焦考研数学多元积分学的几何应用模块，完成该模块专项刷题训练，涵盖曲面面积计算、空间立体体积求解两类核心题型，共计完成42道练习题并对照参考答案完成批改复盘。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;p&gt;通过今日刷题暴露出的核心薄弱点如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;积分区域确定失误&lt;/strong&gt;：处理复杂曲面交线的投影问题时，常遗漏边界曲线的投影转换，导致二重积分的积分区间划分错误；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对称性应用偏差&lt;/strong&gt;：对积分区域奇偶性与被积函数奇偶性的匹配条件把握不准，错误套用对称性简化计算，出现结果符号或数值偏差；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;坐标转换细节疏漏&lt;/strong&gt;：柱坐标、球坐标转换多元积分时，时常遗忘雅可比行列式的系数（如柱坐标漏乘$r$、球坐标漏乘$r^2\sin\varphi$），最终计算结果出错；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;旋转曲面公式混淆&lt;/strong&gt;：绕不同坐标轴旋转的曲面面积公式记忆模糊，常出现系数或根号部分的计算错误。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;多元积分几何应用考研核心考点复盘&lt;/h3&gt;
+&lt;p&gt;多元积分几何应用是考研数学高数模块高频考点，核心聚焦&lt;strong&gt;曲面面积计算&lt;/strong&gt;与&lt;strong&gt;空间立体体积求解&lt;/strong&gt;两类题型，结合考研真题考情复盘如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;曲面面积计算&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;显式曲面$z=f(x,y)$（定义在$xOy$平面区域$D$上）的面积公式：
+$$A=\iint_D \sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}d\sigma$$&lt;/li&gt;
+&lt;li&gt;参数曲面$\boldsymbol{r}(u,v)=x(u,v)\boldsymbol{i}+y(u,v)\boldsymbol{j}+z(u,v)\boldsymbol{k}$的面积公式：
+$$A=\iint_{D_{uv}} \sqrt{EG-F^2}dudv$$
+其中$E=\boldsymbol{r}_u\cdot\boldsymbol{r}_u$，$F=\boldsymbol{r}_u\cdot\boldsymbol{r}_v$，$G=\boldsymbol{r}_v\cdot\boldsymbol{r}_v$。考研中常结合旋转曲面考察，绕$x$轴旋转的曲面面积简化公式为$A=2\pi\int_a^b y\sqrt{1+(y&apos;)^2}dx$，需严格区分旋转轴对应的变量替换规则。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;空间立体体积求解&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;曲顶柱体体积：$V=\iint_D [z_2(x,y)-z_1(x,y)]d\sigma$，其中$z_2,z_1$分别为上下曲面表达式，$D$为柱体在$xOy$平面的投影区域；&lt;/li&gt;
+&lt;li&gt;三重积分法：空间封闭区域$\Omega$的体积$V=\iiint_\Omega dV$，可通过直角坐标、柱坐标、球坐标转换完成计算；&lt;/li&gt;
+&lt;li&gt;对称性简化规则：若积分区域关于坐标平面对称，被积函数为对应变量的奇函数，则积分结果为0，可用于快速简化体积计算。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;考研常见易错陷阱&lt;/strong&gt;
+① 投影区域边界确定：需先求解曲面交线方程，再消去对应坐标得到投影柱面，进而明确投影区域范围；
+② 旋转曲面方程推导：绕$y$轴旋转时需将$x$替换为$\sqrt{x^2+z^2}$，不可直接套用绕$x$轴的公式；
+③ 积分限合理性：需根据积分区域实际范围确定上下限，避免出现上限小于下限的低级错误。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日通过专项刷题巩固了多元积分几何应用的核心解题逻辑，明确了自身在积分区域划分、坐标转换细节上的不足。后续将针对薄弱点开展专项补练，重点练习复杂投影区域划分与旋转曲面面积计算题型。
+💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-07-13</title><link>https://elysiaweb.vercel.app/posts/408/7-13/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-13/</guid><description>408 专业课学习与复盘——散列表专题</description><pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-13&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今天总共投入2.5小时学习散列表相关知识点，覆盖了408统考大纲中数据结构板块的散列表核心考点。&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
