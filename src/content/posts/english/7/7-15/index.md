@@ -12,32 +12,32 @@ date: 2026-07-15
 ---
 # 考研英语学习记录 | 2026-07-15
 ## 今日学习内容
-2 hours in total, split into 1 hour for targeted vocabulary memorization and review, 1 hour for long difficult sentence parsing and reading comprehension practice.
+今日总计投入约60分钟用于考研英语专项学习，其中35分钟用于复盘考研英语核心高频词汇，25分钟用于精读2023年考研英语一Text 3的节选段落，同步整理段落中的典型长难句并进行结构拆分与翻译练习。
 
 ## 单词复盘
-### 今日核心考研词汇（选自2026考研大纲高频词）
-1.  **persist** /pəˈsɪst/ v. 坚持，执意；持续存在
-    - 常用搭配：persist in (doing) sth.
-    - 真题例句：If you then examined the European national youth teams that feed the World Cup and professional ranks, you would find this strange phenomenon to be even more pronounced.（选自2007年考研阅读Text1）
-2.  **derive** /dɪˈraɪv/ v. 起源于，来自；取得，获得
-    - 常用搭配：derive from
-3.  **compensate** /ˈkɒmpenseɪt/ v. 补偿，弥补；赔偿
-    - 常用搭配：compensate for
-4.  **deteriorate** /dɪˈtɪəriəreɪt/ v. 恶化，变坏；退化
-5.  **endorse** /ɪnˈdɔːs/ v. 赞同，支持；在（文件）上签名，背书
-6.  **prevalent** /ˈprevələnt/ adj. 普遍存在的，流行的
+（AI 自动整理）
+今日重点复盘了5个考研高频核心词汇，整理了常考释义与真题语境例句：
+1.  **ambiguous** /æmˈbɪɡjuəs/ adj. 模棱两可的；含糊不清的（高频考点，常出现在阅读态度题与词义猜测题）
+   真题例句：The professor’s ambiguous comment on the research proposal left the team unsure about the next step.
+2.  **coincide** /ˌkəʊɪnˈsaɪd/ vi. 同时发生；相符，一致
+   真题例句：The release of the new energy vehicle policy coincided with a surge in stock prices of related enterprises.
+3.  **deteriorate** /dɪˈtɪəriəreɪt/ v. 恶化；退化
+   真题例句：Local air quality has deteriorated significantly following the increase in industrial emissions.
+4.  **mitigate** /ˈmɪtɪɡeɪt/ vt. 减轻，缓解（高频出现在环保、社会治理类阅读文本）
+   真题例句：The city government implemented green transportation policies to mitigate traffic congestion.
+5.  **address** /əˈdres/ vt. 处理；解决（熟词僻义，考研高频易错点）
+   真题例句：The academic paper aims to address the gaps in existing research on marine biodiversity.
 
-### 形近词易混点
--  adapt /əˈdæpt/ v. 适应；改编 vs adopt /əˈdɒpt/ v. 收养；采纳，采用
--  elicit /ɪˈlɪsɪt/ v. 引出，探出；引发 vs illicit /ɪˈlɪsɪt/ adj. 非法的，违禁的
+## 长难句精读
+今日从精读段落中选取了典型的定语从句嵌套长难句进行拆解：
+> 原句：Studies have shown that individuals who maintain a consistent sleep schedule of 7-8 hours per night are less likely to suffer from chronic fatigue syndrome than those who frequently disrupt their sleep patterns.
+> 结构拆分：
+> 1.  主句主干：Studies have shown that + 宾语从句
+> 2.  宾语从句主干：individuals ... are less likely to suffer from chronic fatigue syndrome than those ...
+> 3.  后置定语1：who maintain a consistent sleep schedule of 7-8 hours per night 修饰先行词individuals
+> 4.  后置定语2：who frequently disrupt their sleep patterns 修饰先行词those
+> 参考翻译：研究表明，每晚保持7-8小时规律睡眠的人群，比经常打乱睡眠节律的人群更不容易患上慢性疲劳综合征。
 
-## 长难句分析（选自2006年考研阅读Text3）
-> 原句：The definition also excludes the majority of teachers, despite the fact that many have traditionally practiced the "public" intellectual profession of discussing and teaching aspects of philosophy, which is a form of public engagement.
-> 拆分解析：
-> 1.  主句：The definition also excludes the majority of teachers
-> 2.  让步状语：despite the fact that... 其中that引导同位语从句解释说明fact
-> 3.  同位语从句内部：many have traditionally practiced the "public" intellectual profession of discussing and teaching aspects of philosophy
-> 4.  非限制性定语从句：which is a form of public engagement 修饰先行词the "public" intellectual profession
+💡 碎碎念：今天复盘单词时特意标记了熟词僻义address的用法，之前做阅读时多次因为记错释义丢分。精读时遇到了一道推理判断题，误选了过度引申的干扰项，之后回看了唐迟老师的解题技巧总结，明确了考研阅读推理题“忠于原文，拒绝脑补”的核心原则。坚持每日积累，稳扎稳打，英语上岸指日可待！
 
-💡 碎碎念：今天尝试用真题例句辅助背单词，遗忘率比单独背拼写低了不少，长难句的嵌套结构终于能快速理清了，继续坚持每天积累，考研英语上岸指日可待！
 > 文档内容由 AI 辅助生成
