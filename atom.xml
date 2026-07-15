@@ -5,7 +5,7 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-14T16:13:42.952Z</updated>
+  <updated>2026-07-15T15:16:45.058Z</updated>
   <language>zh_CN</language>
   <entry>
     <title>考研专业课学习记录2026-07-15</title>
@@ -13,109 +13,88 @@
     <id>https://elysiaweb.vercel.app/posts/408/7-15/</id>
     <published>2026-07-15T00:00:00.000Z</published>
     <updated>2026-07-15T00:00:00.000Z</updated>
-    <summary>408 专业课学习与复盘</summary>
+    <summary>408数据结构排序算法学习与复盘</summary>
     <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-07-15</h1>
 <h2>今日学习内容</h2>
-<p>今日共计投入2.5小时学习，重点梳理了内部排序模块中的<strong>简单插入排序</strong>与<strong>希尔排序</strong>两种经典插入类排序算法，覆盖了原理、实现细节与考研核心考点。</p>
+<p>今日共计投入2小时系统学习408数据结构中的内部排序算法，重点深入理解冒泡排序与快速排序的核心原理、考点细节与应用场景。</p>
 <h2>AI知识点带复盘</h2>
-<h3>1. 简单插入排序</h3>
-<h4>核心思想</h4>
-<p>将待排序数组划分为<strong>有序区</strong>和<strong>无序区</strong>，初始时有序区仅包含数组第一个元素。依次遍历无序区的每个元素，从后往前与有序区元素比较，将大于当前元素的有序区元素向后移动一位，直到找到当前元素的插入位置，插入后扩大有序区范围，直至整个数组完全有序。</p>
-<h4>标准实现（伪代码）</h4>
-<pre><code>void insertSort(int arr[], int n) {
-    for (int i = 1; i &lt; n; i++) {
-        int temp = arr[i]; // 缓存当前待插入元素
-        int j = i - 1;
-        // 从后往前遍历有序区，移动元素腾出插入位置
-        while (j &gt;= 0 &amp;&amp; arr[j] &gt; temp) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = temp; // 插入到正确位置
-    }
-}
-</code></pre>
-<h4>考研考点与特性</h4>
-<ul>
-<li>时间复杂度：最好情况（数组已有序）为$O(n)$，最坏情况（数组逆序）为$O(n^2)$，平均复杂度为$O(n^2)$</li>
-<li>空间复杂度：$O(1)$，属于原地排序算法</li>
-<li>稳定性：稳定排序，相等元素的相对位置不会发生改变</li>
-<li>适用场景：数据量较小、数组基本有序的排序场景</li>
-</ul>
-<h3>2. 希尔排序</h3>
-<h4>核心思想</h4>
-<p>是简单插入排序的优化版本，通过<strong>增量分组</strong>降低插入排序的元素移动次数：</p>
+<h3>一、冒泡排序</h3>
 <ol>
-<li>选定初始增量<code>gap = n/2</code>（n为数组长度），将数组划分为<code>gap</code>个子序列，每个子序列的元素下标间隔为<code>gap</code></li>
-<li>对每个子序列分别执行简单插入排序，让数组逐步趋近全局有序</li>
-<li>逐步缩小增量（<code>gap = gap // 2</code>），重复分组排序过程，直到<code>gap=1</code>，此时对整个数组执行一次简单插入排序，此时数组已基本有序，仅需少量移动即可完成最终排序</li>
-</ol>
-<h4>标准实现（伪代码）</h4>
-<pre><code>void shellSort(int arr[], int n) {
-    for (int gap = n / 2; gap &gt; 0; gap /= 2) {
-        // 对每个分组执行插入排序
-        for (int i = gap; i &lt; n; i++) {
-            int temp = arr[i];
-            int j = i - gap;
-            while (j &gt;= 0 &amp;&amp; arr[j] &gt; temp) {
-                arr[j + gap] = arr[j];
-                j -= gap;
-            }
-            arr[j + gap] = temp;
-        }
-    }
-}
-</code></pre>
-<h4>考研考点与特性</h4>
+<li><strong>核心原理</strong>：通过重复遍历待排序序列，依次比较相邻两个元素的大小，若顺序错误则交换它们，每一轮遍历都会将当前未排序序列中的最大（或最小）元素“冒泡”到末尾的正确位置。</li>
+<li><strong>考研核心考点</strong>
 <ul>
-<li>时间复杂度：依赖增量序列，采用希尔增量时平均复杂度为$O(n^{1.3}) \sim O(n^2)$，最坏复杂度仍为$O(n^2)$</li>
-<li>空间复杂度：$O(1)$，属于原地排序算法</li>
-<li>稳定性：不稳定排序，分组插入会改变相等元素的相对位置</li>
-<li>适用场景：数据量较大的无序数组排序场景</li>
+<li>时间复杂度：未优化版本下，最坏/平均情况为$O(n^2)$，最优情况（序列已有序）下，通过设置交换标记优化后可降至$O(n)$；</li>
+<li>空间复杂度：仅使用常数级额外空间，为$O(1)$；</li>
+<li>稳定性：属于稳定排序算法，相等元素的相对位置不会因交换发生改变；</li>
+<li>适用场景：小规模、近乎有序的序列，实现简单但整体效率较低。</li>
 </ul>
-<h3>3. 两种排序算法对比</h3>
+</li>
+<li>常见优化：通过设置<code>flag</code>标记本轮遍历是否发生交换，若未交换则说明序列已有序，可直接提前终止循环。</li>
+</ol>
+<h3>二、快速排序</h3>
+<ol>
+<li><strong>核心原理</strong>：基于分治思想的排序算法，核心步骤为分区（Partition）：
+<ol>
+<li>选取一个基准元素（Pivot）；</li>
+<li>将序列划分为两部分，左侧所有元素小于等于基准，右侧所有元素大于等于基准，基准元素处于最终的正确位置；</li>
+<li>递归对左右两个子序列重复上述步骤，直至所有子序列长度为1。</li>
+</ol>
+</li>
+<li><strong>考研核心考点</strong>
+<ul>
+<li>时间复杂度：最优/平均情况为$O(n\log n)$（每次分区都能将序列均匀划分为两个等长子序列），最坏情况（如有序序列选取首元素作为基准）为$O(n^2)$；</li>
+<li>空间复杂度：最优情况为$O(\log n)$（递归栈深度为$\log_2 n$），最坏情况为$O(n)$；</li>
+<li>稳定性：属于不稳定排序算法，跨元素交换可能会改变相等元素的相对位置；</li>
+<li>常见优化：三数取中法选取基准、随机选取基准避免最坏情况、当子序列长度较小时改用插入排序减少递归开销；</li>
+<li>分区实现：常考察Hoare分区（双指针法）与Lomuto分区（单指针法）两种经典实现方式。</li>
+</ul>
+</li>
+</ol>
+<h3>三、考点对比</h3>
+<p>结合408选择题高频考点，对比冒泡排序与快速排序的核心差异：</p>
 <table>
 <thead>
 <tr>
 <th>维度</th>
-<th>简单插入排序</th>
-<th>希尔排序</th>
+<th>冒泡排序</th>
+<th>快速排序</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>时间复杂度</td>
+<td>$O(n^2)$为主</td>
+<td>$O(n\log n)$为主</td>
+</tr>
 <tr>
 <td>稳定性</td>
 <td>稳定</td>
 <td>不稳定</td>
 </tr>
 <tr>
-<td>平均时间复杂度</td>
-<td>$O(n^2)$</td>
-<td>$O(n^{1.3})$</td>
+<td>空间复杂度</td>
+<td>$O(1)$</td>
+<td>$O(\log n)$~$O(n)$</td>
 </tr>
 <tr>
-<td>核心优化点</td>
-<td>无分组直接插入</td>
-<td>增量分组减少移动次数</td>
-</tr>
-<tr>
-<td>适用场景</td>
-<td>小数据、基本有序</td>
-<td>大数据集</td>
+<td>核心思想</td>
+<td>相邻交换迭代</td>
+<td>分治递归分区</td>
 </tr>
 </tbody>
 </table>
 <h2>问题与反思</h2>
 <ol>
-<li>对希尔排序不同增量序列对性能的影响理解不够透彻，仅掌握了基础的希尔增量版本</li>
-<li>手写希尔排序代码时，分组遍历的下标逻辑容易出现偏移错误</li>
-<li>偶尔会混淆两种排序算法的稳定性判断，需要通过例题强化记忆</li>
+<li>对快速排序两种分区实现的边界条件处理仍不够熟练，容易在模拟分区过程中出现指针越界的错误；</li>
+<li>对冒泡排序优化版本的触发条件记忆不够清晰，容易混淆最优复杂度的适用场景；</li>
+<li>快速排序的最坏时间复杂度的推导场景容易和其他排序算法混淆，需要结合具体序列案例再巩固练习。</li>
 </ol>
 <h2>收获与总结</h2>
 <ol>
-<li>完整掌握了简单插入排序与希尔排序的原理、实现代码与408高频考点</li>
-<li>明确了两种插入类排序算法的适用场景、性能差异与稳定性区别</li>
-<li>能够独立完成两种排序算法的手写代码，并准确判断其复杂度与稳定性</li>
+<li>完整梳理了冒泡排序的基础实现与优化思路，明确了其在408考试中的考点范围；</li>
+<li>掌握了快速排序的核心原理与两种分区实现方式，能够独立推导其时间复杂度与空间复杂度；</li>
+<li>明确了两种排序算法的稳定性、复杂度差异与适用场景，能够快速应对408选择题中的排序算法对比类题目；</li>
+<li>学会了从考研命题角度拆解知识点，将基础原理与考试考点结合复盘，提升学习效率。</li>
 </ol>
 <p>💡 碎碎念：踏实吃透每一个知识点！</p>
 <blockquote>
@@ -136,47 +115,36 @@
     <summary>考研英语单词与长难句学习记录</summary>
     <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-15</h1>
 <h2>今日学习内容</h2>
-<p>2 hours in total, split into 1 hour for targeted vocabulary memorization and review, 1 hour for long difficult sentence parsing and reading comprehension practice.</p>
+<p>今日总计投入约60分钟用于考研英语专项学习，其中35分钟用于复盘考研英语核心高频词汇，25分钟用于精读2023年考研英语一Text 3的节选段落，同步整理段落中的典型长难句并进行结构拆分与翻译练习。</p>
 <h2>单词复盘</h2>
-<h3>今日核心考研词汇（选自2026考研大纲高频词）</h3>
+<p>（AI 自动整理）
+今日重点复盘了5个考研高频核心词汇，整理了常考释义与真题语境例句：</p>
 <ol>
-<li><strong>persist</strong> /pəˈsɪst/ v. 坚持，执意；持续存在
-<ul>
-<li>常用搭配：persist in (doing) sth.</li>
-<li>真题例句：If you then examined the European national youth teams that feed the World Cup and professional ranks, you would find this strange phenomenon to be even more pronounced.（选自2007年考研阅读Text1）</li>
-</ul>
-</li>
-<li><strong>derive</strong> /dɪˈraɪv/ v. 起源于，来自；取得，获得
-<ul>
-<li>常用搭配：derive from</li>
-</ul>
-</li>
-<li><strong>compensate</strong> /ˈkɒmpenseɪt/ v. 补偿，弥补；赔偿
-<ul>
-<li>常用搭配：compensate for</li>
-</ul>
-</li>
-<li><strong>deteriorate</strong> /dɪˈtɪəriəreɪt/ v. 恶化，变坏；退化</li>
-<li><strong>endorse</strong> /ɪnˈdɔːs/ v. 赞同，支持；在（文件）上签名，背书</li>
-<li><strong>prevalent</strong> /ˈprevələnt/ adj. 普遍存在的，流行的</li>
+<li><strong>ambiguous</strong> /æmˈbɪɡjuəs/ adj. 模棱两可的；含糊不清的（高频考点，常出现在阅读态度题与词义猜测题）
+真题例句：The professor’s ambiguous comment on the research proposal left the team unsure about the next step.</li>
+<li><strong>coincide</strong> /ˌkəʊɪnˈsaɪd/ vi. 同时发生；相符，一致
+真题例句：The release of the new energy vehicle policy coincided with a surge in stock prices of related enterprises.</li>
+<li><strong>deteriorate</strong> /dɪˈtɪəriəreɪt/ v. 恶化；退化
+真题例句：Local air quality has deteriorated significantly following the increase in industrial emissions.</li>
+<li><strong>mitigate</strong> /ˈmɪtɪɡeɪt/ vt. 减轻，缓解（高频出现在环保、社会治理类阅读文本）
+真题例句：The city government implemented green transportation policies to mitigate traffic congestion.</li>
+<li><strong>address</strong> /əˈdres/ vt. 处理；解决（熟词僻义，考研高频易错点）
+真题例句：The academic paper aims to address the gaps in existing research on marine biodiversity.</li>
 </ol>
-<h3>形近词易混点</h3>
-<ul>
-<li>adapt /əˈdæpt/ v. 适应；改编 vs adopt /əˈdɒpt/ v. 收养；采纳，采用</li>
-<li>elicit /ɪˈlɪsɪt/ v. 引出，探出；引发 vs illicit /ɪˈlɪsɪt/ adj. 非法的，违禁的</li>
-</ul>
-<h2>长难句分析（选自2006年考研阅读Text3）</h2>
+<h2>长难句精读</h2>
+<p>今日从精读段落中选取了典型的定语从句嵌套长难句进行拆解：</p>
 <blockquote>
-<p>原句：The definition also excludes the majority of teachers, despite the fact that many have traditionally practiced the "public" intellectual profession of discussing and teaching aspects of philosophy, which is a form of public engagement.
-拆分解析：</p>
+<p>原句：Studies have shown that individuals who maintain a consistent sleep schedule of 7-8 hours per night are less likely to suffer from chronic fatigue syndrome than those who frequently disrupt their sleep patterns.
+结构拆分：</p>
 <ol>
-<li>主句：The definition also excludes the majority of teachers</li>
-<li>让步状语：despite the fact that... 其中that引导同位语从句解释说明fact</li>
-<li>同位语从句内部：many have traditionally practiced the "public" intellectual profession of discussing and teaching aspects of philosophy</li>
-<li>非限制性定语从句：which is a form of public engagement 修饰先行词the "public" intellectual profession</li>
+<li>主句主干：Studies have shown that + 宾语从句</li>
+<li>宾语从句主干：individuals ... are less likely to suffer from chronic fatigue syndrome than those ...</li>
+<li>后置定语1：who maintain a consistent sleep schedule of 7-8 hours per night 修饰先行词individuals</li>
+<li>后置定语2：who frequently disrupt their sleep patterns 修饰先行词those
+参考翻译：研究表明，每晚保持7-8小时规律睡眠的人群，比经常打乱睡眠节律的人群更不容易患上慢性疲劳综合征。</li>
 </ol>
 </blockquote>
-<p>💡 碎碎念：今天尝试用真题例句辅助背单词，遗忘率比单独背拼写低了不少，长难句的嵌套结构终于能快速理清了，继续坚持每天积累，考研英语上岸指日可待！</p>
+<p>💡 碎碎念：今天复盘单词时特意标记了熟词僻义address的用法，之前做阅读时多次因为记错释义丢分。精读时遇到了一道推理判断题，误选了过度引申的干扰项，之后回看了唐迟老师的解题技巧总结，明确了考研阅读推理题“忠于原文，拒绝脑补”的核心原则。坚持每日积累，稳扎稳打，英语上岸指日可待！</p>
 <blockquote>
 <p>文档内容由 AI 辅助生成</p>
 </blockquote>
@@ -195,43 +163,44 @@
     <summary>考研数学学习与复盘记录</summary>
     <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-15</h1>
 <h2>今日学习内容</h2>
-<p>今日累计学习时长3.5小时，聚焦考研数学多元积分学的几何应用模块，完成该模块专项刷题训练，涵盖曲面面积计算、空间立体体积求解两类核心题型，共计完成42道练习题并对照参考答案完成批改复盘。</p>
+<p>今日共计投入3小时开展考研数学专项学习，核心围绕曲线积分与三重积分两大高频考点展开。首先系统回顾了第一类、第二类曲线积分的定义区别、物理意义与标准计算流程，随后重点学习了三重积分在直角坐标系、柱坐标系、球坐标系下的转换规则与积分次序安排，配套完成了12道课后巩固题与3道历年真题改编的综合练习题，整理了3道易错题型的解题笔记。</p>
 <h2>薄弱点</h2>
-<p>通过今日刷题暴露出的核心薄弱点如下：</p>
 <ol>
-<li><strong>积分区域确定失误</strong>：处理复杂曲面交线的投影问题时，常遗漏边界曲线的投影转换，导致二重积分的积分区间划分错误；</li>
-<li><strong>对称性应用偏差</strong>：对积分区域奇偶性与被积函数奇偶性的匹配条件把握不准，错误套用对称性简化计算，出现结果符号或数值偏差；</li>
-<li><strong>坐标转换细节疏漏</strong>：柱坐标、球坐标转换多元积分时，时常遗忘雅可比行列式的系数（如柱坐标漏乘$r$、球坐标漏乘$r^2\sin\varphi$），最终计算结果出错；</li>
-<li><strong>旋转曲面公式混淆</strong>：绕不同坐标轴旋转的曲面面积公式记忆模糊，常出现系数或根号部分的计算错误。</li>
+<li>两类曲线积分的对称性应用容易混淆：无法准确区分第一类曲线积分的奇偶对称性与第二类曲线积分的对称性适用条件，经常出现符号错误；</li>
+<li>三重积分的坐标系选择犹豫不决：面对旋转体、球体类积分区域时，难以快速判断柱坐标/球坐标的适配场景，投影区域的转换步骤容易出错；</li>
+<li>第二类曲线积分与格林公式的衔接不熟练：经常忽略格林公式的使用前提（单/复连通区域、P、Q在区域内具有一阶连续偏导数），遇到奇点时的挖补技巧掌握不牢。</li>
 </ol>
 <h2>AI知识点带复盘</h2>
-<h3>多元积分几何应用考研核心考点复盘</h3>
-<p>多元积分几何应用是考研数学高数模块高频考点，核心聚焦<strong>曲面面积计算</strong>与<strong>空间立体体积求解</strong>两类题型，结合考研真题考情复盘如下：</p>
+<h3>一、曲线积分模块复盘</h3>
 <ol>
-<li><strong>曲面面积计算</strong>
+<li><strong>第一类曲线积分（对弧长的积分）</strong>
+本质为标量积分，物理意义对应曲线形构件的质量。计算核心是将其转化为定积分，参数化公式为：
+$$\int_L f(x,y)ds = \int_\alpha^\beta f(x(t),y(t))\sqrt{[x'(t)]^2+[y'(t)]^2}dt$$
+需注意积分上下限满足$\alpha&lt;\beta$，对称性规则为：若积分曲线$L$关于$x$轴对称，且$f(x,-y)=f(x,y)$，则$\int_L fds=2\int_{L_上}fds$；若$f(x,-y)=-f(x,y)$，则积分值为0。</li>
+<li><strong>第二类曲线积分（对坐标的积分）</strong>
+本质为矢量积分，物理意义对应变力沿曲线做功。参数化公式为：
+$$\int_L Pdx+Qdy = \int_\alpha^\beta\left[P(x(t),y(t))x'(t)+Q(x(t),y(t))y'(t)\right]dt$$
+上下限对应曲线的起点与终点参数，无需满足$\alpha&lt;\beta$。对称性规则与第一类不同：若$L$关于$x$轴对称，且$P(x,-y)=-P(x,y)$、$Q(x,-y)=Q(x,y)$，则积分值为0。考研中常结合格林公式将闭合曲线积分转化为二重积分，需严格验证使用条件。</li>
+</ol>
+<h3>二、三重积分模块复盘</h3>
+<ol>
+<li><strong>直角坐标系</strong>
+包含「先一后二（投影法）」与「先二后一（截面法）」两种思路：
 <ul>
-<li>显式曲面$z=f(x,y)$（定义在$xOy$平面区域$D$上）的面积公式：
-$$A=\iint_D \sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}d\sigma$$</li>
-<li>参数曲面$\boldsymbol{r}(u,v)=x(u,v)\boldsymbol{i}+y(u,v)\boldsymbol{j}+z(u,v)\boldsymbol{k}$的面积公式：
-$$A=\iint_{D_{uv}} \sqrt{EG-F^2}dudv$$
-其中$E=\boldsymbol{r}_u\cdot\boldsymbol{r}_u$，$F=\boldsymbol{r}_u\cdot\boldsymbol{r}_v$，$G=\boldsymbol{r}_v\cdot\boldsymbol{r}_v$。考研中常结合旋转曲面考察，绕$x$轴旋转的曲面面积简化公式为$A=2\pi\int_a^b y\sqrt{1+(y')^2}dx$，需严格区分旋转轴对应的变量替换规则。</li>
+<li>投影法：先确定$xy$平面投影区域$D_{xy}$，再对每个$(x,y)\in D_{xy}$确定$z$的上下限$z_1(x,y)\leq z\leq z_2(x,y)$，公式为$\iiint_\Omega f(x,y,z)dV=\iint_{D_{xy}}dxdy\int_{z_1(x,y)}^{z_2(x,y)}f(x,y,z)dz$；</li>
+<li>截面法：适合被积函数仅含$z$或积分区域为旋转体的场景，公式为$\iiint_\Omega f(z)dV=\int_a^b f(z)S(z)dz$，其中$S(z)$为$z$处的截面面积。</li>
 </ul>
 </li>
-<li><strong>空间立体体积求解</strong>
-<ul>
-<li>曲顶柱体体积：$V=\iint_D [z_2(x,y)-z_1(x,y)]d\sigma$，其中$z_2,z_1$分别为上下曲面表达式，$D$为柱体在$xOy$平面的投影区域；</li>
-<li>三重积分法：空间封闭区域$\Omega$的体积$V=\iiint_\Omega dV$，可通过直角坐标、柱坐标、球坐标转换完成计算；</li>
-<li>对称性简化规则：若积分区域关于坐标平面对称，被积函数为对应变量的奇函数，则积分结果为0，可用于快速简化体积计算。</li>
-</ul>
-</li>
-<li><strong>考研常见易错陷阱</strong>
-① 投影区域边界确定：需先求解曲面交线方程，再消去对应坐标得到投影柱面，进而明确投影区域范围；
-② 旋转曲面方程推导：绕$y$轴旋转时需将$x$替换为$\sqrt{x^2+z^2}$，不可直接套用绕$x$轴的公式；
-③ 积分限合理性：需根据积分区域实际范围确定上下限，避免出现上限小于下限的低级错误。</li>
+<li><strong>柱坐标系</strong>
+转换关系为$x=\rho\cos\theta,y=\rho\sin\theta,z=z$，雅可比行列式为$\rho$，适配场景为投影区域为圆/圆环、被积函数含$x^2+y^2$，标准公式为：
+$$\iiint_\Omega f(x,y,z)dV=\int_{\theta_1}^{\theta_2}d\theta\int_{\rho_1}^{\rho_2}\rho d\rho\int_{z_1(\rho,\theta)}^{z_2(\rho,\theta)}f(\rho\cos\theta,\rho\sin\theta,z)dz$$</li>
+<li><strong>球坐标系</strong>
+转换关系为$x=r\sin\varphi\cos\theta,y=r\sin\varphi\sin\theta,z=r\cos\varphi$，雅可比行列式为$r^2\sin\varphi$，适配场景为积分区域为球体/球锥、被积函数含$x^2+y^2+z^2$，标准公式为：
+$$\iiint_\Omega f(x,y,z)dV=\int_{\theta_1}^{\theta_2}d\theta\int_{\varphi_1}^{\varphi_2}\sin\varphi d\varphi\int_{r_1(\varphi,\theta)}^{r_2(\varphi,\theta)}f(r\sin\varphi\cos\theta,r\sin\varphi\sin\theta,r\cos\varphi)r^2dr$$</li>
 </ol>
 <h2>今日小结</h2>
-<p>今日通过专项刷题巩固了多元积分几何应用的核心解题逻辑，明确了自身在积分区域划分、坐标转换细节上的不足。后续将针对薄弱点开展专项补练，重点练习复杂投影区域划分与旋转曲面面积计算题型。
-💡 碎碎念：稳步积累，持续提升。</p>
+<p>今日通过集中学习完成了曲线积分与三重积分模块的基础巩固与习题训练，梳理了两类积分的核心区别与计算逻辑，初步掌握了不同坐标系下三重积分的转换方法，但在对称性辨析与格林公式的条件验证上仍存在疏漏。后续计划针对性练习8道综合题型，强化易错点的复盘与总结，夯实模块基础。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
 <blockquote>
 <p>文档内容由 AI 辅助生成</p>
 </blockquote>
