@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-19</title><link>https://elysiaweb.vercel.app/posts/408/7-19/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-19/</guid><description>408 专业课排序模块（内部+外部排序）学习与复盘</description><pubDate>Sun, 19 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-19&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-20</title><link>https://elysiaweb.vercel.app/posts/408/7-20/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-20/</guid><description>408 专业课历年大题真题刷题与复盘</description><pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-20&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入2小时，针对考研408统考历年真题中的综合大题模块进行专项刷题训练，覆盖数据结构、操作系统、计算机网络、计算机组成原理四门核心科目，全程对照考研官方评分标准完成答题与批改复盘。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;p&gt;本次刷题围绕408统考历年大题的高频考点展开系统性复盘：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据结构模块&lt;/strong&gt;：重点练习了二叉树遍历变形、图的最短路径应用、线性表综合设计三类高频大题，复盘了递归遍历的边界条件处理、堆排序与快速排序的复杂度差异，明确了算法题中伪代码书写的规范要求。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;操作系统模块&lt;/strong&gt;：完成了3道进程同步PV操作题、2道页面置换算法计算题，梳理了生产者消费者变种场景的PV设置逻辑，纠正了之前对多级页表地址计算的易错误区。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算机组成原理模块&lt;/strong&gt;：训练了指令流水线冒险分析、Cache平均访问时间计算两类重难点题型，明确了数据冒险与控制冒险的判断方法，掌握了多组Cache命中率的分步计算技巧。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算机网络模块&lt;/strong&gt;：复盘了TCP三次握手/四次挥手的细节考点、子网划分快速计算方法，针对历年统考真题的网络大题，梳理了路由转发的完整推导步骤。
+整体通过刷题串联起各科目知识点的关联，明确了大题的得分点分布逻辑。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;部分复杂场景的PV操作题需要较长时间转换思路，后续需要整理典型场景的PV操作模板，强化场景匹配练习；&lt;/li&gt;
+&lt;li&gt;答题时偶尔会省略关键推导步骤，存在被扣分的风险，后续刷题需严格按照考研答题规范完整书写推导过程；&lt;/li&gt;
+&lt;li&gt;计算机组成原理中指令流水线的停顿周期计算偶尔出错，需要单独整理该类题型的错题集进行专项突破。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;通过2小时的专项刷题，明确了408统考大题的命题规律与高频考点分布，对四门科目的大题题型有了更清晰的认知；&lt;/li&gt;
+&lt;li&gt;复盘修正了多个知识点的模糊认知，强化了易错点的记忆与应用能力；&lt;/li&gt;
+&lt;li&gt;练习了限时答题的节奏把控，为后续的全真模拟训练积累了实战经验。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-07-20</title><link>https://elysiaweb.vercel.app/posts/english/7-20/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/7-20/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-07-20&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日总学习时长1小时20分钟，其中45分钟用于考研英语核心单词的复盘与新学，35分钟用于精读2005年考研英语阅读理解Text 1的第2-3段，同步整理文本中的生词、长难句与答题思路。&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理）&lt;/p&gt;
+&lt;h3&gt;今日新学生词（来自精读文本）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;ambiguous&lt;/strong&gt; /æmˈbɪɡjuəs/ adj. 模棱两可的；含糊不清的（考研阅读高频干扰项描述词）
+考研例句：The ambiguous wording of the policy led to widespread confusion.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;constitute&lt;/strong&gt; /ˈkɒnstɪtjuːt/ v. 组成；构成；被视为
+固定搭配：constitute a threat/risk 构成威胁/风险&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;subsequent&lt;/strong&gt; /ˈsʌbsɪkwənt/ adj. 随后的；后续的
+形近联想：consequence n. 结果；后果&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;paradox&lt;/strong&gt; /ˈpærədɒks/ n. 悖论；自相矛盾的观点（考研阅读逻辑考点高频词）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;address&lt;/strong&gt; /əˈdres/ v. 处理；解决；向……发表演说（熟词僻义，考研核心考点）
+考研搭配：address the root cause 解决根本问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;今日旧词复盘&lt;/h3&gt;
+&lt;p&gt;复习了昨日积累的12个考研高频词，重点巩固了熟词僻义：如&lt;code&gt;subject&lt;/code&gt;作动词“使遭受”的用法，以及&lt;code&gt;in terms of&lt;/code&gt;“在……方面；从……角度”的固定译法。&lt;/p&gt;
+&lt;h2&gt;长难句精读分析&lt;/h2&gt;
+&lt;p&gt;今天精读的核心长难句（来自2005年Text1）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&quot;But the idea that the journalist must understand the law more profoundly than an ordinary citizen rests on an understanding of the established conventions and special responsibilities of the news media.&quot;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;结构拆解&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;主句主干：&lt;code&gt;the idea ... rests on an understanding ...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;同位语从句：&lt;code&gt;that the journalist must understand the law more profoundly than an ordinary citizen&lt;/code&gt; 修饰先行词&lt;code&gt;idea&lt;/code&gt;，解释说明观点内容&lt;/li&gt;
+&lt;li&gt;后置定语：&lt;code&gt;of the established conventions and special responsibilities of the news media&lt;/code&gt; 修饰&lt;code&gt;understanding&lt;/code&gt;，说明认知的具体对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;参考译文：但“新闻记者必须比普通公民更深刻地理解法律”这一观点，是基于对新闻媒体既定惯例与特殊责任的认知之上的。&lt;/li&gt;
+&lt;li&gt;易错提醒：容易将&lt;code&gt;rests on&lt;/code&gt;直译为“依靠”，考研语境中更贴切的译法为“基于、建立在……基础上”。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日学习反思&lt;/h2&gt;
+&lt;p&gt;今天最大的收获是纠正了对&lt;code&gt;address&lt;/code&gt;一词的认知误区，之前只记住了“地址”的名词含义，这次结合上下文终于掌握了其作为动词“处理、解决”的核心考法。在长难句分析初期，没能快速识别同位语从句，后续需要加强对从句引导词与先行词搭配的识别练习。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：今天的积累虽然不多，但每一个生词和长难句都吃透了，坚持每天进步一点点，考研英语必上岸！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-07-20</title><link>https://elysiaweb.vercel.app/posts/math/7-20/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-20/</guid><description>考研数学多元积分学几何应用专项刷题与复盘记录</description><pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-20&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日累计投入3小时专项学习，核心任务为完成汤家凤《考研数学接力题典1800》中多元积分学的几何应用模块刷题，覆盖平面区域面积、空间立体体积、曲面面积、曲线弧长四类考研高频题型，累计完成42道习题并对照解析逐一订正。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;p&gt;通过当日刷题暴露出三处核心薄弱环节：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;极坐标下曲面面积的积分限确定易出错，当投影区域为非对称极坐标域时，混淆$\theta$与$r$的取值范围，导致积分区间划定错误；&lt;/li&gt;
+&lt;li&gt;利用二重积分求解空间旋转体体积时，无法快速完成母线方程到旋转体截面面积的转换，部分题目中曲面交线求解失误，直接导致积分区域划定偏差；&lt;/li&gt;
+&lt;li&gt;对第一类曲线积分求弧长的应用场景理解模糊，应用题中无法快速剥离无关条件，建立准确的积分表达式。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;核心考点复盘&lt;/h3&gt;
+&lt;p&gt;考研数学中多元积分学的几何应用是数一、数二的高频考点，核心分为三大模块：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;二重积分的几何应用&lt;/strong&gt;：
+考研常考平面区域面积$S=\iint_D d\sigma$、空间曲面$z=f(x,y)$的面积$A=\iint_D\sqrt{1+(\frac{\partial z}{\partial x})^2+(\frac{\partial z}{\partial y})^2}d\sigma$（其中$D$为曲面在$xOy$面的投影区域）、旋转体体积（绕坐标轴旋转时可直接套用定积分公式，空间曲面旋转需先推导截面面积再用二重积分计算）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第一类曲线积分的几何应用&lt;/strong&gt;：
+核心为曲线弧长$L=\int_\Gamma ds$，以及延伸的曲线形心、转动惯量等应用题，考研中常结合物理背景命题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;常见误区复盘&lt;/strong&gt;：
+当日刷题暴露的积分限错误属于高频丢分点，需牢记极坐标下积分限的确定原则：先固定$\theta$范围，再确定每个$\theta$对应的$r$上下限；曲面面积公式中不可遗漏偏导项的根号部分，部分同学易简化为$\iint_D 1d\sigma$，完全偏离考点。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;真题联动&lt;/h3&gt;
+&lt;p&gt;结合2023年数二真题第17题、2022年数一第19题的命题风格，该模块常与隐函数求导、投影区域转换结合考察，后续需强化复合场景下的题型训练。&lt;/p&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日完成了预定的专项刷题任务，整体正确率约65%，成功梳理了多元积分学几何应用的核心题型框架，但在极坐标积分划定和曲面交线求解环节仍存在明显短板。后续计划用1.5小时针对性练习极坐标下的积分区域划定习题，同时补充10道空间曲面交线求解的基础题，夯实该模块的基础能力。
+💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-07-19</title><link>https://elysiaweb.vercel.app/posts/408/7-19/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-19/</guid><description>408 专业课排序模块（内部+外部排序）学习与复盘</description><pubDate>Sun, 19 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-19&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;两个半小时  外部排序和内部排序的总结&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
