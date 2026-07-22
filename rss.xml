@@ -1,4 +1,108 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-20</title><link>https://elysiaweb.vercel.app/posts/408/7-20/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-20/</guid><description>408 专业课历年大题真题刷题与复盘</description><pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-20&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-22</title><link>https://elysiaweb.vercel.app/posts/408/7-22/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-22/</guid><description>408 专业课学习与复盘</description><pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-22&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日累计学习2小时，完整完成2020年全国硕士研究生招生考试计算机学科专业基础综合（408）真题中的数据结构模块两道综合应用题，同步整理错题思路与核心考点笔记。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;p&gt;本次刷题覆盖了408数据结构两道高频核心大题考点，具体复盘如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;二叉树遍历与路径计算考点&lt;/strong&gt;
+2020年第41题结合中序+后序遍历序列构造二叉树，并求解根到叶子节点的最大路径和，属于数据结构常考综合题型。核心考点包括：
+&lt;ul&gt;
+&lt;li&gt;二叉树遍历序列的还原逻辑：后序遍历序列的最后一个元素为根节点，通过中序遍历序列可将序列划分为根节点的左、右子树区间，递归完成整棵二叉树的构造；&lt;/li&gt;
+&lt;li&gt;根到叶子路径和的求解思路：采用深度优先搜索（DFS）递归遍历每个节点，累加路径上的节点值，当遍历到叶子节点时记录当前路径和的最大值；&lt;/li&gt;
+&lt;li&gt;延伸考点：该题型可变形为求解最小路径和、判断是否存在路径和等于给定值、输出所有符合条件的路径等，核心逻辑均基于递归遍历的路径累加。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;哈希表开放定址法的平均查找长度考点&lt;/strong&gt;
+2020年第42题考查线性探测再散列的哈希表查找成功与不成功的平均查找长度（ASL）计算，是哈希表模块的核心考点：
+&lt;ul&gt;
+&lt;li&gt;线性探测再散列的冲突处理规则：&lt;code&gt;H_i = (H(key) + d_i) % m&lt;/code&gt;，其中&lt;code&gt;d_i = 1,2,...,m-1&lt;/code&gt;，发生冲突时依次向后探查直到找到空位置；&lt;/li&gt;
+&lt;li&gt;查找成功的ASL计算：统计每个关键字在插入时的探查次数，求和后除以关键字总数；&lt;/li&gt;
+&lt;li&gt;查找不成功的ASL计算：针对每个散列地址&lt;code&gt;0~m-1&lt;/code&gt;，统计从该地址开始首次遇到空位置的探查次数，求和后除以散列表长度&lt;code&gt;m&lt;/code&gt;；
+结合本题给定的关键字序列&lt;code&gt;{10,24,31,4,6,19,21,27,13,16}&lt;/code&gt;、散列函数&lt;code&gt;H(key)=key%7&lt;/code&gt;与表长11，可完整推导两次ASL的计算结果，巩固了哈希表性能分析的实操方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;二叉树构造环节中，对中序序列的左右子树区间划分边界偶尔出现失误，导致后续路径计算出错；&lt;/li&gt;
+&lt;li&gt;哈希表查找不成功的ASL计算时，容易混淆探查次数的统计起点，曾误将空位置的位置计入而非探查次数；&lt;/li&gt;
+&lt;li&gt;本次刷题总时长2小时，超出了考场单道大题建议20分钟的时间上限，解题速度有待提升，后续需加强限时刷题训练。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;熟练掌握了二叉树遍历还原与路径类题型的标准化解题步骤，理清了递归遍历的核心逻辑；&lt;/li&gt;
+&lt;li&gt;彻底厘清了线性探测哈希表的两种平均查找长度的计算规则，能够独立完成真题场景下的ASL推导；&lt;/li&gt;
+&lt;li&gt;明确了408数据结构真题的命题风格与高频考点分布，后续刷题可针对性聚焦常考模块；&lt;/li&gt;
+&lt;li&gt;意识到了考场时间把控的重要性，后续刷题将严格按照考试时长要求进行模拟训练。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-07-22</title><link>https://elysiaweb.vercel.app/posts/english/7-22/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/7-22/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-07-22&lt;/h1&gt;
+&lt;h2&gt;今日学习总时长&lt;/h2&gt;
+&lt;p&gt;累计1.5小时，分为单词复盘模块与2012年英语一阅读Text4精读模块&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理）&lt;/p&gt;
+&lt;h3&gt;核心高频词汇积累&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;perspective&lt;/strong&gt;  &lt;em&gt;n.&lt;/em&gt; 视角，观点；透视法
+真题搭配：a long-term perspective 长远视角&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mitigate&lt;/strong&gt;  &lt;em&gt;v.&lt;/em&gt; 减轻，缓解（伤害、问题等）
+形近词辨析：区分&lt;code&gt;migrate&lt;/code&gt;（迁徙，移居）与&lt;code&gt;emigrate&lt;/code&gt;（移民出境）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;inherent&lt;/strong&gt;  &lt;em&gt;adj.&lt;/em&gt; 固有的，内在的
+同义词：intrinsic&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;stagnation&lt;/strong&gt;  &lt;em&gt;n.&lt;/em&gt; 停滞，滞胀
+考研高频语境：economic stagnation 经济停滞&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;legislation&lt;/strong&gt;  &lt;em&gt;n.&lt;/em&gt; 立法，法律体系
+词根拓展：leg（法律）相关词汇：legal, legitimate&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;错题单词回顾&lt;/h3&gt;
+&lt;p&gt;复盘了昨日错题中出现的陌生词：&lt;code&gt;deteriorate&lt;/code&gt;（v. 恶化）、&lt;code&gt;advocate&lt;/code&gt;（n. 倡导者），巩固了其在真题语境中的用法。&lt;/p&gt;
+&lt;h2&gt;真题精读复盘（2012英语一 Text4）&lt;/h2&gt;
+&lt;p&gt;本次完成全文精读并实现全对，重点梳理了以下内容：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;长难句拆解&lt;/strong&gt;：攻克了2处高难度复合句，例如首段长句：&lt;em&gt;&quot;The debate has been framed as a clash between those who argue that economic growth and environmental protection are inherently incompatible and those who insist that growth can be sustained only if we mitigate the harm we do to the planet.&quot;&lt;/em&gt; 拆分了嵌套的定语从句与宾语从句，理清句子主干逻辑。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;出题逻辑复盘&lt;/strong&gt;：总结了该篇的同义替换规律，例如原文的&quot;economic stagnation&quot;对应选项中的&quot;slow economic progress&quot;，强化了对考研阅读改写技巧的认知。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;干扰项排除&lt;/strong&gt;：针对曾出错的第38题，通过回文定位精准对比了两个选项的细节差异，确认了正确选项的原文依据，彻底解决了之前的错题遗留问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：今天的学习状态超棒！不仅完成了计划的学习量，还把之前卡壳的阅读题彻底吃透了，背单词时整理的形近词也在精读中派上了用场。坚持每天积累，上岸的脚步一定会越来越近！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-07-22</title><link>https://elysiaweb.vercel.app/posts/math/7-22/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-22/</guid><description>考研数学学习与复盘记录</description><pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-22&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日累计学习考研数学4小时，核心学习内容为&lt;strong&gt;斯托克斯公式的应用&lt;/strong&gt;与&lt;strong&gt;第二类曲面积分&lt;/strong&gt;的计算技巧，通过教材例题与课后习题完成了针对性练习，梳理了两类题型的解题框架。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;斯托克斯公式的定向规则易混淆：右手螺旋法则中曲线方向与曲面侧的匹配容易出错，导致最终计算结果符号错误；&lt;/li&gt;
+&lt;li&gt;第二类曲面积分的投影符号判断不熟练：不同坐标面投影时，曲面的法向量方向与坐标轴的关系直接影响积分符号，混淆了z正负、投影区域的对应规则；&lt;/li&gt;
+&lt;li&gt;斯托克斯公式的适用条件记忆模糊：容易忽略“曲线需为分段光滑的闭合曲线”“曲面需分片光滑且与曲线定向一致”的前提，误用公式；&lt;/li&gt;
+&lt;li&gt;复杂被积表达式的转化效率低：当被积函数的偏导数计算繁琐时，无法快速简化旋度表达式，影响解题速度。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;一、第二类曲面积分核心复盘&lt;/h3&gt;
+&lt;p&gt;第二类曲面积分是对曲面的侧进行积分，考研中主要考察两种计算路径：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;投影法&lt;/strong&gt;：将曲面积分分别投影到三个坐标面，代入曲面的显式表达式（如$z=z(x,y)$），结合曲面侧确定积分符号（对$xOy$投影时，若曲面法向量与$z$轴夹角为锐角则符号为正，否则为负）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高斯公式转化&lt;/strong&gt;：针对闭合曲面的第二类曲面积分，可转化为三重积分计算，需注意补面时的定向规则。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;二、斯托克斯公式核心复盘&lt;/h3&gt;
+&lt;p&gt;斯托克斯公式是连接第二类曲线积分与第二类曲面积分的核心桥梁，公式形式为：
+$$\oint_\Gamma Pdx+Qdy+Rdz = \iint_\Sigma \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right)dydz + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right)dzdx + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)dxdy$$
+考研常考的应用场景：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当空间闭合曲线$\Gamma$的参数化计算繁琐时，选取以$\Gamma$为边界的简单曲面（如平面区域）转化为曲面积分简化计算；&lt;/li&gt;
+&lt;li&gt;需严格遵循右手定则匹配$\Gamma$与$\Sigma$的定向：右手四指沿$\Gamma$的积分方向，大拇指指向$\Sigma$的法向量方向。
+常见简化技巧：优先选取平面$z=0$或平行于坐标面的平面作为辅助曲面，可大幅降低积分计算难度。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日完成了4小时的针对性学习，系统梳理了第二类曲面积分与斯托克斯公式的核心考点与解题逻辑，通过12道课后习题巩固了投影法与斯托克斯公式的应用，纠正了此前定向规则混淆的问题。后续需加强非闭合曲面的第二类曲面积分练习，以及复杂旋度表达式的快速化简训练，进一步提升解题效率与正确率。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-07-20</title><link>https://elysiaweb.vercel.app/posts/408/7-20/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-20/</guid><description>408 专业课历年大题真题刷题与复盘</description><pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-20&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今日共计投入2小时，针对考研408统考历年真题中的综合大题模块进行专项刷题训练，覆盖数据结构、操作系统、计算机网络、计算机组成原理四门核心科目，全程对照考研官方评分标准完成答题与批改复盘。&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
