@@ -5,8 +5,118 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-22T14:59:14.911Z</updated>
+  <updated>2026-07-23T14:57:25.809Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研英语学习记录2026-07-23</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/7-23/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/7-23/</id>
+    <published>2026-07-23T00:00:00.000Z</published>
+    <updated>2026-07-23T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-23</h1>
+<h2>今日学习总时长</h2>
+<p>1.5小时，分为两部分：1小时考研核心单词复盘与拓展，30分钟2005年考研英语阅读Text3精读与长难句拆解</p>
+<h2>单词复盘（AI 自动整理）</h2>
+<h3>今日核心背诵与复盘词汇</h3>
+<ol>
+<li><strong>cognitive</strong> /ˈkɒɡnətɪv/ adj. 认知的，感知的
+<ul>
+<li>考研语境例句：Cognitive decline is a common concern among the elderly population.（认知能力下降是老年群体普遍担忧的问题。）</li>
+<li>考点拓展：常出现在心理学、神经科学类阅读话题，需注意与perceptual（感知的）的辨析</li>
+</ul>
+</li>
+<li><strong>meticulous</strong> /məˈtɪkjələs/ adj. 一丝不苟的，极注重细节的
+<ul>
+<li>考研语境例句：The sociologist made a meticulous investigation of urban migration patterns.（这位社会学家对城市移民模式进行了细致入微的调查。）</li>
+<li>易混辨析：与scrupulous（谨慎的，有道德原则的）的区别：meticulous侧重对细节的极致追求，scrupulous侧重道德层面的审慎</li>
+</ul>
+</li>
+<li><strong>concomitant</strong> /kənˈkɒmɪtənt/ adj. 伴随的，随之而来的
+<ul>
+<li>考研语境例句：Physical fatigue is often a concomitant of prolonged mental stress.（身体疲劳往往是长期精神压力的伴随症状。）</li>
+<li>考点拓展：常作为后置定语使用，替换常见的accompanying</li>
+</ul>
+</li>
+</ol>
+<h3>今日复盘误区</h3>
+<p>昨天背诵的<code>subtle</code>和<code>subtlety</code>混淆了用法，今天特意整理了例句巩固：<code>The subtle difference between the two terms is easy to overlook.</code>（这两个术语间的细微差异很容易被忽略），避免下次出错。</p>
+<h2>长难句精读与阅读复盘</h2>
+<h3>精选长难句拆解（选自2005年考研英语阅读Text3）</h3>
+<blockquote>
+<p>原句：The researchers argued that the animals’ ability to solve complex problems and plan for the future suggests a level of cognitive sophistication that was previously thought to exist only in humans.</p>
+</blockquote>
+<ol>
+<li>结构拆分：
+<ul>
+<li>主句主干：The researchers argued</li>
+<li>宾语从句主干：the animals’ ability ... suggests a level of cognitive sophistication</li>
+<li>后置定语修饰ability：to solve complex problems and plan for the future</li>
+<li>定语从句修饰cognitive sophistication：that was previously thought to exist only in humans</li>
+</ul>
+</li>
+<li>参考翻译：研究人员认为，动物具备解决复杂问题并为未来规划的能力，这表明它们拥有一种此前被认为仅人类才具备的认知复杂程度。</li>
+</ol>
+<h3>阅读错题复盘</h3>
+<p>今日完成2005年Text3的5道题目，错题为第32题，错因分析：</p>
+<ul>
+<li>原文定位句出现了<code>concomitant</code>一词，我误将其理解为“因果关系”，而非“伴随关系”，导致选错了描述老年认知衰退与衰老关系的选项。</li>
+<li>后续查阅了真题解析并整理了该词在语境中的用法，确保下次不会再犯同类错误。</li>
+</ul>
+<h2>💡 碎碎念：坚持积累，英语必上岸！</h2>
+<p>今天在图书馆学习的时候中途被旁侧同学的讨论声打断两次，靠一杯冰美式才重新找回专注状态。背单词时发现不少旧词出现了记忆模糊，愈发觉得每日复盘的重要性。看着笔记本上慢慢填满的单词和错题笔记，感觉离目标又近了一步。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-07-23</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/7-23/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/7-23/</id>
+    <published>2026-07-23T00:00:00.000Z</published>
+    <updated>2026-07-23T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-23</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入3小时用于考研数学专项复习，核心任务为系统复盘多元积分学的几何应用模块，包括空间曲线弧长、曲面面积、空间几何体体积等考点的知识点梳理、公式推导与配套习题演练，同步回顾了隐函数形式下偏导数的求解方法，为后续复杂题型的解答打好基础。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>曲面面积公式中被积表达式$\sqrt{1+(f_x)^2+(f_y)^2}$的记忆容易出现疏漏，偶尔会遗漏偏导数的平方和部分；</li>
+<li>确定曲面在坐标面上的投影区域时，对复杂边界的推导较慢，且容易忽略曲面的定义域限制导致积分区域范围错误；</li>
+<li>空间曲线弧长的应用场景与第二类曲线积分的边界混淆，偶尔会误用第二类曲线积分的公式进行计算；</li>
+<li>柱面面积的计算公式与曲面面积公式的适用场景区分不清，做题时容易套错公式。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>多元积分学的几何应用是考研数学一、数学二的高频核心考点，数学三不作要求，历年真题多以选择题、填空题或解答题的形式出现，分值约为4-12分，以下是核心知识点的复盘总结：</p>
+<ol>
+<li><strong>空间曲线弧长</strong>：本质为第一类曲线积分的直接应用，核心公式为$L=\int_L ds$，当空间曲线以参数方程$\begin{cases}x=x(t)\y=y(t)\z=z(t)\end{cases}(t\in[\alpha,\beta])$给出时，弧长微元$ds=\sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2}dt$，考研常结合螺旋线、空间封闭曲线等模型考察，需注意参数范围的正确选取与弧长微元的准确计算。</li>
+<li><strong>曲面面积</strong>：分为显式曲面、隐式曲面与柱面三种常见考察形式：
+<ul>
+<li>显式曲面$z=f(x,y)$在$xOy$面投影区域$D$上的面积公式为$A=\iint_D\sqrt{1+(f_x)^2+(f_y)^2}dxdy$，若曲面为$y=f(x,z)$或$x=f(y,z)$，只需对应调整投影面与偏导数项；</li>
+<li>隐式曲面$F(x,y,z)=0$时，需先通过隐函数求导求出$z_x,z_y$再代入公式；</li>
+<li>柱面面积公式为$A=\int_L f(x,y)ds$，其中$L$为柱面的准线，$f(x,y)$为母线方向的高度，需注意与曲面面积公式的场景区分。</li>
+</ul>
+</li>
+<li><strong>空间几何体体积</strong>：主要包括曲顶柱体体积（二重积分应用）、任意空间几何体体积（三重积分应用）两类，考研中常结合旋转体体积的延伸考察，例如绕坐标轴旋转的空间曲面围成的体积，同时会与高斯公式、格林公式的间接应用结合出题。</li>
+<li><strong>真题易错陷阱</strong>：部分真题会将曲面方程设置为隐函数形式，需要考生先通过隐函数求导法则求出偏导数，再代入面积公式；另外投影区域的求解经常会结合二重积分的极坐标变换考察，需熟练掌握不同坐标系下积分区域的转换方法。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日通过3小时的系统复习，完成了多元积分学几何应用模块的全考点复盘，配套完成了18道课后习题与2道近5年的考研真题，初步解决了曲面面积公式记忆混淆的问题，但在投影区域的细节推导与公式场景区分上仍存在不足，后续计划通过专项刷题强化这两类薄弱点的练习，确保下次做题时能够快速准确地选取对应公式与积分区域。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-07-22</title>
     <link href="https://elysiaweb.vercel.app/posts/408/7-22/" rel="alternate" type="text/html"/>
