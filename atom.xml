@@ -5,8 +5,144 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-23T14:57:25.809Z</updated>
+  <updated>2026-07-24T14:59:54.171Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-07-24</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/7-24/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/7-24/</id>
+    <published>2026-07-24T00:00:00.000Z</published>
+    <updated>2026-07-24T00:00:00.000Z</updated>
+    <summary>408数据结构大题刷题强化复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-07-24</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习3小时，完成数据结构的大题刷题专项强化训练，针对408统考常考的大题模块进行针对性练习与思路梳理。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次刷题强化覆盖了408数据结构大题的核心考察模块，结合考研命题规律复盘如下：</p>
+<ol>
+<li><strong>核心考察模块匹配</strong>：408数据结构大题高频考点集中在树与二叉树、图、排序、线性表应用四大模块，今日刷题重点围绕这几类题型展开，例如二叉树的非递归遍历实现、拓扑排序的流程模拟、快速排序的递归过程推演等。</li>
+<li><strong>解题思路复盘</strong>：数据结构大题的解题核心在于先准确定位题目考察的数据结构类型，再匹配对应的操作逻辑。例如遇到链表类大题，需优先考虑头指针的处理、边界节点的特殊情况；遇到树类大题，需区分二叉树与普通树的遍历规则，以及平衡调整的触发条件。</li>
+<li><strong>考点细节回顾</strong>：复盘了易混淆的考点，例如排序算法的稳定性区分、哈希表平均查找长度的计算、最小生成树两种算法的适用场景差异，通过刷题强化了这些细节的记忆与应用。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>部分题型的边界情况处理仍存在疏漏，例如反转链表时头节点的指针修改、平衡二叉树插入后的旋转调整时机判断。</li>
+<li>非递归实现类大题的代码编写速度较慢，需要进一步整理标准化的代码框架，提升答题效率。</li>
+<li>部分图论类大题的流程推演容易出现步骤遗漏，需要在后续练习中刻意标注每一步的操作细节。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>通过3小时的专项刷题，明确了408数据结构大题的命题套路与答题规范，能够快速识别题目对应的知识点模块，缩短了读题与思路构建的时间。</li>
+<li>梳理了各高频大题模块的解题模板，例如拓扑排序的步骤模板、快速排序的递归实现框架，为后续答题提供了标准化的参考。</li>
+<li>纠正了部分之前混淆的考点认知，例如明确了归并排序的空间复杂度为O(n)的原因，以及哈夫曼树带权路径长度的正确计算方式。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点，不追求刷题数量，注重每道题的思路复盘！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-07-24</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/7-24/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/7-24/</id>
+    <published>2026-07-24T00:00:00.000Z</published>
+    <updated>2026-07-24T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-24</h1>
+<h2>今日学习内容</h2>
+<p>今天总共投入1.5小时进行考研英语专项学习，具体分配为：45分钟考研核心单词复盘与新学，60分钟精读2018年英语一Text 2并拆解长难句，剩余15分钟整理当日学习疑点与错题。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+本次复盘聚焦2025考研大纲高频核心词，整理易错易混词汇及实用拓展如下：</p>
+<ol>
+<li><strong>exacerbate</strong> /ɪɡˈzæsəbeɪt/ v. 使恶化，加重
+真题例句："Poor housing conditions can exacerbate health problems." （出自2020年英语二Text3）
+常用搭配：exacerbate tension/crisis 加剧紧张/危机</li>
+<li><strong>pivotal</strong> /ˈpɪvətl/ adj. 关键的，核心的
+真题例句："This decision was pivotal to the company's future development." （出自2019年英语一Text1）
+写作替换：可替代普通的<code>important/critical</code>，提升表达档次</li>
+<li><strong>circumvent</strong> /ˌsɜːkəmˈvent/ v. 规避，绕过；设法克服
+真题例句："Some companies try to circumvent environmental regulations." （出自2021年英语一Text2）
+形近辨析：注意区分<code>convent n. 修道院</code>避免混淆</li>
+<li><strong>corroborate</strong> /kəˈrɒbəreɪt/ v. 证实，确认
+真题例句："The new evidence corroborated the witness's testimony." （出自2022年英语二Text4）
+写作应用：可用于议论文中支撑核心论点</li>
+</ol>
+<h2>长难句拆解</h2>
+<p>本次精读选取2018年英语一Text 2中的经典长难句进行专项训练：</p>
+<blockquote>
+<p>Original sentence: The OECD estimates in its latest Economic Outlook that, if oil prices averaged $22 a barrel for a full year, compared with $13 in 1997, this would increase the oil import bill in rich economies by only 0.25-0.5% of GDP.</p>
+</blockquote>
+<ol>
+<li><strong>结构拆分</strong>：
+<ul>
+<li>主句：<code>The OECD estimates</code> + 介词短语<code>in its latest Economic Outlook</code>（作地点状语）</li>
+<li>宾语从句：由<code>that</code>引导，内部嵌套<code>if</code>引导的条件状语从句</li>
+<li>插入比较状语：<code>compared with $13 in 1997</code>（省略了主语和be动词，完整结构为<code>when it is compared with...</code>）</li>
+</ul>
+</li>
+<li>核心考点：
+<ul>
+<li><code>average</code>作动词的熟词僻义：意为“平均为，达到平均水平”</li>
+<li>固定搭配<code>oil import bill</code>：指“石油进口开支”，而非常见的“账单”含义</li>
+<li>百分比增减表达：<code>increase by + 百分比</code>意为“增加了...”</li>
+</ul>
+</li>
+<li>参考翻译：经合组织在其最新一期《经济展望》中指出，如果油价全年维持在每桶22美元（相较1997年的13美元），富裕经济体的石油进口开支仅会增加GDP的0.25%-0.5%。</li>
+</ol>
+<h2>今日学习反思</h2>
+<ol>
+<li>复盘时发现仍有3个核心词在真题例句中无法快速反应词义，计划后续建立专属易错词本，每周循环复习2次</li>
+<li>长难句的状语拆分速度仍有待提升，明天计划额外练习10道真题长难句的结构拆解训练</li>
+<li>熟词僻义是本次阅读的主要失分点，后续需要单独整理阅读中遇到的僻义词汇，避免重复出错</li>
+</ol>
+<p>💡 碎碎念：今天的学习节奏比昨天更稳定，没有被生词打断太多思考进度，坚持每天积累小进步，考研英语上岸一定没问题！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-07-24</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/7-24/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/7-24/</id>
+    <published>2026-07-24T00:00:00.000Z</published>
+    <updated>2026-07-24T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-24</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入4小时，主要完成线性代数选择题强化课程的听课学习，同步完成配套的20道线代选择专项练习题，并对错题进行了初步标记。</p>
+<h2>薄弱点</h2>
+<p>今日的线代选择专项训练暴露出多处高频易错的薄弱环节：一是伴随矩阵的相关性质记忆混淆，比如伴随矩阵的秩与原矩阵秩的分段对应关系、伴随矩阵行列式公式的适用条件容易记错；二是线性相关性的判定逻辑混乱，常混淆向量组个数与维数的判定规则，误将“向量个数小于维数”当成线性无关的充分条件；三是忽略矩阵乘法的非交换性，做题时默认AB=BA推导结论，掉入命题陷阱；四是对实对称矩阵的特征值性质辨析不清，难以快速判断相关命题的真假。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次线代选择强化课程覆盖了考研数学线性代数选择题的核心必考考点，复盘整理如下：</p>
+<ol>
+<li><strong>伴随矩阵专项</strong>：核心公式$AA^<em>=A^<em>A=|A|E$是每年必考的基础点，需牢记秩的分段结论：当$r(A)=n$时$r(A^</em>)=n$；$r(A)=n-1$时$r(A^</em>)=1$；$r(A)&lt;n-1$时$r(A^<em>)=0$。同时需注意$|A^</em>|=|A|^{n-1}$仅在$n≥2$时成立，避免遗漏前提条件。</li>
+<li><strong>线性相关性判定</strong>：考研选择常考n维向量组的相关性判定，核心方法包括定义法、秩的判定法、齐次线性方程组解的判定法。需牢记：若向量组中向量个数大于维数，则该向量组必线性相关；同时严格区分“部分相关→整体相关”“整体无关→部分无关”的逆否命题，避免逻辑颠倒。</li>
+<li><strong>矩阵运算的陷阱点</strong>：矩阵乘法不满足交换律、消去律，由$AB=AC$无法直接推出$B=C$，除非A可逆；$(AB)^k≠A^kB^k$（A、B不可交换时），转置运算需严格遵循$(AB)^T=B^TA^T$的反向顺序，这些都是选择题最常见的命题陷阱。</li>
+<li><strong>特征值与特征向量基础</strong>：需掌握矩阵的迹等于所有特征值之和、行列式等于所有特征值之积的性质；实对称矩阵的特征值均为实数，且不同特征值对应的特征向量正交，这些是快速判断选择命题真假的核心依据。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日通过4小时的线代选择强化学习，系统梳理了线性代数选择题的核心考点，明确了自身在伴随矩阵性质、矩阵运算规则上的易错点，后续将整理专项错题本，针对薄弱点进行针对性练习巩固。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研英语学习记录2026-07-23</title>
     <link href="https://elysiaweb.vercel.app/posts/english/7-23/" rel="alternate" type="text/html"/>
