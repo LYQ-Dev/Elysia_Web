@@ -1,4 +1,157 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-24</title><link>https://elysiaweb.vercel.app/posts/408/7-24/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-24/</guid><description>408数据结构大题刷题强化复盘</description><pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-24&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-25</title><link>https://elysiaweb.vercel.app/posts/408/7-25/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-25/</guid><description>408 计算机组成原理性能指标、原码补码移码及进制转换学习与复盘</description><pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-25&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计学习3小时，聚焦计算机组成原理强化复习，核心内容包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;计算机CPU性能指标的定义与计算公式（主频、CPI、CPU时间、IPS）&lt;/li&gt;
+&lt;li&gt;二进制、十进制、八进制、十六进制的相互转换规则&lt;/li&gt;
+&lt;li&gt;原码、补码、移码三种有符号数的表示方法与转换逻辑&lt;/li&gt;
+&lt;li&gt;数据存储中的低位截断与高位补充规则&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 计算机CPU性能指标&lt;/h3&gt;
+&lt;h4&gt;核心考点与公式&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主频（时钟频率）&lt;/strong&gt;：CPU每秒产生的时钟周期数，单位为Hz（$f = 1/T$，$T$为单个时钟周期时长），考研常考查单位换算（如GHz、MHz与Hz的转换），例如3GHz主频代表每秒有$3\times10^9$个时钟周期。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CPI（每条指令平均时钟周期数）&lt;/strong&gt;：单条指令执行平均消耗的时钟周期数，公式为 $CPI = \frac{\text{总时钟周期数}}{\text{总指令数}}$，考研中会结合指令混合比例计算平均CPI。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CPU执行时间&lt;/strong&gt;：完成一段程序所需的总时间，核心公式为 $T_{CPU} = \frac{IC \times CPI}{f}$，其中$IC$为总指令数，$f$为主频。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IPS（每秒执行指令数）&lt;/strong&gt;：单位时间内CPU可执行的指令总数，公式为 $IPS = \frac{f}{CPI}$，延伸考点MIPS（百万条指令每秒）为 $MIPS = \frac{IPS}{10^6}$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;考研常见考法&lt;/h4&gt;
+&lt;p&gt;结合具体程序的指令占比，先计算平均CPI，再代入公式求解CPU执行时间或IPS。&lt;/p&gt;
+&lt;h3&gt;2. 进制转换&lt;/h3&gt;
+&lt;h4&gt;核心规则&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;十进制转其他进制&lt;/strong&gt;：整数部分采用“除基取余法”，小数部分采用“乘基取整法”。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;其他进制转十进制&lt;/strong&gt;：按权展开求和，例如二进制$101.1$转十进制为 $1\times2^2 + 0\times2^1 +1\times2^0 +1\times2^{-1}=5.5$。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;快速进制转换&lt;/strong&gt;：3位二进制对应1位八进制，4位二进制对应1位十六进制，可直接分组转换。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;考研常见考法&lt;/h4&gt;
+&lt;p&gt;带小数的多进制转换、不同进制下的数值大小比较。&lt;/p&gt;
+&lt;h3&gt;3. 原码、补码、移码&lt;/h3&gt;
+&lt;h4&gt;核心定义与规则&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;原码&lt;/strong&gt;：最高位为符号位（0正1负），数值部分与真值一致，存在+0和-0两种表示，8位原码范围为$-127\sim+127$。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;补码&lt;/strong&gt;：正数补码与原码相同；负数补码为原码除符号位外取反加1，或通过模运算推导$[x]_补=2^n +x \pmod{2^n}$，仅存在唯一的0表示，8位补码范围为$-128\sim+127$（其中-128无原码对应）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;移码&lt;/strong&gt;：常用于浮点数阶码表示，定义为$[x]_移=2^{n-1}+x$，符号位与原码相反（0负1正），8位移码范围为$-128\sim+127$，可直接通过补码符号位取反得到。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;考研常见考法&lt;/h4&gt;
+&lt;p&gt;真值与机器码的互转、溢出判断（双符号位法、进位异或法）、移码与补码的转换。&lt;/p&gt;
+&lt;h3&gt;4. 低位截断与高位补充&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;低位截断&lt;/strong&gt;：将数据的低数位直接丢弃，无符号数截断后数值为原数对$2^k$取模（$k$为截断后的位数），有符号数截断可能导致数值异常，需注意符号位保留逻辑。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高位补充&lt;/strong&gt;：无符号数扩展时高位补0；有符号数（补码）扩展时高位补充符号位，保证数值不变，例如8位补码$0x81$（-127）扩展为16位时为$0xFF81$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;考研常见考法&lt;/h4&gt;
+&lt;p&gt;不同数据类型赋值时的隐式转换、内存存储的字节序相关问题。&lt;/p&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对补码高位符号扩展的适用场景仍存在混淆，容易在多位数类型转换时出错&lt;/li&gt;
+&lt;li&gt;性能指标公式的关联记忆不够牢固，偶尔会混淆CPU时间与IPS的推导逻辑&lt;/li&gt;
+&lt;li&gt;原码、补码、移码的边界值（如-128的表示）容易记错，需要强化记忆&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;系统梳理了计组核心性能指标的定义与公式关联，明确了各参数的物理意义，能够快速完成给定条件下的性能计算&lt;/li&gt;
+&lt;li&gt;掌握了三种有符号数的表示规则与转换方法，理清了原码、补码、移码的差异与适用场景&lt;/li&gt;
+&lt;li&gt;明确了进制转换的细节规则，能够熟练完成多进制下的数值转换&lt;/li&gt;
+&lt;li&gt;理清了低位截断与高位补充的适用条件，能够准确判断不同场景下的数据转换结果
+💡 碎碎念：踏实吃透每一个知识点！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-07-25</title><link>https://elysiaweb.vercel.app/posts/english/7-25/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/7-25/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-07-25&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;2024年全国硕士研究生招生考试英语（一）阅读理解Text 2精读、50个考研核心单词复盘+新学、2个高频长难句拆解&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理）&lt;/p&gt;
+&lt;h3&gt;今日复盘核心词&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;prevail&lt;/strong&gt; /prɪˈveɪl/ v. 盛行，流行；获胜，占优势
+搭配：prevail over 战胜，压倒&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mitigate&lt;/strong&gt; /ˈmɪtɪɡeɪt/ v. 减轻，缓解
+同义替换：alleviate, ease&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;subsequent&lt;/strong&gt; /ˈsʌbsɪkwənt/ adj. 随后的，后来的
+形近词辨析：consequent（随之发生的）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;paradox&lt;/strong&gt; /ˈpærədɒks/ n. 矛盾的现象，悖论&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;depict&lt;/strong&gt; /dɪˈpɪkt/ v. 描绘，描述&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;易错点总结&lt;/h3&gt;
+&lt;p&gt;今天混淆了&lt;strong&gt;compliment&lt;/strong&gt;（n./v. 称赞，恭维）和&lt;strong&gt;complement&lt;/strong&gt;（n./v. 补充，补足），特意整理了对比例句：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;His nice compliments made me feel happy.（称赞）&lt;/li&gt;
+&lt;li&gt;The red wine is a perfect complement to the steak.（补充）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;今日新学单词&lt;/h3&gt;
+&lt;p&gt;共收录30个新核心词，包括：autonomy, heuristic, meticulous, pervasive等，已制作成单词卡片用于睡前复盘。&lt;/p&gt;
+&lt;h2&gt;长难句拆解&lt;/h2&gt;
+&lt;h3&gt;难句1&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原句：The researchers argue that a lack of formal language learning, which may be common in families where parents are highly educated, does not necessarily mean that children will fail to develop a sophisticated sense of grammar.
+拆分解析：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;主句：The researchers argue + 宾语从句&lt;/li&gt;
+&lt;li&gt;宾语从句主干：a lack of formal language learning does not necessarily mean that...&lt;/li&gt;
+&lt;li&gt;非限制性定语从句：which may be common in families 修饰a lack of formal language learning&lt;/li&gt;
+&lt;li&gt;定语从句嵌套定语从句：where parents are highly educated 修饰families&lt;/li&gt;
+&lt;li&gt;最终翻译：研究人员认为，即便在父母受过高等教育的家庭中普遍缺乏正式的语言学习，也并不意味着孩子们无法形成复杂的语法意识。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;难句2&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原句：It is this apparent disconnect between educational philosophy and classroom practice that helps explain why the system has failed to produce the kind of critical thinkers that policymakers claim to desire.
+拆分解析：强调句型It is...that，核心是this apparent disconnect helps explain why...，后续嵌套宾语从句和定语从句，翻译时调整语序突出强调部分。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;阅读复盘&lt;/h2&gt;
+&lt;p&gt;今天完成2024英一Text 2，整体正确率70%，错第28题。错题原因：未准确把握作者对AI辅助写作的态度，原文中作者用了“cautious skepticism”，但我误选了“enthusiastic support”，后续需要加强对作者态度词的敏感度，整理文中的态度类词汇。&lt;/p&gt;
+&lt;h2&gt;💡 碎碎念：&lt;/h2&gt;
+&lt;p&gt;今天学习时长约3小时，中途因为犯困暂停了两次，靠黑咖啡和薄荷糖撑了下来。背单词时发现很多之前记过的词又出现了记忆模糊的情况，意识到循环复习的重要性。明天计划复盘今日阅读的同义替换词，继续完成2024英一Text3的精读，并新增40个核心单词。坚持每天积累，英语必上岸！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-07-25</title><link>https://elysiaweb.vercel.app/posts/math/7-25/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-25/</guid><description>考研数学学习与复盘记录</description><pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-25&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;四个半小时，开始线代复习，主要完成行列式的部分题型学习，包括加边法 范德蒙类型 复习行列式和矩阵的相关性质&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;对加边法的适用场景判断不准确，难以快速识别适配该方法的行列式结构，且升阶添加行列时容易破坏原式的等价性；&lt;/li&gt;
+&lt;li&gt;范德蒙行列式的变形题型处理不熟练，易记错标准形式的指数规律、项数范围，调整行列顺序时容易忽略符号变化规则；&lt;/li&gt;
+&lt;li&gt;行列式与矩阵的核心性质易混淆，比如数乘运算下二者的计算差异、伴随矩阵与行列式的关联公式记忆模糊。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 行列式与矩阵性质辨析（考研高频易错点）&lt;/h3&gt;
+&lt;p&gt;首先明确核心差异：行列式是一个确定的数值，矩阵是数表，二者的数乘运算规则完全不同：若$A$为$n$阶矩阵，则$|kA|=k^n|A|$，而$kA$是将矩阵所有元素都乘以$k$。此外考研常考关联公式：伴随矩阵的行列式满足$|A^*|=|A|^{n-1} \ (n≥2)$，逆矩阵的行列式满足$|A^{-1}|=|A|^{-1}$，需严格区分矩阵运算和行列式运算的边界。&lt;/p&gt;
+&lt;h3&gt;2. 加边法（升阶法）解题逻辑&lt;/h3&gt;
+&lt;p&gt;加边法适用于每行（列）具有统一线性结构的行列式，例如形如$|a_{ij} + b|$的行列式或递推型行列式。通用升阶原则为&lt;strong&gt;不改变原行列式的值&lt;/strong&gt;，通常将$n$阶行列式升阶为$n+1$阶，标准模板为：
+$$
+D_n = \begin{vmatrix}
+1 &amp;amp; a_1 &amp;amp; a_2 &amp;amp; \dots &amp;amp; a_n \
+0 &amp;amp; &amp;amp; &amp;amp; &amp;amp; \
+0 &amp;amp; &amp;amp; D_n &amp;amp; &amp;amp; \
+\vdots &amp;amp; &amp;amp; &amp;amp; &amp;amp; \
+0 &amp;amp; &amp;amp; &amp;amp; &amp;amp;
+\end{vmatrix}
+$$
+后续通过行/列变换将新增行列的非首元素消为0，即可简化计算，考研中常结合多项式展开、递推关系考察该方法。&lt;/p&gt;
+&lt;h3&gt;3. 范德蒙行列式核心考点&lt;/h3&gt;
+&lt;p&gt;标准$n$阶范德蒙行列式形式为：
+$$
+V_n = \begin{vmatrix}
+1 &amp;amp; 1 &amp;amp; \dots &amp;amp; 1 \
+x_1 &amp;amp; x_2 &amp;amp; \dots &amp;amp; x_n \
+x_1^2 &amp;amp; x_2^2 &amp;amp; \dots &amp;amp; x_n^2 \
+\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \
+x_1^{n-1} &amp;amp; x_2^{n-1} &amp;amp; \dots &amp;amp; x_n^{n-1}
+\end{vmatrix} = \prod_{1≤i&amp;lt;j≤n}(x_j - x_i)
+$$
+考研常考察变形题型：缺项范德蒙行列式需提取公因子补全指数、行列颠倒的范德蒙行列式需注意每交换一次行列就变号一次、含参数的范德蒙行列式可用于判断多项式根的分布，需牢记标准形式结构并灵活适配考题。&lt;/p&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日共计学习4.5小时，完成线性代数行列式模块核心题型复习，系统梳理了加边法、范德蒙行列式的解题逻辑，同时纠正了行列式与矩阵性质混淆的认知偏差。通过学习明确了自身在题型识别和变形处理上的薄弱环节，后续将针对性选取对应习题巩固练习，强化解题熟练度。
+💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-07-24</title><link>https://elysiaweb.vercel.app/posts/408/7-24/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-24/</guid><description>408数据结构大题刷题强化复盘</description><pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-24&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今日累计学习3小时，完成数据结构的大题刷题专项强化训练，针对408统考常考的大题模块进行针对性练习与思路梳理。&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
