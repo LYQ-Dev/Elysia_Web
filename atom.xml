@@ -5,8 +5,206 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-07-28T15:19:27.252Z</updated>
+  <updated>2026-07-29T15:34:25.214Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-07-29</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/7-29/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/7-29/</id>
+    <published>2026-07-29T00:00:00.000Z</published>
+    <updated>2026-07-29T00:00:00.000Z</updated>
+    <summary>408 计算机组成原理主存储器章节学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-07-29</h1>
+<h2>今日学习内容</h2>
+<p>计算机组成原理主存储器章节：SRAM、DRAM、ROM三类半导体存储器的特性与区别，以及主存交叉编址并行访问技术。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 半导体随机存取存储器（RAM）考点复盘</h3>
+<h4>（1）SRAM与DRAM核心差异</h4>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>SRAM（静态RAM）</th>
+<th>DRAM（动态RAM）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储单元</td>
+<td>触发器电路，无需刷新保持数据</td>
+<td>电容+MOS管结构，需定期刷新补充电荷以维持数据</td>
+</tr>
+<tr>
+<td>性能参数</td>
+<td>读写速度快、集成度低、功耗高</td>
+<td>读写速度稍慢、集成度高、单位功耗更低</td>
+</tr>
+<tr>
+<td>典型应用</td>
+<td>CPU高速缓存（L1/L2 Cache）</td>
+<td>计算机主存（内存条）</td>
+</tr>
+<tr>
+<td>考研考点</td>
+<td>高速缓存的基本结构与工作原理</td>
+<td>刷新方式、刷新周期、死时间计算</td>
+</tr>
+</tbody>
+</table>
+<h4>（2）DRAM刷新核心考点</h4>
+<p>考研高频考察三种刷新方案：</p>
+<ul>
+<li>集中刷新：在一个完整的刷新周期内集中完成所有存储单元刷新，存在固定死时间（死区时长=单行刷新时间×总行数）</li>
+<li>分散刷新：每个存取周期后插入一个刷新周期，无死时间但延长了整体存取周期</li>
+<li>异步刷新：将刷新操作分摊到整个系统运行周期中，兼顾了死时间与存取效率，是考研最常考查的刷新方案。</li>
+</ul>
+<h3>2. 只读存储器（ROM）考点复盘</h3>
+<p>ROM核心特性为断电数据不丢失，考研常考察各类ROM的特性差异：</p>
+<ul>
+<li>Mask ROM：厂家定制固化数据，用户无法修改，用于量产固件存储</li>
+<li>PROM：可编程一次，写入后不可逆</li>
+<li>EPROM：紫外线擦除+电写入，可多次修改</li>
+<li>EEPROM：电擦除电写入，无需额外紫外线照射，使用更灵活</li>
+<li>Flash ROM：块级擦除读写，是U盘、SSD的核心存储介质。</li>
+</ul>
+<h3>3. 主存交叉编址技术考点复盘</h3>
+<p>交叉编址用于提升主存并行访问带宽，分为两类核心方案：</p>
+<ul>
+<li><strong>高位交叉编址</strong>：高位地址选择存储体，模块内地址连续，适合程序顺序加载，带宽与单体存储器一致</li>
+<li><strong>低位交叉编址</strong>：低位地址选择存储体，连续地址分布在不同存储体中，可实现连续n个地址的并行访问，理论带宽为单体存储器的n倍（n为存储体数量），是考研计算题的高频考点。</li>
+</ul>
+<h2>问题与反思</h2>
+<p>今日学习中对DRAM三种刷新方式的死时间计算逻辑还不够熟练，容易混淆高位/低位交叉编址的带宽推导细节，后续需要结合历年考研真题例题进行针对性练习巩固。</p>
+<h2>收获与总结</h2>
+<ol>
+<li>理清了SRAM、DRAM、ROM的核心特性、性能差异与应用场景，明确了不同存储器在计算机存储层次中的定位</li>
+<li>掌握了DRAM三种刷新方式的原理与适用场景，可以独立完成刷新周期、死时间的基础计算</li>
+<li>理解了主存交叉编址的两种实现逻辑，能够准确区分高位/低位交叉编址的差异并完成带宽计算，为后续学习Cache与主存的映射、多级存储体系打下了基础。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-07-29</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/7-29/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/7-29/</id>
+    <published>2026-07-29T00:00:00.000Z</published>
+    <updated>2026-07-29T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-07-29</h1>
+<h2>今日学习内容</h2>
+<p>2h</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日新学高频词（85个）</h3>
+<ol>
+<li><strong>词根词缀拓展组</strong>：
+<ul>
+<li>前缀<code>bene-</code>（表“好”）：benefit n./v. 益处、获益；beneficial adj. 有益的；beneficiary n. 受益人</li>
+<li>词根<code>-vert/-vers</code>（表“转”）：convert v. 转换；divert v. 转移；avert v. 避免</li>
+</ul>
+</li>
+<li><strong>形近词辨析</strong>：
+<ul>
+<li>compliment n./v. 赞美、恭维；complement n. 补充、补足物</li>
+<li>perspective n. 视角、透视画法；prospective adj. 未来的、预期的</li>
+</ul>
+</li>
+<li><strong>熟词僻义积累</strong>：
+<ul>
+<li>address v. 处理、解决（=deal with）；n. 地址、演讲</li>
+<li>game n. 猎物、狩猎活动；adj. 愿意的、有胆量的</li>
+</ul>
+</li>
+</ol>
+<h3>今日错题复盘</h3>
+<p>复盘了上周背诵的易混词，记错了<code>empirical</code>（经验主义的）和<code>imperial</code>（帝国的、皇家的）的拼写与含义，今日着重标记强化记忆。</p>
+<h2>长难句精读拆解</h2>
+<p>今日选取2005年考研英语Text3经典长难句进行分析：</p>
+<blockquote>
+<p>原句：Do you remember all those years when scientists argued that smoking would kill us but the doubters insisted that we didn't know for sure? That the evidence was inconclusive, the science uncertain?</p>
+</blockquote>
+<ol>
+<li><strong>语法结构拆解</strong>：
+<ul>
+<li>主句：Do you remember all those years</li>
+<li>定语从句：<code>when scientists argued that...but the doubters insisted that...</code> 修饰先行词<code>years</code></li>
+<li>双层宾语从句：第一个宾语从句<code>that smoking would kill us</code>；第二个宾语从句<code>that we didn't know for sure</code>，后续省略了<code>that</code>的补充同位语：<code>the evidence was inconclusive, the science uncertain</code>（完整形式为<code>that the science was uncertain</code>）</li>
+</ul>
+</li>
+<li><strong>官方参考翻译</strong>：你可还记得那些年？科学家们曾断言吸烟会致命，但怀疑论者坚称我们无法百分百确定，坚称证据尚不充分，科学研究也尚未定论。</li>
+<li><strong>今日学习收获</strong>：掌握了省略引导词的同位语省略结构，熟悉了but连接的转折对比逻辑在考研真题中的高频出题思路。
+💡 碎碎念：今天总共背诵了85个新单词，复盘了上周的12个易混错题，拆解了5篇真题长难句，虽然有些形近词还是容易搞混，但慢慢找到了词根词缀的记忆技巧，坚持积累，英语必上岸！</li>
+</ol>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-07-29</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/7-29/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/7-29/</id>
+    <published>2026-07-29T00:00:00.000Z</published>
+    <updated>2026-07-29T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-07-29</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入4小时考研数学学习，核心模块为<strong>矩阵的秩</strong>，完整完成了从基础定义梳理、核心性质推导到典型题型演练的全流程学习，配套使用了李永乐《线性代数辅导讲义》对应章节、汤家凤线性代数基础班配套习题，共计完成23道针对性练习题。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>带参数的具体矩阵秩计算：对含参数的矩阵做初等变换时，容易忽略参数的取值限制，无法正确分类讨论参数不同取值下的秩的结果，比如不能直接对含参数的行列式项做除法运算；</li>
+<li>抽象矩阵的秩推导：缺乏利用伴随矩阵、可逆矩阵性质推导抽象矩阵秩的逻辑，容易遗忘伴随矩阵秩的分级结论，混淆可逆矩阵对矩阵秩的保序作用；</li>
+<li>秩的不等式综合应用：无法快速将西尔维斯特不等式、$AB=O$的秩约束条件和线性方程组解的结构结合，在综合大题中找不到解题切入点。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>1.  核心基础定义复盘</h3>
+<p>矩阵的秩有两种等价考研考察定义：一是矩阵中最高阶非零子式的阶数，二是矩阵行/列向量组的极大线性无关组所含向量个数。抽象矩阵的秩通常需要结合向量组秩的定义推导，而非直接通过初等变换计算。</p>
+<h3>2.  必考性质与高频不等式</h3>
+<h4>（1）基础性质</h4>
+<ul>
+<li>对$m\times n$矩阵$A$，恒有$0 \leq r(A) \leq \min{m,n}$；</li>
+<li>若$A$为可逆方阵，则$r(AB)=r(B)$、$r(BA)=r(B)$，可逆矩阵也被称为满秩矩阵；</li>
+<li>伴随矩阵$A^<em>$的秩分级结论：$r(A^</em>)=n \iff r(A)=n$，$r(A^<em>)=1 \iff r(A)=n-1$，$r(A^</em>)=0 \iff r(A)&lt;n-1$，为考研选择题高频考点。</li>
+</ul>
+<h4>（2）考研高频不等式</h4>
+<ol>
+<li>$r(A+B) \leq r(A) + r(B)$，可通过向量组极大无关组的包含关系证明；</li>
+<li>$r(AB) \leq \min{r(A), r(B)}$，当$A$或$B$可逆时等号成立；</li>
+<li>西尔维斯特不等式：$r(AB) \geq r(A) + r(B) - n$（$n$为$A$的列数，即$B$的行数），为考研解答题常见证明背景；</li>
+<li>若$AB=O$，则$r(A)+r(B) \leq n$，是线性方程组解的结构核心推导依据。</li>
+</ol>
+<h3>3.  考研题型拆解</h3>
+<ul>
+<li>选择题：结合伴随矩阵秩的分级结论、秩的不等式判断选项正误；</li>
+<li>填空题：具体无参数矩阵的秩计算，通过初等变换化为行阶梯形直接求解；</li>
+<li>解答题：结合线性方程组解的存在性、向量组线性相关性考察秩的综合应用，比如已知方程组有无穷多解求参数取值，本质为$r(A)=r(\overline{A}) &lt; n$。</li>
+</ul>
+<h3>4.  今日错题复盘</h3>
+<p>今日练习中出错的典型题目：已知3阶非零矩阵$A$满足$A^2=O$，求$r(A)$。最初错误地认为$r(A)$可以为2，忽略了$A^2=O$可推出$r(A)+r(A) \leq 3$，结合$A$非零故$r(A)\geq1$，最终正确结果应为$r(A)=1$。</p>
+<h2>今日小结</h2>
+<p>今日4小时的矩阵的秩学习完成了基础框架搭建和针对性题型练习，梳理了易混淆的秩的性质，整理了3道典型错题，明确了自身在参数矩阵秩、抽象矩阵秩推导上的薄弱环节，后续计划针对西尔维斯特不等式证明和伴随矩阵秩的性质开展专项练习。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-07-28</title>
     <link href="https://elysiaweb.vercel.app/posts/408/7-28/" rel="alternate" type="text/html"/>
