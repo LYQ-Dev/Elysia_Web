@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研数学学习记录2026-07-30</title><link>https://elysiaweb.vercel.app/posts/math/7-30/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-30/</guid><description>考研数学学习与复盘记录</description><pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-30&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-31</title><link>https://elysiaweb.vercel.app/posts/408/7-31/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-31/</guid><description>408存储器系统知识点学习与复盘</description><pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-31&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;两个半课时的学习内容：字拓展、位拓展、字位双拓展，以及存储器与CPU的数据交换&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 存储器拓展核心考点复盘&lt;/h3&gt;
+&lt;h4&gt;（1）字拓展（地址拓展）&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;核心原理&lt;/strong&gt;：保持单个存储单元的位数不变，通过增加存储芯片数量提升总存储字数，单芯片容量为$M \times k$时，$n$片芯片字拓展后的总容量为$n \times M \times k$。
+&lt;strong&gt;连接规则&lt;/strong&gt;：将所有芯片的低位地址线、数据线、读写控制信号线全部并联，使用高位地址线连接译码器，译码器输出分别连接各芯片的片选端$\overline{CE}$，通过译码选通对应芯片完成读写。
+&lt;strong&gt;考研考点&lt;/strong&gt;：根据总存储容量与单芯片容量计算所需芯片数、译码器类型、地址线分配逻辑。&lt;/p&gt;
+&lt;h4&gt;（2）位拓展（数据拓展）&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;核心原理&lt;/strong&gt;：保持存储字数不变，通过拼接多片芯片的数据线提升单个存储单元的位数，单芯片容量为$M \times k$时，$n$片芯片位拓展后的总容量为$M \times (n \times k)$。
+&lt;strong&gt;连接规则&lt;/strong&gt;：将所有芯片的地址线、片选端、读写控制信号线全部并联，将各芯片的数据线按位拼接为完整存储字长，例如两片4位芯片可拼接为8位存储单元。
+&lt;strong&gt;考研考点&lt;/strong&gt;：位拓展的数据线连接方式、总存储字长的计算逻辑。&lt;/p&gt;
+&lt;h4&gt;（3）字位双拓展&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;核心原理&lt;/strong&gt;：结合字拓展与位拓展，同时提升存储字数与单元位数，总芯片数 = 总存储容量 / 单芯片容量。
+&lt;strong&gt;实现步骤&lt;/strong&gt;：可先对单芯片做位拓展组成固定字长的存储块，再将多个存储块做字拓展得到最终存储器；也可先字拓展再位拓展，最终结果一致。
+&lt;strong&gt;考研考点&lt;/strong&gt;：复杂存储器拓展题的分步拆解、地址空间分段分配。&lt;/p&gt;
+&lt;h3&gt;2. 存储器与CPU的数据交换&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;核心交互信号&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;地址总线：CPU发送存储单元地址，指定读写目标位置&lt;/li&gt;
+&lt;li&gt;数据总线：实现CPU与存储器的数据传输，读周期时存储器发数据到CPU，写周期时CPU发数据到存储器&lt;/li&gt;
+&lt;li&gt;控制总线：发送$\overline{RD}$（读有效）、$\overline{WR}$（写有效）信号控制读写时序，低速存储器可通过$\overline{READY}$信号向CPU请求等待周期。
+&lt;strong&gt;读写流程&lt;/strong&gt;：CPU发送地址→译码选通对应芯片→发送读写控制信号→完成数据传输→释放总线。
+&lt;strong&gt;考研考点&lt;/strong&gt;：存储器读写周期的时序步骤、核心控制信号的功能与有效电平。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;容易混淆字拓展与位拓展的连接规则，偶尔会搞反并联/译码的信号线类型&lt;/li&gt;
+&lt;li&gt;字位双拓展的分步拆解逻辑容易出错，尤其是地址线的分段分配&lt;/li&gt;
+&lt;li&gt;对存储器与CPU交互的控制信号时序记忆不够牢固，容易混淆$\overline{RD}$与$\overline{WR}$的有效状态&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;清晰区分了三种存储器拓展的核心差异：字拓展改存储字数、位拓展改单元位数、双拓展同时兼顾两者&lt;/li&gt;
+&lt;li&gt;掌握了各类拓展的标准连接方法与考点出题逻辑，能够独立完成基础的存储器拓展计算题&lt;/li&gt;
+&lt;li&gt;理清了存储器与CPU数据交换的核心信号与流程，为后续学习总线、DMA控制器等知识点打下了基础
+💡 碎碎念：踏实吃透每一个知识点！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-07-31</title><link>https://elysiaweb.vercel.app/posts/english/7-31/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/7-31/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-07-31&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共投入1.5小时系统学习考研英语，具体分为三个环节：40分钟考研核心单词复盘与新学、50分钟2023年英语一阅读Text3精读与长难句拆解、20分钟整理当日学习笔记与错题回顾。&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理）
+今日重点复盘了8个考研高频核心词汇，整理了易混淆搭配与真题语境用法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;adhere [ədˈhɪə(r)]&lt;/strong&gt; v. 粘附；坚持，追随
+考研搭配：&lt;code&gt;adhere to&lt;/code&gt;（正式语境下坚持原则、协议等），例句：&lt;em&gt;All parties must adhere to the peace agreement.&lt;/em&gt;
+易混辨析：与&lt;code&gt;stick to&lt;/code&gt;的区别，&lt;code&gt;stick to&lt;/code&gt;多用于日常坚持计划、观点，&lt;code&gt;adhere to&lt;/code&gt;更偏向官方、正式的承诺与规则。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;conventional [kənˈvenʃənl]&lt;/strong&gt; adj. 传统的，惯例的；常规的
+真题例句：&lt;em&gt;Conventional wisdom says that more choice is better.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;discrepancy [dɪˈskrepənsi]&lt;/strong&gt; n. 差异，不一致（尤指数据、说法间的矛盾）
+搭配：&lt;code&gt;discrepancy between A and B&lt;/code&gt;，例句：&lt;em&gt;There is a discrepancy between the two reports.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;evoke [ɪˈvəʊk]&lt;/strong&gt; v. 唤起，引起（情感、记忆）
+真题搭配：&lt;code&gt;evoke strong reactions&lt;/code&gt;，例句：&lt;em&gt;The speech evoked heated debate among the audience.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;inherent [ɪnˈhɪərənt]&lt;/strong&gt; adj. 固有的，内在的
+例句：&lt;em&gt;There is an inherent risk in any new investment.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：今天背单词时特意整理了之前混淆的&lt;code&gt;adhere to&lt;/code&gt;和&lt;code&gt;stick to&lt;/code&gt;，还把真题里出现的&lt;code&gt;discrepancy&lt;/code&gt;的语境例句抄在了笔记本上，避免下次做题时再误解词义。坚持每天复盘5个以上高频词，积少成多，英语上岸肯定没问题！&lt;/p&gt;
+&lt;h2&gt;长难句精读&lt;/h2&gt;
+&lt;p&gt;今日选取2023年考研英语一阅读Text3中的经典长难句进行拆解：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原句：The companies that Dr. Curtis turned to—Procter &amp;amp; Gamble, Colgate-Palmolive and Nestle—had invested hundreds of millions of dollars in finding and controlling the habit loops that keep customers hooked.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;句子结构拆分：
+&lt;ul&gt;
+&lt;li&gt;主句主干：&lt;code&gt;The companies had invested hundreds of millions of dollars&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;第一个定语从句&lt;code&gt;that Dr. Curtis turned to&lt;/code&gt;修饰先行词&lt;code&gt;the companies&lt;/code&gt;，破折号内为补充举例的公司名称&lt;/li&gt;
+&lt;li&gt;第二个定语从句&lt;code&gt;that keep customers hooked&lt;/code&gt;修饰先行词&lt;code&gt;the habit loops&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;参考译文：柯蒂斯博士求助的那些公司——包括宝洁、高露洁-棕榄和雀巢——已经投入了数亿美元用于研究并控制那些让消费者沉迷的习惯循环。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;💡 碎碎念：今天拆解长难句时一开始混淆了两个定语从句的修饰对象，反复对比先行词和从句谓语动词的单复数后才理清逻辑，之后又找了3个同类型嵌套定语从句进行练习，终于掌握了快速拆分的技巧。&lt;/p&gt;
+&lt;h2&gt;今日学习总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;累计背诵并复盘核心单词42个，整理易混搭配5组&lt;/li&gt;
+&lt;li&gt;精读1篇考研阅读真题片段，拆解长难句3句，整理陌生词组6个&lt;/li&gt;
+&lt;li&gt;整理了本周的单词错题本，计划明日早上快速过一遍强化记忆&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-07-31</title><link>https://elysiaweb.vercel.app/posts/math/7-31/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-31/</guid><description>考研数学线性代数矩阵专项刷题与复盘记录</description><pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-31&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入4小时完成线性代数矩阵专项刷题，涵盖基础计算、综合应用、易错陷阱三类共约60道习题，覆盖矩阵基本运算、初等变换、伴随矩阵、分块矩阵、参数矩阵可逆性判断等核心考点，同步完成了错题标注与初步复盘。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;p&gt;今天的刷题过程中暴露出多处典型薄弱环节：一是分块矩阵的初等变换应用不熟练，遇到带分块结构的矩阵求逆、求秩题型时，容易混淆分块变换的规则与顺序，导致推导卡顿甚至出错；二是伴随矩阵的核心公式在抽象矩阵场景下的灵活运用不足，比如已知伴随矩阵求原矩阵的逆、计算伴随矩阵的行列式时，偶尔会记错公式细节；三是矩阵乘法的非交换性经常被忽略，在推导矩阵等式时错误交换相乘顺序，导致最终结果偏差；四是含参数的矩阵可逆性判断中，对参数的分类讨论不够全面，遗漏了部分特殊取值下的行列式为0的情况。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;p&gt;今天的刷题核心围绕线性代数矩阵模块的考研核心考点展开，现将相关知识点系统复盘如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;矩阵基本运算&lt;/strong&gt;：重点复习了矩阵加法、数乘、乘法、转置的运算规则，尤其强调了矩阵乘法不满足交换律，这是考研中最常见的易错陷阱之一，在处理矩阵等式时必须严格遵循相乘顺序，不可随意交换因子位置；同时复习了矩阵幂运算的化简技巧，比如当$\boldsymbol{A}$可对角化时可通过对角矩阵快速计算幂次。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;初等变换与初等矩阵&lt;/strong&gt;：回顾了三种初等变换（换行、倍乘行、倍加行）对应的初等矩阵性质，明确了“左行右列”的核心规律：即对矩阵左乘初等矩阵等价于对其做对应的行初等变换，右乘则对应列初等变换，这一结论是处理矩阵变换类题型的核心工具。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;伴随矩阵专题&lt;/strong&gt;：系统复盘了伴随矩阵的定义、核心公式$\boldsymbol{A}\boldsymbol{A}^&lt;em&gt;=\boldsymbol{A}^&lt;/em&gt;\boldsymbol{A}=|\boldsymbol{A}|\boldsymbol{E}$，以及衍生推论：当$\boldsymbol{A}$可逆时，$\boldsymbol{A}^&lt;em&gt;=|\boldsymbol{A}|\boldsymbol{A}^{-1}$、$|\boldsymbol{A}^&lt;/em&gt;|=|\boldsymbol{A}|^{n-1}$、$(\boldsymbol{A}^&lt;em&gt;)^{-1}=\frac{\boldsymbol{A}}{|\boldsymbol{A}|}$；同时补充了伴随矩阵的秩的分段结论：
+$$r(\boldsymbol{A}^&lt;/em&gt;)=\begin{cases}
+n, &amp;amp; r(\boldsymbol{A})=n \
+1, &amp;amp; r(\boldsymbol{A})=n-1 \
+0, &amp;amp; r(\boldsymbol{A})&amp;lt;n-1
+\end{cases}$$
+该结论在抽象矩阵秩的题型中考察频率极高。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分块矩阵&lt;/strong&gt;：复习了分块矩阵的运算规则，重点掌握了对角分块矩阵、上三角分块矩阵的求逆方法，以及分块初等变换的应用场景，分块矩阵常用来简化高阶矩阵的计算或证明，是处理大型矩阵题型的常用技巧。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;矩阵的秩与可逆性&lt;/strong&gt;：回顾了矩阵秩的基本性质，如$r(\boldsymbol{A}+\boldsymbol{B})\leq r(\boldsymbol{A})+r(\boldsymbol{B})$、$r(\boldsymbol{A}\boldsymbol{B})\leq\min{r(\boldsymbol{A}),r(\boldsymbol{B})}$，以及重要结论：若$\boldsymbol{A}\boldsymbol{B}=\boldsymbol{O}$，则$r(\boldsymbol{A})+r(\boldsymbol{B})\leq n$（$n$为$\boldsymbol{A}$的列数，即$\boldsymbol{B}$的行数）；同时明确了$n$阶矩阵可逆的充要条件：$|\boldsymbol{A}|\neq0$、$r(\boldsymbol{A})=n$、$\boldsymbol{A}$可表示为若干初等矩阵的乘积、齐次线性方程组$\boldsymbol{A}\boldsymbol{x}=\boldsymbol{0}$仅有零解等。
+结合今日刷题，多数错题均围绕上述知识点的细节应用展开，后续需针对薄弱点强化专项练习。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日共计投入4小时完成矩阵专项刷题，整体完成度较好，但通过错题复盘明确了自身在分块变换、伴随矩阵灵活运用、乘法交换律规避等方面的不足。后续计划整理今日错题形成专属错题集，针对薄弱点额外补充20道专项题型，同时每周定期复盘矩阵模块核心知识点，避免遗忘易错细节。
+💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-07-30</title><link>https://elysiaweb.vercel.app/posts/math/7-30/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/7-30/</guid><description>考研数学学习与复盘记录</description><pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-07-30&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今日因前往医院完成常规体检，未开展考研数学专项学习，属于备考间隙的休息调整日。&lt;/p&gt;
 &lt;h2&gt;薄弱点&lt;/h2&gt;
