@@ -1,4 +1,139 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-07-31</title><link>https://elysiaweb.vercel.app/posts/408/7-31/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-31/</guid><description>408存储器系统知识点学习与复盘</description><pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-31&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-08-01</title><link>https://elysiaweb.vercel.app/posts/408/8-1/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/8-1/</guid><description>408 专业课中Cache替换算法、主存与Cache块结构及相关计算的学习与复盘</description><pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-08-01&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入2小时学习，核心聚焦于计算机组成原理中Cache相关核心考点，主要学习了Cache的几种常见替换算法、主存块与Cache块的映射结构，同时配套练习了地址字段划分、命中率计算等实战题型。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 主存块与Cache块的结构基础&lt;/h3&gt;
+&lt;p&gt;在408考研计算机组成原理考点中，主存与Cache均以**块（行）**作为数据交换的最小单位：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主存会被划分为若干连续的主存块，每个主存块大小固定，主存地址可拆分为「主存块号」和「块内偏移量」两个字段，其中块内偏移位数由块大小决定，即 $偏移位数 = \log_2(块大小)$。&lt;/li&gt;
+&lt;li&gt;Cache同样划分为若干Cache块，Cache地址拆分为「Cache块号」和「块内偏移量」，由于二者块大小一致，块内偏移位数与主存地址的偏移位数完全相同。&lt;/li&gt;
+&lt;li&gt;核心映射考点分为三类：
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;直接映射&lt;/strong&gt;：主存块 $i$ 只能映射到Cache块 $i \mod C$（$C$为Cache总块数），结构简单但冲突率高；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;全相联映射&lt;/strong&gt;：主存任意块可放入Cache任意块中，灵活性强但标记位开销大；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;组相联映射&lt;/strong&gt;：折中方案，将Cache划分为$G$组，主存块 $i$ 映射到第 $i \mod G$ 组，组内采用全相联映射，是考研最常考察的映射方式。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. Cache常见替换算法&lt;/h3&gt;
+&lt;p&gt;替换算法是Cache命中率的核心影响因素，考研高频考察以下4种：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;随机替换（RAND）&lt;/strong&gt;：随机选择Cache中的一块进行替换，实现简单但未考虑局部性原理，命中率较低，仅作为基础概念考察。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;先进先出（FIFO）&lt;/strong&gt;：替换最早调入Cache的块，未考虑块的使用频率，可能误替换高频使用的块，存在&quot;抖动&quot;问题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;最近最少使用（LRU）&lt;/strong&gt;：替换最近一段时间内访问次数最少的块，完美契合程序局部性原理，是考研核心考点，常考察LRU的栈实现、计数器实现以及命中率计算。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;最不经常使用（LFU）&lt;/strong&gt;：替换累计使用次数最少的块，易淘汰长期未使用但近期频繁访问的块，实际应用较少，考研多作为对比考点出现。
+此外近似LRU的时钟替换算法也是部分院校的考察点，核心通过标记位记录块的访问状态实现近似LRU。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;3. 核心计算题型&lt;/h3&gt;
+&lt;p&gt;本次学习重点练习了两类计算：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;地址字段划分计算&lt;/strong&gt;：根据主存容量、Cache容量、块大小，计算主存地址各字段（标记位、组号、块内偏移）的位数；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cache性能计算&lt;/strong&gt;：平均访问时间公式为 $T_{avg} = H \times T_c + (1-H) \times (T_c + T_m)$，其中$H$为Cache命中率，$T_c$为Cache访问时间，$T_m$为主存访问+块传输时间，也就是缺块后的访问开销。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;组相联映射的地址字段划分容易混淆组号位数与标记位位数的计算逻辑，需要结合例题再梳理一遍公式；&lt;/li&gt;
+&lt;li&gt;LRU算法的具体替换过程模拟还不够熟练，面对多轮访问序列时容易出现替换错误；&lt;/li&gt;
+&lt;li&gt;平均访问时间的公式容易遗漏Cache本身的访问时间，需要牢记完整的计算逻辑。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;理清了主存块与Cache块的映射关系，明确了不同映射方式下地址字段的拆分规则，解决了之前对地址划分的模糊认知；&lt;/li&gt;
+&lt;li&gt;系统掌握了4种常见Cache替换算法的核心思想、优缺点和考察重点，能够快速区分不同算法的适用场景；&lt;/li&gt;
+&lt;li&gt;熟练掌握了Cache地址字段位数、平均访问时间的基础计算方法，能够独立完成简单的实战题型练习；&lt;/li&gt;
+&lt;li&gt;明确了408中主存-Cache层次的核心考点框架，为后续学习虚拟存储层次打下了基础。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-08-01</title><link>https://elysiaweb.vercel.app/posts/english/8-1/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/8-1/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-08-01&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;1.5小时考研英语系统学习，涵盖两部分：① 考研英语5500词核心高频词复盘；② 2005年全国硕士研究生招生考试英语（一）阅读Text 1的3个典型长难句拆解与翻译训练。&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理，选自近5年考研英语真题高频词）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;stagnate&lt;/strong&gt; /stæɡˈneɪt/ v. 停滞，不发展；（液体）不流动
+&lt;blockquote&gt;
+&lt;p&gt;真题例句：The economy has stagnated for two consecutive quarters.（2021年英语一阅读Text 3）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;detrimental&lt;/strong&gt; /ˌdetrɪˈmentl/ adj. 有害的，不利的
+&lt;blockquote&gt;
+&lt;p&gt;真题例句：Smoking is detrimental to your health.（2019年英语二完形填空）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mitigate&lt;/strong&gt; /ˈmɪtɪɡeɪt/ v. 减轻，缓解（伤害、痛苦等）
+&lt;blockquote&gt;
+&lt;p&gt;真题例句：Measures to mitigate the impact of climate change are urgently needed.（2020年英语一写作）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;plausible&lt;/strong&gt; /ˈplɔːzəbl/ adj. 看似合理的，貌似可信的
+&lt;blockquote&gt;
+&lt;p&gt;真题例句：His explanation sounds plausible but lacks solid evidence.（2018年英语一阅读Text 2）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pursuant&lt;/strong&gt; /pəˈsjuːənt/ adj. 依据，按照（正式书面语）
+&lt;blockquote&gt;
+&lt;p&gt;真题例句：Pursuant to the new policy, all students must complete the internship.（2022年英语二翻译）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;长难句拆解（选自2005年英语一Text 1）&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原句：But science does provide us with the best available guide to the future, and it is critical that our nation and the world base important policies on the best judgments that science can provide concerning the future consequences of present actions.
+拆解分析：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;并列分句1：&lt;code&gt;science does provide us with the best available guide to the future&lt;/code&gt;，其中&lt;code&gt;does&lt;/code&gt;用于强调谓语动词&lt;code&gt;provide&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;并列分句2：&lt;code&gt;it is critical that...&lt;/code&gt;，其中&lt;code&gt;it&lt;/code&gt;为形式主语，真正的主语是&lt;code&gt;that&lt;/code&gt;引导的主语从句；&lt;/li&gt;
+&lt;li&gt;主语从句内部：&lt;code&gt;our nation and the world base important policies on the best judgments&lt;/code&gt;，其中&lt;code&gt;base...on...&lt;/code&gt;为固定搭配“以……为依据”；&lt;/li&gt;
+&lt;li&gt;定语从句&lt;code&gt;that science can provide&lt;/code&gt;修饰&lt;code&gt;best judgments&lt;/code&gt;，后置定语&lt;code&gt;concerning the future consequences of present actions&lt;/code&gt;同样修饰&lt;code&gt;best judgments&lt;/code&gt;。
+参考翻译：但科学确实为我们提供了通往未来的最佳可行指引，而且至关重要的是，我们国家和全世界在制定重大政策时，应基于科学能够提供的、关于当前行动未来后果的最优判断。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;💡 碎碎念：今天复盘的单词都是真题里反复出现的“熟词僻义”高频词，之前总容易忽略这类词的真题考法，用真题例句辅助记忆效果好了很多。长难句拆解一开始被多层从句绕晕，逐句拆分成分后终于理清逻辑，继续坚持每天积累，考研英语上岸一定没问题！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-08-01</title><link>https://elysiaweb.vercel.app/posts/math/8-1/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/8-1/</guid><description>考研数学矩阵刷题与向量组知识复习复盘记录</description><pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-08-01&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日累计学习考研数学4小时，主要完成两部分任务：一是针对性刷矩阵相关的选择题、解答题，涵盖初等变换、矩阵秩、矩阵方程、伴随矩阵等考点；二是系统复习向量组的核心知识点，梳理线性相关/无关、极大线性无关组、向量组秩等模块的逻辑框架。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;矩阵初等变换与矩阵秩的对应关系容易混淆，尤其在区分行变换和列变换对秩的影响上偶尔出错；&lt;/li&gt;
+&lt;li&gt;向量组线性相关性的判定定理应用不够熟练，遇到含参数的向量组线性相关性问题时，容易遗漏分类讨论的情况；&lt;/li&gt;
+&lt;li&gt;矩阵方程$XA=B$的求解步骤容易颠倒，且在处理不可逆矩阵的情况时，无法快速判断解的存在性与解的结构。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;一、矩阵模块复盘&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;核心考点梳理&lt;/strong&gt;：
+考研中矩阵的高频考点包括：初等变换的性质（初等变换不改变矩阵的秩）、伴随矩阵的核心公式$AA^*=A^*A=|A|E$、可逆矩阵的判定（$|A|\neq0$）、矩阵方程的求解方法：$AX=B$可通过$(A|B)$初等行变换求$X=A^{-1}B$，$XA=B$则通过$(A^T|B^T)$行变换求$X^T=(A^T)^{-1}B^T$。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;易错点强化&lt;/strong&gt;：
+行变换仅能用于行阶梯形化、求逆、解线性方程组，常规求矩阵秩仅需行变换即可，误用列变换容易打乱矩阵结构；伴随矩阵的秩和原矩阵秩的关系：$r(A^*)=\begin{cases}n, &amp;amp; r(A)=n \1, &amp;amp; r(A)=n-1 \0, &amp;amp; r(A)&amp;lt;n-1\end{cases}$，该结论容易混淆记错。&lt;/li&gt;
+&lt;li&gt;真题关联：2025年数学一第5题就考察了矩阵初等变换与秩的结合应用，本次刷题刚好覆盖了该题型的训练。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;二、向量组模块复盘&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;核心考点梳理&lt;/strong&gt;：
+向量组的核心逻辑围绕线性相关性、秩、线性表示展开：
+&lt;ul&gt;
+&lt;li&gt;线性相关/无关的定义：存在不全为0的数$k_1,...,k_s$使得$k_1\alpha_1+...+k_s\alpha_s=0$则相关，否则无关；&lt;/li&gt;
+&lt;li&gt;判定定理：$s$个$n$维向量，当$s&amp;gt;n$时必线性相关；向量组的秩$r(\alpha_1,...,\alpha_s)&amp;lt;s$则相关，等于$s$则无关；&lt;/li&gt;
+&lt;li&gt;极大线性无关组的求法：将向量组作为列向量构成矩阵，做初等行变换化为行阶梯形，非零行的首非零元所在列对应的向量即为极大无关组；&lt;/li&gt;
+&lt;li&gt;线性表示的判定：$\beta$可由$\alpha_1,...,\alpha_s$线性表示等价于$r(\alpha_1,...,\alpha_s)=r(\alpha_1,...,\alpha_s,\beta)$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;题型拓展&lt;/strong&gt;：
+含参数的向量组线性相关性问题，需要结合行列式法和秩的定义分类讨论：当向量组为$n$个$n$维向量时，先计算行列式$|A|$，若$|A|\neq0$则无关，若$|A|=0$再通过秩的计算分析具体情况，本次刷题中遇到的3道参数型向量组题目刚好练习了该思路。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日完成了既定的4小时学习计划，通过刷题巩固了矩阵模块的常见题型，梳理了向量组的完整知识框架，整理了20余道错题并标注了易错点。在处理含参数的矩阵方程和向量组相关性问题时，仍存在一定的卡顿，后续需要针对性补充该类题型的专项训练。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-07-31</title><link>https://elysiaweb.vercel.app/posts/408/7-31/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/7-31/</guid><description>408存储器系统知识点学习与复盘</description><pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-07-31&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;两个半课时的学习内容：字拓展、位拓展、字位双拓展，以及存储器与CPU的数据交换&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
