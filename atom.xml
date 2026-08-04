@@ -5,8 +5,169 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-03T15:08:39.637Z</updated>
+  <updated>2026-08-04T14:03:51.689Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-04</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-4/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-4/</id>
+    <published>2026-08-04T00:00:00.000Z</published>
+    <updated>2026-08-04T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-04</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入3小时学习考研408计算机组成原理模块，系统梳理了指令系统章节中的两类核心知识点：各类操作数寻址方式与变长操作码指令设计。</p>
+<h2>AI知识点带复盘</h2>
+<h3>一、各类寻址方式复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：寻址方式指指令格式中用于指定操作数有效地址（EA）的编码规则，直接决定指令访问操作数的效率与寻址范围，是408统考指令系统章节的高频考点。</li>
+<li><strong>常见寻址类型及考点细节</strong>
+<ul>
+<li><strong>立即寻址</strong>：操作数直接包含在指令字段中，无需访存取操作数，执行速度最快，适用于给寄存器赋初值，但操作数长度受指令地址字段限制。</li>
+<li><strong>直接寻址</strong>：有效地址<code>EA = A</code>（A为指令中的地址字段），仅需一次主存访问即可获取操作数，寻址空间受地址字段长度直接限制。</li>
+<li><strong>寄存器寻址</strong>：操作数存储在通用寄存器中，有效地址为寄存器编号，无需访存，执行效率极高，常用于频繁调用的操作数存储。</li>
+<li><strong>寄存器间接寻址</strong>：指令中地址字段指定寄存器，寄存器内存储操作数的有效地址，需两次访存（一次取地址，一次取操作数），可扩大寻址范围。</li>
+<li><strong>相对寻址</strong>：有效地址<code>EA = (PC) + A</code>，PC为当前指令的程序计数器值，A为偏移量，常用于实现程序的相对转移指令，无需知道绝对地址。</li>
+<li><strong>基址寻址</strong>：有效地址<code>EA = (BR) + A</code>，BR为基址寄存器，用于扩大寻址空间，常用于操作系统的内存管理。</li>
+<li><strong>变址寻址</strong>：有效地址<code>EA = (IX) + A</code>，IX为变址寄存器，适合对数组、字符串等批量数据的处理，通过修改变址寄存器值实现遍历。</li>
+<li><strong>堆栈寻址</strong>：通过堆栈指针SP指定操作数，常用于子程序调用、中断处理等场景。</li>
+</ul>
+</li>
+<li><strong>统考考点重点</strong>：常考察各类寻址方式的有效地址计算、适用场景对比、访存次数分析。</li>
+</ol>
+<h3>二、变长操作码指令复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：指令的操作码字段长度不固定，可根据指令功能、使用频率动态调整，通过与地址字段配合实现灵活编码，解决了固定长度操作码的编码效率问题。</li>
+<li><strong>扩展操作码技术（408核心考点）</strong>
+是变长操作码的典型实现方式，通过将地址字段的部分位作为扩展的操作码位，实现多嵌套的指令编码：
+<ul>
+<li>以16位三地址指令格式为例，每个地址字段为4位，则操作码字段为4位，最多可表示<code>2^4=16</code>条三地址指令。</li>
+<li>若将其中1条三地址指令的第三个地址字段作为扩展操作码的高4位，则可将该指令扩展为<code>2^4=16</code>条二地址指令。</li>
+<li>同理，可将1条二地址指令扩展为<code>2^4=16</code>条一地址指令，再将1条一地址指令扩展为<code>2^4=16</code>条零地址指令。</li>
+</ul>
+</li>
+<li><strong>设计优势</strong>：根据指令使用频率分配操作码长度，高频指令使用短操作码减少指令长度，低频指令使用长操作码优化编码空间，整体提升指令系统的存储效率。</li>
+<li><strong>统考考点重点</strong>：常考察扩展操作码的计算题，给定指令格式与各类指令条数，计算最多可实现的指令总数。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对多寄存器联合寻址（如基址+变址寻址）的有效地址计算逻辑仍不够熟练，容易混淆不同寄存器的作用。</li>
+<li>变长操作码的嵌套扩展规则在多地址指令转换时容易出错，需要进一步结合实例推演。</li>
+<li>尚未结合具体指令集（如RISC-V、x86）的寻址实例辅助理解，抽象概念的记忆不够牢固。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了8类常见寻址方式的核心原理、有效地址计算公式、适用场景与访存次数，明确了408统考中寻址方式的高频考察方向。</li>
+<li>掌握了变长操作码（扩展操作码）的设计思路与计算方法，理解了其优化指令编码的核心逻辑。</li>
+<li>明确了指令系统章节的核心考点分布，为后续刷题巩固打下了基础。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-04</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-4/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-4/</id>
+    <published>2026-08-04T00:00:00.000Z</published>
+    <updated>2026-08-04T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-04</h1>
+<h2>今日学习内容</h2>
+<p>总计约1.5小时，分为单词复盘与长难句专项练习两个模块</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+今日复盘考研英语大纲核心词List 14&amp;15，共计64个高频词汇，重点攻克了以下重难点：</p>
+<ol>
+<li><strong>形近易混词辨析</strong>：区分<code>compliment</code>（v./n. 赞美、恭维）与<code>complement</code>（n./v. 补充、补足），通过实用例句强化记忆：
+<ul>
+<li><em>My colleague paid me a sincere compliment on my project proposal.</em></li>
+<li><em>Fresh herbs are the perfect complement to this simple pasta dish.</em></li>
+</ul>
+</li>
+<li><strong>熟词僻义积累</strong>：掌握<code>address</code>作动词的生僻含义“处理、解决”，例句：<em>The new policy aims to address the rising unemployment rate.</em></li>
+<li>借助自测小程序完成复盘检测，整体正确率达83%，标记了10个遗忘率较高的单词，计划明日早自习进行二次巩固。</li>
+</ol>
+<h2>长难句专项分析</h2>
+<p>选取2025年考研英语一Text 3的经典长难句进行拆分训练：</p>
+<blockquote>
+<p><em>The rapid development of generative AI, which has transformed multiple industries, is now reshaping the landscape of higher education.</em></p>
+</blockquote>
+<ol>
+<li><strong>结构拆解</strong>：主句主语为<code>The rapid development of generative AI</code>，谓语为<code>is now reshaping</code>，宾语为<code>the landscape of higher education</code>；非限制性定语从句<code>which has transformed multiple industries</code>修饰先行词generative AI。</li>
+<li><strong>核心词汇积累</strong>：<code>generative AI</code>（生成式人工智能）、<code>landscape</code>（n. 局面、格局）、<code>reshape</code>（v. 重塑、改变）</li>
+<li>中英翻译练习：<em>生成式人工智能的快速发展已改变了多个行业，如今正重塑高等教育的格局。</em></li>
+</ol>
+<p>💡 碎碎念：今天在辨析形近词时终于不再混淆啦，长难句拆分的速度也比上周提升了不少！不用急于求成，每天稳扎稳打积累，考研英语上岸的目标一定能达成！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-04</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-4/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-4/</id>
+    <published>2026-08-04T00:00:00.000Z</published>
+    <updated>2026-08-04T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-04</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入4小时考研数学学习，核心聚焦线性代数板块的向量空间与向量的秩模块，从基础概念的重新梳理、核心定理的推导，到配套考研常考题型的练习与复盘，完成了系统的一轮巩固学习。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>对向量空间的判定条件容易混淆，尤其是区分齐次线性方程组解空间与非齐次解空间是否构成子空间时经常出错；</li>
+<li>过渡矩阵的求解时常忽略基的顺序，导致变换结果与预期不符；</li>
+<li>向量组的秩、矩阵的秩与线性方程组解的维数之间的关联逻辑容易混乱，无法快速建立解题桥梁；</li>
+<li>子空间的交与和的维数公式应用不熟练，计算维度时经常遗漏细节条件。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>向量空间模块复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：向量空间V是满足加法封闭性、数乘封闭性的非空集合，需同时满足8条运算律；子空间是V的非空子集，且对加法和数乘封闭，判定核心为“非空+对两种运算封闭”。考研高频考点为：齐次线性方程组$Ax=0$的解集合构成$\mathbb{R}^n$的子空间（解空间），而非齐次方程组$Ax=b$的解集合不构成子空间（不满足数乘封闭，$k\cdot0\neq b\neq0$）。</li>
+<li><strong>基与维数</strong>：向量空间的极大线性无关组即为一组基，基中向量的个数为空间的维数。考研常考题型为求解给定子空间的基与维数，例如由向量组生成的子空间、齐次解空间的基。</li>
+<li><strong>过渡矩阵</strong>：设$\alpha_1,\alpha_2,\dots,\alpha_n$与$\beta_1,\beta_2,\dots,\beta_n$是$n$维向量空间的两组基，满足$(\beta_1,\beta_2,\dots,\beta_n)=(\alpha_1,\alpha_2,\dots,\alpha_n)P$，则$P$为从基$\alpha$到基$\beta$的过渡矩阵，求解时可通过构造增广矩阵$[\alpha|\beta]$行变换得到$P=\alpha^{-1}\beta$，需严格注意基的顺序。</li>
+</ol>
+<h3>向量的秩模块复盘</h3>
+<ol>
+<li><strong>核心概念</strong>：向量组的极大线性无关组所含向量个数为向量组的秩；矩阵的秩等于其行向量组的秩，也等于其列向量组的秩，即“三秩合一”。</li>
+<li><strong>重要秩公式</strong>：
+<ul>
+<li>$r(A+B) \leq r(A) + r(B)$</li>
+<li>$r(AB) \leq \min{r(A), r(B)}$，若$A$可逆则$r(AB)=r(B)$，$B$可逆则$r(AB)=r(A)$</li>
+<li>$n$元齐次线性方程组$Ax=0$的解空间维数为$n - r(A)$，这是考研计算与证明题的核心考点之一</li>
+</ul>
+</li>
+<li><strong>考研常考题型</strong>：
+<ul>
+<li>求向量组的极大无关组，并将其余向量用极大无关组线性表示</li>
+<li>利用秩的性质证明矩阵秩的等式/不等式</li>
+<li>结合线性方程组的解的结构，通过秩判断解的存在性与解空间维数</li>
+</ul>
+</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日完成了向量空间与向量的秩模块的系统学习与习题练习，对之前模糊的子空间判定、过渡矩阵求解等知识点有了更清晰的认知，但在秩的不等式证明和子空间交与和的维数计算上仍存在卡点，后续需要针对性补充专项习题进行巩固。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-03</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-3/" rel="alternate" type="text/html"/>
