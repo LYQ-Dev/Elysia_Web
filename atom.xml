@@ -5,8 +5,228 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-04T14:03:51.689Z</updated>
+  <updated>2026-08-05T14:31:14.253Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-05</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-5/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-5/</id>
+    <published>2026-08-05T00:00:00.000Z</published>
+    <updated>2026-08-05T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-05</h1>
+<h2>今日学习内容</h2>
+<blockquote>
+<p>学习时长：3小时
+学习内容：CPU的组成体系、寻址方式复习、程序的机器级代码表示</p>
+</blockquote>
+<h2>AI知识点带复盘</h2>
+<h3>1. CPU的组成考点复盘</h3>
+<p>CPU是计算机指令执行的核心部件，考研核心考点包括：</p>
+<ul>
+<li><strong>核心功能</strong>：程序控制（取指-译码-执行循环）、操作控制（协调各部件时序）、时间控制（指令执行节拍管控）、数据加工（算术/逻辑运算）、异常与中断处理。</li>
+<li><strong>核心组成部件</strong>：
+<ol>
+<li>运算器：由ALU、通用寄存器组、状态条件寄存器（标志寄存器，如ZF/CF/SF）组成，负责数据运算与结果状态记录。</li>
+<li>控制器：由PC程序计数器、IR指令寄存器、CU控制单元组成，负责取指译码并生成控制信号，协调各部件工作。</li>
+<li>内部总线：连接CPU内部各模块，实现数据与控制信号传输。</li>
+</ol>
+</li>
+<li>高频考点细节：PC始终指向待执行的下一条指令地址，IR存放当前正在执行的指令，通用寄存器用于暂存操作数以减少访存次数。</li>
+</ul>
+<h3>2. 寻址方式考点复盘</h3>
+<p>寻址方式指CPU确定操作数有效地址的方法，考研核心考点包括：</p>
+<ul>
+<li><strong>常见寻址方式对比</strong>
+<table>
+<thead>
+<tr>
+<th>寻址方式</th>
+<th>有效地址EA计算规则</th>
+<th>核心特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>立即寻址</td>
+<td>EA=指令本身数值</td>
+<td>无需访存，执行速度快</td>
+<td>常数赋值、初始化操作</td>
+</tr>
+<tr>
+<td>直接寻址</td>
+<td>EA=指令地址字段</td>
+<td>逻辑简单，寻址空间受限</td>
+<td>访问固定内存单元</td>
+</tr>
+<tr>
+<td>寄存器寻址</td>
+<td>EA=寄存器编号</td>
+<td>无需访存，执行效率高</td>
+<td>临时变量、高频操作数存储</td>
+</tr>
+<tr>
+<td>寄存器间接寻址</td>
+<td>EA=(寄存器内容)</td>
+<td>寻址空间大，可动态修改访问地址</td>
+<td>数组遍历、指针操作</td>
+</tr>
+<tr>
+<td>相对寻址</td>
+<td>EA=PC+偏移量A</td>
+<td>与当前指令位置绑定，可实现位置无关代码</td>
+<td>分支跳转、循环结构</td>
+</tr>
+<tr>
+<td>基址寻址</td>
+<td>EA=基址寄存器BR+A</td>
+<td>扩大寻址空间，支持程序重定位</td>
+<td>多道程序内存分配、大型数组访问</td>
+</tr>
+<tr>
+<td>变址寻址</td>
+<td>EA=变址寄存器IX+A</td>
+<td>支持动态修改偏移量，适配批量数据遍历</td>
+<td>数组、字符串遍历操作</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>常考题型：给定寄存器与指令参数，计算有效地址；选型最优寻址方式适配业务场景。</li>
+</ul>
+<h3>3. 程序的机器级代码表示考点复盘</h3>
+<p>该模块聚焦高级语言编译后的底层实现逻辑，考研核心考点包括：</p>
+<ul>
+<li><strong>编译全流程</strong>：预处理→编译（生成汇编代码）→汇编（生成目标文件）→链接（生成可执行文件）。</li>
+<li><strong>基础汇编语法</strong>：汇编语句由操作码+操作数组成，典型指令包括数据传输（mov/push/pop）、算术运算（add/sub/imul）、控制转移（jmp/call/ret）。</li>
+<li><strong>函数栈帧实现</strong>：栈帧用于保存函数参数、局部变量、返回地址，核心依托%ebp基址指针与%esp栈指针，标准栈帧布局为：参数区→局部变量区→旧%ebp备份→返回地址。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>各类寻址方式的有效地址计算容易混淆，基址寻址与变址寻址的应用场景边界模糊，需要结合例题强化练习；</li>
+<li>CPU内部各寄存器的功能分工记忆不够清晰，状态条件寄存器与通用寄存器的使用场景容易记混；</li>
+<li>函数栈帧的具体布局与参数传递细节掌握不够熟练，缺乏结合汇编实例的拆解练习。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了CPU的整体组成结构与协同工作逻辑，明确了运算器与控制器的核心职责；</li>
+<li>完整掌握了常见寻址方式的原理、计算规则与适用场景，能够快速区分不同寻址方式的优劣；</li>
+<li>理解了高级语言到机器代码的完整转换流程，掌握了基础汇编语法与函数栈帧的实现逻辑，能够读懂简单的x86汇编代码。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点，多结合例题巩固易混淆的考点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-05</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-5/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-5/</id>
+    <published>2026-08-05T00:00:00.000Z</published>
+    <updated>2026-08-05T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-05</h1>
+<h2>今日学习内容</h2>
+<p>Total study duration: 2 hours</p>
+<ol>
+<li>考研高频单词复盘与新词识记 (1 hour)</li>
+<li>考研英语真题长难句专项训练与精读 (1 hour)</li>
+</ol>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日核心学习词汇（35个考研大纲高频词）</h3>
+<p>本次复盘覆盖2026年考研英语大纲核心高频词，重点整理易混形近词与真题搭配：</p>
+<ol>
+<li><strong>perspective</strong> /pəˈspektɪv/ n. 视角，观点；透视画法
+<ul>
+<li>核心搭配：from the perspective of 从……角度来看；in perspective 合理地看待</li>
+<li>真题例句：<em>We need to gain a new perspective on the current education crisis.</em>（2022年英语二阅读Text 1）</li>
+<li>易混辨析：vs <code>prospective</code> /prəˈspektɪv/ adj. 预期的，未来的</li>
+</ul>
+</li>
+<li><strong>ambiguous</strong> /æmˈbɪɡjuəs/ adj. 模棱两可的，含糊不清的
+<ul>
+<li>同义词：vague, obscure</li>
+<li>真题例句：<em>The candidate’s ambiguous response failed to convince the interviewers.</em>（2023年英语一完形填空）</li>
+</ul>
+</li>
+<li><strong>complement</strong> /ˈkɒmplɪmənt/ n. 补充物；v. 补充，补足
+<ul>
+<li>易混辨析：vs <code>compliment</code> /ˈkɒmplɪmənt/ n./v. 赞美，恭维</li>
+</ul>
+</li>
+<li><strong>persevere</strong> /ˌpɜːsəˈvɪə(r)/ v. 坚持， persevere in/with sth. 坚持某事</li>
+<li><strong>coordinate</strong> /kəʊˈɔːdɪneɪt/ v. 协调，配合；/kəʊˈɔːdɪnət/ n. 坐标
+<ul>
+<li>搭配：coordinate with sb. to complete the project 与某人协作完成项目</li>
+</ul>
+</li>
+</ol>
+<h3>今日易错总结</h3>
+<p>特意整理了5组高频易混词对比表，标注发音、词义与真题使用场景，避免后续做题出现混淆。</p>
+<h2>长难句专项拆解</h2>
+<p>（选自2024年考研英语一阅读Text 2真题）</p>
+<blockquote>
+<p>原句：Although the Supreme Court’s ruling was met with widespread criticism, it laid a solid foundation for the subsequent reform of the judicial system.</p>
+</blockquote>
+<h3>结构拆解</h3>
+<ol>
+<li>让步状语从句：Although the Supreme Court’s ruling was met with widespread criticism</li>
+<li>主句：it laid a solid foundation for the subsequent reform of the judicial system</li>
+</ol>
+<h3>参考译文：尽管最高法院的裁决遭到了广泛批评，但它为后续司法体系改革奠定了坚实基础。</h3>
+<p>💡 碎碎念：今天早上7点半就开始背单词，一开始总把perspective和prospective搞混，特意用思维导图整理了对比，晚上做题的时候终于没认错！长难句拆分一开始还是会卡壳，跟着节奏练了5句之后慢慢找到了感觉。考研英语的提升真的靠每天一点点积累，继续坚持，今年一定能上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-05</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-5/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-5/</id>
+    <published>2026-08-05T00:00:00.000Z</published>
+    <updated>2026-08-05T00:00:00.000Z</updated>
+    <summary>考研数学向量模块刷题与复盘学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-05</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入4小时考研数学专项学习，全部聚焦于向量代数与空间解析几何模块的刷题训练，共计完成近60道历年真题改编题与同步模拟题，练习过程中接触到大量以往未系统训练过的综合新题型，涵盖向量混合积的几何应用、平面与直线的位置关系综合求解、空间曲面投影与轨迹问题等多个考察方向。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>涉及参数化平面与直线的交点求解问题时，容易忽略参数的实际取值范围，导致出现增根或漏解的情况；</li>
+<li>利用混合积求解空间几何体体积时，向量的排列顺序对应的符号问题经常出现失误；</li>
+<li>面对结合空间曲面的向量综合题型时，无法快速建立几何关系与代数表达式的对应桥梁，解题思路卡顿时间较长。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>本次刷题覆盖的向量模块核心考研考点复盘如下：</p>
+<ol>
+<li><strong>向量基本运算</strong>：点积、叉积、混合积的定义与几何意义，其中混合积$[\boldsymbol{a},\boldsymbol{b},\boldsymbol{c}]=(\boldsymbol{a}\times\boldsymbol{b})\cdot\boldsymbol{c}$的绝对值等于以$\boldsymbol{a},\boldsymbol{b},\boldsymbol{c}$为棱的平行六面体体积，是考研高频考点，本次刷题中多次考察其逆用场景，即已知几何体体积反求参数值；</li>
+<li><strong>平面与直线方程</strong>：点法式、一般式、对称式、参数式的相互转化规则，以及直线与平面平行、垂直、相交、直线在平面内的判定条件，本次多数新题型均围绕该模块与向量运算结合命题；</li>
+<li><strong>空间曲面与曲线</strong>：常见二次曲面的标准方程与几何特征，以及空间曲线的投影柱面、投影曲线的求解方法，考研中常将其与向量运算结合，构造跨模块综合应用题；</li>
+<li>本次刷题易错点复盘：多数失误集中在符号判断与参数范围限制环节，后续需通过错题整理强化“先确定参数约束再求解”的解题习惯，同时明确混合积的符号与向量右手系的对应关系。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日的向量专项刷题完成度较高，通过系统练习熟悉了不同题型的解题逻辑，但也清晰暴露出多个需要强化的薄弱环节。后续计划针对性整理本次错题，每天安排1小时的补练，重点突破参数范围限制、混合积符号判断等易错点，同时搭建空间几何综合题的解题框架，提升综合解题速度与正确率。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-04</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-4/" rel="alternate" type="text/html"/>
