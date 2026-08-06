@@ -5,8 +5,185 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-05T14:31:14.253Z</updated>
+  <updated>2026-08-06T14:03:12.582Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-6/</id>
+    <published>2026-08-06T00:00:00.000Z</published>
+    <updated>2026-08-06T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-06</h1>
+<h2>今日学习内容</h2>
+<blockquote>
+<p>累计学习时长：2.5h，核心学习知识点：数据通路的基本结构、中断与异常处理机制、微指令/微程序与微操作相关考点</p>
+</blockquote>
+<h2>AI知识点带复盘</h2>
+<h3>1. 数据通路的结构考点复盘</h3>
+<p>数据通路是CPU内部功能部件（通用寄存器组、ALU、程序计数器PC、指令寄存器IR、存储器地址寄存器MAR、存储器数据寄存器MDR等）之间传输数据的物理路径框架，考研核心考点包括三类主流结构：</p>
+<ul>
+<li>单总线结构：所有部件共享一条总线，同一时刻仅允许一个源部件向总线发送数据，控制逻辑简单但总线竞争频发，性能受限；</li>
+<li>双总线结构：拆分内部总线（连接通用寄存器与ALU）和系统总线（连接CPU与主存/I/O设备），缓解了单总线的竞争问题，但需要额外的总线仲裁逻辑；</li>
+<li>三总线结构：增设专用I/O总线，进一步分离主存与I/O设备的数据传输路径，并行性最高，多用于高性能计算机场景。
+同时需要掌握数据通路的同步/异步控制方式，这是指令执行的基础支撑。</li>
+</ul>
+<h3>2. 中断与异常考点复盘</h3>
+<p>需要明确区分两类内外部触发的异常事件：</p>
+<ul>
+<li>中断（外中断）：来自CPU外部的异步事件，如I/O设备完成信号、时钟中断、外部硬件故障等；</li>
+<li>异常（内中断）：由CPU内部执行指令触发的同步事件，分为陷入（用户主动触发的系统调用）、故障（可恢复的错误如缺页异常）、终止（不可恢复的致命硬件错误）。
+标准中断处理流程为：中断请求→中断屏蔽→中断响应（关中断、保存断点、跳转服务程序）→中断服务（保护现场、执行业务逻辑、恢复现场）→中断返回（恢复断点、开中断恢复原程序执行）。
+额外核心考点包括中断向量表、中断优先级与中断嵌套机制。</li>
+</ul>
+<h3>3. 微指令、微程序与微操作考点复盘</h3>
+<p>三者为层级关联的概念：</p>
+<ul>
+<li>微操作：CPU执行的最小原子操作，如<code>R1→总线</code>、<code>ALU运算结果送R2</code>等；</li>
+<li>微指令：一组互斥微操作的编码集合，包含操作控制字段（指定本次执行的微操作）与下地址字段（确定下一条微指令的地址）；</li>
+<li>微程序：多条微指令的有序集合，对应一条高级机器指令的完整执行逻辑。
+微程序控制器的核心考点包括：微指令的三类编码方式（直接编码、字段直接编码、字段间接编码）、微地址的形成方式（计数器方式、断定方式），以及与硬布线控制器的优缺点对比。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>微指令的字段直接编码方式中，字段划分规则与编码效率的关联还需要结合例题进一步梳理；</li>
+<li>中断嵌套的触发条件与现场保护的时机容易混淆，需要通过流程图加深理解；</li>
+<li>不同数据通路结构在实际CPU中的适配场景还不够清晰，缺乏对应习题的练习巩固。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>理清了三类数据通路结构的设计思路、优缺点与适用场景，明确了数据通路是指令执行的物理基础；</li>
+<li>明确了中断与异常的核心区别，掌握了标准中断处理的完整流程与考研高频考点；</li>
+<li>建立了微操作→微指令→微程序的层级认知，掌握了微程序控制器的核心框架与核心考点。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-6/</id>
+    <published>2026-08-06T00:00:00.000Z</published>
+    <updated>2026-08-06T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-06</h1>
+<h2>今日学习总时长</h2>
+<p>100分钟（60分钟考研核心单词复盘+40分钟真题长难句专项训练）</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日核心高频词（选自近3年考研英语真题高频词库）</h3>
+<ol>
+<li><strong>ambiguous</strong> /æmˈbɪɡjuəs/ adj. 模棱两可的，含糊不清的
+<ul>
+<li>真题语境例句：The politician’s ambiguous statement left voters uncertain about his policy priorities.</li>
+<li>搭配拓展：ambiguous wording/instructions 措辞含糊/指令不明</li>
+</ul>
+</li>
+<li><strong>conspicuous</strong> /kənˈspɪkjuəs/ adj. 显著的，显眼的
+<ul>
+<li>真题语境例句：The new environmental regulations have made conspicuous changes to local industrial production.</li>
+<li>词根记忆：con-(together) + spic(see) + -uous → 被众人看到的 → 显著的</li>
+</ul>
+</li>
+<li><strong>deduce</strong> /dɪˈdjuːs/ v. 推断，演绎
+<ul>
+<li>真题语境例句：Researchers deduced the ancient climate from the chemical composition of the fossil samples.</li>
+<li>派生词：deduction n. 推理，演绎；扣除额</li>
+</ul>
+</li>
+<li><strong>stagnant</strong> /ˈstæɡnənt/ adj. 停滞的，不景气的
+<ul>
+<li>真题语境例句：The stagnant global trade has impacted small export-oriented enterprises severely.</li>
+<li>近义词辨析：stagnant（侧重发展停滞）vs. stationary（侧重静止不动）</li>
+</ul>
+</li>
+<li><strong>emulate</strong> /ˈemjuleɪt/ v. 仿效，赶超
+<ul>
+<li>真题语境例句：Many young graduates emulate successful entrepreneurs to start their own businesses.</li>
+<li>熟词僻义：可表示“与…竞争，匹敌”</li>
+</ul>
+</li>
+</ol>
+<h3>今日错题复盘</h3>
+<p>昨日背诵的20个核心单词中，出现2处高频错误：混淆了<code>stagnant</code>与<code>stationary</code>的词义，将<code>emulate</code>误写为<code>imitate</code>，明日将通过真题例句默写强化记忆。</p>
+<h2>长难句专项训练</h2>
+<h3>真题长难句（2024年考研英语一Text 3）</h3>
+<blockquote>
+<p>The survey found that only 18 percent of small businesses have access to low-interest loans, which is far lower than the government’s promised coverage rate of 40 percent.</p>
+</blockquote>
+<ol>
+<li><strong>结构拆分</strong>
+<ul>
+<li>主句：The survey found + that引导的宾语从句</li>
+<li>宾语从句：only 18 percent of small businesses have access to low-interest loans + which引导的非限制性定语从句（修饰前面的18%数据）</li>
+</ul>
+</li>
+<li>精准翻译：该调查发现，仅有18%的小企业能够获得低息贷款，这远低于政府承诺的40%的覆盖比例。</li>
+<li>重点搭配：have access to 意为“有权使用，有机会获得”，是考研高频必背短语。</li>
+</ol>
+<h2>今日学习碎碎念</h2>
+<p>今天背单词的时候发现，很多之前记过的词在真题语境里还是会反应迟钝，尤其是熟词僻义的部分，比如<code>ambiguous</code>除了“模棱两可”还有“有多种含义”的用法，下次要结合真题例句多梳理。长难句拆分的时候一开始被非限制性定语从句绕晕了，多练了3句同类型的句子才理清逻辑。感觉每天积累一点，慢慢就能找到做题的语感了，继续坚持，考研英语上岸一定没问题！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-06</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-6/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-6/</id>
+    <published>2026-08-06T00:00:00.000Z</published>
+    <updated>2026-08-06T00:00:00.000Z</updated>
+    <summary>2026年8月6日考研数学线性代数模块学习与复盘记录，包含过渡矩阵求解与线性方程组复习内容</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-06</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入4小时学习考研数学，聚焦线性代数核心模块：首先系统攻克了向量空间中列向量的过渡矩阵求解法则，结合教材例题梳理了过渡矩阵的推导过程与两种主流求解方法；随后开启线性方程组章节的首轮复习，初步梳理了该章节的知识脉络与核心考点框架。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>过渡矩阵求解时容易混淆基变换的方向，搞不清过渡矩阵左乘还是右乘旧基向量，偶尔会颠倒矩阵乘法的顺序导致结果出错；</li>
+<li>刚开启线性方程组复习，对该章节的核心判定定理（如解的存在性与秩的关联）记忆不够牢固，尚未形成清晰的解题步骤逻辑；</li>
+<li>过渡矩阵与坐标变换的内在关联尚未完全打通，无法快速实现基变换与坐标转换的互推。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>向量空间过渡矩阵复盘</h3>
+<p>过渡矩阵是线性代数向量空间模块的考研高频考点，核心定义为：设$V$为数域$P$上的$n$维向量空间，$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\dots,\boldsymbol{\alpha}_n$与$\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\dots,\boldsymbol{\beta}_n$是$V$的两个基，若满足$(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\dots,\boldsymbol{\beta}_n)=(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\dots,\boldsymbol{\alpha}_n)\boldsymbol{P}$，则矩阵$\boldsymbol{P}$称为从基${\boldsymbol{\alpha}_i}$到基${\boldsymbol{\beta}_i}$的过渡矩阵，且$\boldsymbol{P}$一定是可逆矩阵。
+考研中常见的求解方法有两种：</p>
+<ol>
+<li><strong>定义推导法</strong>：将每个新基向量$\boldsymbol{\beta}<em>j$用旧基线性表示，即$\boldsymbol{\beta}<em>j = k</em>{1j}\boldsymbol{\alpha}<em>1 + k</em>{2j}\boldsymbol{\alpha}<em>2 + \dots + k</em>{nj}\boldsymbol{\alpha}<em>n$，将系数按列拼接即可得到过渡矩阵$\boldsymbol{P}=(k</em>{ij})</em>{n\times n}$；</li>
+<li><strong>初等变换法</strong>：构造分块矩阵$(\boldsymbol{A}|\boldsymbol{B})$，其中$\boldsymbol{A}=(\boldsymbol{\alpha}_1,\dots,\boldsymbol{\alpha}_n)$，$\boldsymbol{B}=(\boldsymbol{\beta}_1,\dots,\boldsymbol{\beta}<em>n)$，通过初等行变换将$\boldsymbol{A}$化为单位矩阵$\boldsymbol{E}$，此时$\boldsymbol{B}$对应的变换结果即为过渡矩阵$\boldsymbol{P}$，即$(\boldsymbol{E}|\boldsymbol{P})$。
+此外考研常结合坐标变换考察：若向量$\boldsymbol{\xi}$在基${\boldsymbol{\alpha}<em>i}$下的坐标为$\boldsymbol{X}</em>\alpha=(x_1,x_2,\dots,x_n)^T$，则其在基${\boldsymbol{\beta}<em>i}$下的坐标$\boldsymbol{X}</em>\beta = \boldsymbol{P}^{-1}\boldsymbol{X}</em>\alpha$，此处极易混淆矩阵的逆与乘法顺序，需重点记忆。</li>
+</ol>
+<h3>线性方程组复习复盘</h3>
+<p>今日开启线性方程组章节的复习，该模块是线性代数的核心考点之一，考研中常与向量组线性相关性、矩阵秩、特征值等知识点结合考察。核心考点框架包括：</p>
+<ol>
+<li>线性方程组解的存在性判定：非齐次线性方程组$A\boldsymbol{x}=\boldsymbol{b}$有解当且仅当$r(A)=r(A|\boldsymbol{b})$；齐次线性方程组$A\boldsymbol{x}=\boldsymbol{0}$必有零解，存在非零解当且仅当$r(A)&lt;n$（$n$为未知数个数）；</li>
+<li>解的结构：齐次方程组的解空间维度为$n-r(A)$，基础解系是解空间的一组基；非齐次方程组的通解为一个特解加上对应齐次方程组的通解；</li>
+<li>解的唯一性与无穷多解：非齐次方程组有解时，若$r(A)=n$则有唯一解，若$r(A)&lt;n$则有无穷多解。
+后续需结合典型例题巩固通解求解步骤，强化对秩与解的关联的理解。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日完成了预设的4小时考研数学学习任务，顺利攻克了过渡矩阵的核心求解逻辑，同时搭建了线性方程组章节的初步知识框架，学习节奏平稳，专注力保持较好。但仍存在部分细节需要后续通过刷题巩固，后续将针对性补充过渡矩阵与线性方程组的配套例题练习。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-05</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-5/" rel="alternate" type="text/html"/>
