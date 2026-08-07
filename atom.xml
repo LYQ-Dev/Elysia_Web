@@ -5,8 +5,145 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-06T14:03:12.582Z</updated>
+  <updated>2026-08-07T13:45:01.951Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-07</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-7/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-7/</id>
+    <published>2026-08-07T00:00:00.000Z</published>
+    <updated>2026-08-07T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-07</h1>
+<h2>今日学习内容</h2>
+<p>3h 流水线相关（计算机组成原理考研核心考点）</p>
+<h2>AI知识点带复盘</h2>
+<h3>流水线核心考点梳理</h3>
+<ol>
+<li><strong>基本概念</strong>：将单条指令的执行过程拆分为多个独立的阶段（经典5级流水线：取指IF、译码ID、执行EX、访存MEM、回写WB），每个阶段由专属功能部件完成，实现多条指令的重叠执行，大幅提升CPU吞吐率。</li>
+<li><strong>核心性能指标</strong>
+<ul>
+<li><strong>吞吐率（TP）</strong>：单位时间内流水线完成的指令数，理想吞吐率为 $TP_{ideal} = \frac{1}{\Delta t}$（$\Delta t$ 为流水线最慢阶段的时间），实际吞吐率需结合冲突影响修正。</li>
+<li><strong>加速比（S）</strong>：流水线执行$n$条指令的耗时与非流水线执行$n$条指令耗时的比值，公式为 $S=\frac{nk\Delta t}{k\Delta t + (n-1)\Delta t}=\frac{nk}{n+k-1}$（$k$为流水线阶段数），当$n$趋近于无穷大时，加速比趋近于流水线阶段数$k$。</li>
+<li><strong>流水线效率（E）</strong>：流水线中功能部件的平均利用率，等于总吞吐率乘以单阶段时间，或所有阶段有效工作时间总和除以总耗时与阶段数的乘积。</li>
+</ul>
+</li>
+<li><strong>流水线三类冲突与解决方法</strong>
+<ul>
+<li><strong>结构冲突</strong>：多个指令同时竞争同一功能部件，例如指令访存与数据访存共用单端口存储器。解决思路：增设双端口存储器、复制功能部件、通过编译器调度指令错开访问。</li>
+<li><strong>数据冲突</strong>：指令间存在数据依赖关系导致的执行错误，分为RAW（先写后读，最常见）、WAR（写后读，反相关）、WAW（写后写，输出相关）三类。常见解决方法：旁路（转发）技术、插入流水线气泡暂停、编译器重排指令顺序、乱序执行。</li>
+<li><strong>控制冲突</strong>：由转移指令引发，流水线无法提前预判转移结果与目标地址，导致流水线出现空泡。解决思路：提前译码判断转移条件、延迟槽技术、静态/动态分支预测、分支取消机制。</li>
+</ul>
+</li>
+<li><strong>考研常见拓展考点</strong>：超标量流水线、超流水线、超长指令字（VLIW）的区别，以及流水线在多核心处理器中的应用逻辑。</li>
+</ol>
+<h3>真题考点复盘</h3>
+<p>408统考中流水线模块常以选择题、综合计算题形式考察，常见出题方向包括：根据指令序列计算流水线吞吐率与加速比、分析数据冲突类型并给出解决方案、结合指令流水线的执行时序图分析空泡产生的位置与数量。</p>
+<h2>问题与反思</h2>
+<ol>
+<li>对于超标量流水线、超流水线的核心差异点仍存在混淆，需要进一步结合概念定义与性能提升逻辑进行区分梳理。</li>
+<li>在处理带有多组数据依赖的复杂指令序列时，难以快速准确计算流水线的空泡数量与最终执行耗时，需要加强针对性练习。</li>
+<li>动态分支预测的具体实现机制（如两位预测器）的细节掌握不够扎实，容易混淆不同预测策略的适用场景。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了计算机组成原理中流水线模块的核心考点框架，明确了408考试的考察重点与出题形式。</li>
+<li>掌握了流水线性能指标的计算公式与推导逻辑，能够独立完成简单指令序列的流水线性能计算。</li>
+<li>清晰区分了三类流水线冲突的成因与对应的解决方法，能够针对基础题目快速匹配正确的冲突解决方案。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-07</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-7/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-7/</id>
+    <published>2026-08-07T00:00:00.000Z</published>
+    <updated>2026-08-07T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-07</h1>
+<h2>今日学习总时长：5h</h2>
+<h3>1. 考研核心单词复盘与新学（1.5h）</h3>
+<p>今天先完成了上周积累的120个高频核心词的复盘自测，重点攻克了形近易混词难点：区分了<code>adapt</code>（适应、改编）、<code>adopt</code>（采纳、收养）和<code>adept</code>（熟练的）三组易混词，通过造句子加深记忆：<em>She adapted well to the new team after she adopted a positive attitude and became adept at team work.</em> 随后学习了100个新大纲单词，通过词根词缀法整理了以<code>port</code>（意为“携带、运送”）为核心的衍生词：<code>export</code>、<code>import</code>、<code>transport</code>、<code>deport</code>等，结合真题例句理解了每个词的考法语境，最终自测正确率达87%，标记了15个易错词作为明日复盘重点。</p>
+<h3>2. 长难句专项训练（2h）</h3>
+<p>今天聚焦考研英语常见的嵌套式复合句训练，拆解了2018年英语一Text1中的3个典型长难句，使用“拆分-翻译-整合”三步法完成分析：先通过标点、连接词拆分句子主干和修饰成分，再逐个翻译各部分，最后整合为通顺的中文译文。整理了3页长难句笔记，记录了定语从句嵌套状语从句的逻辑分层技巧，还练习翻译了5道历年真题长难句，对照解析修正了2处翻译误区，比如对介词短语作后置定语的处理不够熟练。</p>
+<h3>3. 真题精读与题型练习（1.5h）</h3>
+<p>完成了2017年英语一Text2的前4段精读，标记并整理了10个考研高频短语：比如<code>take a toll on</code>（对...造成负面影响）、<code>put sth into perspective</code>（正确看待某事）、<code>rule out</code>（排除）等。随后完成了对应段落的4道细节题，错题率25%，总结了做题时的陷阱：题干经常会对原文的关键词进行同义替换，比如原文用<code>decline</code>，选项换成<code>drop</code>，差点因忽略同义替换选错答案。</p>
+<p>💡 碎碎念：今天的长难句拆解花了比预期更多的时间，但终于理清了嵌套从句的逻辑层次，感觉阅读速度有明显提升！继续坚持积累，考研英语上岸一定没问题！</p>
+<blockquote>
+<p>文档内容由AI辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-07</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-7/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-7/</id>
+    <published>2026-08-07T00:00:00.000Z</published>
+    <updated>2026-08-07T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-07</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入4小时考研数学学习，核心聚焦线性代数中<strong>同解方程组</strong>模块的系统复习：首先用2小时跟随网课梳理同解方程组的基础定义、两类情形（齐次/非齐次）的判定定理与推导逻辑；随后用1.5小时完成配套课后习题与真题改编题，重点练习已知同解条件求解参数、证明两组方程组同解两类题型；最后用0.5小时整理课堂笔记与错题，标注易错点。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>初期混淆了“系数矩阵秩相等”与“方程组同解”的逻辑关系，曾错误认为秩相等即可推出同解，忽略了行向量组等价的必要条件；</li>
+<li>处理非齐次同解方程组时，容易遗漏验证特解一致性的步骤，仅通过齐次部分同解就直接判定整体同解；</li>
+<li>抽象方程组的同解证明题中，无法快速找到两个方程组解空间的包含关系，导致推导步骤不完整。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>核心知识点梳理</h3>
+<ol>
+<li><strong>基本定义</strong>：若方程组$A\boldsymbol{x}=\boldsymbol{b}$与$B\boldsymbol{x}=\boldsymbol{d}$的解集完全一致，则称二者同解。</li>
+<li><strong>齐次方程组同解的充要条件</strong>：对于$A\boldsymbol{x}=\boldsymbol{0}$与$B\boldsymbol{x}=\boldsymbol{0}$，二者同解当且仅当：
+<ul>
+<li>① $r(A)=r(B)$（解空间维度一致）；</li>
+<li>② $A$的行向量组与$B$的行向量组等价（即$A$的每个行向量都是$B\boldsymbol{x}=\boldsymbol{0}$的解，$B$的每个行向量都是$A\boldsymbol{x}=\boldsymbol{0}$的解）。</li>
+</ul>
+<blockquote>
+<p>易错提醒：仅$r(A)=r(B)$无法推出同解，例如$A=\begin{pmatrix}1&amp;0\end{pmatrix}, B=\begin{pmatrix}0&amp;1\end{pmatrix}$，二者秩均为1，但解空间完全不同。</p>
+</blockquote>
+</li>
+<li><strong>非齐次方程组同解的充要条件</strong>：对于$A\boldsymbol{x}=\boldsymbol{b}$与$B\boldsymbol{x}=\boldsymbol{d}$，二者同解当且仅当：
+<ul>
+<li>① $r(A)=r([A|\boldsymbol{b}])=r(B)=r([B|\boldsymbol{d}])$（两个方程组均有解，且系数矩阵秩一致）；</li>
+<li>② 齐次部分$A\boldsymbol{x}=\boldsymbol{0}$与$B\boldsymbol{x}=\boldsymbol{0}$同解；</li>
+<li>③ 存在$A\boldsymbol{x}=\boldsymbol{b}$的一个特解$\boldsymbol{\eta}$，使得$B\boldsymbol{\eta}=\boldsymbol{d}$（即特解满足对应齐次方程组同解的要求）。</li>
+</ul>
+</li>
+<li><strong>考研常考题型</strong>：
+<ul>
+<li>已知两组方程组同解，求解参数；</li>
+<li>证明两个抽象/具体方程组同解；</li>
+<li>求解两个方程组的公共解。</li>
+</ul>
+</li>
+</ol>
+<h3>今日复盘巩固</h3>
+<p>今天通过例题验证了秩相等与同解的区别，例如非齐次方程组$\begin{cases}x_1+x_2=1\2x_1+3x_2=4\end{cases}$与$\begin{cases}ax_1+bx_2=1\4x_1+5x_2=11\end{cases}$同解，可通过代入特解$(1,0)$和$( -2,3 )$求解$a,b$，后续需加强这类参数题的练习熟练度。</p>
+<h2>今日小结</h2>
+<p>今日完成了同解方程组模块的系统复习，累计掌握了12道基础例题与3道真题改编题，修正了“秩相等即同解”的错误认知，明确了齐次、非齐次同解的完整判定条件。后续计划用1天时间完成同解方程组专项题库练习，重点攻克抽象方程组同解的证明题型。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-06</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-6/" rel="alternate" type="text/html"/>
