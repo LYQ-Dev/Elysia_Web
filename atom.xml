@@ -5,8 +5,156 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-07T13:45:01.951Z</updated>
+  <updated>2026-08-08T15:04:00.354Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-08</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-8/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-8/</id>
+    <published>2026-08-08T00:00:00.000Z</published>
+    <updated>2026-08-08T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘：CPU处理器、存储结构与Cache取指</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-08</h1>
+<h2>今日学习内容</h2>
+<p>2h 主要复盘CPU处理器、存储结构与Cache取指相关知识点</p>
+<h2>AI知识点带复盘</h2>
+<h3>一、CPU处理器核心考点复盘</h3>
+<ol>
+<li><strong>基本组成</strong>：CPU由运算器、控制器、寄存器组、内部总线构成，其中控制器负责指令的取指、译码、执行控制，运算器完成算术逻辑运算，寄存器组用于临时存储数据与指令，减少高频访问内容的主存交互次数。</li>
+<li><strong>指令周期</strong>：经典指令周期分为取指周期、间址周期、执行周期、中断周期，取指周期是所有指令都必须经历的阶段，由PC寄存器提供指令地址，控制单元CU发出读控制信号完成指令读取。</li>
+</ol>
+<h3>二、存储结构考点复盘</h3>
+<ol>
+<li><strong>存储层次体系</strong>：采用Cache-主存-辅存的金字塔层次结构，通过局部性原理平衡存储容量、访问速度与硬件成本，其中Cache位于CPU与主存之间，是缓解处理器与内存速度差的核心优化环节。</li>
+<li><strong>局部性原理</strong>：包括时间局部性（近期访问的数据/指令未来大概率再次被访问）与空间局部性（近期访问的存储单元附近的相邻单元未来大概率被访问），是Cache、虚拟内存等存储优化设计的核心理论基础。</li>
+</ol>
+<h3>三、Cache取指专项复盘</h3>
+<ol>
+<li><strong>标准取指流程</strong>：
+<ol>
+<li>CPU通过PC寄存器获取当前指令地址，将地址发送至Cache控制器；</li>
+<li>Cache通过预定义的地址映射规则，判断该地址对应的缓存块是否存在且标记有效；</li>
+<li>若命中，则直接从Cache中读取指令，送入指令寄存器IR，同时PC自动自增更新下一条指令地址；</li>
+<li>若未命中，则触发Cache替换操作，从主存中读取对应数据块加载到空闲缓存块中，再读取目标指令送至IR，同步更新PC值。</li>
+</ol>
+</li>
+<li><strong>高频考点延伸</strong>：
+<ul>
+<li>三类映射方式差异：直接映射实现简单但冲突率高、全相联映射冲突率低但硬件开销大、组相联映射是二者的折中方案；</li>
+<li>平均访问时间公式：$T_a = H_c \times T_c + (1-H_c) \times (T_c + T_m)$，其中$H_c$为Cache命中率，$T_c$为单级Cache访问时间，$T_m$为主存访问时间；</li>
+<li>配套优化策略：常用LRU（最近最少使用）替换算法降低缓存替换开销，写策略分为写直达（同步更新Cache与主存）与写回（仅更新Cache，脏块替换时再回写主存）。</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对组相联映射的地址划分细节记忆不够牢固，遇到具体主存地址拆分的题型容易出错；</li>
+<li>未结合指令流水线场景复盘Cache取指与流水线的协同逻辑，对流水线阻塞的触发条件理解模糊。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>梳理了CPU处理器的核心组成与指令周期的完整流程，明确了取指周期是所有指令执行的起始环节；</li>
+<li>理清了存储层次结构的设计逻辑，深刻理解了局部性原理对Cache性能优化的核心作用；</li>
+<li>完整复盘了Cache取指的全流程，掌握了三类映射方式的核心差异与平均访问时间的计算方法。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-08</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-8/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-8/</id>
+    <published>2026-08-08T00:00:00.000Z</published>
+    <updated>2026-08-08T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-08</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习考研英语2.5小时，分为三个模块：</p>
+<ol>
+<li>核心单词复盘：1小时，梳理2020-2025年考研英语真题高频核心词汇，拓展词根词缀与形近词辨析</li>
+<li>长难句拆解练习：1小时，完成10个考研英语经典长难句的结构分析与翻译训练</li>
+<li>真题阅读精读：0.5小时，精读2007年考研英语阅读Text 2第一段，整理句间逻辑与生词搭配</li>
+</ol>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日核心词汇梳理</h3>
+<ol>
+<li><strong>词根词缀拓展</strong>：围绕前缀*bene-（表示“好”）*拓展词汇：beneficial（有益的）、benefit（益处；使受益）、beneficiary（受益人）</li>
+<li><strong>形近词辨析</strong>：区分<code>compliment</code>（恭维，赞美）与<code>complement</code>（补充，补足），搭配练习：pay a compliment to sb. / complement sth.</li>
+<li><strong>熟词僻义积累</strong>：address 除常见义“地址”外，还可表示“演讲；处理，解决”，例句：The government is addressing the housing crisis.</li>
+</ol>
+<h3>高频搭配整理：</h3>
+<ul>
+<li>adhere to 坚持，例句：She adhered to her original plan despite the objections.</li>
+<li>in terms of 在……方面，例句：In terms of language proficiency, he is among the top students.</li>
+</ul>
+<h2>长难句拆解练习</h2>
+<blockquote>
+<p>原句：Studies from the University of California show that employees who have access to flexible working arrangements report higher levels of job satisfaction and lower rates of burnout.
+结构分析：主句为<code>Studies from the University of California show that...</code>，宾语从句中包含定语从句<code>who have access to flexible working arrangements</code>修饰先行词employees，嵌套了并列的宾语成分<code>higher levels of job satisfaction and lower rates of burnout</code>。
+参考翻译：加州大学的研究表明，能够享受灵活工作安排的员工报告称自身工作满意度更高，职业倦怠率更低。</p>
+</blockquote>
+<p>💡 碎碎念：今天背单词的时候终于理清了之前总混淆的形近词，长难句拆解时对嵌套定语从句的分析越来越熟练了，虽然还是会偶尔卡壳，但多练总能进步！坚持每天积累，考研英语上岸一定没问题！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-08</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-8/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-8/</id>
+    <published>2026-08-08T00:00:00.000Z</published>
+    <updated>2026-08-08T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录——线性方程组的几何应用专题</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-08</h1>
+<h2>今日学习内容</h2>
+<p>三个半小时  线性方程组的几何应用</p>
+<h2>薄弱点</h2>
+<ol>
+<li>对线性方程组解的结构与空间几何图形的对应关系理解不透彻，尤其是当系数矩阵与增广矩阵的秩相等但小于未知数个数时，无法准确判断多平面/直线的具体位置关系；</li>
+<li>混淆空间直线一般式与对称式、参数式的转换逻辑，在处理由线性方程组表示的直线时，难以快速提取方向向量与定点坐标；</li>
+<li>忽略平面法向量与线性方程组系数向量的对应性，在判断平面平行、垂直或相交时，错误套用向量运算规则；</li>
+<li>面对多个平面交于同一直线的题型时，无法快速将其转化为线性方程组有无穷多解且解空间为直线的场景进行分析。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>本次学习聚焦线性代数与空间解析几何结合的核心考点——线性方程组的几何应用，是考研数学数一、数二的高频考点，常以选择、解答题形式出现，复盘如下：</p>
+<ol>
+<li><strong>基础对应关系</strong>：三元一次方程 $A_1x+B_1y+C_1z+D_1=0$ 对应空间中一个平面，向量 $\boldsymbol{n_1}=(A_1,B_1,C_1)$ 为该平面的法向量，是该专题的核心基础。</li>
+<li><strong>双线性方程组的几何意义</strong>：两个不平行平面的交线即为空间直线，对应直线的一般式方程。此时系数矩阵秩为2，未知数个数为3，解空间维度为1，符合线性方程组解的结构定理。</li>
+<li><strong>多线性方程组的几何场景</strong>
+<ul>
+<li>若 $r(A)=3、r(\overline{A})=3$，方程组有唯一解，对应三个平面交于一点；</li>
+<li>若 $r(A)=2、r(\overline{A})=2$，方程组有无穷多解，解空间为一条直线，对应三个平面交于同一直线；</li>
+<li>若 $r(A)=2、r(\overline{A})=3$，方程组无解，对应至少两个平面平行，或三平面两两相交无公共交线；</li>
+<li>若 $r(A)=1$，所有平面互相平行，结合 $r(\overline{A})$ 判断是否存在重合平面。</li>
+</ul>
+</li>
+<li><strong>考研常考题型</strong>：包括已知多平面位置关系求参数、直线一般式转对称式、利用线性方程组证明直线共面等，需结合秩的计算快速匹配几何场景。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日花费3.5小时完成线性方程组几何应用的专题梳理，从基础的单方程对应平面入手，逐步拓展至多方程组对应的空间直线与多平面位置关系，配套完成5道考研真题与课后习题。练习中暴露了多平面位置关系与秩的匹配逻辑仍有疏漏，尤其是参数影响平面平行性的判断环节，后续需针对性强化练习。整体完成既定学习计划，对该考点的知识框架有了更清晰的认知。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-07</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-7/" rel="alternate" type="text/html"/>
