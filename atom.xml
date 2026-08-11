@@ -5,8 +5,169 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-08T15:04:00.354Z</updated>
+  <updated>2026-08-11T15:07:59.730Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-11</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-11/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-11/</id>
+    <published>2026-08-11T00:00:00.000Z</published>
+    <updated>2026-08-11T00:00:00.000Z</updated>
+    <summary>408 计算机组成原理DMA与中断知识点学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-11</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习3小时，聚焦408计算机组成原理中DMA与中断的关联考点，系统梳理了DMA的核心概念、工作流程以及与中断的区别。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次学习围绕408计算机组成原理中DMA与中断的高频考点展开复盘：</p>
+<ol>
+<li><strong>核心概念辨析</strong>
+<ul>
+<li>中断驱动I/O：CPU通过中断响应处理外设的单次小数据量I/O请求，每传输一个字节/字都需要CPU介入，适合低速外设（如键盘）。</li>
+<li>DMA（直接存储器访问）：由DMA控制器完全接管总线，直接在外设与内存之间完成批量数据传输，仅在传输开始和结束阶段需要CPU干预，适合高速大批量数据传输场景（如磁盘读写、网卡批量收包）。</li>
+</ul>
+</li>
+<li><strong>DMA完整工作流程（408高频考点）</strong>
+<ul>
+<li>预处理阶段：CPU初始化DMA控制器，配置传输方向、内存起始地址、待传输字节数，启动对应外设，之后CPU可执行其他任务。</li>
+<li>数据传输阶段：DMA控制器向CPU发总线请求，获得总线控制权后，依次完成外设→数据缓冲寄存器→内存的传输，每传输1字节，内存地址计数器+1、字节计数器-1，直到字节计数器归0。</li>
+<li>后处理阶段：DMA控制器向CPU发送中断请求，CPU响应中断后完成收尾工作（如校验传输数据、关闭DMA控制器、通知上层应用数据传输完成）。</li>
+</ul>
+</li>
+<li><strong>常考易错点</strong>
+<ul>
+<li>DMA是否需要CPU全程干预？仅初始化和中断收尾阶段需要CPU介入，数据传输阶段无需CPU参与。</li>
+<li>DMA与中断的优先级：DMA的总线请求优先级通常高于普通中断，因为高速外设的批量传输不能长时间等待总线使用权。</li>
+<li>真题关联：2022年408统考真题曾考察DMA传输的工作流程，2021年真题考察了DMA与中断驱动I/O的场景差异。</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对DMA控制器抢占总线的时机和总线控制权移交的细节仍存在模糊，容易混淆CPU暂停执行和DMA接管总线的触发逻辑。</li>
+<li>未能快速准确对应DMA控制器各内部寄存器（地址计数器、字节计数器、控制寄存器）的功能，易混淆考点细节。</li>
+<li>对DMA触发的中断类型（如I/O中断）的具体处理流程记忆不够清晰，和普通外设中断的响应流程区分度不足。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>明确了DMA与中断驱动I/O的核心差异：传输单位、CPU干预程度、适用外设场景。</li>
+<li>完整梳理了DMA的三阶段工作流程，掌握了408考试中DMA相关的高频考点方向。</li>
+<li>理清了DMA与中断的协同逻辑，即DMA通过中断向CPU汇报传输完成状态，而非全程参与数据传输。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个计组硬件交互的细节，不要放过任何一个易混淆的考点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-11</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-11/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-11/</id>
+    <published>2026-08-11T00:00:00.000Z</published>
+    <updated>2026-08-11T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-11</h1>
+<h2>今日学习内容</h2>
+<p>总时长约1.5小时，其中包含1小时的考研核心单词复盘与0.5小时的真题长难句专项练习。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理，选自2024年考研英语一、二真题高频词汇）</p>
+<ol>
+<li><strong>stereotype</strong>  n. 刻板印象；模式化形象  v. 对…形成刻板印象
+真题语境例句：Many people hold the stereotype that engineers are only good at math and logic.</li>
+<li><strong>perspective</strong>  n. 视角；观点；透视画法  v. 透视观察
+搭配拓展：gain a new perspective on 对…获得新的认识</li>
+<li><strong>compromise</strong>  v. 妥协；折中；危及，损害（熟词僻义，高频考点）
+真题例句：Poor eating habits will compromise your physical and mental health.</li>
+<li><strong>allocate</strong>  v. 分配；拨出（款项、土地等）
+考研常用搭配：allocate time and energy to sth. 为某事分配时间和精力</li>
+<li><strong>inevitable</strong>  adj. 不可避免的；必然发生的
+同义词拓展：unavoidable</li>
+</ol>
+<h2>长难句分析</h2>
+<p>（选自2023年考研英语一阅读Text 3）</p>
+<blockquote>
+<p>原句：Rather than dismissing ourselves as unchangeable creatures of habit, we can instead direct our own change by consciously developing new habits.</p>
+</blockquote>
+<h3>结构拆解</h3>
+<ol>
+<li>状语部分：<code>Rather than dismissing ourselves as unchangeable creatures of habit</code>，由rather than引导的比较状语，意为“与其将自己视为无法改变的习惯产物”</li>
+<li>主句：<code>we can instead direct our own change</code>，核心谓语为<code>direct</code>，意为“我们反而可以引导自身的改变”</li>
+<li>方式状语：<code>by consciously developing new habits</code>，说明实现改变的途径，意为“通过有意识地培养新习惯”</li>
+</ol>
+<h3>参考译文</h3>
+<p>与其将自己视作无法改变的习惯产物，我们反而可以通过有意识地培养新习惯来引导自身的改变。
+💡 碎碎念：今天复盘的单词里compromise的“损害”含义之前总是记错，通过搭配例句终于记牢了；长难句的rather than结构之前总搞反逻辑，今天拆分句子成分后彻底理清了思路。继续坚持每日积累，考研英语上岸一定没问题！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-11</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-11/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-11/</id>
+    <published>2026-08-11T00:00:00.000Z</published>
+    <updated>2026-08-11T00:00:00.000Z</updated>
+    <summary>考研数学相似矩阵专题学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-11</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入4小时专项学习相似矩阵相关知识点，涵盖定义辨析、核心性质梳理、相似对角化判定及配套真题演练，全程搭配考研数学线性代数讲义与近10年相似矩阵专项真题。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>易混淆相似、等价、合同的判定条件，误将相似的必要条件当作充要条件进行判定；</li>
+<li>求解相似变换矩阵$P$时，特征向量的排列顺序与对角矩阵中特征值的对应关系容易出错；</li>
+<li>对实对称矩阵的正交相似对角化与一般矩阵相似对角化的步骤区别掌握不牢，容易忽略重根特征向量的正交化、单位化要求；</li>
+<li>针对幂零矩阵、单位矩阵这类特殊矩阵的相似判定，容易出现逻辑漏洞，无法快速结合特征值与秩进行分析。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>核心知识点梳理</h3>
+<ol>
+<li><strong>相似矩阵定义</strong>：设$A,B$均为$n$阶方阵，若存在$n$阶可逆矩阵$P$，使得$P^{-1}AP = B$，则称$A$与$B$相似，记为$A \sim B$。相似关系是等价关系，满足反身性、对称性、传递性。</li>
+<li><strong>相似的高频必要性质（考研快速排除依据）</strong>：
+<ul>
+<li>迹相等：$\text{tr}(A) = \text{tr}(B)$</li>
+<li>行列式相等：$|A| = |B|$</li>
+<li>秩相等：$r(A) = r(B)$</li>
+<li>特征多项式相同：$|\lambda E - A| = |\lambda E - B|$，特征值完全一致（包括代数重数）
+注意：以上均为必要非充分条件，仅能用于排除不相似的矩阵，无法直接判定两矩阵相似。</li>
+</ul>
+</li>
+<li><strong>相似对角化的核心条件</strong>：
+<ul>
+<li>一般$n$阶矩阵$A$可相似对角化的充要条件：$A$有$n$个线性无关的特征向量；或对$A$的任意$k$重特征值$\lambda_0$，均有$r(\lambda_0 E - A) = n - k$。</li>
+<li>实对称矩阵特殊性：任意$n$阶实对称矩阵必可相似对角化，且存在正交矩阵$Q$使得$Q^{-1}AQ = Q^T A Q = \Lambda$（$\Lambda$为对角矩阵，对角线元素为$A$的特征值），不同特征值对应的特征向量天然正交，仅需对重根特征值的特征向量进行施密特正交化+单位化即可。</li>
+</ul>
+</li>
+<li><strong>考研常考题型复盘</strong>：
+<ul>
+<li>矩阵相似性判定：通过迹、行列式、特征值快速排除错误选项，再验证是否存在可逆变换矩阵；</li>
+<li>求解相似变换矩阵$P$：先求$A$的全部特征值与特征向量，将线性无关的特征向量按对应特征值顺序排列得到$P$；</li>
+<li>相似对角化应用：通过相似对角化求解矩阵的幂、行列式、迹等运算。</li>
+</ul>
+</li>
+</ol>
+<h3>当日学习复盘</h3>
+<p>今日通过“先梳理考点→再刷基础题→最后攻坚真题”的流程完成学习，在练习中发现自身对“相似必要条件快速排除”的应用熟练度不足，例如在判断两个非对角矩阵是否相似时，未能第一时间通过迹和特征值筛除错误选项，后续需要加强该类题型的限时训练。</p>
+<h2>今日小结</h2>
+<p>今日完成了4小时的相似矩阵专题学习，系统梳理了相似矩阵的核心考点与易错点，完成了20道配套习题并整理了3道典型错题。目前已掌握相似矩阵的基本定义与性质，但在相似判定的快速应用上仍有提升空间。明日计划针对实对称矩阵的正交相似对角化进行专项训练，巩固正交化、单位化的操作步骤。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-08</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-8/" rel="alternate" type="text/html"/>
