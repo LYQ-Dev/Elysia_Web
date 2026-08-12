@@ -5,8 +5,144 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-11T15:07:59.730Z</updated>
+  <updated>2026-08-12T14:26:42.487Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-12</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-12/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-12/</id>
+    <published>2026-08-12T00:00:00.000Z</published>
+    <updated>2026-08-12T00:00:00.000Z</updated>
+    <summary>408计算机组成原理大题专项刷题与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-12</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入3小时，完成计算机组成原理（计组）大题专项刷题训练，题目覆盖统考408计组高频大题考点，包括指令系统、存储器层次结构、CPU控制器三大核心模块。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次刷题覆盖的计组大题核心考研考点复盘如下：</p>
+<ol>
+<li><strong>指令系统模块</strong>
+考研常考题型包括指令格式设计与扩展、寻址方式计算、CPI（每条指令平均时钟周期）分析、指令流水线冒险（数据冒险、控制冒险、结构冒险）的识别与解决方案。本次刷题中涉及的指令流水线数据冒险的旁路技术应用、RISC/CISC指令集对比分析题，需重点掌握流水线吞吐率、加速比的计算公式，以及冒险对性能的影响分析逻辑。</li>
+<li><strong>存储器层次结构模块</strong>
+该模块是计组大题的核心考察点，高频考点包括：主存容量与地址线位数计算、Cache三种映射方式（直接映射、全相联映射、组相联映射）的标记位/组号位数推导、平均访存时间（AMAT）计算、虚拟存储器的页表转换与缺页中断处理、磁盘寻址时间（寻道时间+旋转延迟+传输时间）计算。本次刷题中组相联Cache的命中率计算出现了多次参数混淆，需强化标记位、组索引位的位数计算逻辑。</li>
+<li><strong>CPU控制器模块</strong>
+常考题型包括组合逻辑控制器与微程序控制器的对比分析、微指令格式设计（水平型/垂直型微指令）、控制信号的产生逻辑、中断处理流程的时钟周期计算。本次涉及的中断响应流程题，需清晰掌握中断请求、中断判优、中断响应、中断服务、中断返回的完整步骤。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>组相联Cache的标记位、组索引位的位数计算容易出现失误，混淆了主存地址各字段的划分规则；</li>
+<li>指令流水线控制冒险的解决思路梳理较慢，需要反复回忆分支预测、延迟槽等相关知识点；</li>
+<li>部分大题的计算步骤书写不够规范，省略了中间推导过程，存在被扣步骤分的风险。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>明确了计组大题的核心考察模块与高频设问方向，建立了答题的框架性思路；</li>
+<li>强化了存储器层次结构模块的计算公式与参数推导逻辑，纠正了组相联映射的计算误区；</li>
+<li>意识到了答题步骤规范性的重要性，后续刷题将严格按照采分点完整书写推导过程。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-12</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-12/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-12/</id>
+    <published>2026-08-12T00:00:00.000Z</published>
+    <updated>2026-08-12T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-12</h1>
+<h2>今日学习内容</h2>
+<p>总时长约2小时，分为两个模块：考研核心单词复盘与新学、考研英语长难句专项分析。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+今天完成了考研英语5500词第18轮次的学习任务：新识记32个高频核心词汇，涵盖科技、社会生活两大主题，包括<code>ingenious</code>（adj. 精巧的；有独创性的）、<code>deprive</code>（v. 剥夺；使丧失）、<code>stereotype</code>（n. 刻板印象）等；同时复盘了过去7天积累的68个词汇，整理了易混淆词组笔记，例如<code>stick to</code>与<code>insist on</code>的语境差异，将易错点录入个人考研英语单词错题本。</p>
+<h2>长难句专项训练</h2>
+<p>选取2023年考研英语一Text 3中的典型长难句进行拆解练习：</p>
+<blockquote>
+<p>Strangers and travelers were welcome sources of diversion, and brought news of the outside world.</p>
+</blockquote>
+<ol>
+<li>结构拆分：本句为并列句，由and连接两个分句。第一个分句主语为<code>Strangers and travelers</code>，系表结构<code>were welcome sources of diversion</code>；第二个分句主语承前省略，谓语为<code>brought</code>，宾语为<code>news of the outside world</code>。</li>
+<li>翻译参考：陌生人和旅行者是受欢迎的消遣来源，同时也能带来外界的新闻消息。
+今天尝试自主拆分结构后对照解析修正了3处错误，对后置定语的识别熟练度有所提升。</li>
+</ol>
+<h2>今日学习反思</h2>
+<p>今天在复盘易混介词短语时发现自己对<code>in terms of</code>与<code>in light of</code>的用法仍有混淆，明天需要针对性整理这两个短语的例句进行强化记忆。另外，长难句的翻译速度仍有提升空间，后续可以每天增加1句翻译练习。</p>
+<p>💡 碎碎念：今天用词根词缀法串联记忆<code>dict-</code>（表示“说”）相关词汇时效率很高，比如<code>dictate</code>、<code>predict</code>、<code>contradict</code>，坚持科学积累，考研英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-12</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-12/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-12/</id>
+    <published>2026-08-12T00:00:00.000Z</published>
+    <updated>2026-08-12T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-12</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习时长4.5小时，核心学习模块为线性代数中矩阵的相似与合同两大高频考点，配套完成了对应章节的课后习题与历年真题节选。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>对矩阵相似与合同的判定标准容易混淆，无法快速区分二者的适用场景与核心约束条件；</li>
+<li>实对称矩阵下“相似必合同”的推导逻辑记忆模糊，不清楚正交变换是二者的关联纽带；</li>
+<li>含参数二次型的正负惯性指数计算易出错，尤其是参数取值范围对惯性指数的影响分析不到位；</li>
+<li>相似矩阵与合同矩阵的必要条件记混，做题时常误用迹相等作为合同的判定条件。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>矩阵相似考点复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：设$A,B$均为$n$阶矩阵，若存在可逆矩阵$P$，使得$P^{-1}AP = B$，则称矩阵$A$与$B$相似，记作$A \sim B$。相似变换是保持矩阵代数结构的重要变换，可用于简化矩阵计算。</li>
+<li><strong>考研常考性质</strong>：
+<ul>
+<li>相似矩阵必具有相同的迹、行列式、特征值、秩，这是快速判断两矩阵不相似的常用方法；</li>
+<li>若$A$可相似对角化，则与$A$相似的矩阵$B$也可相似对角化，且二者的对角化标准形完全一致；</li>
+<li>正交相似（$P$为正交矩阵）时，$P^T = P^{-1}$，此时正交相似变换同时也是合同变换。</li>
+</ul>
+</li>
+<li><strong>高频题型</strong>：判断两矩阵是否相似、求解可逆矩阵$P$实现矩阵相似对角化、利用相似关系反求矩阵中的未知参数。</li>
+</ol>
+<h3>矩阵合同考点复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：仅针对实对称矩阵，若存在可逆矩阵$C$，使得$C^TAC = B$，则称$A$与$B$合同，记作$A \simeq B$。合同变换是二次型研究中的核心变换，用于将二次型化为标准形。</li>
+<li><strong>考研常考性质</strong>：
+<ul>
+<li>合同矩阵必具有相同的秩，实对称矩阵合同的充要条件是二者的正负惯性指数完全一致（含零特征值的个数）；</li>
+<li>一般合同变换不保持矩阵的特征值，但正交合同变换可同时保持特征值与惯性指数；</li>
+<li>合同变换不改变二次型的正定性，即正定矩阵合同于单位矩阵，负定矩阵合同于负单位矩阵。</li>
+</ul>
+</li>
+<li><strong>相似与合同的核心区别</strong>：
+<ul>
+<li>相似要求可逆矩阵满足$P^{-1}AP=B$，合同要求可逆矩阵满足$C^TAC=B$，变换的约束条件不同；</li>
+<li>相似不一定合同，合同也不一定相似，仅在实对称矩阵的正交相似下，二者等价。</li>
+</ul>
+</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日通过系统梳理相似与合同的知识点，结合习题练习完成了考点的初步内化，能够区分基础的相似与合同判定场景，但仍存在对含参数惯性指数计算的薄弱环节，以及部分条件混用的问题。后续将针对性整理相似与合同的对比思维导图，强化含参数二次型的惯性指数计算练习，巩固考点记忆。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-11</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-11/" rel="alternate" type="text/html"/>
