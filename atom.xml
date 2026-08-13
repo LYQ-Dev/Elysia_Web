@@ -5,8 +5,156 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-12T14:26:42.487Z</updated>
+  <updated>2026-08-13T15:14:33.142Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-13</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-13/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-13/</id>
+    <published>2026-08-13T00:00:00.000Z</published>
+    <updated>2026-08-13T00:00:00.000Z</updated>
+    <summary>408 计算机组成原理大题刷题学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-13</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习3小时，专注练习计算机组成原理（计组）综合大题，覆盖统考真题与模拟卷中高频计组大题题型。</p>
+<h2>AI知识点带复盘</h2>
+<h3>计组大题核心考点复盘</h3>
+<ol>
+<li><strong>存储器层次结构大题</strong>：计组大题高频考点，常考察Cache映射方式（直接映射、全相联、组相联）的地址拆分计算、命中率与平均访问时间（AMAT）的公式推导与数值计算，需牢记通用公式<code>AMAT = T_c + (1 - H_c) * T_m</code>，做题时需严格统一单位（如将主存访问时间ms转换为与Cache周期匹配的ns单位）。</li>
+<li><strong>CPU控制器大题</strong>：常考察组合逻辑控制器的控制信号生成流程、微程序控制器的微指令格式与微地址形成，需理清指令周期取指、间址、执行、中断四个阶段的控制信号变化逻辑。</li>
+<li><strong>指令系统运算大题</strong>：常考察补码定点/浮点数的加减运算、溢出判断，需熟练掌握双进位法、变形补码的溢出判断规则，以及浮点数规格化、舍入处理的完整步骤。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>组相联映射的地址拆分逻辑仍不熟练，遇到多组Cache的题目时容易算错组号位数，导致后续命中率计算出错；</li>
+<li>微程序控制器的微地址形成方式（增量法、断定法）的应用场景记忆模糊，无法快速梳理控制信号的生成路径；</li>
+<li>答题时容易省略核心公式推导步骤，导致步骤分丢失，不符合408大题的评分标准。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>梳理了计组综合大题的出题逻辑与答题规范，明确了每类题型的得分要点，必须先写出核心公式再代入数值计算；</li>
+<li>针对今日暴露的薄弱点，整理了组相联映射地址拆分的通用步骤，以及微程序控制器的考点思维导图；</li>
+<li>意识到408计组大题不仅考察计算能力，更考察逻辑梳理能力，需严格按照模块流程分步作答，避免跳步丢分。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-13</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-13/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-13/</id>
+    <published>2026-08-13T00:00:00.000Z</published>
+    <updated>2026-08-13T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-13</h1>
+<h2>今日学习总时长</h2>
+<p>约1小时（单词复盘35分钟，长难句拆解训练25分钟）</p>
+<h2>单词复盘（AI 自动整理）</h2>
+<h3>今日新学考研高频核心词</h3>
+<ol>
+<li><strong>apprehend</strong> /ˌæprɪˈhend/
+<ul>
+<li>释义：v. 理解，领会；逮捕</li>
+<li>真题例句：Few writers are able to apprehend such complex ideas with such clarity.</li>
+<li>易混辨析：与comprehend的区别：apprehend侧重快速抓取核心含义，comprehend强调全面透彻的理解</li>
+</ul>
+</li>
+<li><strong>contiguous</strong> /kənˈtɪɡjuəs/
+<ul>
+<li>释义：adj. 邻近的，毗邻的</li>
+<li>真题例句：The two countries are contiguous along the northern border.</li>
+</ul>
+</li>
+<li><strong>discrepancy</strong> /dɪˈskrepənsi/
+<ul>
+<li>释义：n. 差异，不一致</li>
+<li>真题例句：There is a discrepancy between the official data and the independent survey results.</li>
+</ul>
+</li>
+<li><strong>exacerbate</strong> /ɪɡˈzæsɜːbeɪt/
+<ul>
+<li>释义：v. 使恶化，加重</li>
+<li>真题例句：Poor housing conditions may exacerbate mental health problems.</li>
+</ul>
+</li>
+<li><strong>meticulous</strong> /məˈtɪkjələs/
+<ul>
+<li>释义：adj. 细致的，一丝不苟的</li>
+<li>真题例句：The researcher is meticulous in collecting and analyzing data.</li>
+</ul>
+</li>
+</ol>
+<h3>昨日单词复盘</h3>
+<p>复习2026考研大纲高频词第7组共30个，默写正确率达87%，重点巩固了之前易错的<code>perspective</code>和<code>speculate</code>两个词汇。</p>
+<h2>长难句专项训练</h2>
+<p>选取2023年考研英语一阅读Text3经典嵌套长难句拆解：</p>
+<blockquote>
+<p>原句：Yet these discoveries do not confirm that humans are born with a sense of morality that is shaped by our social interactions in early childhood.</p>
+<ol>
+<li>结构拆分：
+<ul>
+<li>主句：<code>these discoveries do not confirm that...</code></li>
+<li>宾语从句核心：<code>humans are born with a sense of morality</code></li>
+<li>后置定语从句：<code>that is shaped by our social interactions in early childhood</code>，修饰先行词<code>a sense of morality</code></li>
+</ul>
+</li>
+<li>参考译文：然而这些发现并未证实人类天生就具备一种在童年早期通过社会互动塑造而成的道德感。</li>
+<li>做题复盘：配套3道细节选择题正确率100%，理清了嵌套定语从句的识别逻辑，后续将继续强化同类句式训练。</li>
+</ol>
+</blockquote>
+<p>💡 碎碎念：今天特意整理了易混词辨析，记忆比单纯背单词深刻很多；长难句拆解一开始有点绕，多练两遍后终于摸清了拆分技巧。距离考研还有百天，坚持每天积累，英语上岸稳了！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-13</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-13/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-13/</id>
+    <published>2026-08-13T00:00:00.000Z</published>
+    <updated>2026-08-13T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-13</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入3.5小时，针对考研数学线性代数模块的特征值与特征向量章节，完成了基础题型、中档综合题型的刷题训练，重点练习了抽象矩阵特征值推导、实对称矩阵对角化两类高频考点的解题流程。</p>
+<h2>薄弱点</h2>
+<p>今日刷题过程中暴露出三处核心薄弱环节：一是抽象矩阵特征值与特征向量的推导逻辑不够流畅，当题目未给出具体矩阵元素时，难以快速结合迹、行列式等性质完成特征值求解；二是实对称矩阵正交相似对角化的完整步骤存在疏漏，尤其是单位化环节容易遗漏，或在求解正交特征向量时未严格验证正交性；三是跨章节综合题的关联应用能力不足，当题目结合二次型的正定性与特征值范围时，无法快速建立知识点之间的联动逻辑，导致解题耗时过长。</p>
+<h2>AI知识点带复盘</h2>
+<h3>核心知识点回顾</h3>
+<p>特征值与特征向量是线性代数的核心考点之一，也是考研数学的高频考查内容，核心定义为：对于$n$阶矩阵$A$，若存在数$\lambda$和非零$n$维列向量$\boldsymbol{x}$，使得$A\boldsymbol{x}=\lambda\boldsymbol{x}$，则$\lambda$为$A$的特征值，$\boldsymbol{x}$为$A$对应特征值$\lambda$的特征向量，特征方程为$|A-\lambda E|=0$，特征向量为齐次线性方程组$(A-\lambda E)\boldsymbol{x}=0$的非零解。</p>
+<h3>考研常考题型复盘</h3>
+<ol>
+<li><strong>具体矩阵求特征值与特征向量</strong>：直接通过展开特征方程求解特征值，再代入方程组求基础解系得到对应特征向量，是最基础的考查形式，也是今日刷题的基础题型占比最高的部分。</li>
+<li><strong>抽象矩阵求特征值</strong>：常结合矩阵的迹$\text{tr}(A)=\sum_{i=1}^n\lambda_i$、行列式$|A|=\prod_{i=1}^n\lambda_i$，以及已知$A$的特征值推导$f(A)$、$A^{-1}$、$A^*$等矩阵的特征值，是中档题的常见考法，也是今日暴露出的核心薄弱点。</li>
+<li><strong>实对称矩阵的特殊性质</strong>：实对称矩阵的特征值全为实数，不同特征值对应的特征向量正交，且一定可以正交相似对角化，是考研数学的重点考查内容，需要熟练掌握正交单位化的完整步骤。</li>
+<li><strong>综合应用</strong>：常结合相似矩阵的性质、二次型的标准化、矩阵可对角化的条件等知识点出综合大题，需要建立跨章节的知识点联动思维。</li>
+</ol>
+<h3>今日刷题针对性复盘</h3>
+<p>今日重点练习的抽象矩阵推导和实对称矩阵对角化题型，恰好覆盖了考研数学中该章节80%以上的考查比例，通过错题复盘可以发现，自己在抽象矩阵的性质应用和单位化细节上存在记忆疏漏，后续需要针对性强化训练。</p>
+<h2>今日小结</h2>
+<p>今日共计投入3.5小时完成特征值与特征向量章节的刷题训练，累计完成约60道基础至中档难度的习题，通过整理错题修正了单位化遗漏、抽象矩阵推导逻辑混乱等问题，对该章节的基础解题流程熟练度有了明显提升。但在跨章节综合题型的应用上仍存在不足，后续计划通过专项训练强化综合题的解题思路。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-12</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-12/" rel="alternate" type="text/html"/>
