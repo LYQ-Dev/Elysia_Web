@@ -5,8 +5,187 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-13T15:14:33.142Z</updated>
+  <updated>2026-08-14T15:37:19.723Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-14</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-14/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-14/</id>
+    <published>2026-08-14T00:00:00.000Z</published>
+    <updated>2026-08-14T00:00:00.000Z</updated>
+    <summary>408计算机组成原理专业课刷题复盘学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-14</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入3小时学习时长，全程完成12道计组考研大题，覆盖存储器系统、指令流水线、CPU运算器三大核心考点模块，同步对照考研真题解析完成错题订正与思路复盘。</p>
+<h2>AI知识点带复盘</h2>
+<h3>计组考研大题核心考点体系复盘</h3>
+<ol>
+<li><strong>存储器系统高频考点</strong>
+是计组大题TOP1出题模块，常见考法包含：存储容量与地址线/数据线位数推导、位扩展/字扩展/字位扩展的硬件接线规则、主存与Cache地址映射、命中率与平均访问时间计算。
+核心公式与规则复盘：
+<ul>
+<li>存储容量计算公式：$容量 = 2^{地址线位数} \times 数据线位数$，例如16K×8位存储芯片，地址线为14位（$2^{14}=16384=16K$），数据线为8位。</li>
+<li>扩展规则：位扩展通过并联芯片扩充存储字长，字扩展通过译码器连接片选端扩充存储容量，字位扩展结合两种逻辑完成多维扩充。</li>
+<li>Cache平均访问时间：$T_a = H \times T_c + (1-H) \times (T_c + T_m)$，其中$H$为命中率，$T_c$为Cache单次访问时间，$T_m$为主存单次访问时间。</li>
+</ul>
+</li>
+<li><strong>指令流水线核心考点</strong>
+常考结构冒险、数据冒险、控制冒险的识别与解决方案，以及CPI（每指令周期数）的计算。
+易错点复盘：结构冒险多由硬件资源冲突引发，例如取指与访存共用单存储器；数据冒险需识别RAW/WAW/WAR三种数据依赖，转发技术仅能解决RAW依赖；控制冒险由分支指令打断流水线流导致，分支预测技术可有效降低断流概率。</li>
+<li><strong>运算器经典考点</strong>
+主要考查补码加减运算、双符号位溢出判断、ALU功能逻辑设计，今日刷题中重点巩固了补码溢出的两种判断方法：双符号位法（$S_f=S_{f1} \oplus S_{f2}$，$S_f=1$则溢出）与进位判断法（最高位进位与次高位进位异或）。</li>
+</ol>
+<h3>当日刷题对应考点复盘</h3>
+<p>今日错题集中在组相联映射的地址拆分与总线带宽计算，通过复盘明确了组相联映射中「组号=主存地址块号 mod 总组数」的核心规则，以及总线带宽计算公式：$总线带宽 = \frac{总线频率 \times 总线宽度}{8}$（单位：MB/s）。</p>
+<h2>问题与反思</h2>
+<ol>
+<li>综合大题审题效率偏低，一道结合存储器扩展与Cache映射的综合题耗时42分钟才理清地址结构，后续需要训练快速拆解题目参数的能力。</li>
+<li>分支指令流水线的气泡插入数量计算容易出错，遗漏了分支延迟槽的适配场景，需要针对性强化该题型的练习。</li>
+<li>当日刷题未同步整理错题溯源，部分重复出错的细节未及时标注，后续计划建立计组大题错题本，当日刷题结束后15分钟内完成错题归类与考点标注。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>熟练掌握了计组大题标准化解题流程：先拆解题目给出的硬件参数，再匹配对应考点的公式与规则，最后逐步推导最终结果。</li>
+<li>明确了自身薄弱模块：组相联映射、总线带宽计算，后续将针对性刷30道对应题型，配套整理专属考点笔记。</li>
+<li>优化了刷题时长分配计划，后续将3小时刷题拆分为「2小时模块专项练习+1小时综合套卷练习」的模式，避免单一题型耗时过长。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-14</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-14/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-14/</id>
+    <published>2026-08-14T00:00:00.000Z</published>
+    <updated>2026-08-14T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-14</h1>
+<h2>今日学习内容</h2>
+<p>总计2小时：1小时考研英语核心单词复盘与巩固，1小时历年真题长难句精读与翻译练习</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日核心高频词汇</h3>
+<ol>
+<li><strong>perspective</strong> /pəˈspektɪv/
+<ul>
+<li>词性与释义：n. 视角，观点；透视画法；洞察力</li>
+<li>常用搭配：in the perspective of 从……的角度来看；gain a perspective on 对……形成清晰认识</li>
+<li>真题语境例句：From the perspective of educational equity, we should provide more resources for underprivileged students.</li>
+</ul>
+</li>
+<li><strong>fluctuate</strong> /ˈflʌktʃueɪt/
+<ul>
+<li>词性与释义：v. 波动，起伏；变动，涨落</li>
+<li>常用搭配：fluctuate between A and B 在A与B之间波动；fluctuate according to 根据……而变动</li>
+<li>真题语境例句：The price of agricultural products fluctuates greatly according to seasonal supply and market demand.</li>
+</ul>
+</li>
+<li><strong>mitigate</strong> /ˈmɪtɪɡeɪt/
+<ul>
+<li>词性与释义：v. 减轻，缓解；使缓和，减轻……的严重程度</li>
+<li>常用搭配：mitigate the risk/impact 降低风险/减轻影响</li>
+<li>真题语境例句：City planners are trying to mitigate traffic congestion by expanding public transit networks.</li>
+</ul>
+</li>
+<li><strong>cumulative</strong> /ˈkjuːmjələtɪv/
+<ul>
+<li>词性与释义：adj. 累积的，渐增的；累加的</li>
+<li>常用搭配：cumulative effect 累积效应；cumulative experience 累积经验</li>
+<li>真题语境例句：The cumulative effect of decades of deforestation has led to serious soil erosion in this region.</li>
+</ul>
+</li>
+<li><strong>overlook</strong> /ˌəʊvəˈlʊk/
+<ul>
+<li>词性与释义：v. 忽视，忽略；俯瞰，眺望；宽容，不计较</li>
+<li>常用搭配：overlook a mistake 原谅错误；overlook the details 忽视细节</li>
+<li>真题语境例句：Many people overlook the importance of physical exercise in their busy daily lives.</li>
+</ul>
+</li>
+</ol>
+<h2>长难句精读与拆解</h2>
+<h3>今日精选真题长难句</h3>
+<blockquote>
+<p>"We are even farther removed from the unforced flow of childhood friendships than we are from the impact of modern communications on our parents' communication patterns." （来源：2023年考研英语一Text 2）</p>
+</blockquote>
+<ol>
+<li><strong>语法结构拆解</strong>：
+<ul>
+<li>主句主干：We are even farther removed...</li>
+<li>比较状语结构：than we are from the impact... （完整形式为than we are far removed from the impact）</li>
+<li>后置定语：of modern communications on our parents' communication patterns 修饰impact</li>
+<li>前置定语：unforced flow of childhood friendships 修饰第一个宾语部分</li>
+</ul>
+</li>
+<li>参考翻译：与现代通讯对我们父母那一代沟通模式的影响相比，我们甚至更难感受到童年时期那种自然而然的友谊流动。</li>
+<li>学习收获：掌握了“be removed from”表示“远离，脱离”的用法，以及比较状语从句中省略重复成分的技巧，同时积累了unforced、flow等考研核心词的生僻释义。</li>
+</ol>
+<p>💡 碎碎念：今天复盘单词时特意整理了易混淆词对，比如perspective和prospective、fluctuate和flutter，避免下次做题出错。长难句拆解时一开始搞错了比较对象，反复看了语法解析才理清逻辑，看来还是要多练多总结！坚持积累，英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-14</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-14/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-14/</id>
+    <published>2026-08-14T00:00:00.000Z</published>
+    <updated>2026-08-14T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-14</h1>
+<h2>今日学习内容</h2>
+<p>3.5h  特征值和特征向量</p>
+<h2>薄弱点</h2>
+<ol>
+<li>对特征向量必须为非零向量的前提条件理解不扎实，偶尔在做题时忽略该限制；</li>
+<li>求解特征多项式时，高阶行列式的展开与化简容易出现计算错误，导致特征值求解偏差；</li>
+<li>对实对称矩阵不同特征值对应特征向量正交的性质应用场景模糊，无法快速利用该性质简化解题步骤；</li>
+<li>混淆矩阵相似与特征值的关联，在已知相似矩阵求目标矩阵特征值时容易出现逻辑漏洞。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>核心考点梳理</h3>
+<ol>
+<li><strong>定义与判定</strong>：若存在数$\lambda$与非零n维列向量$\boldsymbol{x}$，满足$A\boldsymbol{x}=\lambda\boldsymbol{x}$，则$\lambda$为矩阵$A$的特征值，$\boldsymbol{x}$为对应$\lambda$的特征向量。考研选择题常在此处设置陷阱，比如给出零向量判断是否为特征向量，需严格紧扣“非零”核心条件。</li>
+<li><strong>标准求解流程</strong>
+<ul>
+<li>第一步：写出特征方程$|\lambda E - A| = 0$，求解得到全部特征值；</li>
+<li>第二步：对每个特征值$\lambda_i$，求解齐次线性方程组$(\lambda_i E - A)\boldsymbol{x}=0$，得到的基础解系即为对应$\lambda_i$的线性无关特征向量，所有非零线性组合均为该特征值的特征向量。
+考研大题中常结合矩阵运算考察该流程，比如已知抽象矩阵的迹、行列式等条件，反向推导特征值与特征向量。</li>
+</ul>
+</li>
+<li><strong>高频核心性质</strong>
+<ul>
+<li>迹相等：$\sum_{i=1}^n \lambda_i = \text{tr}(A)$，所有特征值乘积等于$|A|$，可用于快速验证特征值求解是否正确；</li>
+<li>特征值的变换：若$\lambda$是$A$的特征值，则$k\lambda$、$\lambda^m$、$\frac{1}{\lambda}$（$A$可逆时）分别为$kA$、$A^m$、$A^{-1}$的特征值；</li>
+<li>相似矩阵共享特征值：若$A \sim B$，则$|\lambda E - A| = |\lambda E - B|$，可快速推导相似矩阵的特征值。</li>
+</ul>
+</li>
+<li><strong>实对称矩阵专属考点</strong>
+实对称矩阵是考研线性代数大题的高频考察对象，核心考点包括：特征值全为实数、不同特征值对应的特征向量正交、必可正交相似对角化，是后续二次型标准化的核心基础。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日共计投入3.5小时完成特征值与特征向量的系统复习，从定义、求解流程到核心性质均完成了一轮梳理，同时通过针对性练习暴露了计算与性质应用层面的薄弱环节。后续将针对特征多项式计算、实对称矩阵性质应用进行专项刷题，提升解题熟练度与准确性，为后续相似对角化、二次型等进阶内容的学习夯实基础。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-13</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-13/" rel="alternate" type="text/html"/>
