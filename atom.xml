@@ -5,8 +5,152 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-14T15:37:19.723Z</updated>
+  <updated>2026-08-15T13:20:22.179Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-15</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-15/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-15/</id>
+    <published>2026-08-15T00:00:00.000Z</published>
+    <updated>2026-08-15T00:00:00.000Z</updated>
+    <summary>408 计算机组成原理专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-15</h1>
+<h2>今日学习内容</h2>
+<p>3h 刷计组大题</p>
+<h2>AI知识点带复盘</h2>
+<p>本次刷题覆盖了考研408计算机组成原理大题的核心高频考点，复盘如下：</p>
+<ol>
+<li><strong>存储器层次结构</strong>：重点练习了组相联Cache的地址映射、平均访问时间（AMAT）计算、虚拟存储器页表转换流程，明确了块大小、组号、标记位的位数推导逻辑，掌握了命中率对系统性能的影响分析方法。</li>
+<li><strong>指令流水线</strong>：针对数据冒险、控制冒险、结构冒险的识别与停顿周期计算进行了专项练习，复习了流水线吞吐率、加速比的公式推导，同时补充了分支预测技术对控制冒险的缓解规则。</li>
+<li><strong>指令系统与CPU控制器</strong>：巩固了扩展操作码的指令条数计算思路，熟悉了指令周期的时序划分与控制器控制信号的生成逻辑。</li>
+<li><strong>总线与I/O系统</strong>：练习了总线带宽计算公式的应用，梳理了DMA数据传输与中断请求的优先级判断流程。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>处理带分支预测的流水线吞吐率计算题时，容易遗漏分支预测成功的场景，导致加速比计算结果偏差</li>
+<li>交叉编址多模块存储器的带宽计算公式记忆混淆，偶尔误用单模块存储器的计算逻辑</li>
+<li>答题未严格遵循“先写公式→代入数值→得出结果”的规范步骤，部分步骤存在扣分风险</li>
+<li>3小时刷题量偏大，未预留充足复盘时间，少量错题的错误原因未完全梳理清晰</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了计组大题的常见题型与采分标准，明确了各考点的出题角度与解题框架</li>
+<li>强化了存储器与流水线模块的综合应用能力，能够快速匹配考点对应的解题方法</li>
+<li>精准定位了自身薄弱模块：带分支预测的流水线分析、交叉编址存储器带宽计算，后续将针对性整理专项练习题</li>
+<li>意识到刷题后的复盘比单纯刷题更重要，后续将为每次刷题预留1/3时长用于错题复盘
+💡 碎碎念：踏实吃透每一个知识点！</li>
+</ol>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-15</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-15/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-15/</id>
+    <published>2026-08-15T00:00:00.000Z</published>
+    <updated>2026-08-15T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-15</h1>
+<h2>今日学习总时长</h2>
+<p>2.5h（其中1.5h用于单词复盘与新学，1h用于真题长难句专项分析）</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日复盘易错高频词</h3>
+<ol>
+<li><strong>mitigate</strong> v. 减轻，缓解 | 易混淆辨析：与diminish不同，mitigate侧重缓解伤害、痛苦等负面事物，diminish侧重数量、重要性的降低</li>
+<li><strong>endorse</strong> v. 赞同，支持；背书 | 考研阅读中常出现在政策表态、名人背书类语境</li>
+<li><strong>prevalent</strong> adj. 普遍的，流行的 | 同义词：widespread，常用于描述社会现象、疾病传播场景</li>
+<li><strong>tangible</strong> adj. 切实的，有形的 | 反义词：intangible（无形的），固定搭配：tangible benefits（切实利益）</li>
+</ol>
+<h3>今日新学核心词</h3>
+<ol>
+<li>pursuant adj./adv. 依据，按照</li>
+<li>stint v./n. 限制，节省</li>
+<li>thrive v. 繁荣，茁壮成长</li>
+<li>verge n. 边缘，临界点 | 固定搭配：on the verge of（濒临）</li>
+</ol>
+<p>💡 碎碎念：今天特意整理了易混淆词的辨析表格，补上了之前做题时因为词义模糊选错的错题笔记。坚持每天积累，英语必上岸！</p>
+<h2>真题长难句分析</h2>
+<p>今日选取2022年考研英语一Text3经典嵌套长难句拆解：</p>
+<blockquote>
+<p>原句：The researchers suggest that the gaps in performing daily routines that would otherwise brighten our hours are precisely what make a difference between a life well spent and one wasted.</p>
+<ol>
+<li>结构拆解：
+<ul>
+<li>主句主干：The researchers suggest + 宾语从句</li>
+<li>宾语从句主干：the gaps are precisely what引导的表语从句</li>
+<li>定语从句<code>that would otherwise brighten our hours</code>修饰先行词<code>gaps</code>，<code>otherwise</code>意为“本会，否则”，体现转折逻辑</li>
+<li>介词短语<code>in performing daily routines</code>作后置定语修饰<code>gaps</code></li>
+</ul>
+</li>
+<li>参考译文：研究人员指出，那些本可以为日常增添亮色的琐事间隙，恰恰是区分人生充实与虚度的关键。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-15</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-15/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-15/</id>
+    <published>2026-08-15T00:00:00.000Z</published>
+    <updated>2026-08-15T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-15</h1>
+<h2>今日学习内容</h2>
+<p>2.5h  二次型 配方法
+系统学习了二次型配方法的两类核心题型：含平方项的二次型标准化、不含平方项的二次型标准化，配套完成了5道针对性练习题与可逆线性变换验证练习。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>无平方项二次型的前置可逆变换构造不熟练，易出现变换不可逆的低级错误；</li>
+<li>多变量二次型配方时，容易遗漏混合项的合并步骤，导致配方不彻底；</li>
+<li>对“配方法得到的标准形不唯一，但正负惯性指数唯一”的结论理解模糊，做题时混淆标准形与合同变换的对应关系；</li>
+<li>配方法收尾阶段，未主动验证线性变换矩阵的行列式是否非零，忽略了变换可逆的前提要求。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>二次型配方法是考研数学数一、数二、数三二次型模块的核心基础方法，主要用于将一般二次型转化为标准形，进而求解正负惯性指数、判断二次型合同性、结合正定二次型考点命题。</p>
+<h3>两类题型标准解法</h3>
+<ol>
+<li><strong>含平方项的二次型配方</strong>
+解题步骤：固定一个含平方项的变量，将其余所有包含该变量的混合项与平方项合并，通过完全平方公式完成配方，将剩余非该变量项整理为新的低阶二次型，重复上述步骤直至所有项转化为平方项。需保证每一步线性变换可逆，最终整体变换的行列式不为0。
+示例：对二次型 $f = x_1^2 + 2x_2^2 + 3x_3^2 + 2x_1x_2 + 2x_1x_3$，先对$x_1$配方：
+$$f=(x_1 + x_2 + x_3)^2 - (x_2 + x_3)^2 + 2x_2^2 + 3x_3^2$$
+整理后得到 $(x_1 + x_2 + x_3)^2 + x_2^2 - 2x_2x_3 + 2x_3^2$，再对$x_2$配方：
+$$=(x_1 + x_2 + x_3)^2 + (x_2 - x_3)^2 + x_3^2$$
+对应可逆线性变换为 $\begin{cases} y_1 = x_1 + x_2 + x_3 \ y_2 = x_2 - x_3 \ y_3 = x_3 \end{cases}$，解得 $\begin{cases} x_1 = y_1 - y_2 \ x_2 = y_2 + y_3 \ x_3 = y_3 \end{cases}$，变换矩阵行列式为1，符合可逆要求。</li>
+<li><strong>不含平方项的二次型配方</strong>
+解题步骤：先构造可逆变换生成平方项，例如对仅含混合项 $x_1x_2$ 的二次型，可令 $x_1 = y_1 + y_2, x_2 = y_1 - y_2, x_i = y_i(i\geq3)$，将原二次型转化为含平方项的形式后，再按含平方项的方法完成后续配方。</li>
+</ol>
+<h3>考研常考易错点</h3>
+<ol>
+<li>配方法得到的标准形不唯一，但正负惯性指数由二次型的秩和符号差唯一确定，考研中常通过该结论反求二次型中的参数；</li>
+<li>易忽略线性变换可逆的前提，若变换不可逆，则无法将二次型合法转化为标准形，做题时需主动验证变换矩阵的行列式是否非零；</li>
+<li>多变量二次型配方时，需逐步整理剩余项，避免遗漏混合项的合并，导致最终标准形不完整。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日累计学习2.5小时，系统梳理了二次型配方法的完整解题流程，通过例题练习巩固了两类题型的解法。做题过程中发现自己在无平方项二次型的前置变换构造环节存在疏漏，共出错2道未验证变换可逆性的题目，后续将针对性加强该模块的练习，重点强化无平方项二次型的配方步骤与可逆变换的判断方法。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-14</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-14/" rel="alternate" type="text/html"/>
