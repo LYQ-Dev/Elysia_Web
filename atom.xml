@@ -5,8 +5,152 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-17T14:53:56.442Z</updated>
+  <updated>2026-08-18T15:01:37.170Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-18</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-18/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-18/</id>
+    <published>2026-08-18T00:00:00.000Z</published>
+    <updated>2026-08-18T00:00:00.000Z</updated>
+    <summary>408计算机组成原理专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-18</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入2小时复习考研408专业课中的计算机组成原理模块，重点梳理了计算机硬件基础、存储器层次结构与总线系统的核心知识点。</p>
+<h2>AI知识点带复盘</h2>
+<h3>计算机组成原理核心考点复盘</h3>
+<ol>
+<li><strong>冯·诺依曼体系结构</strong>：408计组开篇高频选择题考点，需精准掌握五大硬件组成（运算器、控制器、存储器、输入设备、输出设备）、存储程序的核心思想，以及与哈佛结构的核心差异（哈佛结构将程序指令与数据存储分开，冯诺依曼结构统一存储），考研常以对比选择题形式出题。</li>
+<li><strong>存储器层次结构基础</strong>：掌握层次化存储的设计动机（平衡存储速度、容量与位价的矛盾），各级存储介质的特性差异，以及主存容量、编址的标准计算方法，该模块是后续Cache、虚拟存储器学习的基础，常出基础计算题。</li>
+<li><strong>总线系统核心要点</strong>：明确总线的三大分类（数据总线、地址总线、控制总线）的功能差异，掌握总线带宽的计算公式<code>总线带宽 = 总线工作频率 × 总线宽度 / 8</code>，需注意单位换算（总线宽度单位为bit，转换为字节需除以8），该公式是计组计算题高频考点。</li>
+<li>当日专项复盘：针对此前混淆的「存储单元与存储字长」「总线带宽单位换算」两个易错点进行了专项整理，通过例题验证了公式的正确应用，纠正了此前将总线宽度直接等同于总线带宽的认知误区。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对Cache的三种映射方式（直接映射、全相联映射、组相联映射）的地址划分细节仍不够熟练，尚未独立完成完整的映射计算题练习，后续需要针对性补充专项习题。</li>
+<li>计组核心寄存器（MAR、MDR、PC、IR）的功能与操作流程容易混淆，需要制作速记表格强化记忆。</li>
+<li>今日学习未拆分具体知识点的学习时长，无法精准定位薄弱模块的投入时间，后续需要细化学习时间分配。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>搭建了计组前两章的核心考点框架，明确了408计组选择题与计算题的高频出题方向，对整体复习脉络有了更清晰的认知。</li>
+<li>纠正了2个前期的知识点误区，熟练掌握了主存容量、总线带宽的标准计算方法，能够独立完成基础计算题的推导。</li>
+<li>建立了「当日易错点专项整理」的学习习惯，将混淆的知识点单独记录，便于后续考前复盘。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-18</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-18/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-18/</id>
+    <published>2026-08-18T00:00:00.000Z</published>
+    <updated>2026-08-18T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-18</h1>
+<h2>今日学习总时长</h2>
+<p>120分钟，拆分模块为：单词背诵与复盘60min、长难句拆解与练习40min、真题阅读精读20min</p>
+<h2>单词复盘（AI 自动整理）</h2>
+<h3>今日新学+高频复盘词</h3>
+<ol>
+<li><strong>词根家族：port（搬运核心含义）</strong>
+<ul>
+<li>transport v./n. 运输；运送</li>
+<li>export v./n. 出口；输出品</li>
+<li>import v./n. 进口；输入品</li>
+<li>portable adj. 便携的；可携带的</li>
+</ul>
+</li>
+<li><strong>熟词僻义重点积累</strong>
+<ul>
+<li>address v. 处理；解决（=deal with）；发表演说</li>
+<li>commit v. 投入（时间/精力）；承诺</li>
+<li>foster v. 培养；促进；adj. 收养的</li>
+</ul>
+</li>
+<li><strong>形近易混词辨析</strong>
+<ul>
+<li>perspective n. 视角；观点；透视画法</li>
+<li>prospective adj. 预期的；未来的；可能的
+今日复盘时曾混淆二者含义，特意整理对比表强化记忆。</li>
+</ul>
+</li>
+</ol>
+<h2>长难句拆解（选自2023年考研英语一Text 2）</h2>
+<blockquote>
+<p>原句：The industry’s approach to addressing this momentary crisis is not only to rely on market forces, but also to adjust to the fact that consumers’ attitudes toward energy are shifting.</p>
+</blockquote>
+<ol>
+<li><strong>语法拆分</strong>：
+<ul>
+<li>主句主语：The industry’s approach；后置定语：to addressing this momentary crisis</li>
+<li>主句谓语：is not only...but also... 平行结构，后接两个不定式作表语</li>
+<li>同位语从句：that consumers’ attitudes toward energy are shifting，修饰先行词the fact，解释说明事实内容</li>
+</ul>
+</li>
+<li><strong>参考翻译</strong>：该行业应对这一短期危机的方法不仅是依靠市场力量，还需适应“消费者对能源的态度正在转变”这一现状。</li>
+</ol>
+<p>💡 碎碎念：今天背单词时特意整理了形近词对比表，终于理清了perspective和prospective的用法区别；长难句拆解初期没找准同位语从句的先行词，通过划分主谓结构理清逻辑后，拆分效率提升了不少。坚持每天积累，英语提分稳扎稳打，考研上岸必成！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-18</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-18/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-18/</id>
+    <published>2026-08-18T00:00:00.000Z</published>
+    <updated>2026-08-18T00:00:00.000Z</updated>
+    <summary>考研数学二次型专项刷题与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-18</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习时长约4小时，全程聚焦考研数学二次型专项刷题训练，涵盖二次型的标准形、规范形、正定判定、合同变换、惯性指数等核心考点，共完成3套二次型专项题库套卷+20道历年真题二次型模块真题，重点练习了含参数二次型的相关题型。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>含参数二次型的正/负惯性指数判定易混淆，当二次型带有未知参数时，无法快速通过特征值符号或配方法准确锁定正、负惯性指数的取值范围；</li>
+<li>正定二次型的充要条件混用，曾误将“顺序主子式全部大于等于0”作为正定的充要条件，忽略了必须全部严格大于0的要求；</li>
+<li>合同变换与相似变换的概念混淆，在选择题中无法准确区分二者的判定条件，常将相似等价于合同；</li>
+<li>配方法化标准形时，易忽略线性变换的可逆性要求，导致后续计算规范形时出现逻辑错误。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>本次复盘围绕本次刷题涉及的二次型核心考研考点展开：</p>
+<ol>
+<li><strong>二次型的基本概念</strong>：二次型的本质是关于变量的二次齐次多项式，其矩阵表示必须为对称矩阵，即$A^T=A$，其中$a_{ij}=a_{ji}$对应$x_ix_j$项的系数的1/2；</li>
+<li><strong>化二次型为标准形的三种方法</strong>：
+<ul>
+<li>配方法：需保证每一步的线性变换都是可逆的，核心是逐步消去交叉项，每次仅处理一个变量的二次项与交叉项；</li>
+<li>正交变换法：通过正交变换将实对称矩阵相似对角化，此时得到的标准形系数即为矩阵的特征值，且正交变换同时也是合同变换；</li>
+<li>初等变换法：通过对矩阵同时做初等行变换和相同的初等列变换，将其化为对角矩阵；</li>
+</ul>
+</li>
+<li><strong>惯性定理与合同矩阵</strong>：任意可逆线性变换下，二次型的正惯性指数、负惯性指数均保持不变；实对称矩阵$A$与$B$合同的充要条件是二者的正、负惯性指数完全相同，正交相似的矩阵既是相似也是合同；</li>
+<li><strong>正定二次型与正定矩阵</strong>：正定的充要条件包括：① 对任意非零实向量$\boldsymbol{x}$，$\boldsymbol{x}^TA\boldsymbol{x}&gt;0$；② $A$的所有特征值均大于0；③ $A$的所有顺序主子式均严格大于0；④ 存在可逆实矩阵$P$使得$A=P^TP$。
+结合今日刷题的错题复盘：本次错的2道含参数正定二次型题，均因一开始误用了非严格的顺序主子式条件，后续通过整理错题，明确了正定必须全部顺序主子式&gt;0，而非≥0；另外一道合同判定的选择题，错误地认为相似一定合同，实则只有正交相似的矩阵才同时满足相似与合同，普通相似矩阵仅保证特征值相同，但合同需要正、负惯性指数一致。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日通过4小时的二次型专项刷题，巩固了二次型模块的核心考点，梳理了自身在参数二次型判定、合同与相似概念区分上的薄弱环节，整理了3道典型错题并标注了易错要点，明确了后续二次型模块的复习重点为含参数二次型的惯性指数与正定判定题型。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-17</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-17/" rel="alternate" type="text/html"/>
