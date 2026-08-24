@@ -5,8 +5,110 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-23T14:10:57.982Z</updated>
+  <updated>2026-08-24T15:09:15.248Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研英语学习记录2026-08-24</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-24/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-24/</id>
+    <published>2026-08-24T00:00:00.000Z</published>
+    <updated>2026-08-24T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-24</h1>
+<h2>今日学习内容</h2>
+<p>总时长：1.5小时，具体安排如下：</p>
+<ol>
+<li>考研英语考纲单词复盘与新学：40分钟</li>
+<li>考研真题长难句拆解与翻译训练：50分钟</li>
+<li>2022年英语一阅读Text 3 段落精读：20分钟</li>
+</ol>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>核心考纲词汇梳理</h3>
+<h4>形近词组1：以-ceive结尾</h4>
+<ol>
+<li><strong>conceive</strong> /kənˈsiːv/ v. 构思，设想；怀孕
+例句：It is difficult to conceive of a plan to end poverty. 很难想出一个消除贫困的计划。</li>
+<li><strong>perceive</strong> /pəˈsiːv/ v. 察觉，感知；理解
+例句：Most people perceive him as a tough businessman. 大多数人认为他是一个强硬的商人。</li>
+<li><strong>deceive</strong> /dɪˈsiːv/ v. 欺骗，蒙骗
+例句：He deceived his friends about his income. 他在自己的收入问题上欺骗了朋友。</li>
+</ol>
+<h4>熟词僻义盘点</h4>
+<ol>
+<li><strong>address</strong>  熟义：n. 地址 → 僻义：v. 处理，解决；发表演说</li>
+<li><strong>game</strong>  熟义：n. 游戏 → 僻义：n. 猎物；adj. 愿意尝试的</li>
+<li><strong>critical</strong>  熟义：adj. 批评的 → 僻义：adj. 关键的，决定性的；危急的</li>
+</ol>
+<h2>长难句拆解</h2>
+<p>选自2023年考研英语一Text 3 原句：</p>
+<blockquote>
+<p>"The potential evolution of today's technology, and its social consequences, is as dazzling as the evolution of human culture, which took place over tens of thousands of years."</p>
+</blockquote>
+<h3>结构拆解</h3>
+<ol>
+<li>主句主干：The potential evolution... and its social consequences is as dazzling as the evolution of human culture
+<ul>
+<li>主语是两个并列的名词短语，谓语动词用单数is，因为主语被视为整体概念</li>
+<li>比较状语：as dazzling as the evolution of human culture</li>
+</ul>
+</li>
+<li>定语从句：which took place over tens of thousands of years，修饰先行词the evolution of human culture</li>
+</ol>
+<h3>参考翻译：当今技术的潜在发展及其社会影响，如同历经数万年演变的人类文化发展一样令人炫目。</h3>
+<p>💡 碎碎念：今天在拆解长难句时终于理清了并列主语的谓语单复数规则，之前总在这里出错！背形近词时特意整理了前缀差异，记起来轻松不少，继续每天打卡，上岸的底气就是这样一点点攒起来的！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-24</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-24/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-24/</id>
+    <published>2026-08-24T00:00:00.000Z</published>
+    <updated>2026-08-24T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-24</h1>
+<h2>今日学习内容</h2>
+<p>今日总计投入3.5小时系统学习概率论与数理统计模块，核心聚焦一维离散型随机变量与一维连续型随机变量的核心知识点，配套完成了《概率论9讲》对应章节的课后习题，以及2道近年考研数学概率论真题小题，整理易错错题1道。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>一维离散型随机变量的分布律与分布函数转化时，容易混淆分段点处分布函数的取值逻辑，对阶梯状分布函数的跳跃点判断不准确；</li>
+<li>一维连续型随机变量的概率密度归一性应用中，分段区间的积分计算易遗漏端点赋值，导致参数求解出错；</li>
+<li>两类随机变量的期望计算中，离散型无穷级数收敛性判断、连续型广义积分敛散性分析存在盲区，计算准确率有待提升。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>一维离散型随机变量复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：若随机变量X的所有可能取值为有限个或可列无限个，则称X为一维离散型随机变量，其分布律满足$P{X=x_k}=p_k, k=1,2,\cdots$，且必须满足非负性$p_k\geq0$与归一性$\sum_{k=1}^{\infty}p_k=1$。</li>
+<li><strong>分布函数转化</strong>：$F(x)=P{X\leq x}=\sum_{x_k\leq x}p_k$，是分段常数的阶梯函数，在$x=x_k$处的跳跃高度为$p_k$，考研中常考由分布律求分布函数、由分布函数反推分布律的题型。</li>
+<li><strong>高频考向</strong>：0-1分布、二项分布、泊松分布的参数含义与应用场景，以及利用分布律计算指定区间概率、期望$E(X)=\sum_{k=1}^{\infty}x_kp_k$与方差$D(X)=E(X^2)-[E(X)]^2$。</li>
+</ol>
+<h3>一维连续型随机变量复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：若存在非负可积函数$f(x)$，使得随机变量X的分布函数$F(x)=\int_{-\infty}^x f(t)dt$，则称X为一维连续型随机变量，$f(x)$为其概率密度函数。</li>
+<li><strong>核心性质</strong>：非负性$f(x)\geq0$、归一性$\int_{-\infty}^{+\infty}f(x)dx=1$，考研中常利用归一性求解密度函数中的未知参数；在$f(x)$的连续点处，$F'(x)=f(x)$，可实现分布函数与密度函数的互推。</li>
+<li><strong>高频考向</strong>：均匀分布$U(a,b)$、指数分布$E(\lambda)$的密度函数与分布函数、参数意义，计算区间概率$P{a&lt;X\leq b}=\int_a^b f(x)dx$，以及期望、方差的标准化计算。</li>
+</ol>
+<h3>两类变量对比</h3>
+<p>离散型通过求和实现概率与期望计算，分布函数为阶梯状；连续型通过积分实现，分布函数为连续函数，考研中常结合两种类型的差异设置综合题型，需注意两种计算逻辑的切换。</p>
+<h2>今日小结</h2>
+<p>今日完成了一维随机变量模块的基础学习，对两类随机变量的核心概念与考研考向有了更系统的认知，通过习题练习巩固了基础公式的应用，但在分段点处理、积分/求和细节上仍存在不足。后续将针对性练习分段概率密度的积分计算、分布律与分布函数的转化题型，强化易错点的辨析能力。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-20</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-20/" rel="alternate" type="text/html"/>
