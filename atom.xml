@@ -5,8 +5,185 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-24T15:09:15.248Z</updated>
+  <updated>2026-08-25T15:29:19.604Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-25</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-25/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-25/</id>
+    <published>2026-08-25T00:00:00.000Z</published>
+    <updated>2026-08-25T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘——死锁专题</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-25</h1>
+<h2>今日学习内容</h2>
+<blockquote>
+<p>学习时长：2小时
+核心专题：操作系统死锁模块，涵盖死锁定义、产生原因、预防策略、避免方法与检测解除手段，为408统考高频考点。</p>
+</blockquote>
+<h2>AI知识点带复盘</h2>
+<h3>一、死锁核心概念与产生原因</h3>
+<ol>
+<li><strong>死锁定义</strong>：多个进程在执行过程中，因争夺共享资源而陷入互相等待的状态，若无外力干预，所有进程都将无法继续推进。</li>
+<li><strong>死锁的四个必要条件</strong>（缺一不可，同时满足才会触发死锁）：
+<ul>
+<li>互斥条件：某段时间内某资源仅能被一个进程独占使用</li>
+<li>请求与保持条件：进程已持有部分资源，同时发起新的资源请求，且不释放已占有的资源</li>
+<li>不可剥夺条件：进程已获得的资源在未主动释放前，不能被其他进程强行收回</li>
+<li>循环等待条件：存在进程等待序列<code>{P1,P2,...,Pn}</code>，其中<code>Pi</code>等待<code>Pi+1</code>占有的资源，最终<code>Pn</code>等待<code>P1</code>占有的资源，形成闭环等待</li>
+</ul>
+</li>
+<li><strong>死锁产生的原因</strong>：
+<ul>
+<li>根本原因：系统可用资源总量不足、进程推进顺序非法</li>
+<li>直接原因：四个必要条件同时成立</li>
+</ul>
+</li>
+</ol>
+<h3>二、死锁预防</h3>
+<p>通过破坏至少一个必要条件，从根源上杜绝死锁发生，常见策略如下：</p>
+<ol>
+<li><strong>破坏互斥条件</strong>：将独占资源改造为共享资源，比如通过SPooling技术将打印机改为共享输出设备，仅针对非临界必需的独占资源生效。</li>
+<li><strong>破坏请求与保持条件</strong>：采用静态资源分配策略，进程运行前一次性申请全部所需资源，资源全部满足后才启动进程，进程运行中不再申请新资源。缺点是资源利用率极低，易引发饥饿。</li>
+<li><strong>破坏不可剥夺条件</strong>：当进程申请新资源无法立即满足时，强制收回其已占有的资源，适用于CPU、内存等易回收的资源，需配合进程回滚机制避免数据丢失。</li>
+<li><strong>破坏循环等待条件</strong>：对系统所有资源进行线性编号，规定进程必须按资源编号递增顺序申请资源，避免闭环等待，优点是实现简单，资源利用率优于静态分配。</li>
+</ol>
+<h3>三、死锁避免</h3>
+<p>无需破坏必要条件，通过动态检测系统安全状态，确保资源分配后系统始终处于安全状态，避免死锁。核心算法为<strong>银行家算法</strong>：</p>
+<ol>
+<li><strong>安全状态</strong>：存在至少一种进程推进顺序（安全序列），可让所有进程依次获得所需资源并顺利完成。</li>
+<li>算法核心：当进程发起资源申请时，先假设完成资源分配，再校验系统是否仍处于安全状态，若安全则正式分配，否则拒绝申请。</li>
+<li>考研高频考点：给定系统资源总量、各进程最大资源需求、已分配资源量、剩余可用资源量，推导安全序列或判断当前状态是否安全。</li>
+</ol>
+<h3>四、死锁的检测与解除</h3>
+<p>当未采用预防或避免策略时，通过检测机制发现死锁并进行修复：</p>
+<ol>
+<li><strong>死锁检测</strong>：通过资源分配图化简法完成检测：找到既不阻塞又不孤立的进程节点，释放其占有的全部资源，重复该流程直至无法化简，若所有进程均可被化简则无死锁，反之存在死锁。</li>
+<li><strong>死锁解除手段</strong>：
+<ul>
+<li>资源剥夺：从非死锁进程处剥夺资源，分配给死锁进程</li>
+<li>撤销进程：终止部分或全部死锁进程，回收其资源</li>
+<li>进程回滚：将死锁进程回滚至此前的检查点，重新分配资源</li>
+</ul>
+</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对死锁预防四种策略的适用场景和优缺点区分不够清晰，尤其是破坏请求保持与破坏循环等待的策略边界容易混淆。</li>
+<li>银行家算法的安全序列推导步骤还不够熟练，需要结合更多统考真题例题进行练习巩固。</li>
+<li>资源分配图化简的阻塞进程判断逻辑还需要进一步梳理，避免出现化简步骤错误。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>完整搭建了死锁模块的408考点框架，明确了死锁的核心触发条件与三类死锁处理策略的差异：预防是静态破坏必要条件，避免是动态保障安全状态，检测解除是事后修复手段。</li>
+<li>清晰区分了死锁预防与避免的核心不同：预防以牺牲资源利用率为代价彻底避免死锁，避免则在保证资源利用率的前提下动态规避死锁风险。</li>
+<li>掌握了银行家算法的核心逻辑与安全序列的计算方法，以及资源分配图化简的标准化步骤。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-25</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-25/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-25/</id>
+    <published>2026-08-25T00:00:00.000Z</published>
+    <updated>2026-08-25T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-25</h1>
+<h2>今日学习内容</h2>
+<p>1h（0.5h考研核心单词复盘 + 0.5h真题长难句精读）</p>
+<h2>单词复盘（AI自动整理）</h2>
+<h3>今日复盘核心词汇（选自2010年英语一Text1）</h3>
+<ol>
+<li><strong>critical</strong> /ˈkrɪtɪkl/ adj. 关键的；批判的，批评的
+考研搭配：be critical of 对……挑剔/批评；critical factor 关键因素</li>
+<li><strong>pursue</strong> /pəˈsjuː/ v. 追求，致力于；追赶，追踪
+考研搭配：pursue one's dream 追逐梦想</li>
+<li><strong>privilege</strong> /ˈprɪvəlɪdʒ/ n. 特权，优待；荣幸 v. 给予特权
+考研例句：Education is the privilege of all citizens. 教育是全体公民的权利。</li>
+<li><strong>controversy</strong> /ˈkɒntrəvɜːsi/ n. 争论，争议
+考研搭配：arouse public controversy 引发公众争议</li>
+<li><strong>advocate</strong> /ˈædvəkeɪt/ v. 拥护，主张；/ˈædvəkət/ n. 倡导者，支持者
+考研搭配：advocate environmental protection 倡导环境保护</li>
+</ol>
+<h2>长难句解析（选自2011年英语一Text3）</h2>
+<blockquote>
+<p>The researchers studied the behaviour of female brown capuchin monkeys, which have the same emotions, genetics and social structures as humans.</p>
+</blockquote>
+<h3>句子拆解</h3>
+<ol>
+<li>主句：<code>The researchers studied the behaviour of female brown capuchin monkeys</code>
+主语：The researchers；谓语：studied；宾语：the behaviour，后置定语<code>of female brown capuchin monkeys</code>修饰behaviour</li>
+<li>非限制性定语从句：<code>which have the same emotions, genetics and social structures as humans</code>，关系代词which指代先行词monkeys</li>
+</ol>
+<h3>参考译文</h3>
+<p>研究人员对雌性棕色卷尾猴的行为展开了研究，这些猴子与人类拥有相同的情绪、基因与社会结构。</p>
+<p>💡 碎碎念：今天复盘单词时发现之前混淆了pursue和chase的用法，特意整理了搭配加深记忆；长难句的非限定性定语从句一开始没理清指代对象，反复对照先行词后终于理顺了。坚持每天积累一点点，考研英语上岸肯定没问题！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-25</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-25/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-25/</id>
+    <published>2026-08-25T00:00:00.000Z</published>
+    <updated>2026-08-25T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录——一维连续随机变量专题</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-25</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习时长2.5小时，聚焦一维连续型随机变量专题学习：上午1.5小时系统梳理一维连续随机变量的定义、概率密度函数的核心性质与常见连续型分布的基础知识点；下午1小时完成对应章节的课后习题与考研数学真题节选，重点练习了概率密度参数求解、区间概率计算两类题型。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>分段形式的概率密度函数在计算分布函数或区间概率时，容易混淆积分区间的划分，出现漏算或错算积分上下限的问题；</li>
+<li>对不同常用连续分布（如均匀分布、指数分布）的参数含义记忆模糊，混淆不同分布的概率密度表达式；</li>
+<li>偶尔会忽略连续型随机变量取单个实数值的概率为0这一核心特性，在解题时出现多余的无效计算。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>核心知识点复盘</h3>
+<p>一维连续型随机变量是考研数学概率论与数理统计的基础考点之一，核心框架如下：</p>
+<ol>
+<li><strong>定义与判定</strong>：若随机变量$X$的分布函数$F(x)$可表示为$F(x)=\int_{-\infty}^x f(t)dt$（其中$f(x)$为非负可积函数），则$X$为连续型随机变量，$f(x)$为其概率密度函数。</li>
+<li><strong>概率密度的核心性质</strong>
+<ul>
+<li>非负性：$f(x) \geq 0, \forall x \in \mathbb{R}$</li>
+<li>归一性：$\int_{-\infty}^{+\infty} f(x)dx = 1$，这是求解概率密度中未知参数的核心依据</li>
+<li>区间概率：$P{a &lt; X \leq b} = \int_a^b f(x)dx$，同时连续型随机变量满足$P{X=a}=0$</li>
+<li>可导性：在$f(x)$的连续点处，$F'(x)=f(x)$，可实现分布函数与概率密度的互推</li>
+</ul>
+</li>
+<li><strong>考研高频常用分布</strong>
+<ul>
+<li>均匀分布$U(a,b)$：概率密度$f(x)=\begin{cases}\frac{1}{b-a}, &amp; a \leq x \leq b \0, &amp; \text{其他}\end{cases}$，常结合几何概型考察区间概率计算</li>
+<li>指数分布$Exp(\lambda)$：概率密度$f(x)=\begin{cases}\lambda e^{-\lambda x}, &amp; x \geq 0 \0, &amp; \text{其他}\end{cases} (\lambda&gt;0)$，其无记忆性是考研选择题的高频考点</li>
+</ul>
+</li>
+</ol>
+<h3>今日考点对应练习复盘</h3>
+<p>今日练习中出现的典型错误集中在分段概率密度的积分处理：例如当$f(x)$在$[0,1]$和$[1,2]$上有不同表达式时，计算$P{0.5 &lt; X &lt; 1.5}$需要拆分为$\int_{0.5}^1 f_1(x)dx + \int_1^{1.5}f_2(x)dx$，部分同学容易直接用整体区间积分或错用单一表达式计算，后续需强化分段积分的练习。</p>
+<h2>今日小结</h2>
+<p>今日完成了一维连续型随机变量专题的基础学习与配套练习，梳理了核心知识点框架，解决了部分基础题型的计算问题，但在分段概率密度的积分区间处理上仍存在不熟练的问题。后续计划通过专项习题训练强化该薄弱点，同时补充正态分布的相关知识点学习。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研英语学习记录2026-08-24</title>
     <link href="https://elysiaweb.vercel.app/posts/english/8-24/" rel="alternate" type="text/html"/>
