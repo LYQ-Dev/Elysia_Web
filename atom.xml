@@ -5,8 +5,331 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-25T15:29:19.604Z</updated>
+  <updated>2026-08-27T15:42:27.780Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-27</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-27/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-27/</id>
+    <published>2026-08-27T00:00:00.000Z</published>
+    <updated>2026-08-27T00:00:00.000Z</updated>
+    <summary>408存储系统分页分段知识点学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-27</h1>
+<h2>今日学习内容</h2>
+<p>今日共计投入3小时学习408计算机组成原理中存储系统的分页、分段存储管理知识点，重点梳理了两种存储管理方式的核心原理、地址转换流程与二者的核心差异。</p>
+<h2>AI知识点带复盘</h2>
+<h3>分页存储管理考研考点复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：分页是操作系统为实现离散内存分配，将进程的逻辑地址空间划分为若干大小完全相等的页（页框），同时将物理内存划分为与页大小一致的物理块，进程的每个页可以离散存储在物理内存的空闲物理块中，通过页表建立逻辑页号与物理块号的映射关系，完成地址转换。</li>
+<li><strong>逻辑地址结构</strong>：标准分页逻辑地址分为<strong>页号</strong>和<strong>页内偏移量</strong>两部分，通过硬件自动拆分：页号为逻辑地址右移「页大小对应的二进制位数」得到，页内偏移量直接取逻辑地址的低对应位数。</li>
+<li><strong>核心优化考点</strong>：多级页表用于解决一级页表占用内存过大的问题，快表（TLB）用于缓存常用的页表项，减少内存访问次数，是考研计算类题型的高频考点。</li>
+<li>常见考研题型：逻辑地址转物理地址的手工计算、多级页表的内存访问次数计算、TLB命中率相关的性能分析。</li>
+</ol>
+<h3>分段存储管理考研考点复盘</h3>
+<ol>
+<li><strong>核心定义</strong>：分段是面向用户程序逻辑结构的存储管理方式，将进程的逻辑地址空间按照代码段、数据段、堆栈段等逻辑模块划分为若干长度不等的段，每个段拥有独立的段号和段内地址，段可以离散存储在物理内存中，通过段表记录每个段的起始物理地址与段长度，完成地址转换。</li>
+<li><strong>逻辑地址结构</strong>：分为<strong>段号</strong>和<strong>段内偏移量</strong>两部分，地址转换时需先通过段号查询段表，验证段内偏移量是否超过段长度，再将段起始地址与段内偏移量相加得到物理地址。</li>
+<li><strong>核心优势</strong>：符合程序的模块化设计思路，便于实现段级的内存共享、访问保护与动态增长，是简答题的高频考点。</li>
+</ol>
+<h3>分页与分段核心对比（高频简答题考点）</h3>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>分页存储管理</th>
+<th>分段存储管理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>划分依据</td>
+<td>物理内存统一规格，固定大小的页</td>
+<td>用户程序逻辑结构，长度不等的段</td>
+</tr>
+<tr>
+<td>地址结构</td>
+<td>一维线性逻辑地址</td>
+<td>二维分段逻辑地址</td>
+</tr>
+<tr>
+<td>面向对象</td>
+<td>操作系统级，用于优化内存利用率</td>
+<td>用户级，支持程序模块化管理</td>
+</tr>
+<tr>
+<td>碎片问题</td>
+<td>存在内部碎片（页尾剩余空间），无外部碎片</td>
+<td>存在外部碎片（空闲内存分散），无内部碎片</td>
+</tr>
+<tr>
+<td>共享与保护</td>
+<td>页级共享难度大，需精准匹配页内容</td>
+<td>支持逻辑模块级的便捷共享与保护</td>
+</tr>
+</tbody>
+</table>
+<h2>问题与反思</h2>
+<ol>
+<li>初期容易混淆分页与分段的地址结构，在二维地址的转换逻辑上容易出现错误。</li>
+<li>对多级页表的内存访问次数推导步骤还不够熟练，需要结合典型例题加强练习。</li>
+<li>对段页式存储管理的融合逻辑还需要进一步梳理，避免与分页、分段的概念产生混淆。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统掌握了分页、分段存储管理的核心原理、实现流程与考研常考题型的解题思路。</li>
+<li>能够独立完成分页地址转换的基础计算，清晰理解了快表、多级页表的优化逻辑与应用场景。</li>
+<li>能够清晰对比分页与分段的核心差异，可完整应对相关简答题的设问。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-27</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-27/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-27/</id>
+    <published>2026-08-27T00:00:00.000Z</published>
+    <updated>2026-08-27T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-27</h1>
+<h2>今日学习内容</h2>
+<p>今日总学习时长约1.5小时，分为两个模块：</p>
+<ol>
+<li>考研核心单词复盘与新学：1小时</li>
+<li>历年真题长难句拆解与翻译：0.5小时</li>
+</ol>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）今日复盘了上周识记的50个考研高频核心词，并新学习了20个常考词汇，整理如下：</p>
+<ol>
+<li><strong>allocate</strong> /ˈæləkeɪt/ v. 分配，分派；划拨
+常用搭配：allocate sth. to sb./sth.
+真题例句：The local government will allocate more financial support to rural education projects.</li>
+<li><strong>perspective</strong> /pəˈspektɪv/ n. 视角，观点；透视画法
+常用搭配：gain a new perspective on sth.
+真题例句：Cross-cultural communication helps us see global issues from a broader perspective.</li>
+<li><strong>constrain</strong> /kənˈstreɪn/ v. 限制，约束；克制，抑制
+常用搭配：constrain sb. from doing sth.
+真题例句：Strict environmental regulations constrain the expansion of some high-pollution factories.</li>
+<li><strong>diminish</strong> /dɪˈmɪnɪʃ/ v. 减少，降低；贬低，轻视
+常用搭配：diminish the significance of sth.
+真题例句：Repeated failures did not diminish his enthusiasm for scientific research.</li>
+<li><strong>compromise</strong> /ˈkɒmprəmaɪz/ v. 妥协，折中；危及，损害 n. 妥协，和解
+常用搭配：compromise with sb. on sth.
+真题例句：The two sides finally reached a compromise to end the long-term trade dispute.</li>
+</ol>
+<h2>真题长难句拆解</h2>
+<p>选取2024年考研英语一Text 2中的典型长难句进行分析：</p>
+<blockquote>
+<p>原句：Rather than concluding that children make parents either happy or miserable, Senior suggests we need to redefine happiness: instead of thinking of it as something that can be measured by moment-to-moment joy, we should consider being happy as a past-tense condition.
+🔍 结构拆解：</p>
+<ol>
+<li>句首状语：Rather than concluding that..., 意为“并未断言……”，其中that引导宾语从句作concluding的宾语</li>
+<li>主句主干：Senior suggests [宾语从句]</li>
+<li>宾语从句主干：we need to redefine happiness，冒号后内容对“重新定义幸福”进行具体解释</li>
+<li>解释部分：instead of thinking of it as something that..., we should consider being happy as a past-tense condition，其中that引导定语从句修饰something
+📝 参考翻译：西尼尔并未断言育儿会让父母快乐还是痛苦，而是提出我们需要重新定义幸福：与其将幸福视为可以用即时快乐来衡量的东西，我们更应该将拥有幸福视作一种已然发生的状态。</li>
+</ol>
+</blockquote>
+<p>💡 碎碎念：今天在长难句拆分的时候终于理清了嵌套定语从句的逻辑，单词背诵也找到了更高效的联想记忆法，坚持每天积累，英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-27</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-27/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-27/</id>
+    <published>2026-08-27T00:00:00.000Z</published>
+    <updated>2026-08-27T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-27</h1>
+<h2>今日学习内容</h2>
+<p>3.5h  二维连续型随机变量的专项练习，涵盖联合概率密度求参、边缘密度/条件密度求解、二维随机变量概率计算三类核心题型。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>分段型联合概率密度的积分区域匹配错误，当联合密度存在多个分段区间时，容易混淆x、y的有效取值范围，导致积分上下限计算偏差；</li>
+<li>条件概率密度求解时，未优先验证边缘密度的取值是否大于0，出现分母为0的无意义计算；</li>
+<li>独立性判断时，仅验证了部分区域的$f(x,y)=f_X(x)f_Y(y)$，忽略了全区域的一致性验证。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>核心知识点复盘</h3>
+<ol>
+<li><strong>联合概率密度的性质</strong>：二维连续型随机变量$(X,Y)$的联合密度$f(x,y)$满足$\iint_{\mathbb{R}^2} f(x,y)dxdy=1$，这是考研中高频的求参数题型，常结合分段密度函数考察积分计算；</li>
+<li><strong>边缘概率密度</strong>：$f_X(x)=\int_{-\infty}^{+\infty}f(x,y)dy$，需注意仅在$x$的有效取值区间内积分，其余区间$f_X(x)=0$，同理$f_Y(y)=\int_{-\infty}^{+\infty}f(x,y)dx$；</li>
+<li><strong>条件概率密度</strong>：当$f_Y(y)&gt;0$时，$f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y(y)}$，需明确条件密度的定义域为$y$的有效取值区间；</li>
+<li><strong>二维随机变量的概率计算</strong>：$P{(X,Y)\in D}=\iint_D f(x,y)dxdy$，解题关键是准确画出$D$与$f(x,y)$有效区域的交集，确定正确的积分上下限；</li>
+<li><strong>独立性判断</strong>：$X$与$Y$相互独立的充要条件为$f(x,y)=f_X(x)f_Y(y)$在$\mathbb{R}^2$上几乎处处成立，需验证全区域的等式成立，而非局部区间。</li>
+</ol>
+<h3>考研考向补充</h3>
+<p>该模块是数一、数三概率论与数理统计的核心考点，常以填空题、解答题形式出现，2024年数三解答题第22题即考察了二维连续型随机变量的边缘密度与独立性判断，整体分值占比约6-10分。</p>
+<h2>今日小结</h2>
+<p>今日共投入3.5小时完成二维连续型随机变量专项练习，累计完成17道针对性习题，涵盖三类核心考法。订正错题4道，其中3道错误源于积分区域匹配失误，1道为条件密度求解时忽略分母非零的前提。通过今日练习，对分段函数的二重积分步骤更加熟练，能够快速定位联合密度的有效区间，后续将针对积分区域易错点补充专项训练。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
+  <entry>
+    <title>考研专业课学习记录2026-08-26</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-26/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-26/</id>
+    <published>2026-08-26T00:00:00.000Z</published>
+    <updated>2026-08-26T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-26</h1>
+<h2>今日学习内容</h2>
+<p>1.5h 操作系统进程同步与互斥知识点学习，涵盖基本概念、信号量机制、经典同步问题考点梳理</p>
+<h2>AI知识点带复盘</h2>
+<h3>核心考点梳理</h3>
+<ol>
+<li><strong>基本概念</strong>
+<ul>
+<li>临界资源：同一时刻仅允许一个进程访问的共享资源，如打印机、共享内存缓冲区等，是同步互斥问题的核心载体</li>
+<li>临界区：进程中访问临界资源的代码片段，必须保证临界区的原子执行</li>
+<li>同步（直接相互制约）：进程间因合作完成共同任务产生的先后执行约束，例如生产者必须先生产产品，消费者才能进行消费操作</li>
+<li>互斥（间接相互制约）：多个进程竞争同一临界资源时产生的排他性使用约束，例如多个进程争抢同一台打印机</li>
+</ul>
+</li>
+<li><strong>信号量机制</strong>
+是考研中解决同步互斥问题的主流工具，分为整型信号量和记录型信号量：
+<ul>
+<li>P操作（wait）：将信号量值减1，若结果小于0则阻塞当前进程并加入信号量的等待队列</li>
+<li>V操作（signal）：将信号量值加1，若结果小于等于0则唤醒信号量等待队列中的一个阻塞进程</li>
+</ul>
+</li>
+<li><strong>高频经典同步问题</strong>
+<ul>
+<li><strong>生产者-消费者问题</strong>：考研必考题型，需同时处理互斥与同步。信号量设置：<code>mutex=1</code>（互斥访问共享缓冲区）、<code>empty=n</code>（初始空缓冲区总数）、<code>full=0</code>（初始满缓冲区总数），注意P/V操作顺序不可颠倒，否则易引发死锁</li>
+<li><strong>读者-写者问题</strong>：分为读者优先、写者优先两种变种，核心逻辑为读者间可共享临界资源，写者必须互斥访问，需通过读者计数变量配合信号量实现</li>
+<li><strong>哲学家进餐问题</strong>：经典死锁场景，常见解法包括限制同时就餐人数、奇偶分筷策略、资源分级法等</li>
+</ul>
+</li>
+<li><strong>解题通用步骤</strong>
+考研同步互斥题型解题流程：①分析临界资源与进程间的制约关系；②确定所需信号量并设置合理初值；③编写各进程的P/V操作代码，严格遵循操作顺序</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对同步与互斥的本质边界区分仍存在模糊，偶尔会混淆直接制约与间接制约的应用场景</li>
+<li>信号量初值设置容易出错，例如生产者-消费者问题中<code>empty</code>与<code>full</code>的初值经常记混</li>
+<li>哲学家进餐问题的多种死锁解决思路尚未完全吃透，对不同解法的适用场景判断不够准确</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>理清了同步与互斥的核心概念与二者的本质区别</li>
+<li>掌握了信号量机制的原理与P/V操作的执行规则</li>
+<li>熟悉了三大经典同步问题的模型与考研解题思路</li>
+<li>掌握了用信号量解决考研常见同步互斥题型的通用流程</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-26</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-26/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-26/</id>
+    <published>2026-08-26T00:00:00.000Z</published>
+    <updated>2026-08-26T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-26</h1>
+<h2>今日学习总时长</h2>
+<p>2h</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+今日完成考研英语核心高频词巩固与新词预习，共计复盘120个已学词汇，重点攻克易混淆词组辨析：</p>
+<ol>
+<li><strong>compliment v./n. 赞美，恭维</strong> vs <strong>complement n./v. 补充，补足</strong></li>
+<li><strong>perspective n. 视角，观点</strong> vs <strong>prospective adj. 预期的，未来的</strong></li>
+<li><strong>conserve v. 保护，保存</strong> vs <strong>deserve v. 应得，值得</strong>
+同时借助艾宾浩斯记忆曲线复习了昨日新增的45个考研核心词，标记了5个记忆薄弱词将在明日重点强化巩固。</li>
+</ol>
+<h2>长难句精读</h2>
+<p>今日拆解2022年考研英语一Text3的经典长难句：</p>
+<blockquote>
+<p>原句：The researchers suggest that the same mechanism that regulates sleep and memory consolidation in the brain might also be at work in the formation of lasting romantic bonds.
+结构分析：</p>
+<ol>
+<li>主句主干：The researchers suggest + 宾语从句</li>
+<li>宾语从句核心框架：the same mechanism might also be at work</li>
+<li>定语从句<code>that regulates sleep and memory consolidation in the brain</code>修饰先行词<code>mechanism</code>，补充说明该机制的功能</li>
+<li>地点状语<code>in the formation of lasting romantic bonds</code>明确机制发挥作用的场景
+参考译文：研究人员认为，这种在大脑中调节睡眠与记忆巩固的机制，或许也在持久浪漫关系的形成中发挥着作用。</li>
+</ol>
+</blockquote>
+<p>💡 碎碎念：今天在辨析易混词时才发现之前一直混淆了compliment和complement，及时整理对比笔记后终于理清了两者的用法区别。坚持每天的单词复盘和长难句拆解真的能稳步夯实基础，明天计划精读2010年英语一Text1，整理全文陌生搭配与同义替换表达，继续加油，考研英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-26</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-26/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-26/</id>
+    <published>2026-08-26T00:00:00.000Z</published>
+    <updated>2026-08-26T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-26</h1>
+<h2>今日学习内容</h2>
+<p>2.5h  多维连续型随机变量的函数分布</p>
+<h2>薄弱点</h2>
+<ol>
+<li>对多维连续型随机变量函数分布的求解逻辑理解不透彻，容易混淆分布函数法与卷积公式的适用场景</li>
+<li>当联合概率密度为分段函数时，无法准确根据参数z的取值划分积分区间，导致积分计算错误</li>
+<li>对于Z=max(X,Y)、Z=min(X,Y)这类拓展函数的分布推导，容易记错独立随机变量下的分布函数公式</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>该考点是考研数学数一二三的高频核心考点之一，常以选择题、解答题形式出现，分值约4-12分，复盘核心内容如下：</p>
+<ol>
+<li><strong>通用解法：分布函数法</strong>
+标准步骤为：① 确定随机变量$Z=g(X,Y)$的取值范围；② 写出Z的分布函数$F_Z(z)=P(Z\leq z)=P(g(X,Y)\leq z)=\iint_{g(x,y)\leq z} f(x,y)dxdy$，其中$f(x,y)$为$(X,Y)$的联合概率密度；③ 对z求导得到概率密度$f_Z(z)=F_Z'(z)$。
+易错提醒：需要结合$g(x,y)\leq z$的几何意义准确确定积分上下限，当联合密度存在分段定义时，必须分区间讨论z的取值再计算积分，避免遗漏分段情况。</li>
+<li><strong>简化解法：卷积公式</strong>
+仅适用于$Z=X+Y$的场景，当X、Y相互独立时，卷积公式为$f_Z(z)=\int_{-\infty}^{+\infty} f_X(x)f_Y(z-x)dx$，也可转换为$\int_{-\infty}^{+\infty}f_X(z-y)f_Y(y)dy$。使用时需要结合X、Y的定义域锁定有效积分区间，减少冗余计算。</li>
+<li><strong>拓展题型：最值函数分布</strong>
+当X、Y相互独立时：
+$Z=\max(X,Y)$的分布函数为$F_{\max}(z)=F_X(z)F_Y(z)$，概率密度为$f_{\max}(z)=f_X(z)F_Y(z)+f_Y(z)F_X(z)$；
+$Z=\min(X,Y)$的分布函数为$F_{\min}(z)=1-[1-F_X(z)][1-F_Y(z)]$，概率密度为$f_{\min}(z)=f_X(z)[1-F_Y(z)]+f_Y(z)[1-F_X(z)]$。
+经典考研例题复盘：设X、Y独立同分布于$U(0,1)$，求$Z=X+Y$的概率密度，通过卷积公式可得：当$0\leq z\leq1$时$f_Z(z)=z$，当$1&lt;z\leq2$时$f_Z(z)=2-z$，其余情况为0，该三角分布题型为历年真题高频原型。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日花费2.5小时系统梳理多维连续型随机变量函数分布的核心考点，从基础的分布函数法入手理清了推导逻辑，随后针对性练习了$Z=X+Y$、$Z=\max(X,Y)$两类高频题型。学习过程中暴露了分段积分时容易混淆积分上下限的问题，后续计划通过5道配套强化题巩固分段讨论的思维习惯，同时整理卷积公式与最值函数的推导模板，进一步夯实当日学习成果。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-25</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-25/" rel="alternate" type="text/html"/>
