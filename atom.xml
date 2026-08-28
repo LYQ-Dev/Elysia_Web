@@ -5,8 +5,211 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-08-27T15:42:27.780Z</updated>
+  <updated>2026-08-28T15:11:05.442Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-08-28</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/8-28/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/8-28/</id>
+    <published>2026-08-28T00:00:00.000Z</published>
+    <updated>2026-08-28T00:00:00.000Z</updated>
+    <summary>408计算机组成原理 虚拟存储知识点学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-08-28</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习时长：2h，核心学习知识点为<strong>计算机组成原理中的虚拟存储系统</strong>，覆盖虚拟存储的基本原理、核心实现机制与考研高频考点。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 虚拟存储的核心基础与概念</h3>
+<p>虚拟存储是408计组内存管理模块的核心考点之一，其核心目标是解决主存物理容量不足、CPU与主存速度不匹配的问题，通过操作系统+硬件协同的方式，为用户提供一个远大于实际物理主存的逻辑地址空间。其实现的理论基础是<strong>程序局部性原理</strong>，包含时间局部性（近期访问的数据/指令会被再次访问）与空间局部性（近期访问的存储单元附近的单元也会被高频访问）两类。</p>
+<h3>2. 虚拟存储的核心实现方案（考研高频对比考点）</h3>
+<p>考研常考三类虚拟存储管理方式，需精准掌握其差异：</p>
+<table>
+<thead>
+<tr>
+<th>管理方式</th>
+<th>地址空间划分规则</th>
+<th>核心优点</th>
+<th>核心缺点</th>
+<th>考研考察方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>页式虚拟存储</td>
+<td>按固定大小划分为物理页与逻辑页</td>
+<td>无外部碎片，内存利用率高</td>
+<td>页表存储开销大，不便于按逻辑模块实现信息共享</td>
+<td>地址变换流程、缺页中断处理、页面置换算法计算题</td>
+</tr>
+<tr>
+<td>段式虚拟存储</td>
+<td>按程序逻辑模块划分为段</td>
+<td>便于按逻辑单元实现信息共享与权限保护，段长可动态调整</td>
+<td>存在外部碎片，内存利用率偏低</td>
+<td>段表结构、动态链接实现</td>
+</tr>
+<tr>
+<td>段页式虚拟存储</td>
+<td>先按逻辑分段，再将每段按固定大小分页</td>
+<td>兼具前两者优点，既支持逻辑模块共享又无外部碎片</td>
+<td>软硬件实现复杂度极高</td>
+<td>多级地址变换完整流程</td>
+</tr>
+</tbody>
+</table>
+<h3>3. 考研高频考点拆解</h3>
+<h4>（1）页面置换算法</h4>
+<p>此为408计组必考题型，需掌握5种经典算法的原理与缺页次数计算逻辑：</p>
+<ol>
+<li><strong>OPT最优置换算法</strong>：置换未来最长时间不被访问的页面，为理论最优算法但无法实际落地，常作为性能对比基准</li>
+<li><strong>FIFO先进先出算法</strong>：置换最早进入内存的页面，可能出现Belady异常（分配页框数增加，缺页次数反而上升）</li>
+<li><strong>LRU最近最少使用算法</strong>：置换最近最久未被访问的页面，通过栈/链表实现，性能接近OPT，是考研考察频率最高的置换算法</li>
+<li><strong>Clock时钟置换算法</strong>：基于参考位、修改位的近似LRU算法，分为简单Clock与改进Clock，适配硬件实现逻辑</li>
+<li><strong>工作集算法</strong>：基于进程近期访问的页面集合（工作集）进行置换，可有效规避抖动问题</li>
+</ol>
+<h4>（2）抖动与工作集</h4>
+<ul>
+<li>抖动：指进程频繁触发缺页中断，导致CPU利用率急剧下降的异常现象，核心诱因是分配给进程的物理页框数不足</li>
+<li>规避方案：增加进程分配页框数、采用局部置换策略、通过工作集模型动态调整页框分配量</li>
+</ul>
+<h4>（3）地址变换与TLB快表</h4>
+<p>虚拟地址到物理地址的转换依赖页表支撑，为加速变换流程引入<strong>TLB快表</strong>，TLB缓存常用页表项，命中时可直接获取物理页号，未命中则访问主存页表并同步更新TLB缓存。</p>
+<h2>问题与反思</h2>
+<ol>
+<li>今日刚完成虚拟存储的系统梳理，对改进Clock算法的参考位、修改位置换优先级逻辑仍不够熟练，容易混淆置换顺序</li>
+<li>段页式存储管理的完整地址变换流程，还需要结合专项例题强化实操练习</li>
+<li>缺页中断与普通I/O中断的概念边界仍需进一步明确区分</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>明确了虚拟存储的本质是通过软硬件协同逻辑扩展主存逻辑容量，核心依赖局部性原理落地</li>
+<li>掌握了三类虚拟存储管理方案的核心差异，能够快速匹配不同场景下的适用方案</li>
+<li>梳理清晰了页面置换算法的考察逻辑，可独立完成常规题型的缺页次数计算</li>
+<li>理解了TLB、缺页中断、抖动等核心概念的关联关系与实际工程作用</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-08-28</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/8-28/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/8-28/</id>
+    <published>2026-08-28T00:00:00.000Z</published>
+    <updated>2026-08-28T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-08-28</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习时长：1.5h，分为考研核心单词复盘与真题长难句专项训练两个模块。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日核心考研词汇梳理</h3>
+<ol>
+<li><strong>perspective</strong> /pəˈspektɪv/
+<ul>
+<li>考研高频释义：n. 视角，观点；客观判断力；远景</li>
+<li>常用搭配：put sth. in perspective 客观看待某事；in perspective 正确地</li>
+<li>真题例句：We must put these technological advances in perspective and avoid overestimating their influence.（2021年英语二阅读Text2）</li>
+</ul>
+</li>
+<li><strong>mitigate</strong> /ˈmɪtɪɡeɪt/
+<ul>
+<li>考研高频释义：v. 减轻，缓解；使缓和</li>
+<li>派生词：mitigation n. 缓解，补救措施</li>
+<li>真题搭配：mitigate the adverse impact of 减轻...的负面影响</li>
+</ul>
+</li>
+<li><strong>concomitant</strong> /kənˈkɒmɪtənt/
+<ul>
+<li>考研高频释义：adj. 伴随的，随之而来的</li>
+<li>真题例句：Rapid urbanization has brought about concomitant changes in social structures.（2020年英语一阅读Text3）</li>
+</ul>
+</li>
+<li><strong>deteriorate</strong> /dɪˈtɪəriəreɪt/
+<ul>
+<li>考研高频释义：v. 恶化，变坏；退化</li>
+<li>易错点：易误拼为<code>deteriorate</code>，正确拼写需注意首音节为<code>de-</code></li>
+</ul>
+</li>
+</ol>
+<h2>长难句专项训练</h2>
+<h3>今日拆解真题长难句（2025年英语一Text3）</h3>
+<blockquote>
+<p>原句：Yet, when one sees the homeless man sleeping on a street corner, it is easy to forget that the systems that lead to homelessness are complex and that solutions require collective action from governments, businesses and communities.</p>
+</blockquote>
+<ol>
+<li><strong>结构拆解</strong>：
+<ul>
+<li>主句：<code>it is easy to forget that... and that...</code>，其中<code>it</code>为形式主语，真正的主语是两个并列的<code>that</code>引导的宾语从句</li>
+<li>第一个宾语从句：<code>the systems that lead to homelessness are complex</code>，<code>that</code>引导定语从句修饰先行词<code>systems</code></li>
+<li>第二个宾语从句：<code>solutions require collective action from governments, businesses and communities</code></li>
+<li>状语从句：<code>when one sees the homeless man sleeping on a street corner</code>，作时间状语，<code>sleeping on a street corner</code>为现在分词短语作后置定语修饰<code>homeless man</code></li>
+</ul>
+</li>
+<li>参考译文：然而，当看到无家可归者在街角露宿时，人们很容易忽略一个事实：催生无家可归现象的社会体系十分复杂，解决该问题需要政府、企业与社区的协同行动。</li>
+<li>易错提醒：初学者容易混淆形式主语<code>it</code>的指代逻辑，或漏判两个并列的宾语从句结构，需反复梳理句子主干。
+💡 碎碎念：今天复盘单词时发现自己之前混淆了<code>mitigate</code>和<code>dedicate</code>的拼写与词义，特意整理了对比笔记；长难句分析时一开始漏掉了并列的宾语从句，反复通读3遍才理清整体框架。考研英语的积累从来不是一蹴而就的，每天坚持一点点，才能在考场上游刃有余。继续加油，上岸可期！</li>
+</ol>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-08-28</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/8-28/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/8-28/</id>
+    <published>2026-08-28T00:00:00.000Z</published>
+    <updated>2026-08-28T00:00:00.000Z</updated>
+    <summary>考研数学多维连续型随机变量概率分布学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-08-28</h1>
+<h2>今日学习内容</h2>
+<p>耗时4h系统学习多维连续型随机变量的概率分布相关知识点，涵盖联合密度函数、边缘密度函数、条件密度函数的核心概念与推导方法，结合考研真题题型完成针对性练习与错题整理。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>非矩形积分区域下联合密度的积分限确定容易出错，无法快速拆分曲线围成的积分区间，常出现积分上下限混淆的问题；</li>
+<li>边缘密度求解时，对积分变量的取舍逻辑模糊，忘记需将联合密度在另一变量的全部合法取值范围内完成积分；</li>
+<li>条件密度的定义理解不透彻，易混淆条件概率与条件密度的适用场景，推导时容易遗漏归一化步骤；</li>
+<li>二维正态分布的独立等价条件（相关系数$\rho=0$）与边缘分布性质记忆混淆，常与一维正态分布的结论产生偏差。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>核心知识点梳理</h3>
+<ol>
+<li><strong>联合密度函数的基本性质</strong>：二维连续型随机变量$(X,Y)$的联合密度$f(x,y)$需满足非负性$f(x,y)\geq0$和规范性$\iint_{\mathbb{R}^2}f(x,y)dxdy=1$，联合分布函数$F(x,y)=\int_{-\infty}^x\int_{-\infty}^y f(u,v)dudv$，二者可通过积分或求导互推。</li>
+<li><strong>边缘密度的求解逻辑</strong>：$X$的边缘密度$f_X(x)=\int_{-\infty}^{+\infty}f(x,y)dy$，求解时需先明确$f(x,y)$的非零区域，将积分限限定在区域内关于$y$的投影范围，避免在全体实数域上盲目积分。</li>
+<li><strong>条件密度的核心定义</strong>：当$f_X(x)&gt;0$时，$Y$在$X=x$条件下的条件密度为$f_{Y|X}(y|x)=\frac{f(x,y)}{f_X(x)}$，条件密度同样满足密度函数的规范性要求。</li>
+<li><strong>考研高频考点复盘</strong>
+<ul>
+<li>题型1：已知联合密度求边缘密度、条件密度，或计算$P((X,Y)\in D)$，关键是准确确定积分区域与积分限；</li>
+<li>题型2：已知边缘密度与条件密度推导联合密度，或通过规范性求解联合密度中的未知参数；</li>
+<li>题型3：二维均匀分布，事件概率与区域面积成正比，需优先绘制积分区域判断范围；</li>
+<li>题型4：二维正态分布，$(X,Y)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$，则$X\sim N(\mu_1,\sigma_1^2),Y\sim N(\mu_2,\sigma_2^2)$，且$X$与$Y$独立当且仅当$\rho=0$，为历年真题高频考点。</li>
+</ul>
+</li>
+</ol>
+<h3>易错点修正</h3>
+<p>本次复盘重点纠正了“忽略联合密度非零区域直接积分”的常见错误，明确了非矩形区域下积分限的拆分原则，同时强化了二维正态分布独立条件的记忆，避免与一维分布性质混淆。</p>
+<h2>今日小结</h2>
+<p>今日完成4小时的多维连续型随机变量专题学习，先搭建了完整的知识框架，再结合复习全书例题与近6年考研真题进行针对性训练。练习过程中暴露出积分限确定不准确的问题，通过绘制积分区域图修正了错误，同时整理了3道典型错题并标注易错点。后续将针对非矩形区域积分问题进行专项练习，巩固二维正态分布的相关结论。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-08-27</title>
     <link href="https://elysiaweb.vercel.app/posts/408/8-27/" rel="alternate" type="text/html"/>
