@@ -5,8 +5,183 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-09-01T15:29:43.209Z</updated>
+  <updated>2026-09-02T15:30:42.125Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-09-02</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/9-2/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/9-2/</id>
+    <published>2026-09-02T00:00:00.000Z</published>
+    <updated>2026-09-02T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-09-02</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习时长3小时，核心学习模块为：操作系统下的分页存储管理、输入输出（I/O）系统核心原理、Spool脱机技术。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 分页存储管理</h3>
+<h4>核心考点复盘</h4>
+<ul>
+<li><strong>基本概念</strong>：将进程逻辑地址空间划分为固定大小的页（Page），将物理内存划分为同样大小的页框（Frame），页与页框一一映射，解决了连续分配产生的外碎片问题，是操作系统主流的内存管理方案之一。</li>
+<li><strong>地址转换流程</strong>：逻辑地址分为页号和页内偏移量，通过页表查找对应物理页框号，物理地址=页框号×页大小+页内偏移量，考研常考察地址计算题型，需注意页号、偏移量的位运算拆分规则。</li>
+<li><strong>优化与扩展</strong>：快表（TLB）用于缓存热门页表项，加速页表查询，减少内存访问次数；多级页表用于解决一维页表的内存空间浪费问题，仅加载当前进程需要的页表项；反置页表以物理页框为索引，大幅减少页表占用的内存空间，适用于大内存系统。</li>
+<li><strong>高频考点</strong>：页表项的存储内容、地址转换的步骤、多级页表的内存开销计算、页内碎片的特点。</li>
+</ul>
+<h3>2. 输入输出系统</h3>
+<h4>核心考点复盘</h4>
+<ul>
+<li><strong>I/O控制方式</strong>：从低到高依次为程序直接控制方式、中断驱动控制方式、DMA方式、通道方式，需掌握每种方式的工作原理、适用场景、优缺点：
+<ol>
+<li>程序直接控制：CPU主动轮询设备状态，完全占用CPU资源，仅适用于简单低速设备</li>
+<li>中断驱动：设备完成数据传输后触发中断，CPU响应中断处理数据，适用于中低速字符设备</li>
+<li>DMA：由DMA控制器直接完成内存与设备的数据传输，无需CPU干预，仅需CPU初始化一次，适用于高速块设备</li>
+<li>通道：独立的I/O处理器，可执行预编译的通道程序，完成批量I/O操作，适用于大型主机系统</li>
+</ol>
+</li>
+<li><strong>I/O系统层次结构</strong>：用户层I/O软件、设备独立性软件、设备驱动程序、中断处理程序、硬件层，需掌握各层的功能边界与数据流转逻辑。</li>
+</ul>
+<h3>3. Spool脱机技术（假脱机技术）</h3>
+<h4>核心考点复盘</h4>
+<ul>
+<li><strong>原理</strong>：利用外存的输入井和输出井模拟脱机I/O，将输入/输出操作从直接与外设交互改为与外存交互，由输入进程和输出进程完成数据的中转，实现了联机操作与脱机处理的结合。</li>
+<li><strong>组成结构</strong>：输入井（存储外设输入的数据）、输出井（存储进程输出的数据）、输入进程（将输入井数据转发到进程内存）、输出进程（将进程数据转发到输出外设）。</li>
+<li><strong>核心优点</strong>：将独占设备改造为共享设备、缓解了CPU与外设速度不匹配的问题、大幅提高了I/O的整体吞吐量，考研常考察Spooling技术的应用场景与核心优势。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>分页存储管理的多级页表内存开销计算容易出错，需加强公式推导与例题练习</li>
+<li>四种I/O控制方式的适用场景容易混淆，需要结合磁盘、键盘等具体设备实例梳理差异</li>
+<li>Spool脱机技术的组成模块记忆模糊，易混淆输入井与输出井的功能边界</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>梳理了分页存储管理的完整逻辑，掌握了地址转换的核心流程与高频考点</li>
+<li>理清了I/O系统的控制方式层级与各方式的适用场景，明确了不同设备对应的最优I/O控制方案</li>
+<li>深入理解了Spool脱机技术的原理与优势，明确了其作为虚拟设备技术的核心作用</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-09-02</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/9-2/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/9-2/</id>
+    <published>2026-09-02T00:00:00.000Z</published>
+    <updated>2026-09-02T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-09-02</h1>
+<h2>今日学习内容</h2>
+<p>总时长：2.0h，分为单词背诵与复盘、长难句分析两个核心模块</p>
+<h3>单词学习与复盘</h3>
+<h4>新学高频词汇整理</h4>
+<table>
+<thead>
+<tr>
+<th>核心单词</th>
+<th>词性</th>
+<th>考研高频释义</th>
+<th>经典搭配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mitigate</td>
+<td>v.</td>
+<td>减轻，缓解；使缓和</td>
+<td>mitigate the damage 减轻损失</td>
+</tr>
+<tr>
+<td>perspective</td>
+<td>n.</td>
+<td>视角，观点；透视画法</td>
+<td>gain a new perspective 获得新视角</td>
+</tr>
+<tr>
+<td>constitute</td>
+<td>v.</td>
+<td>组成，构成；被视为</td>
+<td>constitute a threat 构成威胁</td>
+</tr>
+<tr>
+<td>address</td>
+<td>v.</td>
+<td>处理，解决；发表演说</td>
+<td>address the issue 解决问题</td>
+</tr>
+<tr>
+<td>induce</td>
+<td>v.</td>
+<td>引起，导致；引诱</td>
+<td>induce a fever 引起发烧</td>
+</tr>
+</tbody>
+</table>
+<h4>复盘与巩固</h4>
+<p>复习了近2天累计的120个单词，通过考研单词APP拼写默写测试，整体正确率达91%。重点攻克了<code>disposition</code>（n. 性情，倾向；部署）、<code>persevere</code>（v. 坚持）等易混淆词汇，自行造3个句子加深记忆，修正了此前混淆<code>be constituted of</code>与<code>consist of</code>的错误。</p>
+<h3>长难句专项训练</h3>
+<p>拆解并翻译了2009年考研英语Text 2中的经典长难句：<em>"Behaviorist suggests that the child who is raised in an environment where there are many stimuli which develop his or her capacity for appropriate responses will experience greater intellectual development."</em></p>
+<ol>
+<li><strong>结构梳理</strong>：该句为主从复合句，主句主干为<code>Behaviorist suggests that + 宾语从句</code>；宾语从句主语为<code>the child</code>，嵌套三层定语从句：<code>who is raised in an environment</code>修饰child，<code>where there are many stimuli</code>修饰environment，<code>which develop his or her capacity for appropriate responses</code>修饰stimuli；宾语从句谓语为<code>will experience</code>，宾语为<code>greater intellectual development</code>。</li>
+<li><strong>译文对照</strong>：自行初稿翻译为“行为主义者认为在有很多刺激物的环境长大的孩子，这些刺激能发展恰当反应能力，会获得更好智力发展”，修正后调整语序为“行为主义者认为，如果孩子成长在充满诸多刺激物的环境中，这些刺激能够培养其做出恰当反应的能力，那么他/她将获得更出色的智力发展”，更贴合中文学术表达逻辑。
+💡 碎碎念：今天突然意识到自己之前忽略了熟词僻义的积累，不少阅读题里的“生词”其实都是熟词换了考法，明天要专门抽30分钟整理近期遇到的熟词僻义笔记。虽然长难句分析过程有点烧脑，但每搞懂一个句子就感觉离读懂考研阅读更近了一步，继续坚持，考研英语必上岸！</li>
+</ol>
+<blockquote>
+<p>文档内容由AI辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-09-02</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/9-2/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/9-2/</id>
+    <published>2026-09-02T00:00:00.000Z</published>
+    <updated>2026-09-02T00:00:00.000Z</updated>
+    <summary>考研数学数理统计学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-09-02</h1>
+<h2>今日学习内容</h2>
+<p>今天总计投入4小时用于数理统计模块的学习，分为两个阶段：上午2小时梳理基础知识点框架，搭建数理统计的核心知识体系；下午2小时结合同济版课后习题与考研真题节选进行针对性训练，重点攻克参数估计与抽样分布两大核心板块。</p>
+<h2>薄弱点</h2>
+<ol>
+<li>三大抽样分布（卡方分布、t分布、F分布）的应用场景容易混淆，无法快速匹配不同题型对应的分布类型；</li>
+<li>最大似然估计中似然函数的定义域限制容易被忽略，导致最终估计结果出错；</li>
+<li>无偏估计量的验证步骤不够熟练，对统计量的期望计算容易出现偏差。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>1. 数理统计核心基础概念复盘</h3>
+<p>考研中高频考察的核心定义：总体是研究对象的某项数量指标的全体，通常记为随机变量$X$；样本是从总体中抽取的独立同分布的随机变量$X_1,X_2,\dots,X_n$；统计量是不含未知参数的样本函数，常见统计量包括样本均值$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$、样本方差$S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X})^2$等，需注意样本方差分母为$n-1$的自由度修正细节。</p>
+<h3>2. 三大抽样分布专项复盘</h3>
+<ul>
+<li><strong>卡方分布</strong>：若$X_1,\dots,X_n$独立同分布于标准正态分布，则$\sum_{i=1}^nX_i^2\sim\chi^2(n)$，考研常考其可加性、期望为$n$、方差为$2n$，常用于正态总体方差的区间估计与假设检验；</li>
+<li><strong>t分布</strong>：若$X\sim N(0,1),Y\sim\chi^2(n)$且独立，则$T=\frac{X}{\sqrt{Y/n}}\sim t(n)$，考研常考其对称性、分位数的互补性质，常用于正态总体均值的区间估计；</li>
+<li><strong>F分布</strong>：若$U\sim\chi^2(n_1),V\sim\chi^2(n_2)$且独立，则$F=\frac{U/n_1}{V/n_2}\sim F(n_1,n_2)$，常考其倒数性质，用于两个正态总体方差比的区间估计。</li>
+</ul>
+<h3>3. 参数估计板块复盘</h3>
+<ul>
+<li><strong>矩估计</strong>：核心为替换原理，用样本矩代替总体矩，对于单参数$\theta$，令$E(X)=\bar{X}$求解即可；多参数则联立对应阶数的样本矩与总体矩方程组求解；</li>
+<li><strong>最大似然估计</strong>：先构造似然函数$L(\theta)=\prod_{i=1}^nf(x_i;\theta)$，取对数转化为便于求导的对数似然$lnL(\theta)$，通过求导找极值点，需特别注意参数的定义域限制，当参数存在取值范围时，需单独验证边界点的似然函数值。</li>
+</ul>
+<h2>今日小结</h2>
+<p>今日完成了4小时的数理统计专项学习，系统梳理了抽样分布与参数估计的核心考点，通过习题训练巩固了矩估计的解题步骤，同时暴露了三大分布应用混淆、似然函数定义域处理失误的问题。后续计划针对薄弱点进行专项刷题，整理易错点笔记，确保下周的模块测试能够达到正确率85%以上。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-09-01</title>
     <link href="https://elysiaweb.vercel.app/posts/408/9-1/" rel="alternate" type="text/html"/>
