@@ -5,8 +5,168 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-09-03T14:56:09.809Z</updated>
+  <updated>2026-09-04T15:31:40.160Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-09-04</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/9-4/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/9-4/</id>
+    <published>2026-09-04T00:00:00.000Z</published>
+    <updated>2026-09-04T00:00:00.000Z</updated>
+    <summary>2026年9月4日考研408专业课真题大题专项刷题与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-09-04</h1>
+<h2>今日学习内容</h2>
+<p>今日累计投入2小时学习时间，专注完成考研408统考历年真题中的综合大题模块训练，覆盖数据结构、操作系统、计算机组成原理、计算机网络四门核心科目，针对性练习综合应用题的解题逻辑与答题规范。</p>
+<h2>AI知识点带复盘</h2>
+<p>考研408专业课的综合大题是拉开分数差距的核心题型，总分150分中大题占比约47%，每门科目对应1-2道大题，考察知识点的综合应用能力，本次刷题复盘重点如下：</p>
+<ol>
+<li><strong>数据结构大题</strong>：高频考点集中于树与图的遍历、排序算法实现与复杂度分析、线性表/栈队列的场景化应用。本次刷题重点复盘了二叉树非递归遍历的栈边界处理、图的最短路径算法（Dijkstra、Floyd）的答题步骤，明确了考研阅卷中“算法思路+代码框架+复杂度分析”的得分点逻辑。</li>
+<li><strong>操作系统大题</strong>：高频考点为进程同步PV操作、内存页面置换算法、磁盘调度、文件系统管理。本次刷题重点梳理了复杂同步场景下的信号量设置规则，明确了先分析临界资源、再定义信号量、最后编写P/V操作序列的解题步骤，纠正了此前混淆信号量初始值的问题。</li>
+<li><strong>计算机组成原理大题</strong>：高频考点为存储器容量扩展与地址计算、CPU控制器工作流程、中断/DMA处理流程。本次刷题重点练习了多芯片存储器扩展的地址范围推导，理清了片选信号的生成逻辑，掌握了按“地址线位数→芯片数量→片选方式”的步骤解题的方法。</li>
+<li><strong>计算机网络大题</strong>：高频考点为TCP协议交互流程、子网划分与路由转发、滑动窗口协议计算。本次刷题重点复盘了TCP三次握手/四次挥手的细节考点，明确了不同状态转换的触发条件，掌握了子网划分的快速计算技巧。
+同时复盘了真题大题的通用答题技巧：需按步骤分点作答，每一个推理环节都对应阅卷得分点，避免仅给出最终结果丢失步骤分；答题时需先通读题干提取核心考点，再匹配对应知识点模块，避免答非所问。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>数据结构大题中，二叉树非递归遍历的栈操作边界条件处理仍存在疏漏，偶发栈溢出或遍历结果错误的问题。</li>
+<li>操作系统复杂PV操作题中，对于多临界资源的场景，信号量的数量与初始值设置仍容易出错。</li>
+<li>本次刷题未严格把控考场答题时间，单道组成原理大题耗时超30分钟，超出了考场单道大题的平均作答时长要求。</li>
+<li>部分题目虽然最终答案正确，但解题步骤的表述不够规范，未完全匹配考研阅卷的得分点要求。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>明确了408综合大题的阅卷评分逻辑，掌握了按得分点分步作答的答题规范，避免了仅输出结果丢分的问题。</li>
+<li>梳理了四门科目大题的高频考点分布，明确了后续专项复习的重点方向，例如PV操作、存储器扩展、二叉树遍历等薄弱模块。</li>
+<li>提升了综合题目的快速审题与考点匹配能力，能够更快从题干中提取核心考察的知识点模块。</li>
+<li>意识到了考场时间把控的重要性，后续刷题将严格按照考场时间限制进行训练，优化答题节奏。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-09-04</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/9-4/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/9-4/</id>
+    <published>2026-09-04T00:00:00.000Z</published>
+    <updated>2026-09-04T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-09-04</h1>
+<h2>今日学习内容</h2>
+<p>今天总共投入2.5小时备考考研英语，其中先花1小时复盘了昨日背诵的《恋练有词》Unit 5核心单词，梳理了易混形近词和固定搭配。剩余1.5小时用来精读2018年考研英语一阅读理解Text 3，刚拿到文章时状态不佳：昨晚熬夜整理专业课笔记导致睡眠不足，前20分钟读下来完全抓不住文章逻辑，甚至连续三句都需要反复翻译才能勉强理解大意，一度有点挫败想放弃。后来我打开番茄ToDo开启计时模式，每25分钟暂停休息5分钟，同时调整阅读步骤：先快速通读全文标记主旨句，再逐句拆解长难句并查阅陌生词汇，慢慢进入了专注状态，最终完成了全文精读、长难句摘抄和错题整理，还梳理了这篇文章的出题逻辑。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>精读文本提取高频词</h3>
+<p>从2018年Text3中整理的考研高频核心词汇及搭配：</p>
+<ol>
+<li>permeate v. 弥漫，遍布；渗入，渗透  搭配：permeate through 渗透过</li>
+<li>skeptical adj. 持怀疑态度的  搭配：be skeptical of 对……怀疑</li>
+<li>manifest v. 证明，表明；adj. 明显的  搭配：manifest intention 明显的意图</li>
+<li>initiative n. 主动性，积极性；倡议  搭配：take the initiative 采取主动</li>
+<li>counterpart n. 对应的人/物，副本</li>
+<li>exacerbate v. 使恶化，加重  搭配：exacerbate the problem 加剧问题</li>
+</ol>
+<h3>易混词复盘修正</h3>
+<p>今天复盘时纠正了之前混淆的两组形近词：</p>
+<ol>
+<li>adapt /əˈdæpt/ v. 适应；改编  例句：adapt to the new environment 适应新环境</li>
+<li>adopt /əˈdɒpt/ v. 收养；采用，采纳  例句：adopt a new policy 采用新政策
+之前做真题时总把这两个词搞混，今天结合阅读中的例句终于理清了用法。</li>
+</ol>
+<p>💡 碎碎念：今天开局状态拉胯，但及时调整节奏就找回了手感，每天坚持积累单词和精读，考研英语上岸肯定没问题！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-09-04</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/9-4/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/9-4/</id>
+    <published>2026-09-04T00:00:00.000Z</published>
+    <updated>2026-09-04T00:00:00.000Z</updated>
+    <summary>考研数学参数估计与假设检验章节学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-09-04</h1>
+<h2>今日学习内容</h2>
+<p>3h 参数估计与假设检验，包含核心知识点精讲、经典例题演练、章节习题训练与错题整理</p>
+<h2>薄弱点</h2>
+<ol>
+<li>最大似然估计中，当总体分布为分段函数时，似然函数的定义域讨论易出错，导致后续求导计算失误；</li>
+<li>假设检验中两类错误的概念混淆，无法准确区分“弃真错误”和“取伪错误”对应的场景与概率；</li>
+<li>正态总体假设检验的统计量选择混乱，混淆Z检验、t检验、χ²检验的适用条件；</li>
+<li>矩估计中高阶原点矩的计算失误，以及参数替换时出现代数运算错误。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>一、参数估计板块复盘</h3>
+<p>参数估计是考研数学数理统计部分的核心考点，分为点估计和区间估计，今日重点覆盖点估计的两大主流方法：</p>
+<ol>
+<li><strong>矩估计法</strong>
+核心逻辑是用样本原点矩替换总体原点矩，建立方程求解未知参数：
+步骤：①计算总体k阶原点矩 $E(X^k)$；②用样本k阶原点矩 $A_k=\frac{1}{n}\sum_{i=1}^n X_i^k$ 替换；③联立方程解出未知参数。
+考研常考示例：对于指数分布 $X\sim E(\lambda)$，$E(X)=\frac{1}{\lambda}$，令样本均值 $\bar{X}=\frac{1}{n}\sum_{i=1}^n X_i$，则 $\hat{\lambda}=\frac{1}{\bar{X}}$。</li>
+<li><strong>最大似然估计法</strong>
+核心逻辑是找到使样本观测值出现概率最大的参数值：
+步骤：①构造似然函数：连续总体为 $L(\theta)=\prod_{i=1}^n f(x_i;\theta)$，离散总体为 $L(\theta)=\prod_{i=1}^n P(X=x_i;\theta)$；②取对数化简似然函数 $\ln L(\theta)$；③对参数求导找极值点，结合参数定义域验证极值点有效性，得到最大似然估计量。
+易错提醒：当总体分布为分段函数时，需先确定所有样本观测值都满足分段条件，再统一构造似然函数，避免遗漏定义域限制。</li>
+</ol>
+<h3>二、假设检验板块复盘</h3>
+<p>假设检验是数一专属考点，数三仅要求基础概念，考研常考正态总体的参数检验：</p>
+<ol>
+<li><strong>核心逻辑与步骤</strong>
+①提出原假设 $H_0$ 与备择假设 $H_1$，原假设必须包含等号，为我们预设的待推翻结论；②选择匹配的检验统计量，根据总体分布、样本量与检验参数确定；③确定显著性水平 $\alpha$，推导拒绝域；④计算统计量观测值，判断是否落入拒绝域得出结论。</li>
+<li><strong>常见易错区分</strong>
+两类错误是高频考点：第一类错误（弃真）为 $P(\text{拒绝}H_0|H_0\text{为真})=\alpha$，第二类错误（取伪）为 $P(\text{接受}H_0|H_1\text{为真})=\beta$，切勿混淆二者的触发场景。</li>
+<li>正态总体常考检验类型
+<table>
+<thead>
+<tr>
+<th>检验场景</th>
+<th>检验统计量</th>
+<th>拒绝域</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单个正态总体 $\mu$ 检验（$\sigma$已知）</td>
+<td>$Z=\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}$</td>
+<td>$</td>
+</tr>
+<tr>
+<td>单个正态总体 $\mu$ 检验（$\sigma$未知）</td>
+<td>$t=\frac{\bar{X}-\mu_0}{S/\sqrt{n}}$</td>
+<td>$</td>
+</tr>
+<tr>
+<td>单个正态总体 $\sigma^2$ 检验</td>
+<td>$\chi^2=\frac{(n-1)S^2}{\sigma_0^2}$</td>
+<td>$\chi^2&gt;\chi^2_{\alpha/2}(n-1)$或$\chi^2&lt;\chi^2_{1-\alpha/2}(n-1)$</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日共计投入3小时完成参数估计与假设检验的系统学习，先梳理两大模块的核心考点框架，随后通过20道经典习题巩固知识点，整理了4道典型错题，重点攻克了似然函数定义域判断和两类错误区分的难点。整体学习节奏符合每日计划，对模糊的数理统计逻辑有了更清晰的认知，但仍需后续通过真题强化熟练度。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-09-03</title>
     <link href="https://elysiaweb.vercel.app/posts/408/9-3/" rel="alternate" type="text/html"/>
