@@ -5,8 +5,148 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-09-04T15:31:40.160Z</updated>
+  <updated>2026-09-05T15:49:59.820Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-09-05</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/9-5/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/9-5/</id>
+    <published>2026-09-05T00:00:00.000Z</published>
+    <updated>2026-09-05T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-09-05</h1>
+<h2>今日学习内容</h2>
+<p>1.5h 复习数据结构线性表模块核心知识点，梳理顺序存储与链式存储的底层实现差异，配套完成3道历年统考真题选择题，针对性复盘错题考点。</p>
+<h2>AI知识点带复盘</h2>
+<h3>核心知识点复盘</h3>
+<p>线性表作为408数据结构模块的开篇核心考点，考研常以选择题、综合题形式考察：</p>
+<ol>
+<li><strong>顺序存储结构（顺序表）</strong>：采用一维数组实现，逻辑地址与物理地址一一对应，支持随机存取，访问任意元素的时间复杂度为$O(1)$；插入、删除操作需要移动平均一半的元素，时间复杂度为$O(n)$，适合读多写少的场景。考研常考察动态顺序表的扩容逻辑（如C语言中<code>realloc</code>函数的使用）、顺序表的边界合法性判断（插入位置需满足$1 \leq i \leq \text{表长}+1$）。</li>
+<li><strong>链式存储结构</strong>：包括单链表、循环单链表、双向链表、静态链表，通过指针串联节点，无需连续存储空间，不支持随机存取，访问元素需要从头遍历，时间复杂度为$O(n)$；插入、删除操作仅需修改指针指向，无需移动元素，适合写多读少的场景。考研重点考察：头插法/尾插法构建单链表、循环链表尾节点的判断条件（<code>p-&gt;next == head</code>）、双向链表的删除操作逻辑、静态链表的游标数组应用。</li>
+<li>延伸考点：栈、队列属于受限线性表，其核心操作本质是对线性表的插入、删除位置做了限制，也是线性表模块的延伸考察点。</li>
+</ol>
+<h3>当日错题复盘</h3>
+<p>本次练习的3道真题中，第2道选择题失分，题目为“在长度为n的非空单链表中，在第i个节点前插入新节点的时间复杂度为？”，一开始误选了$O(1)$，复盘后纠正：单链表需要先遍历找到第i-1个节点，实际时间复杂度为$O(n)$，后续需要牢记单链表插入的前置遍历逻辑。</p>
+<h2>问题与反思</h2>
+<ol>
+<li>对循环双向链表的尾节点与头节点的指针联动逻辑仍存在混淆，在模拟操作时多次出现指针修改错误；</li>
+<li>做题时容易忽略静态链表的游标存储特性，无法快速定位元素的物理位置，浪费了审题时间；</li>
+<li>对线性表的综合题答题步骤不够熟练，比如反转单链表的递归实现边界条件（空表或只有一个节点时直接返回头节点）容易遗漏。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>明确了顺序存储与链式存储的适用场景，能够快速根据题目需求选择合适的存储结构；</li>
+<li>掌握了线性表模块的核心考点命题规律，选择题常考察复杂度分析、边界判断，综合题常考察链表的插入、删除、反转操作；</li>
+<li>意识到自己的薄弱点在于循环链表与静态链表的细节操作，后续需要针对性加强练习。
+💡 碎碎念：踏实吃透每一个知识点！</li>
+</ol>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-09-05</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/9-5/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/9-5/</id>
+    <published>2026-09-05T00:00:00.000Z</published>
+    <updated>2026-09-05T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-09-05</h1>
+<h2>今日学习内容</h2>
+<p>Total study duration: 1 hour and 10 minutes, divided into two targeted modules:</p>
+<ol>
+<li>Vocabulary review and new word acquisition (40 minutes)</li>
+<li>Long and complex sentence parsing and真题 structure analysis (30 minutes)</li>
+</ol>
+<h2>单词复盘</h2>
+<p>(AI auto-sorted high-frequency postgraduate entrance examination English vocabulary)
+Today's vocabulary task: Reviewed 50 previously learned words from the past 3 days using the Ebbinghaus Forgetting Curve method, and mastered 30 new high-frequency words from the 2026 National Postgraduate Entrance Examination English Syllabus.
+Key error-prone points and exam-aligned examples:</p>
+<ol>
+<li><strong>Ambiguous</strong> &amp; <strong>Ambivalent</strong>:
+<ul>
+<li><em>Ambiguous</em>: Having multiple possible interpretations that cause confusion. Exam example: "The ambiguous wording of the official notice left many applicants confused about the registration deadline."</li>
+<li><em>Ambivalent</em>: Holding mixed, conflicting feelings about a person or situation. Exam example: "Most senior students feel ambivalent about the newly added graduation thesis defense link."</li>
+</ul>
+</li>
+<li><strong>Perspective</strong>: Dual meanings of "viewpoint" and "linear depth in art/design". Exam example: "From the perspective of public health, this policy has far-reaching positive impacts."</li>
+<li><strong>Subsequent</strong>: Refers to events following in chronological order. Exam example: "The initial pilot program received mixed feedback, but subsequent adjustments significantly improved user satisfaction."
+I made 3 collocation mistakes today, and I will review these high-frequency words again during tomorrow's morning review session.</li>
+</ol>
+<h2>长难句专项训练</h2>
+<p>Today we dissected a complex sentence from the 2025 National Postgraduate Entrance Examination English (Paper I) Reading Comprehension Text 3:</p>
+<blockquote>
+<p>The researchers argue that the effect of declining attention spans is not just on our ability to focus on long-form educational content but also on our capacity to cultivate deep, lasting interpersonal relationships.</p>
+</blockquote>
+<h3>Structural Analysis</h3>
+<ol>
+<li>Main clause: <em>The researchers argue</em> + that-guided object clause</li>
+<li>Object clause core structure: <em>The effect [of declining attention spans]</em> is not just on [A] but also on [B], where A = <em>our ability to focus on long-form educational content</em>, B = <em>our capacity to cultivate deep, lasting interpersonal relationships</em></li>
+<li>Key vocabulary: <em>attention spans</em> (average length of time someone can concentrate on a single task), <em>cultivate</em> (to develop and foster skills or relationships), <em>long-form content</em> (extended, in-depth reading or media materials)</li>
+</ol>
+<h3>Official Exam Translation</h3>
+<p>研究人员认为，注意力持续时间缩短的影响不仅体现在我们专注长篇教育内容的能力上，还体现在我们培养深度且持久的人际关系的能力上。
+I initially failed to recognize the parallel "not just...but also..." structure and overlooked the preposition "on" following both comparison parts, but after referring to the official exam analysis video, I now have a clearer grasp of parsing such complex sentences.</p>
+<p>💡 碎碎念：今天早上在图书馆刚坐下的时候有点犯困，用艾宾浩斯法复习单词的时候效率比昨天高了不少，一开始拆解长难句的时候卡了好久，搞懂之后感觉对真题句子的结构把握更熟练了。坚持每天积累，英语上岸肯定没问题！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-09-05</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/9-5/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/9-5/</id>
+    <published>2026-09-05T00:00:00.000Z</published>
+    <updated>2026-09-05T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-09-05</h1>
+<h2>今日学习内容</h2>
+<p>3h 参数估计 假设检验</p>
+<h2>薄弱点</h2>
+<ol>
+<li>最大似然估计中，当似然函数的驻点不在参数的取值范围内时，无法通过常规求导步骤得到估计量，容易盲目套用公式出错；</li>
+<li>假设检验中两类错误的实际含义容易混淆，单侧检验的拒绝域方向经常判断失误；</li>
+<li>双正态总体的假设检验中，难以根据已知条件快速匹配对应的检验统计量。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>一、参数估计模块复盘</h3>
+<ol>
+<li><strong>矩估计</strong>：核心逻辑为用样本矩替换总体矩，建立关于未知参数的方程求解。对于单参数总体，仅需利用一阶原点矩 $E(X)=\bar{X}$ 即可完成求解；对于双参数总体，则需联立一阶原点矩和二阶中心矩（或二阶原点矩）的方程组联立求解。考研高频考查指数分布、正态分布、泊松分布的矩估计，需注意区分样本方差与总体方差的应用场景。</li>
+<li><strong>最大似然估计</strong>：核心是构造似然函数，连续型总体的似然函数为联合密度函数乘积 $L(\theta)=\prod_{i=1}^n f(x_i;\theta)$，离散型总体为联合概率质量函数乘积 $L(\theta)=\prod_{i=1}^n P(X=x_i;\theta)$。通常通过取对数似然将乘积转化为和式简化计算，再对参数求导找驻点。需特别注意参数的定义域限制：若驻点不在参数的合法取值范围内，则需在边界处取最值作为最终估计量，例如当参数 $\theta&gt;0$ 时，若求导得到的驻点为负数，则最大似然估计量应为0。</li>
+</ol>
+<h3>二、假设检验模块复盘</h3>
+<ol>
+<li><strong>核心概念</strong>：原假设 $H_0$ 与备择假设 $H_1$ 的设定原则为将无充分证据不能推翻的结论作为原假设，单侧检验需明确检验方向（左侧检验/右侧检验）。两类错误是考研高频考点：第一类错误（弃真错误）指原假设为真时拒绝 $H_0$，概率为显著性水平 $\alpha$；第二类错误（取伪错误）指原假设为假时接受 $H_0$，概率为 $\beta$，且在样本量固定的前提下，$\alpha$ 增大时 $\beta$ 通常会减小。</li>
+<li><strong>正态总体假设检验</strong>
+<ul>
+<li>单正态总体：当总体方差 $\sigma^2$ 已知时，使用Z检验统计量 $Z=\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}$；当总体方差 $\sigma^2$ 未知时，使用t检验统计量 $t=\frac{\bar{X}-\mu_0}{S/\sqrt{n}}$；方差检验使用 $\chi^2=\frac{(n-1)S^2}{\sigma_0^2}$。</li>
+<li>双正态总体：均值差检验需在方差齐性的前提下使用t检验；方差比检验使用F检验统计量 $F=\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}$，当原假设 $H_0:\sigma_1^2=\sigma_2^2$ 成立时，统计量可简化为 $F=\frac{S_1^2}{S_2^2}$。</li>
+</ul>
+</li>
+<li><strong>标准检验流程</strong>：明确原假设与备择假设→选择匹配的检验统计量→计算检验统计量的观测值→对比临界值确定拒绝域→结合观测值得出最终检验结论。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日共计投入3小时系统学习参数估计与假设检验的核心考点，完成了15道配套课后习题，通过复盘梳理了两类模块的解题逻辑，同时暴露了自身在边界场景的最大似然估计、单侧检验拒绝域判断、双总体检验统计量匹配上的不足，后续将针对性强化该部分题型练习，夯实知识点掌握程度。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-09-04</title>
     <link href="https://elysiaweb.vercel.app/posts/408/9-4/" rel="alternate" type="text/html"/>
