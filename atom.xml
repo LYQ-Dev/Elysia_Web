@@ -5,8 +5,178 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-09-05T15:49:59.820Z</updated>
+  <updated>2026-09-08T14:55:31.994Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-09-07</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/9-7/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/9-7/</id>
+    <published>2026-09-07T00:00:00.000Z</published>
+    <updated>2026-09-07T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-09-07</h1>
+<h2>今日学习内容</h2>
+<p>完成操作系统模块中页面管理相关的历年真题训练，涵盖选择题、计算题两类题型，共计15道真题。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次真题覆盖的页面管理核心考研考点复盘如下：</p>
+<ol>
+<li><strong>请求分页存储管理基础</strong>
+核心为通过动态扩充内存容量实现虚拟存储，页表项需包含状态位（标识页面是否在内存）、访问字段（记录页面访问情况）、修改位（标识页面是否被修改）、外存地址（页面在外存的位置）。当CPU访问的页面不在内存时，触发缺页中断，进入页面置换流程。</li>
+<li><strong>主流页面置换算法</strong>
+<ul>
+<li><strong>最优置换算法（OPT）</strong>：理论上性能最优的置换算法，会淘汰未来最长时间不被访问的页面，但实际无法实现，仅用于作为其他算法的性能参考标准。</li>
+<li><strong>先进先出置换算法（FIFO）</strong>：按照页面进入内存的先后顺序进行置换，存在<strong>Belady异常</strong>——分配的物理块数增加时，缺页中断次数反而增多，仅FIFO算法会出现该现象。</li>
+<li><strong>最近最少使用算法（LRU）</strong>：基于程序局部性原理，淘汰最近一段时间内最少被访问的页面，常通过栈、链表或硬件计数器实现，是考试中最常考查的置换算法。</li>
+<li><strong>时钟置换算法（Clock/NRU）</strong>：近似LRU算法，通过引用位标识页面近期是否被访问，通过循环扫描内存页面完成置换，实现成本较低。</li>
+<li><strong>最不经常使用算法（LFU）</strong>：统计页面的访问频率，淘汰访问次数最少的页面，容易淘汰早期高频但后期不再使用的页面。</li>
+</ul>
+</li>
+<li><strong>页面分配与置换策略</strong>
+分为固定分配局部置换、可变分配全局置换、可变分配局部置换三类，不同策略适配不同的系统调度场景，比如多道程序度较高的系统适合可变分配全局置换。</li>
+<li><strong>抖动与工作集</strong>
+抖动指系统中频繁发生页面置换的现象，成因是分配给进程的物理块数不足，导致进程频繁换入换出页面。工作集是进程在某段时间内访问的页面集合，通过调整工作集大小可以有效缓解抖动问题。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>部分涉及Clock算法的真题中，多轮扫描的引用位更新逻辑容易出错，尤其是初始引用位全为1时的置换场景。</li>
+<li>计算缺页中断次数时，容易遗漏初始物理块为空时，首次加载页面的缺页中断次数。</li>
+<li>曾混淆Belady异常的适用范围，误以为所有置换算法都会出现该问题，现已明确仅FIFO算法存在该异常。</li>
+<li>对不同页面置换算法的适用场景记忆不够牢固，比如LFU算法在高并发场景下的局限性。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>熟练掌握了各类页面置换算法的缺页次数计算步骤，能够快速准确完成相关计算题。</li>
+<li>理清了Belady异常的本质成因，明确了仅FIFO算法存在该现象的核心原因。</li>
+<li>明确了不同页面分配与置换策略的适配场景，能够结合题目给定的系统环境选择正确的策略。</li>
+<li>完整梳理了缺页中断的完整处理流程，能够结合页表项的各个字段分析页面的当前状态。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-09-07</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/9-7/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/9-7/</id>
+    <published>2026-09-07T00:00:00.000Z</published>
+    <updated>2026-09-07T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-09-07</h1>
+<h2>今日学习内容</h2>
+<p>今天完成了两项核心考研英语学习任务：一是背诵2026年考研英语大纲高频核心词汇，二是拆解1句2025年考研英语一真题长难句，夯实语法基础与阅读逻辑分析能力。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日背诵核心词汇及用法梳理</h3>
+<ol>
+<li><strong>perceive</strong> <em>v.</em> 察觉，感知；认为，理解
+例句：Most young consumers perceive personalized marketing as an invasion of personal privacy.</li>
+<li><strong>mitigate</strong> <em>v.</em> 减轻，缓解（危害、负面影响）
+例句：Local authorities launched projects to mitigate air pollution in urban areas.</li>
+<li><strong>subsequent</strong> <em>adj.</em> 随后的，后来的
+例句：Subsequent research validated the preliminary conclusions of the 2024 study.</li>
+<li><strong>collaborate</strong> <em>v.</em> 合作，协作；（贬义）勾结
+例句：The two nonprofit organizations collaborated to provide aid for rural students.</li>
+<li>易混词辨析：<code>compliment</code>（<em>n./v.</em> 赞美，恭维）vs <code>complement</code>（<em>n./v.</em> 补充，补足）
+例句：The herbal tea perfectly complements the spicy hot pot meal.</li>
+</ol>
+<h3>今日复盘小结</h3>
+<p>今日累计背诵35个核心考研词汇，默写自测正确率约80%，重点攻克了易混淆形近词的使用误区，整理了专属易混词笔记便于后续复习回顾。</p>
+<h2>真题长难句拆解</h2>
+<p>选取2025年考研英语一Text 2经典长难句进行结构化分析：</p>
+<blockquote>
+<p>The researchers argue that the trend, which has been accelerating since the early 2000s, is driven by a combination of technological advancements and shifting consumer preferences.</p>
+</blockquote>
+<ol>
+<li><strong>语法结构拆解</strong>：
+<ul>
+<li>主句框架：<code>The researchers argue + that引导的宾语从句</code></li>
+<li>宾语从句主干：<code>the trend ... is driven by a combination of ...</code></li>
+<li>插入式非限制性定语从句：<code>which has been accelerating since the early 2000s</code>，修饰先行词<code>the trend</code>，补充说明该趋势的发展周期</li>
+</ul>
+</li>
+<li>参考译文：研究人员指出，这一自21世纪初以来便持续加速发展的趋势，是由技术进步与消费者偏好转变共同驱动的。</li>
+</ol>
+<p>💡 碎碎念：今天在拆解长难句时终于熟练掌握了插入式定语从句的识别方法，背单词时特意将易混词整理成对照表，感觉对后续做阅读题时的语义理解帮助很大。坚持每天稳步积累，稳扎稳打，考研英语上岸的目标一定能够实现！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-09-07</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/9-7/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/9-7/</id>
+    <published>2026-09-07T00:00:00.000Z</published>
+    <updated>2026-09-07T00:00:00.000Z</updated>
+    <summary>考研数学概率论与数理统计假设检验模块复盘与学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-09-07</h1>
+<h2>今日学习内容</h2>
+<p>今日围绕考研数学概率论与数理统计中的<strong>假设检验</strong>模块展开系统复盘与专项规划，具体包括：</p>
+<ol>
+<li>复盘假设检验的核心基本概念与逻辑框架，重新梳理小概率事件原理的应用边界；</li>
+<li>整理过往刷题中暴露的假设检验类错题，标记出高频混淆点与知识盲区；</li>
+<li>制定后续两周的假设检验专项学习计划，明确每日练习与复盘目标。</li>
+</ol>
+<h2>薄弱点</h2>
+<ol>
+<li>两类错误的定义与概率计算容易混淆，无法快速区分第一类弃真错误与第二类取伪错误的适用场景，且在给定显著性水平α时难以推导第二类错误的概率β；</li>
+<li>不同场景下的检验统计量选择混乱，比如单正态总体方差未知时误用Z检验而非t检验，双正态总体方差未知但相等时未使用合并方差构造检验统计量；</li>
+<li>单侧检验与双侧检验的拒绝域差异记忆模糊，经常颠倒临界值的正负号；</li>
+<li>假设检验与参数区间估计的关联与区别理解不透彻，做题时容易混淆二者的公式与应用逻辑；</li>
+<li>非参数假设检验（如卡方拟合优度检验）的步骤与适用条件掌握不扎实，无法快速判断题目是否需要使用非参数检验方法。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>一、假设检验核心逻辑复盘</h3>
+<p>假设检验的核心基于<strong>小概率事件原理</strong>：在一次试验中，小概率事件几乎不会发生。若原假设$H_0$成立时，观测到的样本统计量落入拒绝域（小概率事件发生），则拒绝原假设$H_0$，反之则接受$H_0$。考研中常考的标准步骤为：</p>
+<ol>
+<li>提出原假设$H_0$与备择假设$H_1$，注意单侧检验与双侧检验的设定差异，比如检验均值是否大于$\mu_0$，应设$H_0: \mu \leq \mu_0$，$H_1: \mu &gt; \mu_0$；</li>
+<li>构造合适的检验统计量，根据总体分布、样本信息与待检验参数选择对应统计量；</li>
+<li>根据显著性水平$\alpha$确定拒绝域，考研中临界值法考察频次远高于p值法；</li>
+<li>代入样本观测值计算检验统计量，与临界值比较判断是否拒绝$H_0$。</li>
+</ol>
+<h3>二、常考场景分类复盘</h3>
+<ol>
+<li><strong>正态总体的参数假设检验</strong>
+<ul>
+<li>单正态总体：
+均值$\mu$检验：$\sigma$已知时使用Z检验，统计量$Z=\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}$；$\sigma$未知时使用t检验，统计量$t=\frac{\bar{X}-\mu_0}{S/\sqrt{n}}$，自由度为$n-1$；
+方差$\sigma^2$检验：使用$\chi^2$检验，统计量$\chi^2=\frac{(n-1)S^2}{\sigma_0^2}$，自由度为$n-1$。</li>
+<li>双正态总体：
+均值差$\mu_1-\mu_2$检验：$\sigma_1、\sigma_2$已知时用Z检验；$\sigma_1、\sigma_2$未知但相等时用t检验，使用合并方差$S_w^2=\frac{(n_1-1)S_1^2+(n_2-1)S_2^2}{n_1+n_2-2}$，统计量$t=\frac{(\bar{X}-\bar{Y})-(\mu_1-\mu_2)}{S_w\sqrt{1/n_1+1/n_2}}$；
+方差比$\sigma_1^2/\sigma_2^2$检验：使用F检验，统计量$F=\frac{S_1^2}{S_2^2}$，自由度为$(n_1-1,n_2-1)$。</li>
+</ul>
+</li>
+<li><strong>两类错误复盘</strong>
+第一类错误（弃真）：$H_0$为真时拒绝$H_0$，概率为$P(\text{拒绝}H_0|H_0\text{为真})=\alpha$（显著性水平）；第二类错误（取伪）：$H_0$为假时接受$H_0$，概率为$P(\text{接受}H_0|H_1\text{为真})=\beta$。考研中常考察当样本量固定时，$\alpha$与$\beta$的反向变动关系，以及如何通过调整样本量同时降低两类错误的概率。</li>
+<li><strong>假设检验与区间估计的关联</strong>
+二者本质上是同一问题的两种表述：假设检验的接受域就是对应置信水平为$1-\alpha$的置信区间。区别在于：假设检验是验证给定的参数假设是否成立，而区间估计是通过样本估计参数的取值范围。考研中常将二者结合出题，比如通过置信区间判断是否拒绝原假设。</li>
+<li><strong>非参数假设检验</strong>
+考研中主要考察卡方拟合优度检验，步骤为：将总体分为$k$个互斥区间，计算每个区间的理论频数与实际频数，构造统计量$\chi^2=\sum_{i=1}^k\frac{(f_i-np_i)^2}{np_i}$，其中$f_i$为实际频数，$np_i$为理论频数，自由度为$k-r-1$（$r$为估计的参数个数），当$\chi^2&gt;\chi^2_{\alpha}(k-r-1)$时拒绝原假设（原假设为总体服从指定分布）。</li>
+</ol>
+<h3>三、错题复盘修正</h3>
+<p>本次复盘针对之前做错的一道双正态总体单侧均值差检验题进行修正：原题为比较两种机床的加工精度，原假设为$H_0:\mu_1\leq\mu_2$，错误地使用了双侧检验的拒绝域，后来通过梳理单侧检验的拒绝域方向，纠正了临界值的选取错误，后续将整理此类单侧检验的临界值记忆口诀，避免再次出错。</p>
+<h2>今日小结</h2>
+<p>今日完成了假设检验模块的核心框架梳理与易错点整理，通过复盘过往错题明确了自身的薄弱环节，并制定了针对性的后续学习计划。整体学习节奏平稳，未出现过度拖延的情况，后续将严格按照规划完成专项练习与复盘。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-09-05</title>
     <link href="https://elysiaweb.vercel.app/posts/408/9-5/" rel="alternate" type="text/html"/>
