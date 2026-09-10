@@ -5,8 +5,149 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-09-09T15:47:31.974Z</updated>
+  <updated>2026-09-10T15:37:13.735Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-09-10</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/9-10/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/9-10/</id>
+    <published>2026-09-10T00:00:00.000Z</published>
+    <updated>2026-09-10T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-09-10</h1>
+<h2>今日学习内容</h2>
+<p>今日共计学习3小时，专项练习PV操作相关考研大题，覆盖经典同步互斥模型及复合场景变形题。</p>
+<h2>AI知识点带复盘</h2>
+<p>PV操作是408操作系统科目进程同步与互斥模块的核心高频考点，本次复盘梳理核心备考要点如下：</p>
+<ol>
+<li><strong>核心概念辨析</strong>
+P操作（原语）用于申请资源，执行时将信号量值减1，若结果小于0则进程阻塞等待；V操作（原语）用于释放资源，执行时将信号量值加1，若结果大于等于0则唤醒阻塞队列中的对应进程。需严格区分<strong>同步</strong>与<strong>互斥</strong>场景：互斥针对临界资源的排他性访问，同一时刻仅允许一个进程进入临界区；同步针对进程间的约定执行顺序，依赖彼此的运行状态完成协作。</li>
+<li><strong>经典必考模型解题逻辑</strong>
+<ul>
+<li>生产者-消费者问题：需设置1个互斥信号量<code>mutex</code>（初始值为1，保护缓冲区临界区）、2个同步信号量<code>empty</code>（初始值为缓冲区总数量，记录空缓冲区剩余数）与<code>full</code>（初始值为0，记录满缓冲区剩余数），必须严格遵循P操作顺序避免死锁。</li>
+<li>读者-写者问题：需通过读者计数器实现读者群体的共享访问，区分读者优先、写者优先两种变种场景，写者进程需完全独占共享资源。</li>
+<li>哲学家进餐问题：经典死锁场景，可通过限制同时拿筷人数、调整拿筷顺序等方式规避死锁风险。</li>
+</ul>
+</li>
+<li><strong>考研大题标准解题步骤</strong>
+① 题目拆解：明确进程数量、共享资源类型、同步/互斥关系；
+② 信号量定义：根据场景确定信号量类型与初始值；
+③ 进程代码编写：为每个进程添加正确的P/V操作，临界区代码仅包含共享资源访问逻辑。</li>
+<li><strong>常见失分陷阱</strong>
+信号量初始值设置错误、P/V操作顺序颠倒引发死锁、混淆同步与互斥信号量的使用边界。</li>
+</ol>
+<h2>问题与反思</h2>
+<p>今日练习过程中，遇到多生产者多缓冲区的复合PV大题时，曾混淆不同生产者对应的同步信号量分配逻辑，在梳理跨进程共享资源边界时花费了较多额外时间，后续需加强这类复合场景的专项训练，提升快速拆解题目的能力。</p>
+<h2>收获与总结</h2>
+<p>通过3小时的专项练习，系统梳理了PV操作的考点框架，熟练掌握了经典同步互斥模型的解题流程，能够准确区分同步与互斥场景并正确设置信号量，纠正了此前容易颠倒P/V操作顺序的小失误，对PV操作大题的得分要点有了更清晰的认知。</p>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-09-10</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/9-10/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/9-10/</id>
+    <published>2026-09-10T00:00:00.000Z</published>
+    <updated>2026-09-10T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-09-10</h1>
+<h2>今日学习内容</h2>
+<p>总学习时长约1.5小时，分为单词复盘、长难句拆解、真题片段精读三个模块，循序渐进夯实考研英语基础。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）今日重点复盘考研英语5500词中前缀<code>mis-</code>相关高频词汇，以及易混淆形近词辨析：</p>
+<ol>
+<li><strong>mislead</strong> v. 误导；引入歧途 → 真题例句（2024英语一Text3）：<em>The sensational headlines mislead the public into overestimating the risks of the new technology.</em></li>
+<li><strong>misinterpret</strong> v. 误解；曲解 → 常用搭配：misinterpret sb's genuine intentions 误解某人的本意</li>
+<li><strong>misfortune</strong> n. 不幸；厄运 → 近义词拓展：adversity, setback</li>
+<li><strong>mitigate</strong> v. 减轻；缓解 → 词根记忆：mit-（发送）+ -igate → 把负面事物送走，即减轻负面影响</li>
+<li>形近词辨析：<code>complement</code>（n./v. 补充；补足）vs <code>compliment</code>（n./v. 赞美；恭维），为考研阅读高频词义辨析考点。</li>
+</ol>
+<h2>长难句拆解</h2>
+<p>选取2025年考研英语一Text2经典长难句进行拆解分析：</p>
+<blockquote>
+<p>Original sentence: <em>The rapid advancement of generative AI has not only transformed the way we consume media but also challenged the traditional boundaries between creative professionals and amateurs.</em></p>
+</blockquote>
+<ol>
+<li>句子结构拆分：
+<ul>
+<li>主句主干：<code>The rapid advancement... has not only transformed... but also challenged...</code></li>
+<li>后置定语：<code>of generative AI</code> 修饰主语<code>advancement</code></li>
+<li>省略式定语从句：<code>the way we consume media</code> 完整结构为<code>the way that/in which we consume media</code>，省略关系代词</li>
+<li>后置定语：<code>between creative professionals and amateurs</code> 修饰核心名词<code>boundaries</code></li>
+</ul>
+</li>
+<li>参考译文：生成式人工智能的快速发展不仅重塑了我们获取媒体内容的方式，也打破了创意从业者与业余爱好者之间的传统创作边界。</li>
+</ol>
+<h2>真题片段精读</h2>
+<p>完成2023年考研英语一Text1前两段的精读训练，整理核心词组与地道表达：</p>
+<ol>
+<li><code>take a toll on</code> 对……造成损害/负面影响</li>
+<li><code>in the wake of</code> 紧随……之后；随着……而来</li>
+<li><code>curb discretionary spending</code> 控制可支配开支</li>
+<li><code>be prone to</code> 易于……；倾向于……</li>
+</ol>
+<p>💡 碎碎念：今天也是教师节，给恩师送上了节日祝福，学习之余收获了满满的暖意。坚持背单词的第47天，起初总容易混淆同前缀词汇，但通过词根词缀串联记忆后，遗忘率明显降低。继续稳扎稳打积累，考研英语上岸的目标一定能达成！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-09-10</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/9-10/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/9-10/</id>
+    <published>2026-09-10T00:00:00.000Z</published>
+    <updated>2026-09-10T00:00:00.000Z</updated>
+    <summary>考研数学微分方程模块学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-09-10</h1>
+<h2>今日学习内容</h2>
+<p>今日累计学习时长3.5h，全程围绕高等数学中的微分方程模块展开，完成了知识点系统梳理、课后习题练习与真题片段训练，重点攻克二阶线性微分方程相关考点。</p>
+<h2>薄弱点</h2>
+<p>通过今日的学习与练习，暴露出多个亟需强化的薄弱环节：一是二阶线性非齐次微分方程的特解形式设定容易出错，尤其是当非齐次项为多项式与指数函数、三角函数结合的复合型时，经常混淆特征根重数对应的特解系数项前的k值；二是在微分方程几何应用场景中，无法快速准确地根据题干描述建立对应的微分方程与初始条件；三是欧拉方程的换元转换步骤容易出现符号错误，导致后续求解偏差。</p>
+<h2>AI知识点带复盘</h2>
+<p>本次复盘围绕考研数学微分方程模块的核心常考考点展开：</p>
+<ol>
+<li><strong>一阶微分方程核心考点</strong>
+涵盖可分离变量型、齐次型与一阶线性微分方程三类基础题型。可分离变量方程通过分离变量后直接积分求解；齐次方程需通过换元$u=\frac{y}{x}$转化为可分离变量方程求解；一阶线性微分方程的标准形式为$y'+P(x)y=Q(x)$，通解公式为$y=e^{-\int P(x)dx}\left(\int Q(x)e^{\int P(x)dx}dx + C\right)$，需熟练掌握积分因子法的推导逻辑，避免记错通解形式。</li>
+<li><strong>二阶线性微分方程核心考点</strong>
+这是考研数学的高频重点：
+<ul>
+<li>二阶线性齐次微分方程（常系数）：通过特征方程$r^2+pr+q=0$的根的三种情况（不等实根、相等实根、共轭复根）直接写出通解形式；</li>
+<li>二阶线性非齐次微分方程（常系数）：通解为齐次通解+非齐次特解，特解形式需根据非齐次项$f(x)$的类型匹配：
+<ul>
+<li>当$f(x)=e^{\lambda x}P_m(x)$（$P_m(x)$为m次多项式），特解设为$x^k e^{\lambda x}Q_m(x)$，其中$k$为$\lambda$作为特征根的重数；</li>
+<li>当$f(x)=e^{\lambda x}[P_l(x)\cos\omega x + Q_n(x)\sin\omega x]$，特解设为$x^k e^{\lambda x}[R_s(x)\cos\omega x + T_s(x)\sin\omega x]$，$s=\max(l,n)$，$k$为$\lambda\pm i\omega$作为特征根的重数。
+今日重点复盘了特解形式中$k$的取值规则，此前曾多次因忽略特征根重数导致特解形式设定错误，后续需强化该规则的记忆与应用。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>欧拉方程与微分方程应用</strong>
+欧拉方程需通过换元$t=\ln x$将变系数方程转化为常系数线性微分方程求解，需注意换元后导数的转换公式；应用场景主要包括几何应用（切线斜率、曲率相关）与物理应用（运动学、种群增长模型），解题核心是根据题干中的变化率关系建立方程，同时准确提取初始条件。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日3.5小时的微分方程模块学习完成了预设的学习目标，通过刷题与复盘明确了自身的薄弱板块，课后整理了《微分方程易错点笔记》，将特解形式、换元规则与建模要点单独摘录强化记忆。后续计划针对薄弱点完成15道专项练习题，进一步巩固考点掌握程度。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-09-09</title>
     <link href="https://elysiaweb.vercel.app/posts/408/9-9/" rel="alternate" type="text/html"/>
