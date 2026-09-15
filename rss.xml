@@ -1,4 +1,109 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-09-10</title><link>https://elysiaweb.vercel.app/posts/408/9-10/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/9-10/</guid><description>408 专业课学习与复盘</description><pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-09-10&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Elysia</title><description>Elysia</description><link>https://elysiaweb.vercel.app/</link><language>zh_CN</language><item><title>考研专业课学习记录2026-09-14</title><link>https://elysiaweb.vercel.app/posts/408/9-14/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/9-14/</guid><description>408 计算机网络基础组成学习与复盘</description><pubDate>Mon, 14 Sep 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-09-14&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入2.5小时，系统学习计算机网络的基础组成模块，覆盖计算机网络的规范定义、硬件与软件组成、分层结构基础等核心前置知识点。&lt;/p&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;考研核心考点复盘与拓展&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;计算机网络的标准定义（高频选择题考点）&lt;/strong&gt;
+以谢希仁《计算机网络》第8版官方定义为准：计算机网络是将若干台具有独立功能的计算机，通过通信设备和通信线路连接起来，在网络操作系统和通信协议的管理协调下，实现资源共享与数据通信的系统。考研常考察“独立功能”的含义，即端系统可脱离网络独立运行，区别于依附主机的外设设备。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算机网络的基础组成（核心必背考点）&lt;/strong&gt;
+分为硬件与软件两大组成模块，是408选择题高频出题点：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;硬件组成&lt;/strong&gt;：
+① 端系统（终端设备）：如个人电脑、服务器、智能手机，是网络的用户接入节点，负责发起或接收数据；
+② 通信链路：数据传输的物理介质，分为有线（双绞线、光纤、同轴电缆）与无线（Wi-Fi、蓝牙、卫星信道）两类；
+③ 通信设备：实现数据转发与互联，如路由器（三层转发，实现跨网络互联）、交换机（二层转发，实现同网段设备互联）、网卡（完成计算机与网络的物理连接与数模转换）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;软件组成&lt;/strong&gt;：
+① 网络协议：通信双方必须遵守的规则约定，TCP/IP协议族是互联网的核心协议栈；
+② 网络操作系统：管理网络资源、提供基础网络服务的系统软件，如Linux服务器系统、Windows Server；
+③ 网络应用软件：面向终端用户的应用程序，如浏览器、微信、云盘等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分层结构的核心逻辑（基础铺垫考点）&lt;/strong&gt;
+网络分层设计的核心目的是拆解复杂通信流程，降低整体复杂度。分层的优势包括：各层功能独立，某一层的迭代不会影响其他层；便于标准化与维护；提升整体系统的灵活性与可扩展性。
+考研常考察OSI七层参考模型与TCP/IP四层模型的基础框架，为后续各层协议的学习奠定认知基础。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算机网络的常见分类（拓展考点）&lt;/strong&gt;
+按覆盖范围分类是考研选择题高频考点：
+&lt;ul&gt;
+&lt;li&gt;局域网（LAN）：覆盖范围最小，如宿舍、家庭网络；&lt;/li&gt;
+&lt;li&gt;城域网（MAN）：覆盖城市级范围；&lt;/li&gt;
+&lt;li&gt;广域网（WAN）：覆盖国家或全球范围，如互联网主干网；&lt;/li&gt;
+&lt;li&gt;个人局域网（PAN）：覆盖个人周边小范围，如蓝牙连接的耳机与手机。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;问题与反思&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;尚未清晰区分交换机与路由器的适用场景，对两类通信设备的功能边界仍存在混淆；&lt;/li&gt;
+&lt;li&gt;对分层结构的具体逻辑仅停留在概念层面，未结合具体协议对应各层的实际功能；&lt;/li&gt;
+&lt;li&gt;本次学习以理论记忆为主，缺乏配套习题巩固知识点，难以快速定位掌握薄弱的环节。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;收获与总结&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;搭建了计算机网络基础组成的完整知识框架，明确了考研常考的网络定义与组成模块；&lt;/li&gt;
+&lt;li&gt;理解了分层设计的核心意义，掌握了网络分类的高频考点；&lt;/li&gt;
+&lt;li&gt;建立了计算机网络模块的初步学习思路，为后续章节的协议学习打下了认知基础。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;💡 碎碎念：踏实吃透每一个知识点！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研英语学习记录2026-09-14</title><link>https://elysiaweb.vercel.app/posts/english/9-14/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/english/9-14/</guid><description>考研英语单词与长难句学习记录</description><pubDate>Mon, 14 Sep 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研英语学习记录 | 2026-09-14&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;总计学习时长1小时，分为两个模块：40分钟考研核心单词复盘与拓展，20分钟历年真题长难句拆解练习。&lt;/p&gt;
+&lt;h2&gt;单词复盘&lt;/h2&gt;
+&lt;p&gt;（AI 自动整理）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;compromise&lt;/strong&gt;  v. 妥协，折中；危及，损害  n. 妥协，和解；折中方案
+真题高频考法：compromise with sb. on sth. 在某事上与某人妥协&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;perspective&lt;/strong&gt;  n. 视角，观点；透视画法  adj. 透视的
+常用搭配：in perspective 正确地、客观地看待事物&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;substitute&lt;/strong&gt;  v. 代替，替换  n. 代替者，替代品
+固定搭配：substitute A for B 用A替代B&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ambiguous&lt;/strong&gt;  adj. 模棱两可的，含糊不清的
+形近词辨析：ambitious（有雄心的）、explicit（明确的）
+💡 碎碎念：今天复盘时特意整理了易混淆的形近词和真题常考搭配，加深了记忆！每天坚持积累一点点，英语提分不是难事，考研上岸一定可期！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研数学学习记录2026-09-14</title><link>https://elysiaweb.vercel.app/posts/math/9-14/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/math/9-14/</guid><description>考研数学级数模块学习与复盘记录</description><pubDate>Mon, 14 Sep 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研数学学习记录 | 2026-09-14&lt;/h1&gt;
+&lt;h2&gt;今日学习内容&lt;/h2&gt;
+&lt;p&gt;今日共计投入3小时系统学习考研数学级数模块，涵盖常数项级数敛散性判别、幂级数收敛域与和函数求解两大核心板块，配套完成了30道精选习题与2套考点梳理表格。&lt;/p&gt;
+&lt;h2&gt;薄弱点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;常数项级数判别时，经常忽略“通项极限为0是级数收敛的必要非充分条件”，常直接跳过该步骤使用判别法；&lt;/li&gt;
+&lt;li&gt;正项级数的比较判别法直接形式与极限形式的适用场景混淆，无法快速选择最优判别方式；&lt;/li&gt;
+&lt;li&gt;幂级数逐项求导、逐项积分后，收敛域端点的收敛性变化规律记忆模糊，容易直接沿用原级数的端点收敛结论；&lt;/li&gt;
+&lt;li&gt;交错级数验证莱布尼茨判别法时，仅验证了通项极限为0，遗漏了“通项绝对值单调递减”的核心条件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
+&lt;h3&gt;1. 常数项级数板块&lt;/h3&gt;
+&lt;p&gt;考研数学中常数项级数是高频考点，核心分为三类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;正项级数&lt;/strong&gt;：敛散性判别优先验证通项极限是否为0，随后可选用：
+① 比较判别法：优先选用极限形式，可简化计算，常见比较基准为$p$级数（$\sum_{n=1}^\infty \frac{1}{n^p}$，$p&amp;gt;1$收敛，$p\leq1$发散）与等比级数（$\sum_{n=1}^\infty aq^{n-1}$，$|q|&amp;lt;1$收敛）；
+② 比值判别法（达朗贝尔判别法）：适用于通项含$n!$、$a^n$的级数，通过计算$\lim_{n\to\infty}\frac{a_{n+1}}{a_n}$判断敛散性；
+③ 根值判别法（柯西判别法）：适用于通项含$n^n$的级数，通过$\lim_{n\to\infty}\sqrt[n]{a_n}$判断敛散性。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;交错级数&lt;/strong&gt;：核心判别法为莱布尼茨判别法，需同时满足两个条件：$\lim_{n\to\infty}u_n=0$且${u_n}$单调递减，满足则级数收敛，同时需区分绝对收敛与条件收敛：绝对收敛的级数任意重排仍收敛，条件收敛的级数可通过重排得到任意指定和。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;任意项级数&lt;/strong&gt;：先判断是否绝对收敛，再判断条件收敛。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2. 幂级数板块&lt;/h3&gt;
+&lt;p&gt;幂级数是考研数学的重点难点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;收敛域求解&lt;/strong&gt;：先通过比值/根值法计算收敛半径$R$，再单独验证$x=\pm R$处的级数敛散性，最终得到收敛域；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;运算性质&lt;/strong&gt;：幂级数在收敛区间内可逐项求导、逐项积分，收敛半径不变，但端点收敛性可能发生变化，例如原级数在$x=R$处收敛，求导后的级数可能在$x=R$处发散；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;和函数求解&lt;/strong&gt;：依托常见函数的麦克劳林展开式（$e^x、\sin x、\ln(1+x)$等），通过逐项求导、积分变形得到目标和函数，例如$\sum_{n=1}^\infty nx^{n-1}=\frac{1}{(1-x)^2},x\in(-1,1)$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;3. 补充考点（数一/数三）&lt;/h3&gt;
+&lt;p&gt;傅里叶级数板块需掌握狄利克雷收敛定理，以及周期为$2l$的函数的傅里叶系数计算，奇偶函数可简化为正弦级数或余弦级数。&lt;/p&gt;
+&lt;h2&gt;今日小结&lt;/h2&gt;
+&lt;p&gt;今日3小时的级数模块学习完成了考点梳理、错题复盘与针对性刷题，解决了此前混淆的比较判别法适用场景问题，理清了幂级数端点收敛性的变化规律，整理了5道典型错题并标注了易错点。整体学习节奏平稳，对级数模块的核心逻辑有了更清晰的认知，后续将针对傅里叶级数板块进行补充学习。&lt;/p&gt;
+&lt;p&gt;💡 碎碎念：稳步积累，持续提升。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文档内容由 AI 辅助生成&lt;/p&gt;
+&lt;/blockquote&gt;
+</content:encoded></item><item><title>考研专业课学习记录2026-09-10</title><link>https://elysiaweb.vercel.app/posts/408/9-10/</link><guid isPermaLink="true">https://elysiaweb.vercel.app/posts/408/9-10/</guid><description>408 专业课学习与复盘</description><pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;考研专业课学习记录 | 2026-09-10&lt;/h1&gt;
 &lt;h2&gt;今日学习内容&lt;/h2&gt;
 &lt;p&gt;今日共计学习3小时，专项练习PV操作相关考研大题，覆盖经典同步互斥模型及复合场景变形题。&lt;/p&gt;
 &lt;h2&gt;AI知识点带复盘&lt;/h2&gt;
