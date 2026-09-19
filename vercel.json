@@ -6,10 +6,6 @@
 	"headers": [
 		{
 			"source": "/(.*)",
-				"github": 
-				{
-					"silent": true	
-				},
 			"headers": [
 				{
 					"key": "X-Content-Type-Options",
