@@ -93,6 +93,7 @@ const isTiltCard = TILT_WIDGET_IDS.has(id);
 	class WidgetLayout extends HTMLElement {
 		constructor() {
 			super();
+			this.setupTagsPagination();
 
 			if (this.dataset.isCollapsed !== "true") {
 				this.setupTiltCard();
@@ -118,6 +119,67 @@ const isTiltCard = TILT_WIDGET_IDS.has(id);
 			}
 		}
 
+		setupTagsPagination() {
+			const pagination = this.querySelector<HTMLElement>(
+				"[data-tags-pagination]",
+			);
+			if (!pagination) {
+				return;
+			}
+
+			const pageSize = Number(pagination.dataset.tagsPageSize);
+			const tagItems = Array.from(
+				pagination.querySelectorAll<HTMLElement>("[data-tag-index]"),
+			);
+			const previousButton = pagination.querySelector<HTMLButtonElement>(
+				"[data-tags-previous]",
+			);
+			const nextButton = pagination.querySelector<HTMLButtonElement>(
+				"[data-tags-next]",
+			);
+			const pageLabel = pagination.querySelector<HTMLElement>(
+				"[data-tags-page]",
+			);
+			const totalPages = Math.ceil(tagItems.length / pageSize);
+			let currentPage = 1;
+
+			const updateTagsPage = (nextPage: number) => {
+				currentPage = Math.max(1, Math.min(nextPage, totalPages));
+				const firstIndex = (currentPage - 1) * pageSize;
+
+				tagItems.forEach((item, index) => {
+					item.classList.toggle(
+						"hidden",
+						index < firstIndex || index >= firstIndex + pageSize,
+					);
+				});
+
+				if (pageLabel) {
+					pageLabel.textContent = `${currentPage} / ${totalPages}`;
+				}
+				if (previousButton) {
+					previousButton.disabled = currentPage === 1;
+				}
+				if (nextButton) {
+					nextButton.disabled = currentPage === totalPages;
+				}
+			};
+
+			pagination.addEventListener("click", (event) => {
+				const target = event.target;
+				if (!(target instanceof Element)) {
+					return;
+				}
+
+				if (target.closest("[data-tags-previous]")) {
+					updateTagsPage(currentPage - 1);
+				}
+				if (target.closest("[data-tags-next]")) {
+					updateTagsPage(currentPage + 1);
+				}
+			});
+		}
+
 		setupTiltCard() {
 			if (this.dataset.tiltCard !== "true") {
 				return;
@@ -137,9 +199,10 @@ const isTiltCard = TILT_WIDGET_IDS.has(id);
 				return;
 			}
 
-			const MAX_ROTATE_X = 14;
-			const MAX_ROTATE_Y = 9;
-			const FOLLOW_FACTOR = 0.18;
+			const isTagsWidget = this.dataset.id === "tags";
+			const MAX_ROTATE_X = isTagsWidget ? 8 : 14;
+			const MAX_ROTATE_Y = isTagsWidget ? 5 : 9;
+			const FOLLOW_FACTOR = isTagsWidget ? 0.12 : 0.18;
 
 			let targetX = 0;
 			let targetY = 0;

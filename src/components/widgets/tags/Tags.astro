@@ -10,6 +10,7 @@ import WidgetLayout from "../common/WidgetLayout.astro";
 const tags = await getTagList();
 
 const COLLAPSED_HEIGHT = "7.5rem";
+const PAGE_SIZE = 20;
 
 // 使用统一的组件管理器检查是否应该折叠
 const tagsComponent = widgetManager
@@ -35,16 +36,43 @@ const style = Astro.props.style;
 	class={className}
 	style={style}
 >
-	<div class="flex gap-2 flex-wrap">
+		<div data-tags-pagination data-tags-page-size={PAGE_SIZE}>
+		<div class="flex gap-2 flex-wrap" data-tags-list>
 		{
-			tags.map((t) => (
-				<ButtonTag
-					href={getTagUrl(t.name)}
-					label={`View all posts with the ${t.name.trim()} tag`}
-				>
-					{t.name.trim()}
-				</ButtonTag>
+			tags.map((t, index) => (
+				<div class={index >= PAGE_SIZE ? "hidden" : undefined} data-tag-index={index}>
+					<ButtonTag
+						href={getTagUrl(t.name)}
+						label={`View all posts with the ${t.name.trim()} tag`}
+					>
+						{t.name.trim()}
+					</ButtonTag>
+				</div>
 			))
 		}
+		</div>
+
+		{tags.length > PAGE_SIZE && (
+			<nav class="mt-4 flex items-center justify-center gap-2" aria-label="Tags pagination">
+				<button
+					type="button"
+					class="btn-plain rounded-lg h-8 px-3 text-sm"
+					data-tags-previous
+					disabled
+				>
+					上一页
+				</button>
+				<span class="text-sm text-black/50 dark:text-white/50" data-tags-page>
+					1 / {Math.ceil(tags.length / PAGE_SIZE)}
+				</span>
+				<button
+					type="button"
+					class="btn-plain rounded-lg h-8 px-3 text-sm"
+					data-tags-next
+				>
+					下一页
+				</button>
+			</nav>
+		)}
 	</div>
 </WidgetLayout>
