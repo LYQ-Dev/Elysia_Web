@@ -5,8 +5,191 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-09-19T16:58:44.903Z</updated>
+  <updated>2026-09-21T15:42:09.101Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-09-21</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/9-21/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/9-21/</id>
+    <published>2026-09-21T00:00:00.000Z</published>
+    <updated>2026-09-21T00:00:00.000Z</updated>
+    <summary>408计算机网络大题专项学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-09-21</h1>
+<h2>今日学习内容</h2>
+<p>计算机网络综合大题专项训练，针对408统考中高频出现的协议交互、子网计算、路由分析三类大题题型进行针对性练习与复盘。</p>
+<h2>AI知识点带复盘</h2>
+<h3>计网大题核心考点复盘</h3>
+<ol>
+<li><strong>传输层高频考点</strong>
+考研计网大题最常见的考察方向之一，核心包括：
+<ul>
+<li>TCP三次握手/四次挥手的完整流程、各阶段的状态变化与异常场景（如半开放连接、TIME_WAIT状态的意义）</li>
+<li>滑动窗口机制与流量控制原理，结合窗口大小计算吞吐量的题型</li>
+<li>拥塞控制四阶段（慢开始、拥塞避免、快重传、快恢复）的触发条件与窗口变化规则，常结合拥塞窗口cwnd的数值变化进行出题</li>
+<li>UDP与TCP的对比，包括可靠性、开销、适用场景等简答题拓展题型</li>
+</ul>
+</li>
+<li><strong>网络层高频考点</strong>
+主要考察子网划分与VLSM、路由协议分析、IP数据报相关计算：
+<ul>
+<li>给定IP地址块与子网数/主机数需求，计算子网掩码、各子网的网络地址、可用IP范围与广播地址</li>
+<li>静态路由、RIP、OSPF、BGP的工作原理与适用场景，结合拓扑图分析路由转发过程</li>
+<li>NAT地址转换、VPN的工作逻辑，以及CIDR无分类编址的规则</li>
+</ul>
+</li>
+<li><strong>应用层高频考点</strong>
+常结合协议交互流程出题：
+<ul>
+<li>HTTP/HTTPS的请求响应流程、常见请求方法（GET/POST/PUT等）与状态码（200/404/500等）的含义</li>
+<li>DNS递归查询与迭代查询的过程，以及域名解析的完整流程</li>
+<li>FTP主动模式与被动模式的区别，以及应用层协议的端口号对应关系</li>
+</ul>
+</li>
+<li><strong>答题规范复盘</strong>
+计网大题作答需严格遵循采分点逻辑：先明确考察的知识点，再分步骤拆解流程，最后总结结论，避免遗漏关键步骤。</li>
+</ol>
+<h2>问题与反思</h2>
+<ol>
+<li>对TCP拥塞控制中快重传与快恢复的触发场景区分不够清晰，在模拟题中误将慢开始阶段的丢包当作快重传场景进行分析</li>
+<li>子网划分时未考虑全0与全1主机地址的禁用规则，导致可用IP数计算出现错误</li>
+<li>作答时未按照“先点明考点→再分步阐述流程→最后总结结果”的逻辑展开，答题结构略显混乱，采分点不明确</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>梳理了408计网大题的三大核心考察模块与对应答题模板，明确了各模块的高频采分点</li>
+<li>彻底理清了TCP拥塞控制四阶段的差异，能够准确区分慢开始、拥塞避免、快重传与快恢复的触发条件与窗口变化</li>
+<li>掌握了子网划分的标准化步骤：确定所需子网数→计算所需主机位数→推导子网掩码→划分各子网的网络地址与可用IP范围</li>
+<li>学会了按照“考点点明→流程拆解→结论总结”的结构化方式作答计网大题，能够更清晰地向阅卷老师展示解题逻辑</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-09-21</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/9-21/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/9-21/</id>
+    <published>2026-09-21T00:00:00.000Z</published>
+    <updated>2026-09-21T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-09-21</h1>
+<h2>今日学习总览</h2>
+<p>今日累计学习考研英语2小时45分钟，具体分为三部分：</p>
+<ol>
+<li>复盘考研核心词汇List 15，完成自测默写</li>
+<li>攻克8个高频考研长难句，重点拆解嵌套定语从句与状语从句结构</li>
+<li>完成2023年全国硕士研究生招生考试英语（一）阅读理解Text 3，共计15题，后续整理错题点</li>
+</ol>
+<h2>单词复盘</h2>
+<p>今日重点复盘并整理了5个高频易错考研核心词：</p>
+<ol>
+<li><strong>permeate</strong> /ˈpɜːmieɪt/ v. 渗透，弥漫；扩散
+<ul>
+<li>真题搭配：<code>permeate through/into</code></li>
+<li>真题例句（2021年Text 2）："Digital technologies have permeated every corner of modern life."</li>
+</ul>
+</li>
+<li><strong>ambiguous</strong> /æmˈbɪɡjuəs/ adj. 模棱两可的，含糊不清的
+<ul>
+<li>反义词：unambiguous /ˌʌnæmˈbɪɡjuəs/</li>
+<li>高频考点：替换vague, unclear</li>
+</ul>
+</li>
+<li><strong>comply</strong> /kəmˈplaɪ/ v. 遵从，服从
+<ul>
+<li>固定搭配：<code>comply with</code></li>
+<li>真题出现频次：≥12次，常考同义替换obey, follow</li>
+</ul>
+</li>
+<li><strong>deteriorate</strong> /dɪˈtɪəriəreɪt/ v. 恶化，退化
+<ul>
+<li>反义词：improve, enhance</li>
+<li>真题语境：多用于医疗、经济类话题</li>
+</ul>
+</li>
+<li><strong>stimulus</strong> /ˈstɪmjələs/ n. 刺激物，激励因素；（经济）刺激方案
+<ul>
+<li>复数形式：stimuli /ˈstɪmjulaɪ/</li>
+<li>2020年Text 3曾考察其经济类释义</li>
+</ul>
+</li>
+</ol>
+<h2>长难句攻坚</h2>
+<p>今日重点拆解了一道嵌套式定语从句长难句：</p>
+<blockquote>
+<p>原句：The researchers found that patients who received the personalized cancer treatment had a 28% lower rate of disease recurrence, a finding that was later validated by two independent clinical trials.
+结构拆解：</p>
+<ol>
+<li>主句：<code>The researchers found that + 宾语从句</code></li>
+<li>宾语从句主干：<code>patients had a 28% lower rate of disease recurrence</code></li>
+<li>定语从句1：<code>who received the personalized cancer treatment</code> 修饰先行词patients</li>
+<li>同位语+定语从句2：<code>a finding that was later validated by two independent clinical trials</code> 补充说明整个宾语从句的内容
+参考翻译：研究人员发现，接受个性化癌症治疗的患者疾病复发率降低了28%，这一研究结果后续得到了两项独立临床试验的验证。</li>
+</ol>
+</blockquote>
+<h2>今日错题反思</h2>
+<p>本次做2023年Text 3时错了2道细节题，主要错误原因：</p>
+<ol>
+<li>没有精准定位题干关键词，误将段落中次要信息当成正确答案</li>
+<li>对<code>stimulus</code>的经济类释义不够熟悉，导致第12题选错了干扰项</li>
+</ol>
+<h2>明日学习计划</h2>
+<ol>
+<li>默写今日复盘的5个核心单词，完成List15的二次自测</li>
+<li>整理2023年Text3的所有错题，写出错误原因与正确解题思路</li>
+<li>学习考研核心词汇List16，完成新单词的初步记忆</li>
+<li>再分析2道之前积累的嵌套定语从句长难句</li>
+</ol>
+<p>💡 碎碎念：今天在默写单词时又忘了<code>permeate</code>的拼写，看来需要加入循环复习清单，明天早起再过一遍！坚持积累，英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-09-21</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/9-21/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/9-21/</id>
+    <published>2026-09-21T00:00:00.000Z</published>
+    <updated>2026-09-21T00:00:00.000Z</updated>
+    <summary>考研线性代数复盘与薄弱点整改记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-09-21</h1>
+<h2>今日学习内容</h2>
+<p>复盘线性代数核心考点模块</p>
+<h2>薄弱点</h2>
+<p>今日复盘线性代数时，暴露出三处核心薄弱环节：一是初等变换与分块矩阵的混合运算容易出现步骤混乱，比如行变换后未及时标记导致和列变换混淆，分块矩阵乘法时未匹配维度导致运算错误；二是线性方程组解的判定中，系数矩阵与增广矩阵的秩联动分析不够熟练，无法快速通过秩的关系推导解的存在性与解的结构；三是实对称矩阵正交相似对角化时，经常遗漏施密特正交化或单位化的关键步骤，导致最终结果不符合正交矩阵的要求。</p>
+<h2>AI知识点带复盘</h2>
+<p>今日复盘覆盖考研线性代数三大高频考点模块，结合考研命题规律逐一复盘：</p>
+<ol>
+<li><strong>矩阵初等变换与分块矩阵</strong>
+考研中该模块常以选择题、填空题或解答题的基础步骤出现，核心考点包括：初等变换不改变矩阵的秩，初等矩阵与可逆矩阵的联系，分块矩阵的运算规则。易错点在于行变换与列变换的混用（比如求逆时误用列变换），以及分块矩阵运算时的维度匹配——例如分块矩阵$[A\ B][C\ D]^T$需要A的列数等于C的行数，否则无法相乘。今日通过复盘3道经典例题，明确了行变换仅用于化简行阶梯形矩阵，分块对角矩阵求逆可直接对每个对角块求逆后放回原位置。</li>
+<li><strong>线性方程组解的理论</strong>
+这是线代解答题的必考题型，核心知识点包括：齐次线性方程组$Ax=0$的基础解系维度为$n-r(A)$，非齐次线性方程组$Ax=b$有解的充要条件为$r(A)=r(\overline{A})$（$\overline{A}$为增广矩阵），解的结构为特解+齐次通解。考研中常结合矩阵的秩综合命题，比如通过解的存在性反求矩阵中的参数。今日复盘时发现自己此前容易忽略增广矩阵的秩的计算，后续需加强“秩联动分析”的专项练习。</li>
+<li><strong>实对称矩阵的正交相似对角化</strong>
+该模块是二次型的前置核心考点，考研中常结合二次型的标准化命题。步骤严格为：①求矩阵的全部特征值；②求出对应特征值的特征向量；③对重根对应的特征向量进行施密特正交化，不同特征值的特征向量天然正交；④将所有特征向量单位化；⑤将单位化后的特征向量按列拼成正交矩阵$Q$，满足$Q^TAQ=\Lambda$（$\Lambda$为对角矩阵，对角元为对应特征值）。今日复盘时修正了此前遗漏正交化步骤的错误，明确了仅重根的特征向量需要正交化，单根的特征向量无需额外操作。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日通过2.5小时的线代复盘，系统梳理了前期学习的模糊知识点，针对薄弱点整理了专属错题笔记，完成了6道配套巩固习题。整体复盘节奏平稳，未出现过度拖延的情况，明确了后续一周的专项练习方向为线性方程组的参数求解与实对称对角化综合题型。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-09-14</title>
     <link href="https://elysiaweb.vercel.app/posts/408/9-14/" rel="alternate" type="text/html"/>
