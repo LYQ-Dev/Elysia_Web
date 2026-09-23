@@ -5,8 +5,132 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-09-22T15:35:56.117Z</updated>
+  <updated>2026-09-23T15:37:29.117Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-09-23</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/9-23/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/9-23/</id>
+    <published>2026-09-23T00:00:00.000Z</published>
+    <updated>2026-09-23T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-09-23</h1>
+<h2>今日学习内容</h2>
+<p>今天完成计算机网络全模块强化复习的收尾工作，正式宣告408统考专业课四门科目（数据结构、计算机组成原理、操作系统、计算机网络）的强化阶段全部结束，后续将转入历年真题演练与针对性查漏补缺的冲刺准备阶段。</p>
+<h2>AI知识点带复盘</h2>
+<h3>计算机网络强化核心考点复盘</h3>
+<p>本次计网强化阶段严格贴合408考试大纲完成全模块复习，核心复盘要点如下：</p>
+<ol>
+<li><strong>五层体系结构逻辑梳理</strong>：明确了物理层到应用层的功能边界与数据传输链路，理清了各层对应设备与协议的匹配关系，解决了前期混淆的“交换机工作层次”“路由器转发逻辑”等易错点。</li>
+<li><strong>重难点模块专项突破</strong>：
+<ul>
+<li>数据链路层：掌握CRC校验的分步计算方法、三类滑动窗口协议的窗口规则与传输效率，吃透以太网CSMA/CD协议的工作流程与冲突域、广播域概念；</li>
+<li>网络层：熟练掌握IP子网划分、CIDR路由聚合技巧，理清ARP/RARP的工作场景与差异，理解OSPF链路状态路由与BGP路径向量路由的适用场景，掌握NAT与DHCP的部署逻辑；</li>
+<li>传输层：彻底区分TCP/UDP的核心差异，完整复现TCP三次握手、四次挥手的全状态转换与异常处理逻辑，掌握滑动窗口流量控制、慢启动、拥塞避免等拥塞控制算法的运行规则；</li>
+<li>应用层：梳理HTTP全版本差异、HTTPS加密握手流程、DNS递归与迭代查询规则、FTP主动/被动模式的区别等高频考点。</li>
+</ul>
+</li>
+<li><strong>408强化阶段整体复盘</strong>：四门课程均完成“考点框架搭建-专项习题训练-错题复盘修正”的闭环复习，建立了完整的408专业课知识图谱，明确了各科目在真题中的分值占比与出题侧重。</li>
+</ol>
+<h2>问题与反思</h2>
+<p>（基于用户输入，不编造）</p>
+<ol>
+<li>计网跨章节综合应用题的解题逻辑仍需打磨，比如结合TCP传输与HTTP请求的场景分析题，容易遗漏协议间的联动细节；</li>
+<li>部分小众协议细节记忆不够牢固，比如ICMPv6报文类型、NAT的分类规则，后续需要通过错题本强化记忆。</li>
+</ol>
+<h2>收获与总结</h2>
+<p>（基于用户输入，不编造）</p>
+<ol>
+<li>顺利完成408专业课全部强化阶段复习，达成了初期制定的强化阶段目标，为后续真题演练扫清了知识盲区；</li>
+<li>通过计网收尾复盘，理清了各知识点的关联逻辑，解决了强化阶段遗留的核心疑点；</li>
+<li>强化阶段的专项刷题训练显著提升了客观题的解题速度与正确率，为冲刺阶段的真题模拟打下了扎实基础。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-09-23</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/9-23/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/9-23/</id>
+    <published>2026-09-23T00:00:00.000Z</published>
+    <updated>2026-09-23T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-09-23</h1>
+<h2>今日学习内容</h2>
+<p>今天重点攻克了考研英语新题型中的段落排序题，选取2015年全国硕士研究生招生考试英语（一）的Text Part B作为练习材料。全程耗时约1小时40分钟，最终仅答对了3个空，正确率远低于预期。复盘过程中发现主要存在两大核心问题：一是对段落间的逻辑衔接信号识别不足，比如误将表转折的<code>by contrast</code>当作顺承连接词，导致段落匹配顺序混乱；二是对指代关系的敏感度不够，比如G段开头的<code>this shift</code>无法快速关联到前文提到的传统家庭结构变化，浪费了大量梳理时间。</p>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）
+今天系统复盘了50个考研英语核心词汇，重点整理了与阅读、新题型高频相关的考点词汇：</p>
+<ul>
+<li><strong>cohere</strong> /kəʊˈhɪə(r)/ <em>v.</em> 连贯，一致；考研常考搭配：<code>cohere with</code> 与…一致</li>
+<li><strong>sequential</strong> /sɪˈkwenʃl/ <em>adj.</em> 按顺序的，连续的；常用于描述段落逻辑结构</li>
+<li><strong>transition</strong> /trænˈzɪʃn/ <em>n./v.</em> 过渡，转变；阅读中常用来指代段落间的逻辑衔接</li>
+<li><strong>perspective</strong> /pəˈspektɪv/ <em>n.</em> 视角，观点；高频短语：<code>in perspective</code> 正确地，恰当地</li>
+<li><strong>flourish</strong> /ˈflʌrɪʃ/ <em>v.</em> 繁荣，兴旺；<em>n.</em> 华丽辞藻</li>
+<li><strong>decline</strong> /dɪˈklaɪn/ <em>v.</em> 下降，衰退；拒绝；<em>n.</em> 衰退，下降</li>
+</ul>
+<p>此外还整理了本次排序题中遇到的陌生主题词汇：<code>disperse</code>（v. 分散，散开）、<code>persist</code>（v. 持续，坚持）、<code>transform</code>（v. 使改变形态），均为社会文化类话题的高频考点词。</p>
+<h2>学习复盘与明日计划</h2>
+<p>通过今天的练习，我明确了新题型排序题的提分关键在于梳理段落逻辑链，接下来将专门整理考研英语新题型常用的逻辑衔接词表，每日进行针对性练习。明日学习计划如下：</p>
+<ol>
+<li>默写今日复盘的所有核心词汇，查漏补缺</li>
+<li>完成2016年英语（一）的排序题练习并整理错题本</li>
+<li>背诵30个新的考研核心词汇，重点关注社会类话题词汇</li>
+</ol>
+<p>💡 碎碎念：今天虽然做题受挫，但及时找到了自己的薄弱项，没有白忙活！坚持每天积累，考研英语必上岸！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-09-23</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/9-23/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/9-23/</id>
+    <published>2026-09-23T00:00:00.000Z</published>
+    <updated>2026-09-23T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-09-23</h1>
+<h2>今日学习内容</h2>
+<p>今天正式启动考研数学历年真题的第一轮模拟刷题练习，选取了2015年全国硕士研究生招生考试数学（一）真题卷进行限时训练。整体来看，试卷覆盖的核心知识点均已完成系统复习，绝大多数题目能够快速定位解题方向，但在答题流畅度、专注力把控上存在明显不足，部分基础题型出现了步骤卡顿和低级失误。</p>
+<h2>薄弱点</h2>
+<p>结合今日的刷题表现，梳理出当前存在的核心薄弱环节：</p>
+<ol>
+<li><strong>解题熟练度不足</strong>：部分基础题型的解题流程不够流畅，需要短暂停顿回忆公式推导或解题框架，导致整体答题时间超出了规定的3小时上限；</li>
+<li><strong>专注力把控不到位</strong>：模拟过程中出现了2次短暂走神，漏看了题目中的隐含条件，最终在定积分计算环节出现了符号错误，导致一道10分的大题被扣全分；</li>
+<li><strong>细节失分隐患</strong>：在步骤书写时，容易忽略函数定义域、级数收敛域这类容易被忽视的细节，存在隐性失分风险。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>本次真题刷题涉及的考研数学核心考点复盘与强化建议：</p>
+<ol>
+<li><strong>高等数学模块</strong>：本次套卷重点考察了一元函数积分学（定积分几何应用、变上限积分求导结合极限）、多元函数微分学（隐函数求偏导、条件极值）、无穷级数（幂级数收敛域求解），其中变上限积分与极限结合的题型是历年真题的高频考察点，后续需要通过专项训练强化快速拆解题型的能力；</li>
+<li><strong>线性代数模块</strong>：考察了矩阵的秩的性质、非齐次线性方程组求解、特征值与特征向量及二次型的合同变换，其中二次型的合同标准化步骤熟练度稍差，后续需要通过默写模板强化步骤规范性；</li>
+<li><strong>概率论与数理统计模块</strong>：考察了随机变量的数字特征、最大似然估计，其中最大似然估计的似然函数构建环节需要严格按照样本取值范围进行限定，避免因忽略定义域导致似然函数写错。
+整体而言，本次套卷的失分均为非知识性失分，主要源于熟练度不足和专注力问题，而非知识点掌握不牢。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日完成一套考研数学真题的限时模拟练习，对真题的命题风格和考察重点有了更直观的认知，明确了当前阶段需要优先提升的方向：强化解题熟练度与答题专注力。后续将通过每日一套真题限时训练，搭配专注度计时练习，逐步改善当前的问题。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-09-21</title>
     <link href="https://elysiaweb.vercel.app/posts/408/9-21/" rel="alternate" type="text/html"/>
