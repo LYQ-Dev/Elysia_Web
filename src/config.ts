@@ -297,6 +297,11 @@ export const navBarConfig: NavBarConfig = {
 					url: "/websites/",
 					icon: "material-symbols:language",
 				},
+				{
+					name: "友链",
+					url: "/links/",
+					icon: "material-symbols:link",
+				},
 			],
 		},
 		{

@@ -1,0 +1,31 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+
+const title = "友链";
+const friends = [
+	{
+		name: "Animaigo",
+		url: "https://animaigo.github.io/",
+		description: "Animaigo 的个人网站",
+	},
+];
+---
+
+<MainGridLayout title={title} description="认识更多有趣的网站">
+	<div class="prose dark:prose-invert max-w-none">
+		<h1>{title}</h1>
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+			{friends.map((friend) => (
+				<a
+					href={friend.url}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="block rounded-lg border border-black/5 p-5 transition hover:shadow-lg dark:border-white/10"
+				>
+					<h2 class="m-0 text-xl font-bold">{friend.name}</h2>
+					<p class="m-0 mt-2 text-sm opacity-70">{friend.description}</p>
+				</a>
+			))}
+		</div>
+	</div>
+</MainGridLayout>
