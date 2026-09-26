@@ -5,8 +5,44 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-09-25T10:39:24.990Z</updated>
+  <updated>2026-09-26T15:44:29.815Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研数学学习记录2026-09-26</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/9-26/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/9-26/</id>
+    <published>2026-09-26T00:00:00.000Z</published>
+    <updated>2026-09-26T00:00:00.000Z</updated>
+    <summary>考研数学真题训练与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-09-26</h1>
+<h2>今日学习内容</h2>
+<p>今日完成了一套近5年的考研数学真题套卷限时训练，严格按照考试时长要求作答，整体完成过程中感受到真题的命题难度高于日常模拟习题，不少题型的设问角度较为新颖，部分题目出现了较长时间的卡壳，最终整体答题进度略滞后于预期。</p>
+<h2>薄弱点</h2>
+<ol>
+<li><strong>知识点综合串联能力不足</strong>：多模块交叉考察的题型（如高数中积分与级数结合、线代中矩阵变换与方程组结合）无法快速梳理解题逻辑，需要花费大量时间回忆相关知识点；</li>
+<li><strong>新颖设问适配性弱</strong>：常规考点更换包装后难以快速识别核心考察方向，比如将定积分的几何意义与参数方程结合的题型，未能第一时间联想到对应的解题思路；</li>
+<li><strong>答题时间分配不合理</strong>：选择题和填空题环节耗时超出预设，导致后续两道高数大题的作答较为仓促，部分会做的题目因时间紧张出现计算失误；</li>
+<li><strong>中档题计算准确度待提升</strong>：部分基础题型因粗心导致计算错误，丢失了本应拿到的分数。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<p>本次真题训练暴露出的核心问题集中在考研数学真题的命题逻辑适配上，结合考研数学常考题型复盘如下：</p>
+<ol>
+<li><strong>多模块综合题型复盘</strong>：考研数学真题非常注重知识点的交叉考察，例如高数中常将变限积分、极限计算与级数敛散性判断结合，线代中会将初等变换、秩的判断与线性方程组的解的结构结合。针对这类题型，后续需要建立“考点拆解-逻辑串联-步骤落地”的解题框架，先通过题干关键词定位单个考点，再梳理各模块知识点的关联；</li>
+<li><strong>新颖设问应对策略</strong>：考研真题不会直接照搬教材或模拟题的设问，往往会通过换元、结合实际背景等方式包装考点。例如将二重积分与物理中的重心问题结合，本质仍是考察二重积分的计算方法，后续需要加强“题干翻译-考点匹配”的专项训练；</li>
+<li><strong>时间分配与计算能力提升</strong>：选择题和填空题需要控制在45-50分钟内完成，后续要通过专项刷题提升基础题型的解题速度；同时每天安排15-20分钟的计算训练，强化四则运算、积分求导等基础计算的熟练度，减少粗心失误。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今日真题训练暴露了较多应试层面的短板，整体完成质量未达到预期目标，后续将针对薄弱点制定专项提升计划，逐步优化答题节奏与知识点掌握程度。
+💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研专业课学习记录2026-09-23</title>
     <link href="https://elysiaweb.vercel.app/posts/408/9-23/" rel="alternate" type="text/html"/>
