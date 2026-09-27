@@ -5,8 +5,175 @@
   <link href="https://elysiaweb.vercel.app/" rel="alternate" type="text/html"/>
   <link href="https://elysiaweb.vercel.app/atom.xml" rel="self" type="application/atom+xml"/>
   <id>https://elysiaweb.vercel.app/</id>
-  <updated>2026-09-26T15:44:29.815Z</updated>
+  <updated>2026-09-27T15:45:51.297Z</updated>
   <language>zh_CN</language>
+  <entry>
+    <title>考研专业课学习记录2026-09-27</title>
+    <link href="https://elysiaweb.vercel.app/posts/408/9-27/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/408/9-27/</id>
+    <published>2026-09-27T00:00:00.000Z</published>
+    <updated>2026-09-27T00:00:00.000Z</updated>
+    <summary>408 专业课学习与复盘</summary>
+    <content type="html"><![CDATA[<h1>考研专业课学习记录 | 2026-09-27</h1>
+<h2>今日学习内容</h2>
+<p>今日完成408数据结构模块专项复盘，重点梳理了二叉树遍历、线索二叉树与哈夫曼树三大核心考点，配套练习了历年真题中的经典题型。</p>
+<h2>AI知识点带复盘</h2>
+<h3>1. 二叉树遍历考点复盘</h3>
+<ul>
+<li><strong>递归遍历</strong>：前、中、后序递归遍历的时间复杂度均为$O(n)$，空间复杂度最坏为$O(n)$（对应单支树的递归栈深度），需明确递归终止条件与访问顺序的核心差异。</li>
+<li><strong>非递归遍历</strong>：
+<ul>
+<li>前序遍历：利用栈实现，先压入右子树根节点，再压入左子树根节点，保证出栈顺序严格遵循根→左→右；</li>
+<li>中序遍历：持续向左子树移动并压栈，直到无左孩子时弹出节点访问，再转向右子树重复操作，是考研算法题高频考点；</li>
+<li>后序遍历：常考双栈法与标记法，标记法通过额外变量记录节点是否已被访问，避免重复遍历子树。</li>
+</ul>
+</li>
+<li><strong>层序遍历</strong>：借助队列实现，可用于求解树的深度、打印每一层节点值，是二叉树应用的基础考点。</li>
+</ul>
+<h3>2. 线索二叉树考点复盘</h3>
+<ul>
+<li><strong>核心目的</strong>：优化二叉树遍历效率，消除递归栈的空间开销，将遍历的前驱后继信息直接存储在节点的空指针域中。</li>
+<li><strong>考点细节</strong>：中序线索二叉树的构造规则，以及如何在线索树上查找任意节点的前驱与后继节点，需注意区分有孩子节点与无孩子节点的不同处理逻辑，选择题常考察线索树的结构判断。</li>
+</ul>
+<h3>3. 哈夫曼树与哈夫曼编码考点复盘</h3>
+<ul>
+<li><strong>哈夫曼树定义</strong>：带权路径长度（WPL）最小的二叉树，所有非叶子节点的度数均为2，无度为1的节点，总节点数为$2n-1$（$n$为叶子节点个数）。</li>
+<li><strong>构造步骤</strong>：每次选取两个权值最小的节点合并为新节点，新节点权值为两节点权值之和，重复操作直到只剩一个节点。</li>
+<li><strong>哈夫曼编码</strong>：基于哈夫曼树生成的前缀编码，可实现最短平均编码长度，常用于数据压缩领域，考研常考察WPL计算与编码生成。</li>
+</ul>
+<h2>问题与反思</h2>
+<ol>
+<li>后序非递归遍历的标记法实现中，节点访问状态的标记逻辑容易混淆，导致代码出现死循环或漏访问节点；</li>
+<li>线索二叉树中，查找节点前驱时容易混淆前驱与后继的指针跳转规则，尤其当节点存在左子树时的处理步骤记忆模糊；</li>
+<li>计算哈夫曼树WPL时，容易漏算非叶子节点的权值累加，导致结果出错。</li>
+</ol>
+<h2>收获与总结</h2>
+<ol>
+<li>系统梳理了二叉树三大遍历的所有实现方式，明确了不同遍历场景的适配逻辑（如中序遍历用于二叉搜索树的有序输出，前序遍历用于树的复制）；</li>
+<li>掌握了线索二叉树的构造与查找操作，解决了此前对线索化后节点关系的认知模糊问题；</li>
+<li>明确了哈夫曼树的构造规则与WPL的计算方法，理解了哈夫曼编码的核心原理，能够独立完成简单哈夫曼树的构造与编码生成。</li>
+</ol>
+<p>💡 碎碎念：踏实吃透每一个知识点！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="major"></category>
+  </entry>
+  <entry>
+    <title>考研英语学习记录2026-09-27</title>
+    <link href="https://elysiaweb.vercel.app/posts/english/9-27/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/english/9-27/</id>
+    <published>2026-09-27T00:00:00.000Z</published>
+    <updated>2026-09-27T00:00:00.000Z</updated>
+    <summary>考研英语单词与长难句学习记录</summary>
+    <content type="html"><![CDATA[<h1>考研英语学习记录 | 2026-09-27</h1>
+<h2>今日学习内容</h2>
+<p>今日聚焦考研英语强化阶段真题精读训练，具体安排如下：</p>
+<ol>
+<li>完成2022年全国硕士研究生招生考试英语（一）阅读理解Text 3的全文精读，对照官方解析梳理错题，总结细节题定位技巧</li>
+<li>背诵并复盘50个考研英语高频核心词汇，重点整理形近词辨析与学术类固定搭配</li>
+<li>拆解3篇包含嵌套从句的考研真题长难句，掌握多层复合句的翻译逻辑</li>
+</ol>
+<h2>单词复盘</h2>
+<p>（AI 自动整理）</p>
+<h3>今日核心词汇积累</h3>
+<ol>
+<li><strong>sustainable</strong> /səˈsteɪnəbl/ adj. 可持续的；合理利用的（考研阅读生态、经济话题高频词）
+搭配：sustainable development 可持续发展</li>
+<li><strong>corroborate</strong> /kəˈrɒbəreɪt/ v. 证实，确证（学术类阅读高频动词，写作中可用于支撑论点）</li>
+<li><strong>anecdotal</strong> /ˌænɪkˈdəʊtl/ adj. 轶事的；传闻的（常与<code>empirical</code>（实证的）对比考察）</li>
+<li><strong>skeptical</strong> /ˈskeptɪkl/ adj. 怀疑的（固定搭配：be skeptical of 对…持怀疑态度）</li>
+</ol>
+<h3>形近词辨析</h3>
+<ul>
+<li><code>complement</code> /ˈkɒmplɪmənt/ n./v. 补充；补足  vs  <code>compliment</code> /ˈkɒmplɪmənt/ n./v. 赞美；恭维</li>
+</ul>
+<h3>固定搭配积累</h3>
+<ol>
+<li>in the wake of 随着…而来；作为…的结果</li>
+<li>take sth. with a grain of salt 对…持保留态度</li>
+<li>be prone to 易于；有…倾向</li>
+</ol>
+<h2>长难句拆解</h2>
+<p>选取今日精读真题中的典型嵌套从句例句进行拆解：</p>
+<blockquote>
+<p>原句：The data from a survey that we conducted last year, which covered 1,200 college students, corroborate the anecdotal evidence that many young people are skeptical of the effectiveness of traditional mental health interventions.</p>
+<p>🔍 结构拆解：</p>
+<ol>
+<li>主句主干：The data... corroborate the anecdotal evidence...</li>
+<li>定语从句1：<code>that we conducted last year</code> 修饰先行词<code>survey</code></li>
+<li>非限定性定语从句：<code>which covered 1,200 college students</code> 补充说明该调查的覆盖范围</li>
+<li>同位语从句：<code>that many young people are skeptical of the effectiveness of traditional mental health interventions</code> 解释说明<code>anecdotal evidence</code>的具体内容</li>
+</ol>
+<p>📝 参考翻译：我们去年开展的一项覆盖1200名大学生的调查数据，证实了“许多年轻人对传统心理健康干预措施的有效性持怀疑态度”这一传闻式结论。</p>
+</blockquote>
+<h2>今日学习反思</h2>
+<p>今天做Text3细节题时，因未圈画题干限定词<code>in the short term</code>选错答案，后续将强化“先圈画题干关键词再回文定位”的做题习惯。单词复盘发现形近词混淆仍是薄弱点，明日将专门整理易混词表进行强化记忆。</p>
+<p>💡 碎碎念：每天积累一点点，稳步推进强化阶段复习，相信坚持就能拿下考研英语！</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="english"></category>
+  </entry>
+  <entry>
+    <title>考研数学学习记录2026-09-27</title>
+    <link href="https://elysiaweb.vercel.app/posts/math/9-27/" rel="alternate" type="text/html"/>
+    <id>https://elysiaweb.vercel.app/posts/math/9-27/</id>
+    <published>2026-09-27T00:00:00.000Z</published>
+    <updated>2026-09-27T00:00:00.000Z</updated>
+    <summary>考研数学学习与复盘记录</summary>
+    <content type="html"><![CDATA[<h1>考研数学学习记录 | 2026-09-27</h1>
+<h2>今日学习内容</h2>
+<p>今天完成2008年全国硕士研究生招生考试数学真题套卷的完整刷题，整体答题节奏基本符合考场要求，但做完后整体感觉发挥一般，部分题目看似熟悉却在细节处出现失误。</p>
+<h2>薄弱点</h2>
+<ol>
+<li><strong>积分运算细节失误</strong>：定积分换元时未同步调整上下限，分部积分过程中符号处理出错，导致最终结果偏差；</li>
+<li><strong>中值定理证明题</strong>：辅助函数构造思路不清晰，部分证明步骤跳步，被扣去步骤分；</li>
+<li><strong>相似矩阵判定</strong>：混淆相似矩阵的完整判定条件，仅通过特征值相同就草率得出结论；</li>
+<li><strong>二维随机变量计算</strong>：条件概率密度的定义域遗漏，边缘分布的概率求和出现漏项；</li>
+<li><strong>综合大题衔接</strong>：建立微分方程时未明确初始条件，导致特解求解错误。</li>
+</ol>
+<h2>AI知识点带复盘</h2>
+<h3>高数核心知识点复盘</h3>
+<p>2008年考研数学高数模块重点覆盖极限、积分、微分方程、中值定理四大高频考点：</p>
+<ol>
+<li><strong>极限计算</strong>：真题中考察了等价无穷小、洛必达法则、泰勒展开的综合应用，易错点在于加减项中滥用等价无穷小，例如$\lim_{x \to 0}\frac{\sin x - x}{x^3}$不能直接替换$\sin x \sim x$，需使用泰勒展开或洛必达法则求解。</li>
+<li><strong>积分计算</strong>：涉及定积分换元、分部积分、二重积分极坐标转换，其中圆域型二重积分的极角范围容易误判，例如$x^2+y^2 \leq 2ax$的极角范围应为$[-\pi/2, \pi/2]$而非$[0, 2\pi]$。</li>
+<li><strong>中值定理证明</strong>：常考察拉格朗日与柯西中值定理的结合应用，构造辅助函数是解题关键，例如证明存在$\xi \in(a,b)$使得$f'(\xi)=\frac{f(\xi)-f(a)}{b-\xi}$，需构造$F(x)=(x-b)[f(x)-f(a)]$辅助推导。</li>
+<li><strong>微分方程应用</strong>：结合物理背景建立微分方程时，必须明确初始条件，否则无法求出唯一特解。</li>
+</ol>
+<h3>线性代数核心知识点复盘</h3>
+<ol>
+<li><strong>相似矩阵判定</strong>：需同时满足特征值相同、迹相等、秩相等，实对称矩阵还需满足可正交相似对角化，部分考生容易仅通过特征值相同就判定矩阵相似，忽略其他必要条件。</li>
+<li><strong>线性方程组解的结构</strong>：当系数矩阵秩为$r$时，$n$元线性方程组的基础解系含$n-r$个线性无关的解向量，需准确选取自由未知量求解。</li>
+<li><strong>二次型正定性</strong>：需通过顺序主子式全大于0进行判定，不可仅通过特征值大于0就直接得出结论（实对称矩阵才满足该等价条件）。</li>
+</ol>
+<h3>概率统计核心知识点复盘</h3>
+<ol>
+<li><strong>二维随机变量</strong>：联合分布、边缘分布、条件分布的计算容易出现漏算概率的情况，例如二维离散型随机变量的联合概率表中遗漏样本点的概率求和。</li>
+<li><strong>最大似然估计</strong>：需正确构造似然函数，离散型总体为各样本概率的乘积，连续型总体为各样本概率密度的乘积，取对数求导时需注意符号处理。</li>
+<li><strong>大数定律</strong>：需明确不同大数定律的适用条件，例如辛钦大数定律要求独立同分布且数学期望存在，切比雪夫大数定律要求方差存在且一致有界。</li>
+</ol>
+<h2>今日小结</h2>
+<p>今天的真题刷题暴露出我对基础知识点的掌握不够扎实，更多的是细节和步骤上的疏漏，而非完全不会解题。整体发挥一般的结果也提醒我，考研数学不仅需要掌握知识点，更需要强化考场答题的严谨性和熟练度。后续我将整理今日的错题，针对薄弱板块进行专项练习，同时规范答题步骤，避免因细节失误丢失分数。</p>
+<p>💡 碎碎念：稳步积累，持续提升。</p>
+<blockquote>
+<p>文档内容由 AI 辅助生成</p>
+</blockquote>
+]]></content>
+    <author>
+      <name>程翊雪</name>
+    </author>
+    <category term="math"></category>
+  </entry>
   <entry>
     <title>考研数学学习记录2026-09-26</title>
     <link href="https://elysiaweb.vercel.app/posts/math/9-26/" rel="alternate" type="text/html"/>
